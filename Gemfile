@@ -9,7 +9,7 @@ gem 'pg'
 gem 'thin'
 
 # Use SCSS for stylesheets
-gem 'sass-rails',   "~> 3.2.3"
+# gem 'sass-rails'
  # '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -31,7 +31,7 @@ gem 'jquery-rails'
 # gem 'foundation-icons-sass-rails'
 # gem 'compass-rails' # you need this or you get an err
 
-gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
+# gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
 gem 'zurb-foundation', '~> 4.0.0'
 
 
