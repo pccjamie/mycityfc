@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 gem 'pg'
 
 gem 'thin'
@@ -22,6 +22,17 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+
+
+
+#foundation
+# gem 'foundation-icons-sass-rails'
+gem 'compass-rails' # you need this or you get an err
+gem 'zurb-foundation', '~> 4.0.0'
+
+
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -78,13 +89,6 @@ gem 'geocoder'
 gem 'httparty'
 gem 'nokogiri'
 
-
-
-
-# #foundation
-# gem 'foundation-icons-sass-rails'
-# gem 'compass-rails' # you need this or you get an err
-# gem 'zurb-foundation', '~> 4.0.0'
 
   
 #dev / prod
