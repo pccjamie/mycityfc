@@ -29,8 +29,8 @@ module Soccer1
 
 
 
-    ENV['FB_APP_ID']
-    ENV['FB_APP_SEC']
+    # ENV['FB_APP_ID']
+    # ENV['FB_APP_SEC']
 
 
   end
