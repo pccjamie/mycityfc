@@ -12,7 +12,7 @@ def facebook
 
       session["devise.facebook_data"] = request.env["omniauth.auth"]
       #need to change?
-      redirect_to root_path
+      redirect_to root_path 
     end
 end
 
