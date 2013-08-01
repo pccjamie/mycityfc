@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   #relies on protected attributes gem. UntiL I figure out how to customize Devise controller directly which is hidden inside gem apparenty.
-  attr_accessible :provider, :uid, :name
+  attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state
 
 #find an existing user by uid or create one with a random password otherwise.
 
@@ -40,8 +40,8 @@ Here is an example that copies the facebook email if available:
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
-        user.location = data["location"] if user.user_location.blank?
-        user.picture = data["picture"] if user.picture.blank?
+        # user.location = data["location"] if user.location.blank?
+        # user.picture = data["picture"] if user.picture.blank?
       end
     end
   end
