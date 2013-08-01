@@ -63,11 +63,14 @@ end
 # gem 'debugger', group: [:development, :test]
 
 
-#FOR RAIL 4 compatability
+#RAIL 4S compatability
 
-# MUST include rails12 for deployment on Heroku
+# to be able to deploy to Heroku
 gem 'rails_12factor', group: :production
-gem 'protected_attributes'
+
+# so Devise can work with strong parameters
+gem "protected_attributes", "~> 1.0.0"
+
 
 #AUTHENTICATION
 gem 'devise'

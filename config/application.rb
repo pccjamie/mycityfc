@@ -20,12 +20,12 @@ module Soccer1
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-
-    # in order to get SASS-RAILS and COMPASS-RAILS to coooperate and compile
-    # properly (as Heroku is expecting this, for Rails4, it is necessary to add this line to THIS file, not production.rb. 
+    # Necessary to add this line to THIS file, not production.rb. required for Heroku - Rails 4 compatability
+    # does NOT address OPEN ISSUES with COMPASS_RAILS. That gem is apparently required by Foundation. Not true. 
+    # compass-rails is only required to use certain SASS helpers provided by Foundation. Doesn't affect normal SASS and CSS. 
+    # WATCHING https://github.com/Compass/compass-rails/pull/59 for ongoing releases.
 
     config.assets.initialize_on_precompile = false
-
 
 
   end
