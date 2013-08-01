@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
  
-# before_filter :authenticate_user!
-# before_filter :user_signed_in?
+before_filter :authenticate_user!
+before_filter :user_signed_in?
 
   def index
   	p'you are on the controller page'
