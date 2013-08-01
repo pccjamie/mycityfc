@@ -19,5 +19,14 @@ module Soccer1
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+
+    # in order to get SASS-RAILS and COMPASS-RAILS to coooperate and compile
+    # properly (as Heroku is expecting this, for Rails4, it is necessary to add this line to THIS file, not production.rb. 
+
+    config.assets.initialize_on_precompile = false
+
+
+
   end
 end

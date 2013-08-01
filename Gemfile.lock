@@ -352,7 +352,7 @@ DEPENDENCIES
   rails_12factor
   resque
   rspec-rails
-  sass-rails (~> 4.0.0)
+  sass-rails
   sdoc
   shoulda-matchers
   thin
