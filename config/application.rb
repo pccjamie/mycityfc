@@ -27,11 +27,8 @@ module Soccer1
 
     config.assets.initialize_on_precompile = false
 
-
-
-    # ENV['FB_APP_ID']
-    # ENV['FB_APP_SEC']
-
+    ENV['FB_APP_ID']
+    ENV['FB_APP_SEC']
 
   end
 end
