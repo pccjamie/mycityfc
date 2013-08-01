@@ -328,7 +328,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   pg
-  protected_attributes
+  protected_attributes (~> 1.0.0)
   pry-debugger
   pry-rails
   pry-stack_explorer
