@@ -1,28 +1,19 @@
-<h1>Intro</h1>
+<h2>A look at soccer in the US</h2>
+<div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
 
-<%# if current_user && user_signed_in? %>
-<%#= link_to 'Skip This', root_path %>
-<%# else %>
-<!-- <div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section"> -->
+<% @slides.each do |s| %>
 
-<div style="background: red">
-
-
-<!-- here's where we add slides. each corresponds to a single Slide stored in the DB.   Need a Ruby statement, to get all slides, and on each put in a section div %> -->
-
-<%= @slides.each do |s| %>
-
-<section id="section" class="slide" name="slide" style="background: black; clear:both">
-
-<%= s.name %>
-<%= s.desc %>
-<%= s.image_url %>
-<%= s.cite %>
-
+<section id="section" class="slide" name="slide">
+		<%= s.name %><br>
+		<%= s.desc %><br/>
+		<%= s.image_url %><br/>
+		<%= s.cite %><br/>
 </section>
-<% end %>
-<div style="clear:both"></div>
 
+
+<% end %>
+<br/>
+<div style="clear:both">
 </div>
 
 

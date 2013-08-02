@@ -1,6 +1,6 @@
 
-body {background-image: url("<%= image_tag 'http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg'%>") top left no-repeat;background-size: 100%; background: pink;}
-#wrapper {height: auto; width: 100%;position: relative; padding:0; background-color: red}
+body {background: url("http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg") top left no-repeat;background-size: 100%;}
+#wrapper {height: auto; width: 100%;position: relative; padding:0;}
 
 ul {list-style: none}
 li {display: inline; padding: 5px}
@@ -26,12 +26,12 @@ h1#logo {height:1px;margin-left:-10000px;position: relative;}
 #slideshow section { color: white;}
 
 * {background-position: top center}
-#slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
-#slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
-#slideshow #impact3 {background-image: url("<%= asset_path 'kids4.jpg' %>");}
-#slideshow #impact4 {background-image: url("<%= asset_path 'us_v_spain.jpg' %>");}
-#slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
-#slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
+// #slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
+// #slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
+// #slideshow #impact3 {background-image: url("<%= asset_path 'kids4.jpg' %>");}
+// #slideshow #impact4 {background-image: url("<%= asset_path 'us_v_spain.jpg' %>");}
+// #slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
+// #slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
 
 strong:first-child, strong:nth-child(5){display: none;}
 
@@ -71,5 +71,5 @@ form a:hover {background:rgba(135,169,181,.75); color: #fff;}
 .form {height: auto; width: 25%; float: left; }
 .form  {color: #FFF}
 
-
+.intro {background: orange}
 

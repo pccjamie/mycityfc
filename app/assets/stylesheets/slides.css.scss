@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {background-image: url("<%= image_tag 'http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg'%>") top left no-repeat;background-size: 100%; background: pink;}
+body {background: url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat;background-size: 100%;}
 #wrapper {height: auto; width: 100%;position: relative; padding:0;}
 
 ul {list-style: none}
@@ -16,8 +16,8 @@ h1,h2,h3, h4, h5, p, a {color: #FFF; font-family: 'BenchNine', sans-serif; text-
 h1#logo {height:1px;margin-left:-10000px;position: relative;}
 
 /*special*/
-#slideshow {height: auto;  overflow: auto; background: #FFF; padding: 0!important;clear: both; display: block;}
-#slideshow section {background: #FFF; /*padding: 10px;*/ height:450px; width: 100%; display: block; position: relative;margin: 0 auto; }
+#slideshow {height: 200px;  overflow: auto; padding: 0!important;clear: both; display: block;}
+#slideshow section { /*padding: 10px;*/ height:250px; width: 100%; display: block; position: relative;margin: 0 auto; }
 #slideshow section figure {width: 55%; display: inline-block; float: right;}
 #slideshow * {color: #262626; letter-spacing:5px;text-shadow: none;}
 
@@ -26,15 +26,16 @@ h1#logo {height:1px;margin-left:-10000px;position: relative;}
 #slideshow h5 {font-size: 20px;}
 
 #slideshow section img {margin: 0 auto;text-align: center;}
-#slideshow section { color: white;}
+#slideshow section { color: #000000}
 
-* {background-position: top center}
-#slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
-#slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
-#slideshow #impact3 {background-image: url("<%= asset_path 'kids4.jpg' %>");}
-#slideshow #impact4 {background-image: url("<%= asset_path 'us_v_spain.jpg' %>");}
-#slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
-#slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
+// #slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
+// #slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
+// #slideshow #impact3 {background-image: url("<%= asset_path 'kids4.jpg' %>");}
+// #slideshow #impact4 {background-image: url("<%= asset_path 'us_v_spain.jpg' %>");}
+// #slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
+// #slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
+
+#slideshow section:nth-child(even) {background: silver;}
 
 strong:first-child, strong:nth-child(5){display: none;}
 
@@ -73,6 +74,7 @@ form * {color: #464646}
 form a:hover {background:rgba(135,169,181,.75); color: #fff;}
 .form {height: auto; width: 25%; float: left; }
 .form  {color: #FFF}
+
 
 
 
