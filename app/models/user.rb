@@ -3,12 +3,13 @@ class User < ActiveRecord::Base
   # :token_authenticatable,
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable
-
-  devise :omniauthable, :omniauth_providers => [:facebook]
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook] #:twitter
 
   #relies on protected attributes gem. UntiL I figure out how to customize Devise controller directly which is hidden inside gem apparenty.
-  # attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state
+  # attr_accessible  :name, :key => "value", email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state
+
+  attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state
+
 
 #find an existing user by uid or create one with a random password otherwise.
 
