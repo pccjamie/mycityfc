@@ -13,5 +13,8 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 # end
 
 resources :home, :only => [:index]
+
+resources :slides, :except => [:destroy]
+
 root :to => "home#index"
 end

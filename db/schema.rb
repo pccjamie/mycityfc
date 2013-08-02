@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130801210131) do
+ActiveRecord::Schema.define(version: 20130802150345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "slides", force: true do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.string   "url"
+    t.string   "image_url"
+    t.string   "cite"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "slide_number"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
