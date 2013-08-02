@@ -1,3 +1,8 @@
-<%= form_tag do %>
-  add fields for slide name, description, slide number, image, and citation
+<%= form_for @slides, url: {action: "create"}, html: {id: "slides"} do |f| %>
+
+<%= f.text_field :name %>
+<%= f.text_area_tag(:message, "What are we seeing here?") :desc %>
+<%= f.url_field :image_url %> <!--lets convert this to file upload when AWS is read -->
+<%= f.text_field :cite %>
+<%= f.submit "Create Slide" %>
 <% end %>
