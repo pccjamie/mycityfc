@@ -7,7 +7,7 @@ devise_for :users, :skip => [:sessions, :registrations], :controllers => { :omni
 
 devise_scope :user do
   get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-  get 'sign_up', :to => 'devise/registrations#new'
+  post 'sign_up', :to => 'devise/registrations#new'
   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
 end
 
