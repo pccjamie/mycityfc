@@ -1,5 +1,5 @@
 body {background: url('sounders.jpg') top left no-repeat;background-size: 100%; background-color: #FFF;}
-#wrapper {height: auto; width: 100%;position: relative; padding:0; background: red}
+#wrapper {height: auto; width: 100%;position: relative; padding:0; background-color: red}
 
 ul {list-style: none}
 li {display: inline; padding: 5px}
