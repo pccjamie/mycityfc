@@ -33,7 +33,7 @@ This means that, if we need to copy data from session whenever a user is initial
 Here is an example that copies the facebook email if available:
 =end 
 
-  def self.new_with_session(params, session)
+  def new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
