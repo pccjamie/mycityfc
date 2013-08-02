@@ -69,8 +69,8 @@ end
 gem 'rails_12factor', group: :production
 
 # so Devise can work with strong parameters
-gem "protected_attributes", "~> 1.0.0"
-
+# gem "protected_attributes", "~> 1.0.0"
+gem 'strong_parameters'
 
 #AUTHENTICATION
 gem 'devise'
