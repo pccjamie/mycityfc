@@ -1,12 +1,13 @@
 class SlidesController < ApplicationController
 
-before_filter :authenticate_user!, :only [:show]
+before_action :authenticate_user!, :only [:show]
 
 	def index
 		@slides = Slide.all
 	end
 
 	def new
+		@slide = Slide.new
 	end
 
 	def create
@@ -14,6 +15,14 @@ before_filter :authenticate_user!, :only [:show]
 
 	def show
 	end
+
+	def edit
+	end
+
+	def update
+	end
+
+	#if i use strong params now and remove attr_accessible from model, will that 
 
 
 

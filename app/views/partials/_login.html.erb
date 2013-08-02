@@ -12,9 +12,10 @@
   <%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%>
   <%end%>
 </nav>
+
 <nav id="site">
   <% if current_user %>
   <%= render partial: "/partials/nav" %>
-  <%else%>
+  <% else %>
   <% end %>
 </nav>
