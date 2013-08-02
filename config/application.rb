@@ -20,6 +20,7 @@ module Soccer1
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+
     # Necessary to add this line to THIS file, not production.rb. required for Heroku - Rails 4 compatability
     # does NOT address OPEN ISSUES with COMPASS_RAILS. That gem is apparently required by Foundation. Not true. 
     # compass-rails is only required to use certain SASS helpers provided by Foundation. Doesn't affect normal SASS and CSS. 
@@ -27,8 +28,13 @@ module Soccer1
 
     config.assets.initialize_on_precompile = false
 
-    ENV['FB_APP_ID']
-    ENV['FB_APP_SEC']
+
+    #blocks rails from expecting attr_accessibile in the Models. NOw I can use strong parameters
+    config.active_record.whitelist_attributes = false
+  
+
+    # ENV['FB_APP_ID']
+    # ENV['FB_APP_SEC']
 
   end
 end

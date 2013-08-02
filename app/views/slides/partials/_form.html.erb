@@ -1,8 +1,15 @@
-<%= form_for @slides, url: {action: "create"}, html: {id: "slides"} do |f| %>
+<%= form_for :slide, url: {action: "create"}, html: {id: "slides"} do |f| %>
+
+<%= f.label :name %>
 
 <%= f.text_field :name %>
-<%= f.text_area_tag(:message, "What are we seeing here?") :desc %>
+<%= f.label :desc %>
+
+<%= f.text_area :desc %>
+<%= f.label :image_url %>
+
 <%= f.url_field :image_url %> <!--lets convert this to file upload when AWS is read -->
+<%= f.label :cite %>
 <%= f.text_field :cite %>
-<%= f.submit "Create Slide" %>
+<%= f.submit "Add Slide" %>
 <% end %>

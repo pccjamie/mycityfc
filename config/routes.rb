@@ -8,13 +8,15 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 # devise_scope :user do
 #   get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
 #   get 'sign_up', :to => 'devise/registrations#new'
-
 #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
 # end
 
 resources :home, :only => [:index]
 
-resources :slides, :except => [:destroy]
 
+	
 root :to => "home#index"
+
+resources :slides
+
 end
