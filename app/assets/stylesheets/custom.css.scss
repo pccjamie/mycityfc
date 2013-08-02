@@ -1,74 +1,74 @@
-body {background: url('sounders.jpg') top left no-repeat;background-size: 100%; background-color: #FFF;}
-#wrapper {height: auto; width: 100%;position: relative; padding:0;}
+// body {background: url('sounders.jpg') top left no-repeat;background-size: 100%; background-color: #FFF;}
+// #wrapper {height: auto; width: 100%;position: relative; padding:0;}
 
-ul {list-style: none}
-li {display: inline; padding: 5px}
+// ul {list-style: none}
+// li {display: inline; padding: 5px}
 
-h1,h2,h3, h4, h5, p, a {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px
-}
+// h1,h2,h3, h4, h5, p, a {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px
+// }
 
-.app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
+// .app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
 
-h1#logo {height:1px;margin-left:-10000px;position: relative;}
+// h1#logo {height:1px;margin-left:-10000px;position: relative;}
 
-/*special*/
-#slideshow {height: auto;  overflow: auto; background: #FFF; padding: 0!important;clear: both; display: block;}
-#slideshow section {background: #FFF; /*padding: 10px;*/ height:450px; width: 100%; display: block; position: relative;margin: 0 auto; }
-#slideshow section figure {width: 55%; display: inline-block; float: right;}
-#slideshow * {color: #262626; letter-spacing:5px;text-shadow: none;}
+// /*special*/
+// #slideshow {height: auto;  overflow: auto; background: #FFF; padding: 0!important;clear: both; display: block;}
+// #slideshow section {background: #FFF; /*padding: 10px;*/ height:450px; width: 100%; display: block; position: relative;margin: 0 auto; }
+// #slideshow section figure {width: 55%; display: inline-block; float: right;}
+// #slideshow * {color: #262626; letter-spacing:5px;text-shadow: none;}
 
-/* custom user view */
-#slideshow h3 { font-size: 40px; width: 35%; display: inline-block;}
-#slideshow h5 {font-size: 20px;}
+// /* custom user view */
+// #slideshow h3 { font-size: 40px; width: 35%; display: inline-block;}
+// #slideshow h5 {font-size: 20px;}
 
-#slideshow section img {margin: 0 auto;text-align: center;}
-#slideshow section { color: white;}
+// #slideshow section img {margin: 0 auto;text-align: center;}
+// #slideshow section { color: white;}
 
-* {background-position: top center}
-#slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
-#slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
-#slideshow #impact3 {background-image: url("<%= asset_path 'kids4.jpg' %>");}
-#slideshow #impact4 {background-image: url("<%= asset_path 'us_v_spain.jpg' %>");}
-#slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
-#slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
+// * {background-position: top center}
+// #slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
+// #slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
+// #slideshow #impact3 {background-image: url("<%= asset_path 'kids4.jpg' %>");}
+// #slideshow #impact4 {background-image: url("<%= asset_path 'us_v_spain.jpg' %>");}
+// #slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
+// #slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
 
-strong:first-child, strong:nth-child(5){display: none;}
+// strong:first-child, strong:nth-child(5){display: none;}
 
-table {display: block; position: relative;}
+// table {display: block; position: relative;}
 
-#myModal {height: 100px;width:200px;margin: 0 auto;}
+// #myModal {height: 100px;width:200px;margin: 0 auto;}
 
-.user_details {background:rgba(135,169,181,.75); color: #fff; padding: 20px; height: auto; position: relative;}
-.user_details div {width: auto;  position: relative;}
-.user_details * h5 {display: inline;position: relative; color:#FFF;}
+// .user_details {background:rgba(135,169,181,.75); color: #fff; padding: 20px; height: auto; position: relative;}
+// .user_details div {width: auto;  position: relative;}
+// .user_details * h5 {display: inline;position: relative; color:#FFF;}
 
-header{height: auto; padding: 0; position: relative; right: 0; background: none;}
+// header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 
-header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float; right}
-footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); position: relative;bottom:0; position: fixed; display: block;}
+// header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float; right}
+// footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); position: relative;bottom:0; position: fixed; display: block;}
 
-nav {height: auto; display: block; padding: 20px; color: #FFF}
+// nav {height: auto; display: block; padding: 20px; color: #FFF}
 
-nav#site, nav#utility {display: inline-block; width: 500px}
-nav#site{text-align: left}
+// nav#site, nav#utility {display: inline-block; width: 500px}
+// nav#site{text-align: left}
 
-nav#utility{height: auto; padding: 0; text-align: right; float: right}
-nav#utility img {padding:2px; background: #fff;}
+// nav#utility{height: auto; padding: 0; text-align: right; float: right}
+// nav#utility img {padding:2px; background: #fff;}
 
-#wrapper {overflow: auto; height: 100%; display: block;}
+// #wrapper {overflow: auto; height: 100%; display: block;}
 
-#espn {height: 600px; width: auto; display: block;position: relative; background: green;}
+// #espn {height: 600px; width: auto; display: block;position: relative; background: green;}
 
 
-#list-leagues {height:auto; display: inline-block;}
+// #list-leagues {height:auto; display: inline-block;}
 
-aside {height:auto; background: rgba(0,0,0,.5); display: inline-block; }
+// aside {height:auto; background: rgba(0,0,0,.5); display: inline-block; }
 
-form {background: rgba(135,169,181,0.75); width: 300px; margin: 0 auto; padding: 20px;}
-form * {color: #464646}
-form a:hover {background:rgba(135,169,181,.75); color: #fff;}
-.form {height: auto; width: 25%; float: left; }
-.form  {color: #FFF}
+// form {background: rgba(135,169,181,0.75); width: 300px; margin: 0 auto; padding: 20px;}
+// form * {color: #464646}
+// form a:hover {background:rgba(135,169,181,.75); color: #fff;}
+// .form {height: auto; width: 25%; float: left; }
+// .form  {color: #FFF}
 
 
 
