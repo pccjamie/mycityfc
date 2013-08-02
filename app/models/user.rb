@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, 
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook] #:twitter
 
-  #relies on protected attributes gem. UntiL I figure out how to customize Devise controller directly which is hidden inside gem apparenty.
-
+  #on Rails4, but keeping attr_accessible in model and using protected attr gem temporarily. 
+  #At least until project delivery is completed. Next step: Move attribute control into an appropriate User or Devise controller.
   attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state
 
 
@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
 =begin
 Notice that Devise RegistrationsController by default calls "User.new_with_session" before building a resource. 
 This means that, if we need to copy data from session whenever a user is initialized before sign up, we just need to implement new_with_session in our model. 
-
 Here is an example that copies the facebook email if available:
 =end 
 
