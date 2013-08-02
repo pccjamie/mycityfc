@@ -3,7 +3,7 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
+# server
 gem 'pg'
 
 gem 'thin'
@@ -23,8 +23,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
-
 
 
 #foundation
@@ -68,13 +66,13 @@ end
 # to be able to deploy to Heroku
 gem 'rails_12factor', group: :production
 
-# so Devise can work with strong parameters
+# keeping this so Devise will cooperate for now.
 gem "protected_attributes", "~> 1.0.0"
 
 #AUTHENTICATION
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-twitter'
+# gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'figaro'
 
@@ -92,8 +90,6 @@ gem 'geocoder'
 #scraping, json, etc
 gem 'httparty'
 gem 'nokogiri'
-
-
   
 #dev / prod
   gem 'pry-rails'
