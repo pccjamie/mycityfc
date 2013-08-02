@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
 
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
 
+	before_filter :authenticate_user!
+
+
   #relies on lib/user_sanitizer.rb
   protected
 	
