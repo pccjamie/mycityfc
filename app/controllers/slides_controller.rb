@@ -20,7 +20,7 @@ class SlidesController < ApplicationController
 	end
 
 	def show
-  		# @slide = Slide.find(slide_params)
+  		@slide = Slide.find(slide_params)
 	end
 
 	def edit
