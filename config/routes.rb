@@ -6,9 +6,9 @@ devise_for :users, :skip => [:sessions], :controllers => { :omniauth_callbacks =
 #note that sessions was ALSO skipped in the normal devise resources.
 
 devise_scope :user do
-  get 'users/sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-  get 'users/sign_up', :to => 'devise/registrations#new'
-  get 'users/sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+  get 'sign_up', :to => 'devise/registrations#new'
+  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
 end
 
 resources :home, :only => [:index]
