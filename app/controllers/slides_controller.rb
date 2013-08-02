@@ -1,13 +1,11 @@
 class SlidesController < ApplicationController
 
-before_filter :authenticate_user!, :only [:index,:show]
-
 	def index
 		@slides = Slide.all
 	end
 
 	def new
-		@slide = Slide.new
+		# @slide = Slide.new
 	end
 
 	def create
