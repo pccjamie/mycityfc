@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable,
   # :lockable, :timeoutable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook] #:twitter
 
   #relies on protected attributes gem. UntiL I figure out how to customize Devise controller directly which is hidden inside gem apparenty.
