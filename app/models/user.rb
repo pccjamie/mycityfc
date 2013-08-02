@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
   # :token_authenticatable,
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable, :confirmable,
-    :recoverable, :rememberable, :trackable, :validatable 
-  
+    :recoverable, :rememberable, :trackable, :validatable
+
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   #relies on protected attributes gem. UntiL I figure out how to customize Devise controller directly which is hidden inside gem apparenty.
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
 
 #find an existing user by uid or create one with a random password otherwise.
 
-  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+  def find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
       user = User.create(name:auth.extra.raw_info.name,

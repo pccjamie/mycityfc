@@ -5,13 +5,13 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 #only using omniauth for authentication, so added these session routes within user scope. 
 #note that sessions was ALSO skipped in the normal devise resources.
 
-devise_scope :user do
-get '/auth/:facebook/callback', to: 'devise/sessions#create'
-  get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-end
+# devise_scope :user do
+# get '/auth/:facebook/callback', to: 'devise/sessions#create'
+#   get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+#   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+# end
 
-resources :home, :only => [:index]
+# resources :home, :only => [:index]
 
 root :to => "home#index"
 
