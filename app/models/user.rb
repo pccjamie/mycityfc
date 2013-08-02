@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 
 #find an existing user by uid or create one with a random password otherwise.
 
-  def find_for_facebook_oauth(auth, signed_in_resource=nil)
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
     unless user
       user = User.create(name:auth.extra.raw_info.name,
@@ -36,7 +36,7 @@ This means that, if we need to copy data from session whenever a user is initial
 Here is an example that copies the facebook email if available:
 =end 
 
-  def new_with_session(params, session)
+  def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
