@@ -7,7 +7,7 @@ devise_for :users, :skip => [:sessions], :controllers => { :omniauth_callbacks =
 
 devise_scope :user do
   get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
-  get 'sign_up', :to => 'devise/registrations#new'
+  # get 'sign_up', :to => 'devise/registrations#new'
   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
 end
 
@@ -16,6 +16,5 @@ resources :home, :only => [:index]
 root :to => "home#index"
 
 #rest  
-
 
 end
