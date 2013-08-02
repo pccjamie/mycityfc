@@ -1,6 +1,6 @@
 class SlidesController < ApplicationController
 
-before_action :authenticate_user!, :only [:index,:show]
+before_filter :authenticate_user!, :only [:index,:show]
 
 	def index
 		@slides = Slide.all
