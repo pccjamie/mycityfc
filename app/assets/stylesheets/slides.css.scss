@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {background: url('sounders.jpg') top left no-repeat;background-size: 100%; background-color: #FFF;}
+body {background: url('http://upload.wikimedia.org/wikipedia/commons/d/db/Seattle_Sounders_FC_First_Game_ECS_Overhead.jpg') top left no-repeat;background-size: 100%; background-color: #FFF;}
 #wrapper {height: auto; width: 100%;position: relative; padding:0; background-color: red}
 
 ul {list-style: none}
@@ -48,7 +48,7 @@ table {display: block; position: relative;}
 
 header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 
-header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float; right}
+header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); position: relative;bottom:0; position: fixed; display: block;}
 
 nav {height: auto; display: block; padding: 20px; color: #FFF}
