@@ -2,31 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {background: url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat;background-size: 100%;}
-#wrapper {height: auto; width: 100%;position: relative; padding:0;}
+body {background: #FFF url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat;background-size: 100%;}
+#wrapper {height: auto; width: 100%; position: relative; padding:0;}
 
 ul {list-style: none}
 li {display: inline; padding: 5px}
 
-h1,h2,h3, h4, h5, p, a {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px
-}
+h1,h2,h3,h4,h5, p, a {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
 
 .app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
 
 h1#logo {height:1px;margin-left:-10000px;position: relative;}
 
 /*special*/
-#slideshow {height: 200px;  overflow: auto; padding: 0!important;clear: both; display: block;}
-#slideshow section { /*padding: 10px;*/ height:250px; width: 100%; display: block; position: relative;margin: 0 auto; }
-#slideshow section figure {width: 55%; display: inline-block; float: right;}
+#slideshow {height: auto;  overflow: auto; padding: 0!important;clear: both; display: block;}
+#slideshow section { padding: 20px; height:400px; width: auto; display: block; position: relative;margin: 0 auto; }
+#slideshow section figure {float: right;}
 #slideshow * {color: #262626; letter-spacing:5px;text-shadow: none;}
 
 /* custom user view */
-#slideshow h3 { font-size: 40px; width: 35%; display: inline-block;}
+#slideshow h3 { font-size: 40px;  display: inline-block;}
 #slideshow h5 {font-size: 20px;}
-
 #slideshow section img {margin: 0 auto;text-align: center;}
-#slideshow section { color: #000000}
+// #slideshow section { color: #000000}
 
 // #slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
 // #slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
@@ -36,6 +34,16 @@ h1#logo {height:1px;margin-left:-10000px;position: relative;}
 // #slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
 
 #slideshow section:nth-child(even) {background: silver;}
+
+#slideshow * .slide-info {background: green}
+
+#slideshow * .slide-name{font-weight:bold}
+#slideshow * .slide-desc{}
+#slideshow * .slide-citation {position: absolute; bottom: 20px; left: 20px}
+#slideshow * .figure{width: 50%; background-color: orange}
+#slideshow * .slide-info, #slideshow * figure {display: inline-block; width: 40%;}
+
+
 
 strong:first-child, strong:nth-child(5){display: none;}
 

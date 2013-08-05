@@ -23,7 +23,18 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
+<% if current_user && user_signed_in? %>
+
+<!--   <body class="users-location-image">
+ -->
+
+<body class="<%= current_user.city.image %>"
+
+
+
+<% else %>
+
+  <body>   
 
   <%= render partial: "/partials/nav" %>
   <%= render partial: "/partials/login" %>
