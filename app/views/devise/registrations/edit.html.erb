@@ -1,18 +1,18 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-
-
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
 
  <% if user_signed_in? && current_user.profile == nil %>
+
       <%= f.radio_button_tag(:profile, "Fan") %>
       <%= f.label_tag(:profile_fan, "Fan") %>
       <%= f.radio_button_tag(:profile, "Parent") %>
       <%= f.label_tag(:profile_parent, "Parent") %>
-     <div><%= f.submit "Update" %></div>
-  
+
+   <div><%= f.submit "Update" %></div>
+
   <% else %>
 
   <div><%= f.label :email %><br />
@@ -32,13 +32,9 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
-
-
-
-
-
   <div><%= f.submit "Update" %></div>
-<% end %>
+  
+  <% end %>
 
 <h3>Cancel my account</h3>
 
