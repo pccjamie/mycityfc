@@ -8,10 +8,6 @@ def after_sign_in_path_for(user)
     users_edit_path
 end
 
-def after_sign_out_path_for(user)
-    redirect_to :root_path
-end
-
 
   #relies on lib/user_sanitizer.rb
   protected
