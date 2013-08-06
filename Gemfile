@@ -80,15 +80,18 @@ gem 'figaro'
 #bg image
 gem "flickr.rb", "~> 1.1.0"
 
+#scraping, json, etc
+# gem 'httparty'
+gem 'nokogiri'
+
+
 #geocoding
 gem 'geocoder'
 
 #utility
 # gem "activesupport", "~> 3.1.1"
 
-#scraping, json, etc
-gem 'httparty'
-gem 'nokogiri'
+
   
 #dev / prod
   gem 'pry-rails'

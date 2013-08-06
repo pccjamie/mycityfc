@@ -28,15 +28,14 @@
 <!--   <body class="users-location-image">
  -->
 
-<body class="<%= current_user.city.image %>"
-
-
-
+<body class="<%#= current_user.city.get_image %>"
+<% elsif current_page? slides_path %>
+<body class="no-bg">   
 <% else %>
+<body>
+<% end %>
 
-  <body>   
-
-  <%= render partial: "/partials/nav" %>
+  <%= render partial: "/partials/site" %>
   <%= render partial: "/partials/login" %>
 
 

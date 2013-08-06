@@ -5,6 +5,8 @@
 body {background: #FFF url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat;background-size: 100%;}
 #wrapper {height: auto; width: 100%; position: relative; padding:0;}
 
+body.no-bg {background: 0;}
+
 ul {list-style: none}
 li {display: inline; padding: 5px}
 
@@ -16,7 +18,8 @@ h1#logo {height:1px;margin-left:-10000px;position: relative;}
 
 /*special*/
 #slideshow {height: auto;  overflow: auto; padding: 0!important;clear: both; display: block;}
-#slideshow section { padding: 20px; height:400px; width: auto; display: block; position: relative;margin: 0 auto; }
+#slideshow section {padding: 20px; height:400px; width: 100%; background: #f1f1f1; display: block; position: relative;margin: 0 auto; }
+#slideshow section:nth-child(even) {background: #f2f2f2}
 #slideshow section figure {float: right;}
 #slideshow * {color: #262626; letter-spacing:5px;text-shadow: none;}
 
@@ -33,19 +36,23 @@ h1#logo {height:1px;margin-left:-10000px;position: relative;}
 // #slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
 // #slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
 
-#slideshow section:nth-child(even) {background: silver;}
 
-#slideshow * .slide-info {background: green}
+#slideshow * .slide-info {}
 
 #slideshow * .slide-name{font-weight:bold}
 #slideshow * .slide-desc{}
 #slideshow * .slide-citation {position: absolute; bottom: 20px; left: 20px}
-#slideshow * .figure{width: 50%; background-color: orange}
+#slideshow * .figure {width: 50%; float: right}
+
 #slideshow * .slide-info, #slideshow * figure {display: inline-block; width: 40%;}
 
+#slideshow * {color: red}
 
+#slideshow * figure img {display: none}
 
-strong:first-child, strong:nth-child(5){display: none;}
+/* filter out nonsense from the scraped data that Nokogiri didn't pick up.*/
+// strong:first-child, strong:nth-child(5){display: none;}
+// #slideshow * img, #slideshow * a {display: none}
 
 table {display: block; position: relative;}
 

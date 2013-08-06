@@ -1,0 +1,25 @@
+
+<nav id="primary">
+  <% if current_user %>
+  <ul>
+	<li><%= link_to 'home', root_path %></li>
+	<li><%= link_to 'usa stats', slides_path %></li>
+	
+	<%# if current_user.profile == 'mom' %>
+	<li><%#= link_to 'see fan view', fan_path %></li>
+	<%# else %>
+	<li><%#= link_to 'see soccer mom view', mom_path %></li>
+	<%# end %>
+
+</ul>
+
+
+  <% else %>
+
+<!--render non -signed in user stuff ->
+
+  <% end %>
+</nav>
+
+
+

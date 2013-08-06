@@ -16,11 +16,10 @@ class SlidesController < ApplicationController
 		else
 		redirect_to new_slide_path
 		end
-	
 	end
 
 	def show
-  		@slide = Slide.find(slide_params)
+  		@slide = Slide.find(slide_params)  		
 	end
 
 	def edit
@@ -29,8 +28,8 @@ class SlidesController < ApplicationController
 	def update
 	end
 
-	#if i use strong params now and remove attr_accessible from model, will that 
 
+	#if i use strong params now and remove attr_accessible from model, will that 
 
 	private
       def slide_params
