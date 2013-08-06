@@ -1,9 +1,5 @@
 Soccer1::Application.routes.draw do
-  
-  get "parent_profiles/index"
-  get "parent_profiles/show"
-  get "fan_profiles/index"
-  get "fan_profiles/show"
+ 
 
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" }
 
@@ -26,5 +22,12 @@ resources :slides
 
 # resources :matches
 # resources :profiles
+
+ 
+  get "parent_profiles/index"
+  get "parent_profiles/show"
+  get "fan_profiles/index"
+  get "fan_profiles/show"
+  
 
 end

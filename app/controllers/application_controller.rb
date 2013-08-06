@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     	edit_user_registration_path
 	end
 
+ 	def after_update_path_for(user)
+  		#tbd
+  	end
+
 
   #relies on lib/user_sanitizer.rb
   protected

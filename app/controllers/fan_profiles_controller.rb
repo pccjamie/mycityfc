@@ -3,26 +3,15 @@ class FanProfilesController < ApplicationController
 
 
 
-  def index
+ #  def index
+ #  end
 
+ #  def show
+ #  end
 
-
-
-  end
-
-  def show
-
-
-  	
-  end
-
-  def get_location
-
-	@city = current_user.city
-
-
-
-  end
+ #  def get_location
+	# @city = current_user.city
+ #  end
 
 
 

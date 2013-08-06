@@ -6,7 +6,7 @@ belongs_to :profilable, :polymorphic => true
   # :token_authenticatable,
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable, 
-    :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook] #:twitter
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook] 
 
   #on Rails4, but keeping attr_accessible in model and using protected attr gem temporarily. 
   #At least until project delivery is completed. Next step: Move attribute control into an appropriate User or Devise controller.
