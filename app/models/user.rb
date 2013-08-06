@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+
+belongs_to :profilable, :polymorphic => true
+
   # Include default devise modules. Others available are:
   # :token_authenticatable,
   # :lockable, :timeoutable
@@ -44,5 +47,7 @@ Here is an example that copies the facebook email if available:
       end
     end
   end
+
+  
 
 end

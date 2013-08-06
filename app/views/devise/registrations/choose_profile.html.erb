@@ -1,0 +1,13 @@
+<h2> Choose Profile</h2>
+
+<% form_for (resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :patch}) do |f| %>
+
+<%= radio_button_tag(:profile, "Fan") %>
+<%= label_tag(:profile_fan, "Fan") %>
+<%= radio_button_tag(:profile, "Parent") %>
+<%= label_tag(:profile_parent, "Parent") %>
+
+<% end %>
+
+
+

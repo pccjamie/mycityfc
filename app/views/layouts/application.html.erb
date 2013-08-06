@@ -28,8 +28,10 @@
 <!--   <body class="users-location-image">
  -->
 
-<body class="<%#= current_user.city.get_image %>"
-<% elsif current_page? slides_path %>
+<body class="temp-class<%#= current_user.city.get_image %>"
+<% else %>
+
+<% if current_page? slides_path %>
 <body class="no-bg">   
 <% else %>
 <body>

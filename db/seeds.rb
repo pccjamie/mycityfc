@@ -7,7 +7,5 @@ Slide.delete_all
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-# s1 = Slide.new(name: 'slide 1', desc:'youth soccer stats', image_url: 'http://datastore04.rediff.com/h1500-w1500/thumb/69586A645B6D2A2E3131/s47kscdm7r4pjx05.D.0.Happy-Valentines-Day-Wallpaper-Image.jpg', cite: 'US Youth Soccer')
-# s2 = Slide.new(name: 'slide 2', desc:'mls vs other sports', image_url: 'http://datastore04.rediff.com/h1500-w1500/thumb/69586A645B6D2A2E3131/s47kscdm7r4pjx05.D.0.Happy-Valentines-Day-Wallpaper-Image.jpg', cite: 'Wikipedia')
-# s3 = Slide.new(name: 'slide 3', desc:'mls vs world', image_url: 'http://datastore04.rediff.com/h1500-w1500/thumb/69586A645B6D2A2E3131/s47kscdm7r4pjx05.D.0.Happy-Valentines-Day-Wallpaper-Image.jpg', cite: 'Wikipedia')
-# s4 = Slide.new(name: 'slide 4', desc:'other stats', image_url: 'http://datastore04.rediff.com/h1500-w1500/thumb/69586A645B6D2A2E3131/s47kscdm7r4pjx05.D.0.Happy-Valentines-Day-Wallpaper-Image.jpg', cite: 'ESPN')
+s1 = Slide.new({:name => 'Youth Soccer Registration'}, {:desc => 'youth soccer stats'},{ :data_url => 'http://www.usyouthsoccer.org/media_kit/keystatistics/' },{:cite => 'US Youth Soccer'})
+s2 = Slide.new({:name =>'MLS Attendance vs US Sports'},{ :desc => 'mls vs other sports'}, {:data_url => 'http://en.wikipedia.org/wiki/Major_League_Soccer_attendance#MLS_average_attendance_vs._other_US_major_sports/'},{ :cite => 'Wikipedia'})

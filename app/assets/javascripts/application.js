@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require cycle2
+//= require soccer
 //= require foundation
 //= require turbolinks
 

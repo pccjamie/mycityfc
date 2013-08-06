@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130805220819) do
+ActiveRecord::Schema.define(version: 20130806133326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fan_profiles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "parent_profiles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "slides", force: true do |t|
     t.string   "name"
@@ -48,6 +58,9 @@ ActiveRecord::Schema.define(version: 20130805220819) do
     t.string   "city"
     t.string   "state"
     t.string   "first_name"
+    t.integer  "profilable_id"
+    t.string   "profilable_type"
+    t.string   "profile"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

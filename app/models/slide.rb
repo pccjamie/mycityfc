@@ -6,8 +6,6 @@ class Slide < ActiveRecord::Base
     	load File.join(RAILS_ROOT, 'lib', 'tasks', 'scrape.rake')
     	Rake::Task[scrape].invoke
     	Rake::Task[scrape].reenable
-
 	end
-
 
 end
