@@ -12,11 +12,12 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 # end
 
 resources :home, :only => [:index]
+
 root :to => "home#index"
 
 resources :slides
 
-get "users/edit", :to => "users/registrations#edit"
+# get "users/edit", :to => "users/registrations#edit"
 
 # resources :matches
 # resources :profiles
