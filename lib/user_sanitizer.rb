@@ -16,5 +16,8 @@ class User::ParameterSanitizer < Devise::ParameterSanitizer
         default_params.permit!
     end
 
+
+
+
 end
 
