@@ -13,11 +13,8 @@ class User::ParameterSanitizer < Devise::ParameterSanitizer
     # end
 
     def account_update
-        default_params.permit!
+        default_params.permit(:first_name, :name, :picture, :provider, :uid, :remember_me, :email, :password, :password_confirmation, :current_password, :city, :state, :profile)
     end
-
-
-
 
 end
 

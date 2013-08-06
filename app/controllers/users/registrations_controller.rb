@@ -23,6 +23,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
 
+  # def deletes_registration_record
+  # 	  @user = User.find(current_user.id)
+  # 	  @user = User.delete
+  # 	  redirect_to root_path
+  # end
+
+
 private
       def profile_params
         params.require(:user).permit!
