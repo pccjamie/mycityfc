@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
 
 	def after_sign_in_path_for(user)
-    	redirect_to :users_edit_path
+    	users_edit_path
 	end
 
 
