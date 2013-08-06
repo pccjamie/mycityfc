@@ -19,19 +19,13 @@
                           <%= f.radio_button(:profile, "Parent") %>
                           <%= f.label(:profile_parent, "Parent") %>
                      
-                        <label>show current location as listed in FB and provide confirmation fields</label>
-                       <%= current_user.location %>
+                        <label>show current location as listed in FB and provide confirmation fields. Says, go to FB to updae this (For now)</label>
+                        <%= current_user.city %>
+                        <%= current_user.state %>
+                        
 
-
-                       <%= f.label(:city, "City") %>
-                       <%= f.text_field(:city, "City") %>
-
-                       <%= f.label(:state, "State") %>
-                       <%= f.text_field(:state, "State") %>
-
-
-                      <div><%= f.submit "Update" %></div>
-                      <div><%= link_to "Cancel", root_path %></div>
+                          <div><%= f.submit "Update" %></div>
+                          <div><%= link_to "Cancel", root_path %></div>
 
                      </section>
                  
