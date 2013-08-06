@@ -4,14 +4,13 @@
   <%= devise_error_messages! %>
 
 
-<% if user_signed_in? && current_user.profile == nil %>
+<% if current_user.profile == nil %>
 
 <%= f.label :profile, 'Choose Profile' %>
 <%= f.radio_button(:profile, "Fan") %>
 <%= f.label(:profile_fan, "Fan") %>
 <%= f.radio_button(:profile, "Parent") %>
 <%= f.label(:profile_parent, "Parent") %>
-<div><%= f.submit "Update" %></div>
 
 <% end %>
 
