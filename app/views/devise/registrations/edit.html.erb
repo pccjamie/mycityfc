@@ -11,17 +11,16 @@
     data-cycle-next=".next">
 
 
-                  <% if user_signed_in? && (current_user.profile || current_user.location) == nil %>
+                  <%# if user_signed_in? && (current_user.profile || current_user.location) == nil %>
+                  <% if user_signed_in? %>
                     
                     <!-- tab 0: choose profile -->
                     <% if current_user.profile %>
                     <%# if current_user.profile == nil %>
 
-                  <div class="center">
-                      <span class="next" style="margin-left:20px"><a href=#>Next >></a></span>
-                  </div>
-
-
+                          <div class="center">
+                              <span class="next" style="margin-left:20px"><a href=#>Next >></a></span>
+                          </div>
 
                       <section id="section" class="slide" name="slide">
                           <%= f.label :profile, 'Choose Profile' %>
@@ -30,32 +29,29 @@
                           <%= f.radio_button(:profile, "Parent") %>
                           <%= f.label(:profile_parent, "Parent") %>
                           <div><%= f.submit "Update" %></div>
-
                       </section>
+
                     <% end %>
                     
                     <!-- tab 0: confirm location -->
                     <%# if current_user.location == nil %> 
                     <% if current_user.location %> 
 
-                  <div class="center">
-
-                <span class="prev"><a href=#><< Prev</a></span>
-                </div>
+                    <div class="center">
+                      <span class="prev"><a href=#><< Prev</a></span>
+                    </div>
 
                       <section id="section" class="slide" name="slide">
                       <label>show current location as listed in FB and provide confirmation fields</label>
                        <%= f.label(:city, "City") %>
                        <%= current_user.location %>
 
-                      <div><%#= f.submit "Update" %></div>
+                      <div><%= f.submit "Update" %></div>
                       <div><%#= link_to "Skip", root_path %></div>
                       </section>
                     <% end %>
 
                   <% else %>
-
-
 
                     <!-- tab 3: normal -->
                     <section id="section" class="slide" name="slide">
