@@ -2,6 +2,10 @@ Soccer1::Application.routes.draw do
   
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" }
 
+get "users/edit", :to => "app/views/users/registrations#edit", :as => :user_edit_path
+
+
+
 #only using omniauth for authentication, so added these session routes within user scope. 
 #note that sessions was ALSO skipped in the normal devise resources.
 
@@ -15,8 +19,6 @@ resources :home, :only => [:index]
 root :to => "home#index"
 
 resources :slides
-
-get "users/edit", :to => "devise/users/registrations#edit"
 
 # resources :matches
 # resources :profiles
