@@ -5,18 +5,23 @@
 
         <!--setting up edit to be inside a slideshow (later iside a modal slideshow) that only appears on initial reg  (or login if db has nils)-->
 
-<!--       <div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-next=">.cycle-next" data-cycle-fx='none' data-cycle-slides=">section"> -->
+<!--       <div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
+ -->
+      <div id="slideshow" class="cycle-slideshow" data-cycle-fx='none' data-cycle-slides=">section"data-cycle-prev=".prev"
+    data-cycle-next=".next">
 
-      <div id="slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-next=">.cycle-next" data-cycle-fx='none' data-cycle-slides=">section">
 
-
-
-                  <%# if user_signed_in? && (current_user.profile || current_user.location) == nil %>
-                  <% if user_signed_in? %>
+                  <% if user_signed_in? && (current_user.profile || current_user.location) == nil %>
                     
                     <!-- tab 0: choose profile -->
-                    <%# if current_user.profile == nil %>
                     <% if current_user.profile %>
+                    <%# if current_user.profile == nil %>
+
+                  <div class="center">
+                      <span class="next" style="margin-left:20px"><a href=#>Next >></a></span>
+                  </div>
+
+
 
                       <section id="section" class="slide" name="slide">
                           <%= f.label :profile, 'Choose Profile' %>
@@ -24,32 +29,28 @@
                           <%= f.label(:profile_fan, "Fan") %>
                           <%= f.radio_button(:profile, "Parent") %>
                           <%= f.label(:profile_parent, "Parent") %>
-
-                      <%= link_to 'Next', :class => "cycle-next" %>
-
+                          <div><%= f.submit "Update" %></div>
 
                       </section>
                     <% end %>
                     
                     <!-- tab 0: confirm location -->
-                    <%# if current_user.location == nil %>
-                     <% if current_user.location %> 
- 
+                    <%# if current_user.location == nil %> 
+                    <% if current_user.location %> 
+
+                  <div class="center">
+
+                <span class="prev"><a href=#><< Prev</a></span>
+                </div>
+
                       <section id="section" class="slide" name="slide">
                       <label>show current location as listed in FB and provide confirmation fields</label>
+                       <%= f.label(:city, "City") %>
                        <%= current_user.location %>
 
                       <div><%#= f.submit "Update" %></div>
                       <div><%#= link_to "Skip", root_path %></div>
-
-                      <div><%= f.submit "Update"%></div>
-
-
-
                       </section>
-
-
-
                     <% end %>
 
                   <% else %>
@@ -74,9 +75,6 @@
 
                       <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
                       <%= f.password_field :current_password %></div>
-                      
-                       <div><%= f.submit "Update", :class => "cycle-next" %></div>
-
 
                     </section>
 
@@ -85,6 +83,7 @@
                       <h1>some other stuff!</h1>
                     </section>
 
+                    <div><%= f.submit "Update" %></div>
 
 
 
@@ -101,10 +100,4 @@
 
 <%#= link_to "Back", :back %>
 
-<script>
-$('#slideshow').cycle({
-    next: ".cycle-next"
-    speed: 600,
-    manualSpeed: 100
-});
-</script>
+<script>$( '#slideshow' ).cycle();</script>
