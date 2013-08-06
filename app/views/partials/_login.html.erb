@@ -4,6 +4,7 @@
   <span>Hi,</span>
   <%= current_user.first_name %>
   <%= current_user.city %>
+  <%= current_user.profile %>
   <%= image_tag current_user.picture %>
   <%= link_to "Sign Out", destroy_user_session_path %>
   <% else %>
