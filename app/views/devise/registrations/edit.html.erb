@@ -23,9 +23,8 @@
                           <%= f.label(:profile_fan, "Fan") %>
                           <%= f.radio_button(:profile, "Parent") %>
                           <%= f.label(:profile_parent, "Parent") %>
-                          <div><%= f.submit "Update", :class => "cycle-next" %></div>
 
-
+                          <%= button_tag 'Next', :class => "cycle-next" %>
 
                       </section>
                     <% end %>
@@ -41,6 +40,11 @@
 
                       <div><%#= f.submit "Update" %></div>
                       <div><%#= link_to "Skip", root_path %></div>
+
+                          <div><%= f.submit "Update"%></div>
+
+
+
                       </section>
                     <% end %>
 
