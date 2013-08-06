@@ -4,10 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
 
-def after_sign_in_path_for(user)
-	@user = User.find(params[:id])
-    users_edit_path
-end
+	def after_sign_in_path_for(user)
+    	redirect_to :users_edit_path
+	end
 
 
   #relies on lib/user_sanitizer.rb
