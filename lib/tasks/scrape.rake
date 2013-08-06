@@ -7,7 +7,7 @@ task :fetch_stats => :environment do
     
     # escaped_stat_name = CGI.escape(stat.name)
     raw_url = slide.data_url
-    raw_data = Nokogiri::HTML(open(raw_url)).css('body p:nth-child()').to_html
+    raw_data = Nokogiri::HTML(open(raw_url)).css('body').to_html
     slide.update_attribute(:data, raw_data)
   
   end

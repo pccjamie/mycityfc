@@ -23,13 +23,13 @@
     <%= csrf_meta_tags %>
   </head>
 
-<% if current_user && user_signed_in? %>
+<%# if current_user && user_signed_in? %>
 
 <!--   <body class="users-location-image">
  -->
 
 <body class="temp-class<%#= current_user.city.get_image %>"
-<% else %>
+
 
 <% if current_page? slides_path %>
 <body class="no-bg">   
@@ -39,7 +39,6 @@
 
   <%= render partial: "/partials/site" %>
   <%= render partial: "/partials/login" %>
-
 
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
