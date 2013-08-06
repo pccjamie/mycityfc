@@ -13,7 +13,6 @@ end
 
 private
       def profile_params
-        params.require(:user).permit(:profile)
-      end
-      
+        params.require(:user).permit!
+      end      
 end
