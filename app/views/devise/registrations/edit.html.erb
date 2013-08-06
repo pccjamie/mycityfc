@@ -24,8 +24,6 @@
                           <%= f.radio_button(:profile, "Parent") %>
                           <%= f.label(:profile_parent, "Parent") %>
 
-                          <%= button_tag 'Next', :class => "cycle-next" %>
-
                       </section>
                     <% end %>
                     
@@ -35,17 +33,20 @@
  
                       <section id="section" class="slide" name="slide">
                       <label>show current location as listed in FB and provide confirmation fields</label>
-                       <%= f.label(:city, "City") %>
                        <%= current_user.location %>
 
                       <div><%#= f.submit "Update" %></div>
                       <div><%#= link_to "Skip", root_path %></div>
 
-                          <div><%= f.submit "Update"%></div>
+                      <div><%= f.submit "Update"%></div>
 
 
 
                       </section>
+
+                      <%= link_to 'Next', :class => "cycle-next" %>
+
+
                     <% end %>
 
                   <% else %>
