@@ -70,6 +70,9 @@ GEM
     geocoder (1.1.8)
     hashie (2.0.5)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     httpauth (0.2.0)
     i18n (0.6.4)
     jbuilder (1.5.0)
@@ -94,6 +97,7 @@ GEM
     minitest (4.7.5)
     mono_logger (1.1.0)
     multi_json (1.7.7)
+    multi_xml (0.5.4)
     multipart-post (1.2.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
@@ -225,6 +229,7 @@ DEPENDENCIES
   figaro
   flickr.rb (~> 1.1.0)
   geocoder
+  httparty
   jbuilder (~> 1.2)
   jquery-rails
   meta_request
