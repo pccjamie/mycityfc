@@ -4,10 +4,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 #   @user = User.find(params[:id])
 # end
 
-def original_url
-	root_path
-end
-
  def update
     # required for settings form to submit when password is left blank
     if params[:user][:password].blank?
