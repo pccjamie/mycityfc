@@ -15,7 +15,7 @@ resources :home, :only => [:index]
 root :to => "home#index"
 
 resources :slides
-resources :matches
-resources :profiles
+# resources :matches
+# resources :profiles
 
 end

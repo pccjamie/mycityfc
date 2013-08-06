@@ -1,11 +1,9 @@
-<h2> Confirm Profile</h2>
+<h2> Confirm Location</h2>
 
 <% form_for (resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :patch}) do |f| %>
 
 <%= radio_button_tag(:profile, "fan") %>
 <%= label_tag(:profile_fan, "Fan") %>
-<%= radio_button_tag(:profile, "parent") %>
-<%= label_tag(:profile_adult, "I'm over 21") %>
 
 <% end %>
 

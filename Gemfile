@@ -81,7 +81,7 @@ gem 'figaro'
 gem "flickr.rb", "~> 1.1.0"
 
 #scraping, json, etc
-gem 'httparty'
+# gem 'httparty'
 gem 'nokogiri'
 
 
@@ -102,16 +102,16 @@ gem 'geocoder'
   gem 'meta_request'
   gem 'annotate'
 
-#test
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
-  gem 'cucumber-rails', :require => false
-  gem 'launchy'
-  gem 'database_cleaner'
-  gem 'guard-rspec'
-  gem 'faker'
+# #test
+#   gem 'factory_girl_rails'
+#   gem 'rspec-rails'
+#   gem 'shoulda-matchers'
+#   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+#   gem 'cucumber-rails', :require => false
+#   gem 'launchy'
+#   gem 'database_cleaner'
+#   gem 'guard-rspec'
+#   gem 'faker'
 
 # group :development do
 #   gem 'better_errors'
