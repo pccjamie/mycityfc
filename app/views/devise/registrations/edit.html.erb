@@ -3,69 +3,73 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
+        <!--setting up edit to be inside a slideshow (later iside a modal slideshow) that only appears on initial reg  (or login if db has nils)-->
 
-<!--setting up edit to be inside a slideshow (later iside a modal slideshow) that only appears on initial reg  (or login if db has nils)-->
+  <% if request.original_url %>
 
-<% if request.original_url %>
-
-<label>Show users a full reg edit form if the requesting URl is the app root. OTHERWISE...shows a subset of the reg edit form</label>
-
-<% else %>
-
-<div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
-
-  <% if user_signed_in? && (current_user.profile || current_user.location) == nil %>
-    
-    <!-- tab 0: choose profile -->
-    <% if current_user.profile == nil %>
-      <section id="section" class="slide" name="slide">
-          <%= f.label :profile, 'Choose Profile' %>
-          <%= f.radio_button(:profile, "Fan") %>
-          <%= f.label(:profile_fan, "Fan") %>
-          <%= f.radio_button(:profile, "Parent") %>
-          <%= f.label(:profile_parent, "Parent") %>
-          <div><%= f.submit "Update" %></div>
-      </section>
-    <%end%>
-    
-    <!-- tab 0: confirm location -->
-    <% if current_user.location == nil %> 
-      <section id="section" class="slide" name="slide">
-      <label>show current location as listed in FB and provide confirmation fields</label>
-      <div><%= f.submit "Update" %></div>
-      </section>
-    <% end %>
+             <label>Show users a full reg edit form if the requesting URl is the app root. OTHERWISE...shows a subset of the reg edit form</label>
 
   <% else %>
 
-    <!-- tab 3: normal -->
-    <section id="section" class="slide" name="slide">
+      <div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
 
-      <div><%= f.label :email %><br />
-      <%= f.email_field :email, :autofocus => true %></div>
+                  <% if user_signed_in? && (current_user.profile || current_user.location) == nil %>
+                    
+                    <!-- tab 0: choose profile -->
+                    <% if current_user.profile == nil %>
+                      <section id="section" class="slide" name="slide">
+                          <%= f.label :profile, 'Choose Profile' %>
+                          <%= f.radio_button(:profile, "Fan") %>
+                          <%= f.label(:profile_fan, "Fan") %>
+                          <%= f.radio_button(:profile, "Parent") %>
+                          <%= f.label(:profile_parent, "Parent") %>
+                          <div><%= f.submit "Update" %></div>
+                      </section>
+                    <% end %>
+                    
+                    <!-- tab 0: confirm location -->
+                    <% if current_user.location == nil %> 
+                      <section id="section" class="slide" name="slide">
+                      <label>show current location as listed in FB and provide confirmation fields</label>
+                       <%= f.label(:city, "City") %>
+                       <%= current_user.location %>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
+                      <div><%#= f.submit "Update" %></div>
+                      <div><%#= link_to "Skip", root_path %></div>
+                      </section>
+                    <% end %>
 
-      <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-      <%= f.password_field :password, :autocomplete => "off" %></div>
+                  <% else %>
 
-      <div><%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %></div>
+                    <!-- tab 3: normal -->
+                    <section id="section" class="slide" name="slide">
 
+                      <div><%= f.label :email %><br />
+                      <%= f.email_field :email, :autofocus => true %></div>
 
-      <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password %></div>
-      <div><%= f.submit "Update" %></div>
+                      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                      <% end %>
 
-    </section>
+                      <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+                      <%= f.password_field :password, :autocomplete => "off" %></div>
 
-<% end %>
+                      <div><%= f.label :password_confirmation %><br />
+                      <%= f.password_field :password_confirmation %></div>
 
-</div>
+                      <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                      <%= f.password_field :current_password %></div>
+                      <div><%= f.submit "Update" %></div>
 
-<% end %>
+                    </section>
+
+                <% end %>
+
+      </div> <!--slideshow-->
+
+  <% end %> <!-- getting source url -->
+
+<% end %> <!-- form -->
 
 <!-- <h3>Cancel my account</h3>
  -->
