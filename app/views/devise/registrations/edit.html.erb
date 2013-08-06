@@ -5,7 +5,7 @@
 
         <!--setting up edit to be inside a slideshow (later iside a modal slideshow) that only appears on initial reg  (or login if db has nils)-->
 
-  <% if request.original_url %>
+  <% if request.original_url == root_path %>
 
              <label>Show users a full reg edit form if the requesting URl is the app root. OTHERWISE...shows a subset of the reg edit form</label>
 
