@@ -4,8 +4,8 @@ Soccer1::Application.routes.draw do
   get "parent_profiles/show"
   get "fan_profiles/index"
   get "fan_profiles/show"
-  
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" }
+
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
 get "users/edit", :to => "users/registrations#edit"
 
