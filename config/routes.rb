@@ -18,7 +18,6 @@ root :to => "home#index"
 
 resources :slides
 
-
 # resources :matches
 # resources :profiles
 
