@@ -1,13 +1,14 @@
-class User::RegistrationsController < Devise::RegistrationsController
+class RegistrationsController < Devise::RegistrationsController
 
 def edit
   @user = User.find(params[:id])
+
 end
 
 
 def update
   @user = User.find(params[:id])
-  @user.update(:profile)
+  @user.update_attributes!(profile_params)
   super
 end
 
