@@ -11,10 +11,6 @@ def update
   super
 end
 
-
-
-
-
 private
       def profile_params
         params.require(:user).permit(:profile)

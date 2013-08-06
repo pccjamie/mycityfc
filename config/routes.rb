@@ -2,7 +2,7 @@ Soccer1::Application.routes.draw do
   
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" }
 
-get "users/edit", :to => "app/views/users/registrations#edit"
+get "users/:id/edit", :to => "users/registrations#edit"
 
 
 
@@ -19,6 +19,7 @@ resources :home, :only => [:index]
 root :to => "home#index"
 
 resources :slides
+
 
 # resources :matches
 # resources :profiles
