@@ -1,15 +1,24 @@
   <% if user_signed_in? && current_user %>
-  <span>Hi,</span>
-  <%= current_user.first_name %>
-  <%= current_user.city %>
-  <%= current_user.profile %>
 
-  <%= image_tag current_user.picture %>
-  <%= link_to "Sign Out", destroy_user_session_path %>
+  <div id="user-registered">
+
+  <span>Hi,</span>
+  <ul>
+    <li><%= current_user.first_name %></li>
+    <li><%= current_user.city %></li>
+    <li><%= current_user.profile %></li>
+    <li><%= image_tag current_user.picture %></li>
+  <li><%= link_to "Sign Out", destroy_user_session_path %></li>
+
+  </div>
+
   <% else %>
 
+  <div id="user-public">
 
   <!--<span>Log In:</span>-->        
   <%#= link_to "Sign In", new_user_session_path %>
   <%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%>
+  </div>
   <%end%>
+
