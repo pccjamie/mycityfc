@@ -4,6 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
 
+def after_sign_in_path_for(user)
+    users_edit_path
+end
+
+def after_sign_out_path_for(user)
+    redirect_to :root_path
+end
+
+
   #relies on lib/user_sanitizer.rb
   protected
 	
@@ -14,5 +23,9 @@ class ApplicationController < ActionController::Base
 	      super
 	    end
 	end
+
+
+
+
 
 end
