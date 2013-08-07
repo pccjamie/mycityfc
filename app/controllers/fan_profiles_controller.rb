@@ -4,18 +4,14 @@ class FanProfilesController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    puts current_user
     # get_league
-    get_weather
+    current_user.get_weather
   end
 
   def show
   end
 
   def get_league
-
-
-
   end
 
 
