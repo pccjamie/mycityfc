@@ -8,11 +8,11 @@ class FanProfilesController < ApplicationController
 
   	flash[:notice] = "get weather - executed"
     	
-     #  raw_state = current_user.state
-     #  user_state = raw_state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
-     #  formatted_state = user_state.gsub!(/ /,"")
-     #  raw_city = current_user.city
-     #  user_city = raw_city.gsub!(/ /, "+")
+     state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
+     state = state.gsub!(/ /,"")
+     city = current_user.city.gsub!(/ /, "+")
+     puts state
+     puts city
      #  @url = "www.wunderground.com/weather-forecast/US/#{formatted_state}/#{user_city}.html"
      # puts @url
      #  # @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
