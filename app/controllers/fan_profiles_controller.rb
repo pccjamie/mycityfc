@@ -7,6 +7,7 @@ require 'open-uri'
   	puts current_user
   	get_weather
   	return @temp
+end
 
   def show
   end
