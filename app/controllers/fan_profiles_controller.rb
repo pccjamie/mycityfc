@@ -6,8 +6,7 @@ require 'open-uri'
   	@user = User.find(current_user.id)
   	puts current_user
   	get_weather
-  	puts @url
-  	return
+  	return @url
   end
 
   def show
