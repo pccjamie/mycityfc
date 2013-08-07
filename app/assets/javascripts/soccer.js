@@ -6,7 +6,7 @@ function espn_find_leagues() {
 		dataType: json,
 		success: function(data) {
 			my_data = data;
-			$('#my-leagues').append(+my_data+);
+			$('#my-leagues').append(+my_data+)
 		}
 	})
 }
