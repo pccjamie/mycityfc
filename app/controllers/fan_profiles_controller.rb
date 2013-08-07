@@ -3,7 +3,6 @@ require 'nokogiri'
 require 'open-uri'
 
   def index
-    city = User.find(current_user.id)
   	get_weather
   	return
   end
@@ -16,10 +15,11 @@ require 'open-uri'
   end
 
 	def get_weather
-	
+		@user = User.find(current_user.id)
+		city = current_user.city
 	    url = "http://www.wunderground.com/cgi-bin/findweather/hdfForecast?query=#{city}"
 		temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
-		rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
+		# rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
 
 		return
 
