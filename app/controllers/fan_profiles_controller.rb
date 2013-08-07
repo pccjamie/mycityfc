@@ -16,10 +16,10 @@ class FanProfilesController < ApplicationController
   def get_weather
     puts "showing weather"
 
-    # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
-    # state = state.gsub!(/ /,"")
+    state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
+    state = state.gsub!(/ /,"")
     # city = current_user.city.gsub!(/ /, "+")
-    # puts state
+    puts state
     # puts city
     #  @url = "www.wunderground.com/weather-forecast/US/#{formatted_state}/#{user_city}.html"
     # puts @url
