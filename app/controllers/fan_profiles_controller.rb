@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 
   def index
-  	@user = User.find(user_params)
+  	@user = User.find(current_user.id)
   	puts current_user
   	get_weather
   end
