@@ -2,21 +2,9 @@ class FanProfilesController < ApplicationController
   require 'nokogiri'
   require 'open-uri'
 
-  def index
-    @user = User.find(current_user.id)
-    # get_league
-    current_user.get_weather
-  end
-
-  def show
-  end
-
-  def get_league
-  end
 
 
   def get_weather
-      # @user = User.find(current_user.id)
       raw_state = current_user.state
       user_state = raw_state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
       formatted_state = user_state.gsub!(/ /,"")
@@ -29,6 +17,21 @@ class FanProfilesController < ApplicationController
     # puts temp
     # # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
   end
+
+
+
+  def index
+    @user = User.find(current_user.id)
+    get_weather
+  end
+
+  def show
+  end
+
+  def get_league
+  end
+
+
 
   private
   def user_params
