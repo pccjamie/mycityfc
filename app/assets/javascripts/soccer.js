@@ -15,6 +15,7 @@ function espn_find_leagues(){
 			$("<div>"+ my_data + "</div>").appendTo("#my-leagues");
 		}
 	});
+	return;
 }
 
 //DOM events
