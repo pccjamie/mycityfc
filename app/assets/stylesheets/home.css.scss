@@ -1,8 +1,9 @@
 
 
-$bg-color: color: brown;
+$bg-color: brown;
 
-#wrapper {overflow: auto; height: 100%; display: block; background: orange;}
+#wrapper {overflow: auto; height: 100%; display: block; background: orange; position: relative;}
+#inner-wrapper {margin: 0 20px; width: 100%; display: block;position: relative}
 #top {
 	height: auto; width: 100%; display: block; background: rgba(0,0,0,.65);
 
