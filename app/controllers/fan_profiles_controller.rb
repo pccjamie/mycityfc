@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 
   def index
-    city = User.find(current_user.city)
+    city = User.find(current_user.id)
   	get_weather
   	return
   end
