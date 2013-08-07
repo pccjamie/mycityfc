@@ -1,11 +1,8 @@
 class FanProfilesController < ApplicationController
   
-	# before_filter :authenticate_user!
-
   require 'nokogiri'
   require 'open-uri'
   require 'httparty'
-
 
   def index
     get_weather
@@ -17,7 +14,7 @@ class FanProfilesController < ApplicationController
   end
 
   def get_weather
-  	@user = User.find(user_params)
+  	@user = User.find(current_user.id)
     @weather = "showing weather"
     # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
     # state = state.gsub!(/ /,"")
