@@ -3,6 +3,8 @@ require 'nokogiri'
 require 'open-uri'
 
   def index
+  	@user = User.find(user_params)
+  	puts current_user
   	get_weather
   end
 
@@ -11,7 +13,6 @@ require 'open-uri'
 
 
 	def get_weather
-		@user = User.find(current_user.user_params)
 		# @user = User.find(current_user.id)
 		raw = current_user.city
 		user_city = raw.gsub!(/ /, '+')
