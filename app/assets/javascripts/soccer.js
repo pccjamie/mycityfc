@@ -11,8 +11,8 @@ function espn_find_leagues(){
 		success: function(json) {
 			console.log(json);
 			var my_data = json;
-			console.log($(my_data).text());
-			// $("#my-leagues").append($(this).text());
+			console.log($('Hi, here is your ' + my_data).text());
+			$("<div>"+ my_data + "</div>").appendTo("#my-leagues");
 		}
 	});
 }
