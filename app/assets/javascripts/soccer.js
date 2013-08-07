@@ -9,8 +9,9 @@ function espn_find_leagues(){
 		// data = city,
 		url: url,
 		success: function(data) {
-			console.log('success');
+			console.log(data);
 			var my_data = data;
+			console.log($(my_data).text());
 			$("#my-leagues").append($(this).text());
 		}
 	});
