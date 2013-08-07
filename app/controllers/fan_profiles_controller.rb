@@ -26,17 +26,13 @@ class FanProfilesController < ApplicationController
       raw_city = current_user.city
       user_city = raw_city.gsub!(/ /, "+")
       url = "www.wunderground.com/weather-forecast/US/#{formatted_state}/#{user_city}.html"
-      @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
+      @temp = Nokogiri.HTML(open(url).css('#nowTemp')).to_html
   end
 
   def show
   end
 
   def get_league
-
-
-
-  	# url = JSONHTTP GET "http://api.espn.com/:version/:resource/:method?apikey=:yourkey"
   	#either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
   end
 
