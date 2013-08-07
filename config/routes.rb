@@ -22,12 +22,12 @@ resources :slides
 
 # resources :matches
 # resources :profiles
-
+resources :fan_profiles
  
   get "parent_profiles/index"
   get "parent_profiles/show"
-  get "fan_profiles/index"
-  get "fan_profiles/show"
-  
+  # get "fan_profiles/index"
+  # get "fan_profiles/show"
+
 
 end
