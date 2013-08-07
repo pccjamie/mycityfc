@@ -23,7 +23,7 @@ end
 	def get_weather
 		# @user = User.find(current_user.id)
 		raw_state = current_user.state
-		user_state = raw_state.gsub!(/\s+{1}/, "+")
+		user_state = raw_state.gsub!(/\s/x, "")
 		puts user_state
 		raw_city = current_user.city
 		user_city = raw_city.gsub!(/ /, "+")
