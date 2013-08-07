@@ -14,7 +14,7 @@ class FanProfilesController < ApplicationController
   end
 
   def get_weather
-    puts "showing weather"
+    @weather = "showing weather"
 
     # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
     # state = state.gsub!(/ /,"")
@@ -25,14 +25,16 @@ class FanProfilesController < ApplicationController
     # puts @url
     #  # @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
     # # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
+  	return
   end
 
 
 
   def get_league
-    puts "showing leagues"
+    @leagues = "showing leagues"
     # url = JSONHTTP GET "http://api.espn.com/:version/:resource/:method?apikey=:yourkey"
     #either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
+  	return
   end
 
   private
