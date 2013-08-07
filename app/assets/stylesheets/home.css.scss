@@ -1,2 +1,13 @@
 #wrapper {overflow: auto; height: 100%; display: block; background: orange;}
-#user-registered, #user-public {height: 100px; width: 35%; float: right; display: block; background: rgba(0,0,0,.65)}
+#top {
+	height: auto; width: 100%; display: block; background: rgba(0,0,0,.65);
+
+	#top-upper {background: red; width:100%;
+
+		ul {width: 50%; background: pink;}
+
+	}
+	#top-lower {background: blue; width: 100%;}
+
+}
+
