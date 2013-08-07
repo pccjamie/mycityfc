@@ -12,8 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       params[:user].delete("password_confirmation")
     end
 
-    
-    @user = User.find(current_user.id)
+    @user = User.find(:id)
     if @user.update_attributes(profile_params)
       set_flash_message :notice, :updated
       # Sign in the user bypassing validation in case his password changed
