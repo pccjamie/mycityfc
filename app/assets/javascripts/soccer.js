@@ -5,7 +5,7 @@
 var search;
 var i;
 var leagues;
-var league;
+var league_data;
 var city = $('.current-user-city').text();
 
 // searches espn with a
@@ -21,7 +21,7 @@ function espn_find_leagues(){
 		url,
 		cache,
 		function(data){
-		console.log(data);
+		league_data = data;
 		console.log('inside the AJAX calls. Should be returning league data');
 	}).done(add_to_page);
 }
@@ -29,12 +29,7 @@ function espn_find_leagues(){
 // add the league info to the page
 function add_to_page(){
 	console.log('adding to DOM');
-//    for(var i = 0; i<gallery.length; i++){
-//     // $('body').css('background','red');
-//     add_photo(i);
-//   }
-//     // var id = $(this).attr("src");
-//     // $('body').css('background-image','url("' + id + '")'); 
+	$('#my-leagues').append(league_data);
 }
 
 // // add new div for single photo for each from parsed list. gets a parameter, which looks to be the index value of the pic in flickr.
