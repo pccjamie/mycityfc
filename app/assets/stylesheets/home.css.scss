@@ -1,16 +1,62 @@
 
 
-$bg-color: brown;
+$bg-color: rgba(135, 169, 181, 0.85);
+$bg-main: rgba(135, 169, 181, 0.85);
 
-#wrapper {overflow: auto; height: 100%; display: block; background: orange; position: relative;}
-#inner-wrapper {margin: 0 20px; width: 100%; display: block;position: relative}
+body.no-bg {background: 0;}
+
+ul {list-style: none}
+li {display: inline; padding: 5px}
+
+h1,h2,h3,h4,h5, p, a, li, {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
+
+.app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
+
+h1#logo {height:1px;margin-left:-10000px;position: relative;}
+
+table {display: block; position: relative;}
+
+
+header{height: auto; padding: 0; position: relative; right: 0; background: none;}
+
+header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
+footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); position: relative;bottom:0; position: fixed; display: block;}
+
+nav {height: auto; display: block; padding: 20px; color: #FFF}
+
+body {background: #262626 url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat; background-size: cover;}
+
+#wrapper {height: 100%; position: relative; padding:0;position: relative; display:block; overflow:auto;}
+
+#inner-wrapper {display: block;position: relative; margin: 10px;
+}
+
+.sleeve {margin: 20px;}
+.inner{margin: 20px;}
+
+section#gameday {height: 100px; width: 100%; background: rgba(0,0,0,.8); display: none;/*to be changed to :none */}
+
+header#banner {min-height: 100px; height: auto;margin: 10px 0; display: block; background: rgba(255,255,255,.75);
+	
+	h1 {font-size: 60px}
+
+}
+
+
+
+section#my-news {height: 400px; overflow: auto; width: 60%; float: left; display: inline-block;position: relative; background: $bg-main; clear:both}
+
+section#my-leagues {height: 400px; overflow-y: auto; width:40%; display: inline-block;position: relative; background: #1f9fff;}
+
+section#my-follows {height: 400px; overflow: auto; width: 30%; display: inline-block; position: relative; background: silver; clear:both}
+
+
+
 #top {
 	height: auto; width: 100%; display: block; background: rgba(0,0,0,.65);
 
-	#top-upper {background: red; width:100%;
-
-		ul {width: 100%; background: pink; text-align: right; display: block; margin:0;}
-
+	#top-upper {background: 0; width:100%;
+		ul {width: 100%; background: 0; text-align: right; display: block; margin:0;}
 	}
 	#top-lower {background: $bg-color; width: 100%;
 

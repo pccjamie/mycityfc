@@ -1,24 +1,29 @@
 <div id="wrapper">
 	<div id="inner-wrapper">
 	<header id="banner">
-		<%#= current_user.city %>
-		<h2><%= @weather %>forecasted</h2>
-		<h2>nice day for a game!</h2>
-
+		<h1><%= @weather %> forecast for NYC<%#= current_user.city %></h1>
+		<h3>nice day for a game!</h3>
 	</header>
 
-
 	<section id="my-news">
+		<div class="sleeve">
 		<header><h3>NEWS</h3></header>
 		<%= @news %>
+	</div>
 	</section>
 
 	<section id="my-leagues">
+		<div class="sleeve">
 		<header><h3>LEAGUE</h3></header>
 		<%= @leagues %>
+		</div>
 	</section>
 
-	<aside>
-	</aside>
+	<section id="my-follows">
+		<div class="sleeve">
+		<header><h3>I'm Following</h3></header>
+		</div>
+	</section>
+
 	</div>
 </div>

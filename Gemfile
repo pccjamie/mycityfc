@@ -84,6 +84,7 @@ gem "flickr.rb", "~> 1.1.0"
 gem 'httparty'
 gem 'nokogiri'
 
+gem 'twitter'
 
 #geocoding
 gem 'geocoder'

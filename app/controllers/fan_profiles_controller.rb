@@ -5,7 +5,7 @@ class FanProfilesController < ApplicationController
     headers["Access-Control-Allow-Origin"] = "*"
     headers["Access-Control-Request-Method"] = "*"
   end
-  
+
 # uncomment for  localhost testing
 # skip_before_filter :authenticate_user!
   
