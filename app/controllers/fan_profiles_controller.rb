@@ -31,7 +31,7 @@ class FanProfilesController < ApplicationController
 
   def get_league
 
-  	url = HTTP GET http://api.espn.com/:version/:resource/:method?apikey=:yourkey
+  	# url = HTTP GET "http://api.espn.com/:version/:resource/:method?apikey=:yourkey"
   	#either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
   end
 
