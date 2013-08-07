@@ -20,6 +20,7 @@ class FanProfilesController < ApplicationController
 
   def index
    	@user = User.find(current_user.id)
+   	get_weather
   end
 
   def show
