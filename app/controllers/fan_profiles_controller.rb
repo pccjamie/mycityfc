@@ -24,7 +24,7 @@ end
 		if current_user.city
 		# @user = User.find(current_user.id)
 		raw_state = current_user.state
-		user_state = raw_state.gsub!(/\b\s\b/, "+").gsub!(/\b{0}/, "")
+		user_state = raw_state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
 		puts user_state
 		raw_city = current_user.city
 		user_city = raw_city.gsub!(/ /, "+")
