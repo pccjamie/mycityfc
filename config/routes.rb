@@ -22,7 +22,7 @@ resources :slides
 
 # resources :matches
 # resources :profiles
-resources :fan_profiles, :only => [:index]
+resources :fan_profiles, :only => [:index, :show]
  
   get "parent_profiles/index"
   get "parent_profiles/show"
