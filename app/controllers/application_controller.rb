@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 	end
 
  	def after_update_path_for(user)
-  		#tbd
+  		root_path
   	end
 
 
