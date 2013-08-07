@@ -7,12 +7,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
  def update
     # required for settings form to submit when password is left blank
-    current_user
     if params[:user][:password].blank?
       params[:user].delete("password")
       params[:user].delete("password_confirmation")
     end
 
+    
     @user = User.find(current_user.id)
     if @user.update_attributes(profile_params)
       set_flash_message :notice, :updated

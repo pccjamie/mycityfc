@@ -21,7 +21,7 @@ class FanProfilesController < ApplicationController
     # city = current_user.city.gsub!(/ /, "+")
     puts state
     # puts city
-    #  @url = "www.wunderground.com/weather-forecast/US/#{formatted_state}/#{user_city}.html"
+    url = "www.wunderground.com/weather-forecast/US/#{state}/#{user_city}.html"
     # puts @url
     #  # @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
     # # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
