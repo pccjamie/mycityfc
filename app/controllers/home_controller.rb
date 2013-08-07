@@ -15,7 +15,7 @@ before_filter :user_signed_in?
   	else
   		#else if NO profile chosen
   		
-  		redirect_to :edit_user_registration_path
+  		#redirect_to :edit_user_registration_path
   	end
 	end
 
