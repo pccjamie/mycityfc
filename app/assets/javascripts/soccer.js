@@ -1,36 +1,29 @@
 //sets background based on user's current location.
 
-//switch from flickr to google image
-
-var search;
-var i;
-var leagues;
-var league_data;
-var city = $('.current-user-city').text();
+// var city = $('.current-user-city').text();
 
 // searches espn with a
 function espn_find_leagues(){
 
-  // search = $('#search').val();
-
-	console.log('My city is: ' + city);
-	console.log('finding leagues');
+	var container = $('#my-leagues');
 	var url = 'http://api.espn.com/v1/sports/soccer/usa.1/?apikey=4u3e6enmscdszh8qcy9dh7my';
-	var cache = false;
-	$.getJSON(
-		url,
-		cache,
-		function(data){
-		league_data = data;
-		console.log('inside the AJAX calls. Should be returning league data');
-	}).done(add_to_page);
+	$.ajax({
+	  url: url,
+	  cache: false,
+	  dataType: json;
+	  data: data,
+	  success: function(data) {
+		console.log(data)	
+	});
+	// $.getJSON(
+	// 	url,
+	// 	cache,
+	// 	function(data){
+	// 	league_data = data;
+	// 	console.log('inside the AJAX calls. Should be returning league data');
+	// }).done(add_to_page);
 }
 
-// add the league info to the page
-function add_to_page(){
-	console.log('adding to DOM');
-	$('#my-leagues').append(league_data);
-}
 
 // // add new div for single photo for each from parsed list. gets a parameter, which looks to be the index value of the pic in flickr.
 
@@ -42,24 +35,5 @@ function add_to_page(){
 //     $('body').css('background-image','url(' + single_image.attr('src') + ')');
 
 // }
-
-// function get_photo_src(index){
-//   var photo = gallery[index];
-//   var src = "http://farm"+ photo.farm +".static.flickr.com/"+ photo.server +"/"+ photo.id +"_"+ photo.secret +"_m.jpg";
-//   return src;
-
-
-// DOM events
-$(function(){
-  espn_find_leagues();
-});
-
-
-
-
-
-
-
-
 
 

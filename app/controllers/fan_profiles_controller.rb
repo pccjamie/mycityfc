@@ -19,10 +19,10 @@ class FanProfilesController < ApplicationController
   def get_weather
   	@user = User.find(user_params)
     @weather = "showing weather"
-    state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
-    state = state.gsub!(/ /,"")
+    # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
+    # state = state.gsub!(/ /,"")
     # city = current_user.city.gsub!(/ /, "+")
-    @state = state 
+    #@state = state 
     # @city = city
     # url = "www.wunderground.com/weather-forecast/US/#{state}/#{user_city}.html"
     # puts @url
