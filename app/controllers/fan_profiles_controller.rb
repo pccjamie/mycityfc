@@ -6,10 +6,8 @@ class FanProfilesController < ApplicationController
 
   def get_weather
 
-  	 flash[:notice] = "get weather - executed"
+  	flash[:notice] = "get weather - executed"
     	
-    redirect_to :index
-
      #  raw_state = current_user.state
      #  user_state = raw_state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
      #  formatted_state = user_state.gsub!(/ /,"")
@@ -22,7 +20,7 @@ class FanProfilesController < ApplicationController
   end
 
   def index
-  	current_user.get_weather
+  	get_weather
   end
 
   def show
