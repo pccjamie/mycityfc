@@ -1,6 +1,6 @@
 class FanProfilesController < ApplicationController
   
-	before_filter :authenticate_user!
+	# before_filter :authenticate_user!
 
   require 'nokogiri'
   require 'open-uri'
