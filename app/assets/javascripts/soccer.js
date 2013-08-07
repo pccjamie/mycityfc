@@ -11,15 +11,28 @@ function espn_find_leagues() {
 			var results = data;
 			console.log(results);
 			results = JSON.stringify(results);
-			console.log(city);
-			local_results = $(results).find(city);
-			$("<div></div>").append(local_results);
+			// local_results = $(results).find(city);
+			$("<div></div>").append(results);
+			local_result = $('div:contains('+city+')').parent();
+
 			// $("#my-leagues").append(results);
-			$("<div>" + local_results + "</div>").appendTo("#my-leagues").html();
+			$("<div>" + local_result + "</div>").appendTo("#my-leagues").text();
+
+
+
+
 		}
 	});
 }
+
+function youtube_find_channel(){
+
+//method to find a specific teams's channel. should i make this dependent on the ESPN api? 
+
+}
+
 //DOM events
 $(function() {
 	espn_find_leagues();
+	youtube_find_channel();
 });

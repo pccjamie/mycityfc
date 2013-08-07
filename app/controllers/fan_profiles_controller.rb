@@ -7,6 +7,8 @@ class FanProfilesController < ApplicationController
   require 'open-uri'
   require 'httparty'
 
+	respond_to :json
+
   def index
     get_weather
     get_league
