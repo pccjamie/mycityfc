@@ -1,0 +1,26 @@
+
+
+var url = 'http://api.espn.com/v1/sports/soccer/usa.1/?apikey=4u3e6enmscdszh8qcy9dh7my';
+// var city = $('.current-user-city').text();
+function espn_find_leagues(){
+	console.log('here i am');
+	$.ajax({
+		dataType: "json",
+		cache: false,
+		type: "GET",
+		url: url,
+		success: function(data){
+
+			var results = data;
+			console.log(results);
+			// $("<article>").append(results);
+			// $("#my-leagues").append(results);
+			$("<div>"+ results + "</div>").appendTo("#my-leagues").text();
+		}
+	});
+}
+
+//DOM events
+$(function(){
+	espn_find_leagues();
+});

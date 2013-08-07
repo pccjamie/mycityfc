@@ -1,19 +1,21 @@
-var url = 'http://api.espn.com/v1/sports/soccer/usa.1/?apikey=4u3e6enmscdszh8qcy9dh7my';
-//send users city
-// var city = $('.current-user-city').text();
+var url = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/'+city+'/?apikey=4u3e6enmscdszh8qcy9dh7my';
+var city = $('.current-user-city').text();
 function espn_find_leagues(){
-	console.log('here i am');
-	$.getJSON({
-		dataType: "json",
+	$.ajax({
+		dataType: "JSON",
 		cache: false,
 		type: "GET",
 		url: url,
-		success: function(json) {
-			var my_data = $.parseJSON(json);
-			$("<div>"+ my_data + "</div>").appendTo("#my-leagues");
+		success: function(data){
+			var results = data;
+			console.log(results);
+			results = JSON.stringify(results);
+			$("<div></div>").append(results);
+			// $("#my-leagues").append(results);
+			$("<div>"+ results + "</div>").appendTo("#my-leagues").html();
+			console.log(city);
 		}
 	});
-	return;
 }
 
 //DOM events
