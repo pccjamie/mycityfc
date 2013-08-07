@@ -14,7 +14,7 @@ class FanProfilesController < ApplicationController
   end
 
   def get_weather
-		flash_message :notice, 'show weather'
+    puts "showing weather"
 
     # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
     # state = state.gsub!(/ /,"")
@@ -30,7 +30,7 @@ class FanProfilesController < ApplicationController
 
 
   def get_league
-    flash_message :notice, "showing leagues"
+    puts "showing leagues"
     # url = JSONHTTP GET "http://api.espn.com/:version/:resource/:method?apikey=:yourkey"
     #either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
   end
