@@ -3,8 +3,6 @@
 //switch from flickr to google image
 
 var search;
-var per_page = 1;
-var gallery;
 var i;
 var single_image;
 
@@ -13,9 +11,9 @@ var single_image;
 function search_flickr(){
 
    // search = $('#search').val();
-  console.log('inside ajax call ');
+  console.log('inside search function ');
 
-   // console.log($('#city').val());
+  // console.log($('#city').val());
   search = $('#city').text();
    
   console.log('My city is: ' + search);
