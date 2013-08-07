@@ -15,7 +15,7 @@ function espn_find_leagues(){
 
 	console.log('My city is: ' + city);
 	console.log('finding leagues');
-	var url = 'http://api.espn.com/v1/sports/soccer?apikey=4u3e6enmscdszh8qcy9dh7my';
+	var url = 'http://api.espn.com/v1/sports/soccer/usa.1/?apikey=4u3e6enmscdszh8qcy9dh7my';
 	var cache = false;
 	$.getJSON(
 		url,
