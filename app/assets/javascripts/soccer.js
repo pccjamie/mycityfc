@@ -6,41 +6,36 @@ var search;
 var i;
 var leagues;
 var league;
+var city = $('.current-user-city').text();
 
 // searches espn with a
 function espn_find_leagues(){
 
   // search = $('#search').val();
-  console.log('finding leagues');
 
-//   // console.log($('#city').val());
-//   search = $('#city').text();
-   
-//   console.log('My city is: ' + search);
+	console.log('My city is: ' + city);
+	console.log('finding leagues');
+	var url = 'http://api.espn.com/v1/sports/soccer?apikey=4u3e6enmscdszh8qcy9dh7my';
+	var cache = false;
+	$.getJSON(
+		url,
+		cache,
+		function(data){
+		console.log(data);
+		console.log('inside the AJAX calls. Should be returning league data');
+	}).done(add_to_page);
+}
 
-//   var url = 'http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=4c6e1f137bbeb666a1c0a884b609e286&secret=18afd75339612a5c&text=' + search + '&per_page=' + per_page + '&format=json&jsoncallback=?';
-// var cache = false
-//   $.getJSON(
-//     url,
-//     cache,
-//     function(data){
-//           gallery = data.photos.photo;
-//       console.log('inside the AJAX calls. Should be returning league data');
-//       // ugly cache fix     
-//     }
-//   ).done(add_photo_album)
-// }
-
-// //Loops and adds each photo in the returned photos
-// function add_photo_album(){ 
-
+// add the league info to the page
+function add_to_page(){
+	console.log('adding to DOM');
 //    for(var i = 0; i<gallery.length; i++){
 //     // $('body').css('background','red');
 //     add_photo(i);
 //   }
 //     // var id = $(this).attr("src");
 //     // $('body').css('background-image','url("' + id + '")'); 
-// }
+}
 
 // // add new div for single photo for each from parsed list. gets a parameter, which looks to be the index value of the pic in flickr.
 
@@ -57,8 +52,6 @@ function espn_find_leagues(){
 //   var photo = gallery[index];
 //   var src = "http://farm"+ photo.farm +".static.flickr.com/"+ photo.server +"/"+ photo.id +"_"+ photo.secret +"_m.jpg";
 //   return src;
-// }
-}
 
 
 // DOM events
