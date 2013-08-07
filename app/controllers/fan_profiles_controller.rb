@@ -6,33 +6,33 @@ class FanProfilesController < ApplicationController
 
 
   def index
-  	get_weather
-  	get_league
+    get_weather
+    get_league
   end
 
- def show
+  def show
   end
-  
+
   def get_weather
-  	 flash[:notice] = "showing weather"
+		flash_message :notice, 'show weather'
 
-     # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
-     # state = state.gsub!(/ /,"")
-     # city = current_user.city.gsub!(/ /, "+")
-     # puts state
-     # puts city
-     #  @url = "www.wunderground.com/weather-forecast/US/#{formatted_state}/#{user_city}.html"
-     # puts @url
-     #  # @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
+    # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
+    # state = state.gsub!(/ /,"")
+    # city = current_user.city.gsub!(/ /, "+")
+    # puts state
+    # puts city
+    #  @url = "www.wunderground.com/weather-forecast/US/#{formatted_state}/#{user_city}.html"
+    # puts @url
+    #  # @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
     # # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
   end
 
- 
+
 
   def get_league
-  	flash[:notice] = "showing leagues"
-  	# url = JSONHTTP GET "http://api.espn.com/:version/:resource/:method?apikey=:yourkey"
-  	#either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
+    flash_message :notice, "showing leagues"
+    # url = JSONHTTP GET "http://api.espn.com/:version/:resource/:method?apikey=:yourkey"
+    #either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
   end
 
   private
