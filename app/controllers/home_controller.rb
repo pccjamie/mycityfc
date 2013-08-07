@@ -8,10 +8,10 @@ before_filter :user_signed_in?
 	def index
   	user_profile = current_user.profile
   	if user_profile == 'Fan'
-  		redirect_to :fan_profiles_path
+  		redirect_to :fan_profiles
   	elsif 
   		user_profile == 'Parent'
-  		redirect_to :parent_profiles_path
+  		redirect_to :parent_profiles
   	else
   		#else if NO profile chosen
   		
