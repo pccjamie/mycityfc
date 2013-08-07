@@ -1,8 +1,10 @@
 class FanProfilesController < ApplicationController
+  
+	before_filter :authenticate_user!
+
   require 'nokogiri'
   require 'open-uri'
   require 'httparty'
-
 
 
   def index
@@ -37,6 +39,12 @@ class FanProfilesController < ApplicationController
     #either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
   	return
   end
+
+  def get_news
+  	@news = "showing news"
+  	return
+  end
+
 
   private
   def user_params
