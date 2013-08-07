@@ -6,17 +6,16 @@ function espn_find_leagues(){
 	$.ajax({
 		dataType: "json",
 		cache: false,
+		type: GET,
 		// data = city,
-		url: url,
-		success: function(data) {
+		url: url
+		}).done(function(data) {
 			console.log(data);
 			var my_data = data;
 			console.log($(my_data).text());
 			$("#my-leagues").append($(this).text());
-		}
-	});
+		});
 }
-
 //DOM events
 $(function(){
 	espn_find_leagues();
