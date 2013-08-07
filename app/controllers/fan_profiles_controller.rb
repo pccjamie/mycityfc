@@ -4,10 +4,18 @@ class FanProfilesController < ApplicationController
   require 'httparty'
 
 
-  def get_weather
 
+  def index
+  	get_weather
+  	get_league
+  end
+
+ def show
+  end
+  
+  def get_weather
   	 flash[:notice] = "showing weather"
-    	
+
      # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
      # state = state.gsub!(/ /,"")
      # city = current_user.city.gsub!(/ /, "+")
@@ -19,21 +27,13 @@ class FanProfilesController < ApplicationController
     # # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
   end
 
-  def index
-  	get_weather
-  	get_league
-  end
-
-  def show
-  end
+ 
 
   def get_league
   	flash[:notice] = "showing leagues"
   	# url = JSONHTTP GET "http://api.espn.com/:version/:resource/:method?apikey=:yourkey"
   	#either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
   end
-
-
 
   private
   def user_params
