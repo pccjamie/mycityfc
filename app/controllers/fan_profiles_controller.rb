@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 
   def index
-  	city = current_user.city
+    city = User.find(current_user.city)
   	get_weather
   	return
   end
@@ -24,6 +24,14 @@ require 'open-uri'
 		return
 
 	end
+
+
+
+private
+      def profile_params
+        params.require(:user).permit(:city)
+      end     
+
 
 
 
