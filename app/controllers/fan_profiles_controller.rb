@@ -8,6 +8,7 @@ class FanProfilesController < ApplicationController
   def index
     get_weather
     get_league
+    get_news
   end
 
   def show
