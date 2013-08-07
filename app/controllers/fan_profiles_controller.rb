@@ -5,6 +5,8 @@ class FanProfilesController < ApplicationController
 
 
   def get_weather
+  	   @user = User.find(current_user.id)
+
       raw_state = current_user.state
       user_state = raw_state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
       formatted_state = user_state.gsub!(/ /,"")
@@ -12,17 +14,16 @@ class FanProfilesController < ApplicationController
       user_city = raw_city.gsub!(/ /, "+")
       @url = "www.wunderground.com/weather-forecast/US/#{formatted_state}/#{user_city}.html"
       @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
-  	render :index
-    # return
-    # puts temp
+    	@temp
     # # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
   end
 
 
 
   def index
-    @user = User.find(current_user.id)
+    # @user = User.find(current_user.id)
     get_weather
+    return
   end
 
   def show
