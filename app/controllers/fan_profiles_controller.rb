@@ -20,7 +20,7 @@ require 'open-uri'
 		raw_state = current_user.state
 		user_city = raw_city.gsub!(/ /, "+")
 		user_state = raw_state.gsub!(/\s+/, "")
-		user_state = user_state.gsub!(/\W/, "+")
+		user_state = user_state.gsub!(/[A-Z]{2}/, "+")
 
 	 	url = "www.wunderground.com/weather-forecast/US/#{user_state}/#{user_city}.html"
 		@temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
