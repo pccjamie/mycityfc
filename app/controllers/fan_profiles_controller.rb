@@ -5,8 +5,9 @@ require 'open-uri'
   def index
   	@user = User.find(current_user.id)
   	puts current_user
+  	get_weather
   	puts @temp 
-  	current_user.city.get_weather
+
   end
 
   def show
@@ -17,12 +18,11 @@ require 'open-uri'
 		# @user = User.find(current_user.id)
 		raw_city = current_user.city
 		raw_state = current_user.state
-
 		user_city = raw_city.gsub!(/\s+/, "+")
 		user_state = raw_state.gsub!(/\s+/, "+")
-	 	url = "www.wunderground.com/weather-forecast/US/#{user_state}/#{user_city}"
-	 	puts url
+	 	url = "www.wunderground.com/weather-forecast/US/#{user_state}/#{user_city}.html"
 		@temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
+		return
 		# puts temp
 		# # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
 	end
