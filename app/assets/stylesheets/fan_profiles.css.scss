@@ -2,5 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+/*SPECIAL*/
 section#gameday {height: 600px; width: 100%; background: red; display: block /*to be changed to :none */}
+
+
+header#banner {height: 100px; width: 100%; float: left ;display: block; background: rgba(255,255,255,.75)}
+
+section#my-leagues {height: 200px; overflow: auto; width:35%; display: inline-block;position: relative; background:orange}
+
+section#my-news {}

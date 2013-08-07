@@ -1,5 +1,11 @@
 class FanProfilesController < ApplicationController
 
+
+  def set_access_control_headers
+    headers["Access-Control-Allow-Origin"] = "*"
+    headers["Access-Control-Request-Method"] = "*"
+  end
+  
 # uncomment for  localhost testing
 # skip_before_filter :authenticate_user!
   
@@ -7,11 +13,11 @@ class FanProfilesController < ApplicationController
   require 'open-uri'
   require 'httparty'
 
-	respond_to :json
+	# respond_to :json
 
   def index
     get_weather
-    get_league
+    get_leagues
     get_news
   end
 
@@ -35,11 +41,9 @@ class FanProfilesController < ApplicationController
 
 
 
-  def get_league
+  def get_leagues
     @leagues = "showing leagues"
-    #either get json or nokogiri scrape of MLS. Find retrieved tteams locations. USe geocoder to compare to user location
-
-  	return
+ 		return
   end
 
   def get_news
