@@ -58,7 +58,7 @@ function espn_find_leagues(){
 //   var src = "http://farm"+ photo.farm +".static.flickr.com/"+ photo.server +"/"+ photo.id +"_"+ photo.secret +"_m.jpg";
 //   return src;
 // }
-
+}
 
 
 // DOM events
