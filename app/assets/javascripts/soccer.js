@@ -1,8 +1,8 @@
-var city = $('.current-user-city').text();	
+var city = $('.current-user-city').text();
 
 // GET LEAGUES & TEAMS
 function espn_find_leagues(){
-var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/location?apikey=4u3e6enmscdszh8qcy9dh7my';
+var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/?apikey=4u3e6enmscdszh8qcy9dh7my';
 
 	$.ajax({
 		url: source_teams,
@@ -47,25 +47,23 @@ function espn_find_news(){
 		});
 }
 
-// GET VIDEOS
-function youtube_find_channel(){
-
-$.ajax({
-		url: 'http://www.youtube.com/user/mls?&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&part=player',
-		data: {
-		_accept: "application/json"
-		},
-		dataType: "json",
-		beforeSend: function(xhr){
-       xhr.setRequestHeader("Accept","application/json");},
-		cache: false,
-		type:"get"
-		}).done(function(data){
-		// $.inArray(my_target, Object.keys(data))
-			$("<div>"+ data + "</div").appendTo("#match-day").text();
-		});
-
-}
+// // GET VIDEOS
+// function youtube_find_channel(){
+// $.ajax({
+// 		url: 'http://www.youtube.com/user/mls?&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&part=player',
+// 		data: {
+// 		_accept: "application/json"
+// 		},
+// 		dataType: "json",
+// 		beforeSend: function(xhr){
+//        xhr.setRequestHeader("Accept","application/json");},
+// 		cache: false,
+// 		type:"get"
+// 		}).done(function(data){
+// 		// $.inArray(my_target, Object.keys(data))
+// 			$("<div>"+ data + "</div").appendTo("#match-day").text();
+// 		});
+// }
 
 //SETS UP MATCH
 function match_day(){
@@ -76,6 +74,6 @@ console.log('match day!');
 $(function() {
 	espn_find_leagues();
 	espn_find_news();
-	youtube_find_channel();
+	// youtube_find_channel();
 	match_day();
 });
