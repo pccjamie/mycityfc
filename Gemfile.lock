@@ -67,6 +67,10 @@ GEM
       rails (>= 3, < 5)
     flickr.rb (1.1.0)
       xml-simple (>= 1.0.7)
+    forecast_io (2.0.0)
+      faraday
+      hashie
+      multi_json
     geocoder (1.1.8)
     hashie (2.0.5)
     hike (1.2.3)
@@ -233,6 +237,7 @@ DEPENDENCIES
   devise
   figaro
   flickr.rb (~> 1.1.0)
+  forecast_io
   geocoder
   httparty
   jbuilder (~> 1.2)

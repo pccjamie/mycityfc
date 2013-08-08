@@ -92,7 +92,8 @@ gem 'geocoder'
 #utility
 # gem "activesupport", "~> 3.1.1"
 
-
+#forecast
+gem 'forecast_io'
   
 #dev / prod
   gem 'pry-rails'
