@@ -25,7 +25,7 @@ var cache = false
     cache,
     function(data){
           gallery = data.photos.photo;
-      console.log('Im inside the AJAX calls. Should be returning a photo based on city');
+      	console.log('Im inside the AJAX calls. Should be returning a photo based on city');
       // ugly cache fix     
     }
   ).done(add_photo_album)
