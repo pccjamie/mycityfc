@@ -67,10 +67,10 @@ $.ajax({
 
 }
 
-// SETS UP MATCH
-// function match_day(){
-// console.log('match_day!');
-// }
+//SETS UP MATCH
+function match_day(){
+console.log('match_day!');
+}
 
 
 
@@ -79,4 +79,5 @@ $(function() {
 	espn_find_leagues();
 	espn_find_news();
 	youtube_find_channel();
+	match_day();
 });

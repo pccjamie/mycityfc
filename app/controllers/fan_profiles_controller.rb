@@ -1,12 +1,12 @@
 class FanProfilesController < ApplicationController
 
-  def set_access_control_headers
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Request-Method"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-  end
+ after_filter :set_access_control_headers
 
- before_filter :set_access_control_headers
+  def set_access_control_headers
+    headers["Access-Control-Allow-Origin"] = "*"
+    headers["Access-Control-Request-Method"] = "*"
+    headers["Access-Control-Allow-Headers"] = "Content-Type"
+  end
 
 # uncomment for  localhost testing
 # skip_before_filter :authenticate_user!
