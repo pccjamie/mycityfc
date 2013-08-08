@@ -21,8 +21,6 @@ class ApplicationController < ActionController::Base
   #   response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   # end
 
-
-
   def after_sign_in_path_for(user)
     edit_user_registration_path
   end
@@ -30,10 +28,6 @@ class ApplicationController < ActionController::Base
   def after_update_path_for(user)
     root_path
   end
-
-
-
-
 
   #relies on lib/user_sanitizer.rb
   protected

@@ -24,9 +24,9 @@ class FanProfilesController < ApplicationController
   end
 
   def get_weather
-  	current_user
-  	state = current_user.state
-  	city = current_user.city
+  	# current_user
+  	# state = current_user.state
+  	# city = current_user.city
     # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
     # state = state.gsub!(/ /,"")
     # city = current_user.city.gsub!(/ /, "%20")
