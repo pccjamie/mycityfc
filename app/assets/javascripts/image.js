@@ -23,8 +23,6 @@
 //     // $('body').css('background','url('+ url +')');
 //   }
 
-
-
 // function OnLoad() {
 
 //   // Create an Image Search instance.

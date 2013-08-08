@@ -1,8 +1,5 @@
 class ApplicationController < ActionController::Base
 
-
-helper :all
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -17,6 +14,15 @@ helper :all
   #   response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   # end
 
+
+ 
+
+  # helper :all
+  # include ApplicationHelper
+
+
+
+
   after_filter :set_access_control_headers
   def set_access_control_headers
     response.headers["Access-Control-Allow-Origin"] = "http://mycityfc.herokuapp.com"
@@ -25,9 +31,6 @@ helper :all
     response.headers["Access-Control-Allow-Headers"] = "Content-Type"
     response.headers["Content-Type"] = "application/json, text/html"
   end
-
- 
-
 
 
   def after_sign_in_path_for(user)
