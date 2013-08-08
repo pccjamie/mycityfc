@@ -1,49 +1,36 @@
 <div id="match-day">
-<section id="highlights">
-<header><h1>my teams vs someone else</h1></header>
+	<section id="highlights">
+	<header><h1>my teams vs someone else</h1></header>
 </section>
 </div>
-
-<div id="wrapper">
-	<div id="inner-wrapper">
-		<details open>
-		<summary><h5>Local Updates</h5></summary>
-		<div id="banner">
-			<div id="messages">
-				<header>
-					<h5>Hi</h5>
-					<h1><%# current_user.first_name %></h1>
-						<h1><%= @weather %></h1>
-					
-					<h3>forecast for <%#= current_user.city %></h3>
-
-					<h3>nice day for a game!</h3>
-				</header>
-			</div>
-			<div id="twitter">
-			</div>
-
-
-
-		</div>
-		</details>
-
-	<section id="my-news">
-		<div class="sleeve">
-		<header><h3>NEWS</h3></header>
-		</div>
-	</section>
-
-	<section id="my-leagues">
-	<div class="sleeve">
-	<header><h3>LEAGUE</h3></header>
-	</div>
-	</section>
-
-	<section id="my-videos">
-		<div class="sleeve">
-		<header><h3>OTHER</h3></header>
-		</div>
-	</section>
+<details open>
+<summary><h5>What's Happening Today?</h5></summary>
+<div id="banner">
+<div id="greeting-block-wide">
+	<header>
+		<h3>Hi</h3>
+		<h1><%= current_user.first_name %></h1>
+		<h1><%= @weather %> in</h1>
+		<h3>forecast for <%= current_user.city %></h3>
+		<h3>looks like a nice day for a game!</h3>
+	</header>
+</div>
+<div id="twitter">
 </div>
 </div>
+</details>
+<section id="my-news">
+<div class="sleeve">
+<header><h3>NEWS</h3></header>
+</div>
+</section>
+<section id="my-leagues">
+<div class="sleeve">
+<header><h3>LEAGUE</h3></header>
+</div>
+</section>
+<section id="my-videos">
+<div class="sleeve">
+<header><h3>OTHER</h3></header>
+</div>
+</section>

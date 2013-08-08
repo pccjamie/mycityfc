@@ -6,10 +6,8 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
   	<meta charset="utf-8" />
-
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
-
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -23,32 +21,22 @@
     <%= csrf_meta_tags %>
   </head>
 
-<%# if current_user && user_signed_in? %>
 
-<!--   <body class="users-location-image">
- -->
+<body class="<%= swap_bg %>">
 
-<body class="temp-class<%#= current_user.city.get_image %>"
-
-<% if current_page? slides_path %>
-<body class="no-bg">   
-<% else %>
-<body>
-<% end %>
-
-<div id="top">
-  <div id="top-upper"><%= render partial: "/partials/login" %></div>
-  <div id="top-lower"><%= render partial: "/partials/site" %></div>
+<div id="utility-bar">
+  <div id="upper"><%= render partial: "/partials/login" %></div>
+  <div id="lower"><%= render partial: "/partials/site" %></div>
 </div>
-
-
 
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
 
-
+<div id="wrapper">
+  <div id="inner-wrapper">
     <%= yield %>
-
+</div>
+</div>
     
     <%= javascript_include_tag "application" %>
   </body>

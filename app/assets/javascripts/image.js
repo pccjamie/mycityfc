@@ -5,38 +5,24 @@ var imageSearch;
 function searchComplete() {
 
   // Check that we got results
-  if (imageSearch.results && imageSearch.results.length < 2) {
+  if (imageSearch.results && imageSearch.results.length > 0) {
 
     // Grab our content div, clear it.
     var contentDiv = document.getElementById('body');
-    $('body').css('background-color','pink');
+    //verifying i can change body attr
+    $('body').css('background-color','lime');
 
-    // Loop through our results, printing them to the page.
+    // Loop through our results, printing them to the page. 
     var results = imageSearch.results;
-    for (var i = 0; i < results.length; i++) {
-      // For each result write it's title and image to the screen
-      var result = results[i];
-      var imgContainer = document.createElement('div');
-      var title = document.createElement('div');
-
-      // We use titleNoFormatting so that no HTML tags are left in the 
-      // title
-      title.innerHTML = result.titleNoFormatting;
-      var newImg = document.createElement('img');
-
-      // There is also a result.url property which has the escaped version
-      newImg.src = "/image-search/v1/result.tbUrl;";
-      console.log('my image' +newImg.src);
-      imgContainer.appendChild(title);
-      imgContainer.appendChild(newImg);
-
-      $('body').css('background-image','url('+ newImg.src+')');
-
+    // newImg.src = "/image-search/v1/result.url;";
       // Put our title + image in the content
       // contentDiv.appendChild(imgContainer);
-    }
+    var image = results[Math.floor(Math.random() * results.length)];
+    var url = image.src = "/image-search/v1/result.url;";
+    $('body').removeClass('bg-fan-profiles').css('background-image','url('+ url +')');
   }
 }
+
 
 function OnLoad() {
 

@@ -4,8 +4,22 @@ $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.8);
 $header-text: black;
 
-body {height: 100%; width: 100%; background: #262626 url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat; background-size: 100%;}
-body.no-bg {background: 0;}
+body {height: 100%; width:100%; display: block;  background: #262626}
+body.bg-default {background-image: asset-url('history1.jpg') }
+body.bg-slides {background: transparent;}
+body.bg-parent-profiles { 
+	position: fixed;
+	background-image: asset-url('kids1.jpg');
+	background-size: 100%;
+	background-repeat: none;
+}
+body.bg-fan-profiles {
+	position: fixed;
+	background-color: gray;
+	background-image: asset-url('nyc.jpg');
+	background-size: 100%;
+	background-repeat: none;
+}
 
 ul {list-style: none}
 li {display: inline; padding: 5px}
@@ -22,14 +36,14 @@ table {display: block; position: relative;}
 
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
-footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); position: relative;bottom:0; position: fixed; display: block;}
-nav {height: auto; display: block; padding: 20px; color: #FFF}
+// footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); position: relative;bottom:0; position: fixed; display: block;}
+// nav {height: auto; display: block; padding: 20px; color: #FFF}
 
 
-#wrapper {height: 100%; position: relative; padding:0;position: relative; display:block;}
-#inner-wrapper {display: block; position: relative; margin: 10px;}
-
+#wrapper {height: 100%; width: 100%; padding:0; display:block; overflow: scroll; position: fixed}
+#inner-wrapper {display: block; margin: 10px;}
 .sleeve {margin: 20px;}
+
 .inner {margin: 20px;}
 
 /* toggle match day */
@@ -62,43 +76,61 @@ div#match-day:hover {
 
 }
 
-/* toggle header */
 
+#utility-bar {
+	height: auto; width: 100%; display: block; 
+
+	#upper {height: 40px; width:100%;
+		ul { display: block; text-align: right;}
+	}
+	#lower {background: $bg-color; height: 60px; width: 100%;
+		ul li a {font-size: 1.5em;}
+	}
+}
+
+
+
+/* toggle header */
 details {background: 0; }
 details summary h5 {color: #FFF;width: auto; display:inline}
 
-#banner {height: auto; display: block; position: relative; background: 0;
+#banner {height: auto; display: block; position: relative; background: 0; width:100%;
 
-	div#messages {height: 250px; width: 50%; display:inline-block; margin: 0px;  position: relative; background:0; 
+	#greeting-block-wide, #greeting-block-narrow {display:inline-block; float: left;margin: 0px;  position: relative; background:0; 
 		h1 {font-size: 80px;}
-		h1,h3 { margin:0 20px}
-
+		h1,h2,h3,h4 { margin:0 20px}
 	}
+	#greeting-block-wide {width: 65%;}
+
+	#greeting-block-narrow {width: 35%;}
 	
-	div#twitter {height: 200px; width: 49%; display: inline-block; float: right; background: $header-bg; position: relative; padding:0; clear:both}
+	#twitter, #calendar-today, #calendar-upcoming {height: 250px; display: inline-block; background: red; position: relative; padding:0;}
+
+	#twitter {width: 35%}
+
+	#calendar-today {background: orange; width: 40%; float: left}
+	#calendar-upcoming {background: orange; width: 20%; float: left}
 }
 
 
-section#my-news {height: 400px; width: 65%; float: left; display: inline-block;position: relative; background: $bg-main; clear:both;
+
+section#my-news, section#my-kid  {height: 400px; float: left; display: inline-block;position: relative; background: $bg-main; clear:both;
 }
+
+ section#my-news {width: 65%;}
+ section#my-kid {width: 35%;}
+
+
+section#my-leagues,section#my-community {height: 400px;  width:35%; display: inline-block;position: relative; background: #1f9fff; overflow: auto;}
+section#my-community {width: 65%;}
+
+
+
+section#my-videos {height: 200px;  width: 100%; display: inline-block; position: relative; background: silver; clear:both}
+
 
 .my-videos {float: left;  height: 200px; width: 300px; background: #262626; position: absolute; top: 20; right: 20; display: block;}
 
 
-section#my-leagues {height: 400px;  width:35%; display: inline-block;position: relative; background: #1f9fff;}
-section#my-videos {height: 200px;  width: 100%; display: inline-block; position: relative; background: silver; clear:both}
 
-#top {
-	height: auto; width: 100%; display: block;
-
-	#top-upper {height: 40px; background: 0; width:100%;
-		ul { display: block; background: 0; text-align: right;}
-	}
-	
-	#top-lower {background: $bg-color; height: 60px; width: 100%;
-		ul li a {font-size: 1.5em;}
-
-	}
-
-}
 
