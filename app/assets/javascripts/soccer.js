@@ -12,6 +12,7 @@ var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/?apikey=4u3
 		cache: false,
 		type:"get"
 	}).done(function(data){
+			console.log(data);
 			var results = data;
 			console.log(results);
 			headlines = JSON.stringify(results);
