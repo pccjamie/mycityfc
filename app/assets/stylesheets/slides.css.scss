@@ -26,25 +26,19 @@
 // #slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
 // #slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
 
-
 #slideshow * .slide-info {}
-
 #slideshow * .slide-name{font-weight:bold}
 #slideshow * .slide-desc{}
 #slideshow * .slide-citation {position: absolute; bottom: 20px; left: 20px}
 #slideshow * .figure {width: 50%; float: right}
-
 #slideshow * .slide-info, #slideshow * figure {display: inline-block; width: 40%;}
-
 #slideshow * {color: red}
-
 #slideshow * figure img {display: none}
 
 /* filter out nonsense from the scraped data that Nokogiri didn't pick up.*/
 // strong:first-child, strong:nth-child(5){display: none;}
 // #slideshow * img, #slideshow * a {display: none}
 
-table {display: block; position: relative;}
 
 #myModal {height: 100px;width:200px;margin: 0 auto;}
 
@@ -52,18 +46,12 @@ table {display: block; position: relative;}
 .user_details div {width: auto;  position: relative;}
 .user_details * h5 {display: inline;position: relative; color:#FFF;}
 
-header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 
-header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
-footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); position: relative;bottom:0; position: fixed; display: block;}
+// nav#site, nav#utility {display: inline-block; width: 500px}
+// nav#site{text-align: left}
 
-nav {height: auto; display: block; padding: 20px; color: #FFF}
-
-nav#site, nav#utility {display: inline-block; width: 500px}
-nav#site{text-align: left}
-
-nav#utility{height: auto; padding: 0; text-align: right; float: right}
-nav#utility img {padding:2px; background: #fff;}
+// nav#utility{height: auto; padding: 0; text-align: right; float: right}
+// nav#utility img {padding:2px; background: #fff;}
 
 
 aside {height:auto; background: rgba(0,0,0,.5); display: inline-block; }

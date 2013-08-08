@@ -6,12 +6,15 @@ class FanProfilesController < ApplicationController
     headers["Access-Control-Request-Method"] = "*"
   end
 
+  after_filter :set_access_control_headers
+
+
 # uncomment for  localhost testing
 # skip_before_filter :authenticate_user!
   
   require 'nokogiri'
   require 'open-uri'
-  require 'httparty'
+  # require 'httparty'
 
 	# respond_to :json
 
@@ -25,16 +28,13 @@ class FanProfilesController < ApplicationController
   end
 
   def get_weather
-  	# @user = User.find(current_user.id)
-    @weather = "showing weather"
-    # state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
-    # state = state.gsub!(/ /,"")
-    # city = current_user.city.gsub!(/ /, "+")
-    #@state = state 
-    # @city = city
-    # url = "www.wunderground.com/weather-forecast/US/#{state}/#{user_city}.html"
-    # puts @url
-    #  # @temp = Nokogiri.HTML(open(url).css('#nowTemp, b')).to_html
+  	@user = User.find(current_user.id)
+    state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
+    state = state.gsub!(/ /,"")
+    city = current_user.city.gsub!(/ /, "%20")
+    # url = "http://wunderground.com/weather-forecast/US/#{state}/#{city}.html"
+    weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").text
+    @weather = weather
     # # rain = Nokogiri.HTML(open(url).css('#curCond , #conds_details_cur, b')).to_html
   	return
   end

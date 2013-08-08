@@ -1,29 +1,46 @@
+<div id="match-day">
+<section id="highlights"></section>
+
+
+<section id="highlights"></section>
+<section id="highlights"></section>
+
+</div>
+
 <div id="wrapper">
 	<div id="inner-wrapper">
-	<header id="banner">
-		<h1><%= @weather %> forecast for NYC<%#= current_user.city %></h1>
-		<h3>nice day for a game!</h3>
-	</header>
+		<details open>
+		<summary><h5>Local Updates</h5></summary>
+		<div id="banner">
+			<div id="messages">
+				<header>
+					<h1><%= @weather %></h1>
+					<h3>forecast for <%#= current_user.city %></h3>
+					<h3>nice day for a game!</h3>
+				</header>
+			</div>
+			<div id="twitter">
+			<header><h5>Follow the footballer!</h5></header>
+		</div>
+		</div>
+		</details>
 
 	<section id="my-news">
 		<div class="sleeve">
 		<header><h3>NEWS</h3></header>
-		<%= @news %>
-	</div>
+		</div>
 	</section>
 
 	<section id="my-leagues">
-		<div class="sleeve">
-		<header><h3>LEAGUE</h3></header>
-		<%= @leagues %>
-		</div>
-	</section>
-
-	<section id="my-follows">
-		<div class="sleeve">
-		<header><h3>I'm Following</h3></header>
-		</div>
-	</section>
-
+	<div class="sleeve">
+	<header><h3>LEAGUE</h3></header>
 	</div>
+	</section>
+
+	<section id="my-other">
+		<div class="sleeve">
+		<header><h3>OTHER</h3></header>
+		</div>
+	</section>
+</div>
 </div>

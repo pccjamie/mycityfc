@@ -5,7 +5,6 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 
 get "users/edit", :to => "users/registrations#edit"
 
-
 #only using omniauth for authentication, so added these session routes within user scope. 
 #note that sessions was ALSO skipped in the normal devise resources.
 
@@ -19,10 +18,7 @@ resources :home, :only => [:index]
 root :to => "home#index"
 
 resources :slides
-
-# resources :matches
-# resources :profiles
-resources :fan_profiles, :only => [:index, :show]
+resources :fan_profiles, :except => [:destroy]
  
   get "parent_profiles/index"
   get "parent_profiles/show"
