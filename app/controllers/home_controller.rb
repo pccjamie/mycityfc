@@ -1,11 +1,11 @@
 class HomeController < ApplicationController
 	
-skip_before_filter :authenticate_user!, :only => [:index]
-# before_filter :user_signed_in?
+# skip_before_filter :authenticate_user!, :only => [:index]
+before_filter :authenticate_user!
+before_filter :user_signed_in?
 
 	def index
-    @user = User.find(params[:id])
-
+    current_user
   	if current_user.profile == 'Fan'
   		redirect_to :fan_profiles
   	elsif 
