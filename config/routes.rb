@@ -22,7 +22,7 @@ resources :parent_profiles, :except => [:destroy]
 
 
 controller :application do
-  get 'layout/application' => :swap_bg
+  get 'application/index' => :swap_bg
 end
 
 
