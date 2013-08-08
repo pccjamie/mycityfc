@@ -4,7 +4,7 @@ $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.8);
 $header-text: black;
 
-body {height: 100%; background: #262626 url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat; background-size: 100%;}
+body {height: 100%; width: 100%; background: #262626 url('http://timsklyarov.com/wp-content/uploads/2012/06/new-york-city-aerial-1.jpg') top left no-repeat; background-size: 100%;}
 body.no-bg {background: 0;}
 
 ul {list-style: none}
@@ -26,7 +26,7 @@ footer {height: auto; width: 100%; background-color: rgba(135,169,181,0.75); pos
 nav {height: auto; display: block; padding: 20px; color: #FFF}
 
 
-#wrapper {height: 100%; position: relative; padding:0;position: relative; display:block; overflow:auto;}
+#wrapper {height: 100%; position: relative; padding:0;position: relative; display:block;}
 #inner-wrapper {display: block; position: relative; margin: 10px;}
 
 .sleeve {margin: 20px;}
@@ -74,13 +74,14 @@ details summary h5 {color: #FFF;width: auto; display:inline}
 }
 
 
-section#my-news {height: 400px; overflow: auto; width: 65%; float: left; display: inline-block;position: relative; background: $bg-main; clear:both;
-
-	video {float: right; height: 200px; width: 300px; background: #262626; position: absolute; top: 0; right: 0}
-
+section#my-news {height: 400px; width: 65%; float: left; display: inline-block;position: relative; background: $bg-main; clear:both;
 }
-section#my-leagues {height: 400px; overflow-y: auto; width:35%; display: inline-block;position: relative; background: #1f9fff;}
-section#my-other {height: 400px; overflow: auto; width: 30%; display: inline-block; position: relative; background: silver; clear:both}
+
+.my-videos {float: left;  height: 200px; width: 300px; background: #262626; position: absolute; top: 20; right: 20; display: block;}
+
+
+section#my-leagues {height: 400px;  width:35%; display: inline-block;position: relative; background: #1f9fff;}
+section#my-videos {height: 200px;  width: 100%; display: inline-block; position: relative; background: silver; clear:both}
 
 #top {
 	height: auto; width: 100%; display: block;

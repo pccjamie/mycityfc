@@ -49,7 +49,22 @@ function espn_find_news(){
 
 // GET VIDEOS
 function youtube_find_channel(){
-//method to find a specific teams's channel. should i make this dependent on the ESPN api? 
+
+$.ajax({
+		url: 'http://www.youtube.com/user/mls?&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&part=player',
+		data: {
+		_accept: "application/json"
+		},
+		dataType: "json",
+		beforeSend: function(xhr){
+       xhr.setRequestHeader("accept","application/json");},
+		cache: false,
+		type:"get"
+		}).done(function(data){
+		// $.inArray(my_target, Object.keys(data))
+			$("<div>"+ data + "</div").appendTo("#match-day").text();
+		});
+
 }
 
 // SETS UP MATCH
