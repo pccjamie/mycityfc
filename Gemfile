@@ -75,6 +75,11 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 
+
+#CORS
+gem 'rack-cors', :require => 'rack/cors'
+
+
 ###CONTENT DELIVERY
 
 #bg image
