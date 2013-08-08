@@ -4,7 +4,7 @@ $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.8);
 $header-text: black;
 
-body {height: 100%; width:100%; display: block;  background-image: url('history1.jpg') }
+body {height: 100%; width:100%; display: block;  background-image: url('<%= asset_path('history1.jpg')%>');}
 body.bg-default {background-image: url('history1.jpg') }
 body.bg-slides {background: transparent;}
 body.bg-parent-profiles { 
@@ -16,7 +16,7 @@ body.bg-parent-profiles {
 body.bg-fan-profiles {
 	position: fixed;
 	background-color: gray;
-	background-image: url('nyc.jpg');
+	background-image: url('<%= asset_path('nyc.jpg')%>');
 	background-size: 100%;
 	background-repeat: none;
 }
