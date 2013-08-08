@@ -14,13 +14,11 @@ class FanProfilesController < ApplicationController
   
   require 'nokogiri'
   require 'open-uri'
-  # require 'httparty'
-
-	# respond_to :json
-
+  require 'httparty'
 
   def index
-  	current_user
+  	@user = User.find(user_params)
+  	@user = current_user
     get_weather
     get_leagues
     get_news
