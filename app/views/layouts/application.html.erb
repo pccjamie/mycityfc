@@ -21,8 +21,9 @@
     <%= csrf_meta_tags %>
   </head>
 
-
+<% @controller %>
 <body class="<%= swap_bg %>">
+<% end %>
 
 <div id="utility-bar">
   <div id="upper"><%= render partial: "/partials/login" %></div>
