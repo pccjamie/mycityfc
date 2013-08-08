@@ -8,10 +8,12 @@ class ApplicationController < ActionController::Base
   after_filter :set_access_control_headers
 
   def set_access_control_headers
+    response.headers["Access-Control-Allow-Origin"] = "http://mycityfc.herokuapp.com"
     response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
-    response.headers["Access-Control-Request-Method"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-    response.headers["Content-Type"] = "application/json, text/html"
+
+    # response.headers["Access-Control-Request-Method"] = "*"
+    # response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+    # response.headers["Content-Type"] = "application/json, text/html"
   end
 
   # before_filter :block_cache

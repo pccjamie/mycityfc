@@ -35,7 +35,7 @@ function espn_find_news(){
 
 		dataType: "json",
 		beforeSend: function(xhr){
-       xhr.setRequestHeader("accept","application/json");},
+       xhr.setRequestHeader("Accept","application/json");},
 		cache: false,
 		type:"get"
 		}).done(function(data){
@@ -57,7 +57,7 @@ $.ajax({
 		},
 		dataType: "json",
 		beforeSend: function(xhr){
-       xhr.setRequestHeader("accept","application/json");},
+       xhr.setRequestHeader("Accept","application/json");},
 		cache: false,
 		type:"get"
 		}).done(function(data){
