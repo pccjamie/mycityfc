@@ -69,10 +69,8 @@ $.ajax({
 
 //SETS UP MATCH
 function match_day(){
-console.log('match_day!');
+console.log('match day!');
 }
-
-
 
 // on load events
 $(function() {
