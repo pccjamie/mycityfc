@@ -26,18 +26,18 @@
 <!-- this is not dry - but for some reason on Heroku, the route to my helper method that controls class swap breaks and I can't figure out what's going on. So putting logic straight into view.-->
 
 
-<% if current_page?(url_for(:controller => 'fan_profiles')) %>
+<% if current_page?(url_for(:controller => 'devise/fan_profiles')) %>
 
 <body class="bg-fan-profiles">
 
 <% elsif %>
-<% current_page?(url_for(:controller => 'parent_profiles')) %>
+<% current_page?(url_for(:controller => 'devise/parent_profiles')) %>
 
 <body class="bg-parent-profiles">
 
 <% else %>
 
-<% current_page?(url_for(:controller => 'slides')) %>
+<% current_page?(url_for(:controller => 'devise/slides')) %>
 
 <body class="bg-slides">
 <% end %>
