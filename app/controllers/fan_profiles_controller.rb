@@ -27,9 +27,9 @@ class FanProfilesController < ApplicationController
   end
 
   def get_weather
-    state = current_user.state.gsub!(/\s{1}/o, " ")
+    state = current_user.state.gsub!(/\s{1}/o, "")
     @state = state
-    city = current_user.city.gsub!(/\s{1}/o, " ")
+    city = current_user.city.gsub!(/\s/, "")
     @city = city
     # # url = "http://wunderground.com/weather-forecast/US/#{state}/#{city}.html"
     # weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").text
