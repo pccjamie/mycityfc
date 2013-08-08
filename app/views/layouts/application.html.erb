@@ -31,10 +31,15 @@
 
 <body class="bg-fan-profiles">
 
-<%  elsif current_page?(url_for(:controller => 'parent_profiles')) %>
+<% elsif %>
+<% current_page?(url_for(:controller => 'parent_profiles')) %>
+
 <body class="bg-parent-profiles">
+
 <% else %>
+
 <% current_page?(url_for(:controller => 'slides')) %>
+
 <body class="bg-slides">
 <% end %>
 
