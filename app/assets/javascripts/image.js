@@ -5,7 +5,7 @@ var imageSearch;
 function searchComplete() {
 
   // Check that we got results
-  if (imageSearch.results && imageSearch.results.length > 0) {
+  if (imageSearch.results && imageSearch.results.length < 2) {
 
     // Grab our content div, clear it.
     var contentDiv = document.getElementById('body');
@@ -25,9 +25,12 @@ function searchComplete() {
       var newImg = document.createElement('img');
 
       // There is also a result.url property which has the escaped version
-      newImg.src = "/image-search/v1/result.tbUrl";
+      newImg.src = "/image-search/v1/result.tbUrl;";
+      console.log('my image' +newImg.src);
       imgContainer.appendChild(title);
       imgContainer.appendChild(newImg);
+
+      $('body').css('background-image','url('+ newImg.src+')');
 
       // Put our title + image in the content
       // contentDiv.appendChild(imgContainer);
