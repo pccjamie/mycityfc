@@ -20,4 +20,10 @@ resources :slides
 resources :fan_profiles, :except => [:destroy]
 resources :parent_profiles, :except => [:destroy]
 
+
+controller :application do
+  get 'layout/application' => :swap_bg
+end
+
+
 end

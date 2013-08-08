@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-include ActionView::Helpers
+# include ActionView::Helpers
 
 belongs_to :profilable, :polymorphic => true
 
