@@ -24,7 +24,7 @@ var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/?apikey=4u3
 // GET NEWS
 function espn_find_news(){
 	$.ajax({
-		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines',
+		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines?keywords=Seattle',
 		data: {
 		// enter your developer api key here
 		apikey: "4u3e6enmscdszh8qcy9dh7my",
