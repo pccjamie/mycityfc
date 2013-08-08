@@ -9,7 +9,7 @@ class FanProfilesController < ApplicationController
   
   # uncomment for  localhost testing
   #skip_before_filter :authenticate_user!
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
   
   require 'nokogiri'
   require 'open-uri'
@@ -25,9 +25,9 @@ class FanProfilesController < ApplicationController
   end
 
   def get_weather
-  	current_user
-  	state = current_user.state
-  	city = current_user.city
+  	# current_user
+  	# state = current_user.state
+  	# city = current_user.city
     #formatted_state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
     #formatted_state = state.gsub!(/ /,"")
     #formatted_city = current_user.city.gsub!(/ /, "%20")
