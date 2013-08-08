@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
 
   # before_filter :block_cache
   # def block_cache
@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
 
  
 
-  # helper :all
-  # include ApplicationHelper
+  helper :all
+  include ApplicationHelper
 
 
 
