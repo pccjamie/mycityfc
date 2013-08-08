@@ -2,7 +2,7 @@ var city = $('.current-user-city').text();
 
 // GET LEAGUES & TEAMS
 function espn_find_leagues(){
-var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/?apikey=4u3e6enmscdszh8qcy9dh7my';
+var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/location?apikey=4u3e6enmscdszh8qcy9dh7my';
 
 	$.ajax({
 		url: source_teams,
@@ -14,18 +14,6 @@ var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/?apikey=4u3
 	}).done(function(data){
 			console.log(data);
 			var results = data;
- 			var filtered = {location: "Seattle"};
- 			var answer = {};
-			$.each(results, function(ind, el) {
-    		if (typeof filtered[ind] !== 'undefined' && results[ind] === filtered[ind])
-        	combinedArr[ind] = el;
-    		console.log(combinedArr);
-});
-
-console.log(combinedArr);
-
-
-
 			console.log(results);
 			headlines = JSON.stringify(results);
 		// $.inArray(my_target, Object.keys(data))
