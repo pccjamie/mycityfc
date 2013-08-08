@@ -5,9 +5,9 @@
 	<li><%= link_to 'usa stats', slides_path %></li>
 	
 	<% if current_user.profile == 'Parent' %>
-	<li><%= link_to 'See fan - home page', fan_profiles_index_path %></li>
+	<li><%= link_to 'See fan - home page', fan_profiles_path %></li>
 	<% else %>
-	<li><%= link_to 'See soccer mom - home page', parent_profiles_index_path %></li>
+	<li><%= link_to 'See soccer mom - home page', parent_profiles_path %></li>
 	<% end %>
 
 </ul>
