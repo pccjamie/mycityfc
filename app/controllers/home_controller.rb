@@ -1,8 +1,9 @@
 class HomeController < ApplicationController
 	
 # skip_before_filter :authenticate_user!, :only => [:index]
-before_filter :authenticate_user!
-
+# before_filter :user_signed_in?
+# before_filter :authenticate_user!
+  
 	def index
    #  current_user
   	# if current_user.profile == 'Fan'
