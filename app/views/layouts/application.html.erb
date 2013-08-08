@@ -22,8 +22,24 @@
   </head>
 
 
-<body class="<%= swap_bg %>">
 
+<!-- this is not dry - but for some reason on Heroku, the route to my helper method that controls class swap breaks and I can't figure out what's going on. So putting logic straight into view.
+<body class="<%#= swap_bg %>">   -->
+
+
+<%
+  if current_page?(url_for(:controller => 'fan_profiles'))
+    body_push_class = 'bg-fan-profiles'
+  elsif
+    current_page?(url_for(:controller => 'parent_profiles'))
+    body_push_class = 'bg-parent-profiles'
+  else
+    current_page?(url_for(:controller => 'slides'))
+    body_push_class = 'bg-slides'
+  end
+%>
+
+<body>
 
 <div id="utility-bar">
   <div id="upper"><%= render partial: "/partials/login" %></div>
