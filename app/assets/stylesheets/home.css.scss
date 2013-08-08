@@ -4,7 +4,7 @@ $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.8);
 $header-text: black;
 
-body {height: 100%; width:100%; display: block;  background: #262626}
+body {height: 100%; width:100%; display: block;  background-image: asset-url('history1.jpg') }
 body.bg-default {background-image: asset-url('history1.jpg') }
 body.bg-slides {background: transparent;}
 body.bg-parent-profiles { 
