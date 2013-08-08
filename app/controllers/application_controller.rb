@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
 
  
 
-  # helper :all
-  # include ApplicationHelper
+  helper :all
+  include ApplicationHelper
 
 
 
