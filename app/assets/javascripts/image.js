@@ -10,7 +10,7 @@ function searchComplete() {
     // Grab our content div, clear it.
     var contentDiv = document.getElementById('body');
     //verifying i can change body attr
-    $('body').css('background-color','lime');
+    // $('body').css('background-color','lime');
 
     // Loop through our results, printing them to the page. 
     var results = imageSearch.results;
