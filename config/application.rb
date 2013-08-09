@@ -46,11 +46,5 @@ module Soccer1
 
 
 
-
-
-
-
-
-
   end
 end

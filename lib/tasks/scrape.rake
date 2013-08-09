@@ -5,17 +5,16 @@ task :fetch_stats => :environment do
 
   Slide.find_each do |slide|
     
-    # escaped_stat_name = CGI.escape(stat.name)
     raw_url = slide.data_url
     raw_data = Nokogiri::HTML(open(raw_url)).css('body').to_html
     slide.update_attribute(:data, raw_data)
   
   end
 
-	# private
- #      def slide_params
- #        params.require(:slide).permit!
- #      end
+	private
+      def slide_params
+        params.require(:slide).permit!
+      end
 
 
 
