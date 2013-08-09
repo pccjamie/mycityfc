@@ -9,11 +9,9 @@
 <div id="banner">
 	<div id="greeting-block-wide">
 	<header>
-		<h3>Hi</h3>
-		<h1><%= current_user.first_name %></h1>
-		<h1><%= @weather %></h1>
-		<h3>in<%= current_user.city %></h3>
-		<h2>looks like a nice day for a game!</h2>
+		<h3>Hi <%= current_user.first_name %>!</h3>
+		<h2><%= @weather %></h2>
+		<h3>in<%= current_user.city %>. Looks like a nice day for a game!</h3>
 	</header>
 	</div>
 	<section id="my-teams">
