@@ -122,7 +122,9 @@ section#my-news, section#my-kid  {height: 400px; float: left; display: inline-bl
  section#my-kid {width: 35%;}
 
 
-section#my-leagues,section#my-community {height: 400px;  width:35%; display: inline-block;position: relative; background: #1f9fff; overflow: auto;}
+#my-leagues, section#my-community {height: 400px;  width:35%; display: inline-block;position: relative; background: #1f9fff; }
+
+
 section#my-community {width: 65%;}
 
 
@@ -132,6 +134,7 @@ section#my-videos {height: 200px;  width: 100%; display: inline-block; position:
 
 .my-videos {float: left;  height: 200px; width: 300px; background: #262626; position: absolute; top: 20; right: 20; display: block;}
 
+.team {background-color: pink; padding: 10px; height: 100%; width: 100%; display: block; position: relative;}
 
 
 

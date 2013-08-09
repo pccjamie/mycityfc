@@ -1,47 +1,71 @@
-var city = $('.current-user-city').text();
+// var city = $('.current-user-city').text();
+var city = 'Seattle';
 var i = 0;
-
+var results;
+var match;
+var record;
 // FIND YOUR TEAM
-function espn_find_team() {
-	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/?apikey=4u3e6enmscdszh8qcy9dh7my';
-
+function espn_find_team(){
+	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my';
+	// console.log('entered function - espn find team');
 	$.ajax({
 		url: source_teams,
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
 			xhr.setRequestHeader("Accept", "application/json");
-		},
+			},
 		cache: false,
 		type: "get"
-	}).done(function(data) {
-		console.log(data);
+		}).done(function(data) {
+			raw = data;
+			$.each(raw.sports[0].leagues[0].teams, function(index, team){
+			console.log('This team is the ' + team.location + ' ' + team.name + ' ' + team.abbreviation);
+				
 
-		// run a function to split the league up into teams
-		for (var i = 0; i < data.length; i++) {
-			creates_a_team(i);
-		}
+				var info = [raw.sports[0].leagues[0].teams];
+				var test = $(this).attr("class","team");
+				console.log(test);
+				var links = JSON.stringify(this.links.web.teams);
+				$('#my-leagues').append("<div class=team>"+ this.location + '<br/>'+this.name +'<br/>'+ links + "</div>");
+				
+
+				// var match, all;
+				// // $.each(all, function() {
+				// //     if (this.name === city {
+				// //         match = this;
+				// //         return false;
+				// //     }
+				// // });
+
+				
+		
+
+				// $('#my-leagues').append($(this).val();
+				// $("#my-leagues").append(temp);
+				// console.log(temp);
+
+			
+			});
 		});
 }
+// //2.  MAKE A TEAM BUCKET THAT TAKES A TEAM
+// function create_a_team(i){
+// //making a container
+// 	var teambucket = $('<article>').addClass('.team').css('background-color','yellow');
+// 	console.log('set up empty containers');
+// 	//assigning a team to a container
+// 	// team.attr('id', get_team_info(i));
+// 	// //add container to the appropriate section on fans profile
+// 	$('#my-leagues .sleeve').append(single_team).html();
+// 	console.log(single_team);
+// }
 
-// 1. FIND TEAM RECORD. DISPLAY NAME
-function get_team_info(index){
-  var team_id = data[location];
-  // var id = "http://farm"+ photo.farm +".static.flickr.com/"+ photo.server +"/"+ photo.id +"_"+ photo.secret +"_m.jpg";
-  console.log(team_id);
-  return team_id;
-}
-
-// 2.  MAKE A TEAM BUCKET THAT TAKES A TEAM
-function creates_a_team(i) {
-	//making a container
-	var team = $('<article>').addClass('team');
-	//assigning a team to a container
-	team.attr('id', get_teams_info(i));
-	//add container to the appropriate section on fans profile
-	$('#my-leagues .sleeve').append(team).html();
-	console.log(team);
-	return;
-}
+// // 1. FIND TEAM RECORD. DISPLAY NAME
+// 	function get_team_info(){
+// 	console.log('entered function - get team info');
+// // 	var team_id = results[index];
+// // 	return team_id;
+// }
 
 // // GET NEWS
 // function espn_find_news() {
@@ -87,11 +111,11 @@ function creates_a_team(i) {
 // 		});
 // }
 
-//SETS UP MATCH
+// //SETS UP MATCH
 
-function match_day() {
-	console.log('match day!');
-}
+// function match_day() {
+// 	console.log('match day!');
+// }
 
 // on load events
 $(function() {
