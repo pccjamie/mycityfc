@@ -1,5 +1,7 @@
 function swap_bg() {
 
+var url = window.location.pathname;
+
 	if ($('body').hasClass('bg-fan-profiles')){
 		$(this).removeClass('bg-fan-profiles').addClass('bg-parent-profiles');
 	}

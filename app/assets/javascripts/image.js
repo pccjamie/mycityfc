@@ -45,3 +45,8 @@
 //   OnLoad();
 
 // });
+
+
+
+//USE THIS???
+  // $('body').css('background-image', 'url(' + single_image.attr('src') + ')');
