@@ -12,9 +12,16 @@ $header-text: black;
    clear: both;
 }
 
-body {height: 100%; width:100%; background-color: none; display: block;}
-body.bg-default {background-image: url(history1.jpg)}
-body.bg-slides {background: transparent;}
+body.bg-public {
+	height: 100%; width:100%; background-color: none; display: block;}
+body.bg-default {
+	position: fixed;
+	background-image: url(history1.jpg);
+	background-size: 100%;
+	background-repeat: none;}
+body.bg-slides {
+	background: transparent;
+}
 body.bg-parent-profiles { 
 	position: fixed;
 	background-image: url(kids1.jpg);
@@ -32,10 +39,15 @@ body.bg-fan-profiles {
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
 
+
 h1,h2,h3,h4,h5,p,a,li {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
 
-.app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
+body.bg-public {
+	h1,h2,h3,h4,h5,p,a,li {color: #363636;}
+}
 
+.app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
+	
 h1#logo {height:1px;margin-left:-10000px;position: relative;}
 
 table {display: block; position: relative;}
@@ -46,8 +58,7 @@ table {display: block; position: relative;}
 
 footer {height: auto; width: 100%; background-color: $bg-main; bottom:0; position: fixed; display: block; border-top: 1px solid #FFF;}
 // nav {height: auto; display: block; padding: 20px; color: #FFF}
-
-
+		
 #wrapper {height: 100%; width: 100%; padding:0; display:block; position: fixed; float: left; overflow: auto;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;}
 .sleeve {margin: 20px;}
