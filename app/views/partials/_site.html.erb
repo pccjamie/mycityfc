@@ -1,16 +1,16 @@
 <% if user_signed_in? && current_user %>
-  <ul>
-  	<li><%= current_user.profile %></li>
+<ul>
+  	<li><%= current_user.profile == 'Fan' %></li>
 	<li><%= link_to 'home', root_path %></li>
-	<li><%= link_to 'usa stats', slides_path %></li>
-	
-	<% if current_user.profile == 'Parent' %>
-	<li><%= link_to 'See fan - home page', fan_profiles_path %></li>
-	<% else %>
-	<li><%= link_to 'See soccer mom - home page', parent_profiles_path %></li>
-	<% end %>
-
+	<li><%= link_to 'soccer in the us today', slides_path %></li>
+	<li><%= link_to 'fans', fan_profiles_path %></li>
 </ul>
+<% if current_user.profile == 'Parent' %>
+	<li><%= link_to 'Fan?', fan_profiles_path %></li>
+<% else %>
+	<li><%= link_to 'See soccer mom - home page', parent_profiles_path %></li>
+</ul>
+<% end %>
 
 <% else %>
 <ul>

@@ -107,5 +107,8 @@ $(function() {
 	espn_find_team();
 	espn_find_news();
 	// youtube_find_channel();
-	match_day();
+});
+
+$( "#trigger" ).click(function() {
+$( '#match-day').slideToggle();
 });

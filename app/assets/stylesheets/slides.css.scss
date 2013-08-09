@@ -19,12 +19,12 @@
 #slideshow section img {margin: 0 auto;text-align: center;}
 // #slideshow section { color: #000000}
 
-// #slideshow #impact1 {background-image: url("<%= asset_path 'kids1.jpg' %>");}
-// #slideshow #impact2 {background-image: url("<%= asset_path 'ld.jpg' %>");}
-// #slideshow #impact3 {background-image: url("<%= asset_path 'kids4.jpg' %>");}
-// #slideshow #impact4 {background-image: url("<%= asset_path 'us_v_spain.jpg' %>");}
-// #slideshow #impact5 {background-image: url("<%= asset_path 'fans.jpg' %>");}
-// #slideshow #bird {background-image: url("<%= asset_path 'bird.jpg' %>");}
+#slideshow #impact1 {background-image: url(kids1.jpg);}
+#slideshow #impact2 {background-image: url(ld.jpg);}
+#slideshow #impact3 {background-image: url(kids4.jpg);}
+#slideshow #impact4 {background-image: url(us_v_spain.jpg);}
+#slideshow #impact5 {background-image: url(fans.jpg);}
+#slideshow #bird {background-image: url(bird.jpg);}
 
 #slideshow * .slide-info {}
 #slideshow * .slide-name{font-weight:bold}
@@ -39,24 +39,13 @@
 // strong:first-child, strong:nth-child(5){display: none;}
 // #slideshow * img, #slideshow * a {display: none}
 
-
 #myModal {height: 100px;width:200px;margin: 0 auto;}
 
 .user_details {background:rgba(135,169,181,.75); color: #fff; padding: 20px; height: auto; position: relative;}
 .user_details div {width: auto;  position: relative;}
 .user_details * h5 {display: inline;position: relative; color:#FFF;}
 
-
-// nav#site, nav#utility {display: inline-block; width: 500px}
-// nav#site{text-align: left}
-
-// nav#utility{height: auto; padding: 0; text-align: right; float: right}
-// nav#utility img {padding:2px; background: #fff;}
-
-
-aside {height:auto; background: rgba(0,0,0,.5); display: inline-block; }
-
-form {background: rgba(135,169,181,0.75); width: 300px; margin: 0 auto; padding: 20px;}
+form {background: rgba(135,169,181,0.75); width: 300px; margin: 0 auto; padding: 20px;margin: 0 auto;}
 form * {color: #464646}
 form a:hover {background:rgba(135,169,181,.75); color: #fff;}
 .form {height: auto; width: 25%; float: left; }
