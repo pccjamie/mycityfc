@@ -33,10 +33,6 @@ module Soccer1
     config.active_record.whitelist_attributes = false
   
 
-    # ENV['FB_APP_ID']
-    # ENV['FB_APP_SEC']
-
-
     config.middleware.use Rack::Cors do
       allow do
         origins '*'

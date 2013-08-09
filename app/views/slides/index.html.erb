@@ -1,4 +1,5 @@
 <h5>A look at soccer in the US</h5>
+
 <div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
 
 <% @slides.each do |slide| %>
@@ -10,19 +11,12 @@
 		<div class="slide-desc"><%= slide.desc %></div>
 		<div class="slide-citation"><%= slide.cite %></div>
 	</div>
-	
-	<figure><%= slide.data %></figure>
+	<%= slide.data.html_safe %>
+	<figure><%= slide.data.html_safe %></figure>
 
 </section>
-
 
 <% end %>
 <br/>
 <div style="clear:both">
 </div>
-
-
-
-
-
-
