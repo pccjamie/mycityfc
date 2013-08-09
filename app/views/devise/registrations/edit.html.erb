@@ -13,19 +13,22 @@
                     <!-- tab 0: choose profile -->
                     <%# if current_user.profile == nil %>
                       <section id="section" class="slide" name="slide">
+
                           <%= f.label :profile, 'Choose Profile' %>
                           <%= f.radio_button(:profile, "Fan") %>
                           <%= f.label(:profile_fan, "Fan") %>
                           <%= f.radio_button(:profile, "Parent") %>
                           <%= f.label(:profile_parent, "Parent") %>
                      
-                        <label>show current location as listed in FB and provide confirmation fields. Says, go to FB to updae this (For now)</label>
+                          <div class="clearfix"></div>
+
+                        <h3>Current Location:</h3>
+
                         <%= current_user.city %>
                         <%= current_user.state %>
                         
-
-                          <div><%= f.submit "Update" %></div>
-                          <div><%= link_to "Cancel", root_path %></div>
+                        <div><%= f.submit "Update" %></div>
+                        <div><%= link_to "Cancel", root_path %></div>
 
                      </section>
                  

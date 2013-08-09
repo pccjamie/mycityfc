@@ -9,7 +9,7 @@ class FanProfilesController < ApplicationController
   
   # uncomment for  localhost testing
   #skip_before_filter :authenticate_user!
-  # before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   
   require 'nokogiri'
   require 'open-uri'
@@ -31,13 +31,11 @@ class FanProfilesController < ApplicationController
     #formatted_state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
     #formatted_state = state.gsub!(/ /,"")
     #formatted_city = current_user.city.gsub!(/ /, "%20")
-    # weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").text
+    #weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").text
     weather = Nokogiri::HTML(open("http://weather.weatherbug.com/NY/New%20York-weather.html")).css("#divTemp").text
     @weather = weather
   	return
   end
-
-
 
   def get_leagues
     @leagues = "showing leagues"
@@ -48,7 +46,6 @@ class FanProfilesController < ApplicationController
   	@news = "showing news"
   	return
   end
-
 
   private
   def user_params
