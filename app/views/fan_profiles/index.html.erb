@@ -1,3 +1,4 @@
+<div id="trigger">Game Day!</div>
 <div id="match-day">
 	<section id="highlights">
 	<header><h1>my teams vs someone else</h1></header>
@@ -10,13 +11,16 @@
 	<header>
 		<h3>Hi</h3>
 		<h1><%#= current_user.first_name %></h1>
-		<h1><%= @weather %> in</h1>
-		<h3>forecast for <%#= current_user.city %></h3>
-		<h3>looks like a nice day for a game!</h3>
+		<h1><%= @weather %></h1>
+		<h3>in<%#= current_user.city %></h3>
+		<h2>looks like a nice day for a game!</h2>
 	</header>
 </div>
-<div id="twitter">
+<section id="my-teams">
+<div class="sleeve">
+<header><h3>MY MLS</h3></header>
 </div>
+</section>
 </div>
 </details>
 <section id="my-news">
@@ -24,13 +28,13 @@
 <header><h3>NEWS</h3></header>
 </div>
 </section>
-<section id="my-leagues">
-
-
-
+<section id="twitter">
+<div class="sleeve">
+<header><h3>Tweets and shit</h3></header>
+</div>
 </section>
 <section id="my-videos">
 <div class="sleeve">
-<header><h3>OTHER</h3></header>
+<header><h3>FIND A SUPPORTERS CLUB</h3></header>
 </div>
 </section>

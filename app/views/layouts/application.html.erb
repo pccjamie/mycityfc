@@ -25,7 +25,7 @@
 
 <!-- this is not dry - but for some reason on Heroku, the route to my helper method that controls class swap breaks and I can't figure out what's going on. So putting logic straight into view.-->
 
-<body class="bg-default">
+<body>
 
 <div id="utility-bar">
   <div id="upper"><%= render partial: "/partials/login" %></div>
@@ -39,8 +39,15 @@
   <div id="inner-wrapper">
     <%= yield %>
 </div>
+
+<footer>
+  <div class="sleeve">
+  <h5>Soccer is Fun</h5>
 </div>
-    
+</footer>    
+
+</div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

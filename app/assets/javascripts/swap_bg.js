@@ -1,16 +1,16 @@
 function swap_bg() {
 
-var url = window.location.pathname;
-
-	if ($('body').hasClass('bg-fan-profiles')){
-		$(this).removeClass('bg-fan-profiles').addClass('bg-parent-profiles');
-	}
-	if ($('body').hasClass('bg-parent_profiles')) {
-		$(this).removeClass('bg-fan-parents').addClass('bg-fan-profiles');
-	}
+ if(window.location.href.indexOf("fan") > -1) {
+        $('body').addClass('bg-fan-profiles');
+    }
+ if(window.location.href.indexOf("parent") > -1) {
+         $('body').addClass('bg-parent-profiles');
+    }
+ if(window.location.href.indexOf("slides") > -1) {
+         $('body').addClass('bg-slides');
+    }
 	return;
 }
-
 $(function() {
-	$('#utility-bar #lower').on('click', "ul li a", swap_bg);
+	swap_bg();
 });
