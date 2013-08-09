@@ -5,13 +5,13 @@
 </section>
 </div>
 <details open>
-<summary><h5>What's Happening Today?</h5></summary>
+<summary><h5>toggle</h5></summary>
 <div id="banner">
 	<div id="greeting-block-wide">
 	<header>
 		<h3>Hi <%= current_user.first_name %>!</h3>
-		<h2><%= @weather %></h2>
-		<h3>in<%= current_user.city %>. Looks like a nice day for a game!</h3>
+		<h1>It's <%= @weather %></h1>
+		<h3>at the moment. Looks like a nice day for a game!</h3>
 	</header>
 	</div>
 	<section id="my-teams">
