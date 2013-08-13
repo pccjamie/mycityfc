@@ -3,7 +3,6 @@ class MatchesController < ApplicationController
 
 
 # require 'httparty'
-
 # before_filter :authenticate_user!
 
 
