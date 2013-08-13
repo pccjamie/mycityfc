@@ -225,7 +225,7 @@ Devise.setup do |config|
 
   #OMNIAUTH FB
   require "omniauth-facebook"
-  config.omniauth :facebook, ENV['app_id'],ENV['app_sec'],{:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
+  config.omniauth :facebook, ENV['fb_app_id'],ENV['fb_app_sec'],{:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}} 
 
   #OMNIAUTH TWITTER
 
