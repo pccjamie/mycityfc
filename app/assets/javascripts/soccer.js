@@ -8,7 +8,7 @@ var entry;
 // FIND YOUR TEAM
 
 function espn_find_team() {
-	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my';
+	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey='ENV["ESPNKEY"]'';
 	// console.log('entered function - espn find team');
 	$.ajax({
 		url: source_teams,
@@ -40,33 +40,33 @@ function espn_find_team() {
 });
 }
 
-// // GET NEWS
-function espn_find_news() {
-	$.ajax({
-		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/',		
-		data: {
-		apikey: "4u3e6enmscdszh8qcy9dh7my",
-		_accept: "application/json"
-		},
-		dataType: "jsonp",
-		beforeSend: function(xhr) {
-			xhr.setRequestHeader("Accept", "application/json");
-		},
-		cache: false,
-		type: "get"
-	}).done(function(data) {
-		raw = data;
-		// $.each(raw.headlines[0].categories[2], function(index, team) {
-		// console.log('This team has a headline: ' + team.headline);
+// // // GET NEWS
+// function espn_find_news() {
+// 	$.ajax({
+// 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/',		
+// 		data: {
+// 		apikey: "4u3e6enmscdszh8qcy9dh7my",
+// 		_accept: "application/json"
+// 		},
+// 		dataType: "jsonp",
+// 		beforeSend: function(xhr) {
+// 			xhr.setRequestHeader("Accept", "application/json");
+// 		},
+// 		cache: false,
+// 		type: "get"
+// 	}).done(function(data) {
+// 		raw = data;
+// 		// $.each(raw.headlines[0].categories[2], function(index, team) {
+// 		// console.log('This team has a headline: ' + team.headline);
 
-		$.each(raw.headlines, function(index, team) {
-			var info = [raw.headlines];
-			// var info = [raw.headlines[0].categories[2].teams];
-			var test = $(this).attr("class", "team-headline");
-			$('#my-news .sleeve').append("<div class=team-headline>" + this.headline + "</div>");
-		});
-	});
-}
+// 		$.each(raw.headlines, function(index, team) {
+// 			var info = [raw.headlines];
+// 			// var info = [raw.headlines[0].categories[2].teams];
+// 			var test = $(this).attr("class", "team-headline");
+// 			$('#my-news .sleeve').append("<div class=team-headline>" + this.headline + "</div>");
+// 		});
+// 	});
+// }
 
 // GET VIDEOS
 function youtube_find_channel(){
