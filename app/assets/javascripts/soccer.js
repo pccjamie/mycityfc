@@ -8,10 +8,14 @@ var entry;
 // FIND YOUR TEAM
 
 function espn_find_team() {
-	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey="ENV["ESPNKEY"]"';
+	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/';
 	// console.log('entered function - espn find team');
 	$.ajax({
 		url: source_teams,
+		data: {
+		apikey: ENV["ESPNKEY"],
+		_accept: "application/json"
+		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
 			xhr.setRequestHeader("Accept", "application/json");
