@@ -13,7 +13,7 @@ function espn_find_team() {
 	$.ajax({
 		url: source_teams,
 		data: {
-		apikey: ENV["ESPNKEY"],
+		apikey: 'ENV["ESPNKEY"]',
 		_accept: "application/json"
 		},
 		dataType: "jsonp",
