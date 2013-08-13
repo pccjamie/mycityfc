@@ -8,12 +8,12 @@
 // // FIND YOUR TEAM
 
 // function espn_find_team() {
-// 	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/';
+// 	var source_teams = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 // 	// console.log('entered function - espn find team');
 // 	$.ajax({
 // 		url: source_teams,
 // 		data: {
-// 		apikey: 'ENV["ESPNKEY"],
+// 		apikey: '4u3e6enmscdszh8qcy9dh7my',
 // 		_accept: "application/json"
 // 		},
 // 		dataType: "jsonp",
@@ -25,52 +25,45 @@
 // 	}).done(function(data) {
 // 		raw = data;
 // 		$.each(raw.sports[0].leagues[0].teams, function(index, team) {
-// 			console.log('This team is the ' + team.location + ' ' + team.name + ' ' + team.abbreviation);
-// 			var info = [raw.sports[0].leagues[0].teams];
-// 			var test = $(this).attr("class", "team");
-// 			console.log(test);
-// 			var links = JSON.stringify(this.links.web.teams);
-// 			// var espn_link = links.replace(/{"href":"//,'');
-// 			$('#my-teams .sleeve').append("<div class=team>" + this.location + ' ' + this.name + '<br/>' + links + "</div>");
+// 			var links = this.links[0][1];
+// 			// console.log(team_links);
+// 			// var test = $(this).attr("class", "team");
+// 			// var links = $.each(info);
+// 			var clickable = JSON.stringify(links);
+// 			// // // var espn_link = links.replace(/{"href":"//,'');
+// 			$('#my-teams .sleeve').append("<div class=team>" + this.location + this.name + clickable + "</div>");
+// 			});
 // 		});
-
-// 	// // var match;
-// 	// // $.each(test, function() {
-// 	// // 	if (this.location:contains('Seattle') {
-// 	// // 		match = this;
-// 	// // 		return false;
-// 	// // 	}
-// 	// });
-// });
+			
 // }
 
-// // // // GET NEWS
-// // function espn_find_news() {
-// // 	$.ajax({
-// // 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/',		
-// // 		data: {
-// // 		apikey: "4u3e6enmscdszh8qcy9dh7my",
-// // 		_accept: "application/json"
-// // 		},
-// // 		dataType: "jsonp",
-// // 		beforeSend: function(xhr) {
-// // 			xhr.setRequestHeader("Accept", "application/json");
-// // 		},
-// // 		cache: false,
-// // 		type: "get"
-// // 	}).done(function(data) {
-// // 		raw = data;
-// // 		// $.each(raw.headlines[0].categories[2], function(index, team) {
-// // 		// console.log('This team has a headline: ' + team.headline);
+// // GET NEWS
+// function espn_find_news() {
+// 	$.ajax({
+// 		url: "http://api.espn.com/v1/sports/soccer/usa.1/news/",
+// 		data: {
+// 		apikey: "4u3e6enmscdszh8qcy9dh7my",
+// 		_accept: "application/json"
+// 		},
+// 		dataType: "jsonp",
+// 		beforeSend: function(xhr) {
+// 			xhr.setRequestHeader("Accept", "application/json");
+// 		},
+// 		cache: false,
+// 		type: "get"
+// 	}).done(function(data) {
+// 		raw = data;
+// 		// $.each(raw.headlines[0].categories[2], function(index, team) {
+// 		// console.log('This team has a headline: ' + team.headline);
 
-// // 		$.each(raw.headlines, function(index, team) {
-// // 			var info = [raw.headlines];
-// // 			// var info = [raw.headlines[0].categories[2].teams];
-// // 			var test = $(this).attr("class", "team-headline");
-// // 			$('#my-news .sleeve').append("<div class=team-headline>" + this.headline + "</div>");
-// // 		});
-// // 	});
-// // }
+// 		$.each(raw.headlines, function(index, team) {
+// 			var info = [raw.headlines];
+// 			// var info = [raw.headlines[0].categories[2].teams];
+// 			var test = $(this).attr("class", "team-headline");
+// 			$('#my-news .sleeve').append("<div class=team-headline>" + this.headline + "</div>");
+// 		});
+// 	});
+// }
 
 // // GET VIDEOS
 // function youtube_find_channel(){

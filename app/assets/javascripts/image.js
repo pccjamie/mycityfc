@@ -1,52 +1,70 @@
-// google.load('search', '1');
+google.load('search', '1');
 
-// var imageSearch;
+// var remote = "https://www.google.com";
 
-// function searchComplete() {
+$(location).attr('href');
 
-//   // // Check that we got results
-//   // if (imageSearch.results && imageSearch.results.length > 0) {
+var imageSearch;
 
-//     // Grab our content div, clear it.
-//     var contentDiv = document.getElementById('body');
-//     //verifying i can change body attr
-//     // $('body').css('background-color','lime');
+function searchComplete() {
 
-//     // Loop through our results, printing them to the page. 
-//     var results = imageSearch.results;
-//     // newImg.src = "/image-search/v1/result.url;";
-//       // Put our title + image in the content
-//       // contentDiv.appendChild(imgContainer);
-//     var image = results[Math.floor(Math.random() * results.length)];
-//      image.src = "/image-search/v1/image.url;";
-//      console.log(image.src);
-//     // $('body').css('background','url('+ url +')');
-//   }
+// Grab our content div, clear it.
+          var contentDiv = document.getElementById('content');
+          contentDiv.innerHTML = '';
 
-// function OnLoad() {
+          // all the results
+          var results = imageSearch.results;
+          result = results[Math.floor(Math.random() * results.length + 1)];
+          for (var i = 0; i < results.length; i++) {
+            // For each result write it's title and image to the screen
+            var result = results[i];
+            var imgContainer = document.createElement('div');
+            var title = document.createElement('div');
 
-//   // Create an Image Search instance.
-//   imageSearch = new google.search.ImageSearch();
+           
+            // We use titleNoFormatting so that no HTML tags are left in the 
+            // title
+            title.innerHTML = result.titleNoFormatting;
+            console.log(result.href);
+            var newImg = document.createElement('img');
 
-//   // Set searchComplete as the callback function when a search is 
-//   // complete.  The imageSearch object will have results in it.
-//   imageSearch.setSearchCompleteCallback(this, searchComplete, null);
+            // There is also a result.url property which has the escaped version
+					console.log(newImg.src="/image-search/v1/result.url");
 
-//   // Find me a beautiful car.
-//   imageSearch.execute("Seattle Mariners");
+            imgContainer.appendChild(title);
+            imgContainer.appendChild(newImg);
 
-//   // Include the required Google branding
-//   // google.search.Search.getBranding('branding');
-// }
-// google.setOnLoadCallback(OnLoad);
+            var source = newImg.src;
+            // Put our title + image in the content
+            contentDiv.appendChild(imgContainer);
+            console.log(contentDiv);
+            //and make it the body bg
+            $('body').css('background-image','none');
+            $('body').css('background-image', 'url('+ source +')');
 
-// $(function (){
+          }
 
-//   OnLoad();
+  }
 
-// });
+function OnLoad() {
 
+  // Create an Image Search instance.
+  imageSearch = new google.search.ImageSearch();
 
+  // Set searchComplete as the callback function when a search is 
+  // complete.  The imageSearch object will have results in it.
+  imageSearch.setSearchCompleteCallback(this, searchComplete, null);
 
-//USE THIS???
-  // $('body').css('background-image', 'url(' + single_image.attr('src') + ')');
+  // Find me a beautiful car.
+  imageSearch.execute("Seattle Sounders");
+
+  // Include the required Google branding
+  // google.search.Search.getBranding('branding');
+}
+google.setOnLoadCallback(OnLoad);
+
+$(function (){
+
+  OnLoad();
+
+});

@@ -39,9 +39,6 @@ class FanProfilesController < ApplicationController
 
   def get_leagues
     @leagues = "showing leagues"
-    respond_to do |format|
-      format.js.erb   {}
-  end
  		return
   end
 
