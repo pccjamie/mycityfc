@@ -1,6 +1,7 @@
 $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.5);
 $header-text: #363636;
+$bg-footer: rgba(0,0,0,.75);
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -10,8 +11,9 @@ $header-text: #363636;
    clear: both;
 }
 
-body.bg-public {
-	background-color: none;
+body.default {
+	background-image: url(closeup.jpg);
+	background-size: 100%;
 }
 body.bg-default {
 	background-image: url(history1.jpg);
@@ -31,10 +33,14 @@ body {
 	background-repeat: none;display: block;
 }
 
+body.default * form {background: $bg-footer;}
+
+body.default * form * {color: #FFF}
+
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
 
-h1,h2,h3,h4,h5,p,a,li {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
+h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
 
 body.bg-public {
 	h1,h2,h3,h4,h5,p,a,li {color: #363636;}
@@ -46,16 +52,24 @@ h1#logo {height:1px;margin-left:-10000px;position: relative;}
 
 table {display: block; position: relative;}
 
-// header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 
+/* BEHAVIOR */
+
+.pending {display: none}
+
+// header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
-footer {height: auto; width: 100%; background-color: $bg-main; bottom:0; position: fixed; display: block; border-top: 1px solid #FFF;}
+footer {height: auto; width: 100%; background-color: $bg-footer; bottom:0; position: absolute; display: block; }
 // nav {height: auto; display: block; padding: 20px; color: #FFF}
 		
 #wrapper {height: 100%; width: 100%; padding:0; display:block; position: fixed; float: left; overflow: auto;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;}
+
+#inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
+
 .sleeve {margin: 20px;}
+
 .inner {margin: 20px;}
 
 /* toggle match day */
@@ -124,7 +138,13 @@ section#my-news {
 	width: 65%;
 	.team-headline {height: auto; color: #F1f1f1; padding: 10px 0;}
 	.team-headline:first-of-type {background: #FFF;color: #000; padding:10px; font-size:1.5em;}
+
+
+
 }
+
+	.team-link {background: red; color: #000; padding:10px; font-size:1.5em;}
+
 
 section#my-kid {width: 50%;}
 
@@ -140,3 +160,29 @@ section#training {height: 400px; background: red}
 .team:first-of-type {padding: 10px;background: white; color:#1f9fff; font-size: 2em; }
 //temp hide until filter works
 .team:not(:first-of-type){ display: none;}
+
+form {background: rgba(135,169,181,0.75); max-height: 300px; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
+form #slideshow section {height: 220px}
+form #slideshow.modal * {position: relative;}
+
+form #slideshow.modal * .sleeve {height: 100px; text-align: center;}
+form #slideshow.modal * .sleeve aside {height: 60px; display: inline-block; }
+form #slideshow.modal * .button {position: relative; }
+
+
+form {background: 0}
+form.standard {background-color: $bg-main}
+
+form * {color: #363636;}
+form * input.button {margin: 0}
+form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; border: 0; position: relative;}
+form * .button:hover {background: #f9f9f9;color: teal}
+
+form #slideshow.modal .button {width: 100%;}
+// form a:hover {background:rgba(135,169,181,.75); color: #fff;}
+// .form {height: auto; width: 25%; float: left; }
+// .form  {color: #FFF}
+
+#utility-bar  * :hover {color: orange}
+
+

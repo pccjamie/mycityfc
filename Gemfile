@@ -82,13 +82,14 @@ gem 'rack-cors', :require => 'rack/cors'
 
 ###CONTENT DELIVERY
 
+#vids
+
 #bg image
 gem "flickr.rb", "~> 1.1.0"
 
 #scraping, json, etc
 gem 'httparty'
 gem 'nokogiri'
-
 gem 'twitter'
 
 #geocoding

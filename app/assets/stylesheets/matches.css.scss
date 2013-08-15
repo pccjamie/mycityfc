@@ -1,3 +1,13 @@
 // Place all the styles related to the Matches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#match-day {padding:20px}
+#match-day section {height: auto; max-height: 800px; width:600px; display:inline-block; background: red}
+
+#match-day section {}
+
+#match-day aside {height: auto; height: 800px; width: 300px; float:left; background: purple; display:inline-block;}
+
+
+#match-day aside details {margin: 20px; }

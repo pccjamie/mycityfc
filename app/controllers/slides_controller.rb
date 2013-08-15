@@ -27,6 +27,9 @@ class SlidesController < ApplicationController
 	def update
 	end
 
+	def destroy
+	end
+
 
 	#if i use strong params now and remove attr_accessible from model, will that 
 

@@ -7,7 +7,7 @@
 #slideshow section {padding: 20px; height:400px; width: 100%; background: #f1f1f1; display: block; position: relative;margin: 0 auto; }
 #slideshow section:nth-child(even) {background: #f2f2f2}
 #slideshow section figure {float: right;}
-#slideshow * {color: #262626; letter-spacing:5px;text-shadow: none;}
+#slideshow * {letter-spacing:5px;text-shadow: none;}
 
 /* custom user view */
 #slideshow h3 { font-size: 40px;  display: inline-block;}
@@ -28,24 +28,16 @@
 #slideshow * .slide-citation {position: absolute; bottom: 20px; left: 20px}
 #slideshow * .figure {width: 50%; float: right}
 #slideshow * .slide-info, #slideshow * figure {display: inline-block; width: 40%;}
-#slideshow * {color: red}
 #slideshow * figure img {display: none}
 
 /* filter out nonsense from the scraped data that Nokogiri didn't pick up.*/
 // strong:first-child, strong:nth-child(5){display: none;}
 // #slideshow * img, #slideshow * a {display: none}
 
-#myModal {height: 100px;width:200px;margin: 0 auto;}
-
 .user_details {background:rgba(135,169,181,.75); color: #fff; padding: 20px; height: auto; position: relative;}
 .user_details div {width: auto;  position: relative;}
 .user_details * h5 {display: inline;position: relative; color:#FFF;}
 
-form {background: rgba(135,169,181,0.75); width: 300px; margin: 0 auto; padding: 20px;margin: 0 auto;}
-form * {color: #464646}
-form a:hover {background:rgba(135,169,181,.75); color: #fff;}
-.form {height: auto; width: 25%; float: left; }
-.form  {color: #FFF}
 
 
 

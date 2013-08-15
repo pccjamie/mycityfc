@@ -1,20 +1,32 @@
-<% if user_signed_in? && current_user %>
-<ul>
-  <li>Hi,</li>
+<% if user_signed_in? %>
+
+<ul class="private">
+
   <li><%= current_user.first_name %></li>
   <li class="current-user-city"><%#= current_user.city %></li>
-  <li><%= image_tag current_user.picture %></li>
-  <li><%= link_to "Sign Out", destroy_user_session_path %></li>
+  <li><%= image_tag current_user.picture %>
+      <li><%= link_to('My Account', edit_user_registration_path) %></li>
+      <li><%= link_to('Logout', destroy_user_session_path)%></li>
+  
+  </li>
+
 </ul>
-
-  <% else %>
-
-<ul>
-  <!--<span>Log In:</span>-->        
-  <%#= link_to "Sign In", new_user_session_path %>
-  <li><%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%></li>
-</ul>
+      <li><%= link_to('Logout', destroy_user_session_path)%></li>
 
 
+<% else %>
+
+<ul class="public">
+  <li><%= link_to('Login', new_user_session_path)  %> </li> 
+  <li><%= link_to('Register', new_user_registration_path)  %></li>
+  
+  <% if root_path %>
+  
+  <%else%>
+   <li><%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%></li>
   <%end%>
+</ul>
+
+
+<%end%>
 

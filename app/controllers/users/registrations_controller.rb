@@ -1,10 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
-
-# def edit
-#   @user = User.find(params[:id])
-# end
-
  def update
     # required for settings form to submit when password is left blank
  
@@ -24,14 +19,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render "edit"
     end
   end
-
-
-  # def deletes_registration_record
-  # 	  @user = User.find(current_user.id)
-  # 	  @user = User.delete
-  # 	  redirect_to root_path
-  # end
-
 
 private
       def profile_params

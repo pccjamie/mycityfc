@@ -1,80 +1,92 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
 
-        <!--setting up edit to be inside a slideshow (later iside a modal slideshow) that only appears on initial reg  (or login if db has nils)-->
+<%= devise_error_messages! %>
 
-      <div id="slideshow" class="cycle-slideshow" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
+      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
 
                   <% if user_signed_in? %>
-                  <%# if user_signed_in? && (current_user.profile || current_user.location) == nil %>
+                  <%# if user_signed_in? && current_user.profile == nil %>
                     
-                    <!-- tab 0: choose profile -->
-                    <%# if current_user.profile == nil %>
+                    <!-- tab 1: choose a profile -->
                       <section id="section" class="slide" name="slide">
 
-                          <%= f.label :profile, 'Choose Profile' %>
-                          <%= f.radio_button(:profile, "Fan") %>
-                          <%= f.label(:profile_fan, "Fan") %>
-                          <%= f.radio_button(:profile, "Parent") %>
-                          <%= f.label(:profile_parent, "Parent") %>
-                     
-                          <div class="clearfix"></div>
+                        <div class="sleeve">
+                              
+                              <h5><%= f.label :profile, 'Choose Profile' %></h5>
+                              
+                              <aside class="left">
+                              <%= f.radio_button(:profile, "Fan") %>
+                              <%= f.label(:profile_fan, "Fan") %>
+                              </aside>
 
-                        <h3>Current Location:</h3>
+                              <aside class="right">
+                              <%= f.radio_button(:profile, "Parent") %>
+                              <%= f.label(:profile_parent, "Parent") %>
+                              </aside>
 
-                        <%= current_user.city %>
-                        <%= current_user.state %>
+                        </div>
+
+                        <div class="clearfix"></div>  
+
+                        <%= f.submit "Confirm", :class=>'button' %><div><%#= link_to "Cancel", root_path %></div>
+                       
+                      </section>
+
+
+                      <section id="section" class="slide pending" name="slide">
+                        <div class="sleeve">
+                        <h5>Location:</h5>
+                        <p>
+                        <%= current_user.city %>,
+                        <%= current_user.state %></p>
+                        </div>
+                        <!--inputs pending -->
                         
-                        <div><%= f.submit "Update" %></div>
-                        <div><%= link_to "Cancel", root_path %></div>
 
-                     </section>
+                        <%= f.submit "Confirm", :class=>'button' %>
+                      <div><%#= link_to "Cancel", root_path %></div>
+                      
+
+                      </section>  
+
+                    
+                      
                  
-                    <!-- tab 0: confirm location -->
-                   
-
-                  <% else %>
-
+                    
+                    <!-- tab 2: confirm location -->
                     <!-- tab 3: normal -->
-                    <section id="section" class="slide" name="slide">
+                   
+                      <!--<section id="section" class="slide" name="slide">
 
-                      <div><%= f.label :email %><br />
-                      <%= f.email_field :email, :autofocus => true %></div>
+                      <div><%#= f.label :email %><br />
+                      <%#= f.email_field :email, :autofocus => true %></div>
 
-                      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                      <% end %>
+                      <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                        <div>Currently waiting confirmation for: <%#= resource.unconfirmed_email %></div>
+                      <%# end %>
 
-                      <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-                      <%= f.password_field :password, :autocomplete => "off" %></div>
+                      <div><%#= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+                      <%#= f.password_field :password, :autocomplete => "off" %></div>
 
-                      <div><%= f.label :password_confirmation %><br />
-                      <%= f.password_field :password_confirmation %></div>
+                      <div><%#= f.label :password_confirmation %><br />
+                      <%#= f.password_field :password_confirmation %></div>
 
-                      <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-                      <%= f.password_field :current_password %></div>
+                      <div><%#= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                      <%#= f.password_field :current_password %></div>
 
-                    </section>
-
-                    <section id="section" class="slide" name="slide">
-                      <h1>some other stuff!</h1>
-                    </section>
-
-                    <div><%= f.submit "Update" %></div>
-
-
-
+                    </section>-->
+                   
                 <% end %>
 
       </div> <!--slideshow-->
 
 <% end %> <!-- form -->
 
-<!-- <h3>Cancel my account</h3>
- -->
 
-<p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<!-- <h3>Cancel my account</h3>-->
+<!--<p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>-->
 
 <%#= link_to "Back", :back %>

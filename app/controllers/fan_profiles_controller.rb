@@ -7,9 +7,9 @@ class FanProfilesController < ApplicationController
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
   
-  # uncomment for  localhost testing
-  #skip_before_filter :authenticate_user!
-  #before_filter :authenticate_user!
+  # uncomment for localhost testing
+  # skip_before_filter :authenticate_user!
+  # before_filter :authenticate_user!
   
   require 'nokogiri'
   require 'open-uri'

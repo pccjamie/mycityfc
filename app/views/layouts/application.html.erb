@@ -14,40 +14,55 @@
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=BenchNine|Pathway+Gothic+One|Numans|Carrois+Gothic+SC|Inconsolata' %>
-
     <%= javascript_include_tag "https://www.google.com/jsapi" %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=BenchNine|Pathway+Gothic+One|Numans|Carrois+Gothic+SC|Inconsolata' %>
 
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
 <!-- replace with helper method. already written but path on Heroku breaks for some reason. BG change controlled by JS instead.-->
-
-<body>
-
+ 
+<body class="default">
+<% current_uri = request.env['PATH_INFO'] %>
+<% if current_uri == request.path %>
 <div id="utility-bar">
+ <div class="sleeve"><header><h3>Soccer Is Fun. Come Play!</h3></header></div>
+</div>
+<% else %>
+<div id="utility-bar public">
   <div id="upper"><%= render partial: "/partials/login" %></div>
   <div id="lower"><%= render partial: "/partials/site" %></div>
 </div>
-
+<% end %>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
 
 <div id="wrapper">
+  <% if current_uri == request.path %>
+  <% else %>
   <div id="inner-wrapper">
+  <% end %>
     <%= yield %>
+  <% else %>
+  <div id="inner-wrapper public">
+
+
+
+
 </div>
 
 <footer>
   <div class="sleeve">
 
-
+  <aside class="left">
+  <%= render partial: "/partials/login" %>
+   <h1>MYCITYFC.COM</h1>
+  </aside>
+  <aside class="right">
   <h5>Soccer is Fun</h5>
-  <h1>MYCITYFC.COM</h1>
-
-
-  <h6>jamie yu -ramos -2013. all rights reserved</h6>
+  <h6>jamie yu-ramos 2013. all rights reserved</h6>
+  </aside>
 
 </div>
 </footer>    
