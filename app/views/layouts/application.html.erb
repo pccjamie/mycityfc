@@ -24,29 +24,29 @@
 <!-- replace with helper method. already written but path on Heroku breaks for some reason. BG change controlled by JS instead.-->
  
 <body class="default">
-<% current_uri = request.env['PATH_INFO'] %>
-<% if current_uri == request.path %>
-<div id="utility-bar">
+<%# current_uri = request.env['PATH_INFO'] %>
+<%# if current_uri == request.path %>
+<!-- <div id="utility-bar">
  <div class="sleeve"><header><h3>Soccer Is Fun. Come Play!</h3></header></div>
-</div>
-<% else %>
+</div> -->
+<%# else %>
 <div id="utility-bar public">
   <div id="upper"><%= render partial: "/partials/login" %></div>
   <div id="lower"><%= render partial: "/partials/site" %></div>
 </div>
-<% end %>
+<%# end %>
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
 
 <div id="wrapper">
-  <% if current_uri == request.path %>
-  <% else %>
+  <%# if current_uri == request.path %>
+  <%# else %>
   <div id="inner-wrapper">
-  <% end %>
+  <%# end %>
     <%= yield %>
-  <% else %>
-  <div id="inner-wrapper public">
-
+  <%# else %>
+<!--   <div id="inner-wrapper public">
+ -->
 
 
 
