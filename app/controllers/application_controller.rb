@@ -14,11 +14,8 @@ class ApplicationController < ActionController::Base
   #   response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   # end
 
-  # helper :all
+  #helper :all
   # include ApplicationHelper
-
-
-
 
   after_filter :set_access_control_headers
   def set_access_control_headers

@@ -5,5 +5,7 @@
 /*SPECIAL*/
 
 
-#my-teams {overflow: auto};
-#my-teams * .team, #my-teams * a {color: #262626; display: none; background:0};
+#my-teams, #my-news {overflow: auto};
+#my-teams * a {color: #262626; display: none; background:0};
+#my-teams * .team {display: none};
+#my-teams * .hideme {display: none};

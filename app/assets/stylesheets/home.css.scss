@@ -1,7 +1,7 @@
 $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.5);
 $header-text: #363636;
-$bg-footer: rgba(0,0,0,.75);
+$bg-dark: rgba(0,0,0,.75);
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -10,6 +10,8 @@ $bg-footer: rgba(0,0,0,.75);
    height: 0;
    clear: both;
 }
+
+.notice, .alert {background: orange; color: white;}
 
 body.default {
 	background-image: url(closeup.jpg);
@@ -33,7 +35,7 @@ body {
 	background-repeat: none;display: block;
 }
 
-body.default * form {background: $bg-footer;}
+body.default * form {background: $bg-dark;}
 
 body.default * form * {color: #FFF}
 
@@ -60,17 +62,23 @@ table {display: block; position: relative;}
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
-footer {height: auto; width: 100%; background-color: $bg-footer; bottom:0; position: absolute; display: block; }
+footer {height: auto; width: 100%; background-color: $bg-dark; position: relative; float: left; display: block; }
 // nav {height: auto; display: block; padding: 20px; color: #FFF}
 		
-#wrapper {height: 100%; width: 100%; padding:0; display:block; position: fixed; float: left; overflow: auto;}
+#wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;}
 
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
 .sleeve {margin: 20px;}
-
 .inner {margin: 20px;}
+
+header#splash {
+
+	h1 {font-size: 90px;}
+	h2 {font-size: 30px; background: $bg-dark;}
+}
+
 
 /* toggle match day */
 
@@ -157,9 +165,9 @@ section#my-videos {height: 700px;  width: 100%; display: block; position: relati
 section#training {height: 400px; background: red}
 
 .team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF}
-.team:first-of-type {padding: 10px;background: white; color:#1f9fff; font-size: 2em; }
+.team {padding: 10px;background: white; color:#1f9fff; font-size: 2em; }
 //temp hide until filter works
-.team:not(:first-of-type){ display: none;}
+// .team:not(:first-of-type){ display: none;}
 
 form {background: rgba(135,169,181,0.75); max-height: 300px; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 form #slideshow section {height: 220px}

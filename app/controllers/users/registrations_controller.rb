@@ -1,8 +1,10 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
+#IMPORTANT: If editing ANY part of this file, must restart server after saving.
+
  def update
     # required for settings form to submit when password is left blank
- 
+    #user_signed_in? #&&
     current_user
     if params[:user][:password].blank?
       params[:user].delete("password")

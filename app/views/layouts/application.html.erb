@@ -16,7 +16,6 @@
   	<%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "https://www.google.com/jsapi" %>
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=BenchNine|Pathway+Gothic+One|Numans|Carrois+Gothic+SC|Inconsolata' %>
-
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
@@ -35,6 +34,7 @@
   <div id="lower"><%= render partial: "/partials/site" %></div>
 </div>
 <%# end %>
+  
    <p class="notice"><%= notice %></p>
    <p class="alert"><%= alert %></p>
 
@@ -45,26 +45,21 @@
   <%# end %>
     <%= yield %>
   <%# else %>
-<!--   <div id="inner-wrapper public">
- -->
-
-
-
-</div>
+  <!--   <div id="inner-wrapper public">
+   -->
+  </div>
 
 <footer>
   <div class="sleeve">
-
-  <aside class="left">
-  <%= render partial: "/partials/login" %>
-   <h1>MYCITYFC.COM</h1>
-  </aside>
-  <aside class="right">
-  <h5>Soccer is Fun</h5>
-  <h6>jamie yu-ramos 2013. all rights reserved</h6>
-  </aside>
-
-</div>
+      <aside class="left">
+      <%= render partial: "/partials/login" %>
+       <h1>MYCITYFC.COM</h1>
+      </aside>
+      <aside class="right">
+      <h5>Soccer is Fun</h5>
+      <h6>jamie yu-ramos 2013. all rights reserved</h6>
+      </aside>
+  </div>
 </footer>    
 
 </div>

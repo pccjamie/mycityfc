@@ -32,6 +32,7 @@ gem 'zurb-foundation', '~> 4.0.0'
 
 
 	
+gem "trollop", "~> 2.0"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -96,8 +97,7 @@ gem 'twitter'
 gem 'geocoder'
 
 #utility
-# gem "activesupport", "~> 3.1.1"
-
+gem "activesupport"   #, "~> 3.1.1"
 #forecast
 gem 'forecast_io'
   
@@ -111,14 +111,14 @@ gem 'forecast_io'
   gem 'annotate'
 
 # #test
-#   gem 'factory_girl_rails'
-#   gem 'rspec-rails'
-#   gem 'shoulda-matchers'
-#   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
-#   gem 'cucumber-rails', :require => false
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'cucumber-rails', :require => false
 #   gem 'launchy'
-#   gem 'database_cleaner'
-#   gem 'guard-rspec'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
 #   gem 'faker'
 
 # group :development do

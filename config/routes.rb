@@ -12,11 +12,9 @@ get "users/edit", :to => "users/registrations#edit"
 #   get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
 # end
 
-resources :home, :only => [:index]
-
-root :to => "home#index"
-
-resources :slides
+resources :home, :only => [:index, :splash]
+root :to => "home#splash"
+resources :slides, :except => [:destroy]
 resources :fan_profiles, :except => [:destroy]
 resources :parent_profiles, :except => [:destroy]
 
