@@ -1,7 +1,6 @@
 // GET VIDEOS
 
 // function youtube_find_channel() {
-
 // 	$.ajax({
 // 		url: 'http://www.youtube.com/user/mls?&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&part=player',
 // 		data: {
@@ -21,9 +20,7 @@
 
 
 //SETS UP MATCH
-
 function match_day() {
-
 	console.log('Match Day! Slide down!');
 	// if (#schedule.has(now)){
 	// $('match-day').css('display','block');
@@ -32,9 +29,7 @@ function match_day() {
 
 // on load events
 $(function() {
-
 	youtube_find_channel();
-
 });
 
 $("#trigger").click(function() {

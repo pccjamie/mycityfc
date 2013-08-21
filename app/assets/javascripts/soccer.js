@@ -76,19 +76,12 @@ function espn_find_news() {
 		
 			$('#my-news .sleeve').append("<div class=team-headline>" + headline.title + "</div>");
 
-			// $("#my-news * .sleeve:contains('usa.1')").remove();
-			// $("#my-news * .sleeve:contains('" + city + "')").css("display", "block");
-			// $("#my-news * br").remove();
-
-
-
 		});
 	});
 }
 
 // ON LOAD
 $(function() {
-	//espn_find_team();
 	find_team_info();
 	espn_find_news();
 });
