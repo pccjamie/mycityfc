@@ -2,6 +2,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 #IMPORTANT: If editing ANY part of this file, must restart server after saving.
 
+before_filter :authenticate_user!
+
  def update
     # required for settings form to submit when password is left blank
     #user_signed_in? #&&
