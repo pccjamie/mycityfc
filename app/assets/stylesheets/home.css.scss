@@ -167,9 +167,7 @@ section#my-kid {width: 50%;}
 section#twitter, section#my-community {height: 400px;  width:35%; display: inline-block;position: relative; 	background: rgba(31, 159, 255, .75); overflow-y: auto; overflow-x:none}
 
 section#my-community {width: 50%;}
-
-section#my-videos {height: 700px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.9); clear:both}
-
+section#my-videos, section#fans {height: 700px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.75); clear:both; float: left}
 section#training {height: 400px; background: red}
 
 
