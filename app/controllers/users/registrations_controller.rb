@@ -31,4 +31,8 @@ private
         params.require(:user).permit!
       end     
 
+      def teams_params
+        params.require(:team).permit!
+      end     
+
 end
