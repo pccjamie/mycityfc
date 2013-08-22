@@ -8,4 +8,6 @@
 #my-teams, #my-news {overflow: auto};
 #my-teams * a {color: #262626; display: none; background:0};
 #my-teams * .team {display: none};
-#my-teams * .hideme {display: none};
+#my-teams * .hideme {display: none};	
+
+#my-teams * a {background: rgba(255,255,255,0.5)}

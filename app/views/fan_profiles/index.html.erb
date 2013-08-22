@@ -19,8 +19,8 @@
 <div id="banner">
 	<div id="greeting-block-wide">
 	<header>
-		<h3>Hi <%= current_user.first_name %>!</h3>
-		<h1>It's <%#= @weather %></h1>
+		<h3>Hi <%#= current_user.first_name %>!</h3>
+		<h1>It's <%= @weather %></h1>
 		<h3>at the moment. Looks like a nice day for a game!</h3>
 	</header>
 	</div>
@@ -29,12 +29,12 @@
 	<header><h3>MLS Teams Near You!</h3></header>	
 	<nav></nav>
 	</div>
-
+<!-- 
 	<div id="geo">
-		<% @myteams.each do |t| %>
-		<%= t.name %>
-		<% end %>
-	</div>
+		<%# @myteams.each do |t| %>
+		<%#= t.name %>
+		<%# end %>
+	</div> -->
 
 	</section>
 
@@ -51,7 +51,7 @@
 </section>
 <section id="twitter">
 <div class="sleeve">
-<header><h3>Tweets and shit</h3></header>
+<header><h3>INTERACT WITH PLAYERS</h3></header>
 <article></article>
 </div>
 </section>

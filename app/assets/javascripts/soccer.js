@@ -1,5 +1,6 @@
 var city = $('li.current-user-city').html();
-var city = city.toLowerCase();
+//var city = city.toLowerCase();
+var city = 'new';
 var i = 0;
 
 // GET INFO
@@ -56,7 +57,7 @@ function find_team_info() {
 //GET NEWS
 function espn_find_news() {
 	$.ajax({
-		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/',
+		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json"
@@ -73,7 +74,7 @@ function espn_find_news() {
 		
 			$('#my-news .sleeve').append("<article><h4><a href="+article.links.web.href+">"+article.title+"</a></h4> </article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
-			
+			console.log()
 			// $.each(article, function(index,categories){
 			// 		// $.each(categories, function(index,teams){
 			// 		// 		$('#my-news .sleeve article').append("<span class=team>"+article.links.web.href+">"+article.title+"</a></h4> </article>");
