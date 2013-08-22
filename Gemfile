@@ -29,8 +29,6 @@ gem 'jquery-rails'
 # gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
 gem 'zurb-foundation', '~> 4.0.0'
 
-
-	
 gem "trollop", "~> 2.0"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -71,7 +69,6 @@ gem "protected_attributes", "~> 1.0.0"
 #AUTHENTICATION
 gem 'devise'
 gem 'omniauth'
-# gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'figaro'
 

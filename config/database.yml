@@ -3,5 +3,4 @@ development:
   database: soccer1_dev
   pool: 5
   timeout: 5000
-
-  
+  localhost: localhost

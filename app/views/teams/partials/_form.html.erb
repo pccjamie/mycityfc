@@ -1,0 +1,19 @@
+<%= form_for :team, url: {action: "create"}, html: {id: "teams"} do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :league %>
+<%= f.text_field :league %>
+
+<%= f.label :logo %> 
+<%= f.url_field :logo %> 
+<%= f.label :venue %>
+<%= f.text_field :venue %>
+
+<%= f.label :city %>
+<%= f.text_field :city %>
+<%= f.label :state %>
+<%= f.text_field :state %>
+
+<%= f.submit "Add Team" %>
+<% end %>

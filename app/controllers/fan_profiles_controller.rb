@@ -17,24 +17,34 @@
   require 'httparty'
 
   def index
+    current_user
+    @teams = Team.all
+    @users = User.all
     #match day
     show_match_info
     #standard
     show_weather
     show_leagues
     show_news
+
+# @user = request.city
+
+# @teams = Team.near([@user.latitude, @userocation_info.longitude], 50)
+
+  @myteams = Team.near([current_user.latitude,current_user.longitude], 200)
+  
   end
 
-  # #future use - individual user profile pages
-  # def show
-  # end
+  def show
+  #future use - individual user profile pages
+  end
 
+####SPECIAL
   def get_current_time
     #basic time for testing - replace later with specific time params...
     @time = Time.now
     @today =  @time.strftime("%A, %B %d, %Y").inspect
-    return [@time, @today]
-    
+    return [@time, @today]   
   end
 
 #prefer to handle with AJAX /JSON but no access to ESPN schedule API. So scraping.
@@ -150,4 +160,9 @@ end
   def user_params
     params.require(:user).permit!
   end
+  def teams_params
+    params.require(:team).permit!
+  end
+
+
 end

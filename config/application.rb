@@ -28,11 +28,9 @@ module Soccer1
 
     config.assets.initialize_on_precompile = false
 
-
-    #blocks rails from expecting attr_accessibile in the Models. NOw I can use strong parameters
+    #blocks rails from expecting attr_accessibile in the Models. Now I can use strong parameters
     config.active_record.whitelist_attributes = false
   
-
     config.middleware.use Rack::Cors do
       allow do
         origins '*'

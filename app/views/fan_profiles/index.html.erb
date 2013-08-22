@@ -29,7 +29,17 @@
 	<header><h3>MLS Teams Near You!</h3></header>	
 	<nav></nav>
 	</div>
+
+	<div id="geo">
+		<% @myteams.each do |t| %>
+		<%= t.name %>
+		<% end %>
+	</div>
+
 	</section>
+
+
+
 </div>
 
 </details>

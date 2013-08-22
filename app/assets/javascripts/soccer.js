@@ -72,12 +72,19 @@ function espn_find_news() {
 		$.each(data.headlines, function(index, article) {
 		
 			$('#my-news .sleeve').append("<article><h4><a href="+article.links.web.href+">"+article.title+"</a></h4> </article>");
-			$('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
+			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			
-			// $.each(article, function(index, categories){
-			// 				console.log(categories.obj);		
+			// $.each(article, function(index,categories){
+			// 		// $.each(categories, function(index,teams){
+			// 		// 		$('#my-news .sleeve article').append("<span class=team>"+article.links.web.href+">"+article.title+"</a></h4> </article>");
+			// 		// });
 			// });
 
+			// $('#my-news .sleeve article').append(article.categories);
+
+	
+
+			// });
 		});
 	});
 }
