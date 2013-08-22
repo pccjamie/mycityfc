@@ -9,8 +9,7 @@
   
   # uncomment for localhost testing
   # skip_before_filter :authenticate_user!
-  skip_before_filter :authenticate_user!
-  
+  before_filter :authenticate_user!
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
