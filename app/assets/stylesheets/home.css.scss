@@ -160,12 +160,7 @@ section#my-news {
 }
 
 
-article:nth-child(even) {background: blue}
-
-
-
-	.team-link {background: red; color: #000; padding:10px; font-size:1.5em;}
-
+article:nth-child(even) {background: #1f9fff}
 
 section#my-kid {width: 50%;}
 
@@ -177,8 +172,7 @@ section#my-videos {height: 700px;  width: 100%; display: block; position: relati
 
 section#training {height: 400px; background: red}
 
-.team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF}
-.team {padding: 10px;background: white; color:#1f9fff; font-size: 2em; }
+
 //temp hide until filter works
 // .team:not(:first-of-type){ display: none;}
 

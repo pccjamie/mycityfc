@@ -28,11 +28,9 @@
     show_leagues
     show_news
 
-# @user = request.city
-
 # @teams = Team.near([@user.latitude, @userocation_info.longitude], 50)
 
-  #@myteams = Team.near([current_user.latitude,current_user.longitude], 200)
+  @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
   
   end
 
