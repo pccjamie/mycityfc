@@ -1,6 +1,7 @@
 // GET VIDEOS
 
 // function youtube_find_channel() {
+
 // 	$.ajax({
 // 		url: 'http://www.youtube.com/user/mls?&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&part=player',
 // 		data: {
@@ -29,7 +30,8 @@ function match_day() {
 
 // on load events
 $(function() {
-	youtube_find_channel();
+	// youtube_find_channel();
+
 });
 
 $("#trigger").click(function() {

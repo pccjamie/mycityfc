@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	
 # skip_before_filter :authenticate_user!, :only => [:index]
 before_filter :authenticate_user!, :except => [:splash]
-before_filter :user_signed_in?, :except => [:splash]
+before_filter :user_signed_in?
 
 	def index
     current_user
@@ -12,12 +12,11 @@ before_filter :user_signed_in?, :except => [:splash]
   		current_user.profile == 'Parent'
   		redirect_to :parent_profiles
   	else
-  		
+  		redirect_to :splash
   	end
 	end
 
   def splash
-    # flash[:notice] = "I am a splash page"
   end
 
 end

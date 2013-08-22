@@ -17,7 +17,6 @@
 //= require soccer
 //= require foundation
 //= require turbolinks
-
 //= require_tree .
 
 $(document).foundation();

@@ -1,6 +1,7 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<!-- <h5>Default View <%#= resource_name.to_s.humanize %></h5>
+ -->
 
 <%= devise_error_messages! %>
 
@@ -14,8 +15,7 @@
 
                         <div class="sleeve">
                               
-                              <h5><%= f.label :profile, 'Choose Profile' %></h5>
-                              
+                              <h5><%= f.label :profile, 'Default View' %></h5>
                               <aside class="left">
                               <%= f.radio_button(:profile, "Fan") %>
                               <%= f.label(:profile_fan, "Fan") %>

@@ -1,7 +1,4 @@
-# encoding: utf-8
-
-class FanProfilesController < ApplicationController 
-
+  class FanProfilesController < ApplicationController 
 
   # def set_access_control_headers
   #   response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"

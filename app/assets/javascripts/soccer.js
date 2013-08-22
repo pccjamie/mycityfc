@@ -22,6 +22,7 @@ function find_team_info() {
 		type: "get"
 	}).done(function(data) {
 			console.log(data.sports[0].leagues[0].name);
+			console.log($(this).parent(name));
 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
@@ -52,9 +53,7 @@ function find_team_info() {
 
 // console.log(city);
 
-
 //GET NEWS
-
 function espn_find_news() {
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/',
@@ -69,17 +68,19 @@ function espn_find_news() {
 		cache: false,
 		type: "get"
 	}).done(function(data) {
-		// $.each(raw.headlines[0].categories[2], function(index, team) {
-		// console.log('This team has a headline: ' + team.headline);
 
-		$.each(data.headlines, function(index, headline) {
+		$.each(data.headlines, function(index, article) {
 		
-			$('#my-news .sleeve').append("<div class=team-headline>" + headline.title + "</div>");
+			$('#my-news .sleeve').append("<article><h4><a href="+article.links.web.href+">"+article.title+"</a></h4> </article>");
+			$('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
+			
+			// $.each(article, function(index, categories){
+			// 				console.log(categories.obj);		
+			// });
 
 		});
 	});
 }
-
 // ON LOAD
 $(function() {
 	find_team_info();

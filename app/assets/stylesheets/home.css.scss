@@ -3,6 +3,11 @@ $header-bg: rgba(255,255,255,.5);
 $header-text: #363636;
 $bg-dark: rgba(0,0,0,.75);
 
+$text-hover-bg: #262626;
+$text-hover-main: #FFF;
+
+$devise-bg: #f2f2f2;
+
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
    visibility: hidden;
@@ -11,7 +16,7 @@ $bg-dark: rgba(0,0,0,.75);
    clear: both;
 }
 
-.notice, .alert {background: orange; color: white;}
+.notice, .alert {background: orange; color: white; padding: 10px;}
 
 body.default {
 	background-image: url(closeup.jpg);
@@ -35,9 +40,9 @@ body {
 	background-repeat: none;display: block;
 }
 
-body.default * form {background: $bg-dark;}
+// body.default * form {background: $bg-dark;}
 
-body.default * form * {color: #FFF}
+body.default * form * {color: #252525}
 
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
@@ -93,8 +98,9 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 }
 
-#trigger {height: 20px; width: 10%; padding: 10px; background: rgba(0,0,0,.5); position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
+#trigger {height: 40px; width: 10%; padding: 10px; background: rgba(0,0,0,.5); position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
 }
+
 // div#match-day:hover {
 // height: 80%;
 //   -webkit-transition: height .5s ease-in-out;
@@ -108,11 +114,12 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 /*top nav*/
 #utility-bar {
+
 	height: auto; width: 100%; display: block; 
 
 	#upper {height: 40px; width:100%;
 		ul { display: block; text-align: right;}
-		* img {margin-top: 4px}
+		* img {margin-top: 4px; height: 20px}
 	}
 	#lower {background: rgba(135, 169, 181, 0.85); height: 60px; width: 100%;
 		ul li a {font-size: 1.5em;}
@@ -144,12 +151,18 @@ section#my-news, section#my-kid  {height: 400px; float: left; display: inline-bl
 
 section#my-news {
 	width: 65%;
-	.team-headline {height: auto; color: #F1f1f1; padding: 10px 0;}
-	.team-headline:first-of-type {background: #FFF;color: #000; padding:10px; font-size:1.5em;}
 
-
+	// .headlines  {background: red;}
+	// .headlines {height: auto; color: #F1f1f1; padding: 10px 0;}
+	// .headlines:first-of-type {background: #FFF;color: #000; padding:10px; font-size:1.5em;}
+	// .headlines.single:nth-child(even) {background:red}
 
 }
+
+
+article:nth-child(even) {background: blue}
+
+
 
 	.team-link {background: red; color: #000; padding:10px; font-size:1.5em;}
 
@@ -177,8 +190,9 @@ form #slideshow.modal * .sleeve {height: 100px; text-align: center;}
 form #slideshow.modal * .sleeve aside {height: 60px; display: inline-block; }
 form #slideshow.modal * .button {position: relative; }
 
+form {background: #f2f2f2}
 
-form {background: 0}
+form.devise {background-color: $devise-bg}
 form.standard {background-color: $bg-main}
 
 form * {color: #363636;}
@@ -191,6 +205,6 @@ form #slideshow.modal .button {width: 100%;}
 // .form {height: auto; width: 25%; float: left; }
 // .form  {color: #FFF}
 
-#utility-bar  * :hover {color: orange}
+#utility-bar  * li:hover {background-color: $text-hover-bg; color: $text-hover-main}
 
 
