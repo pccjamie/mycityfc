@@ -5,7 +5,7 @@
 /*SPECIAL*/
 
 
-#my-teams, #my-news {overflow: auto};
+#my-teams, #my-news {overflow: auto; max-height: 600px};
 #my-teams * a {color: #262626; display: none; background:0};
 #my-teams * .team {display: none};
 #my-teams * .hideme {display: none};	
@@ -16,3 +16,5 @@
 .team, .team2 {padding: 10px;background: white; color:#1f9fff; font-size: 2em; }
 
 .team-link, .team-info {color: orange}
+
+	#greeting-block-wide header h3 {color: #FFF; background: #FFF;}
