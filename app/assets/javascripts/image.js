@@ -1,10 +1,9 @@
-function image(){
-	console.log($('#products').data('url'));
+// function image(){
 	
-}
+// }
 
-// DOM events
-	$(function(){
-		$('body').css('background-image','none');
-		image();
-	});
+// // DOM events
+// 	$(function(){
+// 		$('body').css('background-image','none');
+// 		image();
+// 	});
