@@ -9,7 +9,7 @@
   
   # uncomment for localhost testing
   # skip_before_filter :authenticate_user!
-  before_filter :authenticate_user!, :except => [:index]
+  skip_before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'
@@ -17,7 +17,7 @@
   require 'httparty'
 
   def index
-    current_user
+    #current_user
     @teams = Team.all
     @users = User.all
     
@@ -27,7 +27,7 @@
     show_news
 
     @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
-  
+
     #match day
     show_match_info
 
