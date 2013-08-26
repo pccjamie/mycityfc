@@ -1,5 +1,6 @@
-var city = $('li.current-user-city').html();
-var city = city.toLowerCase();
+//var city = $('li.current-user-city').html();
+//var city = city.toLowerCase();
+var city = "Seattle";
 var i = 0;
 
 // GET INFO
@@ -21,12 +22,12 @@ function find_team_info() {
 		cache: false,
 		type: "get"
 	}).done(function(data) {
-			console.log(data.sports[0].leagues[0].name);
-			console.log($(this).parent(name));
+			// console.log(data.sports[0].leagues[0].name);
+			// console.log($(this).parent(name));
 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
-			console.log(team.id);
+			// console.log(team.id);
 		$('#my-teams * header').append("<div class=team>" + team_location +  "</div>");
 		$("#my-teams * .team:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
@@ -50,6 +51,28 @@ function find_team_info() {
 	});
 	return;
 }
+
+// function find_players() {
+// 	var espn = 'http://api.espn.com/v1/sports/soccer/eng.1/athletes/teams/:192';
+// 	data: {
+// 		apikey: "4u3e6enmscdszh8qcy9dh7my",
+// 		_accept: "application/json"
+// 	},
+// 	dataType: "jsonp",
+// 	beforeSend: function(xhr) {
+// 		xhr.setRequestHeader("Accept", "application/json");
+// 	},
+// 	cache: false,
+// 	type: "get"
+// }).done(function(data) {
+
+
+
+// });
+// });
+
+// }
+
 
 // console.log(city);
 
