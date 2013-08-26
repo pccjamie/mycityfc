@@ -67,12 +67,9 @@ table {display: block; position: relative;}
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
-footer {height: auto; width: 100%; background-color: $bg-dark; position: relative; float: left; display: block; }
-// nav {height: auto; display: block; padding: 20px; color: #FFF}
-		
+
 #wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;}
-
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
 .sleeve {margin: 20px;}
@@ -84,6 +81,8 @@ header#splash {
 	h2 {font-size: 30px; background: $bg-dark;}
 }
 
+footer {height: auto; width: 100%; background-color: $bg-dark; position: relative; float: left; display: block; }
+// nav {height: auto; display: block; padding: 20px; color: #FFF}
 
 /* toggle match day */
 
@@ -100,17 +99,6 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 #trigger {height: 40px; width: 10%; padding: 10px; background: rgba(0,0,0,.5); position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
 }
-
-// div#match-day:hover {
-// height: 80%;
-//   -webkit-transition: height .5s ease-in-out;
-//   -moz-transition: height.5s ease-in-out;
-//   -o-transition: height .5s ease-in-out;
-//   transition: height .5s ease-in-out;
-//   section#highlights {position: relative; background: red; height: 200px; width:300px;}
-// }
-
-
 
 /*top nav*/
 #utility-bar {
@@ -138,11 +126,31 @@ details summary h5 {color: #FFF; height: 20px; width: auto; display:block}
 		h1,h2,h3,h4 { margin:0 20px}
 	}
 
-	#greeting-block-wide {width: 65%;}
+	#greeting-block-wide {
+
+		width: 65%;
+		header h3 {color: #FFF;}
+	
+	}
+
 	#greeting-block-narrow {width: 35%;}
 	
 	#my-teams, #calendar-today, #calendar-upcoming {height: 250px; display: inline-block; background-color:$header-bg; position: relative; padding:0;}
 	#my-teams {width: 35%}
+
+
+#my-teams, #my-news {overflow: auto; max-height: 600px};
+#my-teams * a {color: #262626; display: none; background:0};
+#my-teams * .team {display: none};
+#my-teams * .hideme {display: none};	
+
+#my-teams * a {background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
+
+.team, .team2 {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF}
+.team, .team2 {padding: 10px;background: white; color:#1f9fff; font-size: 2em; }
+
+.team-link, .team-info {color: orange}
+
 
 	#calendar-today {background: orange; padding: 20px; width: 25%; float: right}
 	#calendar-upcoming {background: yellow; width: 25%; float: left}
@@ -162,6 +170,9 @@ section#my-news {
 
 
 article:nth-child(even) {background: #1f9fff}
+
+
+
 
 section#my-kid {width: 50%;}
 

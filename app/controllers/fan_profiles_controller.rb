@@ -11,7 +11,6 @@
   # skip_before_filter :authenticate_user!
   before_filter :authenticate_user!, :except => [:index]
 
-
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
@@ -21,24 +20,25 @@
     current_user
     @teams = Team.all
     @users = User.all
-    #match day
-    show_match_info
+    
     #standard
     show_weather
     show_leagues
     show_news
 
-# @teams = Team.near([@user.latitude, @userocation_info.longitude], 50)
-
-  @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
+    @myteams = Team.near([current_user.latitude,current_user.longitude], 60, :order => :distance)
   
+    #match day
+    show_match_info
+
   end
 
   def show
-  #future use - individual user profile pages
+    #future use - individual user profile pages
   end
 
-####SPECIAL
+  
+  ####SPECIAL
   def get_current_time
     #basic time for testing - replace later with specific time params...
     @time = Time.now
@@ -48,7 +48,7 @@
 
 #prefer to handle with AJAX /JSON but no access to ESPN schedule API. So scraping.
   def get_team
-    #where do I get this? Work with the ESPN API?   
+    #where do I get this? Work with the ESPN API?  currently working with seed.   
     response = HTTParty.get("http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my")
     puts response.body, response.code, response.message, response.headers.inspect
     @team_hash = JSON(response) 
@@ -63,8 +63,8 @@
   def get_schedules
     #get the users team id(s) from the dataset that was retrieved via API
     #scrape the espn site for schedule info (was not available via API)
+
     get_current_time
-    #parse teams
     
     url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
     # url_nasl = "http://www.nasl.com/index.php?id=12"
@@ -135,7 +135,9 @@
     get_current_time
     get_schedules
 
-    # looks at whole schedule, if anything includes the users'  current  system time,
+    #1 looks at whole schedule, if anything includes the users'  current  system time,
+    #2 check date first
+
     if @schedule_mls.include?(@today)
         show_match_day
     elsif
