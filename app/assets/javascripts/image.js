@@ -1,5 +1,6 @@
 function image(){
-	var bg = $('a.team-info img').attr('href');
+	var bg = $('img.stadium').attr('href');
+	console.log(bg);
 	$('body').css('background-image','url('+bg+')');
 }
 // DOM events
