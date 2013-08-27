@@ -27,21 +27,25 @@
 	</header>
 	</div>
 	<section id="my-teams">
-	<div class="sleeve">
-	<header><h3>MLS</h3></header>
-	<nav></nav>
-	</div>
+
 	
-	<div class="clearfix"></div>
 
 	<div class="sleeve">
 	<% @myteams.each do |t| %>
-	<!-- <div class="team-name"><%#= t.name %></div>
-	<div class="team-venue"><%#= t.venue %></div> -->
+	<div class="team-name"><%= t.name %></div>
 	<div class="team-logo"><img src='<%= t.logo %>'/></div/>
 	<div class="team-venue"><%= t.image %></div>
 	<% end %>
 	</div>
+
+	<div class="clearfix"></div>
+
+
+	<div class="sleeve">
+	<header><h3>MLS</h3></header>
+	<nav></nav>
+	</div>
+
 
 	</section>
 

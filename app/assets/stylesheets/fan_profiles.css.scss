@@ -10,6 +10,8 @@
 #my-teams * .team {display: none};
 #my-teams * .hideme {display: none};	
 
+#my-teams .sleeve {width:50%}
+
 #my-teams * a {background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
 
 .team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
