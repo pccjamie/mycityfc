@@ -29,7 +29,7 @@ function find_team_info() {
 			var team_location = team.location.toLowerCase();
 
 		$('#my-teams * .team-overview header').append("<div class=team>" + team_location + "</div>");
-		$("#my-teams * .team:contains('" + city + "')").css("display", "block");
+		//$("#my-teams * .team:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
 				
 				info2 = $(info);
