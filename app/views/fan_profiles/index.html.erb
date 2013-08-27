@@ -38,7 +38,7 @@
 	<% @myteams.each do |t| %>
 	<a class="team-info"><%= t.name %></a>
 	<div class="team-info"><%= t.venue %></div>
-	<img class="team-info-logo"><%= t.logo %>/>
+	<div class="team-info-logo"><img src='<%= t.logo %>'/></div/>
 	<div class="venue-image"><%= t.image %></div>
 	<% end %>
 	</div>
