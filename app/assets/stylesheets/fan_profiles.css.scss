@@ -13,10 +13,13 @@
 #my-teams * a {background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
 
 .team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
-.team-link, .team-info {color: orange}
 
 	#greeting-block-wide header h3 {color: #FFF;}
 
 .team-info {width: auto; float: left; display:inline-block;}
-.team-info-logo {height: 100px; width:100px; background:silver; float: right; position: relative; display: inline-block;}
-.venue-image {height: 1px; visibility: hidden; text-indent: -9999px}
+
+.sleeve.left .sleeve.right {width: 50%; display: inline-block;}
+.sleeve.left {float: right}
+
+.sleeve.left .team-info-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
+.venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
