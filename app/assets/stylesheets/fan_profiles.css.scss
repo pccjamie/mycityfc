@@ -6,20 +6,24 @@
 
 
 #my-teams, #my-news {overflow: auto; max-height: 600px};
-#my-teams * a {color: orange; display: none; background:0};
+
 #my-teams * .team {display: none};
 #my-teams * .hideme {display: none};	
 
 
-
 #my-teams * a {background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
 
-.team-api {position: relative; display:inline-block}
-.team-db {position:relative; display:inline-block}
+.team-overview {float: left}
+.team-media {float:right}
 
-.team {height: 100%; width: auto;  max-width: 50%; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
+.team-overview, .team-media {position: relative; display:inline-block}
+
+.team-overview nav a.team-link {color: red; display: none; background: none}
+
+.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
 
 	#greeting-block-wide header h3 {color: #FFF;}
 
-.team-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
+
+.team-logo {height: 150px; width:150px; background: 0; position: relative; display: inline-block;}
 .team-venue {height: 0px; visibility: hidden; text-indent: -9999px}

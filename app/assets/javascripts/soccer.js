@@ -22,23 +22,24 @@ function find_team_info() {
 		cache: false,
 		type: "get"
 	}).done(function(data) {
-			// console.log(data.sports[0].leagues[0].name);
-			// console.log($(this).parent(name));
+			
 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
-			// console.log(team.id);
-		$('#my-teams * .team-api').append("<div class=team>" + team_location + "</div>");
+
+		$('#my-teams * .team-overview').append("<div class=team>" + team_location + "</div>");
 		$("#my-teams * .team:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
+				
 				info2 = $(info);
 				info2.slice(5, 7);
+
 				$.each(info2, function(index, linkset) {
 					$.each(linkset, function(index, set) {
-						// console.log(set);
+
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
-								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-info');
+								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview');
 								$("#my-teams * a:contains('usa.1')").remove();
 								$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();

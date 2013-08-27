@@ -32,18 +32,18 @@
 
 	<div class="sleeve">
 		
-	<div class="team-api">	
-		<header></header>
-		<nav></nav>
-	</div>
+			<div class="team-overview">	
+				<header></header>
+				<nav></nav>
+			</div>
 
-	<div class="team-db">
-		<% @myteams.each do |t| %>
-		<div class="team-name"><%=t.name %></div>
-		<div class="team-logo"><img src='<%= t.logo %>'/></div/>
-		<div class="team-venue"><%= t.image %></div>
-		<% end 	%>
-	</div>
+			<div class="team-media">
+				<% @myteams.each do |t| %>
+				<div class="team-name"><%=t.name %></div>
+				<div class="team-logo"><img src='<%= t.logo %>'/></div/>
+				<div class="team-venue"><%= t.image %></div>
+				<% end 	%>
+			</div>
 	
 	</div>
 
