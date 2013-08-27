@@ -25,7 +25,7 @@ function find_team_info() {
 	}).done(function(data) {
 			
 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
-			
+
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
 
@@ -41,7 +41,7 @@ function find_team_info() {
 
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
-								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview');
+								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview nav');
 								$("#my-teams * a:contains('usa.1')").remove();
 								$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
