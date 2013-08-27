@@ -29,14 +29,14 @@
 	</div>
 	
 	<section id="my-teams">
+
 	<div class="sleeve">
+		<header></header>
 		<% @myteams.each do |t| %>
-		<div class="team-name"><%= t.name %></div>
+		<!--<div class="team-name"><%#= t.name %></div>-->
 		<div class="team-logo"><img src='<%= t.logo %>'/></div/>
 		<div class="team-venue"><%= t.image %></div>
 		<% end %>
-		
-		<header><h3>MLS</h3></header>
 		<nav></nav>
 
 	</div>
