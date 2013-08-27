@@ -1,5 +1,5 @@
 function image(){
-	var bg = $('.team-venue').text();
+	var bg = $('.team-venue-image').text();
 	$('body').css('background-image','url('+bg+')');
 }
 // DOM events

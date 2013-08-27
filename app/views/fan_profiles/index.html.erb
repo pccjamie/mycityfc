@@ -39,9 +39,10 @@
 
 			<div class="team-media">
 				<% @myteams.each do |t| %>
-				<!-- <div class="team-name"><%#=t.name %></div>-->
+			  <div class="team-name"><h3><%=t.name %></h3></div>
 				<div class="team-logo"><img src='<%= t.logo %>'/></div/>
-				<div class="team-venue"><%= t.image %></div>
+				<div class="team-venue"><%= t.venue %></div>
+				<div class="team-venue-image"><%= t.image %></div>
 				<% end 	%>
 			</div>
 	
