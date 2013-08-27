@@ -6,9 +6,10 @@ var city = "seattle";
 // GET INFO
 
 function find_team_info() {
+
 	var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
-	// console.log('entered function - espn find team');
 	var espn_links;
+
 	$.ajax({
 		url: espn,
 		data: {
@@ -24,6 +25,7 @@ function find_team_info() {
 	}).done(function(data) {
 			
 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
+			
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
 
