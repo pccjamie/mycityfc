@@ -20,30 +20,25 @@
 <summary><h5>toggle</h5></summary>
 <div id="banner">
 	<div id="greeting-block-wide">
+
 	<header>
 		<h3>Hi <%= current_user.first_name %>!</h3>
 		<h1>It's <%= @weather %></h1>
 		<h3>at the moment. Looks like a nice day for a game!</h3>
 	</header>
 	</div>
-	<section id="my-teams">
-
 	
-
+	<section id="my-teams">
 	<div class="sleeve">
-	<% @myteams.each do |t| %>
-	<div class="team-name"><%= t.name %></div>
-	<div class="team-logo"><img src='<%= t.logo %>'/></div/>
-	<div class="team-venue"><%= t.image %></div>
-	<% end %>
-	</div>
+		<% @myteams.each do |t| %>
+		<div class="team-name"><%= t.name %></div>
+		<div class="team-logo"><img src='<%= t.logo %>'/></div/>
+		<div class="team-venue"><%= t.image %></div>
+		<% end %>
+		
+		<header><h3>MLS</h3></header>
+		<nav></nav>
 
-	<div class="clearfix"></div>
-
-
-	<div class="sleeve">
-	<header><h3>MLS</h3></header>
-	<nav></nav>
 	</div>
 
 
