@@ -18,8 +18,10 @@
 
 .team-info {height: auto; width: auto; float: left;}
 
-.left, .right {width: 50%; display: inline-block;}
+.left, .right {width: 60%; display: inline-block;}
 .left {float: left}
+
+.right {width:35%; float: right}
 
 .left .team-info-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
 .venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
