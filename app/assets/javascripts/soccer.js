@@ -5,7 +5,7 @@ var i = 0;
 // GET INFO
 
 function find_team_info() {
-	var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
+	var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/enable=venues';
 	// console.log('entered function - espn find team');
 	var espn_links;
 	$.ajax({

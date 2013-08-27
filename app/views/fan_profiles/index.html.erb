@@ -28,21 +28,21 @@
 	</div>
 	<section id="my-teams">
 	<div class="sleeve">
-	<header><h3>MLS in your area!</h3></header>	
+	<header><h3>MLS</h3></header>	
 	<nav></nav>
 	</div>
 	
 	<div class="clearfix"></div>
 
-		<div class="sleeve">
-		<% @myteams.each do |t| %>
-		<div class="team2">
-		<a class="team-info"><%#= t.venue %></a>
-		<div class="venue-image"><%= t.image %></div>
-		</div>
-		<% end %>
+	<div class="sleeve">
+	<% @myteams.each do |t| %>
+	<a class="team-info"><%= t.name %></a>
+	<div class="team-info"><%= t.venue %></div>
+	<div class="team-info-logo"><%= t.logo %></div>
+	<div class="venue-image"><%= t.image %></div>
+	<% end %>
+	</div>
 
-		</div>
 	</section>
 
 </div>

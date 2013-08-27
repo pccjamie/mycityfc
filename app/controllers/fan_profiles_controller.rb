@@ -7,8 +7,6 @@
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
   
-  # uncomment for localhost testing
-  # skip_before_filter :authenticate_user!
   before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
@@ -17,7 +15,7 @@
   require 'httparty'
 
   def index
-    #current_user
+    current_user
     @teams = Team.all
     @users = User.all
     
