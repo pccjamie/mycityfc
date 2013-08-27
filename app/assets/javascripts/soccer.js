@@ -1,7 +1,6 @@
-// var city = $('li.current-user-city').html();
-// var city = city.toLowerCase();
-// var i = 0;
-var city = "seattle";
+var city = $('li.current-user-city').html();
+var city = city.toLowerCase();
+var i = 0;
 
 // GET INFO
 
