@@ -126,12 +126,12 @@ details summary h5 {color: #FFF; height: 20px; width: auto; display:block}
 
 	#greeting-block-wide {
 		width: 65%;
-		header h3 {color: #FFF;}
+		header h3 {color: #FFF;} 
 	}
 
 	#greeting-block-narrow {width: 35%;}
 	
-	#my-teams, #calendar-today, #calendar-upcoming {min-height: 300px; height: auto; display: inline-block; background-color:$header-bg; position: relative; padding:0;}
+	#my-teams, #calendar-today, #calendar-upcoming {min-height: 300px; height: auto; display: inline-block; background-color:$header-bg; position: relative; padding:0; width:35%;}
 
 	#calendar-today {background: orange; padding: 20px; width: 25%; float: right}
 	#calendar-upcoming {background: yellow; width: 25%; float: left}
