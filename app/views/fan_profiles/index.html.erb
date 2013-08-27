@@ -36,10 +36,10 @@
 
 	<div class="sleeve right">
 	<% @myteams.each do |t| %>
-	<div class="team-info"><%= t.name %></div>
-	<div class="team-info"><%= t.venue %></div>
-	<div class="team-info-logo"><img src='<%= t.logo %>'/></div/>
-	<div class="venue-image"><%= t.image %></div>
+	<!-- <div class="team-name"><%#= t.name %></div>
+	<div class="team-venue"><%#= t.venue %></div> -->
+	<div class="team-logo"><img src='<%= t.logo %>'/></div/>
+	<div class="team-venue"><%= t.image %></div>
 	<% end %>
 	</div>
 

@@ -23,5 +23,7 @@
 
 .right {width:35%; float: right}
 
-.left .team-info-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
-.venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
+.team-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
+.team-venue {height: 0px; visibility: hidden; text-indent: -9999px}
+
+.team-link {text-decoration: underline;}

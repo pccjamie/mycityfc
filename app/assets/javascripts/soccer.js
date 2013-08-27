@@ -5,7 +5,7 @@ var i = 0;
 // GET INFO
 
 function find_team_info() {
-	var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/enable=venues';
+	var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 	// console.log('entered function - espn find team');
 	var espn_links;
 	$.ajax({
@@ -30,16 +30,16 @@ function find_team_info() {
 		$('#my-teams * header').append("<div class=team>" + team_location +  "</div>");
 		$("#my-teams * .team:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
-				record = $(info);
-				record.slice(5, 7);
-				$.each(record, function(index, linkset) {
+				info2 = $(info);
+				info2.slice(5, 7);
+				$.each(info2, function(index, linkset) {
 					$.each(linkset, function(index, set) {
 						// console.log(set);
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
 								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+team_name +' on ESPN</a>').appendTo('#my-teams * nav');
-								$("#my-teams * div:contains('usa.1')").remove();
-								$("#my-teams * div:contains('" + city + "')").css("display", "block");
+								$("#my-teams * a:contains('usa.1')").remove();
+								$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
 							});
 						});
