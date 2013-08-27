@@ -31,12 +31,12 @@
 	<header><h3>MLS in your area!</h3></header>	
 	<nav></nav>
 	</div>
-<div class="clearfix"></div>
+	
+	<div class="clearfix"></div>
 
 		<div class="sleeve">
 		<% @myteams.each do |t| %>
 		<div class="team2">
-		<a class="team-info"><%= t.name %></a>
 		<a class="team-info"><%= t.venue %></a>
 		<div class="venue-image"><%= t.image %></div>
 		<% end %>

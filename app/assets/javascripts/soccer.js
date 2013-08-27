@@ -1,6 +1,5 @@
-//var city = $('li.current-user-city').html();
-//var city = city.toLowerCase();
-var city = "Seattle";
+var city = $('li.current-user-city').html();
+var city = city.toLowerCase();
 var i = 0;
 
 // GET INFO
@@ -31,9 +30,9 @@ function find_team_info() {
 		$('#my-teams * header').append("<div class=team>" + team_location +  "</div>");
 		$("#my-teams * .team:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
-				info2 = $(info);
-				info2.slice(5, 7);
-				$.each(info2, function(index, linkset) {
+				record = $(info);
+				record.slice(5, 7);
+				$.each(record, function(index, linkset) {
 					$.each(linkset, function(index, set) {
 						// console.log(set);
 						$.each(set, function(index, contents) {

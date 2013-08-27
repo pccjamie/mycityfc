@@ -26,7 +26,7 @@
     show_leagues
     show_news
 
-    @myteams = Team.near([current_user.latitude,current_user.longitude], 30)
+    @myteams = Team.near([current_user.latitude,current_user.longitude], 120)
 
     #match day
     show_match_info
