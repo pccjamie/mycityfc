@@ -6,7 +6,7 @@
 
 
 #my-teams * .hideme {display: none};	
-#my-teams * a {display: 0; background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
+#my-teams * a {display: none; background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
 
 	#greeting-block-wide header h3 {color: #FFF;}
 
@@ -24,4 +24,4 @@
 
 .team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
 
-#my-teams * .team {display: none};
+		#my-teams * .team {display: none};
