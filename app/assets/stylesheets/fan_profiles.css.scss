@@ -6,7 +6,7 @@
 
 
 #my-teams, #my-news {overflow: auto; max-height: 600px};
-#my-teams * a {color: #262626; display: none; background:0};
+#my-teams * a {color: orange; display: none; background:0};
 #my-teams * .team {display: none};
 #my-teams * .hideme {display: none};	
 
@@ -18,8 +18,8 @@
 
 .team-info {width: auto; float: left; display:inline-block;}
 
-.sleeve.left .sleeve.right {width: 50%; display: inline-block;}
-.sleeve.left {float: right}
+.left .sleeve.right {width: 50%; display: inline-block;}
+.left {float: left}
 
-.sleeve.left .team-info-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
+.left .team-info-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
 .venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
