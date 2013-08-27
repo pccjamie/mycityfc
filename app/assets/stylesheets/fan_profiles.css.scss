@@ -16,9 +16,9 @@
 
 	#greeting-block-wide header h3 {color: #FFF;}
 
-.team-info {width: auto; float: left; display:inline-block;}
+.team-info {height: auto; width: auto; float: left;}
 
-.left .sleeve.right {width: 50%; display: inline-block;}
+.left, .right {width: 50%; display: inline-block;}
 .left {float: left}
 
 .left .team-info-logo {height: 150px; width:150px; background: 0; float: right; position: relative; display: inline-block;}
