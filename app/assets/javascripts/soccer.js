@@ -40,7 +40,7 @@ function find_team_info() {
 							$.each(contents, function(index, espn_links) {
 								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-info');
 								$("#my-teams * a:contains('usa.1')").remove();
-								$("#my-teams * .team-api a:contains('" + city + "')").css("display", "block");
+								$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
 							});
 						});
