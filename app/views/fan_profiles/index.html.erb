@@ -31,16 +31,21 @@
 	<section id="my-teams">
 
 	<div class="sleeve">
+		
+	<div class="team-api">	
 		<header></header>
-		<% @myteams.each do |t| %>
-		<!--<div class="team-name"><%#= t.name %></div>-->
-		<div class="team-logo"><img src='<%= t.logo %>'/></div/>
-		<div class="team-venue"><%= t.image %></div>
-		<% end %>
 		<nav></nav>
-
 	</div>
 
+	<div class="team-db">
+		<% @myteams.each do |t| %>
+		<div class="team-name"><%=t.name %></div>
+		<div class="team-logo"><img src='<%= t.logo %>'/></div/>
+		<div class="team-venue"><%= t.image %></div>
+		<% end 	%>
+	</div>
+	
+	</div>
 
 	</section>
 

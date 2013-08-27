@@ -1,6 +1,7 @@
-var city = $('li.current-user-city').html();
-var city = city.toLowerCase();
-var i = 0;
+// var city = $('li.current-user-city').html();
+// var city = city.toLowerCase();
+// var i = 0;
+var city = "seattle";
 
 // GET INFO
 
@@ -27,7 +28,7 @@ function find_team_info() {
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
 			// console.log(team.id);
-		$('#my-teams * header').append("<div class=team>" + team_location +  "</div>");
+		$('#my-teams * .team-api').append("<div class=team>" + team_location + "</div>");
 		$("#my-teams * .team:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
 				info2 = $(info);
@@ -37,9 +38,9 @@ function find_team_info() {
 						// console.log(set);
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
-								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+ team_name +' on ESPN</a>').appendTo('#my-teams * nav');
+								$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>Visit the '+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-info');
 								$("#my-teams * a:contains('usa.1')").remove();
-								$("#my-teams * a:contains('" + city + "')").css("display", "block");
+								$("#my-teams * .team-api a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
 							});
 						});
@@ -50,27 +51,6 @@ function find_team_info() {
 	});
 	return;
 }
-
-// function find_players() {
-// 	var espn = 'http://api.espn.com/v1/sports/soccer/eng.1/athletes/teams/:192';
-// 	data: {
-// 		apikey: "4u3e6enmscdszh8qcy9dh7my",
-// 		_accept: "application/json"
-// 	},
-// 	dataType: "jsonp",
-// 	beforeSend: function(xhr) {
-// 		xhr.setRequestHeader("Accept", "application/json");
-// 	},
-// 	cache: false,
-// 	type: "get"
-// }).done(function(data) {
-
-
-
-// });
-// });
-
-// }
 
 
 // console.log(city);

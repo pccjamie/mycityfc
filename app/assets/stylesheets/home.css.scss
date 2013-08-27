@@ -135,7 +135,8 @@ details summary h5 {color: #FFF; height: 20px; width: auto; display:block}
 
 	#greeting-block-narrow {width: 35%;}
 	
-	#my-teams, #calendar-today, #calendar-upcoming {height: 250px; display: inline-block; background-color:$header-bg; position: relative; padding:0;}
+	#my-teams, #calendar-today, #calendar-upcoming {min-height: 300px; height: auto; display: inline-block; background-color:$header-bg; position: relative; padding:0;}
+
 	#my-teams {width: 35%}
 
 .team-link, .team-info {color: orange}
