@@ -1,6 +1,5 @@
 var city = $('li.current-user-city').html();
 var city = city.toLowerCase();
-//var city = 'seattle';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 // GET TEAM ID
@@ -28,7 +27,6 @@ $.ajax({
 // GET INFO
 function find_team_info() {
 
-	//var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 	var espn_links;
 
 	$.ajax({

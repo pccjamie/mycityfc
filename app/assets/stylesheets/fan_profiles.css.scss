@@ -4,7 +4,7 @@
 
 /*SPECIAL*/
 
-#my-teams {width: 35%}
+#my-teams {width: 400px}
 
 #my-teams, #my-news {overflow: auto; max-height: 600px};
 
@@ -13,7 +13,9 @@
 
 #my-teams * a {background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
 
-.team-overview {float: left}
+/*holds espn api info  - not certain what to do with that yet*/
+
+.team-overview {display:none}
 .team-media {float:right;}
 
 .team-overview, .team-media {position: relative; display:inline-block; width:auto}
