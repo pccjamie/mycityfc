@@ -15,15 +15,16 @@
 
 /*holds espn api info  - not certain what to do with that yet*/
 
-.team-overview {display:none}
-.team-media {float:right;}
+.team-overview {width: 100%; float: right}
+.team-media {width: 200px; float:left; text-align:center}
 
-.team-overview, .team-media {position: relative; display:inline-block; width:auto}
+.team-overview, .team-media {position: relative; display:inline-block;}
 
 .team-overview nav a.team-link {color: red; display: none; background: none}
 
-.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
+.team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
 
+	#greeting-block-wide 
 	#greeting-block-wide header h3 {color: #FFF;}
 
 .team-logo {height: 150px; width:150px; background: 0; position: relative; display: inline-block; text-align:center}
