@@ -15,19 +15,19 @@
   require 'httparty'
 
   def index
-    #current_user
-    # @teams = Team.all
-    # @users = User.all
+    current_user
+    @teams = Team.all
+    @users = User.all
     
     #standard
-    # show_weather
-    # show_leagues
-    # show_news
+    show_weather
+    show_leagues
+    show_news
 
-   # @myteams = Team.near([current_user.latitude,current_user.longitude], 240)
+    @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
 
     #match day
-    #show_match_info
+    show_match_info
 
   end
 
@@ -46,10 +46,10 @@
 
 #prefer to handle with AJAX /JSON but no access to ESPN schedule API. So scraping.
   def get_team
-    # #where do I get this? Work with the ESPN API?  currently working with seed.   
-    # response = HTTParty.get("http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my")
-    # puts response.body, response.code, response.message, response.headers.inspect
-    # @team_hash = JSON(response) 
+    #where do I get this? Work with the ESPN API?  currently working with seed.   
+    response = HTTParty.get("http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my")
+    puts response.body, response.code, response.message, response.headers.inspect
+    @team_hash = JSON(response) 
 
     # respond_to do |format|
     #   format.json render :partial => "fan_profiles/get_team.json"
