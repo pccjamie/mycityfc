@@ -1,12 +1,34 @@
 var city = $('li.current-user-city').html();
 var city = city.toLowerCase();
-var i = 0;
+var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
+
+// GET TEAM ID
+
+$.ajax({
+	url: espn,
+	data: {
+		apikey: '4u3e6enmscdszh8qcy9dh7my',
+		_accept: "application/json"
+	},
+	dataType: "jsonp",
+	beforeSend: function(xhr) {
+		xhr.setRequestHeader("Accept", "application/json");
+	},
+	cache: false,
+	type: "get"
+}).done(function(data) {
+		$.each(data.sports[0].leagues[0].teams, function(index, team) {
+					team_id = team.id;
+					console.log(team_id);
+					return this;
+			});	return;
+	});
+
 
 // GET INFO
-
 function find_team_info() {
 
-	var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
+	//var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 	var espn_links;
 
 	$.ajax({
@@ -27,8 +49,7 @@ function find_team_info() {
 
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
-			var team_uid = team.uid;
-			console.log(team_uid);
+			
 		$('#my-teams * .team-overview header').append("<div class=team>" + team_location + "</div>");
 		//$("#my-teams * .team:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
@@ -56,8 +77,6 @@ function find_team_info() {
 }
 
 
-// console.log(city);
-
 //GET NEWS
 function espn_find_news() {
 	$.ajax({
@@ -79,19 +98,21 @@ function espn_find_news() {
 			$('#my-news .sleeve').append("<article><h4><a href="+article.links.web.href+">"+article.title+"</a></h4> </article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 		
-			// $.each(article, function(index,categories){
-			// 		// $.each(categories, function(index,teams){
-			// 		// 		$('#my-news .sleeve article').append("<span class=team>"+article.links.web.href+">"+article.title+"</a></h4> </article>");
-			// 		// });
-			// });
-			// $('#my-news .sleeve article').append(article.categories);
-
-			// });
+			
 		});
 	});
 }
+
+function ajax(){
+
+
+	return this;
+}
+
+
 // ON LOAD
 $(function() {
+	
 	find_team_info();
 	espn_find_news();
 });

@@ -8,8 +8,8 @@
 
 #my-teams, #my-news {overflow: auto; max-height: 600px};
 
-#my-teams * .team {display: none};
-#my-teams * .hideme {display: none};	
+/* elements default to hidden */
+#my-teams * .team, #my-teams * .hideme  {display: none};
 
 #my-teams * a {background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
 
