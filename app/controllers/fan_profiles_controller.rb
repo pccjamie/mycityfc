@@ -14,8 +14,8 @@
   require 'nokogiri'
   require 'open-uri'
   require 'httparty'
-  require 'rubygems'
-  require 'google/api_client'
+  # require 'rubygems'
+  # require 'google/api_client'
   require 'trollop'
 
 
