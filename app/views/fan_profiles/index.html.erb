@@ -1,75 +1,111 @@
 <div id="trigger">Game Day!</div>
 <div id="match-day">
 	<section>
-
-	<%= @current_time %>
-  <p class="alert"><%= alert %></p>
-
-
-	<%= @schedules_mls %>
-
-
+		<%= @current_time %>
+		<p class="alert"><%= alert %></p>
+		<%= @schedules_mls %>
 	</section>
 	<aside class="right">match info
-		<details>time, day, etc</details></aside>
-
+	<details>time, day, etc</details></aside>
 </div>
 
+<header>
+	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
+	<h4>It's __ <%#= @weather %> at the moment. Looks like a nice day for a game! Here's what's going on around the <%#= current_user.city %> area</h4>
+</header>
 
-<details open>
-<summary><h5>toggle</h5></summary>
-<div id="banner">
-	<div id="greeting-block-wide">
-
-	<header>
-		<h3>Hi <%= current_user.first_name %>!</h3>
-		<h1>It's <%= @weather %></h1>
-		<h3>at the moment. Looks like a nice day for a game!</h3>
-	</header>
-	</div>
+<div id="latest-content">
 	
-	<section id="my-teams">
+	<header><h2>LATEST NEWS</h2></header>
 
-	<div class="sleeve">
-		
-			<div class="team-overview">	
-				<header></header>
-				<nav></nav>
-			</div>
-
-			<div class="team-media">
-				<% @myteams.each do |t| %>
-			  <div class="team-name"><h3><%=t.name %></h3></div>
-				<div class="team-logo"><img src='<%= t.logo %>'/></div/>
-				<div class="team-venue"><h4><%= t.venue %></h4></div>
-				<div class="team-venue-image"><%= t.image %></div>
-				<% end 	%>
-			</div>
-	
-	</div>
-
+	<section id="video">
+		<div class="sleeve">
+			<div id="player"></div>
+		</div>
 	</section>
 
 </div>
 
-</details>
-<div class="clearfix"></div>
-<section id="my-news">
-<div class="sleeve">
-<header><h3>NEWS</h3></header>
+<!--right panel-->
+
+<div id="profile">
+
+<div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
+
+<ul class="cycle-pager">
+<li class="pager">MLS</li>
+<li class="pager">NASL</li>
+<li class="pager">USL PRO</li>
+</ul>
+
+<div class="league slide">
+<header class="right">	MAJOR LEAGUE SOCCER</header>
+					<section id="my-teams">
+						<div class="sleeve">
+							
+							<div class="team-overview">
+								<header></header>
+							<nav></nav>
+							</div>
+							<div class="team-media">
+							<% @myteams.each do |t| %>
+							<div class="team-name"><h3><%=t.name %></h3></div>
+							<div class="team-logo"><img src='<%= t.logo %>'/></div/>
+							<div class="team-venue"><h4><%= t.venue %></h4></div>
+							<div class="team-venue-image"><%= t.image %></div>
+							<% end 	%>
+							</div>
+					</div>
+					</section>
+
+		<div class="clearfix"></div>
+		
+					<section id="my-news">
+					<div class="sleeve">
+					<header><h5>NEWS</h5></header>
+					</div>
+					</section>
+					<section id="my-players">
+					<div class="sleeve">
+					<header><h5>WHOS ON YOUR TEAM?</h5></header>
+					<article></article>
+					</div>
+					</section>
+
+		<div class="clearfix"></div>
+
+					<section id="fans">
+					<div class="sleeve">
+					<header><h5>FIND A SUPPORTERS CLUB</h5></header>
+					</div>
+					</section>
+
+
 </div>
-</section>
-<section id="twitter">
-<div class="sleeve">
-<header><h3>WHOS ON YOUR TEAM?</h3></header>
-<article></article>
-</div>
-</section>
+
+<div class="league slide">
+<header class="right">NASL
+</header>
+	<p>Want to see NASL team info on this site? Help us out by ....</p>
+
+</div> <!--2-->
+
+
+<div class="league slide">	
+
+<header class="right">USL Pro
+</header>
+	<p>Want to see USL PRO team info on this site? Help us out by ....
+
+</div><!--3-->
+
+</div><!--close slides-->
+
+</div><!--slideshow-->
 
 <div class="clearfix"></div>
-
-<section id="fans">
+<section id="tbd">
 <div class="sleeve">
-<header><h3>FIND A SUPPORTERS CLUB</h3></header>
+<header><h3>AROUND THE LEAGUE</h3></header>
 </div>
 </section>

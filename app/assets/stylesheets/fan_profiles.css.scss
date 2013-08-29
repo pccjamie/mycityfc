@@ -4,29 +4,18 @@
 
 /*SPECIAL*/
 
-#my-teams {width: 400px}
-
-#my-teams, #my-news {overflow: auto; max-height: 600px};
 
 /* elements default to hidden */
 #my-teams * .team, #my-teams * .hideme  {display: none};
 
-#my-teams * a {background: rgba(255,255,255,0.75); padding:10px; font-size:1.5em;}
-
 /*holds espn api info  - not certain what to do with that yet*/
 
-.team-overview {background: rgba(0,0,0,.5); height: 100%; width: 100%; float: right}
+.team-overview {height: 100%; width: 100%; float: right}
 .team-media {float:left; text-align:center; height: 100%; width: 230px;}
 
 .team-overview, .team-media {position: relative; display:inline-block;}
-
 .team-overview nav a.team-link {color: red; display: none; background: none}
-
 .team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
-
-	#greeting-block-wide 
-	#greeting-block-wide header h3 {color: #FFF;}
-
 .team-logo {height: 150px; width:150px; background: 0; position: relative; display: inline-block; text-align:center}
 .team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 

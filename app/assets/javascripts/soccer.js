@@ -1,7 +1,7 @@
 var city = $('li.current-user-city').html();
-var city = city.toLowerCase();
+// var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
-
+var city = 'seattle';
 // GET TEAM ID
 
 $.ajax({
@@ -83,7 +83,8 @@ function espn_find_news() {
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
-			_accept: "application/json"
+			_accept: "application/json",
+			limit: 2
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -117,11 +118,17 @@ function espn_find_news() {
 	});
 }
 
+function teamslider(){
 
+$('.leagueslider').cycle({
+    manualSpeed: 100
+});
+}
 
 // ON LOAD
 $(function() {
-	
 	find_team_info();
 	espn_find_news();
+		teamslider();
+
 });

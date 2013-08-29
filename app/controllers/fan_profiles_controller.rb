@@ -1,5 +1,6 @@
   class FanProfilesController < ApplicationController 
 
+
   # def set_access_control_headers
   #   response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
   #   response.headers["Access-Control-Request-Method"] = "*"
@@ -13,6 +14,10 @@
   require 'nokogiri'
   require 'open-uri'
   require 'httparty'
+  require 'rubygems'
+  require 'google/api_client'
+  require 'trollop'
+
 
   def index
     current_user
@@ -24,7 +29,7 @@
     show_leagues
     show_news
 
-    @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
+    @myteams = Team.near([current_user.latitude,current_user.longitude], 1000)
 
     #match day
     show_match_info

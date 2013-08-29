@@ -1,26 +1,29 @@
 // GET VIDEOS
 
-// function youtube_find_channel() {
+function youtube_find_channel() {
 
-// 	$.ajax({
-// 		url: 'http://www.youtube.com/user/mls?&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&part=player',
-// 		data: {
-// 			_accept: "application/json"
-// 		},
-// 		dataType: "jsonp",
-// 		beforeSend: function(xhr) {
-// 			xhr.setRequestHeader("Accept", "application/json");
-// 		},
-// 		cache: false,
-// 		type: "get"
-// 	}).done(function(data) {
-// 		console.log(data);
-// 		// $("<div>"+ data + "</div").appendTo("#match-day").text();
-// 	});
-// }
+
+	$.ajax({
+		url: 'http://www.youtube.com/user/mls?&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&part=player',
+		data: {
+			_accept: "application/json"
+		},
+		dataType: "jsonp",
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader("Accept", "application/json");
+		},
+		cache: false,
+		type: "get"
+	}).done(function(data) {
+		console.log(data);
+		$(data).appendTo("#player").text();
+
+	});return;
+}
 
 
 //SETS UP MATCH
+
 function match_day() {
 	console.log('Match Day! Slide down!');
 	// if (#schedule.has(now)){
@@ -30,8 +33,7 @@ function match_day() {
 
 // on load events
 $(function() {
-	// youtube_find_channel();
-
+	youtube_find_channel();
 });
 
 $("#trigger").click(function() {

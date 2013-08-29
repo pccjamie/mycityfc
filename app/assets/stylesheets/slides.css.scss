@@ -4,9 +4,9 @@
 
 /*special*/
 #slideshow {height: auto;  overflow: auto; padding: 0!important;clear: both; display: block; color:#262626}
-#slideshow section {padding: 20px; height:400px; width: 100%; background: 0; display: block; position: relative;margin: 0 auto; }
+// #slideshow section {padding: 20px; height:auto; width: 100%; display: block; position: relative;margin: 0 auto; }
 #slideshow section figure {float: right;}
-#slideshow * {letter-spacing:5px;text-shadow: none; color: #262626}
+// #slideshow * {letter-spacing:5px;text-shadow: none; color: #262626}
 
 /* custom user view */
 #slideshow h3 { font-size: 40px;  display: inline-block;}

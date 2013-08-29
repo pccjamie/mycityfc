@@ -2,9 +2,13 @@ $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.5);
 $header-text: #363636;
 $bg-dark: rgba(0,0,0,.75);
+$bg-light: rgba(255,255,255,.5);
+
 $text-hover-bg: #262626;
 $text-hover-main: #FFF;
 $devise-bg: #f2f2f2;
+
+$bg-shine: rgba(31,159,255,.75);
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -16,12 +20,8 @@ $devise-bg: #f2f2f2;
 
 .notice, .alert {background: orange; color: white; padding: 10px;}
 
-body.default {
-	background-image: url(closeup.jpg);
-	background-size: 100%;
-}
 body.bg-default {
-	background-image: url(history1.jpg);
+	background-image: url(closeup.jpg);
 }
 body.bg-slides {
 	background-image: url(history1.jpg);
@@ -34,8 +34,11 @@ body.bg-fan-profiles {
 }
 
 body {
-	height: 100%; width:100%; position: fixed;background-size: 100%;
+	height: 100%; width:100%;
+	background-image: url(closeup.jpg);
+	background-size: 100%;
 	background-repeat: none;display: block;
+	background-attachment:fixed;
 }
 
 // body.default * form {background: $bg-dark;}
@@ -45,7 +48,7 @@ body.default * form * {color: #252525}
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
 
-h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
+h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-weight: normal}
 
 body.bg-public {
 	h1,h2,h3,h4,h5,p,a,li {color: #363636;}
@@ -66,20 +69,20 @@ table {display: block; position: relative;}
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
 
-#wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto;}
-#inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;}
+#wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto;position: relative;}
+#inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;position: relative;}
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
-.sleeve {margin: 20px;}
+.sleeve {height: 100%; margin: 20px;}
 .inner {margin: 20px;}
 
 header#splash {
 
-	h1 {font-size: 90px;}
-	h2 {font-size: 30px; background: $bg-dark;}
+	h1 {font-size: 120px;}
+	h2 {font-size: 30px; background: $bg-light;}
 }
 
-footer {height: auto; width: 100%; background-color: $bg-dark; position: relative; float: left; display: block; }
+footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark; position: relative; float: left; display: block; }
 // nav {height: auto; display: block; padding: 20px; color: #FFF}
 
 /* toggle match day */
@@ -95,73 +98,91 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 }
 
-#trigger {height: 40px; width: 10%; padding: 10px; background: rgba(0,0,0,.5); position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
+#trigger {height: 40px; width: 10%; padding: 10px; background: $bg-shine; position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
 }
 
 /*top nav*/
 #utility-bar {
 
+	background-color: rgba(0,0,0,.5);
+
 	height: auto; width: 100%; display: block; 
 
-	#upper {height: 40px; width:100%;
+	#upper {
+		height: 40px; width:100%;
 		ul { display: block; text-align: right;}
 		* img {margin-top: 4px; height: 20px}
 	}
-	#lower {background: rgba(135, 169, 181, 0.85); height: 60px; line-height: 60px; width: 100%;
+	#lower {
+		height: 40px; line-height: 40px; width: 100%;
 		ul {line-height: inherit}
 		ul li a {font-size: 1.5em;}
 	}
 }
 
 /* toggle header */
-details {background: 0; }
-details summary h5 {color: #FFF; height: 20px; width: auto; display:block}
+// details {background: 0; }
+// details summary h5 {color: #FFF; height: 20px; width: auto; display:block}
 
-#banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
+// #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
+#latest-content, #profile {height: 600px; width:50%; display: inline-block; position:relative} 
+#latest-content {float: left;  position:relative;}
+#profile {float: right}
+#profile * section {
+
+	display:inline-block; width:50%; height: auto; display: inline-block; background-color:$header-bg; position: relative; min-height: 200px; max-height: 400px;
+
+}
+
+
+#profile * .leagueslider {height: auto; display: block}
+#profile * .league { height: auto; width: 100%; margin-top: 40px;}
+
+.league {background: $bg-light; color: #262626}
+
+#profile * .cycle-pager {height: 40px;  width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
+#profile * .cycle-pager li.pager {height: 40px; line-height: 40px; width: 30%; display: inline-block; background: $bg-main; margin:0; padding:0;}
+#profile * .cycle-pager li.active { background: $bg-light;}
+
+#profile * .active-slide {height: 600px;}
+
+section#video{height: auto; width: 100%;
+	#player {height: 300px; width: 450px; background: gray; margin: auto}
+}
+
+section#video {}	
+section#video .sleeve {margin:20px; background: $bg-dark;}
+section#my-teams,section#my-news, section #my-players {height: 200px;background: $bg-shine; width: 50%}
+section#my-teams { height: 200px; width: 100%}
+section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
+
+section#tbd {height: auto; min-height: 200px; background: orange}
+
+
+section#greeting-block-wide {height: 500px}
+
+	#greeting-block-wide header h3 {color: #FFF;}
 	#greeting-block-wide, #greeting-block-narrow {display:inline-block; float: left;margin: 0px;  position: relative; background:0; 
+
+		width: 50%;
 		h1 {font-size: 80px;}
-		h1,h2,h3,h4 { margin:0 20px}
+		h1,h2,h3,h4 { margin:0 20px};
+		* color: #FFF;
 	}
 
-	#greeting-block-wide {
-		width: 65%;
-		header h3 {color: #FFF;} 
-	}
-
-	#greeting-block-narrow {width: 35%;}
 	
-	#my-teams, #calendar-today, #calendar-upcoming {min-height: 300px; height: auto; display: inline-block; background-color:$header-bg; position: relative; padding:0; width:35%;}
-
+	#calendar-today, #calendar-upcoming {min-height: 300px; height: auto; display: inline-block; background-color:$header-bg; position: relative; padding:0;}
 	#calendar-today {background: orange; padding: 20px; width: 25%; float: right}
 	#calendar-upcoming {background: yellow; width: 25%; float: left}
-}
-
-section#my-news, section#my-kid  {height: 400px; float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
-
-section#my-news {
-	width: 65%;
-
-	// .headlines  {background: red;}
-	// .headlines {height: auto; color: #F1f1f1; padding: 10px 0;}
-	// .headlines:first-of-type {background: #FFF;color: #000; padding:10px; font-size:1.5em;}
-	// .headlines.single:nth-child(even) {background:red}
-
-}
+//}
 
 
 article:nth-child(even) {background: #1f9fff}
 
-
-section#my-kid {width: 50%;}
-section#twitter, section#my-community {height: 400px;  width:35%; display: inline-block;position: relative; 	background: rgba(31, 159, 255, .75); overflow-y: auto; overflow-x:none}
-section#my-community {width: 50%;}
-section#my-videos, section#fans {height: 400px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.75); clear:both; float: left; clear:both;}
+section#my-community {display: inline-block;position: relative; 	background: rgba(31, 159, 255, .75); overflow-y: auto; overflow-x:none}
+section#my-videos {height: 400px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.75); clear:both; float: left; clear:both;}
 section#training {height: 400px; background: red}
-
-
-//temp hide until filter works
-// .team:not(:first-of-type){ display: none;}
 
 form {background: rgba(135,169,181,0.75); max-height: 300px; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 form #slideshow section {height: 220px}
@@ -172,7 +193,6 @@ form #slideshow.modal * .sleeve aside {height: 60px; display: inline-block; }
 form #slideshow.modal * .button {position: relative; }
 
 form {background: #f2f2f2}
-
 form.devise {background-color: $devise-bg}
 form.standard {background-color: $bg-main}
 
