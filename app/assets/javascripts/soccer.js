@@ -1,7 +1,6 @@
 var city = $('li.current-user-city').html();
-// var city = city.toLowerCase();
+var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
-var city = 'seattle';
 // GET TEAM ID
 
 $.ajax({
@@ -100,19 +99,19 @@ function espn_find_news() {
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			console.log(article.categories);
 					
-					$.each(article.categories, function(index, category) {
+					// $.each(article.categories, function(index, category) {
 										
-										// console.log(category);
-										var cat = category;
+					// 					// console.log(category);
+					// 					var cat = category;
 										
-										$(cat);
+					// 					$(cat);
 
-										$(cat).attr('class','cat');
-										// console.log($('.cat'));
-										$("#my-news * .cat:contains('" + team_id + "')").css("display", "block");
-										return this;
+					// 					$(cat).attr('class','cat');
+					// 					// console.log($('.cat'));
+					// 					$("#my-news * .cat:contains('" + team_id + "')").css("display", "block");
+					// 					return this;
 
-					});
+					// });
 			
 		});
 	});

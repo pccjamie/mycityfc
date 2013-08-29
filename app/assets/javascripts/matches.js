@@ -33,7 +33,7 @@ function match_day() {
 
 // on load events
 $(function() {
-	youtube_find_channel();
+	// youtube_find_channel();
 });
 
 $("#trigger").click(function() {
