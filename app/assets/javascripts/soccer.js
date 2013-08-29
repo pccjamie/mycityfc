@@ -3,24 +3,24 @@ var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 // GET TEAM ID
 
-$.ajax({
-	url: espn,
-	data: {
-		apikey: '4u3e6enmscdszh8qcy9dh7my',
-		_accept: "application/json"
-	},
-	dataType: "jsonp",
-	beforeSend: function(xhr) {
-		xhr.setRequestHeader("Accept", "application/json");
-	},
-	cache: false,
-	type: "get"
-}).done(function(data) {
-		$.each(data.sports[0].leagues[0].teams, function(index, team) {
-					team_id = team.id;
-					return this;
-			});	return;
-	});
+// $.ajax({
+// 	url: espn,
+// 	data: {
+// 		apikey: '4u3e6enmscdszh8qcy9dh7my',
+// 		_accept: "application/json"
+// 	},
+// 	dataType: "jsonp",
+// 	beforeSend: function(xhr) {
+// 		xhr.setRequestHeader("Accept", "application/json");
+// 	},
+// 	cache: false,
+// 	type: "get"
+// }).done(function(data) {
+// 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
+// 					team_id = team.id;
+// 					return this;
+// 			});	return;
+// 	});
 
 
 // GET INFO
