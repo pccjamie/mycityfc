@@ -1,4 +1,4 @@
-# module FanProfilesHelper
+module FanProfilesHelper
 
 
 
@@ -42,4 +42,4 @@
 # puts "Videos:\n", videos, "\n"
 # puts "Channels:\n", channels, "\n"
 # puts "Playlists:\n", playlists, "\n"
-# end
+end
