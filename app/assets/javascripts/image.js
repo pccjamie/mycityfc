@@ -1,9 +1,9 @@
-function image(){
+function location_based_content(){
 	var bg = $('.team-venue-image:first').text();
-	console.log(bg);
 	$('body').css('background-image','url('+bg+')');
+	$('.team:first').nextAll().addClass('secondary');
 }
 // DOM events
 	$(function(){
-		image();
+		location_based_content();
 	});
