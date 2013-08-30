@@ -129,6 +129,7 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 #latest-content, #profile {height: 600px; width:50%; display: inline-block; position:relative} 
 #latest-content {float: left;  position:relative;}
+#latest-content header h2 {height: 40px; line-height: 40px; margin:0}
 #profile {float: right}
 #profile * section {
 
@@ -148,14 +149,16 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 #profile * .active-slide {height: 600px;}
 
-section#video{height: auto; width: 100%;
+section#videos{height: auto; width: auto; margin-right:20px;
 	#player {height: 300px; width: 450px; background: gray; margin: auto}
 }
 
-section#video {}	
-section#video .sleeve {margin:20px; display:inline-block; background: $bg-dark;}
+section#videos {}	
+section#videos .sleeve {margin:20px; display:inline-block; background: $bg-dark;}
+
 section#my-teams, section#my-news, section#my-players {height: 200px; background: $bg-shine; width: 50%}
 section#my-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
+section#my-teams .sleeve {margin: 0px}
 section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
 
 section#tbd {height: auto; min-height: 200px; background: orange}
