@@ -2,25 +2,25 @@ var city = $('li.current-user-city').html();
 var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
-// GET TEAM ID
-// $.ajax({
-// 	url: espn,
-// 	data: {
-// 		apikey: '4u3e6enmscdszh8qcy9dh7my',
-// 		_accept: "application/json"
-// 	},
-// 	dataType: "jsonp",
-// 	beforeSend: function(xhr) {
-// 		xhr.setRequestHeader("Accept", "application/json");
-// 	},
-// 	cache: false,
-// 	type: "get"
-// }).done(function(data) {
-// 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
-// 					team_id = team.id;
-// 					return this;
-// 			});	return;
-// 	});
+//GET TEAM ID
+$.ajax({
+	url: espn,
+	data: {
+		apikey: '4u3e6enmscdszh8qcy9dh7my',
+		_accept: "application/json"
+	},
+	dataType: "jsonp",
+	beforeSend: function(xhr) {
+		xhr.setRequestHeader("Accept", "application/json");
+	},
+	cache: false,
+	type: "get"
+}).done(function(data) {
+		$.each(data.sports[0].leagues[0].teams, function(index, team) {
+					team_id = team.id;
+					return this;
+			});	return;
+	});
 
 
 // GET INFO
@@ -50,7 +50,7 @@ function find_team_info() {
 			var team_id = team.id;
 			
 		$('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
-		//$("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
+		$("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
 				
 				info2 = $(info);
@@ -61,9 +61,9 @@ function find_team_info() {
 
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
-								//$('<a class="espn-links" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview nav');
+								$('<a class="espn-links" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview nav');
 								$("#my-teams * a:contains('usa.1')").remove();
-								//$("#my-teams * a:contains('" + city + "')").css("display", "block");
+								$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
 							});
 						});
