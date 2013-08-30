@@ -19,16 +19,16 @@
 			.team-city {}
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
-		.team-links {float: right; width: 25%; height: auto; display:inline-block; background: gray}
+		// .team-links {float: right; width: 25%; height: auto; display:inline-block; background: gray}
 
 			.team.primary {}
 		 	.team.secondary {width: 50%;}
 		 		.team.secondary .team-overview {background: #402C1B}
 		 		.team.secondary * .team-logo {height: auto; width:50%;}
 				h5.secondary {margin: 10px; float: left;}
+
 /*holds espn api info  - not certain what to do with that yet*/
-	.team-feed {height: 100%; max-width: 50%; width: auto; float:right; text-align: left;}
-			.team-feed {height: 100%; background: silver;}
+		.team-feed {height: 100%; max-width: 35%; width: auto; float:right; text-align: left;}
 			.team-feed nav a.espn-links {color: red; display: none; background: none}
 
 	.team-feed, .team-overview {position: relative; display:inline-block;}
