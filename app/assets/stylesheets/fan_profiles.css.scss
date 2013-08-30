@@ -8,9 +8,9 @@
 /* elements default to hidden */
 #my-teams * .team, #my-teams * .hideme  {display: none};
 
-.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;}
+.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; clear:both}
 
-	.team-overview {height: auto; width: 400px; float: left; border: 1px solid white; padding: 8px;}
+	.team-overview {height: auto; width: 100%; float: left; border: 1px solid white; padding: 8px;}
 
 		.team-logo {height: 150px; width:150px; background: 0; position: relative; display: inline-block; float: left; text-align:center}
 		.team-logo:not(first) 
@@ -20,7 +20,8 @@
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
 			.team.primary {}
-		 	.team.secondary .team-logo img {height: 100px; width: 100px;}
+		 	.team.secondary {width: 50%;}
+		  .team.secondary .team-logo img {height: 50%; width: 50%;}
 /*holds espn api info  - not certain what to do with that yet*/
 	.team-feed {height: 100%; max-width: 50%; width: auto; float:right; text-align: left;}
 			.team-feed nav a.espn-links {color: red; display: none; background: none}
