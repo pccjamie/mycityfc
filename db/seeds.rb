@@ -2,8 +2,6 @@ User.delete_all
 Slide.delete_all
 Team.delete_all
 
-
-
 t1 = Team.create!(:name => 'Seattle Sounders FC', :venue => 'CenturyLink Field', :address=> '6800 Occidental Ave S, Seattle, WA', :city =>'Seattle',:state => 'WA',:league =>'MLS', :image => 'http://upload.wikimedia.org/wikipedia/commons/6/68/Soundersfcqwestfield.jpg', :logo => 'https://s3.amazonaws.com/soccer-production-jyr/logos/seattle_150.png')
 t2 = Team.create!(:name=>'New York Red Bulls', :venue=> 'Red Bull Arena, Harrison, NJ', :address => '600 Cape May St, Harrison, NJ', :city =>'Harrison',:state=>'NJ', :league=>'MLS', :image => 'http://www.topdrawersoccer.com/the91stminute/wp-content/uploads/2013/05/NYC.jpg', :logo =>'https://s3.amazonaws.com/soccer-production-jyr/logos/newyork_150.png')
 t3 = Team.create!(:name =>'LA Galaxy', :venue => 'StubHub Center', :address =>'18400 S Avalon Blvd, Carson, CA 90746', :league =>'MLS', :image => 'http://www.soccerbyives.net/images/2012/12/RobbieKeanePK-ISIPhotos.com_.jpg', :logo => 'https://s3.amazonaws.com/soccer-production-jyr/logos/losangeles_150.png')

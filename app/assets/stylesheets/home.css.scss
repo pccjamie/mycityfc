@@ -37,13 +37,14 @@ body {
 	height: 100%; width:100%;
 	background-image: url(closeup.jpg);
 	background-size: 100%;
-	background-repeat: none;display: block;
-	background-attachment:fixed;
+	background-repeat: none;
+	background-attachment: fixed;
+	display: block;
 }
 
 // body.default * form {background: $bg-dark;}
 
-body.default * form * {color: #252525}
+body.bg-default * form * {color: #252525}
 
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}

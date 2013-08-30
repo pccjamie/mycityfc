@@ -51,15 +51,15 @@
 
 #prefer to handle with AJAX /JSON but no access to ESPN schedule API. So scraping.
   def get_team
-    #where do I get this? Work with the ESPN API?  currently working with seed.   
-    response = HTTParty.get("http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my")
-    puts response.body, response.code, response.message, response.headers.inspect
-    @team_hash = JSON(response) 
+    # #where do I get this? Work with the ESPN API?  currently working with seed.   
+    # response = HTTParty.get("http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my")
+    # puts response.body, response.code, response.message, response.headers.inspect
+    # @team_hash = JSON(response) 
 
-    # respond_to do |format|
-    #   format.json render :partial => "fan_profiles/get_team.json"
-    # end
-    return
+    # # respond_to do |format|
+    # #   format.json render :partial => "fan_profiles/get_team.json"
+    # # end
+    # return
   end
 
 
