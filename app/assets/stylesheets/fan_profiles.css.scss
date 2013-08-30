@@ -24,9 +24,9 @@
 			.team.primary {}
 		 	.team.secondary {width: 50%;}
 		 		.team.secondary .team-overview {background: #425566}
-		 		.team.secondary * .team-logo img {height: auto; width:auto;}
+		 		.team.secondary * .team-logo {height: 100px; width:auto;}
 		 		.team.secondary * .team-info {width: 45%}
-		 		
+
 				h5.secondary {margin: 10px; float: left; clear:both}
 
 /*holds espn api info  - not certain what to do with that yet*/
