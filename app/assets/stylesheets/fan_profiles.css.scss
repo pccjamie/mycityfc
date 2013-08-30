@@ -12,7 +12,7 @@
 
 	.team-overview {height: auto; width: 100%; float: left; border: 1px solid white; padding: 8px;background: #758AA3}
 
-		.team-logo {height: auto; width: 50%; background: 0; position: relative; display: inline-block; float: left; text-align:center}
+		.team-logo {height: auto; width: 150px; background: 0; position: relative; display: inline-block; float: left; text-align:center}
 		.team-info {height:auto; width: 40%; display:inline-block; margin-left: 10px; }
 			.team-name {}
 			.team-venue {}
@@ -24,7 +24,9 @@
 			.team.primary {}
 		 	.team.secondary {width: 50%;}
 		 		.team.secondary .team-overview {background: #425566}
-		 		.team.secondary * .team-logo img {height: auto; width:50%;}
+		 		.team.secondary * .team-logo img {height: auto; width:auto;}
+		 		.team.secondary * .team-info {width: 45%}
+		 		
 				h5.secondary {margin: 10px; float: left; clear:both}
 
 /*holds espn api info  - not certain what to do with that yet*/

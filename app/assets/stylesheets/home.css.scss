@@ -149,8 +149,8 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 #profile * .active-slide {height: 600px;}
 
-section#videos{height:460px; width: auto; margin-right:20px; background: $bg-dark;
-	#player {height: 300px; width: 450px; background: 0; margin: auto}
+section#videos{height:440px; width: auto; margin-right:20px; background: $bg-dark;
+	#player {height: 300px; width: 450px; background: gray; margin: auto}
 }
 section#videos {background: $bg-dark;}
 section#videos .sleeve {margin:20px; display:inline-block}
@@ -160,9 +160,7 @@ section#my-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
 section#my-teams .sleeve {margin: 0px}
 section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
 
-section#fans {width:100%;}
-
-section#tbd {height: auto; min-height: 300px; background: orange; float: left; display: block; margin-top:20px;}
+section#tbd {height: auto; min-height: 300px;  width: 100%; background: orange; margin-top:20px;}
 
 
 section#greeting-block-wide {height: 500px}
