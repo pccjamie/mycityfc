@@ -16,7 +16,7 @@
   require 'httparty'
   # require 'rubygems'
   # require 'google/api_client'
-  require 'trollop'
+  # require 'trollop'
 
 
   def index
