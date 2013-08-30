@@ -49,8 +49,8 @@ function find_team_info() {
 			var team_location = team.location.toLowerCase();
 			var team_id = team.id;
 			
-		$('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
-		$("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
+		// $('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
+		// $("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
 				
 				info2 = $(info);

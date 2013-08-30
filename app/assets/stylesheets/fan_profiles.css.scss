@@ -6,7 +6,7 @@
 
 
 /* elements default to hidden */
-#my-teams * .team, #my-teams * .hideme  {display: none};
+#my-teams * .hideme  {display: none};
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; clear:both}
 
@@ -26,9 +26,8 @@
 				h5.secondary {margin: 10px; float: left;}
 /*holds espn api info  - not certain what to do with that yet*/
 	.team-feed {height: 100%; max-width: 50%; width: auto; float:right; text-align: left;}
-			.team-feed .feed-data {height: 100%; background: silver}
+			.team-feed {height: 100%; background: silver;}
 			.team-feed nav a.espn-links {color: red; display: none; background: none}
-			.feed-data {display:none}
 
 	.team-feed, .team-overview {position: relative; display:inline-block;}
 
