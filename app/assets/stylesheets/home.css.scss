@@ -149,12 +149,11 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 #profile * .active-slide {height: 600px;}
 
-section#videos{height: auto; width: auto; margin-right:20px;
+section#videos{height:440px; width: auto; margin-right:20px; background: $bg-dark;
 	#player {height: 300px; width: 450px; background: gray; margin: auto}
 }
-
-section#videos {}	
-section#videos .sleeve {margin:20px; display:inline-block; background: $bg-dark;}
+section#videos {background: $bg-dark;}
+section#videos .sleeve {margin:20px; display:inline-block}
 
 section#my-teams, section#my-news, section#my-players {height: 200px; background: $bg-shine; width: 50%}
 section#my-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
@@ -163,7 +162,7 @@ section#my-news, section#my-kid  {float: left; display: inline-block;position: r
 
 section#fans {width:100%;}
 
-section#tbd {height: auto; min-height: 200px; background: orange}
+section#tbd {height: auto; min-height: 300px; background: orange; float: left; display: block; margin-top:20px;}
 
 
 section#greeting-block-wide {height: 500px}
@@ -187,7 +186,7 @@ section#greeting-block-wide {height: 500px}
 article:nth-child(even) {background: #1f9fff}
 
 section#my-community {display: inline-block;position: relative; 	background: rgba(31, 159, 255, .75); overflow-y: auto; overflow-x:none}
-section#my-videos {height: 400px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.75); clear:both; float: left; clear:both;}
+section#my-videos {height: 440px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.75); clear:both; float: left; clear:both;}
 section#training {height: 400px; background: red}
 
 form {background: rgba(135,169,181,0.75); max-height: 300px; height: auto; width: 300px; margin: 0 auto; padding: 20px;}

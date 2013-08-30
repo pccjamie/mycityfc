@@ -10,7 +10,7 @@
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; clear:both}
 
-	.team-overview {height: auto; width: 65%; float: left; border: 1px solid white; padding: 8px;}
+	.team-overview {height: auto; width: 100%; float: left; border: 1px solid white; padding: 8px;}
 
 		.team-logo {height: auto; width: 50%; background: 0; position: relative; display: inline-block; float: left; text-align:center}
 		.team-info {height:auto; width: 40%; display:inline-block; margin-left: 10px; }
@@ -25,10 +25,10 @@
 		 	.team.secondary {width: 50%;}
 		 		.team.secondary .team-overview {background: #402C1B}
 		 		.team.secondary * .team-logo {height: auto; width:50%;}
-				h5.secondary {margin: 10px; float: left;}
+				h5.secondary {margin: 10px; float: left; clear:both}
 
 /*holds espn api info  - not certain what to do with that yet*/
-		.team-feed {height: 100%; max-width: 35%; width: auto; float:right; text-align: left;}
+		.team-feed {height: 100%; max-width: 35%; width: auto; float:right; text-align: left; display:none}
 			.team-feed nav a.espn-links {color: red; display: none; background: none}
 
 	.team-feed, .team-overview {position: relative; display:inline-block;}
