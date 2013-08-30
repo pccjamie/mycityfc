@@ -144,7 +144,7 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 .league {background: $bg-light; color: #262626}
 
 #profile * .cycle-pager {height: 40px;  width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
-#profile * .cycle-pager li.pager {height: 40px; line-height: 40px; width: 30%; display: inline-block; background: $bg-main; margin:0; padding:0;}
+#profile * .cycle-pager li.pager {height: 40px; line-height: 40px; width: 30%; display: inline-block; background: $bg-main; margin:0; padding:0 0 0 20px;}
 #profile * .cycle-pager li.active { background: $bg-light;}
 
 #profile * .active-slide {height: 600px;}
@@ -160,6 +160,8 @@ section#my-teams, section#my-news, section#my-players {height: 200px; background
 section#my-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
 section#my-teams .sleeve {margin: 0px}
 section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
+
+section#fans {width:100%;}
 
 section#tbd {height: auto; min-height: 200px; background: orange}
 

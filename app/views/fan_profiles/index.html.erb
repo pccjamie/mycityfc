@@ -11,7 +11,7 @@
 
 <header>
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
-	<h4>It's __ <%= @weather %> at the moment. Looks like a nice day for a game! Here's what's going on around the <%= current_user.city %> area</h4>
+	<h4><!-- It is <%#= @weather %> at the moment. --> Looks like a nice day for a game! Here's what's going on around the <%= current_user.city %> area</h4>
 </header>
 
 <div id="latest-content">
@@ -44,20 +44,25 @@
 
 							<% @myteams.each do |t| %>
 							<div class="team">
-								<div class="team-overview">
-									<div class="team-logo"><img src='<%= t.logo %>'/></div/>
-									<div class="team-info">
-										<h4 class="team-name"><%=t.name %></h4>
-										<h5 class="team-venue"><%= t.venue %></h5>
-										<h5 class="team-city"><%= t.city %></h5>
-										<div class="team-venue-image"><%= t.image %></div>
+									<div class="team-overview">
+										<div class="team-logo"><img src='<%= t.logo %>'/></div/>
+										<div class="team-info">
+											<h4 class="team-name"><%=t.name %></h4>
+											<h5 class="team-venue"><%= t.venue %></h5>
+											<h5 class="team-city"><%= t.city %>, <%= t.state %></h5>
+											<div class="team-venue-image"><%= t.image %></div>
+										</div>
 									</div>
-								</div>
 
-								<div class="team-feed">
-									<header></header>
-									<nav></nav>
-								</div>
+									<div class="team-links">
+										<a href="#">MLS</a>
+										<a href="#">ESPN</a>
+									</div>
+
+									<div class="team-feed">
+										<header></header>
+										<nav></nav>
+									</div>
 						</div>
 
 							<% end %>

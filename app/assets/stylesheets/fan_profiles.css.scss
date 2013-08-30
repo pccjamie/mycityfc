@@ -10,19 +10,21 @@
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; clear:both}
 
-	.team-overview {height: auto; width: 100%; float: left; border: 1px solid white; padding: 8px;}
+	.team-overview {height: auto; width: 65%; float: left; border: 1px solid white; padding: 8px;}
 
-		.team-logo {height: auto; width: auto; background: 0; position: relative; display: inline-block; float: left; text-align:center}
-		.team-info {height:auto; width: 200px; display:inline-block; margin-left: 10px; }
+		.team-logo {height: auto; width: 60%; background: 0; position: relative; display: inline-block; float: left; text-align:center}
+		.team-info {height:auto; width: 40%; display:inline-block; margin-left: 10px; }
 			.team-name {}
 			.team-venue {}
 			.team-city {}
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
+		.team-links {float: right; width: 25%; height: auto; display:inline-block; background: gray}
+
 			.team.primary {}
 		 	.team.secondary {width: 50%;}
 		 		.team.secondary .team-overview {background: #402C1B}
-		 		.team.secondary .team-logo img {height: auto; width:50%;}
+		 		.team.secondary * .team-logo {height: auto; width:50%;}
 				h5.secondary {margin: 10px; float: left;}
 /*holds espn api info  - not certain what to do with that yet*/
 	.team-feed {height: 100%; max-width: 50%; width: auto; float:right; text-align: left;}
