@@ -61,7 +61,7 @@ function find_team_info() {
 
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
-								$('<a class="espn-links" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview nav');
+								$('<a class="espn-links" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-feed nav');
 								$("#my-teams * a:contains('usa.1')").remove();
 								$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
