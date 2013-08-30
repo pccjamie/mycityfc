@@ -44,14 +44,18 @@
 							
 							<div class="team-overview">
 								<header></header>
-							<nav></nav>
+								<nav></nav>
 							</div>
 							<div class="team-media">
 							<% @myteams.each do |t| %>
+							<div class="team-data">
+
 							<div class="team-name"><h5><%=t.name %></h5></div>
 							<div class="team-logo"><img src='<%= t.logo %>'/></div/>
 							<div class="team-venue"><h5><%= t.venue %></h5></div>
 							<div class="team-venue-image"><%= t.image %></div>
+							</div>
+
 							<% end 	%>
 							</div>
 					</div>

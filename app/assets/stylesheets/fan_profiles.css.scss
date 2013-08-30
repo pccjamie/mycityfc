@@ -10,6 +10,9 @@
 
 /*holds espn api info  - not certain what to do with that yet*/
 
+
+.team-data {height:auto; width: auto; display:inline-block; border: 1px solid white;}
+
 .team-overview {height: 100%; width: 50%; float: right}
 .team-media {float:left; text-align:center; height: 100%; width: 200px;}
 
@@ -20,3 +23,4 @@
 .team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
 #my-news * .cat {display:none}
+
