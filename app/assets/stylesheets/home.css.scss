@@ -2,6 +2,8 @@ $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.5);
 $header-text: #363636;
 $bg-dark: rgba(0,0,0,.75);
+$bg-medium: rgba(0,0,0,.5);
+
 $bg-light: rgba(255,255,255,.5);
 
 $text-hover-bg: #262626;
@@ -117,6 +119,7 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 	#lower {
 		height: 40px; line-height: 40px; width: 100%;
 		ul {line-height: inherit}
+		ul li {background: #425566}
 		ul li a {font-size: 1.5em;}
 	}
 }
@@ -127,9 +130,9 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 // #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
-#latest-content, #profile {height: 600px; width:50%; display: inline-block; position:relative} 
+#latest-content, #profile {height: auto; width:50%; display: inline-block; position:relative} 
 #latest-content {float: left;  position:relative;}
-#latest-content header h2 {height: 40px; line-height: 40px; margin:0}
+#latest-content header h2 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
 #profile {float: right}
 #profile * section {
 
