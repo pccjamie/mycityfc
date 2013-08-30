@@ -10,8 +10,8 @@
 
 /*holds espn api info  - not certain what to do with that yet*/
 
-.team-overview {height: 100%; width: 45%; float: right}
-.team-media {float:left; text-align:center; height: 100%; width: 50%;}
+.team-overview {height: 100%; width: 50%; float: right}
+.team-media {float:left; text-align:center; height: 100%; width: 200px;}
 
 .team-overview, .team-media {position: relative; display:inline-block;}
 .team-overview nav a.team-link {color: red; display: none; background: none}

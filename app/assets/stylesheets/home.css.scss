@@ -154,7 +154,7 @@ section#video{height: auto; width: 100%;
 section#video {}	
 section#video .sleeve {margin:20px; background: $bg-dark;}
 section#my-teams,section#my-news, section #my-players {height: 200px;background: $bg-shine; width: 50%}
-section#my-teams { height: 200px; width: 100%}
+section#my-teams { height: auto; width: 100%}
 section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
 
 section#tbd {height: auto; min-height: 200px; background: orange}
