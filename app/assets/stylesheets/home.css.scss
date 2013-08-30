@@ -149,8 +149,8 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 #profile * .active-slide {height: 600px;}
 
-section#videos{height:440px; width: auto; margin-right:20px; background: $bg-dark;
-	#player {height: 300px; width: 450px; background: gray; margin: auto}
+section#videos{height:460px; width: auto; margin-right:20px; background: $bg-dark;
+	#player {height: 300px; width: 450px; background: 0; margin: auto}
 }
 section#videos {background: $bg-dark;}
 section#videos .sleeve {margin:20px; display:inline-block}
