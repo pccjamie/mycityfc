@@ -41,25 +41,29 @@
 <div class="league slide">
 					<section id="my-teams">
 						<div class="sleeve">
-							
-							<div class="team-overview">
-								<header></header>
-								<nav></nav>
-							</div>
-							<div class="team-media">
+
 							<% @myteams.each do |t| %>
-							<div class="team-data">
+							<div class="team">
+								<div class="team-overview">
+									<div class="team-logo"><img src='<%= t.logo %>'/></div/>
+									<div class="team-info">
+										<h4 class="team-name"><%=t.name %></h4>
+										<h5 class="team-venue"><%= t.venue %></h5>
+										<div class="team-venue-image"><%= t.image %></div>
+									</div>
+								</div>
 
-							<div class="team-name"><h5><%=t.name %></h5></div>
-							<div class="team-logo"><img src='<%= t.logo %>'/></div/>
-							<div class="team-venue"><h5><%= t.venue %></h5></div>
-							<div class="team-venue-image"><%= t.image %></div>
-							</div>
+								<div class="team-feed">
+									<header></header>
+									<nav></nav>
+								</div>
+						</div>
 
-							<% end 	%>
-							</div>
-					</div>
-					</section>
+							<% end %>
+
+					
+					</div><!--sleeve-->
+					</section><!--my teams section-->
 
 		<div class="clearfix"></div>
 		

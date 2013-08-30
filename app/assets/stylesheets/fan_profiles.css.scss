@@ -8,19 +8,24 @@
 /* elements default to hidden */
 #my-teams * .team, #my-teams * .hideme  {display: none};
 
+.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
+
+	.team-overview {float: left; border: 1px solid white; padding: 8px;}
+
+		.team-logo {height: 150px; width:150px; background: 0; position: relative; display: inline-block; float: left; text-align:center}
+
+		.team-info {height:auto; width: 250px; display:inline-block; }
+			.team-name {}
+			.team-venue {}
+			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
+
+
 /*holds espn api info  - not certain what to do with that yet*/
+	.team-feed {height: 100%; max-width: 50%; width: auto; float:right; text-align: left;}
+			.team-feed nav a.espn-links {color: red; display: none; background: none}
 
 
-.team-data {height:auto; width: auto; display:inline-block; border: 1px solid white;}
-
-.team-overview {height: 100%; width: 50%; float: right}
-.team-media {float:left; text-align:center; height: 100%; width: 200px;}
-
-.team-overview, .team-media {position: relative; display:inline-block;}
-.team-overview nav a.team-link {color: red; display: none; background: none}
-.team {height: 100%; width: 100%; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
-.team-logo {height: 150px; width:150px; background: 0; position: relative; display: inline-block; text-align:center}
-.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
+	.team-feed, .team-overview {position: relative; display:inline-block;}
 
 #my-news * .cat {display:none}
 

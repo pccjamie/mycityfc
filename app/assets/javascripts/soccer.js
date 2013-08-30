@@ -49,8 +49,8 @@ function find_team_info() {
 			var team_location = team.location.toLowerCase();
 			var team_id = team.id;
 			
-		$('#my-teams * .team-overview header').append("<div class=team>" + team_location + "</div>");
-		//$("#my-teams * .team:contains('" + city + "')").css("display", "block");
+		$('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
+		//$("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
 				
 				info2 = $(info);
@@ -61,7 +61,7 @@ function find_team_info() {
 
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
-								//$('<a class="team-link" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview nav');
+								//$('<a class="espn-links" href=' + espn_links + '><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('#my-teams * .team-overview nav');
 								$("#my-teams * a:contains('usa.1')").remove();
 								//$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
@@ -95,7 +95,7 @@ function espn_find_news() {
 
 		$.each(data.headlines, function(index, article) {
 		
-			$('#my-news .sleeve').append("<article><h4><a href="+article.links.web.href+">"+article.title+"</a></h4> </article>");
+			$('#my-news .sleeve').append("<article><h5><a href="+article.links.web.href+">"+article.title+"</a></h5> </article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			console.log(article.categories);
 					

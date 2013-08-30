@@ -35,6 +35,7 @@ body.bg-parent-profiles {
 
 body {
 	height: 100%; width:100%;
+	background-image: url(closeup.jpg);
 	background-size: 100%;
 	background-repeat: none;
 	background-attachment: fixed;
@@ -152,9 +153,9 @@ section#video{height: auto; width: 100%;
 }
 
 section#video {}	
-section#video .sleeve {margin:20px; background: $bg-dark;}
-section#my-teams,section#my-news, section #my-players {height: 200px;background: $bg-shine; width: 50%}
-section#my-teams { height: auto; width: 100%}
+section#video .sleeve {margin:20px; display:inline-block; background: $bg-dark;}
+section#my-teams, section#my-news, section#my-players {height: 200px; background: $bg-shine; width: 50%}
+section#my-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
 section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
 
 section#tbd {height: auto; min-height: 200px; background: orange}

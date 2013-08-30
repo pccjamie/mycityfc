@@ -29,7 +29,7 @@
     show_leagues
     show_news
 
-    @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
+    @myteams = Team.near([current_user.latitude,current_user.longitude], 200)
 
     #match day
     show_match_info
@@ -83,10 +83,8 @@
   def get_current_city
     #get value stored in User model
     user = User.find(current_user.id) 
-    puts user  
     @city = current_user.city
     @state = current_user.state
-    puts @city
     return 
   end
 
