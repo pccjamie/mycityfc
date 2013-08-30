@@ -8,14 +8,14 @@
 /* elements default to hidden */
 #my-teams * .team, #my-teams * .hideme  {display: none};
 
-.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;background: white; color:#1f9fff; font-size: 2em;}
+.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px;}
 
-	.team-overview {float: left; border: 1px solid white; padding: 8px;}
+	.team-overview {height: auto; width: 400px; float: left; border: 1px solid white; padding: 8px;}
 
 		.team-logo {height: 150px; width:150px; background: 0; position: relative; display: inline-block; float: left; text-align:center}
 
-		.team-info {height:auto; width: 250px; display:inline-block; }
-			.team-name {}
+		.team-info {height:auto; width: 200px; display:inline-block; margin-left: 10px; }
+			.team-name {font-size:1.1em}
 			.team-venue {}
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
