@@ -12,16 +12,16 @@
 
 	.team-overview {height: auto; width: 100%; float: left; border: 1px solid white; padding: 8px;background: #758AA3}
 
-		.team-logo {height: auto; width: 50%; background: 0; position: relative; display: inline-block; float: left; text-align:center}
+		.team-logo {height: auto; background: 0; position: relative; display: inline-block; float: left; text-align:center}
 		.team-info {height:auto; width: 40%; display:inline-block; margin-left: 10px; }
 			.team-name {}
 			.team-venue {}
 			.team-city {}
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
-		// .team-links {float: right; width: 25%; height: auto; display:inline-block; background: gray}
+		.team-links {float: right; width: 25%; height: auto; display:inline-block; background: gray}
 
-			.team.primary {}
+			.team.primary * .team-logo {width:150px;}
 		 	.team.secondary {width: 50%;}
 		 		.team.secondary .team-overview {background: #425566}
 		 		.team.secondary * .team-logo img {height: auto; width:50%;}
