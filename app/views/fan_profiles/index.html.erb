@@ -31,13 +31,6 @@
 
 <%= render partial: 'search' %>
 
-
-<% for team in @myteams.nearbys(10) %>
-<%= team.name, team.city %> (<%= city.distance.round(2) %> miles)
-<% end %>
-
-
-
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 
 							<ul class="cycle-pager">
