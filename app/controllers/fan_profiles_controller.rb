@@ -14,6 +14,7 @@
   require 'nokogiri'
   require 'open-uri'
   require 'httparty'
+  
   # require 'rubygems'
   # require 'google/api_client'
   # require 'trollop'
@@ -21,17 +22,25 @@
 
   def index
     current_user
-    @teams = Team.all
+    # @teams = Team.all
     @users = User.all
     
     #standard
-    show_weather
-    show_leagues
-    show_news
+    # show_weather
+    # show_leagues
+    # show_news
 
-    @myteams = Team.near([current_user.latitude,current_user.longitude], 200)
+  if params[:search].present?
+
+    @myteams = Team.near(params[:search], 50, :order => :distance)
+    # @myteams = Team.near([current_user.latitude,current_user.longitude], 200)
+    
+  else
+    @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
+  
+  end
     #match day
-    show_match_info
+    #show_match_info
 
   end
 
@@ -50,15 +59,14 @@
 
 #prefer to handle with AJAX /JSON but no access to ESPN schedule API. So scraping.
   def get_team
-    # #where do I get this? Work with the ESPN API?  currently working with seed.   
-    # response = HTTParty.get("http://api.espn.com/v1/sports/soccer/usa.1/teams?apikey=4u3e6enmscdszh8qcy9dh7my")
-    # puts response.body, response.code, response.message, response.headers.inspect
-    # @team_hash = JSON(response) 
+  
 
-    # # respond_to do |format|
-    # #   format.json render :partial => "fan_profiles/get_team.json"
-    # # end
-    # return
+  # if params[:search].present?
+  #   @teams = Location.near(params[:search], 50, :order => :distance)
+  # else
+  #   @locations = Location.all
+  # end
+
   end
 
 
@@ -95,7 +103,7 @@
    #  state = state.gsub!(/ /,"")
    #  city = current_user.city.gsub!(/ /, "%20")
     #weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").to_html
-    weather = Nokogiri::HTML(open("http://weather.weatherbug.com/NY/New%20York-weather.html")).css("#divTemp").text
+    #weather = Nokogiri::HTML(open("http://weather.weatherbug.com/NY/New%20York-weather.html")).css("#divTemp").text
     # weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").text
     @weather = weather
 
@@ -124,10 +132,10 @@
   end
 
 
-  #MAIN LOGIC.
-  # 1. DETERMINE DAY
-  # 2. LOOK AT SCHEDULE (schedule method gets users team)
-  # 3. IF DAY AND SCHEDULE MATCH... DO SONE THING IF NOT DO ANOTHER 
+#   #MAIN LOGIC.
+#   # 1. DETERMINE DAY
+#   # 2. LOOK AT SCHEDULE (schedule method gets users team)
+#   # 3. IF DAY AND SCHEDULE MATCH... DO SONE THING IF NOT DO ANOTHER 
 
   def show_match_info
 
@@ -146,15 +154,15 @@
         flash[:alert] = "Piss off wanker"
     end
 
-    # looks at time first, then will look at teams
-    #   if @time.year == 2013 #if current day == (match_day <= 3)
-    #     show_match_upcoming
-    #   elsif @time.year == 2014  #elsf current_day == (match.day >=3)
-    #     show_match_highlights  
-    #   else
-    #     #temp
-    #     flash[:notice]  ='Offseason! Check back later!'
-    #   end
+#     # looks at time first, then will look at teams
+#     #   if @time.year == 2013 #if current day == (match_day <= 3)
+#     #     show_match_upcoming
+#     #   elsif @time.year == 2014  #elsf current_day == (match.day >=3)
+#     #     show_match_highlights  
+#     #   else
+#     #     #temp
+#     #     flash[:notice]  ='Offseason! Check back later!'
+#     #   end
 
 end
 

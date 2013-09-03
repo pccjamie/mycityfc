@@ -51,7 +51,10 @@ body.bg-default * form * {color: #252525}
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
 
-h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-weight: normal}
+h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px; font-weight: normal}
+
+p {font-family: 'BenchNine', Helvetica, Arial, sans-serif;}
+
 
 body.bg-public {
 	h1,h2,h3,h4,h5,p,a,li {color: #363636;}
@@ -132,12 +135,10 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 #latest-content, #profile {height: auto; width:50%; display: inline-block; position:relative} 
 #latest-content {float: left;  position:relative;}
-#latest-content header h2 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
+#latest-content header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
 #profile {float: right}
 #profile * section {
-
 	display:inline-block; width:50%; height: auto; display: inline-block; background-color:$header-bg; position: relative; min-height: 200px; max-height: 400px;
-
 }
 
 
@@ -159,7 +160,7 @@ section#videos {background: $bg-dark;}
 section#videos .sleeve {margin:20px; display:inline-block}
 
 section#my-teams, section#my-news, section#my-players {height: 200px; background: $bg-shine; width: 50%}
-section#my-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
+section#my-teams { height: auto; min-height: 440px; width: 100%; padding: 10px; overflow-x: auto}
 section#my-teams .sleeve {margin: 0px}
 section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
 
