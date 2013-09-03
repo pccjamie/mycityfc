@@ -34,7 +34,7 @@
   #@myteams = Team.near(params[:search], 50, :order => :distance)
     
   #else
-    @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
+    @myteams = Team.near([current_user.latitude,current_user.longitude], 300)
   
   #end
   
