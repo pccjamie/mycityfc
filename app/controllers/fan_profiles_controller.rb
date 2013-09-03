@@ -22,7 +22,7 @@
 
   def index
     current_user
-    # @teams = Team.all
+    @teams = Team.all
     @users = User.all
     
     #standard
@@ -30,21 +30,16 @@
     # show_leagues
     # show_news
 
-
-
+  #if params[:search].present?
+  #@myteams = Team.near(params[:search], 50, :order => :distance)
     
-
-  if params[:search].present?
-
-    @myteams = Team.near(params[:search], 50, :order => :distance)
-    # @myteams = Team.near([current_user.latitude,current_user.longitude], 200)
-    
-  else
+  #else
     @myteams = Team.near([current_user.latitude,current_user.longitude], 60)
   
-  end
-    #match day
-    #show_match_info
+  #end
+  
+  #match day
+  show_match_info
 
   end
 
@@ -63,14 +58,6 @@
 
 #prefer to handle with AJAX /JSON but no access to ESPN schedule API. So scraping.
   def get_team
-  
-
-  # if params[:search].present?
-  #   @teams = Location.near(params[:search], 50, :order => :distance)
-  # else
-  #   @locations = Location.all
-  # end
-
   end
 
 
@@ -137,9 +124,9 @@
 
 
 #   #MAIN LOGIC.
-#   # 1. DETERMINE DAY
-#   # 2. LOOK AT SCHEDULE (schedule method gets users team)
-#   # 3. IF DAY AND SCHEDULE MATCH... DO SONE THING IF NOT DO ANOTHER 
+#   1. DETERMINE DAY
+#   2. LOOK AT SCHEDULE (schedule method gets users team)
+#   3. IF DAY AND SCHEDULE MATCH... DO SONE THING IF NOT DO ANOTHER 
 
   def show_match_info
 
