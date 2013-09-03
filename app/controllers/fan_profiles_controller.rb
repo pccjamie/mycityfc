@@ -8,7 +8,7 @@
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
   
-  skip_before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'
@@ -33,7 +33,7 @@
     @myteams = Team.near([current_user.latitude,current_user.longitude], 200)
    # @myteams = ['Seattle Sounders']
     #match day
-    #show_match_info
+    show_match_info
 
   end
 
@@ -100,7 +100,6 @@
     #weather = Nokogiri::HTML(open("http://weather.weatherbug.com/NY/New%20York-weather.html")).css("#divTemp").text
     # weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").text
     @weather = weather
-
   	return
   end
 
