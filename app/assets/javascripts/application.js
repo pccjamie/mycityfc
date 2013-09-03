@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require swap_bg
-//= require image
 //= require cycle2
 //= require soccer
 //= require foundation

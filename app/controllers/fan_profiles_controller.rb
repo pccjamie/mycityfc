@@ -103,7 +103,7 @@
 
   def show_match_info
 
-    get_team
+    # get_team
     get_current_time
     get_schedules
 
