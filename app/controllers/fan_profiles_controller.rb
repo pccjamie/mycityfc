@@ -30,6 +30,10 @@
     # show_leagues
     # show_news
 
+
+
+    
+
   if params[:search].present?
 
     @myteams = Team.near(params[:search], 50, :order => :distance)
