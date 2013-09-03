@@ -1,12 +1,12 @@
   class FanProfilesController < ApplicationController 
 
 
-  # def set_access_control_headers
-  #   response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
-  #   response.headers["Access-Control-Request-Method"] = "*"
-  #   response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-  #   response.headers["Content-Type"] = "application/json, text/html"
-  # end
+  def set_access_control_headers
+    response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
+    response.headers["Access-Control-Request-Method"] = "*"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+    response.headers["Content-Type"] = "application/json, text/html"
+  end
   
   before_filter :authenticate_user!, :except => [:index]
 
@@ -14,11 +14,6 @@
   require 'nokogiri'
   require 'open-uri'
   require 'httparty'
-  
-  # require 'rubygems'
-  # require 'google/api_client'
-  # require 'trollop'
-
 
   def index
     current_user
@@ -104,14 +99,10 @@
 
   # info coming in to client directly....perhaps should move to server side processing.
   def show_leagues
-    @leagues = "showing leagues"
- 		return
   end
 
   # info coming in to client directly....perhaps should move to server side processing.
   def show_news
-  	@news = "showing news"
-  	return
   end
 
 
@@ -123,11 +114,6 @@
       flash[:alert] = "No matches today. Sorry! Here's some other stuff."
   end
 
-
-  #MAIN LOGIC.
-  # 1. DETERMINE DAY
-  # 2. LOOK AT SCHEDULE (schedule method gets users team)
-  # 3. IF DAY AND SCHEDULE MATCH... DO SONE THING IF NOT DO ANOTHER 
 
   def show_match_info
 
