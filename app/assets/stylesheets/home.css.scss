@@ -133,10 +133,11 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 
 // #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
-#latest-content, #profile {height: auto; width:50%; display: inline-block; position:relative} 
-#latest-content {float: left;  position:relative;}
+#latest-content, #profile {height: auto; display: inline-block; position:relative} 
+#latest-content {float: left;  position:relative; width:60%;}
+
 #latest-content header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
-#profile {float: right}
+#profile {float: right; width: 40%}
 #profile * section {
 	display:inline-block; width:50%; height: auto; display: inline-block; background-color:$header-bg; position: relative; min-height: 200px; max-height: 400px;
 }

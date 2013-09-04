@@ -13,7 +13,7 @@
 	.team-overview {height: auto; width: 100%; float: left; border: 1px solid white; padding: 8px;background: #758AA3}
 
 		.team-logo {height: auto; background: 0; position: relative; display: inline-block; float: left; text-align:center}
-		.team-info {height:auto; width: 40%; display:inline-block; margin-left: 10px; }
+		.team-info {height:auto; display:inline-block; margin-left: 10px; }
 			.team-name {}
 			.team-venue {}
 			.team-city {}
@@ -22,7 +22,7 @@
 		.team-links {float: right; width: 25%; height: auto; display:inline-block; background: gray}
 
 			.team.primary * .team-logo {width:150px;}
-		 	.team.secondary {width: 50%;}
+		 	.team.secondary {width: 49%;}
 		 		.team.secondary .team-overview {background: #425566}
 		 		.team.secondary * .team-logo img {height: auto; width:50%;}
 				h5.secondary {margin: 10px; font-size:15px; float: left; clear:both}

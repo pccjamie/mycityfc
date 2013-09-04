@@ -2,6 +2,7 @@
 <div id="match-day">
 	<section>
 		<%= @current_time %>
+		<!--It is <%#= @weather %> at the moment. -->
 		<p class="alert"><%= alert %></p>
 		<%= @schedules_mls %>
 	</section>
@@ -11,7 +12,7 @@
 
 <header>
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
-	<h4><!-- It is <%#= @weather %> at the moment. --> Here's what's going on around <%= current_user.city %></h4>
+	<h4>Here's what's going on around <%= current_user.city %></h4>
 </header>
 
 <div id="latest-content">
@@ -41,7 +42,7 @@
 					<section id="my-teams">
 						<div class="sleeve">
 
-							<% @myteams.each do |t| %>
+							<% @teams.each do |t| %>
 							<div class="team">
 									<div class="team-overview">
 
@@ -52,6 +53,13 @@
 												<h5 class="team-venue"><%= t.venue %></h5>
 												<h5 class="team-city"><%= t.city %>, <%= t.state %></h5>
 												<div class="team-venue-image"><%= t.image %></div>
+												<div><%= t.distance_to(current_user.city) %></div>
+											
+											<div class="team-links">
+												<a href="#">MLS</a>
+												<a href="#">ESPN</a>
+											</div>
+
 										</div>
 									
 									<!-- 	<div class="team-feed">
@@ -60,10 +68,10 @@
 										</div> -->
 
 
-										<div class="team-links">
-											<a href="#">MLS</a>
-											<a href="#">ESPN</a>
-										</div>
+											<div class="team-links">
+												<a href="#">MLS</a>
+												<a href="#">ESPN</a>
+											</div>
 
 									</div>
 									</div>
@@ -92,7 +100,7 @@
 
 					<section id="fans">
 					<div class="sleeve">
-					<header><h5>FIND A SUPPORTERS CLUB</h5></header>
+					<header><h5>WHERE TO WATCH (And yes, drink)</h5></header>
 					</div>
 					</section>
 

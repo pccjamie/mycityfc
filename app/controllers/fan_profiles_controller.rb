@@ -17,7 +17,7 @@
 
   def index
     current_user
-    @teams = Team.all
+    #@teams = Team.all
     @users = User.all
     
     #standard
@@ -25,7 +25,9 @@
     # show_leagues
     # show_news
 
-    @myteams = Team.near([current_user.latitude,current_user.longitude], 1000)
+
+
+    @teams = Team.near([current_user.latitude,current_user.longitude], 1000)
     #match day
     show_match_info
 
