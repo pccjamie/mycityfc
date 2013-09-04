@@ -128,7 +128,7 @@ function location_switch(){
 	var bg = $('.team-venue-image:first').text();
 	$('body').css('background-image','url('+bg+')');
 	$('.team:first').addClass('primary');
-	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary').remove('.team-links');
+	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 }
 
 

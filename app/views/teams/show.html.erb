@@ -1,5 +1,7 @@
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
+admin screen
+
 <% @team %>
 <%= team.name %>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@team.latitude}%2C#{@team.longitude}" %>
+
 <% end %>
