@@ -8,7 +8,6 @@
   # end
   
   before_filter :authenticate_user!, :except => [:index]
-  # skip_before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'

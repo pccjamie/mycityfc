@@ -57,10 +57,8 @@
 												<h5 class="team-venue"><%= t.venue %>: About <%= t.distance_to(current_user.city).to_i %>miles away.</h5>
 												<h5 class="team-city"><%= t.city %>, <%= t.state %></h5>
 												<div class="team-venue-image"><%= t.image %></div>
-																						
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@t.latitude}%2C#{@t.longitude}" %>
-
-
+																								
+													<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@t.latitude}%2C#{@t.longitude}" %>
 
 											<div class="team-links">
 												<a href="#">MLS</a>
