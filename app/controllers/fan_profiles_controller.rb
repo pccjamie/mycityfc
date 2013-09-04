@@ -7,18 +7,17 @@
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
   
-  #before_filter :authenticate_user!, :except => [:index]
-  skip_before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index]
+  # skip_before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
   # require 'httparty'
 
-  #current_user = 'Jamie Yu-Ramos'
 
   def index
-    #current_user
+    current_user
     @users = User.all
     
     #standard
@@ -26,13 +25,14 @@
     # show_leagues
     # show_news
 
-    #@teams = Team.near([current_user.latitude,current_user.longitude], 1000)
-    
-    @teams = ['Houston']
+   @teams = Team.near([current_user.latitude,current_user.longitude], 400) 
 
     #match day
     show_match_info
 
+  end
+
+  def enter_distance
   end
 
   def show
@@ -53,10 +53,9 @@
     #scrape the espn site for schedule info (was not available via API)
 
     get_current_time
-    
     url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
-    # url_nasl = "http://www.nasl.com/index.php?id=12"
-    # url_usl = "http://uslpro.uslsoccer.com/schedules/"
+    url_nasl = "http://www.nasl.com/index.php?id=12"
+    url_usl = "http://uslpro.uslsoccer.com/schedules/"
     
     @schedule_mls = Nokogiri::HTML(open(url_mls)).css('#my-teams-table * tr.stathead').to_html
     # @schedule_nasl = Nokogiri::HTML(open(url_nasl)).css('body').to_html

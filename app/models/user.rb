@@ -5,6 +5,7 @@ has_and_belongs_to_many :teams
 
 geocoded_by :city
 after_validation :geocode
+after_validation :geocode, :if => :address_changed?
 
 belongs_to :profilable, :polymorphic => true
 

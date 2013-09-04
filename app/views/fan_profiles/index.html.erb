@@ -29,6 +29,7 @@
 <!--right panel-->
 
 <div id="profile">
+<h3>ALL LEAGUES, ALL TEAMS, NEAR YOU</h3>
 
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 
@@ -38,6 +39,8 @@
 							<li class="pager">USL PRO</li>
 							</ul>
 
+
+
 <div class="league slide">
 					<section id="my-teams">
 						<div class="sleeve">
@@ -46,14 +49,14 @@
 							<div class="team">
 									<div class="team-overview">
 
-										<div class="team-logo"><img src='<%#= t.logo %>'/></div>
+										<div class="team-logo"><img src='<%= t.logo %>'/></div>
 									
 										<div class="team-info">
-												<h4 class="team-name"><%#=t.name %></h4>
-												<h5 class="team-venue"><%#= t.venue %></h5>
-												<h5 class="team-city"><%#= t.city %>, <%#= t.state %></h5>
-												<div class="team-venue-image"><%#= t.image %></div>
-												<div><%#= t.distance_to(current_user.city) %></div>
+												<h4 class="team-name"><%=t.name %></h4>
+												<h5 class="team-venue"><%= t.venue %></h5>
+												<h5 class="team-city"><%= t.city %>, <%= t.state %></h5>
+												<div class="team-venue-image"><%= t.image %></div>
+												<div><%= t.distance_to(current_user.city) %></div>
 											
 											<div class="team-links">
 												<a href="#">MLS</a>
@@ -67,20 +70,16 @@
 											<nav></nav>
 										</div> -->
 
-
-											<div class="team-links">
-												<a href="#">MLS</a>
-												<a href="#">ESPN</a>
-											</div>
-
 									</div>
 									</div>
 
 							<% end %>
-
 					
 					</div><!--sleeve-->
+
 					</section><!--my teams section-->
+
+
 
 		<div class="clearfix"></div>
 		

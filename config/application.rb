@@ -31,6 +31,8 @@ module Soccer1
     #blocks rails from expecting attr_accessibile in the Models. Now I can use strong parameters
     config.active_record.whitelist_attributes = false
   
+
+    #cross domain ajax calls
     config.middleware.use Rack::Cors do
       allow do
         origins '*'
