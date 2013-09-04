@@ -22,20 +22,20 @@
 // }
 
 
-// //SETS UP MATCH
+//SETS UP MATCH
 
-// function match_day() {
-// 	console.log('Match Day! Slide down!');
-// 	// if (#schedule.has(now)){
-// 	// $('match-day').css('display','block');
-// 	// }
-// }
+function match_day() {
+	console.log('Match Day! Slide down!');
+	// if (#schedule.has(now)){
+	// $('match-day').css('display','block');
+	// }
+}
 
 // // on load events
 // $(function() {
 // 	// youtube_find_channel();
 // });
 
-// $("#trigger").click(function() {
-// 	$('#match-day').slideToggle();
-// });
+$("#trigger").click(function() {
+	$('#match-day').slideToggle();
+});

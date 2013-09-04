@@ -117,17 +117,26 @@ function espn_find_news() {
 	});
 }
 
-function teamslider(){
+function league_slider(){
 
 $('.leagueslider').cycle({
     manualSpeed: 100
 });
 }
 
+function location_switch(){
+	var bg = $('.team-venue-image:first').text();
+	$('body').css('background-image','url('+bg+')');
+	$('.team:first').addClass('primary');
+	$('.team:first').after('<h5>Other teams near you</h5>').nextAll().addClass('secondary');
+}
+
+
 // ON LOAD
 $(function() {
 	find_team_info();
+	location_switch();
 	espn_find_news();
-		teamslider();
+	league_slider();
 
 });
