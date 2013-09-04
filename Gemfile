@@ -3,8 +3,9 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# server
 gem 'pg'
+
+# server
 gem 'thin'
 
 # Use SCSS for stylesheets
@@ -29,7 +30,7 @@ gem 'jquery-rails'
 # gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
 gem 'zurb-foundation', '~> 4.0.0'
 
-gem "trollop", "~> 2.0"
+# gem "trollop", "~> 2.0"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -82,7 +83,7 @@ gem 'rack-cors', :require => 'rack/cors'
 #vids
 
 #bg image
-gem "flickr.rb", "~> 1.1.0"
+# gem "flickr.rb", "~> 1.1.0"
 
 #scraping, json, etc
 gem 'httparty'
@@ -107,14 +108,14 @@ gem 'forecast_io'
   gem 'annotate'
 
 # #test
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
-  gem 'cucumber-rails', :require => false
+  # gem 'factory_girl_rails'
+  # gem 'rspec-rails'
+  # gem 'shoulda-matchers'
+  # gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  # gem 'cucumber-rails', :require => false
 #   gem 'launchy'
-  gem 'database_cleaner'
-  gem 'guard-rspec'
+  # gem 'database_cleaner'
+  # gem 'guard-rspec'
 #   gem 'faker'
 
 # group :development do
