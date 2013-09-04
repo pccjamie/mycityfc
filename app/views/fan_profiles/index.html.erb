@@ -29,7 +29,7 @@
 <!--right panel-->
 
 <div id="profile">
-<h3>ALL LEAGUES, ALL TEAMS, NEAR YOU</h3>
+<h3>ALL LEAGUES &amp; TEAMS NEAR YOU</h3>
 
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 
@@ -56,7 +56,7 @@
 												<h5 class="team-venue"><%= t.venue %></h5>
 												<h5 class="team-city"><%= t.city %>, <%= t.state %></h5>
 												<div class="team-venue-image"><%= t.image %></div>
-												<div><%= t.distance_to(current_user.city) %></div>
+												<div class="team-distance"><%= t.distance_to(current_user.city).to_i %></div>
 											
 											<div class="team-links">
 												<a href="#">MLS</a>
