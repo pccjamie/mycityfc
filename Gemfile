@@ -57,7 +57,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
 #RAIL 4S compatability
 
 # to be able to deploy to Heroku
@@ -82,10 +81,10 @@ gem 'rack-cors', :require => 'rack/cors'
 #vids
 
 #bg image
-gem "flickr.rb", "~> 1.1.0"
+#gem "flickr.rb", "~> 1.1.0"
 
 #scraping, json, etc
-gem 'httparty'
+#gem 'httparty'
 gem 'nokogiri'
 gem 'twitter'
 
@@ -107,15 +106,15 @@ gem 'forecast_io'
   gem 'annotate'
 
 # #test
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
-  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
-  gem 'cucumber-rails', :require => false
-#   gem 'launchy'
-  gem 'database_cleaner'
-  gem 'guard-rspec'
-#   gem 'faker'
+  # gem 'factory_girl_rails'
+  # gem 'rspec-rails'
+  # gem 'shoulda-matchers'
+  # gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  # gem 'cucumber-rails', :require => false
+  # gem 'launchy'
+  # gem 'database_cleaner'
+  # gem 'guard-rspec'
+  # gem 'faker'
 
 # group :development do
 #   gem 'better_errors'

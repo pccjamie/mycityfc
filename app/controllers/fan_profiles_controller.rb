@@ -1,23 +1,24 @@
   class FanProfilesController < ApplicationController 
 
-
-  def set_access_control_headers
-    response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
-    response.headers["Access-Control-Request-Method"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-    response.headers["Content-Type"] = "application/json, text/html"
-  end
+  # def set_access_control_headers
+  #   response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
+  #   response.headers["Access-Control-Request-Method"] = "*"
+  #   response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+  #   response.headers["Content-Type"] = "application/json, text/html"
+  # end
   
-  before_filter :authenticate_user!, :except => [:index]
+  #before_filter :authenticate_user!, :except => [:index]
+  skip_before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
-  require 'httparty'
+  # require 'httparty'
+
+  #current_user = 'Jamie Yu-Ramos'
 
   def index
-    current_user
-    #@teams = Team.all
+    #current_user
     @users = User.all
     
     #standard
@@ -25,7 +26,10 @@
     # show_leagues
     # show_news
 
-    @teams = Team.near([current_user.latitude,current_user.longitude], 1000)
+    #@teams = Team.near([current_user.latitude,current_user.longitude], 1000)
+    
+    @teams = ['Houston']
+
     #match day
     show_match_info
 
@@ -57,6 +61,7 @@
     @schedule_mls = Nokogiri::HTML(open(url_mls)).css('#my-teams-table * tr.stathead').to_html
     # @schedule_nasl = Nokogiri::HTML(open(url_nasl)).css('body').to_html
     # @schedule_usl = Nokogiri::HTML(open(url_usl)).css('body * div#schedule').inner_html
+    
     @schedules =[@schedule_mls]#,@schedule_nasl, @schedule_nasl
     return
   end
