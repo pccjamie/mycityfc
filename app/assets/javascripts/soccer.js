@@ -83,7 +83,7 @@ function espn_find_news() {
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 2
+			limit: 3
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -95,18 +95,20 @@ function espn_find_news() {
 
 		$.each(data.headlines, function(index, article) {
 		
-			//if ($(this).parent().length > 0 ){
-				
-				$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
-		
-				//if this.children.length > 1, hide each and then show when MORE link is clicked.
-
-
+			$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
-			//	}
-			// else {
-			// 	$('#ticker #headlines').text('Sorry, no news is available at this time.');
-			// }
+			console.log(article.categories);
+					
+					// $.each(article.categories, function(index, category) {
+										
+					// 					// console.log(category);
+					// 					var cat = category;										
+					// 					$(cat);
+					// 					$(cat).attr('class','cat');
+					// 					// console.log($('.cat'));
+					// 					$("#my-news * .cat:contains('" + team_id + "')").css("display", "block");
+					// 					return this;
+					// });
 			
 		});
 	});
@@ -124,7 +126,9 @@ function location_switch(){
 	$('body').css('background-image','url('+bg+')');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
+	$('.team:first').nextAll().remove('.team-links');
 }
+
 
 // ON LOAD
 $(function() {
