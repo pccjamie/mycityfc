@@ -91,7 +91,7 @@ header#splash {
 
 header#banner * a {font-size: 30px; font-family: Arial, Helvetica, serif; letter-spacing:0}
 header#banner {display: block;}
-header#banner #ticker label {max-width:100px; display:inline-block}
+header#banner #ticker label {width: 25%; max-width: 300px; margin-right:20px; display:inline-block; position: relative}
 header#banner #ticker #headlines {width: 50%; display:inline-block}
 footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark; position: relative; float: left; display: block; }
 // nav {height: auto; display: block; padding: 20px; color: #FFF}
