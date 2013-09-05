@@ -1,4 +1,3 @@
-User.delete_all
 Slide.delete_all
 Team.delete_all
 
