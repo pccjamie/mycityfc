@@ -95,8 +95,15 @@ function espn_find_news() {
 
 		$.each(data.headlines, function(index, article) {
 		
-			$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
+			if($(this).children().length > 0 ){
+				$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
+				}
+			else {
+				$('#ticker #headlines').text('Sorry, no news is available at this time.');
+			}
+
+
 			console.log(article.categories);
 					
 					// $.each(article.categories, function(index, category) {

@@ -13,8 +13,7 @@
 <header id="banner">
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
  <div id="ticker">
-
- 	<label>JUST IN</label>
+ 	<span>JUST IN</span>
 	<div id="headlines">
 	</div>
  
@@ -24,7 +23,7 @@
 
 <div id="latest-content">
 	
-	<header><h3>MY ____: MATCH HIGHLIGHTS AND NEWS</h3></header>
+	<header><h3><%#= current_user.followed_team %>MATCH HIGHLIGHTS AND NEWS</h3></header>
 
 	<section id="videos">
 		<div class="sleeve">
