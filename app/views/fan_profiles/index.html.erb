@@ -12,12 +12,17 @@
 
 <header id="banner">
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
+ 	<div class="g-title">JUST IN</div>
+
  <div id="ticker">
- 	<span>JUST IN</span>
-	<div id="headlines">
-	</div>
- 
+		<div id="headlines"></div>
+ 		
+		<%= render partial: 'news' %>
+
+
+
  </div>
+		<a class="trigger">more?</a>
 
 </header>
 
@@ -35,8 +40,9 @@
 <!--right panel-->
 
 <div id="profile">
-<h3>ALL LEAGUES & TEAMS NEAR <%= current_user.city %></h3>
-
+	<header>
+<h3>ALL TEAMS WITHIN <%#= t.distance_to(current_user.city).to_i %> miles of <%#= current_user.city %></h3>
+</header>
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 
 							<ul class="cycle-pager">
@@ -55,14 +61,14 @@
 							<div class="team">
 									<div class="team-overview">
 
-										<div class="team-logo"><img src='<%= t.logo %>'/></div>
+										<div class="team-logo"><img src='<%#= t.logo %>'/></div>
 									
 										<div class="team-info">
-												<h4 class="team-name"><%=t.name %></h4>
-												<h5 class="team-venue"><%= t.venue %></h5>
-												<h5 class="team-city"><%= t.city %>, <%= t.state %></h5>
-												<div class="team-venue-image"><%= t.image %></div>
-												<h5 class="team-distance">Approx. <%= t.distance_to(current_user.city).to_i %> miles away.</h5>
+												<h4 class="team-name"><%#=t.name %></h4>
+												<h5 class="team-venue"><%#= t.venue %></h5>
+												<h5 class="team-city"><%#= t.city %>, <%#= t.state %></h5>
+												<div class="team-venue-image"><%#= t.image %></div>
+												<h5 class="team-distance">Approx. <%#= t.distance_to(current_user.city).to_i %> miles away.</h5>
 																								
 													<%#= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@t.latitude}%2C#{@t.longitude}" %>
 

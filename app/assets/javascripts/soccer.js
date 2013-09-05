@@ -1,6 +1,13 @@
 var city = $('li.current-user-city').html();
 var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
+function sets_up_news(){
+$("#banner").on("click","a.trigger", function(e) {
+	e.preventDefault();
+	$("#ticker").toggleClass('exposed');
+	$("#headlines article:first").nextAll().css('display','block');
+});
+}
 
 //GET TEAM ID
 $.ajax({
@@ -21,7 +28,6 @@ $.ajax({
 					return this;
 			});	return;
 	});
-
 
 // GET INFO
 function find_team_info() {
@@ -83,7 +89,7 @@ function espn_find_news() {
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 3
+			limit: 10
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -98,43 +104,32 @@ function espn_find_news() {
 			$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			console.log(article.categories);
-					
-					// $.each(article.categories, function(index, category) {
-										
-					// 					// console.log(category);
-					// 					var cat = category;										
-					// 					$(cat);
-					// 					$(cat).attr('class','cat');
-					// 					// console.log($('.cat'));
-					// 					$("#my-news * .cat:contains('" + team_id + "')").css("display", "block");
-					// 					return this;
-					// });
-			
 		});
 	});
 }
 
-function league_slider(){
+function switch_leagues(){
 
 $('.leagueslider').cycle({
     manualSpeed: 100
 });
 }
 
-function location_switch(){
+
+function change_on_location(){
 	var bg = $('.team-venue-image:first').text();
 	$('body').css('background-image','url('+bg+')');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
-	$('.team:first').nextAll().remove('.team-links');
 }
 
 
 // ON LOAD
 $(function() {
+	sets_up_news();
 	find_team_info();
-	location_switch();
-	espn_find_news();
-	league_slider();
-
+	find_news();
+	change_on_location();
+	switch_leagues();
 });
+

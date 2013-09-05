@@ -21,18 +21,13 @@
     
     #standard
     # show_weather
-    # show_leagues
-    # show_news
-
-   @teams = Team.near([current_user.latitude,current_user.longitude], 400) 
-
+   @teams = Team.near([current_user.latitude,current_user.longitude], 600) 
+   # @teams = ['Seattle']
     #match day
     show_match_info
 
   end
 
-  def enter_distance
-  end
 
   def show
     #future use - individual user profile pages
@@ -40,6 +35,10 @@
 
   
   ####SPECIAL
+
+  def enter_distance
+  end
+
   def get_current_time
     #basic time for testing - replace later with specific time params...
     @time = Time.now
@@ -65,7 +64,6 @@
   end
 
   def get_current_city
-    #get value stored in User model
     user = User.find(current_user.id) 
     @city = current_user.city
     @state = current_user.state
@@ -85,15 +83,6 @@
     @weather = weather
   	return
   end
-
-  # info coming in to client directly....perhaps should move to server side processing.
-  def show_leagues
-  end
-
-  # info coming in to client directly....perhaps should move to server side processing.
-  def show_news
-  end
-
 
   def show_match_day
       flash[:alert] = "Dates match. Showing ALL games for this day. Need to filter so it only returns USERS area."
