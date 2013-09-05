@@ -89,8 +89,9 @@ header#splash {
 	h2 {font-size: 30px; background: $bg-light;}
 }
 
-header#ticker * a {font-size: 40px; font-family: Arial, Helvetica, serif; letter-spacing:0}
-
+header#banner * a {font-size: 40px; font-family: Arial, Helvetica, serif; letter-spacing:0}
+header#banner #ticker label {max-width:100px;width: auto}
+header#banner #ticker #headlines {width: auto;}
 footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark; position: relative; float: left; display: block; }
 // nav {height: auto; display: block; padding: 20px; color: #FFF}
 

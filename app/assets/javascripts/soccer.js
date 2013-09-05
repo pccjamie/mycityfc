@@ -95,7 +95,7 @@ function espn_find_news() {
 
 		$.each(data.headlines, function(index, article) {
 		
-			$('#ticker').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
+			$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			console.log(article.categories);
 					
