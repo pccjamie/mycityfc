@@ -23,7 +23,7 @@ $bg-shine: rgba(31,159,255,.75);
 .notice, .alert {background: orange; color: white; padding: 10px;}
 
 body.bg-default {
-	background: #363636 url(closeup.jpg);
+	background-image: url(closeup.jpg);
 }
 body.bg-slides {
 	background-image: url(history1.jpg);
@@ -36,7 +36,8 @@ body.bg-parent-profiles {
 // }
 
 body {
-	height: 100%; width:100%;
+	height: 100%; 
+	width:100%;
 	background-image: url(closeup.jpg);
 	background-size: 100%;
 	background-repeat: none;
