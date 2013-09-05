@@ -12,14 +12,13 @@
 
 <header id="banner">
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
-<!-- 	<h5>Here's what's going on around <%#= current_user.city %></h5>
- -->	<div id="ticker"></div>
+ <div id="ticker"></div>
 
 </header>
 
 <div id="latest-content">
 	
-	<header><h3>MATCH HIGHLIGHTS AND NEWS</h3></header>
+	<header><h3>MY ____: MATCH HIGHLIGHTS AND NEWS</h3></header>
 
 	<section id="videos">
 		<div class="sleeve">
@@ -50,7 +49,6 @@
 							<% @teams.each do |t| %>
 							<div class="team">
 									<div class="team-overview">
-
 
 										<div class="team-logo"><img src='<%= t.logo %>'/></div>
 									

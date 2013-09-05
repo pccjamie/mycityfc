@@ -83,7 +83,7 @@ function espn_find_news() {
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 10
+			limit: 3
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -95,9 +95,7 @@ function espn_find_news() {
 
 		$.each(data.headlines, function(index, article) {
 		
-
-
-			$('#ticker').append("<article><h2><a:first href="+article.links.web.href+">"+article.title+"</a></h2> </article>");
+			$('#ticker').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			console.log(article.categories);
 					
