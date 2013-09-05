@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
 has_and_belongs_to_many :teams
 
 geocoded_by :city
-after_validation :geocode
-after_validation :geocode, :if => :city_changed?
-
+after_validation :geocode,
+  :if => lambda{ |current_user| current_user.city_changed? }
+  
 belongs_to :profilable, :polymorphic => true
 
   # Include default devise modules. Others available are:
@@ -20,7 +20,7 @@ belongs_to :profilable, :polymorphic => true
   attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state, :profile
 
 
-#find an existing user by uid or create one with a random password otherwise.
+#find an existing user by uid or create one otherwise.
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
