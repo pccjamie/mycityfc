@@ -3,10 +3,10 @@ class User < ActiveRecord::Base
 # include ActionView::Helpers
 has_and_belongs_to_many :teams
 
-geocoded_by :city
+geocoded_by :location
 after_validation :geocode,
-  :if => lambda{ |current_user| current_user.city_changed? }
-  
+  :if => lambda{ |User| User.location_changed? }
+
 belongs_to :profilable, :polymorphic => true
 
   # Include default devise modules. Others available are:
