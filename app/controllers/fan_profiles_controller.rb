@@ -8,7 +8,7 @@
   # end
   
   before_filter :authenticate_user!, :except => [:index]
-  
+
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
@@ -24,7 +24,7 @@
     # show_leagues
     # show_news
 
-   @teams = Team.near([current_user.latitude,current_user.longitude], 400) 
+    @teams = Team.near([current_user.latitude,current_user.longitude], 100) 
 
     #match day
     show_match_info
