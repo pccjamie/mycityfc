@@ -95,22 +95,19 @@ function espn_find_news() {
 
 		$.each(data.headlines, function(index, article) {
 		
-			$('#my-news .sleeve').append("<article><h5><a href="+article.links.web.href+">"+article.title+"</a></h5> </article>");
+			$('#ticker').append("<article><h5><a href="+article.links.web.href+">"+article.title+"</a></h5> </article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			console.log(article.categories);
 					
 					// $.each(article.categories, function(index, category) {
 										
 					// 					// console.log(category);
-					// 					var cat = category;
-										
+					// 					var cat = category;										
 					// 					$(cat);
-
 					// 					$(cat).attr('class','cat');
 					// 					// console.log($('.cat'));
 					// 					$("#my-news * .cat:contains('" + team_id + "')").css("display", "block");
 					// 					return this;
-
 					// });
 			
 		});
@@ -128,7 +125,8 @@ function location_switch(){
 	var bg = $('.team-venue-image:first').text();
 	$('body').css('background-image','url('+bg+')');
 	$('.team:first').addClass('primary');
-	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary').remove('.team-links');
+	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
+	$('.team:first').nextAll().remove('.team-links');
 }
 
 

@@ -10,15 +10,16 @@
 	<details>time, day, etc</details></aside>
 </div>
 
-<header id="page">
+<header id="banner">
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
-	<h5>Short<%= current_user.city %></h5>
-	<h4>LATEST:</h4>
+	<h5>Here's what's going on around <%= current_user.city %></h5>
+	<div id="ticker"></div>
+
 </header>
 
 <div id="latest-content">
 	
-	<header><h3>LATEST NEWS</h3></header>
+	<header><h3>MATCH HIGHLIGHTS AND NEWS</h3></header>
 
 	<section id="videos">
 		<div class="sleeve">
