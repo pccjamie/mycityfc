@@ -5,20 +5,16 @@ has_and_belongs_to_many :teams
 
 geocoded_by :location
 after_validation :geocode,
-  :if => lambda{ |current_user| current_user.location_changed? }
+  :if => lambda{ |user| user.location_changed? }
 
 belongs_to :profilable, :polymorphic => true
 
-  # Include default devise modules. Others available are:
-  # :token_authenticatable,
-  # :lockable, :timeoutable
   devise :database_authenticatable, :registerable, 
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook] 
 
   #on Rails4, but keeping attr_accessible in model and using protected attr gem temporarily. 
   #At least until project delivery is completed. Next step: Move attribute control into an appropriate User or Devise controller.
   attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state, :profile
-
 
 #find an existing user by uid or create one otherwise.
 
@@ -40,18 +36,10 @@ belongs_to :profilable, :polymorphic => true
     user
   end
 
-=begin
-Notice that Devise RegistrationsController by default calls "User.new_with_session" before building a resource. 
-This means that, if we need to copy data from session whenever a user is initialized before sign up, we just need to implement new_with_session in our model. 
-Here is an example that copies the facebook email if available:
-=end 
-
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
-        user.location = data["location"] if user.location.blank?
-        # user.picture = data["picture"] if user.picture.blank?
+        user.location = data["location"] if user.location_changed?
       end
     end
   end
