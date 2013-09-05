@@ -50,7 +50,7 @@ Here is an example that copies the facebook email if available:
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
-        # user.location = data["location"] if user.location.blank?
+        user.location = data["location"] if user.location.blank?
         # user.picture = data["picture"] if user.picture.blank?
       end
     end
