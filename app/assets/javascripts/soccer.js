@@ -83,7 +83,7 @@ function espn_find_news() {
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 3
+			limit: 2
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
