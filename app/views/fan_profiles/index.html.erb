@@ -40,9 +40,11 @@
 <!--right panel-->
 
 <div id="profile">
+
 	<header>
-<h3>PRO TEAMS NEAR <%= current_user.city %></h3>
-</header>
+	<h3>PRO TEAMS NEAR <%= current_user.city %></h3>
+	</header>
+	
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 
 							<ul class="cycle-pager">
@@ -51,12 +53,10 @@
 							<li class="pager">USL PRO</li>
 							</ul>
 
-
-
 <div class="league slide">
 					<section id="my-teams">
 						<div class="sleeve">
-
+							
 							<% @teams.each do |t| %>
 							<div class="team">
 									<div class="team-overview">
