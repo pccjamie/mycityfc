@@ -9,7 +9,7 @@ $bg-light: rgba(255,255,255,.5);
 $text-hover-bg: #262626;
 $text-hover-main: #FFF;
 $devise-bg: #f2f2f2;
-
+$trigger: #BFFF00;
 $bg-shine: rgba(31,159,255,.75);
 
 .clearfix:after {
@@ -38,7 +38,6 @@ body.bg-parent-profiles {
 body {
 	height: 100%; 
 	width:100%;
-	background-color: gray;
 	background-image: url(closeup.jpg);
 	background-size: 100%;
 	background-repeat: none;
@@ -50,17 +49,19 @@ body {
 
 body.bg-default * form * {color: #252525}
 
+
+body.bg-public {
+	h1,h2,h3,h4,h5,p,a,li {color: #363636;}
+}
+
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
 
 h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px; font-weight: normal}
 
-p {font-family: 'BenchNine', Helvetica, Arial, sans-serif;}
+p {font-family: Helvetica, Arial, sans-serif;}
 
 
-body.bg-public {
-	h1,h2,h3,h4,h5,p,a,li {color: #363636;}
-}
 
 .app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
 	
@@ -101,20 +102,17 @@ header#banner .g-title {width: 100px; font-size: 30px; color: #FFF; background: 
 header#banner #ticker {width: 610px;}
 header#banner #ticker #headlines {height: auto; width: auto; display:inline-block;}
 
-header#banner .exposed {height: auto; background: url('http://voorhes.com/wordpress/wp-content/uploads/2010/11/FPO_ESPN_Logo_01.jpg'); margin-bottom: 10px;}
+header#banner .exposed {height: auto; background: 0; margin-bottom: 10px;}
 
-a.trigger {position: relative; float: left; right: 0px; z-index: 1; height: 20px; width:20px; background: orange; display: block;}
+a.trigger {position: relative; float: left; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
 
 #ticker {height: 100px; display:inline-block; float: left}
-
-#ticker article:first-child a {font-size: 40px; margin: auto}
+#ticker article:first-child a {font-size: 30px; margin: auto}
 
 #ticker article:not(:first-child) a {font-size: 20px}
 #ticker article:not(:first-child) {height: auto;display:none; margin-bottom: 10px}
 
 header#banner * .external-links {height: auto}
-
-
 
 
 footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark; position: relative; float: left; display: block; }
@@ -134,7 +132,7 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 }
 
-#trigger {height: 40px; width: 10%; padding: 10px; background: $bg-shine; position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
+#trigger {height: 40px; width: 10%; padding: 10px; background: $trigger; position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
 }
 
 /*top nav*/

@@ -21,7 +21,7 @@
     
     #standard
     # show_weather
-   @teams = Team.near([current_user.latitude,current_user.longitude], 600) 
+   @teams = Team.nearbys([current_user.latitude,current_user.longitude], 00) 
    # @teams = ['Seattle']
     #match day
     show_match_info
