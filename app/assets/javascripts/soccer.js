@@ -96,26 +96,13 @@ function espn_find_news() {
 		$.each(data.headlines, function(index, article) {
 		
 			if($(this).children().length > 0 ){
+				
 				$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 				}
 			else {
 				$('#ticker #headlines').text('Sorry, no news is available at this time.');
 			}
-
-
-			console.log(article.categories);
-					
-					// $.each(article.categories, function(index, category) {
-										
-					// 					// console.log(category);
-					// 					var cat = category;										
-					// 					$(cat);
-					// 					$(cat).attr('class','cat');
-					// 					// console.log($('.cat'));
-					// 					$("#my-news * .cat:contains('" + team_id + "')").css("display", "block");
-					// 					return this;
-					// });
 			
 		});
 	});
@@ -135,7 +122,6 @@ function location_switch(){
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 	$('.team:first').nextAll().remove('.team-links');
 }
-
 
 // ON LOAD
 $(function() {
