@@ -1,13 +1,13 @@
 var city = $('li.current-user-city').html();
 var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
-function sets_up_news(){
+
 $("#banner").on("click","a.trigger", function(e) {
 	e.preventDefault();
+	// $("#ticker").animate({height: '100%'},200);
 	$("#ticker").toggleClass('exposed');
 	$("#headlines article:first").nextAll().css('display','block');
 });
-}
 
 //GET TEAM ID
 $.ajax({
@@ -83,7 +83,7 @@ function find_team_info() {
 
 
 //GET NEWS
-function espn_find_news() {
+function find_news() {
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
 		data: {
@@ -116,7 +116,7 @@ $('.leagueslider').cycle({
 }
 
 
-function change_on_location(){
+function location_based_view(){
 	var bg = $('.team-venue-image:first').text();
 	$('body').css('background-image','url('+bg+')');
 	$('.team:first').addClass('primary');
@@ -126,10 +126,9 @@ function change_on_location(){
 
 // ON LOAD
 $(function() {
-	sets_up_news();
 	find_team_info();
 	find_news();
-	change_on_location();
+	location_based_view();
 	switch_leagues();
 });
 
