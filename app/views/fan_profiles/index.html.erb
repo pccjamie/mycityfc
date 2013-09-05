@@ -10,9 +10,10 @@
 	<details>time, day, etc</details></aside>
 </div>
 
-<header>
+<header id="page">
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
-	<h4>Here's what's going on around <%#= current_user.city %></h4>
+	<h5>Short<%= current_user.city %></h5>
+	<h4>LATEST:</h4>
 </header>
 
 <div id="latest-content">
@@ -29,7 +30,7 @@
 <!--right panel-->
 
 <div id="profile">
-<h3>ALL LEAGUES &amp; TEAMS NEAR YOU</h3>
+<h3>ALL LEAGUES & TEAMS NEAR YOU</h3>
 
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 
