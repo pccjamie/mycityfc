@@ -18,10 +18,10 @@
   def index
     current_user
     @users = User.all
-    
+    @teams = Team.all
     #standard
-    # show_weather
-   @teams = Team.nearbys([current_user.latitude,current_user.longitude], 00) 
+    show_weather
+    @teams = Team.near([current_user.latitude,current_user.longitude], 100) 
    # @teams = ['Seattle']
     #match day
     show_match_info
