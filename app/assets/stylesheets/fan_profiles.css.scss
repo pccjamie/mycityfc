@@ -19,16 +19,19 @@
 			.team-city {}
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
-			.team-info, .team-logo{height: auto; background: 0; position: relative; display: inline-block;}
+			.team-info, .team-logo{height: auto; width: 50%; background: 0; position: relative; display: inline-block;}
 
 			.team-links {margin-top: 10px; float: right; width: 100%; height: auto; display:inline-block; background: gray}
 
 			.team.primary * .team-logo {width:150px;}
 
 		 	.team.secondary {width: 50%;}
+		 	
 		 		.team.secondary .team-overview {background: #425566; border:0}
-		 		.team.secondary * .team-logo img {height: auto; width:50%;}
-		 		.team.secondary * .team-info * h4 {font-size:12px}
+		 		// .team.secondary * .team-logo img {height: auto; width:25%}
+		 		.team.secondary * h4.team-name {font-size:16px}
+				
+
 				h5.secondary {margin: 10px; font-size:15px; float: left; clear:both}
 
 /*holds espn api info  - not certain what to do with that yet*/
