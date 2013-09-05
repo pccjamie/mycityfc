@@ -98,6 +98,10 @@ function espn_find_news() {
 			//if ($(this).parent().length > 0 ){
 				
 				$('#ticker #headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
+		
+				//if this.children.length > 1, hide each and then show when MORE link is clicked.
+
+
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			//	}
 			// else {
