@@ -44,6 +44,4 @@ belongs_to :profilable, :polymorphic => true
     end
   end
 
-  
-
 end
