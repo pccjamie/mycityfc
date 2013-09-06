@@ -88,6 +88,11 @@ p {font-family: Helvetica, Arial, sans-serif;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;position: relative;}
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
+.modal-shield {display: block; background: gray; opacity: 0.75; z-index: 9999; position: fixed; height: 100%; width: 100%; z-index: 1}
+
+
+
+
 .sleeve {height: 100%; margin: 20px;}
 .inner {margin: 20px;}
 
@@ -129,7 +134,7 @@ footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark;
 /* toggle match day panel */
 #js-match-day {
 
-	height: 100%; width: 75%; background: $bg-dark; display: block; position: fixed; left: 10%; right: 10%; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none;
+	height: auto; max-height: 600px; width: 800px; background: $bg-dark; display: block; position: fixed; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none; z-index: 2;
 
   -webkit-transition: height .5s ease-in-out;
   -moz-transition: height.5s ease-in-out;
@@ -141,7 +146,7 @@ footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark;
 
 header#banner * .match-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
 
-#js-match-day .match-trigger {height: 15px; width: 15px; top: -5px; right: -5px}
+#js-match-day * .match-trigger {height:40px; width: 40px; top: 0px; right: 0px}
 
 .match-trigger {background: $trigger; color:#FFF; position: absolute;}
 

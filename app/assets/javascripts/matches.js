@@ -14,5 +14,9 @@ function match_day() {
 //click to open
 
 $(".match-trigger").click(function() {
-	$('#js-match-day').slideToggle();
+	$('#js-match-day').slideToggle('500', function(){
+
+		$('.modal-shield').css('display','none');
+
+	});
 });
