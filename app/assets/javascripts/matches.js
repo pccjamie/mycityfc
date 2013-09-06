@@ -1,5 +1,3 @@
-// // GET VIDEOS
-
 //SETS UP MATCH
 
 function match_day() {
@@ -13,6 +11,8 @@ function match_day() {
 // $(function() {
 // });
 
-$("#match-trigger, #panel-trigger").click(function() {
-	$('#match-day').slideToggle();
+//click to open
+
+$(".match-trigger").click(function() {
+	$('#js-match-day').slideToggle();
 });

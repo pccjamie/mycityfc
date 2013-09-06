@@ -117,7 +117,6 @@ header#banner * a.trigger {position: relative; float: left; right: 0px; z-index:
 
 #ticker, #match-overview {height: 100px; display:inline-block; float: left}
 #ticker article:first-child a {font-size: 30px; margin: auto}
-
 #ticker article:not(:first-child) a {font-size: 20px}
 #ticker article:not(:first-child) {height: auto;display:none; margin-bottom: 10px}
 
@@ -125,23 +124,10 @@ a.credits {height: auto; width: auto; display: block;position: relative}
 
 header#banner * .external-links {height: auto}
 
-
 footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark; position: relative; float: left; display: block; }
-// nav {height: auto; display: block; padding: 20px; color: #FFF}
 
-/* toggle match day */
-#match-overview {}
-
-#match-panel-trigger {background: $trigger; /*to be changed to :none */color:#FFF; position: absolute;}
-
-header#banner * .match-panel-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
-
-#match-day .match-panel-trigger {height: 15px; width: 15px;top: -5px; right: -5px}
-
-
-#global-trigger {position: fixed; top: 0;z-index:9999; display: block; }
-
-#match-day {
+/* toggle match day panel */
+#js-match-day {
 
 	height: 100%; width: 75%; background: $bg-dark; display: block; position: fixed; left: 10%; right: 10%; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none;
 
@@ -153,11 +139,16 @@ header#banner * .match-panel-trigger {height: 30px; width: 50%; bottom: 0px;padd
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 }
 
+header#banner * .match-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
+
+#js-match-day .match-trigger {height: 15px; width: 15px; top: -5px; right: -5px}
+
+.match-trigger {background: $trigger; color:#FFF; position: absolute;}
 
 
 /*top nav*/
 
-#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-medium;}
+#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-medium; padding:20px;}
 
 nav {height: 40px; width: 100%; display: block; line-height: 40px;		
 				* img {margin-top: 4px; height: 20px}
@@ -165,7 +156,6 @@ nav {height: 40px; width: 100%; display: block; line-height: 40px;
 
 	nav.private {
 		ul li {background: #425566}
-		ul li a {font-size: 1.5em;}
 	}
 
 
