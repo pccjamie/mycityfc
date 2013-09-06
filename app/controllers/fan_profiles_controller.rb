@@ -22,8 +22,7 @@
     #show_weather
     @teams = Team.near([current_user.latitude,current_user.longitude], 400) 
     
-      #match day
-    show_match_info
+    match_day_conditions
 
   end
 
