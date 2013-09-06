@@ -84,7 +84,7 @@ gem 'rack-cors', :require => 'rack/cors'
 #gem "flickr.rb", "~> 1.1.0"
 
 #scraping, json, etc
-#gem 'httparty'
+gem 'httparty'
 gem 'nokogiri'
 gem 'twitter'
 

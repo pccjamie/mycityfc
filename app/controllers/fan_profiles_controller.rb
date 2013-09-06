@@ -12,7 +12,7 @@
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
-  # require 'httparty'
+  require 'httparty'
 
   def index
     current_user
@@ -51,6 +51,15 @@
     @weather = weather
     return
   end
+
+  def get_teams
+
+    response = HTTPARTY::get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
+    @response = response
+
+
+  end
+
 
   def enter_distance
   end
@@ -104,7 +113,7 @@
       flash[:alert] = "No matches today. Piss off, wanker!"
     end
 
-    # looks at time first, then will look at teams
+    # looks at datetime first, then will look at teams
     #   if @time.year == 2013 #if current day == (match_day <= 3)
     #     show_match_upcoming
     #   elsif @time.year == 2014  #elsf current_day == (match.day >=3)
