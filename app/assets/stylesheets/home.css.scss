@@ -106,7 +106,7 @@ header#banner .g-title {width: 100px; font-size: 30px; color: #FFF; background: 
 header#banner #ticker {width: 610px;}
 header#banner #match-overview {width: 300px; background: red}
 
-header#banner #ticker #headlines {height: auto; width: auto; display:inline-block;}
+header#banner #ticker #js-headlines {height: auto; width: auto; display:inline-block;}
 
 header#banner .exposed {height: auto; background: 0; margin-bottom: 10px;}
 
@@ -130,12 +130,13 @@ footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark;
 /* toggle match day */
 #match-overview {}
 
-#match-trigger {height: 40px; width: 10%; padding: 10px; background: red; position: fixed; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
-}
+#match-trigger {height: 40px; width: auto; padding: 10px; background: red; /*to be changed to :none */color:#FFF; float: left;}
+
+#global-trigger {position: fixed; top: 0;z-index:9999; display: block; }
 
 #match-day {
 
-	height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: fixed; left: 10%; right: 10%; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none;
+	height: 100%; width: 75%; background: $bg-dark; display: block; position: fixed; left: 10%; right: 10%; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none;
 
   -webkit-transition: height .5s ease-in-out;
   -moz-transition: height.5s ease-in-out;
@@ -247,6 +248,5 @@ form #slideshow.modal .button {width: 100%;}
 // .form {height: auto; width: 25%; float: left; }
 // .form  {color: #FFF}
 
-#utility-bar  * li:hover {background-color: $text-hover-bg; color: $text-hover-main}
 
 
