@@ -84,11 +84,11 @@ p {font-family: Helvetica, Arial, sans-serif;}
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
 
-#wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto;position: relative;}
+#wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto; position: relative; z-index:0}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;position: relative;}
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
-.modal-shield {display: none; background: gray; opacity: 0.75; z-index: 9999; position: fixed; height: 100%; width: 100%; z-index: -10}
+.modal-shield {display: none; background: gray; opacity: 0.75; position: fixed; height: 100%; width: 100%; z-index: -10}
 
 
 .sleeve {height: 100%; margin: 20px;}
