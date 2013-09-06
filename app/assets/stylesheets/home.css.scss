@@ -71,7 +71,12 @@ table {display: block; position: relative;}
 
 /* BEHAVIOR */
 
+/* generic */
+
 .pending {display: none}
+
+a.credits img {height: auto; width: auto; display: block}
+
 
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
@@ -89,10 +94,9 @@ header#splash {
 	h2 {font-size: 30px; background: $bg-light;}
 }
 
-header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; background: $bg-dark }
+header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; background: $bg-dark}
 header#banner * {height: 100px}
-
-header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
+header#banner * article a {letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
 // header#banner:hover {height: 300px; -webkit-animation: hanging 2s infinite 2s alternate}
@@ -110,6 +114,7 @@ a.trigger {position: relative; float: left; right: 0px; z-index: 1; height: 20px
 
 #ticker article:not(:first-child) a {font-size: 20px}
 #ticker article:not(:first-child) {height: auto;display:none; margin-bottom: 10px}
+
 
 header#banner * .external-links {height: auto}
 
