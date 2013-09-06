@@ -18,6 +18,8 @@ $text-hover-bg: #262626;
 $text-hover-main: #FFF;
 $devise-bg: #f2f2f2;
 
+$white: #fff;
+
 $trigger: #BFFF00;
 
 $bg-shine: rgba(31,159,255,.75);
@@ -88,8 +90,7 @@ p {font-family: Helvetica, Arial, sans-serif;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;position: relative;}
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
-.modal-shield {display: none; background: gray; opacity: 0.75; position: fixed; height: 100%; width: 100%; z-index: -10}
-
+.overlay {display: none; background: gray; opacity: 0.75; position: fixed; height: 100%; width: 100%; z-index: -10}
 
 .sleeve {height: 100%; margin: 20px;}
 .inner {margin: 20px;}
@@ -127,8 +128,8 @@ a.credits {height: auto; width: auto; display: block;position: relative}
 
 header#banner * .external-links {height: auto}
 
-footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark; position: relative; float: left; display: block; }
-
+footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-medium; position: relative; float: left; display: block; }
+footer * {color: $white}
 /* toggle match day panel */
 #js-match-day {
 

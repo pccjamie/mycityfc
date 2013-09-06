@@ -62,7 +62,7 @@
     return [@time, @today]   
   end
 
-  def get_schedules
+  def check_schedule
     #get the users team id(s) from the dataset that was retrieved via API
     #scrape the espn site for schedule info (was not available via API)
 
@@ -89,9 +89,11 @@
 
   def match_day_conditions
 
-    # run thes...
-    get_current_time
-    get_schedules
+    # run these to determine whether the match day trigger button should appear.
+    the_time = get_current_time
+    check_schedule
+
+    if 
 
     #1 looks at whole schedule, if anything includes the users'  current  system time,
     #2 check date first
