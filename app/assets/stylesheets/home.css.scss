@@ -1,15 +1,23 @@
 $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.5);
 $header-text: #363636;
+
+/*blacks */
 $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
+$bg-light: rgba(0,0,0,.25);
 
-$bg-light: rgba(255,255,255,.5);
+
+$tx-dark: #666666;
+$tx-medium: #464646;
+$tx-light: #161616;
 
 $text-hover-bg: #262626;
 $text-hover-main: #FFF;
 $devise-bg: #f2f2f2;
+
 $trigger: #BFFF00;
+
 $bg-shine: rgba(31,159,255,.75);
 
 .clearfix:after {
@@ -20,7 +28,7 @@ $bg-shine: rgba(31,159,255,.75);
    clear: both;
 }
 
-.notice, .alert {background: orange; color: white; padding: 10px;}
+.notice, .alert {background: orange; color: #FFF; padding: 10px;}
 
 body.bg-default {
 	background-image: url(closeup.jpg);
@@ -36,7 +44,7 @@ body.bg-parent-profiles {
 // }
 
 body {
-	height: 100%; 
+	height:100%; 
 	width:100%;
 	background-image: url(closeup.jpg);
 	background-size: 100%;
@@ -49,10 +57,12 @@ body {
 
 body.bg-default * form * {color: #252525}
 
-
 body.bg-public {
-	h1,h2,h3,h4,h5,p,a,li {color: #363636;}
+	h1,h2,h3,h4,h5,p,a,li {color: $tx-medium;}
 }
+
+table {display: block; position: relative;}
+
 
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
@@ -61,13 +71,8 @@ h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sa
 
 p {font-family: Helvetica, Arial, sans-serif;}
 
-
-
 .app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
 	
-h1#logo {height:1px;margin-left:-10000px;position: relative;}
-
-table {display: block; position: relative;}
 
 /* BEHAVIOR */
 
@@ -89,7 +94,7 @@ header#splash {
 	h2 {font-size: 30px; background: $bg-light;}
 }
 
-header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px;}
+header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; background: $bg-medium}
 header#banner * {height: 100px}
 
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
@@ -99,17 +104,22 @@ header#banner * article a:hover {background: yellow}
 header#banner .g-title {width: 100px; font-size: 30px; color: #FFF; background: $bg-shine; margin-right:20px; display:inline-block;float: left; position: relative}
 
 header#banner #ticker {width: 610px;}
+header#banner #match-overview {width: 300px; background: red}
+
 header#banner #ticker #headlines {height: auto; width: auto; display:inline-block;}
 
 header#banner .exposed {height: auto; background: 0; margin-bottom: 10px;}
 
 a.trigger {position: relative; float: left; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
 
-#ticker {height: 100px; display:inline-block; float: left}
+
+#ticker, #match-overview {height: 100px; display:inline-block; float: left}
 #ticker article:first-child a {font-size: 30px; margin: auto}
 
 #ticker article:not(:first-child) a {font-size: 20px}
 #ticker article:not(:first-child) {height: auto;display:none; margin-bottom: 10px}
+
+a.credits {height: auto; width: auto; display: block;position: relative}
 
 header#banner * .external-links {height: auto}
 
@@ -118,9 +128,14 @@ footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark;
 // nav {height: auto; display: block; padding: 20px; color: #FFF}
 
 /* toggle match day */
+#match-overview {}
 
-div#match-day {
-height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: fixed; left: 10%; right: 10%; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none;
+#match-trigger {height: 40px; width: 10%; padding: 10px; background: red; position: fixed; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
+}
+
+#match-day {
+
+	height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: fixed; left: 10%; right: 10%; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none;
 
   -webkit-transition: height .5s ease-in-out;
   -moz-transition: height.5s ease-in-out;
@@ -130,27 +145,22 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 }
 
-#trigger {height: 40px; width: 10%; padding: 10px; background: $trigger; position: fixed; left: 10px; right: 10px; top: 0;/*to be changed to :none */z-index:9999; display: block; color:#FFF; float: left;
-}
+
 
 /*top nav*/
-nav {
 
-	background-color: rgba(0,0,0,.5);
-	height: auto; width: 100%; display: block; 
+#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-medium;}
 
-	#upper {
-		height: 40px; width:100%;
-		ul { display: block; text-align: right;}
-		* img {margin-top: 4px; height: 20px}
-	}
-	#lower {
-		height: 40px; line-height: 40px; width: 100%;
-		ul {line-height: inherit}
+nav {height: 40px; width: 100%; display: block; line-height: 40px;		
+				* img {margin-top: 4px; height: 20px}
+}
+
+
+	nav.private {
 		ul li {background: #425566}
 		ul li a {font-size: 1.5em;}
 	}
-}
+
 
 /* toggle header */
 // details {background: 0; }
@@ -191,7 +201,6 @@ section#my-teams .sleeve {margin: 0px}
 section#my-news, section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
 
 section#tbd {height: auto; min-height: 300px;  width: 100%; background: orange; margin-top:20px;}
-
 
 section#greeting-block-wide {height: 500px}
 

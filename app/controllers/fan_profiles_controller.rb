@@ -30,12 +30,16 @@
   end
 
 
+
+
   def show
     #future use - individual user profile pages
   end
 
   
   ####SPECIAL
+
+
 
   def enter_distance
   end
