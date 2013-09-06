@@ -106,7 +106,7 @@ header#banner * article a:hover {background: yellow}
 header#banner .g-title {width: 100px; font-size: 30px; color: #FFF; background: $bg-shine; margin-right:20px; display:inline-block;float: left; position: relative}
 
 header#banner #ticker {width: 610px;}
-header#banner #match-overview {width: 300px; background: $bg-rev-medium}
+header#banner #match-overview {width: 300px; background: $bg-rev-medium; position: relative; display:inline-block;float:left}
 
 header#banner #ticker #js-headlines {height: auto; width: auto; display:inline-block;}
 
@@ -132,7 +132,12 @@ footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark;
 /* toggle match day */
 #match-overview {}
 
-header#banner * #match-trigger {height: 30px; width: 100%; padding: 10px; background: $trigger; /*to be changed to :none */color:#FFF;}
+#match-panel-trigger {background: $trigger; /*to be changed to :none */color:#FFF; position: absolute;}
+
+header#banner * .match-panel-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
+
+#match-day .match-panel-trigger {height: 15px; width: 15px;top: -5px; right: -5px}
+
 
 #global-trigger {position: fixed; top: 0;z-index:9999; display: block; }
 

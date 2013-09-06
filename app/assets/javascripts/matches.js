@@ -13,6 +13,6 @@ function match_day() {
 // $(function() {
 // });
 
-$("#match-trigger").click(function() {
+$("#match-trigger, #panel-trigger").click(function() {
 	$('#match-day').slideToggle();
 });
