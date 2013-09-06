@@ -89,7 +89,7 @@ header#splash {
 	h2 {font-size: 30px; background: $bg-light;}
 }
 
-header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; background: url('http://farm1.staticflickr.com/57/214074619_4ec86828fa_b.jpg'); background-position: 100%; background-repeat: none;}
+header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; background: $bg-dark }
 header#banner * {height: 100px}
 
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}

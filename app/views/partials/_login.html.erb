@@ -1,29 +1,36 @@
+
 <% if user_signed_in? %>
 
-<ul class="private">
+  <ul class="left">
+    <li><% link_to 'MYCITYFC', root_path %></li>
+    <li><%= link_to 'soccer in the us', slides_path %></li>
+    <li><%= link_to 'Supporters', fan_profiles_path %></li>
+    <li><%= link_to 'soccer mom?', parent_profiles_path %></li>
+  </ul>
 
-  <li><%= current_user.first_name %></li>
-  <li class="current-user-city"><%= current_user.city %></li>
-  <li><%= image_tag current_user.picture %>
-  <li><%= link_to('My Account', edit_user_registration_path) %></li>
-  <li><%= link_to('Logout', destroy_user_session_path)%></li>  
-  </li>
+  <ul class="private right">
 
-</ul>
+    <li><%= current_user.first_name %></li>
+    <li class="current-user-city"><%= current_user.city %></li>
+    <li><%= image_tag current_user.picture %>
+    <li><%= link_to('My Account', edit_user_registration_path) %></li>
+    <li><%= link_to('Logout', destroy_user_session_path)%></li>  
+    </li>
+
+  </ul>
 
 
 <% else %>
 
-<ul class="public">
+<ul class="left">
+  <li><% link_to 'MYCITYFC', root_path %></li>
+</ul
+
+
+<ul class="public right">
   <li><%= link_to('Login', new_user_session_path)  %> </li> 
   <!--<li><%#= link_to('Register', new_user_registration_path)%></li>-->  
-
-<% if root_path %>
-  
-  <%else%>
    <li><%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%></li>
-  <%end%>
-
 </ul>
 
 <%end%>
