@@ -16,13 +16,14 @@
 
 <ul class="public">
   <li><%= link_to('Login', new_user_session_path)  %> </li> 
-  <li><%#= link_to('Register', new_user_registration_path)  %></li>
-  
+  <!--<li><%#= link_to('Register', new_user_registration_path)%></li>-->  
+
 <% if root_path %>
   
   <%else%>
    <li><%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%></li>
   <%end%>
+
 </ul>
 
 <%end%>

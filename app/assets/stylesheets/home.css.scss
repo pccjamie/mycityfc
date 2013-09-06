@@ -85,12 +85,11 @@ table {display: block; position: relative;}
 .inner {margin: 20px;}
 
 header#splash {
-
 	h1 {font-size: 120px;}
 	h2 {font-size: 30px; background: $bg-light;}
 }
 
-header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px;background: url('http://voorhes.com/wordpress/wp-content/uploads/2010/11/FPO_ESPN_Logo_01.jpg')}
+header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; background: url('http://farm1.staticflickr.com/57/214074619_4ec86828fa_b.jpg')}
 header#banner * {height: 100px}
 
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
@@ -120,7 +119,6 @@ footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-dark;
 
 /* toggle match day */
 
-
 div#match-day {
 height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: fixed; left: 10%; right: 10%; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none;
 
@@ -136,10 +134,9 @@ height: 100%; width: 75%; background: rgba(0,0,0,.8); display: block; position: 
 }
 
 /*top nav*/
-#utility-bar {
+#menu {
 
 	background-color: rgba(0,0,0,.5);
-
 	height: auto; width: 100%; display: block; 
 
 	#upper {
