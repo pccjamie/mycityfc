@@ -7,7 +7,6 @@ before_filter :authenticate_user!
   end
 
   def show
-  	@team = Team.find(teams_params)
 	end
 
   def new

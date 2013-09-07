@@ -10,6 +10,6 @@ root :to => 'home#splash'
 resources :slides, :except => [:destroy]
 resources :fan_profiles, :except => [:destroy]
 resources :parent_profiles, :except => [:destroy]
-resources :teams
+resources :teams, :except => [:destroy]
 
 end

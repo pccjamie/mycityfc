@@ -25,7 +25,6 @@
     #show_weather
     check_conditions
 
-
   end
   
   ####SPECIAL
@@ -64,6 +63,12 @@
     return
   end
 
+  def pick_primary_team
+
+    @teams = Team.near([current_user.latitude,current_user.longitude], 360) 
+
+
+  end
 
 
   def get_current_time
@@ -127,14 +132,10 @@
   # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
   
   def show
-    current_user
-    user = User.find(current_user.id) 
-    #current_user.fan_profile
   end
 
-  def edit
-
-  end
+  # def edit
+  # end
 
   # def update
   # end
