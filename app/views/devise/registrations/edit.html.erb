@@ -40,9 +40,9 @@
 
                         <div class="sleeve">
                               
-                                              
+                                                
 
-              <%= f.collection_select(:team, :name, @users.primary_team, :id, :name %>
+              <%= f.collection_select(:team, :name, current_user.primary_team, :id, :name %>
 
                         </div>
 

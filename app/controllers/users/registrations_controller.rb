@@ -28,7 +28,7 @@ before_filter :authenticate_user!
   end
 
   def set_primary_team
-    @primary_team = @user.primary_team
+   current_user.primary.team
   end
 
 private
