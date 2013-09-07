@@ -16,14 +16,13 @@
   require 'pry-rails'
 
   def index
-    #current_user
+    current_user
     @users = User.all
     @teams = Team.all
-    #standard
-    #show_weather
-    @teams = Team.near([current_user.latitude,current_user.longitude], 400) 
+    @teams = Team.near([current_user.latitude,current_user.longitude], 600) 
     
     get_teams
+    #show_weather
     check_conditions
 
   end
@@ -31,6 +30,7 @@
   ####SPECIAL
 
   def get_current_city
+    current_user
     user = User.find(current_user.id) 
     @city = current_user.city
     @state = current_user.state
