@@ -40,9 +40,9 @@
 
                         <div class="sleeve">
                               
-                              <h5>Choose TEAM<%#= f.label :primary_team, 'Pick Team' %></h5>
+                              <h5><%= f.label :primary_team, 'Pick Team' %></h5>
                                                               
-                          <%#= f.collection_select :primary_team, Team.all, :id, :name, :prompt => "Pick a team" %>
+                          <%= f.collection_select :primary_team, Team.all, :id, :name, :prompt => "Pick a team" %>
 
                              
 
