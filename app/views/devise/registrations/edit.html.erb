@@ -39,11 +39,8 @@
                        <section id="section" class="slide" name="slide">
 
                         <div class="sleeve">
-                              
-                                                
-
-              <%= f.collection_select(:team, :name, current_user.primary_team, :id, :name %>
-
+              
+<%= options_from_collection_for_select(Team.all, :id, :name) %>
                         </div>
 
                         <div class="clearfix"></div>  
