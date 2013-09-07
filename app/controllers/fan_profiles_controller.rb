@@ -65,6 +65,7 @@
   end
 
 
+
   def get_current_time
     #basic time for testing - replace later with specific time params...
     @time = Time.now
