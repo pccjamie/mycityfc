@@ -21,10 +21,10 @@
     @teams = Team.all
     #standard
     #show_weather
-    #@teams = Team.near([current_user.latitude,current_user.longitude], 400) 
+    @teams = Team.near([current_user.latitude,current_user.longitude], 400) 
     
     get_teams
-    # check_conditions
+    check_conditions
 
   end
   
