@@ -43,7 +43,7 @@
                           <h5><%= f.label :primary_team, 'Pick Team' %></h5>
                                   
 
-               <%= f.collection_select :user, :primary_team, Team.all, :id, :name %>
+               <%= f.collection_select :primary_team, current_user, Team.all, :id, :name %>
                              
 
                         </div>
