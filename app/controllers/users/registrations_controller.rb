@@ -14,6 +14,7 @@ before_filter :authenticate_user!
     end
 
     @user = User.find(current_user.id)
+    
     if @user.update_attributes(profile_params)
       set_flash_message :notice, :updated
       # Sign in the user bypassing validation in case his password changed
@@ -25,6 +26,9 @@ before_filter :authenticate_user!
       render "edit"
     end
   end
+
+
+
 
 private
       def profile_params
