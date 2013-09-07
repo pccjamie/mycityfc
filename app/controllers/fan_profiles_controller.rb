@@ -13,20 +13,20 @@
   require 'nokogiri'
   require 'open-uri'
   require 'httparty'
+  require 'pry-rails'
 
   def index
-    current_user
+    #current_user
     @users = User.all
     @teams = Team.all
     #standard
     #show_weather
-    @teams = Team.near([current_user.latitude,current_user.longitude], 400) 
+    #@teams = Team.near([current_user.latitude,current_user.longitude], 400) 
     
-    match_day_conditions
+    get_teams
+    # check_conditions
 
   end
-
-  
 
   
   ####SPECIAL
@@ -54,10 +54,14 @@
 
   def get_teams
 
-    response = HTTPARTY::get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
-    @response = response
-
-
+    response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
+    @response = response["sports"][0]["leagues"][0]["teams"]
+   
+    respond_to do |format|
+      format.html
+      format.json { render :xml => @response.to_json }
+    end
+    return
   end
 
 
@@ -96,13 +100,11 @@
 
   end
 
-  def match_day_conditions
+  def check_conditions
 
     # run these to determine whether the match day trigger button should appear.
     the_time = get_current_time
     check_schedule
-
-    if 
 
     #1 looks at whole schedule, if anything includes the users'  current  system time,
     #2 check date first
@@ -126,19 +128,19 @@
   end
 
 
-  #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
+  # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
   
-  def show
-  end
+  # def show
+  # end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-  end
+  # def update
+  # end
 
-  def destroy
-  end
+  # def destroy
+  # end
 
   private
   def user_params
@@ -148,4 +150,5 @@
     params.require(:team).permit!
   end
 
+end
 end

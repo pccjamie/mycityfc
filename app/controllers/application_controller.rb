@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
   #before_filter :authenticate_user!
 
+    require 'pry-rails'
+
+
   # before_filter :block_cache
   # def block_cache
   #   response.headers["Access-Control-Allow-Origin: facebook.com"]

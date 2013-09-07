@@ -80,11 +80,9 @@ gem 'rack-cors', :require => 'rack/cors'
 
 #vids
 
-#bg image
-#gem "flickr.rb", "~> 1.1.0"
 
 #scraping, json, etc
-gem 'httparty'
+gem 'httparty' # for espn data
 gem 'nokogiri'
 gem 'twitter'
 

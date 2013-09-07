@@ -1,4 +1,4 @@
-	<%= render 'match' %>
+<%= render 'match' %>
 
 <header id="banner">
 
@@ -32,7 +32,7 @@
 <div id="profile">
 
 	<header>
-	<h3>PRO TEAMS NEAR <%= current_user.city %></h3>
+	<h3>PRO TEAMS NEAR <%#= current_user.city %></h3>
 	</header>
 	
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
@@ -58,7 +58,7 @@
 												<h5 class="team-venue"><%= t.venue %></h5>
 												<h5 class="team-city"><%= t.city %>,<%= t.state %></h5>
 												<div class="team-venue-image"><%= t.image %></div>
-												<h5 class="team-distance">Approx. <%= t.distance_to(current_user.city).to_i %> miles away.</h5>
+												<h5 class="team-distance">Approx. <%#= t.distance_to(current_user.city).to_i %> miles away.</h5>
 																								
 													<%#= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@t.latitude}%2C#{@t.longitude}" %>
 
