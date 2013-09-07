@@ -25,6 +25,7 @@
     #show_weather
     check_conditions
 
+
   end
   
   ####SPECIAL
@@ -61,13 +62,6 @@
       format.json { render :xml => @response.to_json }
     end
     return
-  end
-
-  def pick_primary_team
-
-    @teams = Team.near([current_user.latitude,current_user.longitude], 360) 
-
-
   end
 
 

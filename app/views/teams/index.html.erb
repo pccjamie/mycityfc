@@ -1,5 +1,5 @@
 <div id="team-directory">
-	
+
 <h1>ALL Teams</h1>
 <% @teams.each do |t|%>
 <article class="team">
@@ -7,7 +7,6 @@
 	<h5 class="team-venue"><%= t.venue %></h5>
 	<h5 class="team-city"><%= t.city %>,<%= t.state %></h5>
 	<div class="team-venue-image"><%= t.image %></div>
-	<h5 class="team-distance">Approx. <%= t.distance_to(current_user.city).to_i %> miles away.</h5>
 </article>
 <% end %>
 
