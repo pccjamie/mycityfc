@@ -18,8 +18,8 @@
   def index
     current_user
     @users = User.all
-    @teams = Team.all
-    @teams = Team.near([current_user.latitude,current_user.longitude], 600) 
+    # @teams = Team.all
+    @teams = Team.near([current_user.latitude,current_user.longitude], 1000) 
     
     get_teams
     #show_weather
@@ -113,19 +113,17 @@
     else
       flash[:alert] = "No matches today. Piss off, wanker!"
     end
-
-    # looks at datetime first, then will look at teams
-    #   if @time.year == 2013 #if current day == (match_day <= 3)
-    #     show_match_upcoming
-    #   elsif @time.year == 2014  #elsf current_day == (match.day >=3)
-    #     show_match_highlights  
-    #   else
-    #     #temp
-    #     flash[:notice]  ='Offseason! Check back later!'
-    #   end
+        # looks at datetime first, then will look at teams
+        #   if @time.year == 2013 #if current day == (match_day <= 3)
+        #     show_match_upcoming
+        #   elsif @time.year == 2014  #elsf current_day == (match.day >=3)
+        #     show_match_highlights  
+        #   else
+        #     #temp
+        #     flash[:notice]  ='Offseason! Check back later!'
+        #   end
     return
   end
-
 
   # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
   
