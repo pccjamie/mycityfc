@@ -162,6 +162,11 @@ nav {height: 40px; width: 100%; display: block; line-height: 40px;
 		ul li {background: #425566}
 	}
 
+nav ul.l2 {display:none; position: absolute; top: 100%; left: 0; background: green}
+
+nav ul.l1 li.hover + ul.l2 {display: block}
+
+
 h5:nth-child(even) {color: red}
 /* toggle header */
 // details {background: 0; }
