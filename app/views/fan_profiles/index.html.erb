@@ -32,7 +32,7 @@
 <div id="profile">
 
 	<header class="team-finder">
-	<h3>PRO TEAMS NEAR <%= current_user.city, html:{class: "team-geo"} %>| <%= link_to 'All Teams', teams_path, html:{class: "team-directory"} %></h3>
+	<h3>PRO TEAMS NEAR <%= current_user.city, class: "team-geo" %> | <%= link_to 'All Teams', teams_path, class: "team-directory" %></h3>
 	</header>
 	
 <div id="slideshow" class="leagueslider"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
