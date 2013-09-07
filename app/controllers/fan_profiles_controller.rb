@@ -27,7 +27,6 @@
     # check_conditions
 
   end
-
   
   ####SPECIAL
 
@@ -150,5 +149,5 @@
     params.require(:team).permit!
   end
 
-end
+
 end
