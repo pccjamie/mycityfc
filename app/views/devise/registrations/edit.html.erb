@@ -5,9 +5,9 @@
 
 <%= devise_error_messages! %>
 
-      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='1000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
+      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='3000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
 
-                  <% if user_signed_in? && current_user.profile == nil %>
+                  <% if user_signed_in? #&& current_user.profile == nil %>
                     
                     <!-- tab 1: choose a profile -->
                       <section id="section" class="slide" name="slide">
@@ -32,6 +32,30 @@
                         <%= f.submit "Confirm", :class=>'button' %><div><%#= link_to "Cancel", root_path %></div>
                        
                       </section>
+
+
+
+
+                       <section id="section" class="slide" name="slide">
+
+                        <div class="sleeve">
+                              
+                              <h5><%= f.label :primary_team, 'Pick Team' %></h5>
+                                                              
+                          <%= f.collection_select :primary_team, Team.all, :id, :name, :prompt => "Pick a team" %>
+
+                             
+
+                        </div>
+
+                        <div class="clearfix"></div>  
+
+                        <%= f.submit "Confirm", :class=>'button' %><div><%#= link_to "Cancel", root_path %></div>
+                       
+                      </section>
+
+
+
 
 
                   

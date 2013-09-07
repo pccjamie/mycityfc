@@ -1,7 +1,9 @@
 Soccer1::Application.routes.draw do
  
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" }
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" },:path_prefix => 'my'
 get "users/edit", :to => "users/registrations#edit"
+
+resources :users
 
 resources :home, :only => [:index, :splash]
 
