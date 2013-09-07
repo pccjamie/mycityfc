@@ -41,7 +41,7 @@
                         <div class="sleeve">
              
                           <%#= options_from_collection_for_select(Team.all, :id, :name) %>
-                          <%= collection_select(:user, :team_id, Team.all, :id, :name) %>
+                          <%= collection_select(:primary_team, :team_id, Team.all, :id, :name) %>
 
 
 
