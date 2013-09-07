@@ -18,7 +18,7 @@
   def index
     current_user
     @users = User.all
-    @teams = Team.all
+    @teams = Team.geocoded(:order => :distance)
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250) 
     
     get_teams
