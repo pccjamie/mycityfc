@@ -1,9 +1,10 @@
 class TeamsController < ApplicationController
   
-skip_before_filter :authenticate_user!
+before_filter :authenticate_user!
 
   def index
   	@teams = Team.all
+    @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250) 
   end
 
   def show

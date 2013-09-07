@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20130906190631) do
   create_table "fan_profiles", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
+    t.string   "primary_team"
   end
 
   create_table "fan_profiles_teams", id: false, force: true do |t|

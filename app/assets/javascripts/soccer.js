@@ -121,7 +121,7 @@ $('.leagueslider').cycle({
 });
 }
 
-
+//change BG based on closest team
 function location_based_view(){
 	var bg = $('.team-venue-image:first').text();
 	$('body').css('background-image','url('+bg+')');
