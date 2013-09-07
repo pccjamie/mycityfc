@@ -21,6 +21,8 @@
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250) 
     
+    @primary_team = current_user.primary_team
+
     get_teams
     #show_weather
     check_conditions
@@ -61,13 +63,6 @@
       format.json { render :xml => @response.to_json }
     end
     return
-  end
-
-  def pick_primary_team
-
-    @teams = Team.near([current_user.latitude,current_user.longitude], 360) 
-
-
   end
 
 
