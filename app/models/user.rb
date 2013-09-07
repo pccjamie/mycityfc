@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
 # include ActionView::Helpers
 has_and_belongs_to_many :teams
 
-geocoded_by :location
-after_validation :geocode,
-  :if => lambda{ |current_user| current_user.location_changed? }
+geocoded_by :city
+after_validation :geocode
 
 belongs_to :profilable, :polymorphic => true
 
