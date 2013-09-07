@@ -1,7 +1,8 @@
 User picks Primary Team and other stuff
 
-<% form_for current_user.fan_profile do |f| %>
+<% form_for current_user do |f| %>
 
 <%= f.text_field :primary_team %>
 <%= f.submit 'Update' %>
+
 <% end %>

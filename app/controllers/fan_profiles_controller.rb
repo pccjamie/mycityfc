@@ -127,10 +127,14 @@
   # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
   
   def show
+    current_user
+    user = User.find(current_user.id) 
+    #current_user.fan_profile
   end
 
-  # def edit
-  # end
+  def edit
+
+  end
 
   # def update
   # end
