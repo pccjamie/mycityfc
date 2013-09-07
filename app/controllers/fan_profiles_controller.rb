@@ -19,7 +19,7 @@
     current_user
     @users = User.all
     # @teams = Team.all
-    @teams = Team.near([current_user.latitude,current_user.longitude], 1000) 
+    @teams = Team.near([current_user.latitude,current_user.longitude], 500) 
     
     get_teams
     #show_weather
