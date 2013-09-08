@@ -24,7 +24,7 @@
                               <%= f.radio_button(:profile, "Parent") %>
                               <%= f.label(:profile_parent, "Parent") %>
                               </aside>
-                                                        <%= collection_select(:primary_team, :team_id, Team.all, :id, :name) %>
+                              <%= f.collection_select(:primary_team, :team_id, Team.all, :id, :name) %>
 
 
                         </div>
