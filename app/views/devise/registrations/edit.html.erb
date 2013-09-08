@@ -26,7 +26,7 @@
                               </aside>
 
 
-                          <%= f.collection_select(:user.primary_team, Team.all, :id, :name) %>
+                          <%= f.collection_select(:user, :primary_team, Team.all, :id, :name) %>
 
 
                         </div>
