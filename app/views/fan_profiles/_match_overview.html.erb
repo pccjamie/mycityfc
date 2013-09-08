@@ -1,14 +1,14 @@
 <div id="match-overview">
 	<div class="sleeve">
 	<%#= @answer %>
-	<p>You are following: <%= current_user.primary_team %></p>
+	<p>You are following: <%#= current_user.primary_team %></p>
 
-	<%= @response.each do |record| %>
+	<%#= @response.each do |record| %>
 
-			<%= record['location'] %>
-			<%= record['name'] %>
+			<%#= record['location'] %>
+			<%#= record['name'] %>
 		
-	<% end %>
+	<%# end %>
 
 	<!--match overview-->
 	<!--It is <%#= @weather %> at the moment. -->

@@ -13,7 +13,7 @@ belongs_to :profilable, :polymorphic => true
 
   #on Rails4, but keeping attr_accessible in model and using protected attr gem temporarily. 
   #At least until project delivery is completed. Next step: Move attribute control into an appropriate User or Devise controller.
-  attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state, :profile, :primary_team, :team_id
+  attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state, :profile
 
 #find an existing user by uid or create one otherwise.
 
