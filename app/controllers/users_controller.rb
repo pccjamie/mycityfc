@@ -1,14 +1,14 @@
-# class Users::UsersController < Devise::RegistrationsController
+class Users::UsersController < Devise::RegistrationsController
 
-# def update
-#   @user = User.find(params[:id])
-#   @user.update_attributes!(profile_params)
-#   super
-# end
+def update
+  @user = User.find(params[:id])
+  @user.update_attributes!(user_params)
+  super
+end
 
-# 	private
-#   def profile_params
-#     params.require(:user).permit(:profile)
-#   end
+	private
+  def user_params
+        params.require(:user).permit!
+  end
    
-# end
+end
