@@ -2,10 +2,17 @@
 	<div class="sleeve">
 
 		<h6>My Team:<%= current_user.primary_team %></h6>
-	<p class="alert"><%#= alert %></p>	
+	<p class="alert">
+		<%= alert %></p>	
 
-<%= @my_team %>
-<%= @schedule %>
+		<%= @my_team %>
+
+<% @schedule.each do |schedule| %>
+
+	<%= schedule %>
+
+<%end%>
+
 
 	<!--from nokogiri, using for match trigger-->
 	<%#= @schedule_mls %>
