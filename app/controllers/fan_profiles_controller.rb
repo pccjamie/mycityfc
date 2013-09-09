@@ -114,14 +114,14 @@
 
     #schedule_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html
   
-    if schedule_mls.include?(my_team[0])
+    #valid_dates elements = @schedule.css "[#{@my_team}]"
 
-      flash[:alert] = "#{@my_team} has a game coming up."
-      
+    if schedule_mls.include?(my_team[0]) 
+
       match_day
 
       #write code that checks WHEN and decides which set of match info to display
-      get_current_time
+        #get_current_time
         
         # if schedule_dates.include?(@today)
         #   #1 if current date matches game date, show ALL game content.
@@ -133,7 +133,6 @@
 
     else
       match_preview
-      flash[:alert] = "No games this month - looks like it's offseason...."   
     end
     
     return
