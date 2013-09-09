@@ -13,7 +13,8 @@ before_filter :authenticate_user!
       params[:user].delete("password_confirmation")
     end
 
-    @teams = Team.find(:all)
+    @teams = Team.all
+    
 
     @user = User.find(current_user.id)
     if @user.update_attributes(user_params)
