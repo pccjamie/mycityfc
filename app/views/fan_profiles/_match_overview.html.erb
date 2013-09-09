@@ -1,8 +1,11 @@
 <div id="match-overview">
 	<div class="sleeve">
 
-		<h3>My Team:<%= current_user.primary_team %></h3>
-	<p class="alert"><%= alert %></p>	
+		<h6>My Team:<%= current_user.primary_team %></h6>
+	<p class="alert"><%#= alert %></p>	
+
+<%= @my_team %>
+<%= @schedule %>
 
 	<!--from nokogiri, using for match trigger-->
 	<%#= @schedule_mls %>

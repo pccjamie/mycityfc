@@ -23,9 +23,10 @@
 
     @user_team = current_user.primary_team
 
-    get_teams
+    get_teams_from_espn
     #show_weather
-    check_conditions
+    check_schedule
+
 
   end
   
@@ -53,7 +54,8 @@
     return
   end
 
-  def get_teams
+
+  def get_teams_from_espn
 
     response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
     @response = response["sports"][0]["leagues"][0]["teams"]
@@ -67,78 +69,75 @@
 
 
   def get_current_time
-    #basic time for testing - replace later with specific time params...
+    #basic time for testing - replace later with more specific params...
     @time = Time.now
     @today =  @time.strftime("%A, %B %d, %Y").inspect
     return [@time, @today]   
   end
 
-  def check_schedule
-    #get the users team id(s) from the dataset that was retrieved via API
-    #scrape the espn site for schedule info (was not available via API)
 
-    get_current_time
+  def match_preview
+    #@user_team = current_user.primary_team
+    flash[:alert] = "PREVIEW"
 
-    #url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
-    #url_nasl = "http://www.nasl.com/index.php?id=12"
-    #url_usl = "http://uslpro.uslsoccer.com/schedules/"
-    
-    #@schedule_mls = Nokogiri::HTML(open(url_mls)).css('#my-teams-table * tr.stathead').to_html
-    # @schedule_nasl = Nokogiri::HTML(open(url_nasl)).css('body').to_html
-    # @schedule_usl = Nokogiri::HTML(open(url_usl)).css('body * div#schedule').inner_html
-    
-    return
   end
-
-  
 
   def match_day
-
-    #check_schedule
-    @user_team = current_user.primary_team
-
-
+    #@user_team = current_user.primary_team
+    flash[:alert] = "ITS MATCH DAY"
   end
 
-  def check_conditions
 
-    # run these to determine whether the match day trigger button should appear.
-    the_time = get_current_time
-    #check_schedule
+=begin
 
-    #1 looks at whole schedule, if anything includes the users'  current  system time,
-    #2 check date first
+  #check_schedule:
+  this checks MLS schedule and see whether game is listed for the user's primary team.
+  if the team is listed, then it will next check current time and compare that to the team's match date.
+  time to match determines what kind of content will appear in match_day method.
 
-    @user_team = current_user.primary_team
-
-    url_mls = 'http://www.mlssoccer.com/schedule'
-    #url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
-    
+    #alt for mls schedule: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?" 
     #url_nasl = "http://www.nasl.com/index.php?id=12"
     #url_usl = "http://uslpro.uslsoccer.com/schedules/"
+
+=end
+
+  def check_schedule
     
-    @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
+    #set
+    url_mls = 'http://www.mlssoccer.com/schedule'
+    schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
+   
+    @schedule = schedule_mls
+    #inconsistent team name in the schedule source. strip to just first word in team name prior to seeing there is a DB match.
+    my_team = current_user.primary_team.split(' ').map(&:strip)
 
-    split_a = @user_team.split(' ').map(&:strip)
+    @my_team = my_team[0]
 
-    @user_team = split_a[0]
+    schedule_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html
+  
+    if schedule_mls.include?(my_team[0])
 
-    if @schedule_mls.include?(@user_team)  #or whatever the condition is
-      flash[:alert] = "Team match upcoming. Display the trigger"
-      match_day
+      flash[:alert] = "#{@my_team} has a game coming up."
+      
+      #write code that checks WHEN and decides which set of match info to display
+        get_current_time
+
+        @today = 'September 25, 2013'
+        
+        if schedule_dates.include?(@today)
+          #1 if current date matches game date, show ALL game content.
+          match_day
+        else
+          #2 if current date is x days prior to game, show preview ontent
+          match_preview
+        end
+
     else
-      flash[:alert] = "No matches today!"
+      flash[:alert] = "No games this month - looks like it's offseason...."   
     end
-        # looks at datetime first, then will look at teams
-        #   if @time.year == 2013 #if current day == (match_day <= 3)
-        #     show_match_upcoming
-        #   elsif @time.year == 2014  #elsf current_day == (match.day >=3)
-        #     show_match_highlights  
-        #   else
-        #     #temp
-        #     flash[:notice]  ='Offseason! Check back later!'
-        #   end
+    
     return
+
   end
 
   # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
