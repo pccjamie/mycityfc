@@ -115,7 +115,7 @@
     
     @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
 
-    if @schedule_mls.include?('Florida')  #or whatever the condition is
+    if @schedule_mls.include?('Metapan')  #or whatever the condition is
       #match_day
       flash[:alert] = "Date and team match. Showing ALL games for this day. Need to filter so it only returns USERS area."
     else
