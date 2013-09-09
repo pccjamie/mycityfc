@@ -79,7 +79,6 @@
   def match_preview
     #@user_team = current_user.primary_team
     flash[:alert] = "PREVIEW"
-
   end
 
   def match_day
@@ -113,7 +112,7 @@
 
     @my_team = my_team[0]
 
-    schedule_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html
+    #schedule_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html
   
     if schedule_mls.include?(my_team[0])
 
@@ -122,7 +121,7 @@
       match_day
 
       #write code that checks WHEN and decides which set of match info to display
-        get_current_time
+      get_current_time
         
         # if schedule_dates.include?(@today)
         #   #1 if current date matches game date, show ALL game content.
@@ -133,8 +132,7 @@
         # end
 
     else
-                match_preview
-
+      match_preview
       flash[:alert] = "No games this month - looks like it's offseason...."   
     end
     
