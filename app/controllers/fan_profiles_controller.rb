@@ -116,7 +116,7 @@
     
     @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
 
-    if @schedule_mls.include?(current_user.primary_team)  #or whatever the condition is
+    if @schedule_mls.include?('Seattle')  #or whatever the condition is
       match_day
     else
       flash[:alert] = "No matches today. Piss off, wanker!"
