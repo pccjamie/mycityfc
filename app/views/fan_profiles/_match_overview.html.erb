@@ -1,8 +1,11 @@
 <div id="match-overview">
 	<div class="sleeve">
 
-	<h2>My Team:<%= @user_team %></h2>
-	<h2>My Team:<%= current_user.primary_team %></h2>
+	<h3>My Team:<%= current_user.primary_team %></h3>
+
+	<span>Switch?</span>
+  <%= collection_select(:user,:primary_team, Team.all, :id, :name) %>
+
 
 	<%#= @schedule_mls %>
 

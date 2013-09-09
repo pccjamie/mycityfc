@@ -94,7 +94,7 @@
 
   def match_day
 
-    @user_team = current_user.primary_team
+    #@user_team = current_user.primary_team
 
     flash[:alert] = "Date and team match. Showing ALL games for this day. Need to filter so it only returns USERS area."
 
@@ -104,11 +104,17 @@
 
     # run these to determine whether the match day trigger button should appear.
     the_time = get_current_time
-    check_schedule
+    #check_schedule
 
     #1 looks at whole schedule, if anything includes the users'  current  system time,
     #2 check date first
 
+    url_mls = 'http://www.mlssoccer.com/schedule'
+    #url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
+    #url_nasl = "http://www.nasl.com/index.php?id=12"
+    #url_usl = "http://uslpro.uslsoccer.com/schedules/"
+    
+    @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
 
     if @schedule_mls.include?(current_user.primary_team)  #or whatever the condition is
       match_day
@@ -129,8 +135,8 @@
 
   # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
   
-  def show
-  end
+  # def show
+  # end
 
   # def edit
   # end
