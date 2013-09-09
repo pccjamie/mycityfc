@@ -3,9 +3,16 @@
 
 	<h3>My Team:<%= current_user.primary_team %></h3>
 
-	<span>Switch?</span>
-  <%= collection_select(:user,:primary_team, Team.all, :id, :name) %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 
+
+	<span>Switch?</span>
+  <%= f.collection_select(:primary_team, Team.all, :id, :name) %>
+
+   <%= f.submit "Confirm", :class=>'button' %>
+
+
+<% end %>
 
 	<%#= @schedule_mls %>
 
