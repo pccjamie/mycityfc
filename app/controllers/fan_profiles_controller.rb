@@ -79,11 +79,11 @@
 
     get_current_time
 
-    url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
+    #url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
     #url_nasl = "http://www.nasl.com/index.php?id=12"
     #url_usl = "http://uslpro.uslsoccer.com/schedules/"
     
-    @schedule_mls = Nokogiri::HTML(open(url_mls)).css('#my-teams-table * tr.stathead').to_html
+    #@schedule_mls = Nokogiri::HTML(open(url_mls)).css('#my-teams-table * tr.stathead').to_html
     # @schedule_nasl = Nokogiri::HTML(open(url_nasl)).css('body').to_html
     # @schedule_usl = Nokogiri::HTML(open(url_usl)).css('body * div#schedule').inner_html
     
@@ -96,7 +96,6 @@
 
     #@user_team = current_user.primary_team
 
-    flash[:alert] = "Date and team match. Showing ALL games for this day. Need to filter so it only returns USERS area."
 
   end
 
@@ -116,8 +115,10 @@
     
     @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
 
-    if @schedule_mls.include?('Seattle')  #or whatever the condition is
-      match_day
+    if @schedule_mls.contents.include?('Seattle')  #or whatever the condition is
+      #match_day
+      flash[:alert] = "Date and team match. Showing ALL games for this day. Need to filter so it only returns USERS area."
+
     else
       flash[:alert] = "No matches today. Piss off, wanker!"
     end
