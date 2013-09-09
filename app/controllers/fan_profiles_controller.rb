@@ -94,7 +94,8 @@
 
   def match_day
 
-    #@user_team = current_user.primary_team
+    #check_schedule
+    @user_team = current_user.primary_team
 
 
   end
@@ -108,18 +109,22 @@
     #1 looks at whole schedule, if anything includes the users'  current  system time,
     #2 check date first
 
+    @user_team = current_user.primary_team
+
+    @user_city = current_user.primary_team
     url_mls = 'http://www.mlssoccer.com/schedule'
     #url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
+    
     #url_nasl = "http://www.nasl.com/index.php?id=12"
     #url_usl = "http://uslpro.uslsoccer.com/schedules/"
     
     @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
 
     if @schedule_mls.include?('Metapan')  #or whatever the condition is
-      #match_day
-      flash[:alert] = "Date and team match. Showing ALL games for this day. Need to filter so it only returns USERS area."
+      flash[:alert] = "Team match upcoming. Display the trigger"
+      match_day
     else
-      flash[:alert] = "No matches today. Piss off, wanker!"
+      flash[:alert] = "No matches today!"
     end
         # looks at datetime first, then will look at teams
         #   if @time.year == 2013 #if current day == (match_day <= 3)
