@@ -119,20 +119,22 @@
 
       flash[:alert] = "#{@my_team} has a game coming up."
       
+      match_day
+
       #write code that checks WHEN and decides which set of match info to display
         get_current_time
-
-        @today = 'September 25, 2013'
         
-        if schedule_dates.include?(@today)
-          #1 if current date matches game date, show ALL game content.
-          match_day
-        else
-          #2 if current date is x days prior to game, show preview ontent
-          match_preview
-        end
+        # if schedule_dates.include?(@today)
+        #   #1 if current date matches game date, show ALL game content.
+        #   match_day
+        # else
+        #   #2 if current date is x days prior to game, show preview ontent
+        #   match_preview
+        # end
 
     else
+                match_preview
+
       flash[:alert] = "No games this month - looks like it's offseason...."   
     end
     
