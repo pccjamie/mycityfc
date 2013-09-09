@@ -14,7 +14,7 @@ before_filter :authenticate_user!
     end
 
     @teams = Team.all
-    
+
 
     @user = User.find(current_user.id)
     if @user.update_attributes(user_params)

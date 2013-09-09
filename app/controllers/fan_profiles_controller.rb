@@ -22,6 +22,9 @@
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250) 
     
 
+    @user_team = User.find(current_user.primary_team)
+
+
     get_teams
     #show_weather
     check_conditions
