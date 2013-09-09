@@ -94,7 +94,9 @@
 
   def match_day
 
-    flash[:alert] = "Dates match. Showing ALL games for this day. Need to filter so it only returns USERS area."
+    @user_team = current_user.primary_team
+
+    flash[:alert] = "Date and team match. Showing ALL games for this day. Need to filter so it only returns USERS area."
 
   end
 
@@ -107,7 +109,8 @@
     #1 looks at whole schedule, if anything includes the users'  current  system time,
     #2 check date first
 
-    if @schedule_mls.include?(@today) #or whatever the condition is
+
+    if @schedule_mls.include?(current_user.primary_team)  #or whatever the condition is
       match_day
     else
       flash[:alert] = "No matches today. Piss off, wanker!"

@@ -1,7 +1,10 @@
 <div id="match-overview">
 	<div class="sleeve">
 
-	<p>You are following: <%= @user_team %></p>
+	<h2>My Team:<%= @user_team %></h2>
+	<h2>My Team:<%= current_user.primary_team %></h2>
+
+	<%#= @schedule_mls %>
 
 	<%#= @response.each do |record| %>
 
