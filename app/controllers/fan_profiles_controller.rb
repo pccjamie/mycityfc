@@ -111,7 +111,6 @@
 
     @user_team = current_user.primary_team
 
-    @user_city = current_user.primary_team
     url_mls = 'http://www.mlssoccer.com/schedule'
     #url_mls = "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
     
@@ -120,7 +119,11 @@
     
     @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-table').to_html
 
-    if @schedule_mls.include?('Metapan')  #or whatever the condition is
+    split_a = @user_team.split(' ').map(&:strip)
+
+    @user_team = split_a[0]
+
+    if @schedule_mls.include?(@user_team)  #or whatever the condition is
       flash[:alert] = "Team match upcoming. Display the trigger"
       match_day
     else
