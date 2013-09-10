@@ -101,14 +101,11 @@
 
   def check_schedule
 
-    #get team name from db for comparison to scrape
-    my_team = current_user.primary_team.split(' ').map(&:strip)
-    @my_team = my_team[0]
     
     #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
-    @schedule = Nokogiri::HTML(open(url_mls))
-    @schedule.at_css('.schedule-page').text
+    @schedule = Nokogiri::HTML(open(url_mls)).css('.schedule-page')
+    schedule.at_css('.schedule-page').text
 
     #get dates
     #match_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html.split('</h3><h3>').map(&:strip)
@@ -152,10 +149,14 @@
     #parse dates, should be getting an array of dates objects here. 
     match_date = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
 
-    #valid_dates elements = @schedule.css "[#{@my_team}]"
+    #valid_dates elements = @schedule.css "[#{@my_team}]"   
 
+
+    #get team name from db for comparison to scrape
+    my_team = current_user.primary_team.split(' ').map(&:strip)
+    @my_team = my_team[0]
     
-    if (@schedule.include?(my_team[0]))
+    if @schedule_mls.include?(my_team[0])
       match_day
     else
       match_preview

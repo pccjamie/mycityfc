@@ -1,8 +1,8 @@
 <div id="match-overview">
 	<div class="sleeve">
 	<p>My Team:<%= current_user.primary_team %></p>
+	<%= @my_team %>
 
-		<article><%= @schedule %></article>
 
 
 	<ul>
@@ -14,7 +14,6 @@
 	</ul>
 
 
-	<%#= @my_team %>
 
 	<!--from nokogiri, using for match trigger-->
 	<%#= @schedule_mls %>
@@ -30,6 +29,6 @@
 	<!--match overview-->
 	<!--It is <%#= @weather %> at the moment. -->
 	
-	<div class="match-trigger">open panel</div>
+	<div class="match-trigger">match info</div>
 </div>
 </div>
