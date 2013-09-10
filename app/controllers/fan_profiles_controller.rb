@@ -108,7 +108,7 @@
     #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
     @schedule = Nokogiri::HTML(open(url_mls))
-    #puts schedule.at_css('.schedule-page').text
+    @schedule.at_css('.schedule-page').text
 
     #get dates
     #match_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html.split('</h3><h3>').map(&:strip)
