@@ -133,7 +133,7 @@ footer * {color: $white}
 /* toggle match day panel */
 #js-match-day {
 
-	height: auto; max-height: 600px; width: 800px; background: $bg-dark; display: block; position: fixed; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none; z-index: 2;
+	height: auto; min-height: 600px; max-height: 800px; width: 800px; background: $bg-dark; display: block; position: fixed; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none; z-index: 2;
 
   -webkit-transition: height .5s ease-in-out;
   -moz-transition: height.5s ease-in-out;

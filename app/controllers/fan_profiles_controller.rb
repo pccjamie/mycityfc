@@ -92,9 +92,12 @@
     
     #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
-    schedule = Nokogiri::HTML(open(url_mls)).css('.schedule-page').to_html
-    schedule_page =  schedule.at_css('.schedule-page').to_html
-    @schedule = schedule_page
+    @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-page').to_html
+    
+
+
+    # schedule_page =  schedule.at_css('.schedule-page').to_html
+    # @schedule = schedule_page
 
     #get dates
     #match_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html.split('</h3><h3>').map(&:strip)
@@ -117,7 +120,7 @@
 
     #get current date
     today = Time.now.strftime('%Y-%m-%d')
-
+    @today = today
   
 =begin
   
@@ -132,9 +135,10 @@
 
     #get team name from db for comparison to scrape
     my_team = current_user.primary_team.split(' ').map(&:strip)
-    @my_team = my_team[0]
-    
-    if @schedule.include?(@my_team)
+    #@my_team = my_team[0]
+    @my_team = 'Seattle'
+
+    if @schedule_mls.include?(@my_team)
       match_day
     else
       match_preview

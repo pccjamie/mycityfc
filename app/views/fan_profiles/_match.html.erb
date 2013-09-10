@@ -1,17 +1,11 @@
 <div id="js-match-day">
 <div class="sleeve">
 	
-	<%= @schedule %>
+	<%= @today %>
 
-	<%#= @game_date %>
-	<ul>
-	<li><%#= @game_time %></li>
-	<li><%= @home_team %></li>
-	<li><%= @away_team %></li>
-	<li><%#= @tv %></li>
-	<li><%#= @tickets %></li>
-	</ul>
-
+	<% @schedule_mls.each do |this| %>
+		<%= this %>
+	<% end %>
 
 <div class="match-trigger">close</div>
 

@@ -7,9 +7,7 @@
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
  	<!--appears on match day for user's prefered team.-->
  	<%= render 'match_overview' %>
-
  	<!--constant, but if match day appears, then is minimized or positioned elsewhere .-->
-
  	<%= render 'news_ticker' %>
 
 </header>
@@ -22,6 +20,9 @@
 
 	<section id="videos">
 		<div class="sleeve">
+
+			<article style="color:white"><%= @schedule_mls %></article>
+
 		</div>
 	</section>
 
