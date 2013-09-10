@@ -93,7 +93,7 @@
     #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
     schedule = Nokogiri::HTML(open(url_mls)).css('.schedule-page').to_html
-    schedule_page.at_css('.schedule-page').to_html
+    schedule_page =  schedule.at_css('.schedule-page').to_html
     @schedule = schedule_page
 
     #get dates
@@ -109,8 +109,8 @@
     schedule_page.css(".schedule-table").each do |weekend|
       #@game_date = weekend.at_css("h3.match-date").to_html
       # @game_time = weekend.at_css(".field-game-date-start-time")
-      @home_team = weekend.at_css(".field-home-team")
-      @away_team = weekend.at_css(".field-away-team")
+      @home_team = weekend.at_css(".field-home-team").text
+      @away_team = weekend.at_css(".field-away-team").text
       # @tv =  weekend.at_css(".broadcast-partners")
       # @tickets = weekend.at_css(".sch-tickets") 
     end
