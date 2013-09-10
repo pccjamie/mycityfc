@@ -23,6 +23,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'chronic'
+
 #foundation
 # gem 'foundation-icons-sass-rails'
 # gem 'compass-rails' # you need this or you get an err
