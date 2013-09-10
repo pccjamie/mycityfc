@@ -1,19 +1,7 @@
 <div id="match-overview">
 	<div class="sleeve">
-	<p>My Team:<%= current_user.primary_team %></p>
-	<%= @my_team %>
-
-
-
-	<ul>
-	<li><%= @game_time %></li>
-	<li><%= @home_team %></li>
-	<li><%= @away_team %></li>
-	<li><%= @tv %></li>
-	<li><%= @tickets %></li>
-	</ul>
-
-
+	Following: <%= current_user.primary_team %>
+	Following (alt):<%= @my_team %>
 
 	<!--from nokogiri, using for match trigger-->
 	<%#= @schedule_mls %>
