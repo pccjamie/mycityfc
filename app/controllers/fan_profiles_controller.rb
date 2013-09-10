@@ -106,14 +106,14 @@
     # the_table = schedule.at_css ".schedule-table"
     # h3.parent = the_table
 
-    schedule_page.css(".schedule-table").each do |weekend|
-      #@game_date = weekend.at_css("h3.match-date").to_html
-      # @game_time = weekend.at_css(".field-game-date-start-time")
-      @home_team = weekend.at_css(".field-home-team").text
-      @away_team = weekend.at_css(".field-away-team").text
-      # @tv =  weekend.at_css(".broadcast-partners")
-      # @tickets = weekend.at_css(".sch-tickets") 
-    end
+    # schedule_page.css(".schedule-table").each do |weekend|
+    #   #@game_date = weekend.at_css("h3.match-date").to_html
+    #   # @game_time = weekend.at_css(".field-game-date-start-time")
+    #   @home_team = weekend.at_css(".field-home-team").text
+    #   @away_team = weekend.at_css(".field-away-team").text
+    #   # @tv =  weekend.at_css(".broadcast-partners")
+    #   # @tickets = weekend.at_css(".sch-tickets") 
+    # end
 
     #get current date
     today = Time.now.strftime('%Y-%m-%d')
