@@ -124,7 +124,7 @@
     h3.parent = the_table
 
     schedule.css(".schedule-table").each do |weekend|
-      @game_date = weekend.at_css("h3.match-date.").text
+      @game_date = weekend.at_css("h3.match-date").text
       @game_time = weekend.at_css(".field-game-date-start-time").text
       @home_team = weekend.at_css(".field-home-team").text
       @away_team = weekend.at_css(".field-away-team").text
