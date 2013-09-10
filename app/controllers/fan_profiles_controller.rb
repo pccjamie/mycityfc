@@ -107,7 +107,7 @@
     
     #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
-    schedule = Nokogiri::HTML(open(url_mls))
+    @schedule = Nokogiri::HTML(open(url_mls))
     #puts schedule.at_css('.schedule-page').text
 
     #get dates
@@ -120,7 +120,7 @@
     # the_table = schedule.at_css ".schedule-table"
     # h3.parent = the_table
 
-    schedule.css(".schedule-table").each do |weekend|
+    @schedule.css(".schedule-table").each do |weekend|
       #@game_date = weekend.at_css("h3.match-date").to_html
       @game_time = weekend.at_css(".field-game-date-start-time")
       @home_team = weekend.at_css(".field-home-team")
@@ -147,15 +147,15 @@
 
 
 =end
-
+  
 
     #parse dates, should be getting an array of dates objects here. 
-    match_date_ex = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
+    match_date = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
 
     #valid_dates elements = @schedule.css "[#{@my_team}]"
 
     
-    if (schedule.include?(my_team[0]))
+    if (@schedule.include?(my_team[0]))
       match_day
     else
       match_preview

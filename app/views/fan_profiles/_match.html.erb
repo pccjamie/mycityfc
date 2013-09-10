@@ -1,16 +1,21 @@
 <div id="js-match-day">
 <div class="sleeve">
+		<article><%= @schedule %></article>
+
+	<%#= @game_date %>
+	<ul>
+	<li><%= @game_time %></li>
+	<li><%= @home_team %></li>
+	<li><%= @away_team %></li>
+	<li><%= @tv %></li>
+	<li><%= @tickets %></li>
+	</ul>
+
+
 <div class="match-trigger">close</div>
 
 	<%#= @time %>
 	<%#= @today %>
-
-	<%#= @game_date %>
-	<%= @game_time %>
-	<%= @home_team %>
-	<%= @away_team %>
-	<%= @tv %>
-	<%= @tickets %>
 
 
 	<p class="alert"><%= alert %></p>	
