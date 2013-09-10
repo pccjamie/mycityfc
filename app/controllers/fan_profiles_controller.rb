@@ -22,7 +22,6 @@
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)     
     @user_team = current_user.primary_team
     get_teams_from_espn
-    #show_weather
     check_schedule
 
   end
@@ -38,17 +37,6 @@
   end
 
   def show_weather
-    current_user
-    # # state = current_user.state
-    # # city = current_user.city
-   #  state = current_user.state.gsub!(/\b\s\b/, "+").gsub!(/\b/, "")
-   #  state = state.gsub!(/ /,"")
-   #  city = current_user.city.gsub!(/ /, "%20")
-    #weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").to_html
-    #weather = Nokogiri::HTML(open("http://weather.weatherbug.com/NY/New%20York-weather.html")).css("#divTemp").text
-    # weather = Nokogiri::HTML(open("http://weather.weatherbug.com/#{state}/#{city}-weather.html")).css("#divTemp").text
-    @weather = weather
-    return
   end
 
 
@@ -68,7 +56,7 @@
 
   def get_current_time
     #basic time for testing - replace later with more specific params...
-    time = Time.now
+    @time = Time.now
     @tomorrow = Chronic.parse('tomorrow')
     @today =  @time.strftime("%A, %B %d, %Y").inspect
     return [@time, @today]   
@@ -104,8 +92,9 @@
     
     #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
-    @schedule = Nokogiri::HTML(open(url_mls)).css('.schedule-page')
-    schedule.at_css('.schedule-page').text
+    schedule = Nokogiri::HTML(open(url_mls)).css('.schedule-page').to_html
+    schedule_page.at_css('.schedule-page').to_html
+    @schedule = schedule_page
 
     #get dates
     #match_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html.split('</h3><h3>').map(&:strip)
@@ -117,13 +106,13 @@
     # the_table = schedule.at_css ".schedule-table"
     # h3.parent = the_table
 
-    @schedule.css(".schedule-table").each do |weekend|
+    schedule_page.css(".schedule-table").each do |weekend|
       #@game_date = weekend.at_css("h3.match-date").to_html
-      @game_time = weekend.at_css(".field-game-date-start-time")
+      # @game_time = weekend.at_css(".field-game-date-start-time")
       @home_team = weekend.at_css(".field-home-team")
       @away_team = weekend.at_css(".field-away-team")
-      @tv =  weekend.at_css(".broadcast-partners")
-      @tickets = weekend.at_css(".sch-tickets") 
+      # @tv =  weekend.at_css(".broadcast-partners")
+      # @tickets = weekend.at_css(".sch-tickets") 
     end
 
     #get current date
@@ -134,29 +123,18 @@
   
 1. on page load, we get the full schedule immediately. User's primary team is likely on there, but need to add if/else in case it's offseason or edge case. (hardcode excluded months? restrict to league schedule? or include all dates?...hmmm)
 
-  if team name is present in the schedule, THEN....
-
-    iterate through schedule. Each weekend is its own table. 
-
-  else
-
-  end
-
-
 =end
   
 
     #parse dates, should be getting an array of dates objects here. 
-    match_date = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
-
-    #valid_dates elements = @schedule.css "[#{@my_team}]"   
+    #match_date = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
 
 
     #get team name from db for comparison to scrape
     my_team = current_user.primary_team.split(' ').map(&:strip)
     @my_team = my_team[0]
     
-    if @schedule_mls.include?(my_team[0])
+    if schedule.include?(@my_team)
       match_day
     else
       match_preview
@@ -168,17 +146,17 @@
 
   # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
   
-  # def show
-  # end
+  def show
+  end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # def update
-  # end
+  def update
+  end
 
-  # def destroy
-  # end
+  def destroy
+  end
 
   private
   def user_params
