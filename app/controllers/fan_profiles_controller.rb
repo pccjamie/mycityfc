@@ -108,17 +108,17 @@
     #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
     schedule = Nokogiri::HTML(open(url_mls))
-    puts schedule.at_css('.schedule-page').text
+    #puts schedule.at_css('.schedule-page').text
 
     #get dates
     #match_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html.split('</h3><h3>').map(&:strip)
 
     #move date div inside corresponding table that shows matches. For some reason they put it outside of the table. Stupid!
 
-    h3  = schedule.at_css ".schedule-page h3"
-    h3['class']='match-date'
-    the_table = schedule.at_css ".schedule-table"
-    h3.parent = the_table
+    # h3  = schedule.at_css ".schedule-page h3"
+    # h3['class']='match-date'
+    # the_table = schedule.at_css ".schedule-table"
+    # h3.parent = the_table
 
     schedule.css(".schedule-table").each do |weekend|
       #@game_date = weekend.at_css("h3.match-date").to_html
@@ -149,9 +149,6 @@
 =end
 
 
-
-
-
     #parse dates, should be getting an array of dates objects here. 
     match_date_ex = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
 
@@ -159,20 +156,7 @@
 
     
     if (schedule.include?(my_team[0]))
-
       match_day
-
-      #write code that checks WHEN and decides which set of match info to display
-        #get_current_time
-        
-        # if schedule_dates.include?(@today)
-        #   #1 if current date matches game date, show ALL game content.
-        #   match_day
-        # else
-        #   #2 if current date is x days prior to game, show preview ontent
-        #   match_preview
-        # end
-
     else
       match_preview
     end
