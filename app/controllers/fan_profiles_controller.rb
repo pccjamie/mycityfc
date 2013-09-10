@@ -126,7 +126,7 @@
       @home_team = weekend.at_css(".field-home-team")
       @away_team = weekend.at_css(".field-away-team")
       @tv =  weekend.at_css(".broadcast-partners")
-      @tickets = weekend.at_css(".sch-tickets")
+      @tickets = weekend.at_css(".sch-tickets") 
     end
 
     #get current date
@@ -158,7 +158,7 @@
     #valid_dates elements = @schedule.css "[#{@my_team}]"
 
     
-    if (schedule_mls.include?(my_team[0]))
+    if (schedule.include?(my_team[0]))
 
       match_day
 
