@@ -20,13 +20,10 @@
     @users = User.all
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)     
-
     @user_team = current_user.primary_team
-
     get_teams_from_espn
     #show_weather
     check_schedule
-
 
   end
   
@@ -124,12 +121,12 @@
     h3.parent = the_table
 
     schedule.css(".schedule-table").each do |weekend|
-      @game_date = weekend.at_css("h3.match-date").text
-      @game_time = weekend.at_css(".field-game-date-start-time").text
-      @home_team = weekend.at_css(".field-home-team").text
-      @away_team = weekend.at_css(".field-away-team").text
-      @tv =  weekend.at_css(".broadcast-partners").text
-      @tickets = weekend.at_css(".sch-tickets").text
+      #@game_date = weekend.at_css("h3.match-date").to_html
+      @game_time = weekend.at_css(".field-game-date-start-time").to_html
+      @home_team = weekend.at_css(".field-home-team").to_html
+      @away_team = weekend.at_css(".field-away-team").to_html
+      @tv =  weekend.at_css(".broadcast-partners").to_html
+      @tickets = weekend.at_css(".sch-tickets").to_html
     end
 
     #get current date
