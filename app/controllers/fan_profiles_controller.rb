@@ -7,7 +7,7 @@
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
   
-  skip_before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index]
   
   require 'active_support/all'
   require 'nokogiri'
@@ -16,12 +16,12 @@
   require 'chronic'
 
   def index
-    #current_user
+    current_user
     @users = User.all
     @teams = Team.all
-    #@nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)     
+    @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)     
 
-    #@user_team = current_user.primary_team
+    @user_team = current_user.primary_team
 
     get_teams_from_espn
     #show_weather
@@ -79,12 +79,12 @@
 
 
   def match_preview
-    #@user_team = current_user.primary_team
+    @user_team = current_user.primary_team
     flash[:alert] = "PREVIEW"
   end
 
   def match_day
-    #@user_team = current_user.primary_team
+    @user_team = current_user.primary_team
     flash[:alert] = "ITS MATCH DAY"
   end
 
@@ -122,7 +122,7 @@
     h3['class']='match-date'
     the_table = schedule.at_css ".schedule-table"
     h3.parent = the_table
-    
+
     schedule.css(".schedule-table").each do |weekend|
       @game_date = weekend.at_css("h3.match-date.").text
       @game_time = weekend.at_css(".field-game-date-start-time").text
