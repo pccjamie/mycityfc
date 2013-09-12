@@ -1,15 +1,24 @@
 <div id="js-match-day">
-<div class="sleeve">
+	<div class="sleeve">
+		<section id="schedule">
+			<p class="alert"><%= alert %></p>
+
+<% @schedule_array.each do |date| %>
+
+<div class="schedule-date">
 	
-	<%= @today %>
+	<!--date should appear here -->
 
-	<% @schedule_mls.each do |this| %>
-		<%= this %>
-	<% end %>
-
-<div class="match-trigger">close</div>
-
-	<p class="alert"><%= alert %></p>	
-
+	<div class="single-game">
+		<div class="game-home"><%= date.css('.field-home-team').text %></div>
+		<div class="game-score"><%= date.css('.field-score').text %></div>
+		<div class="game-away"><%= date.css('.field-away-team').text %></div>
+		<div class="game-time"><%= date.css('.field-game-date-start-time').text %></div>
+		<a class="game-tickets" href="#"><%= date.css('a.sch_matchcenter').text %></a>
+	</div>
 </div>
+<%end%>
+		</section>
+		<div class="match-trigger">close</div>
+	</div>
 </div>

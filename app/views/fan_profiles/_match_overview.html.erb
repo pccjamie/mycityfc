@@ -1,12 +1,12 @@
 <div id="match-overview">
 	<div class="sleeve">
-	Following: <%= current_user.primary_team %>
-	Following (alt):<%= @my_team %>
-
+	<!-- db query -->
+	<%#= current_user.primary_team %>
+	Following:<%= @my_team %>
 	<!--from nokogiri, using for match trigger-->
-	<%#= @schedule_mls %>
-	<!-- espn api, use tbd. data may be unreliable-->
+	
 
+	<!-- espn api, use tbd. data may be unreliable-->
 	<%#= @response.each do |record| %>
 
 			<%#= record['location'] %>

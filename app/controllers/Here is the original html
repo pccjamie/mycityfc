@@ -1,0 +1,42 @@
+Here is the SOURCE HTML I am trying to scrape. The H3 + table pattern is repeated several times, all within div.schedule-page.
+<div class="schedule-page">
+  <h3>Sunday, September 1, 2013</h3>
+  <table class="views-table cols-1 schedule-table">
+  <!--a single day's info -->
+  </table>
+
+  <h3>Sunday, September 7, 2013</h3>
+  <table class="views-table cols-1 schedule-table">
+  <!--another day's info -->
+  </table>
+  <!--repeated for several days -->
+</div>
+
+WHAT I WANT:
+I am trying to figure out how to use Nokogiri the right way so that I can move:
+
+<h3>Sunday, September 1, 2013</h3>
+<table class="views-table cols-1 schedule-table"></table>
+
+SO that it looks like this in my ERB.
+
+				<% @schedule_array.each do |date| %>
+		
+				<div class="schedule-date">
+
+					<div class="single-game">
+
+						<div class="game-home"><%= date.css('.field-home-team').text %></div>
+						<div class="game-score"><%= date.css('.field-score').text %></div>
+						<div class="game-away"><%= date.css('.field-away-team').text %></div>
+						<div class="game-time"><%= date.css('.field-game-date-start-time').text %></div>
+
+						<a class="game-tickets" href="#"><%= date.css('a.sch_matchcenter').text %></a>
+
+
+					</div>
+				</div>
+
+
+				<%end%>
+

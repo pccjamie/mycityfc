@@ -21,9 +21,10 @@
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)     
     @user_team = current_user.primary_team
-    get_teams_from_espn
+    #get_teams_from_espn
+    #move_date_node
     check_schedule
-
+    return
   end
   
   ####SPECIAL
@@ -36,42 +37,29 @@
     return 
   end
 
-  def show_weather
-  end
 
+  #may deprecate. source doesnt retun anything im using right now. Also, dup of JS function.
+  # def get_teams_from_espn
+  #   response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
+  #   @response = response["sports"][0]["leagues"][0]["teams"]
+  #   respond_to do |format|
+  #     format.html
+  #     format.json { render :xml => @response.to_json }
+  #   end
 
-  def get_teams_from_espn
+  #   return
 
-    response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
-    @response = response["sports"][0]["leagues"][0]["teams"]
-   
-    respond_to do |format|
-      format.html
-      format.json { render :xml => @response.to_json }
-    end
-    return
-
-  end
+  # end
 
 
   def get_current_time
-    #basic time for testing - replace later with more specific params...
+    #replace later with more specific params...
     @time = Time.now
     @tomorrow = Chronic.parse('tomorrow')
     @today =  @time.strftime("%A, %B %d, %Y").inspect
     return [@time, @today]   
   end
 
-
-  def match_preview
-    @user_team = current_user.primary_team
-    flash[:alert] = "PREVIEW"
-  end
-
-  def match_day
-    @user_team = current_user.primary_team
-    flash[:alert] = "ITS MATCH DAY"
-  end
 
 
 =begin
@@ -87,36 +75,33 @@
 
 =end
 
+ def match_preview
+    @user_team = current_user.primary_team
+    flash[:alert] = "PREVIEW"
+  end
+
+  def match_day
+    @user_team = current_user.primary_team
+    flash[:alert] = "ITS MATCH DAY for #{@my_team}"
+  end
+
+  def get_source
+    url_mls = "http://www.mlssoccer.com/schedule"
+  end
+
+  def move_date_node
+
+    #moves date inside it's corresponding table. For some reason they put it outside of corresponding games container.
+  
+  end
+
+
   def check_schedule
 
-    
-    #scrape full for date, game time, home and away team
     url_mls = "http://www.mlssoccer.com/schedule"
-    @schedule_mls = Nokogiri::HTML(open(url_mls)).css('.schedule-page').to_html
-    
 
-
-    # schedule_page =  schedule.at_css('.schedule-page').to_html
-    # @schedule = schedule_page
-
-    #get dates
-    #match_dates = Nokogiri::HTML(open(url_mls)).css('.schedule-page h3').to_html.split('</h3><h3>').map(&:strip)
-
-    #move date div inside corresponding table that shows matches. For some reason they put it outside of the table. Stupid!
-
-    # h3  = schedule.at_css ".schedule-page h3"
-    # h3['class']='match-date'
-    # the_table = schedule.at_css ".schedule-table"
-    # h3.parent = the_table
-
-    # schedule_page.css(".schedule-table").each do |weekend|
-    #   #@game_date = weekend.at_css("h3.match-date").to_html
-    #   # @game_time = weekend.at_css(".field-game-date-start-time")
-    #   @home_team = weekend.at_css(".field-home-team").text
-    #   @away_team = weekend.at_css(".field-away-team").text
-    #   # @tv =  weekend.at_css(".broadcast-partners")
-    #   # @tickets = weekend.at_css(".sch-tickets") 
-    # end
+    #scrape source
+    @schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-page .schedule-table tbody tr').to_a
 
     #get current date
     today = Time.now.strftime('%Y-%m-%d')
@@ -130,21 +115,22 @@
   
 
     #parse dates, should be getting an array of dates objects here. 
-    #match_date = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
+    match_date = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
 
 
     #get team name from db for comparison to scrape
     my_team = current_user.primary_team.split(' ').map(&:strip)
-    #@my_team = my_team[0]
-    @my_team = 'Seattle'
+    @my_team = my_team[0]
+    
+    #@my_team = 'Seattle'
 
-    if @schedule_mls.include?(@my_team)
+    if @schedule_array.include?(@my_team) 
       match_day
     else
       match_preview
     end
     
-    return
+  
 
   end
 

@@ -106,11 +106,11 @@ gem 'forecast_io'
   gem 'annotate'
 
 # #test
-  # gem 'factory_girl_rails'
-  # gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
   # gem 'shoulda-matchers'
   # gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
-  # gem 'cucumber-rails', :require => false
+  #gem 'cucumber-rails', :require => false
   # gem 'launchy'
   # gem 'database_cleaner'
   # gem 'guard-rspec'

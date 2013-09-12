@@ -107,7 +107,12 @@ header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0
 header#banner * article a:hover {background: yellow}
 
 // header#banner:hover {height: 300px; -webkit-animation: hanging 2s infinite 2s alternate}
-header#banner .g-title {width: 100px; font-size: 30px; color: #FFF; background: $bg-shine; margin-right:20px; display:inline-block;float: left; position: relative}
+header#banner .g-title {width: 100px; font-size: 25px; color: #FFF; background: $bg-shine; margin-right:20px; display:inline-block;float: left; position: relative;
+}
+
+
+header#banner .g-title.short-term {width: auto}
+
 
 header#banner #ticker {width: 610px;}
 header#banner #match-overview {width: 300px; background: $bg-rev-medium; position: relative; display:inline-block;float:left}
@@ -133,7 +138,7 @@ footer * {color: $white}
 /* toggle match day panel */
 #js-match-day {
 
-	height: auto; min-height: 600px; max-height: 800px; width: 800px; background: $bg-dark; display: block; position: fixed; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none; z-index: 2;
+	height: auto; min-height: 400px; max-height: 600px; width: 800px; overflow: auto; background: $bg-dark; display: block; position: fixed; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none; z-index: 2;
 
   -webkit-transition: height .5s ease-in-out;
   -moz-transition: height.5s ease-in-out;
@@ -142,6 +147,17 @@ footer * {color: $white}
   -webkit-box-shadow: 1px 1px 10px black;
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 }
+
+
+.raw-data {height: auto; background: orange; margin-bottom: 20px; display: block; position: relative}
+.schedule-date:nth-child(odd) {background: blue} 
+.schedule-date:nth-child(even) {background: purple}
+
+.schedule-table:nth-child(even) {background: #363636}
+.schedule-table:nth-child(odd) {background: #161616}
+
+.single-game {height: auto; background: yellow; margin-bottom: 40px;}
+
 
 header#banner * .match-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
 
