@@ -32,6 +32,7 @@ module Soccer1
     config.active_record.whitelist_attributes = false
   
 
+
     #cross domain ajax calls
     config.middleware.use Rack::Cors do
       allow do
@@ -40,7 +41,7 @@ module Soccer1
       end
     end
 
-
+    RAILS_ENV=production rake assets:precompile
 
   end
 end
