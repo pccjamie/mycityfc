@@ -124,7 +124,7 @@
     
     #@my_team = 'Seattle'
 
-    if @schedule_array.include?(@my_team) 
+    if @schedule_array.include?(@my_team)
       match_day
     else
       match_preview

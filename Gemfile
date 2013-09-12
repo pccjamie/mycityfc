@@ -30,7 +30,6 @@ gem 'chronic'
 # gem 'compass-rails' # you need this or you get an err
 # gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
 gem 'zurb-foundation', '~> 4.0.0'
-
 gem "trollop", "~> 2.0"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -73,7 +72,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 
-
 #CORS
 gem 'rack-cors', :require => 'rack/cors'
 
@@ -86,7 +84,7 @@ gem 'rack-cors', :require => 'rack/cors'
 #scraping, json, etc
 gem 'httparty' # for espn data
 gem 'nokogiri'
-gem 'twitter'
+# gem 'twitter'
 
 #geocoding
 gem 'geocoder'
@@ -94,7 +92,7 @@ gem 'geocoder'
 #utility
 gem "activesupport"   #, "~> 3.1.1"
 #forecast
-gem 'forecast_io'
+# gem 'forecast_io'
   
 #dev / prod
   gem 'pry-rails'
@@ -106,8 +104,8 @@ gem 'forecast_io'
   gem 'annotate'
 
 # #test
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
+  # gem 'factory_girl_rails'
+  # gem 'rspec-rails'
   # gem 'shoulda-matchers'
   # gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   #gem 'cucumber-rails', :require => false
