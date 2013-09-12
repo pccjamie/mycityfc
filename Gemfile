@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-
 # server
 gem 'pg'
 gem 'thin'
@@ -23,20 +22,23 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#time parsing
 gem 'chronic'
 
 #foundation
 # gem 'foundation-icons-sass-rails'
 # gem 'compass-rails' # you need this or you get an err
 # gem "compass-rails", github: "milgner/compass-rails", ref: "1749c06f15dc4b058427e7969810457213647fb8"
-gem 'zurb-foundation', '~> 4.0.0'
-gem "trollop", "~> 2.0"
+# gem 'zurb-foundation', '~> 4.0.0'
+
+#for google
+# gem "trollop", "~> 2.0"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 
 # background jobs
-gem 'resque'
+# gem 'resque'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
