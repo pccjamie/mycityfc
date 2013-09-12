@@ -18,4 +18,4 @@
 # Ignore application configuration
 /config/application.yml
 
-/public/assets
+/public/assets/images/
