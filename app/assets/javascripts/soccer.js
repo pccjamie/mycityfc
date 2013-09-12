@@ -119,7 +119,10 @@ $('.leagueslider').cycle({
 
 //change BG based on closest team
 function location_based_view(){
+	//if no primary team, use background for team closest
 	var bg = $('.team-venue-image:first').text();
+	//else use background for team chosen
+	////////
 	$('body').css('background-image','url('+bg+')');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');

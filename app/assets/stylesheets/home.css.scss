@@ -150,14 +150,14 @@ footer * {color: $white}
 
 
 .raw-data {height: auto; background: orange; margin-bottom: 20px; display: block; position: relative}
-.schedule-date:nth-child(odd) {background: blue} 
-.schedule-date:nth-child(even) {background: purple}
+// .schedule-date:nth-child(odd) {background: blue} 
+// .schedule-date:nth-child(even) {background: purple}
 
 .schedule-table:nth-child(even) {background: #363636}
 .schedule-table:nth-child(odd) {background: #161616}
 
-.single-game {height: auto; background: yellow; margin-bottom: 40px;}
-
+.single-game {height: auto; background: #1f9fff; margin-bottom: 40px;}
+.single-game {display: inline-block; width: 80px;}
 
 header#banner * .match-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
 

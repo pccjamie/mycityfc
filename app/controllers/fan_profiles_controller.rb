@@ -122,9 +122,9 @@
     my_team = current_user.primary_team.split(' ').map(&:strip)
     @my_team = my_team[0]
     
-    #@my_team = 'Seattle'
+    @my_team = 'Seattle'
 
-    if @schedule_array.include?(@my_team)
+    if @schedule_array.include?(@user_team)
       match_day
     else
       match_preview
