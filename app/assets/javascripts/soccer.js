@@ -127,9 +127,9 @@ function location_based_view(){
 
 // ON LOAD
 $(function() {
+	location_based_view();
 	//find_team_info();
 	find_news();
-	location_based_view();
 	switch_leagues();
 });
 
