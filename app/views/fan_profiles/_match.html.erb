@@ -6,7 +6,9 @@
 			<% @schedule.each do |game| %>
 				
 				<!--date should appear here -->
-				
+				<div class="date"><%= game.parent.previous_element.text %></div>
+
+
 				<div class="single-game">
 					<div class="game-home"><%= game.css('.field-home-team').text %></div>
 					<div class="game-home-logo"><%= game.css('field-home-team-logo').text %></div>
