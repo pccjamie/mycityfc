@@ -117,7 +117,7 @@
     #finds game date and formats time
     schedule_array.each do |date|
       game_date = date.css('.schedule-page h3').text
-      @game_date = Chronic.parse(game_date).strftime('%Y-%m-%d')
+      @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
     end
     
    
