@@ -78,12 +78,6 @@
 
   end
 
-  def move_date_node
-
-    #moves date inside it's corresponding table. For some reason they put it outside of corresponding games container.
-
-  end
-
 
   def check_schedule
 
@@ -96,17 +90,36 @@
     my_team = current_user.primary_team.split(' ').map(&:strip)
     @my_team = my_team[0] #formats for easier comparison to scrape.
 
+    #filter results for my team here.
+    schedule_array.each do |team|
+        if @my_team.match(team.css(('field-home-team').text || ('.field-away-team').text))
+
+        
+            @home = team.css('.field-home-team').text
+            @away = team.css('.field-away-team').text
+          
+
+        else
+
+        flash[:alert] = "Sorry!"
+
+        end
+      end
+
+
+
+
     #finds game date and formats time
+    schedule_array.each do |date|
+      game_date = date.css('.schedule-page h3').text
+      @game_date = Chronic.parse(game_date).strftime('%Y-%m-%d')
+    end
+    
+   
 
-    # dates_array = Nokogiri::HTML(open(get_source)).css('.schedule-page').to_a
-
-    # dates_array.each do |d|
-    #   game_date = d.css('h3').text
-    #   @game_date = Chronic.parse(game_date).strftime('%Y-%m-%d')
-    # end
 
     #get current date
-    # today = Time.now.strftime('%Y-%m-%d')
+    today = Time.now.strftime('%Y-%m-%d')
 
     # #compares the two
     

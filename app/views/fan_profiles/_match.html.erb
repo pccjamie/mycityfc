@@ -4,14 +4,20 @@
 			<p class="alert"><%= alert %></p>
 			<p><%= @my_team %></p>
 			<% @schedule.each do |game| %>
+
+<div class="newgame">
+			<h5><%= @home %></h5>
+			<h5><%= @away %></h5>
+</div>
 				
 				<!--date should appear here -->
-				<div class="date"><%= game.parent.parent.previous_element.text %></div>
-
+				<div class="game-date">
+					<%= game.parent.parent.previous_element.text %>
+				</div>
 
 				<div class="single-game">
 					<div class="game-home"><%= game.css('.field-home-team').text %></div>
-					<div class="game-home-logo"><%= game.css('field-home-team-logo').text %></div>
+					<div class="game-home-logo"><img src="<%= game.css('imagecache-schedule_team_logo') %>"/></div>
 					<div class="game-score"><%= game.css('.field-score').text %></div>
 					<div class="game-away-logo"><%= game.css('.field-away-team-logo').text %></div>
 					<div class="game-away"><%= game.css('.field-away-team').text %></div>
