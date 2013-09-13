@@ -100,14 +100,11 @@
 
         if @my_team.match(/#{home}||#{away}/)
 
-           
-
             flash[:alert] = 'Showing game info for your team only'
 
             @home = home
             @away = away
-            
-            return
+
           
         else
 
