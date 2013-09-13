@@ -96,7 +96,7 @@
       home = team.css('field-home-team').text 
       away = team.css('field-away-team').text 
 
-        if @my_team.match(home||away)
+        if @my_team.match(/#{home}||#{away}/)
 
             flash[:alert] = 'Showing game info for your team only'
 
