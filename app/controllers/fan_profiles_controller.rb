@@ -100,8 +100,8 @@
 
             flash[:alert] = 'Showing game info for your team only'
 
-            @home = team.css('.field-home-team').text
-            @away = team.css('.field-away-team').text
+            @home = home
+            @away = away
           
 
         else
@@ -110,9 +110,6 @@
 
         end
       end
-
-
-
 
     #finds game date and formats time
     schedule_array.each do |date|
