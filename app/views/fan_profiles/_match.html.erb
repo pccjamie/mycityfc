@@ -2,22 +2,23 @@
 	<div class="sleeve">
 		<section id="schedule">
 			<p class="alert"><%= alert %></p>
+			<p><%= @my_team %></p>
+			<% @schedule.each do |game| %>
+				
+				<!--date should appear here -->
+				
+				<div class="single-game">
+					<div class="game-home"><%= game.css('.field-home-team').text %></div>
+					<div class="game-home-logo"><%= game.css('field-home-team-logo').text %></div>
+					<div class="game-score"><%= game.css('.field-score').text %></div>
+					<div class="game-away-logo"><%= game.css('.field-away-team-logo').text %></div>
+					<div class="game-away"><%= game.css('.field-away-team').text %></div>
+					<div class="game-time"><%= game.css('.field-game-date-start-time').text %></div>
+					<a class="game-tickets" href="#"><%= game.css('a.sch_matchcenter').text %></a>
+				</div>
 
-<% @schedule_array.each do |date| %>
 
-<div class="schedule-date">
-	
-	<!--date should appear here -->
-
-	<div class="single-game">
-		<div class="game-home"><%= date.css('.field-home-team').text %></div>
-		<div class="game-score"><%= date.css('.field-score').text %></div>
-		<div class="game-away"><%= date.css('.field-away-team').text %></div>
-		<div class="game-time"><%= date.css('.field-game-date-start-time').text %></div>
-		<a class="game-tickets" href="#"><%= date.css('a.sch_matchcenter').text %></a>
-	</div>
-</div>
-<%end%>
+			<%end%>
 		</section>
 		<div class="match-trigger">close</div>
 	</div>

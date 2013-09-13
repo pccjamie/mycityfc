@@ -12,7 +12,7 @@
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
-  require 'httparty'
+  #require 'httparty'
   require 'chronic'
 
   def index
@@ -61,20 +61,6 @@
   end
 
 
-
-=begin
-
-  #check_schedule:
-  this checks MLS schedule and see whether game is listed for the user's primary team.
-  if the team is listed, then it will next check current time and compare that to the team's match date.
-  time to match determines what kind of content will appear in match_day method.
-
-    #alt for mls schedule: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?" 
-    #url_nasl = "http://www.nasl.com/index.php?id=12"
-    #url_usl = "http://uslpro.uslsoccer.com/schedules/"
-
-=end
-
  def match_preview
     @user_team = current_user.primary_team
     flash[:alert] = "PREVIEW"
@@ -86,67 +72,59 @@
   end
 
   def get_source
+    # scraping is not preferred, source html could change and break this app. this is temp for POC. need API or more reliable solution
     url_mls = "http://www.mlssoccer.com/schedule"
+    #alt for mls schedule: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?" 
+
   end
 
   def move_date_node
 
     #moves date inside it's corresponding table. For some reason they put it outside of corresponding games container.
-  
+
   end
 
 
   def check_schedule
 
-    url_mls = "http://www.mlssoccer.com/schedule"
+    #as written, assumes user's team IS in fact on the schedule page. Need to validate.
 
-    #scrape source
-    @schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-page .schedule-table tbody tr').to_a
+    #scrape
+    schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
+
+    #get team name from db for comparison
+    my_team = current_user.primary_team.split(' ').map(&:strip)
+    @my_team = my_team[0] #formats for easier comparison to scrape.
+
+    #finds game date and formats time
+
+    # dates_array = Nokogiri::HTML(open(get_source)).css('.schedule-page').to_a
+
+    # dates_array.each do |d|
+    #   game_date = d.css('h3').text
+    #   @game_date = Chronic.parse(game_date).strftime('%Y-%m-%d')
+    # end
 
     #get current date
-    today = Time.now.strftime('%Y-%m-%d')
-    @today = today
-  
-=begin
-  
-1. on page load, we get the full schedule immediately. User's primary team is likely on there, but need to add if/else in case it's offseason or edge case. (hardcode excluded months? restrict to league schedule? or include all dates?...hmmm)
+    # today = Time.now.strftime('%Y-%m-%d')
 
-=end
-  
-
-    #parse dates, should be getting an array of dates objects here. 
-    match_date = Chronic.parse("September 10, 2013").strftime('%Y-%m-%d')
-
-
-    #get team name from db for comparison to scrape
-    my_team = current_user.primary_team.split(' ').map(&:strip)
-    @my_team = my_team[0]
+    # #compares the two
     
-    @my_team = 'Seattle'
-
-    if @schedule_array.include?(@user_team)
-      match_day
-    else
-      match_preview
-    end
+    # if schedule_array.include?(@my_team)
+    #   if (today < @game_date)
+    #     match_day
+    #   else
+    #     match_preview
+    #   end
+    # else
+    #   flash[:alert] = "Team not found. Offseason, perhaps?"
+    #   # define method for what to do when team is not listed.
+    # end
     
-  
+  @schedule = schedule_array
 
   end
 
-  # #basic CRUD - will use when setting up individual user profile pages. Right now, index acts as user profile in that it shows location based view
-  
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 
   private
   def user_params

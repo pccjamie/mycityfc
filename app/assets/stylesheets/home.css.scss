@@ -149,15 +149,16 @@ footer * {color: $white}
 }
 
 
-.raw-data {height: auto; background: orange; margin-bottom: 20px; display: block; position: relative}
 .schedule-date:nth-child(odd) {background: blue} 
 .schedule-date:nth-child(even) {background: purple}
 
 .schedule-table:nth-child(even) {background: #363636}
 .schedule-table:nth-child(odd) {background: #161616}
 
-.single-game {height: auto; background: yellow; margin-bottom: 40px;}
-.single-game * {display:inline-block; width: auto}
+.single-game {height: auto; padding: 5px 0; margin-bottom: 10px; display: none;}
+.single-game * {display:inline-block; width: 100px}
+.single-game .game-score {width: 50px;}
+
 
 header#banner * .match-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
 

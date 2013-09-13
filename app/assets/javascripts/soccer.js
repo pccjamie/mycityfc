@@ -112,7 +112,7 @@ $("#banner").on("click","a.trigger", function(e) {
 
 function switch_leagues(){
 
-$('.leagueslider').cycle({
+$('.js-tabs').cycle({
     manualSpeed: 100
 });
 }
@@ -127,6 +127,16 @@ function location_based_view(){
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 }
+
+// function filter_games(){
+
+// 	var primary_team = $(li.).val();
+// 	if $('.single-game').has('current')
+
+
+// }
+
+
 
 // ON LOAD
 $(function() {
