@@ -3,19 +3,15 @@
 		<section id="schedule">
 			<p class="alert"><%= alert %></p>
 			<p><%= @my_team %></p>
-			<% @schedule_array.each do |game| %>
-	
+			<% @schedule.each do |game| %>
+				
 				<!--date should appear here -->
 				<div class="game-date">
 					<%= game.parent.parent.previous_element.text %>
 				</div>
 
+
 				<div class="single-game">
-			
-				<h6><%= @home %></h6>
-				<h6><%= @away %></h6>
-
-
 					<div class="game-home"><%= game.css('.field-home-team').text %></div>
 					<div class="game-home-logo"><img src="<%= game.css('imagecache-schedule_team_logo') %>"/></div>
 					<div class="game-score"><%= game.css('.field-score').text %></div>

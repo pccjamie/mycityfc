@@ -84,37 +84,28 @@
     #as written, assumes user's team IS in fact on the schedule page. Need to validate.
 
     #scrape
-    @schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
+    schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
 
     #get team name from db for comparison
     my_team = current_user.primary_team.split(' ').map(&:strip)
     @my_team = my_team[0] #formats for easier comparison to scrape.
 
     #filter results for my team here.
-    @schedule_array.each do |team|
+    schedule_array.each do |team|
         
-
         home = team.css('field-home-team').text 
-        away = team.css('field-away-team').text 
-   
+        away = team.css('field-away-team').text    
 
-        if @my_team.match(/#{home}||#{away}/)
-
-            flash[:alert] = 'Showing game info for your team only'
-
-            @home = home
-            @away = away
-
-          
-        else
-
-        flash[:alert] = "Sorry!"
-
+        unless @my_team.match(/#{home}||#{away}/) do
+          team.reject! {|t| t.css('tr')}
         end
-      end
+       
+
+end
+end
 
     #finds game date and formats time
-    @schedule_array.each do |date|
+    schedule_array.each do |date|
       game_date = date.css('.schedule-page h3').text
       @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
     end
@@ -138,7 +129,7 @@
     #   # define method for what to do when team is not listed.
     # end
     
- 
+ @schedule = schedule_array
 
   end
 
