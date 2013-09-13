@@ -128,13 +128,17 @@ function location_based_view(){
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 }
 
-// function filter_games(){
+function filter_games(){
+	console.log('filtering games');
+	var my_team = $('h3.my-team').text();
+	if ($('.single-game:contains('+my_team+')')){
+		$(this).css('display','block');
+	}
+	else{
+		//else nothing. this function wont even run
+	}
 
-// 	var primary_team = $(li.).val();
-// 	if $('.single-game').has('current')
-
-
-// }
+}
 
 
 
@@ -142,6 +146,7 @@ function location_based_view(){
 $(function() {
 	location_based_view();
 	//find_team_info();
+	filter_games();
 	find_news();
 	switch_leagues();
 });

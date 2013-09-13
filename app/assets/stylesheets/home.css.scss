@@ -155,7 +155,7 @@ footer * {color: $white}
 .schedule-table:nth-child(even) {background: #363636}
 .schedule-table:nth-child(odd) {background: #161616}
 
-.single-game {height: auto; padding: 5px 0; margin-bottom: 10px;}
+.single-game {height: auto; padding: 5px 0; margin-bottom: 10px; display: none}
 .single-game * {display:inline-block; width: 100px}
 .single-game .game-score {width: 50px;}
 
