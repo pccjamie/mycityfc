@@ -100,8 +100,8 @@
 
             flash[:alert] = 'Showing game info for your team only'
 
-            @home = home
-            @away = away
+            @home = home.text
+            @away = away.text
           
 
         else
