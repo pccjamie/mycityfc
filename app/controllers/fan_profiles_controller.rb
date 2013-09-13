@@ -91,32 +91,19 @@
     @my_team = my_team[0] #formats for easier comparison to scrape.
 
     #filter results for my team here.
-    schedule_array.each do |team|
-        
-        home = team.css('field-home-team').text 
-        away = team.css('field-away-team').text    
 
-        unless @my_team.match(/#{home}||#{away}/) do
-          team.reject! {|t| t.css('tr')}
-        end
-       
 
-end
-end
-
-    #finds game date and formats time
+    #finds game date and formats time. not for display in view, but for comparison on server to filter out past dates and also to determine which game state to show.
     schedule_array.each do |date|
       game_date = date.css('.schedule-page h3').text
       @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
     end
-    
-   
 
 
     #get current date
     today = Time.now.strftime('%Y-%m-%d')
 
-    # #compares the two
+    #compares the two
     
     # if schedule_array.include?(@my_team)
     #   if (today < @game_date)
@@ -129,7 +116,7 @@ end
     #   # define method for what to do when team is not listed.
     # end
     
- @schedule = schedule_array
+    @schedule = schedule_array
 
   end
 
