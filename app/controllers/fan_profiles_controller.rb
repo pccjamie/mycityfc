@@ -93,17 +93,18 @@
     #filter results for my team here.
     schedule_array.each do |team|
 
-      home = team.css('field-home-team').text 
-      away = team.css('field-away-team').text 
+   
 
         if @my_team.match(/#{home}||#{away}/)
 
+            home = team.css('field-home-team').text 
+            away = team.css('field-away-team').text 
+
             flash[:alert] = 'Showing game info for your team only'
 
-            @home = home.text
-            @away = away.text
+            @home = home
+            @away = away
           
-
         else
 
         flash[:alert] = "Sorry!"
