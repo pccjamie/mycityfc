@@ -41,18 +41,18 @@ var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 // 		cache: false,
 // 		type: "get"
 // 	}).done(function(data) {
-			
+
 // 			console.log(team_id);
 // 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
 
 // 			var team_name = team.name.toLowerCase();
 // 			var team_location = team.location.toLowerCase();
 // 			var team_id = team.id;
-			
+
 // 		// $('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
 // 		// $("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
 // 			$.each(team, function(index, info) {
-				
+
 // 				info2 = $(info);
 // 				info2.slice(5, 7);
 
@@ -77,6 +77,7 @@ var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 
 //GET NEWS
+
 function find_news() {
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
@@ -94,57 +95,55 @@ function find_news() {
 	}).done(function(data) {
 
 		$.each(data.headlines, function(index, article) {
-		
-			$('#ticker #js-headlines').append("<article><a href="+article.links.web.href+">"+article.title+"</a></article>");
+
+			$('#ticker #js-headlines').append("<article><a href=" + article.links.web.href + ">" + article.title + "</a></article>");
 			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 			console.log(article.categories);
 		});
 	});
 }
 
-$("#banner").on("click","a.trigger", function(e) {
+$("#banner").on("click", "a.trigger", function(e) {
 	e.preventDefault();
 	// $("#ticker").animate({height: '100%'},200);
 	$("#ticker").toggleClass('exposed');
-	$("#js-headlines article:first").nextAll().css('display','block');
+	$("#js-headlines article:first").nextAll().css('display', 'block');
 });
 
 
-function switch_leagues(){
+function switch_leagues() {
 
-$('.js-tabs').cycle({
-    manualSpeed: 100
-});
+	$('.js-tabs').cycle({
+		manualSpeed: 100
+	});
 }
 
 //change BG based on closest team
-function location_based_view(){
+
+function location_based_view() {
 	//if no primary team, use background for team closest
 	var bg = $('.team-venue-image:first').text();
 	//else use background for team chosen
-	////////
-	$('body').css('background-image','url('+bg+')');
+	$('body').css('background-image', 'url(' + bg + ')');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 }
 
 function afterCss() {
-    // $(temp).first().animate({'height':'200px','background':'red'});
+	// $(temp).first().animate({'height':'200px','background':'red'});
 }
 
-function filter_games(){
+function filter_games() {
 	//retrive user's preferred team from DOM text.
 	var my_team = $('.my-team').text();
 
-	if ($(".single-game:contains('"+my_team+"')")) {
-		
-	$(".single-game:contains('"+my_team+"')").css("display","block").first();
-	//ensuring this occurs before further action.
-	//setTimeout(afterCss, 10);
-	
-	}
-	
-	else {
+	if ($(".single-game:contains('" + my_team + "')")) {
+
+		$(".single-game:contains('" + my_team + "')").css("display", "block");
+		//ensuring this occurs before further action.
+		//setTimeout(afterCss, 10);
+
+	} else {
 		console.log('Sorry!')
 	}
 
@@ -161,4 +160,3 @@ $(function() {
 	switch_leagues();
 
 });
-
