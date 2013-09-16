@@ -20,9 +20,10 @@
     @users = User.all
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
-    @user_team = current_user.primary_team
     #get_teams_from_espn
     get_schedule
+    match_preview
+    match_day
     return
   end
   
@@ -86,7 +87,7 @@
 
     #get team name from db for comparison
     my_team = current_user.primary_team.split(' ').map(&:strip)
-    @my_team = my_team[0] #formats for easier comparison to scrape.
+    @formatted_team = my_team[0] #formats for easier comparison to scrape.
 
     #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow. 
 
@@ -102,12 +103,7 @@
 
     #compares the two
     
-    if schedule_array.include?(@my_team)
-        match_day
-    else
-        match_preview
-    end
-    
+   
     @schedule = schedule_array
 
   end
