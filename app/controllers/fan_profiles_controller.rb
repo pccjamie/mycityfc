@@ -19,7 +19,7 @@
     current_user
     @users = User.all
     @teams = Team.all
-    @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)     
+    @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
     @user_team = current_user.primary_team
     #get_teams_from_espn
     check_schedule
