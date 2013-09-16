@@ -3,8 +3,41 @@
 	<!-- db query -->
 	<h3 class="my-team">Following: <%= @my_team %></h3>
 	<!--from nokogiri, using for match trigger-->
-	 <%= render 'schedule' %>
+		<% @schedule.each do |game| %>
+				
+			
 
+
+				<div class="single-game">
+
+						<!--date should appear here -->
+				<div class="game-date">
+					<%= game.parent.parent.previous_element.text %>
+				</div>
+
+
+				<br/>
+					<div class="game-competition"><%=game.css('span.competetion').text %></div>
+					<div class="game-home"><%= game.css('.field-home-team').text %></div>
+					<div class="game-home-logo"><img src="<%= game.css('imagecache-schedule_team_logo') %>"/></div>
+					<div class="game-score"><%= game.css('.field-score').text %></div>
+					<div class="game-away-logo"><%= game.css('.field-away-team-logo').text %></div>
+					<div class="game-away"><%= game.css('.field-away-team').text %></div>
+					<div class="game-time"><%= game.css('.field-game-date-start-time').text %></div>
+					<div class="game-tv" href="#"><%= game.css('.field-broadcast-partners').text %></div>
+
+					<div class="game-links">
+					<a class="game-tickets" href="#"><%= game.css('a.sch_tickets').text %></a>
+
+					<a class="game-matchcenter" href="#"><%= game.css('a.sch_matchcenter').text %></a>
+
+					</div>
+				
+
+
+				</div>
+
+			<%end%>
 
 	<!-- espn api, use tbd. data may be unreliable-->
 	<%#= @response.each do |record| %>
