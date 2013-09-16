@@ -2,12 +2,11 @@
 	<div class="sleeve">
 		<section id="schedule">
 			<p class="alert"><%= alert %></p>
-	<h3 class="my-team">Following: <%= @my_team %></h3>
+	<h3 class="my-team">Following: <%= @my_team %>
+		<%= current_user.primary_team %></h3>
+
 			<% @schedule.each do |game| %>
 				
-			
-
-
 				<div class="single-game">
 
 						<!--date should appear here -->

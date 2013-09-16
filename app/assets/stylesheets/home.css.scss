@@ -136,8 +136,6 @@ header#banner * .external-links {height: auto}
 footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-medium; position: relative; float: left; display: block; }
 footer * {color: $white}
 /* toggle match day panel */
-
-h3.my-team {text-transform: capitalize;}
 #js-match-day {
 
 	height: auto; min-height: 400px; max-height: 600px; width: 800px; overflow: auto; background: $bg-dark; display: block; position: fixed; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none; z-index: 2;
