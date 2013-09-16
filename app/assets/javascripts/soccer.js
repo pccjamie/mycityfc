@@ -128,12 +128,8 @@ function location_based_view(){
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 }
 
-var my_team = 'LA';
-
 function afterCss() {
-    $(temp).first().animate({'height':'200px','background':'red'});
-
-
+    // $(temp).first().animate({'height':'200px','background':'red'});
 }
 
 function filter_games(){
@@ -144,7 +140,7 @@ function filter_games(){
 		
 	temp =	$(".single-game:contains('"+my_team+"')").css("display","block").first();
 	//ensuring this occurs before further action.
-	setTimeout(afterCss, 5000);
+	setTimeout(afterCss, 10);
 	}
 	
 	else {
@@ -158,7 +154,6 @@ function filter_games(){
 // ON LOAD
 $(function() {
 	filter_games();
-
 	location_based_view();
 	//find_team_info();
 	find_news();
