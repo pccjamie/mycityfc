@@ -134,13 +134,14 @@ function afterCss() {
 
 function filter_games(){
 
-	 //var my_team = $('.my-team').text();
+	var my_team = $('.my-team').text();
 
 	if ($(".single-game:contains('"+my_team+"')")) {
 		
-	temp =	$(".single-game:contains('"+my_team+"')").css("display","block").first();
+	$(".single-game:contains('"+my_team+"')").css("display","block").first();
 	//ensuring this occurs before further action.
-	setTimeout(afterCss, 10);
+	//setTimeout(afterCss, 10);
+	
 	}
 	
 	else {

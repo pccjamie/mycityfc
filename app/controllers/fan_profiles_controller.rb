@@ -60,12 +60,12 @@
 
 
  def match_preview
-    @user_team = current_user.primary_team
+    #@user_team = current_user.primary_team
     flash[:alert] = "PREVIEW"
   end
 
   def match_day
-    @user_team = current_user.primary_team
+    #@user_team = current_user.primary_team
     flash[:alert] = "ITS MATCH DAY for #{@my_team}"
   end
 
@@ -99,7 +99,7 @@
 
 
     #get current date
-    get_time
+
     #compares the two
     
     if schedule_array.include?(@my_team)
