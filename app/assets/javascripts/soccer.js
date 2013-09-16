@@ -1,6 +1,6 @@
-var city = $('li.current-user-city').html();
-var city = city.toLowerCase();
-//var city = 'seattle';
+//var city = $('li.current-user-city').html();
+//var city = city.toLowerCase();
+var city = 'seattle';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 // //GET TEAM ID
@@ -128,14 +128,27 @@ function location_based_view(){
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 }
 
+var my_team = 'LA';
+
+function afterCss() {
+    $(temp).first().animate({'height':'200px','background':'red'});
+
+
+}
+
 function filter_games(){
-	console.log('filtering games');
-	var my_team = $('h3.my-team').text();
-	if ($('.single-game:contains('+my_team+')')){
-		$(this).css('display','block');
+
+	 //var my_team = $('.my-team').text();
+
+	if ($(".single-game:contains('"+my_team+"')")) {
+		
+	temp =	$(".single-game:contains('"+my_team+"')").css("display","block").first();
+	//ensuring this occurs before further action.
+	setTimeout(afterCss, 5000);
 	}
-	else{
-		//else nothing. this function wont even run
+	
+	else {
+		console.log('Sorry!')
 	}
 
 }
@@ -144,10 +157,12 @@ function filter_games(){
 
 // ON LOAD
 $(function() {
+	filter_games();
+
 	location_based_view();
 	//find_team_info();
-	filter_games();
 	find_news();
 	switch_leagues();
+
 });
 

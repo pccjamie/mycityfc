@@ -148,17 +148,19 @@ footer * {color: $white}
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 }
 
-
-.schedule-date:nth-child(odd) {background: blue} 
-.schedule-date:nth-child(even) {background: purple}
+#schedule {z-index:10;}
 
 .schedule-table:nth-child(even) {background: #363636}
 .schedule-table:nth-child(odd) {background: #161616}
 
-.single-game {height: auto; padding: 5px 0; margin-bottom: 10px; display: none}
-.single-game * {display:inline-block; width: 100px}
-.single-game .game-score {width: 50px;}
+// .game-container {display:none; height: 100px; width: auto; background: blue}
+.single-game {height: 50px; padding: 5px 0; margin-bottom: 10px; display: none; position: relative; z-index:20; background:$bg-shine;
 
+	* {width: 100px;display:inline-block; background: $bg-rev-medium}
+	.game-score {width: 50}
+	.game-home-logo,.game-away-logo {width:25px}
+}
+.single-game .game-date {width: 100%; background:red}
 
 header#banner * .match-trigger {height: 30px; width: 50%; bottom: 0px;padding: 10px;}
 

@@ -22,7 +22,6 @@
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)     
     @user_team = current_user.primary_team
     #get_teams_from_espn
-    #move_date_node
     check_schedule
     return
   end
@@ -62,12 +61,12 @@
 
 
  def match_preview
-    @user_team = current_user.primary_team
+    #@user_team = current_user.primary_team
     flash[:alert] = "PREVIEW"
   end
 
   def match_day
-    @user_team = current_user.primary_team
+   # @user_team = current_user.primary_team
     flash[:alert] = "ITS MATCH DAY for #{@my_team}"
   end
 
@@ -89,7 +88,7 @@
     #get team name from db for comparison
     my_team = current_user.primary_team.split(' ').map(&:strip)
     @my_team = my_team[0] #formats for easier comparison to scrape.
-
+    #@my_team = 'Seattle'
     #filter results for my team here.
 
 
@@ -105,16 +104,11 @@
 
     #compares the two
     
-    # if schedule_array.include?(@my_team)
-    #   if (today < @game_date)
-    #     match_day
-    #   else
-    #     match_preview
-    #   end
-    # else
-    #   flash[:alert] = "Team not found. Offseason, perhaps?"
-    #   # define method for what to do when team is not listed.
-    # end
+    if schedule_array.include?(@my_team)
+        match_day
+    else
+        match_preview
+    end
     
     @schedule = schedule_array
 
