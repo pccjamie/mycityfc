@@ -1,5 +1,5 @@
-var current_city = $('li.current-user-city').html();
-var current_city = city.toLowerCase();
+//var current_city = $('li.current-user-city').html();
+//var current_city = city.toLowerCase();
 //var city = 'seattle';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
@@ -126,7 +126,7 @@ function afterCss() {
 
 function filter_games(){
 
-	// user selects team in profile set up, 
+	// user selects team in profile set up, which i
 	 var my_team = $('.my-team').text();
 
 	if ($(".single-game:contains('"+my_team+"')")) {
