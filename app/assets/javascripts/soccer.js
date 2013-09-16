@@ -133,7 +133,7 @@ function afterCss() {
 }
 
 function filter_games(){
-
+	//retrive user's preferred team from DOM text.
 	var my_team = $('.my-team').text();
 
 	if ($(".single-game:contains('"+my_team+"')")) {
