@@ -87,7 +87,7 @@
 
     #get team name from db for comparison
     my_team = current_user.primary_team.split(' ').map(&:strip)
-    @formatted_team = my_team[0] #formats for easier comparison to scrape.
+    @formatted_team = my_team[0].downcase.capitalize #formats for easier comparison to scrape.
 
     #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow. 
 
