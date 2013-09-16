@@ -10,10 +10,10 @@
   <li><%= link_to 'soccer mom?', parent_profiles_path %></li>
 </ul>
 <ul class="right">
-  <li><%= current_user.first_name %></li>
-  <li class="current-user-city"><%= current_user.city %></li>
+  <li><%#= current_user.first_name %></li>
+  <li class="current-user-city">Current City: <%= current_user.city %></li>
   <li><%= image_tag current_user.picture %>
-  <li><%= link_to('My Account', edit_user_registration_path) %></li>
+  <li><%= link_to('Manage Profile', edit_user_registration_path) %></li>
   <li><%= link_to('Logout', destroy_user_session_path)%></li>
   </li>
 </ul>

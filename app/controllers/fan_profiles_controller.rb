@@ -22,7 +22,7 @@
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
     @user_team = current_user.primary_team
     #get_teams_from_espn
-    check_schedule
+    get_schedule
     return
   end
   
@@ -45,28 +45,27 @@
   #     format.html
   #     format.json { render :xml => @response.to_json }
   #   end
-
   #   return
-
   # end
 
 
-  def get_current_time
+  def get_time
     #replace later with more specific params...
     @time = Time.now
     @tomorrow = Chronic.parse('tomorrow')
+    @yesterday = Chronic.parse('yesterday')
     @today =  @time.strftime("%A, %B %d, %Y").inspect
-    return [@time, @today]   
+    return [@time, @today, @tomorrow, @yesterday]   
   end
 
 
  def match_preview
-    #@user_team = current_user.primary_team
+    @user_team = current_user.primary_team
     flash[:alert] = "PREVIEW"
   end
 
   def match_day
-   # @user_team = current_user.primary_team
+    @user_team = current_user.primary_team
     flash[:alert] = "ITS MATCH DAY for #{@my_team}"
   end
 
@@ -78,9 +77,9 @@
   end
 
 
-  def check_schedule
+  def get_schedule
 
-    #as written, assumes user's team IS in fact on the schedule page. Need to validate.
+    #as written, assumes  1) user's team IS in fact on the schedule page, and 2) source is formatted a certain way. WRITE CODE TO ACCOUNT FOR OTHER...
 
     #scrape
     schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
@@ -88,8 +87,8 @@
     #get team name from db for comparison
     my_team = current_user.primary_team.split(' ').map(&:strip)
     @my_team = my_team[0] #formats for easier comparison to scrape.
-    #@my_team = 'Seattle'
-    #filter results for my team here.
+
+    #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow. 
 
 
     #finds game date and formats time. not for display in view, but for comparison on server to filter out past dates and also to determine which game state to show.
@@ -100,8 +99,7 @@
 
 
     #get current date
-    today = Time.now.strftime('%Y-%m-%d')
-
+    get_time
     #compares the two
     
     if schedule_array.include?(@my_team)
