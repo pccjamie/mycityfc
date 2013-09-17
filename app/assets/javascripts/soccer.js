@@ -135,18 +135,16 @@ function afterCss() {
 function filter_games() {
 	//retrive user's preferred team from DOM text.
 	var my_team = $('h3.my-team').text();
-	console.log('Value from h3.my-team: '+my_team);
-	//var my_team = 'Seattle';
 
 	if ($(".single-game:contains('" + my_team + "')")) {
 
 		$(".single-game:contains('" + my_team + "')").css("display", "block");
 		//ensuring this occurs before further action.
 		//setTimeout(afterCss, 10);
-
 	} 
+
 	else {
-		console.log('Sorry!')
+		console.log('No team selected.')
 	}
 
 }

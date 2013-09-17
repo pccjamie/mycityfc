@@ -67,7 +67,7 @@
 
   def match_day
     #@user_team = current_user.primary_team
-    flash[:alert] = "ITS MATCH DAY for #{@formatted_team}"
+    #flash[:alert] = "ITS MATCH DAY for #{@formatted_team}"
   end
 
   def get_source
@@ -103,8 +103,10 @@
     #get current date
 
     #compares the two
+    if schedule_array.include?(@today)
+      match_day
+    end
     
-   
     @schedule = schedule_array
 
   end

@@ -3,12 +3,10 @@
 		<section id="schedule">
 			<p class="alert"><%= alert %></p>
 
-
 			<% @schedule.each do |game| %>
 				
 				<div class="single-game">
 
-						<!--date should appear here -->
 				<div class="game-date">
 					<%= game.parent.parent.previous_element.text %>
 				</div>
