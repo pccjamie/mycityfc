@@ -19,7 +19,7 @@
     current_user
     @users = User.all
     @teams = Team.all
-    #@nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
+    @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
     #get_teams_from_espn
     get_schedule
     match_preview
@@ -85,17 +85,18 @@
 
     #get team name from db for comparison
     my_team = current_user.primary_team.split(' ').map(&:strip)
+    
     @formatted_team = my_team[0] #formats for easier comparison to scrape.
-    #@formatted_team = "New York"
+    @formatted_team = "New York"
 
     #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow. 
 
 
     #finds game date and formats time. not for display in view, but for comparison on server to filter out past dates and also to determine which game state to show.
-    schedule_array.each do |date|
-      game_date = date.css('.schedule-page h3').text
-      @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
-    end
+    # schedule_array.each do |date|
+    #   game_date = date.css('.schedule-page h3').text
+    #   @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
+    # end
 
 
     #get current date
@@ -107,7 +108,6 @@
       match_preview
     end
     
-    @schedule = schedule_array
 
   end
 

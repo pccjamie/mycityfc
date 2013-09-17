@@ -103,11 +103,11 @@ function find_news() {
 	});
 }
 
-$("#banner").on("click", "a.trigger", function(e) {
+$("#banner").on("click", ".news-trigger", function(e) {
 	e.preventDefault();
-	// $("#ticker").animate({height: '100%'},200);
-	$("#ticker").toggleClass('exposed');
 	$("#js-headlines article:first").nextAll().css('display', 'block');
+	$("#js-headlines").toggleClass('exposed');
+
 });
 
 
@@ -124,6 +124,9 @@ function location_based_view() {
 	var bg = $('.team-venue-image:first').text();
 	//else use background for team chosen
 	$('body').css('background-image', 'url(' + bg + ')');
+	$('#js-match-day').css('background-color', 'rgba(0,0,0,.60');
+	//$('#js-match-day').css('background-image', 'url(' + bg + ')');
+
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
 }

@@ -55,6 +55,7 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 	display: block;
+	background-color: #333333;
 }
 
 // body.default * form {background: $bg-dark;}
@@ -66,7 +67,6 @@ body.bg-public {
 }
 
 table {display: block; position: relative;}
-
 
 ul {list-style: none; margin: 0; padding:0}
 li {display: inline; padding: 5px}
@@ -100,50 +100,71 @@ header#splash {
 	h2 {font-size: 30px; background: $bg-light;}
 }
 
-header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; background: $bg-medium}
-header#banner * {height: 100px}
+header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; position: relative; background: $bg-medium; }
+
 
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
 // header#banner:hover {height: 300px; -webkit-animation: hanging 2s infinite 2s alternate}
-header#banner .g-title {width: 100px; font-size: 20px; color: #FFF; background: $bg-shine; margin-right:20px; display:inline-block;float: left; position: relative;
+header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000; background: $white; margin-right:20px; display:inline-block;float: left; position: relative;
 }
 
-header#banner .g-title.short-term {width: auto}
 
-header#banner #ticker {width: 610px;}
-header#banner #match-preview {width: 300px; background: $bg-rev-medium; position: relative; display:inline-block;float:left}
+header#banner #match-preview {
+	height: 100px; width: 300px; background: red; position: relative; display:inline-block;float:left;
 
-header#banner #ticker #js-headlines {height: auto; width: auto; display:inline-block;}
+.g-title.short-term {width: auto}
+	h3 {display:inline}
 
-header#banner .exposed {height: auto; background: 0; margin-bottom: 10px;}
+}
 
-header#banner * a.trigger {position: relative; float: left; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
+#ticker {height: auto; margin: auto}
 
+#js-headlines {
 
-#ticker, #match-preview {height: 100px; display:inline-block; float: left}
-#ticker article:first-child a {font-size: 30px; margin: auto}
-#ticker article:not(:first-child) a {font-size: 20px}
-#ticker article:not(:first-child) {height: auto;display:none; margin-bottom: 10px}
+	height: 100px;
+	width: 600px;
 
-a.credits {height: auto; width: auto; display: block;position: relative}
+	transition: height 1s;
+	-webkit-transition: height 1s;
+	
+	position:relative;
 
+	}
+
+#js-headlines.exposed {height: 400px; overflow: hidden}
+
+#ticker, #match-preview {display:inline-block;}
+#ticker article:first-child {height: 100px;}
+#ticker article:first-child a {font-size: 32px; margin: auto; }
+#ticker article:not(:first-child) a {font-size: 16px}
+#ticker article:not(:first-child) {height: auto; display:none; margin-bottom: 10px}
+
+header#banner a.credits {height: auto; width: auto; display: inline-block;position: relative; float:right}
+header#banner a.credits img {height: 50%; width: 50%;}
 header#banner * .external-links {height: auto}
 
 footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-medium; position: relative; float: left; display: block; }
 footer * {color: $white}
+
 /* toggle match day panel */
 #js-match-day {
 
-	height: 100%; min-height: 400px; max-height: 600px; overflow: auto; background: rgba(255,255,255,.9); display: block; position: fixed; top: 0;/*to be changed to :none */z-index:9999; -webkit-transition: width 1s ease-in-out; display: none; z-index: 2;
+	height: 100%; width: 800px; margin: auto; overflow: auto; background: rgba(255,255,255,.9); display: block; position: relative;/*to be changed to :none */z-index:9999; display: none;
 
-  -webkit-transition: height .5s ease-in-out;
-  -moz-transition: height.5s ease-in-out;
-  -o-transition: height .5s ease-in-out;
-  transition: height .5s ease-in-out;
-  -webkit-box-shadow: 1px 1px 10px black;
+  // -webkit-transition: height 1s ease-in-out;
+   -webkit-transition: display 1s ease-in-out;
+  -moz-transition: display 1s ease-in-out;
+  -o-transition: display 1s ease-in-out;
+  // transition: height 1s ease-in-out;
+  transition: display 1s ease-in-out;
+  -webkit-box-shadow: 1px 1px 2px black;
    // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
+
+   #schedule {width: 50%}
+   * #game-day-content {display:inline-block; background: $bg-shine; float: right}
+
 }
 
 //h3.my-team {text-transform: capitalize;}
@@ -154,7 +175,7 @@ footer * {color: $white}
 .schedule-table:nth-child(odd) {background: #161616}
 
 // .game-container {display:none; height: 100px; width: auto; background: blue}
-.single-game {height: auto; padding: 5px 0; margin-bottom: 10px; display: none; position: relative; z-index:20; background:$bg-shine;
+.single-game {height: auto; padding:0px; margin-bottom: 10px; display: none; position: relative; z-index:20; background:$bg-shine;
 
 	* {width: 100px;display:inline-block; background: $bg-rev-medium; line-height: normal; color: #FFF; }
 	.game-score {width: 50}
@@ -162,11 +183,12 @@ footer * {color: $white}
 }
 .single-game .game-date {width: 100%;}
 
-header#banner * .match-trigger {height: 20px; width: 20px; bottom: 5px; right: 5px; padding: 10px;}
+/* modal trigger */
 
+header#banner * .match-trigger, header#banner * .news-trigger {height: 20px; width: 20px; top: 5px; right: 5px; }
 #js-match-day * .match-trigger {height:20px; width: 20px; top: 5px; right: 5px}
-
-.match-trigger {background: $trigger; color:#FFF; position: absolute;}
+.news-trigger, .match-trigger {background: $trigger; color:#FFF; position: absolute; text-align:center; margin: auto;}
+.news-trigger {top: 0px; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
 
 
 /*top nav*/
@@ -189,31 +211,37 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 // details summary h5 {color: #FFF; height: 20px; width: auto; display:block}	
 // #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
-#latest-content, #profile {height: auto; display: inline-block; position:relative} 
-#latest-content {float: left;  position:relative; width:60%;}
+#profile, #local {height: auto; display: inline-block; position:relative} 
+#profile {float: left;  position:relative; width:60%;}
+#profile header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
 
-#latest-content header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
-#profile {float: right; width: 40%}
-#profile * section {
+#local {float: right; width: 40%}
+#local * section {
 	display:inline-block; width:50%; height: auto; display: inline-block; background-color:$header-bg; position: relative; min-height: 200px; max-height: 400px;
 }
 
 
-#profile * .leagueslider {height: auto; display: block}
-#profile * .league { height: auto; width: 100%; margin-top: 40px;}
+#local * .leagueslider {height: auto; display: block}
+#local * .league { height: auto; width: 100%; margin-top: 40px;}
 
 .league {background: $bg-light; color: #262626}
 
-#profile * .cycle-pager {height: 40px;  width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
-#profile * .cycle-pager li.pager {height: 40px; line-height: 40px; width: 30%; display: inline-block; background: $bg-main; margin:0; padding:0 0 0 20px;}
-#profile * .cycle-pager li.active { background: $bg-light;}
-#profile * .active-slide {height: 600px;}
+#local * .cycle-pager {height: 40px;  width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
+#local * .cycle-pager li.pager {height: 40px; line-height: 40px; width: 30%; display: inline-block; background: $bg-main; margin:0; padding:0 0 0 20px;}
+#local * .cycle-pager li.active { background: $bg-light;}
+#local * .active-slide {height: 600px;}
 
-section#videos{height:440px; width: auto; margin-right:20px; background: $bg-dark;
+
+section#videos{height:440px;
+
 	#player {height: 300px; width: 450px; background: gray; margin: auto}
+
 }
-section#videos {background: $bg-dark;}
-section#videos .sleeve {margin:20px; display:inline-block}
+section#videos, section#schedule {
+
+	background: $bg-dark; margin-right:20px;
+	.sleeve { display:inline-block}
+}
 
 section#my-teams, section#my-news, section#my-players {height: 200px; background: $bg-shine; width: 50%}
 section#my-teams { height: auto; min-height: 440px; width: 100%; padding: 10px; overflow-x: auto}
