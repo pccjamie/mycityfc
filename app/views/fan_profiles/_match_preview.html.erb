@@ -1,10 +1,11 @@
 <div id="match-preview">
 	<!-- db query -->
-	<h5>Next Game:</h5>
+	<div class="g-title">NEXT GAME:</div>
+
 	<h3 class="my-team"><%= @formatted_team %></h3>
 	vs
-	<h3 class=""><% @other_team %></h3>
-
+<!-- 	<h3 class="">Another Team</h3>
+ -->
 	<!-- espn api, use tbd. data may be unreliable-->
 	<%#= @response.each do |record| %>
 	<%#= record['location'] %>

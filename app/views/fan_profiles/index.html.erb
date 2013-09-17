@@ -2,11 +2,9 @@
 
 <header id="banner">
 
-	<div class="g-title short-term">UPCOMING</div>
-
 	<!-- <h3>Hi Jamie<%#= current_user.first_name %>!</h3> -->
  	<!--appears on match day for user's prefered team.-->
- 	<%= render 'match_overview' %>
+ 	<%= render 'match_preview' %>
  	<!--constant, but if match day appears, then is minimized or positioned elsewhere .-->
  	<%= render 'news_ticker' %>
 
@@ -16,12 +14,12 @@
 
 <div id="latest-content">
 	
-	<header><h3><%= current_user.primary_team %>MATCH HIGHLIGHTS AND NEWS</h3></header>
+	<header><h3><%= current_user.primary_team %> - Latest Video</h3></header>
 
 	<section id="videos">
 
 		<div class="sleeve">
-						<header><h3>video</h3></header>
+		<header><h3>video</h3></header>
 
 		</div>
 	</section>
@@ -30,7 +28,7 @@
 
 	<section id="schedule">
 		<div class="sleeve">
-						<header><h3>schedule</h3></header>
+		<header><h3>schedule</h3></header>
 
 		<%= render 'schedule' %>
 		</div>

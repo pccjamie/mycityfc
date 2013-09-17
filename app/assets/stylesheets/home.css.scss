@@ -113,7 +113,7 @@ header#banner .g-title {width: 100px; font-size: 20px; color: #FFF; background: 
 header#banner .g-title.short-term {width: auto}
 
 header#banner #ticker {width: 610px;}
-header#banner #match-overview {width: 300px; background: $bg-rev-medium; position: relative; display:inline-block;float:left}
+header#banner #match-preview {width: 300px; background: $bg-rev-medium; position: relative; display:inline-block;float:left}
 
 header#banner #ticker #js-headlines {height: auto; width: auto; display:inline-block;}
 
@@ -122,7 +122,7 @@ header#banner .exposed {height: auto; background: 0; margin-bottom: 10px;}
 header#banner * a.trigger {position: relative; float: left; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
 
 
-#ticker, #match-overview {height: 100px; display:inline-block; float: left}
+#ticker, #match-preview {height: 100px; display:inline-block; float: left}
 #ticker article:first-child a {font-size: 30px; margin: auto}
 #ticker article:not(:first-child) a {font-size: 20px}
 #ticker article:not(:first-child) {height: auto;display:none; margin-bottom: 10px}
