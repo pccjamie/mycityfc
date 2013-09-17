@@ -98,6 +98,11 @@
       @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
     end
 
+    # schedule_array.each do |logo|
+    #   game_date = date.css('.schedule-page h3').text
+    #   @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
+    # end
+
 
     #get current date
 

@@ -112,19 +112,20 @@ header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000
 
 
 header#banner #match-preview {
-	height: 100px; width: 300px; background: red; position: relative; display:inline-block;float:left;
+	height: 100px; width: 40%; background: red; position: relative; display:inline-block;float:left;
 
 .g-title.short-term {width: auto}
 	h3 {display:inline}
 
 }
 
-#ticker {height: auto; margin: auto}
+#ticker {height: auto; width: 60%; margin: auto}
+
 
 #js-headlines {
 
 	height: 100px;
-	width: 600px;
+	width: auto;
 
 	transition: height 1s;
 	-webkit-transition: height 1s;
@@ -137,7 +138,7 @@ header#banner #match-preview {
 
 #ticker, #match-preview {display:inline-block;}
 #ticker article:first-child {height: 100px;}
-#ticker article:first-child a {font-size: 32px; margin: auto; }
+#ticker article:first-child a {font-size: 24px; margin: auto; }
 #ticker article:not(:first-child) a {font-size: 16px}
 #ticker article:not(:first-child) {height: auto; display:none; margin-bottom: 10px}
 
@@ -188,7 +189,8 @@ footer * {color: $white}
 header#banner * .match-trigger, header#banner * .news-trigger {height: 20px; width: 20px; top: 5px; right: 5px; }
 #js-match-day * .match-trigger {height:20px; width: 20px; top: 5px; right: 5px}
 .news-trigger, .match-trigger {background: $trigger; color:#FFF; position: absolute; text-align:center; margin: auto;}
-.news-trigger {top: 0px; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
+.match-trigger {bottom: 0px}
+.news-trigger {top: 0px;  z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
 
 
 /*top nav*/
