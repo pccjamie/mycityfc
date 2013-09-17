@@ -128,7 +128,7 @@ function location_based_view() {
 	//$('#js-match-day').css('background-image', 'url(' + bg + ')');
 
 	$('.team:first').addClass('primary');
-	$('.team:first').after('<h5>A little farther away...</h5><br/>').nextAll().addClass('secondary');
+	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
 }
 
 function afterCss() {
