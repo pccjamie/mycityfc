@@ -1,6 +1,6 @@
-var city = $('li.current-user-city').html();
-var city = city.toLowerCase();
-//var city = 'seattle';
+//var city = $('li.current-user-city').html();
+//var city = city.toLowerCase();
+var city = 'seattle';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 // //GET TEAM ID
@@ -112,7 +112,6 @@ $("#banner").on("click", "a.trigger", function(e) {
 
 
 function switch_leagues() {
-
 	$('.js-tabs').cycle({
 		manualSpeed: 100
 	});
@@ -135,7 +134,9 @@ function afterCss() {
 
 function filter_games() {
 	//retrive user's preferred team from DOM text.
-	var my_team = $('.my-team').text();
+	var my_team = $('h3.my-team').text();
+	console.log('Value from h3.my-team: '+my_team);
+	//var my_team = 'Seattle';
 
 	if ($(".single-game:contains('" + my_team + "')")) {
 
@@ -143,7 +144,8 @@ function filter_games() {
 		//ensuring this occurs before further action.
 		//setTimeout(afterCss, 10);
 
-	} else {
+	} 
+	else {
 		console.log('Sorry!')
 	}
 
@@ -153,10 +155,10 @@ function filter_games() {
 
 // ON LOAD
 $(function() {
-	filter_games();
 	location_based_view();
 	//find_team_info();
 	find_news();
 	switch_leagues();
+	filter_games();
 
 });
