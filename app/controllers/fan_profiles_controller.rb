@@ -93,10 +93,10 @@
 
 
     #finds game date and formats time. not for display in view, but for comparison on server to filter out past dates and also to determine which game state to show.
-    # schedule_array.each do |date|
-    #   game_date = date.css('.schedule-page h3').text
-    #   @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
-    # end
+    schedule_array.each do |date|
+      game_date = date.css('.schedule-page h3').text
+      @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
+    end
 
 
     #get current date
