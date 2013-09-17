@@ -62,7 +62,7 @@
 
  def match_preview
     #@user_team = current_user.primary_team
-    flash[:alert] = "PREVIEW"
+    #flash[:alert] = "PREVIEW"
   end
 
   def match_day
