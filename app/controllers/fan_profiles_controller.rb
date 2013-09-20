@@ -21,7 +21,7 @@
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
     #get_teams_from_espn
-    get_schedule
+    get_team
     match_preview
     match_day
     return
@@ -36,6 +36,23 @@
     @state = current_user.state
     return 
   end
+
+
+  def get_video_from_youtube
+    
+    get_team
+
+    
+
+    @response = HTTParty.get('http://www.youtube.com/user/soundersfcdotcom/videos
+')
+    respond_to do |format|
+      format.html
+      format.json { render :xml => @response.to_json }
+    end
+    return
+  end
+
 
 
   #may deprecate. source doesnt retun anything im using right now. Also, dup of JS function.
@@ -76,7 +93,7 @@
   end
 
 
-  def get_schedule
+  def get_team
 
     #as written, assumes  1) user's team IS in fact on the schedule page, and 2) source is formatted a certain way. WRITE CODE TO ACCOUNT FOR OTHER...
 
