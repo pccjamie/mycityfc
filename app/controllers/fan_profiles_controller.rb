@@ -22,6 +22,7 @@
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
     #get_teams_from_espn
     get_team
+    get_video_from_youtube
     match_preview
     match_day
     return
@@ -38,14 +39,15 @@
   end
 
 
-  def get_video_from_youtube
     
-    get_team
+    #get_team
 
     # for each team in team DB, match
+  def get_video_from_youtube
 
+    @videos = HTTParty.get('http://www.youtube.com/user/soundersfcdotcom/videos')
 
-    @response = HTTParty.get('http://www.youtube.com/user/soundersfcdotcom/videos')
+    
     respond_to do |format|
       format.html
       # format.json { render :xml => @response.to_json }

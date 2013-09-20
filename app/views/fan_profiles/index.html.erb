@@ -12,7 +12,10 @@ My Profile
 <section id="videos">
 	<div class="sleeve">
 		<header>- Latest Video</header>
-		<%= @response %>
+		<% @videos.each do |v| %>
+		<%= v %>
+		<%end%>
+
 	</div>
 </section>
 
