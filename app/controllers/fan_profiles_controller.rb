@@ -42,13 +42,13 @@
     
     get_team
 
-    
+    # for each team in team DB, match
 
-    @response = HTTParty.get('http://www.youtube.com/user/soundersfcdotcom/videos
-')
+
+    @response = HTTParty.get('http://www.youtube.com/user/soundersfcdotcom/videos')
     respond_to do |format|
       format.html
-      format.json { render :xml => @response.to_json }
+      # format.json { render :xml => @response.to_json }
     end
     return
   end
