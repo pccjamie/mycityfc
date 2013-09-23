@@ -100,7 +100,7 @@
 
 
     respond_to do |format|
-      #format.html
+      format.html
       format.json { render :json => @videos.to_html }
     end
     return
