@@ -45,9 +45,59 @@
     # for each team in team DB, match
   def get_video_from_youtube
 
-    @videos = HTTParty.get('http://www.youtube.com/user/soundersfcdotcom/videos')
+ #sample  = HTTParty.get("https://www.googleapis.com/youtube/v3/channels?id=soundersfcdotcom&part=id,snippet,contentDetails&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA&playlistId=&UUSZbXT5TLLW_i-5W8FZpFsg&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA")
 
-    
+    #first get the user's teams
+    get_team
+
+    #and then based on that get the related youtube URL. Probably need to save URL in datbabase?
+
+    #set key (add to config vars, this is just temp)
+    y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA"
+    y_user ="soundersfcdotcom"
+
+    #1. FIND CHANNEL IDS FOR EACH TEAM
+    #Services > YouTube Data API v3 > youtube.channels.list
+
+    #retrieve the channel for youtube username
+    response = HTTParty.get("https://www.googleapis.com/youtube/v3/channels?part=id%2C+snippet&forUsername=#{y_user}&key=#{y_key}")
+
+    #retrieves channel id from the response
+    channel_id = response["items"][0]["id"]
+
+    #2. FIND A PLAYLIST FOR THE CHANNEL
+
+    #Services > YouTube Data API v3 > youtube.playlists.list
+
+    channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw"
+   
+   #all_playlists = HTTParty.get("https://www.googleapis.com/youtube/v3/channels?part=id%2CcontentDetails&forUsername=#{teamurl}&maxResults=3&key=#{key}")
+
+
+   # response2 = HTTParty.get("https://www.googleapis.com/youtube/v3/playlists?part=id%2Csnippet&channelId=#{channel_id}&key=#{key}")
+
+   #  #should retrieve uploads playlist for this channel
+   #  playlist_id = response2["items"][0]["id"]
+
+
+    #2. FIND ALl VIDEOS FOR THE CHANNEL ID
+
+    videos = HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=5&order=date&key=#{y_key}")
+
+
+
+    # https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet&id=UCVhbRUhe_hfmgi-UN1gcQzw&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
+
+    #pass this var that is passed into a second json call, which we need to pass into the new URL which will look for the videos for that channel. 
+
+   
+
+
+
+
+
+
+
     respond_to do |format|
       format.html
       # format.json { render :xml => @response.to_json }
