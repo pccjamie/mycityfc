@@ -82,7 +82,7 @@
 
     #2. FIND ALl VIDEOS FOR THE CHANNEL ID
 
-    videos = HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=5&order=date&key=#{y_key}")
+    @videos = HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=5&order=date&key=#{y_key}")
 
 
 
