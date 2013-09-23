@@ -85,8 +85,9 @@
     @videos = HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=5&order=date&key=#{y_key}")
 
 
+    #https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=UCVhbRUhe_hfmgi-UN1gcQzw&maxResults=5&order=date&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
 
-    # https://www.googleapis.com/youtube/v3/videos?part=id%2Csnippet&id=UCVhbRUhe_hfmgi-UN1gcQzw&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
+
 
     #pass this var that is passed into a second json call, which we need to pass into the new URL which will look for the videos for that channel. 
 
@@ -99,8 +100,8 @@
 
 
     respond_to do |format|
-      format.html
-      # format.json { render :xml => @response.to_json }
+      #format.html
+      format.json { render :json => @videos.to_html }
     end
     return
   end
