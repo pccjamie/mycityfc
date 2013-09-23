@@ -240,6 +240,10 @@ section#videos{height:440px;
 	#player {height: 300px; width: 450px; background: gray; margin: auto}
 
 }
+
+
+.y_video:nth-child(even) {background: yellow}
+
 section#videos, section#schedule {
 
 	background: $bg-dark; margin-right:20px;
