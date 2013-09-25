@@ -118,14 +118,6 @@ function switch_leagues() {
 }
 
 
-function switch_videos() {
-	$('.js-videos-tabs').cycle({
-		manualSpeed: 100
-	});
-}
-
-//ch
-
 //change BG based on closest team
 
 function location_based_view() {
@@ -175,7 +167,7 @@ $(function() {
 	//find_team_info();
 	find_news();
 	switch_leagues();
-	switch_videos();
+	//switch_videos();
 	//change_video()
 	filter_games();
 
