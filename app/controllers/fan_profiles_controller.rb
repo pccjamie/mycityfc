@@ -12,7 +12,7 @@
   require 'active_support/all'
   require 'nokogiri'
   require 'open-uri'
-  #require 'httparty'
+  require 'httparty'
   require 'chronic'
 
   def index
@@ -20,7 +20,7 @@
     @users = User.all
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
-    get_teams_from_espn
+    # get_teams_from_espn
     get_team
     get_video_from_youtube
     match_preview
@@ -110,9 +110,6 @@
     #this says, for each video in the array....
   
     #https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=UCVhbRUhe_hfmgi-UN1gcQzw&maxResults=10&order=date&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
-
-   
-
 
     # respond_to do |format|
     #   format.html
