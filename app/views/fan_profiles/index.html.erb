@@ -12,11 +12,28 @@ My Profile
 <section id="videos">
 	<div class="sleeve">
 		<header>- Latest Video</header>
-		
-		<%#= @videos %>
-		<% @videos.each do |v| %>
-		<div class="y_video"><%= v %></div>
-		<%end%>
+
+			<%# @video_a.each do |v| %>
+				<%#= v["items"][0]["player"]["embedHtml"].html_safe %>	
+				<%# end %>
+<!-- 
+ 	<%# @video["items"].each do |item| %>
+    <div class="video_id"><%#=  item["id"]["videoId"] %></div>
+  <%# end%> -->
+
+<div class="cycle-slideshow" data-cycle-slides="> .video-slide"
+>
+
+<!-- this calls a video-->
+<% @videos.each do |v| %>
+	<div class="video-slide"><%= v.html_safe %></div>
+<% end %>
+</div>
+
+<div class="center">
+    <a href=# id="prev">Prev</a> 
+    <a href=# id="next">Next</a>
+</div>
 
 	</div>
 </section>

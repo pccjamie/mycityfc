@@ -117,6 +117,15 @@ function switch_leagues() {
 	});
 }
 
+
+function switch_videos() {
+	$('.js-videos-tabs').cycle({
+		manualSpeed: 100
+	});
+}
+
+//ch
+
 //change BG based on closest team
 
 function location_based_view() {
@@ -152,6 +161,12 @@ function filter_games() {
 
 }
 
+// function change_video()
+// {
+
+// 	var source = $('.video-slide iframe').attr('src');
+// 	console.log(source)
+// }
 
 
 // ON LOAD
@@ -160,6 +175,8 @@ $(function() {
 	//find_team_info();
 	find_news();
 	switch_leagues();
+	switch_videos();
+	//change_video()
 	filter_games();
 
 });

@@ -235,14 +235,18 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 #local * .active-slide {height: 600px;}
 
 
-section#videos{height:440px;
+section#videos{height:2440px;
 
 	#player {height: 300px; width: 450px; background: gray; margin: auto}
 
 }
 
 
-.y_video:nth-child(even) {background: yellow}
+.y_video {border: 1px solid white;}
+
+
+.video_id {background: lime; margin-bottom: 10px;}
+
 
 section#videos, section#schedule {
 

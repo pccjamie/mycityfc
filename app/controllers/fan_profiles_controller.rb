@@ -20,7 +20,7 @@
     @users = User.all
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)    
-    #get_teams_from_espn
+    get_teams_from_espn
     get_team
     get_video_from_youtube
     match_preview
@@ -54,55 +54,70 @@
 
     #set key (add to config vars, this is just temp)
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA"
-    y_user ="soundersfcdotcom"
 
-    #1. FIND CHANNEL IDS FOR EACH TEAM
-    #Services > YouTube Data API v3 > youtube.channels.list
+    y_user ="soundersfcdotcom" # REPLACE WITH DB QUERY / SCRAPE MLS FOR NAMES
 
-    #retrieve the channel for youtube username
+    #y_user = current_user.#
+
+    #1. FIND CHANNEL IDS FOR EACH TEAM BASED ON YT USERNAME- youtube.channels.list
+
+    #https://www.googleapis.com/youtube/v3/channels?part=id%2C+snippet&forUsername=soundersfcdotcom&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
+
     response = HTTParty.get("https://www.googleapis.com/youtube/v3/channels?part=id%2C+snippet&forUsername=#{y_user}&key=#{y_key}")
 
     #retrieves channel id from the response
     channel_id = response["items"][0]["id"]
 
-    #2. FIND A PLAYLIST FOR THE CHANNEL
+    #2. FIND A PLAYLIST FOR THE RETURNED 
 
-    #Services > YouTube Data API v3 > youtube.playlists.list
-
-    channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw"
-   
+    #Services > YouTube Data API v3 > youtube.playlists.list   
    #all_playlists = HTTParty.get("https://www.googleapis.com/youtube/v3/channels?part=id%2CcontentDetails&forUsername=#{teamurl}&maxResults=3&key=#{key}")
-
-
    # response2 = HTTParty.get("https://www.googleapis.com/youtube/v3/playlists?part=id%2Csnippet&channelId=#{channel_id}&key=#{key}")
-
    #  #should retrieve uploads playlist for this channel
    #  playlist_id = response2["items"][0]["id"]
 
 
     #2. FIND ALl VIDEOS FOR THE CHANNEL ID
 
-    @videos = HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=5&order=date&key=#{y_key}")
+    sample_channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw" #REPLACE WITH METHOD
+
+    #this returns an array of videos for the channel.
+    channel_info = HTTParty.get("https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=#{sample_channel_id}&maxResults=6&order=date&key=#{y_key}")
+    
+    #and this gets each video ID from each result and pushes into array
+    
+    @video_ids = []
+
+    channel_info["items"].each do |item|
+       @video_ids.push(item["id"]["videoId"])
+    end
+
+    #now, for each video id in the array, we make another call to get the video resource for the id and then make a player 
+
+    @videos = []
+
+    @video_ids.each do |id|
+
+    source = HTTParty.get("https://www.googleapis.com/youtube/v3/videos?part=id,snippet,player&id=#{id}&key=#{y_key}")
+
+    a_video  = source["items"][0]["player"]["embedHtml"]
+
+    @videos.push(a_video)
+
+   end
 
 
-    #https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=UCVhbRUhe_hfmgi-UN1gcQzw&maxResults=5&order=date&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
-
-
-
-    #pass this var that is passed into a second json call, which we need to pass into the new URL which will look for the videos for that channel. 
+    #this says, for each video in the array....
+  
+    #https://www.googleapis.com/youtube/v3/search?part=id%2C+snippet&channelId=UCVhbRUhe_hfmgi-UN1gcQzw&maxResults=10&order=date&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
 
    
 
 
-
-
-
-
-
-    respond_to do |format|
-      format.html
-      format.json { render :json => @videos.to_html }
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render :json => @videos.to_html }
+    # end
     return
   end
 
