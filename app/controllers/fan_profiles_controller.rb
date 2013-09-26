@@ -51,7 +51,7 @@ class FanProfilesController < ApplicationController
 
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA"
 
-    y_user_team = current_user.primary_team
+    @y_user_team = current_user.primary_team
 
     y_user = "soundersfcdotcom" # REPLACE WITH DB QUERY / SCRAPE MLS FOR NAMES
 
