@@ -25,7 +25,7 @@ class FanProfilesController < ApplicationController
     get_video_from_youtube
     match_preview
     match_day
-    return
+    #return
   end
 
   ####SPECIAL
@@ -50,8 +50,6 @@ class FanProfilesController < ApplicationController
     #API key (ADD TO ENV CFG VAR)
 
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA"
-
-    @y_user_team = current_user.primary_team
 
     y_user = "soundersfcdotcom" # REPLACE WITH DB QUERY / SCRAPE MLS FOR NAMES
 
