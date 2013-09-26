@@ -31,7 +31,7 @@ class FanProfilesController < ApplicationController
   ####SPECIAL
 
   def get_current_city
-    #current_user
+    current_user
     user = User.find(current_user.id)
     @city = current_user.city
     @state = current_user.state
@@ -39,7 +39,7 @@ class FanProfilesController < ApplicationController
   end
 
   def get_video_from_youtube
-
+    current_user
     #first get the user's teams
     get_team
 
