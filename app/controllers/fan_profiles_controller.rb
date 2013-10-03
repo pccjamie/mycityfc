@@ -7,7 +7,7 @@ class FanProfilesController < ApplicationController
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
 
-  before_filter :authenticate_user!, :except => [:index]
+  skip_before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'
@@ -19,9 +19,9 @@ class FanProfilesController < ApplicationController
     current_user
     @users = User.all
     @teams = Team.all
-    @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
+    #@nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     # get_teams_from_espn
-    get_team
+    get_team_and_schedule
     get_video_from_youtube
     match_preview
     match_day
@@ -41,7 +41,7 @@ class FanProfilesController < ApplicationController
   def get_video_from_youtube
     current_user
     #first get the user's teams
-    get_team
+    get_team_and_schedule
 
     #and then based on that get the related youtube URL. Probably need to save URL in datbabase?
 
@@ -66,13 +66,12 @@ class FanProfilesController < ApplicationController
 
     #2. FIND ALl VIDEOS FOR THE CHANNEL ID
 
-    sample_channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw" #REPLACE WITH METHOD
+    #sample_channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw" #REPLACE WITH METHOD
 
     #this returns an array of videos for the channel.
-    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{sample_channel_id}&maxResults=6&order=date&key=#{y_key}")
+    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=1&order=date&key=#{y_key}")
 
     #gets video ID from each result and pushes to array
-
     @video_ids = []
     channel_info["items"].each do |item|
       @video_ids.push(item["id"]["videoId"])
@@ -80,12 +79,18 @@ class FanProfilesController < ApplicationController
 
     #another call to get the video resource for each video id and push to array
 
-    @videos = []
-    @video_ids.each do |id|
-      source = HTTParty.get("#{base}/videos?part=id,snippet,player&id=#{id}&key=#{y_key}")
-      a_video  = source["items"][0]["player"]["embedHtml"]
-      @videos.push(a_video)
-    end
+    # @videos = []
+    # @video_ids.each do |id|
+    #   source = HTTParty.get("#{base}/videos?part=id,snippet,player&id=#{id}&key=#{y_key}")
+    #   a_video  = source["items"][0]["player"]["embedHtml"]
+    #   @videos.push(a_video)
+
+    #   #@video_id = id
+
+    
+
+
+    # end
     # respond_to do |format|
     #   format.html
     #   format.json { render :json => @videos.to_html }
@@ -98,11 +103,15 @@ class FanProfilesController < ApplicationController
   def get_time
     #replace later with more specific params...
     @time = Time.now
+    @today =  @time.strftime("%A, %B %d, %Y").inspect
     @tomorrow = Chronic.parse('tomorrow')
     @yesterday = Chronic.parse('yesterday')
-    @today =  @time.strftime("%A, %B %d, %Y").inspect
     return [@time, @today, @tomorrow, @yesterday]
   end
+
+
+
+
 
 
   def match_preview
@@ -114,53 +123,67 @@ class FanProfilesController < ApplicationController
   end
 
   def get_source
+
+    year = Chronic.parse('this year').strftime('%Y')
     # scraping is not preferred, source html could change and break this app. this is temp for POC. need API or more reliable solution
-    url_mls = "http://www.mlssoccer.com/schedule"
+    url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
     #alt for mls schedule: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
 
   end
 
 
-  def get_team
+  def get_team_and_schedule
 
     #as written, assumes  1) user's team IS in fact on the schedule page, and 2) source is formatted a certain way. WRITE CODE TO ACCOUNT FOR OTHER...
 
     #scrape (TENUOUS - what is source HTML changes???)
+    #source currently set to display current month's games only. This only displays current month
+
     schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
 
     #get user's chosen team from db for comparison
-    my_team = current_user.primary_team.split(' ').map(&:strip)
+    #my_team = current_user.primary_team.split(' ').map(&:strip)
 
-    @formatted_team = my_team[0] #formats for easier comparison to scrape.
-    #@formatted_team = "New York"
+    #@formatted_team = my_team[0] #formats for easier comparison to scrape.
+    @formatted_team = "Seattle"
 
     #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow.
-
-
-    #finds game date and formats time. not for display in view, but for comparison on server to filter out past dates and also to determine which game state to show.
-    schedule_array.each do |date|
-      game_date = date.css('.schedule-page h3').text
-      @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
-    end
-
-    # schedule_array.each do |logo|
-    #   game_date = date.css('.schedule-page h3').text
-    #   @game_date = Chronic.parse(game_date)#.strftime('%Y-%m-%d')
-    # end
-
-
-    #get current date
-
-    #compares the two
-    if schedule_array.include?(@today)
-      match_day
-    else
-      match_preview
-    end
 
     @schedule = schedule_array
 
   end
+
+
+  # def finds_next_game
+    
+  #   #finds game date and formats time. not for display in view, but for comparison on server to filter out past dates and also to determine which game state to show.
+  #   get_time
+  #   get_team_and_schedule
+   
+  #   schedule_array.each do |date|
+  #     raw_date = date.css('.schedule-page h3').text
+  #     @game_date = Chronic.parse(raw_date)#.strftime('%Y-%m-%d')
+      
+  #     if (game_date < @today)
+  #       schedule_array.delete game_date
+  #       true
+  #     end
+    
+  #   end
+
+  #   #get current date
+
+  #   #compares the two
+  #   if schedule_array.include?(@today)
+  #     match_day
+  #   else
+  #     match_preview
+  #   end
+
+  # end
+
+
+
 
   #GETS TEAM NAMES FROM ESPN. ALT TO STORING IN DB. MAY USE LATER.
   

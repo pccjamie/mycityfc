@@ -8,7 +8,9 @@
 
 
 /* elements default to hidden */
-#my-teams * .hideme  {display: none};
+#nearby-teams * .hideme  {display: none};
+
+a.team-directory {background: #1f9fff; float:right}
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; clear:both}
 
@@ -46,6 +48,8 @@
 
 	.team-feed, .team-overview {position: relative; display:inline-block;}
 
-.video-slide:nth-child(odd) {background: brown}
+
+/* video slider */
+.video-slide {border: 1px solid white; color: #FFF}
 
 

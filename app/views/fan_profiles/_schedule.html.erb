@@ -1,31 +1,40 @@
+<ul class="competitions">
+	<li class="type-mls-reg">MLS</li>
+	<li class="type-ccl">CCL</li>
+	<li class="type-open">OPEN CUP</li>
+	<li class="type-friendly">INTL FRIENDLY</li>
+</ul>
 
-			<% @schedule.each do |game| %>
-				
-				<div class="single-game">
+<div class="clearfix"></div>
 
-				<div class="game-date">
-					<%= game.parent.parent.previous_element.text %>
-				</div>
+<% @schedule.each do |game| %>
 
-				<br/>
-					<div class="game-competition"><%=game.css('span.competetion').text %></div>
-					<div class="game-home"><%= game.css('.field-home-team').text %></div>
-					<div class="game-home-logo"><img src="<%= game.css('imagecache-schedule_team_logo') %>"/></div>
-					<div class="game-score"><%= game.css('.field-score').text %></div>
-					<div class="game-away-logo"><%= game.css('.field-away-team-logo').text %></div>
-					<div class="game-away"><%= game.css('.field-away-team').text %></div>
-					<div class="game-time"><%= game.css('.field-game-date-start-time').text %></div>
-					<div class="game-tv" href="#"><%= game.css('.field-broadcast-partners').text %></div>
+<div class="single-game">
+	<div class="game-date">
+		<%= game.parent.parent.previous_element.text %>
+	</div>
+		<div class="game-time"><%= game.css('.field-game-date-start-time').text %></div>
+	<div class="game-competition"><%= game.css('span.competetion').text %></div>
+	<div class="game-home"><%= game.css('.field-home-team').text %></div>
+	<%= raw game.css('.field-home-team-logo') %>
+	
+	<span class="separator">vs</span>
 
-					<div class="game-links">
-					<a class="game-tickets" href="#"><%= game.css('a.sch_tickets').text %></a>
+<!-- <img src="<%#= game.css('imagecache-schedule_team_logo') %>"/>
+ -->
+	<div class="game-score"><%= game.css('.field-score').text %></div>
 
-					<a class="game-matchcenter" href="#"><%= game.css('a.sch_matchcenter').text %></a>
+	<%= raw game.css('.field-away-team-logo') %>
+ 	<div class="game-away"><%= game.css('.field-away-team').text %></div>
 
-					</div>
-				
-
-
-				</div>
-
-			<%end%>
+		<div class="clearfix"></div>
+	
+	<div class="game-links">
+	<a class="game-tv"><%= game.css('.field-broadcast-partners').text %></a>	<%#= raw game.css('a.sch_tickets') %>
+		<%#= raw game.css('a.sch_tickets') %>
+		<%= raw game.css('a.sch_tickets') %>
+		<%= raw game.css('a.sch_matchcenter') %>
+	</div>
+	
+</div>
+<%end%>
