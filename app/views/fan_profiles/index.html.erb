@@ -4,29 +4,30 @@
 	<%= render 'news_ticker' %>
 </header>
 <div id="profile">
-	
 	<section id="videos">
 		<div class="sleeve">
 	
+		<div class="cycle-control prev">
+			<a href=# id="prev" class="reload-prev"><</a>
+		</div>
+
+		<div class="cycle-control next">
+			<a href=# id="next" class="reload-next">></a>
+		</div>
+
+
 		<header><h4>Latest Videos</h4></header>
 	
-		<div class="cycle-slideshow" data-cycle-timeout="0"
-			data-cycle-prev="#prev"
-			data-cycle-next="#next"
-			data-cycle-slides="> .video-slide">
-			<!-- this calls a set of iframes. may not use. -->
-			<%# @video_ids.each do |v| %>
-			<!-- <div class="video-slide">
-				<iframe id="player" type="text/html" width="400" height="250"
-				src="http://www.youtube.com/embed/<%#= v %>?enablejsapi=1&origin=http://localhost:3000.com"
+		<div class="cycle-slideshow" data-cycle-timeout="0" data-cycle-prev="#prev" data-cycle-next="#next" data-cycle-slides="> .video-slide">
+			<% @video_ids.each do |v| %>
+			<div class="video-slide">
+				<iframe id="player" type="text/html" width="600" height="375"
+				src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com"
 				frameborder="0"></iframe>
-			</div> -->
-			<%# end %>
+			</div>
+			<% end %>
 		</div>
-		<div class="center">
-			<a href=# id="prev" class="reload-prev">Prev</a>
-			<a href=# id="next" class="reload-next">Next</a>
-		</div>
+	
 	</div>
 </section>
 <section id="fans">
@@ -36,10 +37,10 @@
 		<div class="venues"><header><h4>WHERE TO WATCH (And yes, drink) IN <%#=current_user.city %></h4></header>YELP API</div>
 		<div class="social"><header><h4>FOLLOW TEAM?</h4></header>TWITTER</div>
 	</aside>
-	<aside>
+	<!-- <aside>
 		<div class="misc1"><header><h4>TBD<%#=current_user.city %></h4></header>tbd</div>
 		<div class="misc2"><header><h4>TBD<%#=current_user.city %></h4></header>tbd</div>
-		</aside>
+	</aside> -->
 	</div>
 </section>
 
@@ -66,51 +67,47 @@
 <header class="team-finder">
 <h3>PRO TEAMS NEAR <%#= current_user.city %> | <%= link_to 'All Teams', teams_path, class: "team-directory" %></h3>
 </header>
+
 <div id="slideshow" class="js-tabs"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 <ul class="cycle-pager">
-<li class="pager">MLS</li>
-<li class="pager">NASL</li>
-<li class="pager">USL PRO</li>
+	<li class="pager">MLS</li>
+	<li class="pager">NASL</li>
+	<li class="pager">USL PRO</li>
 </ul>
-<div class="league slide">
-<section id="nearby-teams">
-<div class="sleeve">
-<%# @nearby_teams.each do |t| %>
-<div class="team">
-<div class="team-overview">
 
-<!-- 	<div class="team-feed">
-<header></header>
-<nav></nav>
-</div> -->
-</div>
-</div>
-<%# end %>
-</div><!--sleeve-->
-</section><!--my teams section-->
-<div class="clearfix"></div>
-<!-- <section id="my-news">
-			<div class="sleeve">
-			<header><h5>NEWS</h5></header>
-</div>
-</section>-->
-<div class="clearfix"></div>
-</div>
 <div class="league slide">
-<div class="sleeve">
-<header class="right"><h3>NASL</h3></header>
+	<section id="nearby-teams">
+	<div class="sleeve">
+	<%# @nearby_teams.each do |t| %>
+	<div class="team">
+	<div class="team-overview">
+	<!-- 	<div class="team-feed">
+	<header></header>
+	<nav></nav>
+	</div> -->
+	</div>
+	</div>
+	<%# end %>
+	</div><!--sleeve-->
+	</section><!--my teams section-->
 </div>
+
+<div class="league slide">
+	<div class="sleeve">
+	<header class="right"><h3>NASL</h3></header>
+	</div>
 </div> <!--2-->
+
 <div class="league slide">
-<div class="sleeve">
-<header class="right"><h3>USL Pro</h3></header>
-</div>
+	<div class="sleeve">
+	<header class="right"><h3>USL Pro</h3></header>
+	</div>
 </div><!--3-->
-</div><!--close slides-->
+
 </div><!--slideshow-->
 <section id="tbd">
-<div class="sleeve">
-<header><h4>AROUND THE LEAGUE</h4></header>
-</div>
+	<div class="sleeve">
+	<header><h4>AROUND THE LEAGUE</h4></header>
+	</div>
 </section>
 </div>

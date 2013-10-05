@@ -50,6 +50,30 @@ a.team-directory {background: #1f9fff; float:right}
 
 
 /* video slider */
-.video-slide {border: 1px solid white; color: #FFF}
+// #slideshow .cycle-slideshow {text-align: center}
 
+// #profile * .cycle-slideshow {text-align:center}
 
+.video-slide {color: #FFF; width: 100%; padding: 20px}
+
+.cycle-control { 
+
+	display: block; text-align: center; position: absolute; 
+	height: 60px;
+	width: 60px; 
+	line-height: 60px; 
+	z-index:9999;
+	top: 50%; 
+	border-radius: 30px;
+	a {font-size:30px;height: 60px;
+	width: 60px; 
+	line-height: 60px; display: block}
+
+	a:hover {color: #FFF}
+
+}
+
+.cycle-control:hover {background: #1f9fff;}
+
+.cycle-control.prev {left: 0;}
+.cycle-control.next {right: 0;}

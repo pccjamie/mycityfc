@@ -69,7 +69,7 @@ class FanProfilesController < ApplicationController
     #sample_channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw" #REPLACE WITH METHOD
 
     #this returns an array of videos for the channel.
-    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=1&order=date&key=#{y_key}")
+    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{y_key}")
 
     #gets video ID from each result and pushes to array
     @video_ids = []
@@ -87,9 +87,7 @@ class FanProfilesController < ApplicationController
 
     #   #@video_id = id
 
-    
-
-
+  
     # end
     # respond_to do |format|
     #   format.html
@@ -97,7 +95,6 @@ class FanProfilesController < ApplicationController
     # end
     return
   end
-
 
 
   def get_time
@@ -108,10 +105,6 @@ class FanProfilesController < ApplicationController
     @yesterday = Chronic.parse('yesterday')
     return [@time, @today, @tomorrow, @yesterday]
   end
-
-
-
-
 
 
   def match_preview

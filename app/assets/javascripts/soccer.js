@@ -75,16 +75,17 @@ var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 // 	return;
 // }
 
+var my_team = $('.my-team').text();
+var cap = 2;
 
 //GET NEWS
-
 function find_news() {
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 10
+			limit: 5
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -106,12 +107,6 @@ $("#banner").on("click", ".news-trigger", function(e) {
 	$("#js-headlines").toggleClass('exposed');
 });
 
-function switch_leagues() {
-	$('.js-tabs').cycle({
-		manualSpeed: 100
-	});
-}
-
 //change BG based on closest team
 
 function location_based_view() {
@@ -120,31 +115,14 @@ function location_based_view() {
 	//else use background for team chosen
 	//$('body').css('background-image', 'url(' + bg + ')');
 	$('#js-schedule').css('background-color', 'rgba(0,0,0,.60)');
-	//$('#js-match-day').css('background-image', 'url(' + bg + ')');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
 }
-
-// function filter_games() {
-// 	//retrive user's preferred team from DOM text.
-	
-// 	// if (valid_game) {
-// 	//  	$(this).css("display", "block");
-// 	// 	//ensuring this occurs before further action.
-// 	// 	//setTimeout(afterCss, 10);
-// 	// }
-// 	//passing this to the 
-// 	show_next_game();
-// }
-
-	var my_team = $('.my-team').text();
 
 
 function filter_schedule() {
 
 	var today = moment().format("MM-DD-YYYY");
-
-	//var valid_game = 
 
 	// check MLS schedule
 	$('.single-game').each(function() {
@@ -166,7 +144,7 @@ function filter_schedule() {
 			//display ALL games that have my team
 			$(".single-game:contains('" + my_team + "')").css('display','block');
 
-			// dont remember why i had this at the moment, just keep for now.
+			// this hid the score field if game is upcoming...but moved to CSS. Keeping for the moment though.
 			//$(this).css({'color': '#363636'}).children('.game-score').css('display','none');
 
 			//$(this):contains("'+ my_team +'")).parent().first().appendTo(".game-summary").css('display','block');
@@ -176,26 +154,23 @@ function filter_schedule() {
 		
 			//grab the first from upcoming games
 			var single_game = $('#game-previews * .single-game:first');
-			
-			var game_limit = 2;
-			$('#upcoming-games').children().slice(game_limit).hide();
 
-			//add to...
+			//limits returned results (NEED TO ADD USER OPTION TO CHANGE CAP)			
+			$('#upcoming-games').children().slice(cap);
+
+			//add to next game
 			$(single_game).filter(":contains('"+my_team+"')").prependTo('#next-game');
 
 			//NEED TO LIMIT RESULTS TO XXXX 
-
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
 			if (game_date == today) {
 				$('.gameday-trigger').css('display', 'block');
 			}
-
 		}
 
-		//sorts games
+		// id game type
 		var game_type = $(this).children('.game-competition').text();
 		switch (game_type) {
-
 			case "MLS Regular Season":
 				$(this).addClass('type-mls-reg');
 				break;
@@ -212,84 +187,116 @@ function filter_schedule() {
 				$(this).addClass('type-unknown');
 		}
 
+		// finally id the next game
 		$(single_game).addClass('js-next-game').removeClass('type-mls-reg');
-
 	})
 
+	$(".schedule-trigger").click(function() {
+	$('#upcoming-games').slideToggle('slow', function() {
+	});
 	
-
+	$('#controls').fadeToggle('slow').click(function(){
+		alert('click to run code that controls how many results displayed');
+		$(this).css('color','yellow');
+	});
+});
 }
 
 function game_fields() {
 	if (($('a.game-matchcenter') || $('a.game-tickets')).empty()) {
 		$(this).css('display', 'none');
 	}
-
 	//channels
-
 }
 
-// ON CLICK
-
 function sorting(){
-$("ul.competitions li.type-ccl").click(function(){
+//conditional display of tabs, depending on various situations
+// if (($'section#schedule * .single-game')).has('.type-friendly'){
+// 	$('ul.competitions li.type-friendly').show();
+// }
+
+$("li.type-all").click(function(){
+	$("section#schedule * .single-game:contains('Seattle')").show();
+});
+$("li.type-mls-reg").click(function(){
+	$("section#schedule * .single-game.type-mls-reg:contains('Seattle')").show();
+	$("section#schedule * .single-game:contains('Seattle'):not('.type-mls-reg')").hide();
+});
+$("li.type-ccl").click(function(){
+	$("section#schedule * .single-game.type-ccl:contains('Seattle')").show();
+	$("section#schedule * .single-game:contains('Seattle'):not('.type-ccl')").hide();
+});
+$("li.type-open").click(function(){
+	$("section#schedule * .single-game.type-open:contains('Seattle')").show();
+	$("section#schedule * .single-game:contains('Seattle'):not('.type-open')").hide();
 });
 }
 
-
+//triggers
 $(".gameday-trigger").click(function() {
 	$('#js-gameday').toggle();
 });
 
+var nbcsn="NBCSN"; 
+var ch_nbcsn=nbcsn.match(/NBCSN/g);
 
-$(".schedule-trigger").click(function() {
-	$('#upcoming-games').slideToggle('500', function() {});
-});
+var nbc="NBC"; 
+var ch_nbc=nbc.match(/NBC/g);
 
+var bein= "BEIN SPORT"; 
+var ch_bein=bein.match(/BEIN SPORT/g);
 
+var espn="ESPN"; 
+var ch_espn=espn.match(/ESPN/g);
 
+var mls="MLS LIVE"; 
+var ch_mls=mls.match(/MLS LIVE/g);
 
-// var tv1 = $(/MLS LIVE/);
-// var tv2 =/NBCSN/;
-// var tv3 =/NBC/;
-	var tv4 = /ESPN/;
+$('a.game-tv:contains("'+ch_nbcsn+'")').filter(function() { 
+	return $(this).text();
+}).attr("href","http://www.nbcsports.com/tv-listings");
 
-// var tv5 =/BEIN SPORT/;
-// var tv6 =/UNIMAS/;
-// var tv7 =/TSN/;
+// $('a.game-tv:contains("'+ch_nbc+'")').filter(function() { 
+// 	return $(this).text();
+// }).attr("href","http://www.nbc.com");
 
-// $('a.game-tv').filter(function() { 
-// 	return $(this).text() === $(/MLS LIVE/);
-// }).attr("href","http://www.mlssoccer.com/liveeso");
+$('a.game-tv:contains("'+ch_bein+'")').filter(function() { 
+	return $(this).text();
+}).attr("href","http://www.beinsport.tv");
 
-// $('a.game-tv').filter(function() { 
-// 	return $(this).text() === $(tv2);
-// }).attr("href","http://www.nbcsports.com/tv-listings");
+$('a.game-tv:contains("'+ch_mls+'")').filter(function() { 
+	return $(this).text();
+}).attr("href","http://www.mlssoccer.com/liveeso");
 
-// $('a.game-tv').filter(function() { 
-// 	return $.trim($(this).text() === /ESPN/i);
-// }).attr("href","http://espn.go.com/watchespn/index");
+$('a.game-tv:contains("'+ch_espn+'")').filter(function() { 
+	return $(this).text();
+}).attr("href","http://espn.go.com/watchespn/index");
+
+$('a.game-tv:contains("TSN","UNIMAS,"RDS2")').removeAttr('href');
 
 // $('a.game-tv').filter(function() { 
 // 	return $(this).text() === $(/TSN/);
 // }).attr("href","http://www.tsn.ca/");
 
 // $('a.game-tv').filter(function() { 
-// 	return $(this).text() === $(/BEIN SPORT/);
-// }).attr("href","http://www.beinsport.tv/");
-
-// $('a.game-tv').filter(function() { 
 // 	return $(this).text() === $(/UNIMAS/);
 // }).attr("href","http://tv.univision.com/unimas/");
 
+
+function switch_leagues() {
+	$('.js-tabs').cycle({
+		manualSpeed: 100
+	});
+}
 
 // ON LOAD...
 $(function() {
 	location_based_view();
 	//find_team_info();
-	//find_news();
-	//switch_leagues();
+	find_news();
 	filter_schedule();
 	game_fields();
 	sorting();	
+	switch_leagues();
+
 });
