@@ -44,12 +44,10 @@ class FanProfilesController < ApplicationController
 
     base = "https://www.googleapis.com/youtube/v3"
 
-    #API key (ADD TO ENV CFG VAR instead)
-    y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA"
-
-    y_user = "soundersfcdotcom" # REPLACE WITH DB QUERY / SCRAPE MLS FOR NAMES
-
-    #WRITE SOMETHING TO GET Y_USER VALUE BASED ON USER'S PREFFERRED TEAM
+    # YT API KEY
+    y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
+    # YT USERNAME
+    y_user = "soundersfcdotcom"     # HARDCODING FOR NOW. NEED TO QUERY FOR Y_USER VALUE BASED ON USER'S PREFERRED TEAM.
 
     #1. FIND CHANNEL IDS FOR EACH TEAM BASED ON YT USERNAME- youtube.channels.list
 
@@ -62,10 +60,8 @@ class FanProfilesController < ApplicationController
 
     #2. FIND ALl VIDEOS FOR THE CHANNEL ID
 
-    #sample_channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw" #REPLACE WITH METHOD
-
     #this returns an array of videos for the channel.
-    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=5&order=date&key=#{y_key}")
+    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{y_key}")
 
     #gets video ID from each result and pushes to array
     @video_ids = []
@@ -73,7 +69,7 @@ class FanProfilesController < ApplicationController
       @video_ids.push(item["id"]["videoId"])
     end
 
-    #another call to get the video resource for each video id and push to array
+    #another call to get the video resource for each video id and push to array. 
 
     # @videos = []
     # @video_ids.each do |id|
@@ -89,8 +85,6 @@ class FanProfilesController < ApplicationController
     # end
     return
   end
-
-
 
   def get_time
     #replace later with more specific params...
@@ -116,17 +110,15 @@ class FanProfilesController < ApplicationController
 
     #as written, assumes  1) user's team IS in fact on the schedule page, and 2) source is formatted a certain way. WRITE CODE TO ACCOUNT FOR OTHER...
 
-    #scrape (TENUOUS - what is source HTML changes???)
-    #source currently set to display current month's games only. This only displays current month
+    #what if source HTML changes???)
 
     schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
 
     #get user's chosen team from db for comparison
-    #my_team = current_user.primary_team.split(' ').map(&:strip)
-
-    #@formatted_team = my_team[0] #formats for easier comparison to scrape.
+    my_team = current_user.primary_team.split(' ').map(&:strip)
 
     @formatted_team = "Seattle"
+    @formatted_team = my_team[0] #formats for easier comparison to scrape.
 
     #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow.
 
@@ -167,16 +159,15 @@ class FanProfilesController < ApplicationController
 
 
   #GETS TEAM NAMES FROM ESPN. ALT TO STORING IN DB. MAY USE LATER.
-  
-  # def get_teams_from_espn
-  #   response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
-  #   @response = response["sports"][0]["leagues"][0]["teams"]
-  #   respond_to do |format|
-  #     format.html
-  #     format.json { render :xml => @response.to_json }
-  #   end
-  #   return
-  # end
+  def get_teams_from_espn
+    response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
+    @response = response["sports"][0]["leagues"][0]["teams"]
+    respond_to do |format|
+      format.html
+      format.json { render :xml => @response.to_json }
+    end
+    return
+  end
 
 
   private

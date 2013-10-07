@@ -26,14 +26,14 @@
 			data-cycle-youtube=true
 			data-cycle-youtube-autostart=false
 			data-cycle-youtube-autostop=true 
-
 			>
 
 			<% @video_ids.each do |v| %>
 				<iframe id="player" class="video-slide" type="text/html" width="600" height="375"
-				src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com&html5=1"
+				src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com"
 				frameborder="0"></iframe>
 			<% end %>
+
 		</div>
 	
 	</div>
@@ -42,7 +42,7 @@
 	<div class="sleeve">
 	<header><h4>NEW FAN?</h4></header>	
 	<aside>
-		<div class="venues"><header><h4>WHERE TO WATCH (and drink) IN <%#=current_user.city %></h4></header><span class="pending">Yelp</div>
+		<div class="venues"><header><h4>WHERE TO WATCH (and drink) IN <%=current_user.city %></h4></header><span class="pending">Yelp</div>
 		<div class="social"><header><h4>FOLLOW TEAM?</h4></header><span class="pending">Twitter</span>
 		</div>
 	</aside>
@@ -59,19 +59,12 @@
 </div>
 </section>
 
-<!-- <section id="players">
-<div class="sleeve">
-<header><h5>section</h5></header>
-</div>
-</section> -->
-
-
 </div> 
 <!--close left-->
 <!--right panel-->
 <div id="local">
 <header class="team-finder">
-<h3>PRO TEAMS NEAR <%#= current_user.city %> | <%= link_to 'All Teams', teams_path, class: "team-directory" %></h3>
+<h3>PRO TEAMS NEAR <%= current_user.city %> <%= link_to 'All Teams', teams_path, class: "team-directory" %></h3>
 </header>
 
 <div id="slideshow" class="js-tabs"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
@@ -87,8 +80,6 @@
 	<% @nearby_teams.each do |t| %>
 	<div class="team">
 	<div class="team-overview">
-
-
 		<div class="team-logo"><img src='<%= t.logo %>'/></div>
 					
 					<div class="team-info">
@@ -103,13 +94,6 @@
 						</div> -->
 					</div>
 
-
-
-
-	<!-- 	<div class="team-feed">
-	<header></header>
-	<nav></nav>
-	</div> -->
 	</div>
 	</div>
 	<% end %>
@@ -134,6 +118,7 @@
 <section id="tbd">
 	<div class="sleeve">
 	<header><h4>AROUND THE LEAGUE</h4></header>
+	<div class="pending"></div>
 	</div>
 </section>
 </div>

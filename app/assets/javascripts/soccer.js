@@ -88,7 +88,7 @@ function find_news() {
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 10
+			limit: 5
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -190,9 +190,6 @@ function filter_schedule() {
 			case "Open Cup":
 				$(this).addClass('type-open');
 				break;
-				// case "Friendly":
-				// 	$(this).addClass('type-friendly');
-				// 	break;
 			default:
 				$(this).addClass('type-unknown');
 		}
@@ -208,7 +205,7 @@ function filter_schedule() {
 	$('#upcoming-games').slideToggle('slow', function() {
 	});
 	
-	$('.show_more').fadeToggle('slow').click(function(){
+	$('#controls').fadeToggle('slow').click(function(){
 		alert('clicking this will run code that controls how many results displayed');
 		$(this).css('color','red');
 	});

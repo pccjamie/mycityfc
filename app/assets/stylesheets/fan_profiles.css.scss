@@ -29,7 +29,7 @@ a.team-directory {background: #1f9fff; float:right}
 
 			.team.primary * .team-logo {width:150px;}
 
-		 	.team.secondary {width: 45%; float: left}
+		 	.team.secondary {width: 45%; display:inline-block;}
 
 		 		.team.secondary .team-overview {background: #425566; border:0}
 		 		// .team.secondary * .team-logo img {height: auto; width:25%}
@@ -77,6 +77,5 @@ a.team-directory {background: #1f9fff; float:right}
 }
 
 #profile * .cycle-control:hover {background: #1f9fff;}
-
 #profile * .cycle-control.prev {left: 0;}
 #profile * .cycle-control.next {right: 0;}

@@ -18,7 +18,6 @@
 
 	<div class="clearfix"></div>
 
-
 	<div class="game-competition"><%= game.css('span.competetion').text %></div>
 	<div class="game-home"><%= game.css('.field-home-team').text %></div>
 	<%= raw game.css('.field-home-team-logo') %>
@@ -35,8 +34,8 @@
 		<div class="clearfix"></div>
 	
 	<div class="game-links">
-	<a class="game-tv"><%= game.css('.field-broadcast-partners').text %></a>	<%#= raw game.css('a.sch_tickets') %>
-		<%#= raw game.css('a.sch_tickets') %>
+	<a class="game-tv">
+		<%= game.css('.field-broadcast-partners').text %></a>	
 		<%= raw game.css('a.sch_tickets') %>
 		<%= raw game.css('a.sch_matchcenter') %>
 	</div>
