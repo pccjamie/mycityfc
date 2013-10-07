@@ -3,8 +3,8 @@
 	<li class="type-mls-reg clicked">MLS</li>
 	<li class="type-ccl clicked">CCL</li>
 	<li class="type-open clicked">OPEN CUP</li>
-	<li class="type-unknown clicked">OTHER</li>
-</ul>
+<!-- 	<li class="type-friendly clicked">INTL FRIENDLY</li>
+ --></ul>
 
 <div class="clearfix"></div>
 
@@ -16,6 +16,9 @@
 	</div>
 		<div class="game-time"><%= game.css('.field-game-date-start-time').text %></div>
 
+	<div class="clearfix"></div>
+
+
 	<div class="game-competition"><%= game.css('span.competetion').text %></div>
 	<div class="game-home"><%= game.css('.field-home-team').text %></div>
 	<%= raw game.css('.field-home-team-logo') %>
@@ -23,7 +26,7 @@
 	<span class="separator">vs</span>
 
 <!-- <img src="<%#= game.css('imagecache-schedule_team_logo') %>"/>
-
+ -->
 	<div class="game-score"><%= game.css('.field-score').text %></div>
 
 	<%= raw game.css('.field-away-team-logo') %>

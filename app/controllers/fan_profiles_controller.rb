@@ -7,7 +7,7 @@ class FanProfilesController < ApplicationController
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
 
-  skip_before_filter :authenticate_user!, :except => [:index]
+  before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'
@@ -19,12 +19,11 @@ class FanProfilesController < ApplicationController
     current_user
     @users = User.all
     @teams = Team.all
-    #@nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
+    @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     # get_teams_from_espn
     get_team_and_schedule
     get_video_from_youtube
-    match_preview
-    match_day
+
     #return
   end
 
@@ -43,17 +42,14 @@ class FanProfilesController < ApplicationController
     #first get the user's teams
     get_team_and_schedule
 
-    #and then based on that get the related youtube URL. Probably need to save URL in datbabase?
-
     base = "https://www.googleapis.com/youtube/v3"
 
-    #API key (ADD TO ENV CFG VAR)
-
+    #API key (ADD TO ENV CFG VAR instead)
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA"
 
     y_user = "soundersfcdotcom" # REPLACE WITH DB QUERY / SCRAPE MLS FOR NAMES
 
-    #y_user = current_user.
+    #WRITE SOMETHING TO GET Y_USER VALUE BASED ON USER'S PREFFERRED TEAM
 
     #1. FIND CHANNEL IDS FOR EACH TEAM BASED ON YT USERNAME- youtube.channels.list
 
@@ -69,7 +65,7 @@ class FanProfilesController < ApplicationController
     #sample_channel_id = "UCVhbRUhe_hfmgi-UN1gcQzw" #REPLACE WITH METHOD
 
     #this returns an array of videos for the channel.
-    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{y_key}")
+    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=5&order=date&key=#{y_key}")
 
     #gets video ID from each result and pushes to array
     @video_ids = []
@@ -86,8 +82,6 @@ class FanProfilesController < ApplicationController
     #   @videos.push(a_video)
 
     #   #@video_id = id
-
-  
     # end
     # respond_to do |format|
     #   format.html
@@ -95,6 +89,7 @@ class FanProfilesController < ApplicationController
     # end
     return
   end
+
 
 
   def get_time
@@ -106,20 +101,12 @@ class FanProfilesController < ApplicationController
     return [@time, @today, @tomorrow, @yesterday]
   end
 
-
-  def match_preview
-    #flash[:alert] = "PREVIEW"
-  end
-
-  def match_day
-    #flash[:alert] = "ITS MATCH DAY for #{@formatted_team}"
-  end
-
   def get_source
 
     year = Chronic.parse('this year').strftime('%Y')
     # scraping is not preferred, source html could change and break this app. this is temp for POC. need API or more reliable solution
     url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
+
     #alt for mls schedule: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
 
   end
@@ -138,6 +125,7 @@ class FanProfilesController < ApplicationController
     #my_team = current_user.primary_team.split(' ').map(&:strip)
 
     #@formatted_team = my_team[0] #formats for easier comparison to scrape.
+
     @formatted_team = "Seattle"
 
     #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow.

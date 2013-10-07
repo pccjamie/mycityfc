@@ -12,10 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require swap_bg
-//= require cycle2
-//= require moment
-//= require soccer
 //= require foundation
 //= require turbolinks
 //= require_tree .

@@ -15,16 +15,24 @@
 			<a href=# id="next" class="reload-next">></a>
 		</div>
 
-
 		<header><h4>Latest Videos</h4></header>
 	
-		<div class="cycle-slideshow" data-cycle-timeout="0" data-cycle-prev="#prev" data-cycle-next="#next" data-cycle-slides="> .video-slide">
+		<div class="cycle-slideshow"
+			
+			data-cycle-timeout=0
+			data-cycle-prev=#prev
+			data-cycle-next=#next
+			data-cycle-slides=">.video-slide"
+			data-cycle-youtube=true
+			data-cycle-youtube-autostart=false
+			data-cycle-youtube-autostop=true 
+
+			>
+
 			<% @video_ids.each do |v| %>
-			<div class="video-slide">
-				<iframe id="player" type="text/html" width="600" height="375"
-				src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com"
+				<iframe id="player" class="video-slide" type="text/html" width="600" height="375"
+				src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com&html5=1"
 				frameborder="0"></iframe>
-			</div>
 			<% end %>
 		</div>
 	
@@ -32,32 +40,30 @@
 </section>
 <section id="fans">
 	<div class="sleeve">
-	<header><h2>NEW FAN?</h2></header>	
+	<header><h4>NEW FAN?</h4></header>	
 	<aside>
-		<div class="venues"><header><h4>WHERE TO WATCH (And yes, drink) IN <%#=current_user.city %></h4></header>YELP API</div>
-		<div class="social"><header><h4>FOLLOW TEAM?</h4></header>TWITTER</div>
+		<div class="venues"><header><h4>WHERE TO WATCH (and drink) IN <%#=current_user.city %></h4></header><span class="pending">Yelp</div>
+		<div class="social"><header><h4>FOLLOW TEAM?</h4></header><span class="pending">Twitter</span>
+		</div>
 	</aside>
-	<!-- <aside>
-		<div class="misc1"><header><h4>TBD<%#=current_user.city %></h4></header>tbd</div>
-		<div class="misc2"><header><h4>TBD<%#=current_user.city %></h4></header>tbd</div>
-	</aside> -->
+
 	</div>
 </section>
 
 
 
-<section id="schedule">
+<section id="schedule-results">
 <div class="sleeve">
 <header><h5>Previous Results</h5></header>
 <%= render 'schedule' %>
 </div>
 </section>
 
-<section id="players">
+<!-- <section id="players">
 <div class="sleeve">
 <header><h5>section</h5></header>
 </div>
-</section>
+</section> -->
 
 
 </div> 
@@ -78,16 +84,35 @@
 <div class="league slide">
 	<section id="nearby-teams">
 	<div class="sleeve">
-	<%# @nearby_teams.each do |t| %>
+	<% @nearby_teams.each do |t| %>
 	<div class="team">
 	<div class="team-overview">
+
+
+		<div class="team-logo"><img src='<%= t.logo %>'/></div>
+					
+					<div class="team-info">
+						<h4 class="team-name"><%=t.name %></h4>
+						<h5 class="team-venue"><%= t.venue %></h5>
+						<h5 class="team-city"><%= t.city %>,<%= t.state %></h5>
+						<div class="team-venue-image"><%= t.image %></div>
+						<h5 class="team-distance">Approx. <%= t.distance_to(current_user.city).to_i %> miles away.</h5>
+						<!-- <div class="team-links">
+							<a href="#">MLS</a>
+							<a href="#">ESPN</a>
+						</div> -->
+					</div>
+
+
+
+
 	<!-- 	<div class="team-feed">
 	<header></header>
 	<nav></nav>
 	</div> -->
 	</div>
 	</div>
-	<%# end %>
+	<% end %>
 	</div><!--sleeve-->
 	</section><!--my teams section-->
 </div>
@@ -105,6 +130,7 @@
 </div><!--3-->
 
 </div><!--slideshow-->
+
 <section id="tbd">
 	<div class="sleeve">
 	<header><h4>AROUND THE LEAGUE</h4></header>

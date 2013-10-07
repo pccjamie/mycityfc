@@ -2,6 +2,9 @@ $bg-main: rgba(135, 169, 181, 0.85);
 $header-bg: rgba(255,255,255,.5);
 $header-text: #363636;
 
+$tbd: rgba(0,0,0,.25);
+$pending: rgba(255,0,0,.5);
+
 /*blacks */
 $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
@@ -21,7 +24,7 @@ $white: #fff;
 
 $trigger: #BBFF00;
 
-$bg-shine: rgba(31,159,255,.75);
+$profile: rgba(31,159,255,.75);
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -77,11 +80,9 @@ h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sa
 p {font-family: Helvetica, Arial, sans-serif;}
 
 .app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
-	
 
-/* BEHAVIOR */
-
-.pending {display: none}
+/* TEMP */
+.pending {background: $pending}
 
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 // header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
@@ -102,7 +103,6 @@ p {font-family: Helvetica, Arial, sans-serif;}
 }
 
 #wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto; position: relative; z-index:0}
-
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;position: relative;}
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
@@ -114,19 +114,43 @@ header#splash {
 	h2 {font-size: 30px; background: $bg-light;}
 }
 
+
+
+/*top nav*/
+#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-medium; padding:20px;}
+
+nav {height: 40px; width: 100%; display: block; line-height: 40px;		
+	* img {margin-top: 4px; height: 20px}
+}
+
+nav.private {
+	ul li {background: #425566}
+}
+
+nav ul.l2 {display:none; position: absolute; top: 100%; left: 0; background: green}
+nav ul.l1 li:hover + ul.l2 {display: block}
+
+
+
 header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; position: relative; background: $bg-medium;}
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
-// header#banner:hover {height: 300px; -webkit-animation: hanging 2s infinite 2s alternate}
 header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000; background: $white; margin-right:20px; display:inline-block;float: left; position: relative;
 }
 
 
 
+
+/* DONT TOUCH */
+h3.my-team {display:none}
+
+
+/*SCHEDULE */
+/* defaults */
 .single-game {height: auto; padding: 10px; margin-bottom: 1px; display: none; float: left; position: relative; z-index:20;
 
-	* {width: 100px; display:inline-block; /*background: $bg-rev-medium; */line-height: normal; color: #363; }
+	* {width: 100px; display:inline-block; /*background: $bg-rev-medium; */line-height: normal; color: a; }
 
 	.game-date {width: 100%; color: #363636}
 	.game-home-logo,	.game-away-logo {width: 50px;}
@@ -136,7 +160,6 @@ header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000
 	.field-home-team-logo, .field-away-team-logo {width: auto;}
 	.field-home-team-logo img, .field-away-team-logo img {width: 25px}
 
-	//anything in upcoming games
 	.game-away, .game-time {display: inline}
 	.game-tv {clear:both}
 	.game-links {width: 100%; clear:both; float: left}
@@ -144,26 +167,27 @@ header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000
 	span.separator {width: 40px; text-align:center};
 }
 
-section#schedule * .single-game {display:none; width: 100%}
-section#schedule * .single-game * {width: auto}
-section#schedule * .game-tv {display:none}
-section#schedule * .game-date {width: 35%;}
+/* results */
+section#schedule-results * .single-game {display:none; width: 100%}
+section#schedule-results * .single-game * {width: auto}
+section#schedule-results * .game-tv {display:none}
+section#schedule-results * .game-date {width: 35%;}
 
-section#schedule * .game-links {width: 100px; float: right; background: #333;}
-section#schedule * .game-time {display:none}
-section#schedule * .game-score {text-align:center}
-section#schedule * .game-home {width: 100px;}
-section#schedule * .game-away {width: 100px;}
-section#schedule * .separator {display:none}
+section#schedule-results * .game-links {width: 100px; float: right; background: #333;}
+section#schedule-results * .game-time {display:none}
+section#schedule-results * .game-score {text-align:center}
+section#schedule-results * .game-home {width: 100px;}
+section#schedule-results * .game-away {width: 100px;}
+section#schedule-results * .separator {display:none}
 
 
+/* previews */
 header#banner #game-previews {
 	
-	height: auto; width: 60%; position: relative; display:inline-block;float:left; background: $bg-shine;
+	height: auto; width: 60%; position: relative; display:inline-block;float:left; background: #1f9fff;
 
 	.gameday-trigger {height: 100px; padding: 0; margin: 0}
 	.gameday-trigger {width: 100px; margin: 20px 20px 0 0; background: red}
-	//.game-summary {height: auto;width: 100%; padding: 20px; display:inline; float: left;
 
 	.wrapper {background: #363636;  height: auto;width: 100%; float: left; display:block}
 	.wrapper .schedule-trigger {height: 100%; width: 90%; background: transparent; display:inline-block; float:left; position: relative}	
@@ -173,24 +197,20 @@ header#banner #game-previews {
 	#controls {height: 100%; width: 10%; color: #FFF; background: transparent; text-align:center; line-height: 50px; display: none; float:right}
 
 
-	// .show_less {height: 100%; width: 5%; color: #FFF;background: #262626; text-align:center; line-height: 50px; display: none; float:left}
-
-
-	// li.less, li.more {display:inline-block; width: 100px;}
-
-	h3.my-team {display:none}
-
+	/*next game only */
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
 	.js-next-game.single-game * {color: #FFF; width: auto}
 	.js-next-game.single-game .game-home,	.js-next-game.single-game .game-away {font-size: 64px; font-family: 'BenchNine', Helvetica, Arial; text-transform: uppercase;}
 	.js-next-game.single-game .game-home-logo, 	.js-next-game.single-game .game-away-logo {margin: auto}
 	.js-next-game.single-game .game-date {background: 0; display:block}
 	.js-next-game.single-game .game-time {display:block}
-	.js-next-game.single-game .game-links {margin-top: 20px; width: 100%;}
+	.js-next-game.single-game .game-links {margin-top: 20px;}
 	.js-next-game.single-game * a {background: #1f9fff;color:#FFF}
 	.js-next-game {width: 100%; padding: 20px; display: block;background-image: url(closeup.jpg); }
 	.js-next-game * {background: 0}
 
+
+/*upcoming games */
 
 #upcoming-games {
 
@@ -202,7 +222,6 @@ header#banner #game-previews {
   // transition: height 1s ease-in-out;
   transition: display 1s ease-in-out;
   -webkit-box-shadow: 1px 1px 5px #363636;
-   // section#highlights {position: absolute; top: 20px; left: 20px; display:none}
 
 }
 
@@ -212,9 +231,10 @@ header#banner #game-previews {
 #upcoming-games .single-game * a {background: #1f9fff;color:#FFF}
 #upcoming-games .single-game .game-time {display:block; margin-bottom: 10px;}
 #upcoming-games .single-game .game-score {display:none}
-// #upcoming-games .single-game .game-date {color: #}
 
 
+
+/* NEWS TICKER */
 #ticker {height: auto; width: 40%; margin: auto}
 
 #js-headlines {
@@ -230,7 +250,6 @@ header#banner #game-previews {
 
 #js-headlines.exposed {height: 400px; overflow: hidden}
 
-#ticker, #game-previews {display:inline-block;}
 #ticker article:first-child {height: 100px;}
 #ticker article:first-child a {font-size: 24px; margin: auto; }
 #ticker article:not(:first-child) a {font-size: 16px}
@@ -250,14 +269,13 @@ footer * {color: $white}
 
 
 
-#schedule {z-index:10;}
-
-// .schedule-table:nth-child(even) {background: #363636}
-// .schedule-table:nth-child(odd) {background: #161616}
-
-// .game-container {display:none; height: 100px; width: auto; background: blue}
+#ticker, #game-previews {display:inline-block;}
 
 
+
+
+
+/* TRIGGERS */
 header#banner * .match-trigger, header#banner * .news-trigger {height: 20px; width: 20px; }
 .news-trigger, .match-trigger{background: $trigger; color:#FFF; position: absolute; text-align:center; margin: auto;}
 .news-trigger {top: 0px; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
@@ -268,35 +286,22 @@ header#banner * .match-trigger, header#banner * .news-trigger {height: 20px; wid
 
 
 
-
-/*top nav*/
-#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-medium; padding:20px;}
-
-nav {height: 40px; width: 100%; display: block; line-height: 40px;		
-	* img {margin-top: 4px; height: 20px}
-}
-
-nav.private {
-	ul li {background: #425566}
-}
-
-nav ul.l2 {display:none; position: absolute; top: 100%; left: 0; background: green}
-nav ul.l1 li:hover + ul.l2 {display: block}
-
 /* toggle header */
 // details {background: 0; }
 // details summary h5 {color: #FFF; height: 20px; width: auto; display:block}	
 // #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
 #profile, #local {height: auto; padding: 20px;display: inline-block; position:relative} 
-#profile {float: left;  position:relative; width:60%; background: $bg-shine}
+#profile {float: left;  position:relative; width:60%; background: $profile}
 #profile header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
-// #profile section:nth-child(odd) {background: #363636;}
+
+
+
 #profile section:nth-child(even) .sleeve header h2 {color: #363636}
-#profile section:nth-child(even) {background: #F1F1F1;}
+#profile section:nth-child(even) {background: $tbd;}
 
 
-section#videos, section#fans, section#players, section#schedule {
+section#videos, section#fans, section#players, section#schedule-results {
 
 	height: auto;
 	width: 100%;
@@ -304,16 +309,15 @@ section#videos, section#fans, section#players, section#schedule {
 	display: block;
 	position: relative;
 	clear:both;
-
+	float:left;
 	.sleeve {margin: 20px}
 
 }
 
-// section#schedule {max-height: 400px; overflow: auto}
+// section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
 	.sleeve {margin: 0;}
 }
-
 
 section#fans .sleeve header {display: block; position:relative}
 section#fans .sleeve aside {
@@ -323,12 +327,15 @@ section#fans .sleeve aside {
 		position:relative;
 
 		.social, .venues {height: auto; width: 300px; min-height: 200px;margin-bottom: 20px; padding: 10px;background: #363636;}
-		
 		}
 
-section#schedule .sleeve {margin:0}
+section#schedule-results .sleeve {margin:0}
 
 
+
+
+
+/* GEO */
 
 #local {height: 100%; width: 40%; position: relative; display:inline-block}
 #local * section {
@@ -352,7 +359,7 @@ section#nearby-teams .sleeve {margin: 0px}
 
 
 
-section#tbd {height: auto; min-height: 300px; background: #565656; display:inline-block;}
+section#tbd {height: auto; min-height: 300px; background: $tbd; display: block;}
 
 section#tbd .sleeve {margin: 20px}
 
@@ -404,6 +411,9 @@ form #slideshow.modal .button {width: 100%;}
 // .form  {color: #FFF}
 
 //
+
+
+
 ul.competitions {height: auto; background: #363636; float: right; margin-right: 10px}
 
 .game-competition {display: none}
