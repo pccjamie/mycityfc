@@ -1,3 +1,25 @@
 // Place all the styles related to the ParentProfiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+header * {color: #262626}
+
+	#greeting-block {display:inline-block; float: left;margin: 0px;  position: relative; background:0; 
+		width: 50%;
+
+		h1 {font-size: 80px;}
+		h1,h2,h3,h4 { margin:0 20px};
+		* color: #262626;
+	}
+
+	
+	#toolbox {min-height: 300px; height: auto; display: inline-block;  position: relative; padding:0; background: burlywood; padding: 20px; width: 50%;}
+	#toolbox #inbox {height: auto; width: 200px; background:brown;}
+
+
+section#calendar {height: 200px;}
+section#my-calendar, section#my-kid, section#my-community, section#training, section#leagues, section#nonprofit {height: 200px; width: 33.3%; display: inline-block; position: relative; color: #FFF; margin: 0; padding: 0; float: left}
+
+body.bg-parent-profiles * section:nth-child(odd){background: green}
+body.bg-parent-profiles * section:nth-child(even) {background: 0}

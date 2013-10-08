@@ -1,6 +1,6 @@
 class ParentProfilesController < ApplicationController
 
-before_filter :authenticate_user!
+skip_before_filter :authenticate_user!
 
 
   def index

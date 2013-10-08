@@ -37,8 +37,8 @@ $profile: rgba(31,159,255,.75);
 .notice, .alert {background: orange; color: #FFF; padding: 10px;}
 
 body.bg-default {
-	background-image: url(closeup.jpg);
-	#wrapper {background: $bg-dark}
+	//background-image: url(closeup.jpg);
+	// #wrapper {background: $bg-dark}
 }
 body.bg-slides {
 	background-image: url(history1.jpg);
@@ -46,9 +46,9 @@ body.bg-slides {
 body.bg-parent-profiles { 
 	background-image: url(kids1.jpg);
 }
-// body.bg-fan-profiles {
-// 	background-image: url(nyc.jpg);
-// }
+body.bg-fan-profiles {
+	background-image: url(nyc.jpg);
+}
 
 body {
 	height:100%; 
@@ -367,29 +367,8 @@ section#tbd .sleeve {margin: 20px}
 section#nearby-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
 section#nearby-teams .sleeve {margin: 0px}
 
-section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
-section#greeting-block-wide {height: 500px}
-
-	#greeting-block-wide header h3 {color: #FFF;}
-	#greeting-block-wide, #greeting-block-narrow {display:inline-block; float: left;margin: 0px;  position: relative; background:0; 
-
-		width: 50%;
-		h1 {font-size: 80px;}
-		h1,h2,h3,h4 { margin:0 20px};
-		* color: #FFF;
-	}
-
-	
-	#calendar-today, #calendar-upcoming {min-height: 300px; height: auto; display: inline-block; background-color:$header-bg; position: relative; padding:0;}
-	#calendar-today {background: orange; padding: 20px; width: 25%; float: right}
-	#calendar-upcoming {background: yellow; width: 25%; float: left}
-//}
 
 
-
-section#my-community {display: inline-block;position: relative; 	background: rgba(31, 159, 255, .75); overflow-y: auto; overflow-x:none}
-section#my-videos {height: 440px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.75); clear:both; float: left; clear:both;}
-section#training {height: 400px; background: red}
 
 form {background: rgba(135,169,181,0.75); max-height: 300px; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 form #slideshow section {height: 220px}
@@ -404,7 +383,7 @@ form.devise {background-color: $devise-bg}
 form.standard {background-color: $bg-main}
 
 form * {color: #363636;}
-form * input.button {margin: 0}
+form * input.button {margin: 0 0 20px 0}
 form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; border: 0; position: relative;}
 form * .button:hover {background: #f9f9f9;color: teal}
 
