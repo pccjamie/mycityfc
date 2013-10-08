@@ -198,6 +198,9 @@ header#banner #game-previews {
 
 
 	/*next game only */
+	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block;background-image: url(closeup.jpg); }
+
+
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
 	.js-next-game.single-game * {color: #FFF; width: auto}
 	.js-next-game.single-game .game-home,	.js-next-game.single-game .game-away {font-size: 64px; font-family: 'BenchNine', Helvetica, Arial; text-transform: uppercase;}
@@ -206,7 +209,6 @@ header#banner #game-previews {
 	.js-next-game.single-game .game-time {display:block}
 	.js-next-game.single-game .game-links {margin-top: 20px;}
 	.js-next-game.single-game * a {background: #1f9fff;color:#FFF}
-	.js-next-game {width: 100%; padding: 20px; display: block;background-image: url(closeup.jpg); }
 	.js-next-game * {background: 0}
 
 
@@ -233,29 +235,34 @@ header#banner #game-previews {
 #upcoming-games .single-game .game-score {display:none}
 
 
-
 /* NEWS TICKER */
-#ticker {height: auto; width: 40%; margin: auto}
+#ticker {height: auto; width: 40%; margin: auto;}
+
+#ticker .sleeve {height: 100%}
+#ticker .sleeve header {height: 40px; display:block;
+	h4 {margin:0; width: auto; float:left; display:inline-block}
+}
 
 #js-headlines {
-
 	height: auto;
 	width: auto;
-	padding: 0 0 0 10px;
-	transition: height 1s;
-	-webkit-transition: height 1s;
+	margin-bottom: 20px;
 	position:relative;
-
+	display:none;
 	}
 
-#js-headlines.exposed {height: 200px; overflow: hidden}
-
-#ticker article:first-child {height: auto; padding: 20px;}
-#ticker article:first-child a {font-size:32px; margin: auto; }
+#ticker article:first-child {height: auto;}
+#ticker article:not(:first-child) {height: auto;}
 #ticker article:not(:first-child) a {font-size: 16px}
-#ticker article:not(:first-child) {height: auto; display:none; padding: 5px}
 
-header#banner a.credits {height: auto; width: auto; display: inline-block;position: relative; float:right}
+#js-headlines article {padding: 10px}
+#js-headlines article:nth-child(odd) {background: $bg-medium}
+
+#js-headlines-latest {height: 160px}
+#js-headlines-latest article:first-child a {font-size:32px; margin: auto; }
+
+
+header#banner a.credits {height: auto; width: auto; display: none; position: absolute; float: left; margin-left: 20px;}
 header#banner a.credits img {height: 50%; width: 50%;}
 header#banner * .external-links {height: auto}
 
@@ -267,21 +274,15 @@ footer * {color: $white}
  }
 
 
-
-
 #ticker, #game-previews {display:inline-block;}
 
-
-
-
-
 /* TRIGGERS */
-header#banner * .match-trigger, header#banner * .news-trigger {height: 20px; width: 20px; }
-.news-trigger, .match-trigger{background: $trigger; color:#FFF; position: absolute; text-align:center; margin: auto;}
-.news-trigger {top: 0px; right: 0px; z-index: 1; height: 20px; width:20px; background: $trigger; display: block;}
 
-.gameday-trigger, .match-trigger {top: 0px; right: 0px; position: absolute}
+.news-trigger {background: $trigger; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: 50px; line-height: 50px; background: $bg-medium; display: block;}
+
+.gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
+
 .schedule-trigger {height: 50px; line-height: 50px; padding-left: 20px; bottom: 0px; color: #FFF}
 
 
@@ -311,7 +312,6 @@ section#videos, section#fans, section#players, section#schedule-results {
 	clear:both;
 	float:left;
 	.sleeve {margin: 20px}
-
 }
 
 // section#schedule-results {max-height: 400px; overflow: auto}
@@ -319,6 +319,7 @@ section#videos {
 	.sleeve {margin: 0;}
 }
 
+section#fans {margin-bottom:20px}
 section#fans .sleeve header {display: block; position:relative}
 section#fans .sleeve aside {
 			
@@ -340,6 +341,11 @@ section#schedule-results .sleeve {margin:0}
 #local {height: 100%; width: 40%; position: relative; display:inline-block}
 #local * section {
 	display:inline-block; width:50%; height: auto; display: inline-block; position: relative; min-height: 200px; max-height: 400px;
+}
+
+#local header.team-finder {background: #363636;
+
+	a.team-directory {padding: 0 10px}
 }
 
 #local #slideshow {min-height:400px;}
@@ -382,7 +388,6 @@ section#greeting-block-wide {height: 500px}
 //}
 
 
-article:nth-child(even) {background: #1f9fff}
 
 section#my-community {display: inline-block;position: relative; 	background: rgba(31, 159, 255, .75); overflow-y: auto; overflow-x:none}
 section#my-videos {height: 440px;  width: 100%; display: block; position: relative; background: rgba(0,0,0,.75); clear:both; float: left; clear:both;}
@@ -424,6 +429,6 @@ ul.competitions {height: auto; background: #363636; float: right; margin-right: 
 .type-open {background: #336699}
 .type-unknown {background: black}
 
-ul.competitions li {color:#FFF}
+li.type-mls-reg {color: #363636}
 
 

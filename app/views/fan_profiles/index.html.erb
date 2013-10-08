@@ -10,15 +10,13 @@
 		<div class="cycle-control prev">
 			<a href=# id="prev" class="reload-prev"><</a>
 		</div>
-
 		<div class="cycle-control next">
 			<a href=# id="next" class="reload-next">></a>
 		</div>
 
 		<header><h4>Latest Videos</h4></header>
 	
-		<div class="cycle-slideshow"
-			
+		<div class="cycle-slideshow"	
 			data-cycle-timeout=0
 			data-cycle-prev=#prev
 			data-cycle-next=#next
@@ -33,7 +31,6 @@
 				src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com"
 				frameborder="0"></iframe>
 			<% end %>
-
 		</div>
 	
 	</div>
@@ -42,15 +39,13 @@
 	<div class="sleeve">
 	<header><h4>NEW FAN?</h4></header>	
 	<aside>
-		<div class="venues"><header><h4>WHERE TO WATCH (and drink) IN <%=current_user.city %></h4></header><span class="pending">Yelp</div>
+		<div class="venues"><header><h4>WHERE TO WATCH (and drink) IN <%#=current_user.city %></h4></header><span class="pending">Yelp</div>
 		<div class="social"><header><h4>FOLLOW TEAM?</h4></header><span class="pending">Twitter</span>
 		</div>
 	</aside>
 
 	</div>
 </section>
-
-
 
 <section id="schedule-results">
 <div class="sleeve">
@@ -77,7 +72,9 @@
 <div class="league slide">
 	<section id="nearby-teams">
 	<div class="sleeve">
-	<% @nearby_teams.each do |t| %>
+	
+		<!-- PLACE TEAM INFO HERE -->
+<% @nearby_teams.each do |t| %>
 	<div class="team">
 	<div class="team-overview">
 		<div class="team-logo"><img src='<%= t.logo %>'/></div>
@@ -97,6 +94,10 @@
 	</div>
 	</div>
 	<% end %>
+		<!-- PLACE TEAM INFO HERE -->
+
+
+
 	</div><!--sleeve-->
 	</section><!--my teams section-->
 </div>

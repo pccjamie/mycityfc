@@ -7,7 +7,7 @@ class FanProfilesController < ApplicationController
   #   response.headers["Content-Type"] = "application/json, text/html"
   # end
 
-  before_filter :authenticate_user!, :except => [:index]
+  skip_before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
   require 'nokogiri'
@@ -117,7 +117,7 @@ class FanProfilesController < ApplicationController
     #get user's chosen team from db for comparison
     my_team = current_user.primary_team.split(' ').map(&:strip)
 
-    @formatted_team = "Seattle"
+    #@formatted_team = "Seattle"
     @formatted_team = my_team[0] #formats for easier comparison to scrape.
 
     #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow.

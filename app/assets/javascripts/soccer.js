@@ -88,7 +88,7 @@ function find_news() {
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 5
+			limit: 10
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -99,15 +99,20 @@ function find_news() {
 	}).done(function(data) {
 		$.each(data.headlines, function(index, article) {
 			$('#ticker #js-headlines').append("<article><a href=" + article.links.web.href + ">" + article.title + "</a></article>");
-			// $('#my-news .sleeve article').append("<div class=images>" + article.images+"</div>");
 		});
+			$('#js-headlines article:first').appendTo("#js-headlines-latest");
 	});
+
 }
 
 $("#banner").on("click", ".news-trigger", function(e) {
 	e.preventDefault();
-	$("#js-headlines article:first").nextAll().css('display', 'block');
-	$("#js-headlines").toggleClass('exposed');
+
+		$('a.credits').fadeToggle();
+		$('#js-headlines').slideToggle('slow', function(){
+			// ("#js-headlines article:first").nextAll().css('display', 'block');
+		});
+
 });
 
 function switch_leagues() {
@@ -128,7 +133,6 @@ function location_based_view() {
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
 }
 
-
 function filter_schedule() {
 
 	var today = moment().format("MM-DD-YYYY");
@@ -141,20 +145,14 @@ function filter_schedule() {
 		var game_date = moment($(this).children('.game-date').text()).format("MM-DD-YYYY");
 
 		if (game_date < today) {
-
-			//console.log("Before today: "+game_date);//game_date = "10-01-2013";
 			var removable = $("#game-previews * .single-game:contains('" + my_team + "')").css('display','block');
 			$(removable).remove();		
-			//$(this).css('display', 'none');
 		} 
 
 		else if (game_date >= today) {
 
 			//display ALL games that have my team
 			$(".single-game:contains('" + my_team + "')").css('display','block');
-
-			// this hid the score field if game is upcoming...but moved to CSS. Keeping for the moment though.
-			//$(this).css({'color': '#363636'}).children('.game-score').css('display','none');
 
 			//$(this):contains("'+ my_team +'")).parent().first().appendTo(".game-summary").css('display','block');
 			
@@ -196,11 +194,7 @@ function filter_schedule() {
 
 		// finally id the next game
 		$(single_game).addClass('js-next-game').removeClass('type-mls-reg');
-
-
 	})
-
-	
 	$(".schedule-trigger").click(function() {
 	$('#upcoming-games').slideToggle('slow', function() {
 	});
@@ -209,9 +203,7 @@ function filter_schedule() {
 		alert('clicking this will run code that controls how many results displayed');
 		$(this).css('color','red');
 	});
-
 });
-
 }
 
 function game_fields() {
@@ -240,18 +232,13 @@ $("li.type-mls-reg").click(function(){
 
 
 $("li.type-ccl").click(function(){
-
 	$("section#schedule-results * .single-game.type-ccl:contains('Seattle')").show();
 	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-ccl')").hide();
-
 });
 
 $("li.type-open").click(function(){
-
-
 	$("section#schedule-results * .single-game.type-open:contains('Seattle')").show();
 	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-open')").hide();
-
 });
 
 }
@@ -297,7 +284,7 @@ $('a.game-tv:contains("'+ch_espn+'")').filter(function() {
 	return $(this).text();
 }).attr("href","http://espn.go.com/watchespn/index");
 
-$('a.game-tv:contains("TSN","UNIMAS,"RDS2")').removeAttr('href');
+$('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background','none');
 
 
 // ON LOAD...
