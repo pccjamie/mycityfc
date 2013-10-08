@@ -140,8 +140,7 @@ function location_based_view() {
 	} else {
 		$('body').addClass('bg-default');
 	}
-	return;
-
+	
 	$('#js-schedule').css('background-color', 'rgba(0,0,0,.60)');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');

@@ -317,7 +317,7 @@ section#videos, section#fans, section#players, section#schedule-results {
 
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
-	.sleeve {margin: 0;float:left}
+	.sleeve {margin: 0; float:left}
 }
 
 section#fans {margin-bottom:20px}
@@ -335,6 +335,12 @@ section#schedule-results .sleeve {margin:0}
 
 
 
+
+
+
+section#tbd {height: auto; min-height: 300px; background: $tbd; display: block;}
+
+section#tbd .sleeve {margin: 20px}
 
 
 /* GEO */
@@ -360,12 +366,6 @@ section#schedule-results .sleeve {margin:0}
 
 section#nearby-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
 section#nearby-teams .sleeve {margin: 0px}
-
-
-
-section#tbd {height: auto; min-height: 300px; background: $tbd; display: block;}
-
-section#tbd .sleeve {margin: 20px}
 
 section#my-kid  {float: left; display: inline-block;position: relative; background: $bg-main; clear:both;}
 section#greeting-block-wide {height: 500px}
