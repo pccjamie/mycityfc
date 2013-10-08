@@ -10,6 +10,8 @@ $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
 
+$bg-steel: rgba(66,85,102,1);
+
 $bg-rev-medium: rgba(255,255,255,.5);
 
 $tx-dark: #666666;
@@ -126,7 +128,7 @@ nav {height: 40px; width: 100%; display: block; line-height: 40px;
 }
 
 nav.private {
-	ul li {background: #425566}
+	ul li {background: $bg-steel}
 }
 
 nav ul.l2 {display:none; position: absolute; top: 100%; left: 0; background: green}
@@ -181,7 +183,7 @@ section#schedule-results * .game-score {text-align:center}
 section#schedule-results * .game-home {width: 100px;}
 section#schedule-results * .game-away {width: 100px;}
 section#schedule-results * .separator {display:none}
-
+section#schedule-results * .clearfix {display:none}
 
 /* previews */
 header#banner #game-previews {
@@ -280,7 +282,7 @@ footer * {color: $white}
 
 /* TRIGGERS */
 
-.news-trigger {background: $trigger; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: 50px; line-height: 50px; background: $bg-medium; display: block;}
+.news-trigger {background: $bg-steel; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: 50px; line-height: 50px; background: $bg-medium; display: block;}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
@@ -346,7 +348,9 @@ section#tbd .sleeve {margin: 20px}
 	display:inline-block; width:50%; height: auto; display: inline-block; position: relative; min-height: 200px; 
 }
 
-#local header.team-finder {background: #363636;}
+
+#local header.team-finder {}
+	h3 a.team-directory {background: rgba(66,85,102,1); color: #363636; float: right}
 
 #local #slideshow {min-height:400px;}
 #local * .leagueslider {height: auto; display: block}
@@ -399,7 +403,9 @@ ul.competitions {height: auto; background: #363636; float: right; margin-right: 
 .type-all {background: #363636}
 .type-mls-reg {background: #f1f1f1;}
 .type-ccl {background: #99ccff}
-.type-open {background: #336699}
+.type-natl-us {background: #336699}
+.type-natl-can {background: #FF0000}
+
 .type-unknown {background: black}
 
 li.type-mls-reg {color: #363636}

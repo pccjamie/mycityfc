@@ -152,15 +152,13 @@ function filter_schedule() {
 		if (game_date < today) {
 			var removable = $("#game-previews * .single-game:contains('" + my_team + "')").css('display','block');
 			$(removable).remove();		
-		} 
+		}
 
 		else if (game_date >= today) {
 
 			//display ALL games that have my team
 			$(".single-game:contains('" + my_team + "')").css('display','block');
-
 			//$(this):contains("'+ my_team +'")).parent().first().appendTo(".game-summary").css('display','block');
-			
 			//add to upcoming games (NEED TO ACCOUNT FOR HAVING A HUGE LIST AT BEG OF MO)
 			$(this).filter(":contains('"+my_team+"')").appendTo("#upcoming-games");
 		
@@ -190,8 +188,11 @@ function filter_schedule() {
 			case "CCL":
 				$(this).addClass('type-ccl');
 				break;
-			case "Open Cup":
-				$(this).addClass('type-open');
+			case "US Open Cup":
+				$(this).addClass('type-natl-us');
+				break;
+			case "Canadian Championship":
+				$(this).addClass('type-natl-can');
 				break;
 			default:
 				$(this).addClass('type-unknown');
@@ -223,9 +224,7 @@ function sorting(){
 
 //conditional display of tabs, depending on various situations
 $("li.type-all").click(function(){
-
 	$("section#schedule-results * .single-game:contains('"+my_team+"')").show();
-
 });
 
 $("li.type-mls-reg").click(function(){
@@ -235,15 +234,19 @@ $("li.type-mls-reg").click(function(){
 
 });
 
-
 $("li.type-ccl").click(function(){
 	$("section#schedule-results * .single-game.type-ccl:contains('"+my_team+"')").show();
 	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-ccl')").hide();
 });
 
-$("li.type-open").click(function(){
-	$("section#schedule-results * .single-game.type-open:contains('"+my_team+"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-open')").hide();
+$("li.type-natl-us").click(function(){
+	$("section#schedule-results * .single-game.type-natl-us:contains('"+my_team+"')").show();
+	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-natl-us')").hide();
+});
+
+$("li.type-natl-can").click(function(){
+	$("section#schedule-results * .single-game.type-natl-can:contains('"+my_team+"')").show();
+	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-natl-can')").hide();
 });
 }
 
