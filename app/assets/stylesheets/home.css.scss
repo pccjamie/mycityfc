@@ -47,7 +47,6 @@ body.bg-parent-profiles {
 	background-image: url(kids1.jpg);
 }
 body.bg-fan-profiles {
-	background-image: url(nyc.jpg);
 }
 
 body {
@@ -317,7 +316,7 @@ section#videos, section#fans, section#players, section#schedule-results {
 
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
-	.sleeve {margin: 0; float:left}
+	.sleeve {margin: 0; float: none}
 }
 
 section#fans {margin-bottom:20px}
