@@ -8,9 +8,7 @@
   <li><%= link_to 'soccer mom?', parent_profiles_path %></li>
 </ul>
 <ul class="right">
-  <li><%= current_user.first_name %>!</li>
-  <li class="current-user-city">Your Current Location: <%= current_user.city %></li>
-  |
+  <li class="current-user-city">Your Current Location is: <%= current_user.city %></li>
   <li><%= image_tag current_user.picture %></li>
   <li><%= link_to('Profile', edit_user_registration_path) %></li>
   <li><%= link_to('Logout', destroy_user_session_path)%></li>

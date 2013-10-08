@@ -38,6 +38,7 @@ $profile: rgba(31,159,255,.75);
 
 body.bg-default {
 	background-image: url(closeup.jpg);
+	#wrapper {background: $bg-dark}
 }
 body.bg-slides {
 	background-image: url(history1.jpg);
