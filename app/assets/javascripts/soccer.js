@@ -1,6 +1,6 @@
 //var city = $('li.current-user-city').html();
 //var city = city.toLowerCase();
-var city = '"+my_team"';
+var city = 'New York';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 if(window.location.href.indexOf("fan") > -1) {
@@ -239,20 +239,20 @@ $("li.type-all").click(function(){
 
 $("li.type-mls-reg").click(function(){
 
-	$("section#schedule-results * .single-game.type-mls-reg:contains('"+my_team"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team"'):not('.type-mls-reg')").hide();
+	$("section#schedule-results * .single-game.type-mls-reg:contains('New York')").show();
+	$("section#schedule-results * .single-game:contains('New York'):not('.type-mls-reg')").hide();
 
 });
 
 
 $("li.type-ccl").click(function(){
-	$("section#schedule-results * .single-game.type-ccl:contains('"+my_team"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team"'):not('.type-ccl')").hide();
+	$("section#schedule-results * .single-game.type-ccl:contains('New York')").show();
+	$("section#schedule-results * .single-game:contains('New York'):not('.type-ccl')").hide();
 });
 
 $("li.type-open").click(function(){
-	$("section#schedule-results * .single-game.type-open:contains('"+my_team"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team"'):not('.type-open')").hide();
+	$("section#schedule-results * .single-game.type-open:contains('New York')").show();
+	$("section#schedule-results * .single-game:contains('New York'):not('.type-open')").hide();
 });
 
 }
