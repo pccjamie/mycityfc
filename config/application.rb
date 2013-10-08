@@ -26,12 +26,12 @@ module Soccer1
     # compass-rails is only required to use certain SASS helpers provided by Foundation. Doesn't affect normal SASS and CSS. 
     # WATCHING https://github.com/Compass/compass-rails/pull/59 for ongoing releases.
 
+    #this was set to true prior to interviews
     config.assets.initialize_on_precompile = false
 
     #blocks rails from expecting attr_accessibile in the Models. Now I can use strong parameters
     config.active_record.whitelist_attributes = false
   
-
     #cross domain ajax calls
     config.middleware.use Rack::Cors do
       allow do

@@ -20,14 +20,11 @@ class FanProfilesController < ApplicationController
     @users = User.all
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
-    # get_teams_from_espn
+    #get_teams_from_espn
     get_team_and_schedule
     get_video_from_youtube
-
     #return
   end
-
-  ####SPECIAL
 
   def get_current_city
     current_user
@@ -46,9 +43,10 @@ class FanProfilesController < ApplicationController
 
     # YT API KEY
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
-    # YT USERNAME
-    y_user = "soundersfcdotcom"    
-     # HARDCODING FOR NOW. NEED TO QUERY FOR Y_USER VALUE BASED ON USER'S PREFERRED TEAM.
+
+    # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
+
+    y_user = "soundersfcdotcom" 
 
     #1. FIND CHANNEL IDS FOR EACH TEAM BASED ON YT USERNAME- youtube.channels.list
 
@@ -56,34 +54,32 @@ class FanProfilesController < ApplicationController
 
     response = HTTParty.get("#{base}/channels?part=id%2C+snippet&forUsername=#{y_user}&key=#{y_key}")
 
-    #finding channel id
+    #get ch id
     channel_id = response["items"][0]["id"]
 
-    #2. FIND ALl VIDEOS FOR THE CHANNEL ID
-
-    #this returns an array of videos for the channel.
+    #get ch info from id
     channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{y_key}")
 
-    #gets video ID from each result and pushes to array
+    #gets vid IDs from ch info
     @video_ids = []
     channel_info["items"].each do |item|
       @video_ids.push(item["id"]["videoId"])
     end
 
-    #another call to get the video resource for each video id and push to array. 
+    #this gets the actual video embed html.....but not using. Handling iframe rendering another way.
 
     # @videos = []
     # @video_ids.each do |id|
     #   source = HTTParty.get("#{base}/videos?part=id,snippet,player&id=#{id}&key=#{y_key}")
     #   a_video  = source["items"][0]["player"]["embedHtml"]
     #   @videos.push(a_video)
-
     #   #@video_id = id
     # end
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render :json => @videos.to_html }
-    # end
+  
+    respond_to do |format|
+      format.html
+      format.json { render :json => @videos.to_html }
+    end
     return
   end
 
@@ -99,7 +95,8 @@ class FanProfilesController < ApplicationController
   def get_source
 
     year = Chronic.parse('this year').strftime('%Y')
-    # scraping is not preferred, source html could change and break this app. this is temp for POC. need API or more reliable solution
+    
+    #SCRAPE MLS SCHEDULE
     url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
 
     #alt for mls schedule: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
@@ -109,19 +106,19 @@ class FanProfilesController < ApplicationController
 
   def get_team_and_schedule
 
-    #as written, assumes  1) user's team IS in fact on the schedule page, and 2) source is formatted a certain way. WRITE CODE TO ACCOUNT FOR OTHER...
+    #as written, assumes  1) user's team IS in fact on the schedule page, and 2) source is formatted a certain way. WRITE CODE TO ACCOUNT FOR 
 
-    #what if source HTML changes???)
+    #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow.
+
 
     schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
 
-    #get user's chosen team from db for comparison
-    my_team = current_user.primary_team.split(' ').map(&:strip)
+    #get user's team from db, formats to be friendly for schedule retrieval and rendering.
+    
+    my_team = current_user.primary_team.split(' ').map(&:strip)#NOT WORKING FOR 2 WORD CITY NAMES YET
 
     #@formatted_team = "Seattle"
-    @formatted_team = my_team[0] #formats for easier comparison to scrape.
-
-    #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow.
+    @formatted_team = my_team[0] 
 
     @schedule = schedule_array
 
@@ -142,9 +139,7 @@ class FanProfilesController < ApplicationController
   #       schedule_array.delete game_date
   #       true
   #     end
-    
   #   end
-
   #   #get current date
 
   #   #compares the two
@@ -153,13 +148,9 @@ class FanProfilesController < ApplicationController
   #   else
   #     match_preview
   #   end
-
   # end
 
-
-
-
-  #GETS TEAM NAMES FROM ESPN. ALT TO STORING IN DB. MAY USE LATER.
+  #gets team names from espn db automatically (not doing anything with this yet)
   def get_teams_from_espn
     response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
     @response = response["sports"][0]["leagues"][0]["teams"]
@@ -169,6 +160,7 @@ class FanProfilesController < ApplicationController
     end
     return
   end
+
 
 
   private

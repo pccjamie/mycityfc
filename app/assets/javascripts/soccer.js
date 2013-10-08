@@ -36,62 +36,59 @@ if(window.location.href.indexOf("fan") > -1) {
 // 	});
 
 // // GET INFO
-// function find_team_info() {
+function find_team_info() {
+	var espn_links;
+	$.ajax({
+		url: espn,
+		data: {
+			apikey: '4u3e6enmscdszh8qcy9dh7my',
+			_accept: "application/json"
+		},
+		dataType: "jsonp",
+		beforeSend: function(xhr) {
+			xhr.setRequestHeader("Accept", "application/json");
+		},
+		cache: false,
+		type: "get"
+	}).done(function(data) {
 
-// 	var espn_links;
+			console.log(team_id);
+		$.each(data.sports[0].leagues[0].teams, function(index, team) {
 
-// 	$.ajax({
-// 		url: espn,
-// 		data: {
-// 			apikey: '4u3e6enmscdszh8qcy9dh7my',
-// 			_accept: "application/json"
-// 		},
-// 		dataType: "jsonp",
-// 		beforeSend: function(xhr) {
-// 			xhr.setRequestHeader("Accept", "application/json");
-// 		},
-// 		cache: false,
-// 		type: "get"
-// 	}).done(function(data) {
+			var team_name = team.name.toLowerCase();
+			var team_location = team.location.toLowerCase();
+			var team_id = team.id;
 
-// 			console.log(team_id);
-// 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
+		// $('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
+		// $("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
+			$.each(team, function(index, info) {
 
-// 			var team_name = team.name.toLowerCase();
-// 			var team_location = team.location.toLowerCase();
-// 			var team_id = team.id;
+				info2 = $(info);
+				info2.slice(5, 7);
 
-// 		// $('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
-// 		// $("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
-// 			$.each(team, function(index, info) {
+				$.each(info2, function(index, linkset) {
+					$.each(linkset, function(index, set) {
 
-// 				info2 = $(info);
-// 				info2.slice(5, 7);
-
-// 				$.each(info2, function(index, linkset) {
-// 					$.each(linkset, function(index, set) {
-
-// 						$.each(set, function(index, contents) {
-// 							$.each(contents, function(index, espn_links) {
-// 								$('<a class="espn-links" href='+espn_links+'><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('.team-feed nav');
-// 								$("#my-teams * a:contains('usa.1')").remove();
-// 								$("#my-teams * a:contains('" + city + "')").css("display", "block");
-// 								$("#my-teams * br").remove();
-// 							});
-// 						});
-// 					});
-// 				});
-// 			});
-// 		});
-// 	});
-// 	return;
-// }
+						$.each(set, function(index, contents) {
+							$.each(contents, function(index, espn_links) {
+								$('<a class="espn-links" href='+espn_links+'><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('.team-feed nav');
+								$("#my-teams * a:contains('usa.1')").remove();
+								$("#my-teams * a:contains('" + city + "')").css("display", "block");
+								$("#my-teams * br").remove();
+							});
+						});
+					});
+				});
+			});
+		});
+	});
+	return;
+}
 
 var my_team = $('.my-team').text();
 var cap = 2;
 
 //GET NEWS
-
 function find_news() {
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
@@ -117,12 +114,10 @@ function find_news() {
 
 $("#banner").on("click", ".news-trigger", function(e) {
 	e.preventDefault();
-
 		$('a.credits').fadeToggle();
 		$('#js-headlines').slideToggle('slow', function(){
 			// ("#js-headlines article:first").nextAll().css('display', 'block');
 		});
-
 });
 
 function switch_leagues() {
@@ -138,8 +133,6 @@ function location_based_view() {
 	var bg = $('.team-venue-image:first').text();
 	//else use background for team chosen
 	$('body').css('background-image', 'url(' + bg + ')');
-
-	
 	$('#js-schedule').css('background-color', 'rgba(0,0,0,.60)');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');

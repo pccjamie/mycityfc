@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
 
     require 'pry-rails'
 
-
   # before_filter :block_cache
   # def block_cache
   #   response.headers["Access-Control-Allow-Origin: facebook.com"]
