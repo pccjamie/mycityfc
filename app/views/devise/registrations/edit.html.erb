@@ -26,6 +26,8 @@
                               <%= f.label(:profile_parent, "Parent") %>
                               </aside>
 
+                              <h5><%= f.label :primary_team, 'MLS Team' %></h5>
+
                           <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
 
 
