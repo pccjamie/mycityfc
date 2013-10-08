@@ -65,7 +65,7 @@ body {
 
 // body.default * form {background: $bg-dark;}
 
-body.bg-default * form * {color: #252525}
+body.bg-default * form * {color: #363636}
 
 body.bg-public {
 	h1,h2,h3,h4,h5,p,a,li {color: $tx-medium;}
@@ -73,7 +73,7 @@ body.bg-public {
 
 table {display: block; position: relative;}
 
-ul {list-style: none; margin: 0; padding:0}
+ul {list-style: none; margin: 0; padding:0; line-height: 40px;}
 li {display: inline; padding: 5px}
 
 h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px; font-weight: normal}
