@@ -1,6 +1,6 @@
 //var city = $('li.current-user-city').html();
 //var city = city.toLowerCase();
-var city = 'New York';
+var city = 'seattle';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 if(window.location.href.indexOf("fan") > -1) {
@@ -12,8 +12,8 @@ if(window.location.href.indexOf("fan") > -1) {
 	if (window.location.href.indexOf("slides") > -1) {
 		$('body').addClass('bg-slides').removeClass('bg-default');
 	} else {
-		$('body').removeClass('bg-default');
-}
+		$('body').addClass('bg-default');
+	}
 
 // //GET TEAM ID
 // $.ajax({
@@ -233,26 +233,26 @@ function sorting(){
 //conditional display of tabs, depending on various situations
 $("li.type-all").click(function(){
 
-	$("section#schedule-results * .single-game:contains('"New York"')").show();
+	$("section#schedule-results * .single-game:contains('Seattle')").show();
 
 });
 
 $("li.type-mls-reg").click(function(){
 
-	$("section#schedule-results * .single-game.type-mls-reg:contains('New York')").show();
-	$("section#schedule-results * .single-game:contains('New York'):not('.type-mls-reg')").hide();
+	$("section#schedule-results * .single-game.type-mls-reg:contains('Seattle')").show();
+	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-mls-reg')").hide();
 
 });
 
 
 $("li.type-ccl").click(function(){
-	$("section#schedule-results * .single-game.type-ccl:contains('New York')").show();
-	$("section#schedule-results * .single-game:contains('New York'):not('.type-ccl')").hide();
+	$("section#schedule-results * .single-game.type-ccl:contains('Seattle')").show();
+	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-ccl')").hide();
 });
 
 $("li.type-open").click(function(){
-	$("section#schedule-results * .single-game.type-open:contains('New York')").show();
-	$("section#schedule-results * .single-game:contains('New York'):not('.type-open')").hide();
+	$("section#schedule-results * .single-game.type-open:contains('Seattle')").show();
+	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-open')").hide();
 });
 
 }
