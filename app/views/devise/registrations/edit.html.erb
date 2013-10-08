@@ -5,7 +5,7 @@
 
 <%= devise_error_messages! %>
 
-      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='3000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
+      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='5000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
 
                   <% if user_signed_in? #&& current_user.profile == nil %>
                     
@@ -15,6 +15,7 @@
                         <div class="sleeve">
                               
                               <h5><%= f.label :profile, 'Default View' %></h5>
+
                               <aside class="left">
                               <%= f.radio_button(:profile, "Fan") %>
                               <%= f.label(:profile_fan, "Fan") %>
@@ -25,15 +26,17 @@
                               <%= f.label(:profile_parent, "Parent") %>
                               </aside>
 
-
                           <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
+
+
+                        <%= f.submit "Confirm", :class=>'button' %>
 
 
                         </div>
 
-                        <div class="clearfix"></div>  
 
-                        <%= f.submit "Confirm", :class=>'button' %><div><%#= link_to "Cancel", root_path %></div>
+
+                       <%#= link_to "Cancel", root_path %>
                        
                       </section>
                    
@@ -43,7 +46,7 @@
                       <%#= f.email_field :email, :autofocus => true %></div>
 
                       <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                        <div>Currently waiting confirmation for: <%#= resource.unconfirmed_email %></div>
+                        <div>Currently waiting on confirmation for: <%#= resource.unconfirmed_email %></div>
                       <%# end %>
 
                       <div><%#= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
@@ -62,8 +65,6 @@
       </div> <!--slideshow-->
 
 <% end %> <!-- form -->
-
-
 
 <!-- <h3>Cancel my account</h3>-->
 <!--<p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>-->
