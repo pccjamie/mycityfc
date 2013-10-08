@@ -12,7 +12,7 @@ if(window.location.href.indexOf("fan") > -1) {
 	if (window.location.href.indexOf("slides") > -1) {
 		$('body').addClass('bg-slides').removeClass('bg-default');
 	} else {
-		$('body').removedClass('bg-default');
+		$('body').removeClass('bg-default');
 }
 
 // //GET TEAM ID
@@ -252,9 +252,7 @@ $("li.type-open").click(function(){
 	$("section#schedule-results * .single-game.type-open:contains('Seattle')").show();
 	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-open')").hide();
 });
-
 }
-
 
 //triggers
 $(".gameday-trigger").click(function() {
