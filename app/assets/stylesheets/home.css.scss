@@ -106,7 +106,7 @@ p {font-family: Helvetica, Arial, sans-serif;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;position: relative;}
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
-.sleeve {height: 100%; display:block; margin: 20px; float:left}
+.sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
 header#splash {
@@ -316,7 +316,7 @@ section#videos, section#fans, section#players, section#schedule-results {
 
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
-	.sleeve {margin: 0;}
+	.sleeve {margin: 0;float:left}
 }
 
 section#fans {margin-bottom:20px}
@@ -344,7 +344,6 @@ section#schedule-results .sleeve {margin:0}
 }
 
 #local header.team-finder {background: #363636;
-
 	a.team-directory {padding: 0 10px}
 }
 
