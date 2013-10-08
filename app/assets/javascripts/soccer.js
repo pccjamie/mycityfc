@@ -224,26 +224,26 @@ function sorting(){
 //conditional display of tabs, depending on various situations
 $("li.type-all").click(function(){
 
-	$("section#schedule-results * .single-game:contains('Seattle')").show();
+	$("section#schedule-results * .single-game:contains('"+my_team+"')").show();
 
 });
 
 $("li.type-mls-reg").click(function(){
 
-	$("section#schedule-results * .single-game.type-mls-reg:contains('Seattle')").show();
-	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-mls-reg')").hide();
+	$("section#schedule-results * .single-game.type-mls-reg:contains('"+my_team+"')").show();
+	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-mls-reg')").hide();
 
 });
 
 
 $("li.type-ccl").click(function(){
-	$("section#schedule-results * .single-game.type-ccl:contains('Seattle')").show();
-	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-ccl')").hide();
+	$("section#schedule-results * .single-game.type-ccl:contains('"+my_team+"')").show();
+	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-ccl')").hide();
 });
 
 $("li.type-open").click(function(){
-	$("section#schedule-results * .single-game.type-open:contains('Seattle')").show();
-	$("section#schedule-results * .single-game:contains('Seattle'):not('.type-open')").hide();
+	$("section#schedule-results * .single-game.type-open:contains('"+my_team+"')").show();
+	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-open')").hide();
 });
 }
 
