@@ -106,7 +106,7 @@ p {font-family: Helvetica, Arial, sans-serif;}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px;position: relative;}
 #inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
 
-.sleeve {height: auto; display:block; margin: 20px;}
+.sleeve {height: 100%; display:block; margin: 20px; float:left}
 .inner {margin: 20px;}
 
 header#splash {
@@ -340,7 +340,7 @@ section#schedule-results .sleeve {margin:0}
 
 #local {height: 100%; width: 40%; position: relative; display:inline-block}
 #local * section {
-	display:inline-block; width:50%; height: auto; display: inline-block; position: relative; min-height: 200px; max-height: 400px;
+	display:inline-block; width:50%; height: auto; display: inline-block; position: relative; min-height: 200px; 
 }
 
 #local header.team-finder {background: #363636;
@@ -360,7 +360,7 @@ section#schedule-results .sleeve {margin:0}
 #local * .active-slide {height: auto;}
 
 
-section#nearby-teams { height: auto; min-height: 440px; width: 100%; padding: 10px; overflow-x: auto}
+section#nearby-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
 section#nearby-teams .sleeve {margin: 0px}
 
 
