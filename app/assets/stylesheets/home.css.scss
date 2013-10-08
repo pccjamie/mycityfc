@@ -37,7 +37,7 @@ $profile: rgba(31,159,255,.75);
 .notice, .alert {background: orange; color: #FFF; padding: 10px;}
 
 body.bg-default {
-	//background-image: url(closeup.jpg);
+	background-image: url(closeup.jpg);
 	// #wrapper {background: $bg-dark}
 }
 body.bg-slides {
@@ -47,6 +47,8 @@ body.bg-parent-profiles {
 	background-image: url(kids1.jpg);
 }
 body.bg-fan-profiles {
+		background-image: url(closeup.jpg);
+
 }
 
 body {
@@ -331,9 +333,6 @@ section#fans .sleeve aside {
 		}
 
 section#schedule-results .sleeve {margin:0}
-
-
-
 
 
 
