@@ -12,7 +12,7 @@ if(window.location.href.indexOf("fan") > -1) {
 	if (window.location.href.indexOf("slides") > -1) {
 		$('body').addClass('bg-slides').removeClass('bg-default');
 	} else {
-		$('body').removedClass('bg-default');
+		$('body').removeClass('bg-default');
 }
 
 // //GET TEAM ID
@@ -233,7 +233,7 @@ function sorting(){
 //conditional display of tabs, depending on various situations
 $("li.type-all").click(function(){
 
-	$("section#schedule-results * .single-game:contains('"+my_team"')").show();
+	$("section#schedule-results * .single-game:contains('"New York"')").show();
 
 });
 
