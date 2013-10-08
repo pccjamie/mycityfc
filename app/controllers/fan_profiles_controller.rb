@@ -47,7 +47,8 @@ class FanProfilesController < ApplicationController
     # YT API KEY
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
     # YT USERNAME
-    y_user = "soundersfcdotcom"     # HARDCODING FOR NOW. NEED TO QUERY FOR Y_USER VALUE BASED ON USER'S PREFERRED TEAM.
+    y_user = "soundersfcdotcom"    
+     # HARDCODING FOR NOW. NEED TO QUERY FOR Y_USER VALUE BASED ON USER'S PREFERRED TEAM.
 
     #1. FIND CHANNEL IDS FOR EACH TEAM BASED ON YT USERNAME- youtube.channels.list
 

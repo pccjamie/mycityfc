@@ -12,7 +12,7 @@ if(window.location.href.indexOf("fan") > -1) {
 	if (window.location.href.indexOf("slides") > -1) {
 		$('body').addClass('bg-slides').removeClass('bg-default');
 	} else {
-		$('body').addClass('bg-default');
+		$('body').removedClass('bg-default');
 }
 
 // //GET TEAM ID
@@ -87,8 +87,6 @@ if(window.location.href.indexOf("fan") > -1) {
 // 	return;
 // }
 
-
-
 var my_team = $('.my-team').text();
 var cap = 2;
 
@@ -100,7 +98,7 @@ function find_news() {
 		data: {
 			apikey: "4u3e6enmscdszh8qcy9dh7my",
 			_accept: "application/json",
-			limit: 10
+			limit: 5
 		},
 		dataType: "jsonp",
 		beforeSend: function(xhr) {
@@ -137,9 +135,9 @@ function switch_leagues() {
 
 function location_based_view() {
 	//if no primary team, use background for team closest
-	//var bg = $('.team-venue-image:first').text();
+	var bg = $('.team-venue-image:first').text();
 	//else use background for team chosen
-	//$('body').css('background-image', 'url(' + bg + ')');
+	$('body').css('background-image', 'url(' + bg + ')');
 
 	
 	$('#js-schedule').css('background-color', 'rgba(0,0,0,.60)');
