@@ -23,10 +23,10 @@ belongs_to :profilable, :polymorphic => true
       user = User.create(name:auth.extra.raw_info.name,
                          first_name:auth.info[:first_name],
                          provider:auth.provider,
-                         location:auth.info[:location][:name],
+                         location:auth.info[:location]["name"],
                          uid:auth.uid,
-                         city:auth.info[:location][:name].split(',').first,
-                         state:auth.info[:location][:name].split(',').last,
+                         city:auth.info[:location]["name"].split(',').first,
+                         state:auth.info[:location]["name"].split(',').last,
                          picture:auth.info[:image],
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]
