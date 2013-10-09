@@ -24,22 +24,20 @@
  
 <body class="bg-default">
 
+
+
+
+<!--<div id="match-trigger">Game Day!</div>-->
+
+<div id="nav-wrapper">
+
 <% if user_signed_in? %>
   <%= render "/partials/login" %>
 <% else %>
   <%= render "/partials/public" %>
 <% end %>
 
-<header class="logo">
-
-  <h2>Soccer is Fun. Come Play!</h2>
-  <h1>MYCITYFC</h1>
-
-</header>
-
-<!--<div id="match-trigger">Game Day!</div>-->
-
-<div id="nav-wrapper"><%= render "/partials/login" %></div>
+</div>
   
   <!--  <p class="notice"><%#= notice %></p>
    <p class="alert"><%#= alert %></p> -->
