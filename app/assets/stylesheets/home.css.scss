@@ -79,7 +79,7 @@ table {display: block; position: relative;}
 ul {list-style: none; margin: 0; padding:0; line-height: 40px;}
 li {display: inline; padding: 5px}
 
-h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px; font-weight: normal}
+h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
 
 p {font-family: Helvetica, Arial, sans-serif;}
 
@@ -113,10 +113,11 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
-header.logo {display:inline-block; width:35%; float: left; margin: 20px;
+header.logo {display:inline-block; width: 100%; float: left; margin: 20px;
  
  	* {margin: 0}
-	h1 {font-size: 32px;}
+	h1 {font-size: 92px; letter-spacing: 8px; text-shadow: -2px -2px 2px #425666; color: #FFF}
+
 }
 
 

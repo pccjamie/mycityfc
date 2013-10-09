@@ -12,7 +12,7 @@ if(window.location.href.indexOf("fan") > -1) {
 	if (window.location.href.indexOf("slides") > -1) {
 		$('body').addClass('bg-slides').removeClass('bg-default');
 	} else {
-		$('body').removeClass('bg-default');
+		$('body').addClass('bg-default');
 }
 
 // //GET TEAM ID
