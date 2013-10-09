@@ -25,8 +25,8 @@ belongs_to :profilable, :polymorphic => true
                          provider:auth.provider,
                          location:auth.info[:location],
                          uid:auth.uid,
-                         city: auth.info[:location].split(',').first,
-                         state: auth.info[:location].split(',').last,
+                         # city: auth.info[:location].split(',').first,
+                         # state: auth.info[:location].split(',').last,
                          picture: auth.info[:image],
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]
@@ -35,13 +35,13 @@ belongs_to :profilable, :polymorphic => true
     user
   end
 
-  # def self.new_with_session(params, session)
-  #   super.tap do |user|
-  #     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-  #       user.location = data["location"] if user.location_changed?
-  #     end
-  #   end
-  # end
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.location = data["location"] if user.location_changed?
+      end
+    end
+  end
 
   
 
