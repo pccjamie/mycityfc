@@ -116,7 +116,6 @@ $("#banner").on("click", ".news-trigger", function(e) {
 	e.preventDefault();
 		$('a.credits').fadeToggle();
 		$('#js-headlines').slideToggle('slow', function(){
-			// ("#js-headlines article:first").nextAll().css('display', 'block');
 		});
 });
 
@@ -133,7 +132,6 @@ function location_based_view() {
 	var bg = $('.team-venue-image:first').text();
 	//else use background for team chosen
 	$('body').css('background-image', 'url(' + bg + ')');
-	$('#js-schedule').css('background-color', 'rgba(0,0,0,.60)');
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
 }
@@ -151,14 +149,16 @@ function filter_schedule() {
 
 		if (game_date < today) {
 			var removable = $("#game-previews * .single-game:contains('" + my_team + "')").css('display','block');
-			$(removable).remove();		
+			$(removable).remove();
 		}
 
 		else if (game_date >= today) {
 
 			//display ALL games that have my team
 			$(".single-game:contains('" + my_team + "')").css('display','block');
+
 			//$(this):contains("'+ my_team +'")).parent().first().appendTo(".game-summary").css('display','block');
+			
 			//add to upcoming games (NEED TO ACCOUNT FOR HAVING A HUGE LIST AT BEG OF MO)
 			$(this).filter(":contains('"+my_team+"')").appendTo("#upcoming-games");
 		
@@ -225,6 +225,7 @@ function sorting(){
 //conditional display of tabs, depending on various situations
 $("li.type-all").click(function(){
 	$("section#schedule-results * .single-game:contains('"+my_team+"')").show();
+
 });
 
 $("li.type-mls-reg").click(function(){

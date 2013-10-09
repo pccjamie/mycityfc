@@ -21,7 +21,7 @@ module Soccer1
     # config.i18n.default_locale = :de
 
 
-    # Necessary to add this line to THIS file, not production.rb. required for Heroku - Rails 4 compatability
+    # Necessary to add THIS line to THIS file, not production.rb. required for Heroku - Rails 4 compatability
     # does NOT address OPEN ISSUES with COMPASS_RAILS. That gem is apparently required by Foundation. Not true. 
     # compass-rails is only required to use certain SASS helpers provided by Foundation. Doesn't affect normal SASS and CSS. 
     # WATCHING https://github.com/Compass/compass-rails/pull/59 for ongoing releases.

@@ -188,12 +188,12 @@ section#schedule-results * .clearfix {display:none}
 /* previews */
 header#banner #game-previews {
 	
-	height: auto; width: 60%; position: relative; display:inline-block;float:left; background: #1f9fff;
+	height: auto; width: 60%; position: relative; display:inline-block;float:left;
 
 	.gameday-trigger {height: 100px; padding: 0; margin: 0}
 	.gameday-trigger {width: 100px; margin: 20px 20px 0 0; background: red}
 
-	.wrapper {background: #363636;  height: auto;width: 100%; float: left; display:block}
+	.wrapper {height: auto;width: 100%; float: left; display:block}
 	.wrapper .schedule-trigger {height: 100%; width: 90%; background: transparent; display:inline-block; float:left; position: relative}	
 	
 	}
@@ -232,11 +232,15 @@ header#banner #game-previews {
 }
 
 /*schedule filtering*/
-#upcoming-games .single-game {height: 150px; width:50%; border: 1px solid #363636; padding: 18px; float: left; margin-bottom: 0;display:inline; }
+#upcoming-games .single-game {height: 150px; width:50%; border: 1px solid #363636; padding: 8px; float: left; margin-bottom: 0;display:inline; }
 #upcoming-games .single-game * {color: #363636}; 
 #upcoming-games .single-game * a {background: #1f9fff;color:#FFF}
-#upcoming-games .single-game .game-time {display:block; margin-bottom: 10px;}
+#upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
+#upcoming-games .single-game .game-time {display: inline; margin-bottom: 10px; width:35%}
+#upcoming-games .single-game .game-competition {display:block; width: auto; margin: 5px 0}
 #upcoming-games .single-game .game-score {display:none}
+#upcoming-games .single-game .clearfix {display:none}
+#upcoming-games .single-game .game-links {position:absolute; bottom: 0px}
 
 
 /* NEWS TICKER */
@@ -350,9 +354,9 @@ section#tbd .sleeve {margin: 20px}
 
 
 #local header.team-finder {}
-	h3 a.team-directory {background: rgba(66,85,102,1); color: #363636; float: right}
+	h3 a.team-directory {background: rgba(66,85,102,1); color: #FFF; float: right}
 
-#local #slideshow {min-height:400px;}
+#local #slideshow {min-height:400px; overflow: none}
 #local * .leagueslider {height: auto; display: block}
 #local * .league { height: auto; width: 100%; margin-top: 40px;}
 
