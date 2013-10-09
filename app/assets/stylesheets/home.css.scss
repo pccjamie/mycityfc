@@ -113,6 +113,9 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
+header.logo {display:inline-block; width:35%; float: left}
+nav.account {display:inline-block; width: 60%; float:right}
+
 header#splash {
 	h1 {font-size: 120px;}
 	h2 {font-size: 30px; background: $bg-light;}
