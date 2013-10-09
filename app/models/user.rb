@@ -24,9 +24,8 @@ belongs_to :profilable, :polymorphic => true
                          first_name:auth.info[:first_name],
                          provider:auth.provider,
                          location:auth.info[:location],
-                         uid:auth.uid,
-                         city: auth.info[:location].split(',').first,
-                         state: auth.info[:location].split(',').last,
+                         # city: auth.info[:location].split(',').first,
+                         # state: auth.info[:location].split(',').last,
                          picture: auth.info[:image],
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]

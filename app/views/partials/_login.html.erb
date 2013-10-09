@@ -1,36 +1,22 @@
-
-
 <nav class="private account">
-
- <ul class="right">
+  <ul class="right">
     <li class="current-user-city">Your Current Location is: <%= current_user.city %></li>
     <li><%= image_tag current_user.picture %></li>
     <li><%= link_to('Profile', edit_user_registration_path) %></li>
     <li><%= link_to('Logout', destroy_user_session_path)%></li>
-    </li>
+  </li>
 </ul>
-
 </nav>
-
-
-
 <header class="logo">
-
-  <h4>Soccer is Fun. Come Play!</h4>
-  <h1>MYCITYFC</h1>
-
+<h4>Soccer is Fun. Come Play!</h4>
+<h1>MYCITYFC</h1>
 </header>
-
-
-
 <nav class="private content">
-
-  <ul class="left">
-    <li><%= link_to 'MYCITYFC', root_path %></li>
-    <li><%= link_to 'US SOCCER STATS', slides_path %></li>
-    <li><%= link_to 'PRO SOCCER IN YOUR AREA', fan_profiles_path %></li>
-    <li><%= link_to 'ALL TEAMS', teams_path, class: "team-directory" %></li>
-    <li><%= link_to 'soccer mom?', parent_profiles_path %></li>
-  </ul>
-
+<ul class="left">
+  <li><%= link_to 'MYCITYFC', root_path %></li>
+  <li><%= link_to 'US SOCCER STATS', slides_path %></li>
+  <li><%= link_to 'PRO SOCCER IN YOUR AREA', fan_profiles_path %></li>
+  <li><%= link_to 'ALL TEAMS', teams_path, class: "team-directory" %></li>
+  <li><%= link_to 'soccer mom?', parent_profiles_path %></li>
+</ul>
 </nav>

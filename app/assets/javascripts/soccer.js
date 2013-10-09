@@ -195,7 +195,7 @@ function filter_schedule() {
 				$(this).addClass('type-natl-can');
 				break;
 			default:
-				$(this).addClass('type-unknown');
+				$(this).addClass('type-other');
 		}
 
 		// finally id the next game

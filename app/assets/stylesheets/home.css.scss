@@ -170,7 +170,7 @@ h3.my-team {display:none}
 	.game-date {width: 100%; color: #363636}
 	.game-home-logo,	.game-away-logo {width: 50px;}
 	.game-score {width: 50px;}
-	.game-links {padding: 5px; color: #FFF; float:right;}
+	.game-links {padding: 0; color: #FFF; float:right;}
 
 	.field-home-team-logo, .field-away-team-logo {width: auto;}
 	.field-home-team-logo img, .field-away-team-logo img {width: 25px}
@@ -201,8 +201,7 @@ header#banner #game-previews {
 	
 	height: auto; width: 60%; position: relative; display:inline-block;float:left;
 
-	.gameday-trigger {height: 100px; padding: 0; margin: 0}
-	.gameday-trigger {width: 100px; margin: 20px 20px 0 0; background: red}
+	.gameday-trigger {height: 180px; padding: 10px; margin: 0; width: 80px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 
 	.wrapper {height: auto;width: 100%; float: left; display:block}
 	.wrapper .schedule-trigger {height: 100%; width: 90%; background: transparent; display:inline-block; float:left; position: relative}	
@@ -231,7 +230,7 @@ header#banner #game-previews {
 
 #upcoming-games {
 
-	height: 100%; width: 100%; overflow-y: auto; margin: auto; overflow: auto; position: relative;/*to be changed to :none */z-index:9999; display: none;
+	height: 100%; width: 100%; overflow-y: auto; margin: auto; overflow: auto; position: relative;/*to be changed to :none */z-index: 8500; display: none;
   // -webkit-transition: height 1s ease-in-out;
   -webkit-transition: display 1s ease-in-out;
   -moz-transition: display 1s ease-in-out;
@@ -421,7 +420,7 @@ ul.competitions {height: auto; background: #363636; float: right; margin-right: 
 .type-natl-us {background: #336699}
 .type-natl-can {background: #FF0000}
 
-.type-unknown {background: black}
+.type-other {background: brown}
 
 li.type-mls-reg {color: #363636}
 
