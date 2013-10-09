@@ -113,8 +113,26 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
-header.logo {display:inline-block; width:35%; float: left}
-nav.account {display:inline-block; width: 60%; float:right}
+#nav-wrapper {
+	
+	header.logo {width: auto; max-width:35%; float: left; margin: 20px;display:inline-block; 
+ 
+ 	* {margin: 0}
+	h1 {font-size: 32px;}
+	}
+
+	aside.special {width: auto; max-width: 65%; display:inline-block;}
+
+
+	nav.account {display:inline-block; width: 100%; float:right; background: #425666}
+
+	nav.content {font-size:24px}
+
+
+}
+
+
+
 
 header#splash {
 	h1 {font-size: 120px;}
@@ -124,7 +142,7 @@ header#splash {
 
 
 /*top nav*/
-#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-medium; padding:20px;}
+#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-steel; padding: 0 20px;}
 
 nav {height: 40px; width: 100%; display: block; line-height: 40px;		
 	* img {margin-top: 4px; height: 20px}
@@ -155,7 +173,7 @@ h3.my-team {display:none}
 
 /*SCHEDULE */
 /* defaults */
-.single-game {height: auto; padding: 10px; margin-bottom: 1px; display: none; float: left; position: relative; z-index:20;
+.single-game {height: auto; padding: 10px; margin-bottom: 1px; display: none; float: left; position: relative; z-index:20; background: #FFF;
 
 	* {width: 100px; display:inline-block; /*background: $bg-rev-medium; */line-height: normal; color: a; }
 
@@ -205,7 +223,7 @@ header#banner #game-previews {
 
 
 	/*next game only */
-	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block;background-image: url(closeup.jpg); }
+	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block; background: orange; background-image: url(closeup.jpg);}
 
 
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
