@@ -1,0 +1,20 @@
+<header class="logo">
+
+  <h4>Soccer is Fun. Come Play!</h4>
+  <h1>MYCITYFC</h1>
+
+</header>
+
+<nav class="public content">
+
+<ul class="left">
+  <li><% link_to 'MYCITYFC', root_path %></li>
+</ul>
+
+<ul class="right">
+  <!-- <li><%#= link_to('Login', new_user_session_path)  %> </li> -->
+  <!--<li><%#= link_to('Register', new_user_registration_path)%></li>-->
+  <li>SIGN IN WITH FACEBOOK<%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%></li>
+</ul>
+
+</nav>

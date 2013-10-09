@@ -220,7 +220,7 @@ header#banner #game-previews {
 
 #upcoming-games {
 
-	height: 100%; width: 100%; overflow-y: auto; margin: auto; overflow: auto; background: rgba(255,255,255,.9); position: relative;/*to be changed to :none */z-index:9999; display: none;
+	height: 100%; width: 100%; overflow-y: auto; margin: auto; overflow: auto; position: relative;/*to be changed to :none */z-index:9999; display: none;
   // -webkit-transition: height 1s ease-in-out;
   -webkit-transition: display 1s ease-in-out;
   -moz-transition: display 1s ease-in-out;
@@ -237,10 +237,10 @@ header#banner #game-previews {
 #upcoming-games .single-game * a {background: #1f9fff;color:#FFF}
 #upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
 #upcoming-games .single-game .game-time {display: inline; margin-bottom: 10px; width:35%}
-#upcoming-games .single-game .game-competition {display:block; width: auto; margin: 5px 0}
+#upcoming-games .single-game .game-competition {display:block; width: auto; margin: 10px 0}
 #upcoming-games .single-game .game-score {display:none}
 #upcoming-games .single-game .clearfix {display:none}
-#upcoming-games .single-game .game-links {position:absolute; bottom: 0px}
+#upcoming-games .single-game .game-links {margin-top: 10px;}
 
 
 /* NEWS TICKER */
