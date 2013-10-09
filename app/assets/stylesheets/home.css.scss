@@ -113,25 +113,15 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
-
-	
-	header.logo {width: auto; max-width:35%; float: left; margin: 20px;display:inline-block; 
+header.logo {display:inline-block; width:35%; float: left; margin: 20px;
  
  	* {margin: 0}
 	h1 {font-size: 32px;}
-	}
+}
 
 
 
-	nav.account {display:inline-block; width: 100%; float:right; background: #425666}
-
-	nav.content {font-size:24px}
-
-
-
-
-
-
+nav.account {display:inline-block; width: 100%; float:right; background: #425666}
 
 header#splash {
 	h1 {font-size: 120px;}
