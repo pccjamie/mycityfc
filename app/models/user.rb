@@ -23,7 +23,7 @@ belongs_to :profilable, :polymorphic => true
       user = User.create(name:auth.extra.raw_info.name,
                          first_name:auth.info[:first_name],
                          provider:auth.provider,
-                         location:auth.info[:gender],
+                         location:auth.info.gender,
                          #location:auth.extra.raw_info.name,
                          
                          uid:auth.uid,
