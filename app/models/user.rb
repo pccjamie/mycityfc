@@ -35,13 +35,13 @@ belongs_to :profilable, :polymorphic => true
     user
   end
 
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.location = data["location"] if user.location_changed?
-      end
-    end
-  end
+  # def self.new_with_session(params, session)
+  #   super.tap do |user|
+  #     if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+  #       user.location = data["location"] if user.location_changed?
+  #     end
+  #   end
+  # end
 
   
 
