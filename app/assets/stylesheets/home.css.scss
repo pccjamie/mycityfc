@@ -113,7 +113,7 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
-#nav-wrapper {
+
 	
 	header.logo {width: auto; max-width:35%; float: left; margin: 20px;display:inline-block; 
  
@@ -121,7 +121,6 @@ p {font-family: Helvetica, Arial, sans-serif;}
 	h1 {font-size: 32px;}
 	}
 
-	aside.special {width: auto; max-width: 65%; display:inline-block;}
 
 
 	nav.account {display:inline-block; width: 100%; float:right; background: #425666}
@@ -129,7 +128,7 @@ p {font-family: Helvetica, Arial, sans-serif;}
 	nav.content {font-size:24px}
 
 
-}
+
 
 
 
@@ -223,7 +222,7 @@ header#banner #game-previews {
 
 
 	/*next game only */
-	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block; background: orange; background-image: url(closeup.jpg);}
+	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block;background-image: url(closeup.jpg); }
 
 
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
