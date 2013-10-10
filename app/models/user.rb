@@ -27,8 +27,8 @@ belongs_to :profilable, :polymorphic => true
                          #location:auth.info[:location],
                          # city: auth.info[:location].split(',').first,
                          # state: auth.info[:location].split(',').last,
-                         location:auth.info["location"],
-                         
+                         #location:auth.info["location"], #allows login, noting written.
+                         location:auth.info["location"].to_s,
 
                          #location:auth.info[:location][:name],#results in error
                          #location:auth.info["location"]["name"],# results in error
