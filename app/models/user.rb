@@ -29,7 +29,7 @@ belongs_to :profilable, :polymorphic => true
                          # state: auth.info[:location].split(',').last,
                          
                         #location:auth.extra.raw_info["gender"],# CORRECT WRITING
-                        location:auth.extra.raw_info.location["name"],# CORRECT WRITING
+                        location:auth.extra.raw_info.location[:name],# CORRECT WRITING
 
                          #location:auth.info["location"]["name"].to_s, #no account. error
 
