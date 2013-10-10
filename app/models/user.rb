@@ -31,11 +31,12 @@ belongs_to :profilable, :polymorphic => true
                         #location:auth.extra.raw_info[:location][:name],
                         #location:auth.extra.raw_info.location.name,
                         
-                        location:auth.info[:location][:name],
+                        location:auth.info["location"],
 
                         #LOGIN AND SAVE 
                         #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
                         #location:auth.extra.raw_info[:gender]
+
                         
                         #LOGIN, And NO SAVE 
                         # location:auth.extra.raw_info[:location],
