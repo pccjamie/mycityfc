@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  # raise request.env["omniauth.auth"].to_yaml
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
