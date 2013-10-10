@@ -225,7 +225,7 @@ Devise.setup do |config|
 
   #OMNIAUTH FB
   require "omniauth-facebook"
-  config.omniauth :facebook, ENV['FB_APP_ID'],ENV['FB_APP_SEC'],{:scope => 'email, offline_access, location'} 
+  config.omniauth :facebook, ENV['FB_APP_ID'],ENV['FB_APP_SEC'],{:scope => 'email,  user_location'} #offline_access permission deprecated by FB.
 
  # :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}
  
