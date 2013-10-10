@@ -29,9 +29,9 @@ belongs_to :profilable, :polymorphic => true
                          # state: auth.info[:location].split(',').last,
                          
                         #location:auth.extra.raw_info[:location][:name],
-                        location:auth.extra.raw_info.location.name,
-
-
+                        #location:auth.extra.raw_info.location.name,
+                        location:auth.info[:urls][:Facebook],
+                        
                         #LOGIN AND SAVE 
                         #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
                         #location:auth.extra.raw_info[:gender]
