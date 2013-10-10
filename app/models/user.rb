@@ -31,7 +31,7 @@ belongs_to :profilable, :polymorphic => true
 
                         #LOGIN AND SAVE 
                         #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
-                        location:auth.extra.raw_info[:location]
+                        location:auth.extra.raw_info[:location],
 
                         # ERROR
                         #location:auth.extra.raw_info.location["name"],
