@@ -39,8 +39,12 @@ belongs_to :profilable, :polymorphic => true
                          #location:auth.info["location"], #login, no save.
                          #location:auth.info["location"].to_s, #allows login, noting written.
 
-                         #location:auth.info[:location][:name],#results in error
-                         location:auth.extra.raw_info["location"]["name"],# results in error
+                         location:auth.extra.raw_info[:location][:name],#results in error
+
+
+
+                         # errors
+                         #location:auth.extra.raw_info["location"]["name"],
                          
 
                          picture: auth.info[:image],
