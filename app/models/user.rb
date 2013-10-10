@@ -28,6 +28,8 @@ belongs_to :profilable, :polymorphic => true
                          # city: auth.info[:location].split(',').first,
                          # state: auth.info[:location].split(',').last,
                          
+
+                        #LOGIN AND SAVE 
                         #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
 
 
@@ -36,14 +38,16 @@ belongs_to :profilable, :polymorphic => true
                          #location:auth.info["location"]["name"].to_s, #no account. error
 
                          #location:auth.extra.raw_info["location"].to_s, #login, no save.
-                         #location:auth.info["location"], #login, no save.
-                         #location:auth.info["location"].to_s, #allows login, noting written.
+                         
+                        #LOGIN, NO SAVE
+                         #location:auth.info["location"], 
+                         #location:auth.info["location"].to_s, 
 
-                         location:auth.extra.raw_info[:location][:name],#results in error
 
-
+                      location:auth.extra.raw_info["location"].flatten
 
                          # errors
+                         #location:auth.extra.raw_info[:location][:name],
                          #location:auth.extra.raw_info["location"]["name"],
                          
 
