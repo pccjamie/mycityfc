@@ -28,17 +28,21 @@ belongs_to :profilable, :polymorphic => true
                          # city: auth.info[:location].split(',').first,
                          # state: auth.info[:location].split(',').last,
                          
-                        #location:auth.extra.raw_info["gender"],# SAVES
+                        #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
+
+
                         #location:auth.extra.raw_info[:location][:name],# CORRECT WRITING
-                        location:auth.extra.raw_info["location"].to_s,# CORRECT WRITING
 
                          #location:auth.info["location"]["name"].to_s, #no account. error
 
-                         #location:auth.info["location"], #allows login, noting written.
+                         #location:auth.extra.raw_info["location"].to_s, #login, no save.
+                         #location:auth.info["location"], #login, no save.
                          #location:auth.info["location"].to_s, #allows login, noting written.
 
                          #location:auth.info[:location][:name],#results in error
-                         #location:auth.info["location"]["name"],# results in error
+                         location:auth.extra.raw_info["location"]["name"],# results in error
+                         
+
                          picture: auth.info[:image],
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]
