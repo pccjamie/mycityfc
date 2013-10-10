@@ -28,7 +28,7 @@ belongs_to :profilable, :polymorphic => true
                          # city: auth.info[:location].split(',').first,
                          # state: auth.info[:location].split(',').last,
                          
-                        location:auth.extra.raw_info[:user_location],
+                        location:auth.info[:location],
 
 
                         #LOGIN AND SAVE 
