@@ -21,7 +21,7 @@ class FanProfilesController < ApplicationController
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     #get_teams_from_espn
-    get_team_and_schedule
+    get_user_team_info
     get_video_from_youtube
     #return
   end
@@ -36,25 +36,21 @@ class FanProfilesController < ApplicationController
 
   def get_video_from_youtube
     current_user
+
     #first get the user's teams
-    get_team_and_schedule
+    get_user_team_info
 
     base = "https://www.googleapis.com/youtube/v3"
-
-    # YT API KEY
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
 
     # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
+    y_user = "soundersfcdotcom"
 
-    y_user = "soundersfcdotcom" 
-
-    #1. FIND CHANNEL IDS FOR EACH TEAM BASED ON YT USERNAME- youtube.channels.list
-
-    #https://www.googleapis.com/youtube/v3/channels?part=id%2C+snippet&forUsername=soundersfcdotcom&key=AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA
+    #FIND CHANNELS FOR EACH TEAM BASED ON YT USERNAME (youtube.channels.list)
 
     response = HTTParty.get("#{base}/channels?part=id%2C+snippet&forUsername=#{y_user}&key=#{y_key}")
 
-    #get ch id
+    #get ch id from the response
     channel_id = response["items"][0]["id"]
 
     #get ch info from id
@@ -67,7 +63,6 @@ class FanProfilesController < ApplicationController
     end
 
     #this gets the actual video embed html.....but not using. Handling iframe rendering another way.
-
     # @videos = []
     # @video_ids.each do |id|
     #   source = HTTParty.get("#{base}/videos?part=id,snippet,player&id=#{id}&key=#{y_key}")
@@ -80,6 +75,7 @@ class FanProfilesController < ApplicationController
       format.html
       format.json { render :json => @videos.to_html }
     end
+
     return
   end
 
@@ -92,63 +88,33 @@ class FanProfilesController < ApplicationController
     return [@time, @today, @tomorrow, @yesterday]
   end
 
-  def get_source
 
-    year = Chronic.parse('this year').strftime('%Y')
-    
-    #SCRAPE MLS SCHEDULE
+  # def find_schedules
+
+  #   #MLS (alt: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?")
+  #   year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
+  #   url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
+
+  # end
+
+
+  def get_user_team_info 
+
+    #need to rethink how schedule data is obtained and formatted. Scrape is not ideal. 
+
+    #get users team and sends to DOM, where it's used in schedule filtering.
+    my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
+    @formatted_team = my_team[0]
+ 
+    #get teams schedule. to be passed to DOM for client side handling.
+    year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
     url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
-
-    #alt for mls schedule: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?"
-
-  end
-
-
-  def get_team_and_schedule
-
-    #as written, assumes  1) user's team IS in fact on the schedule page, and 2) source is formatted a certain way. WRITE CODE TO ACCOUNT FOR 
-
-    #filter results for my team here? client side? Currently, results are sent to client and filtered there based on DOM value. Move to server side somehow.
-
-
-    schedule_array = Nokogiri::HTML(open(get_source)).css('.schedule-page .schedule-table tbody tr').to_a
-
-    #get user's team from db, formats to be friendly for schedule retrieval and rendering.
-    
-    my_team = current_user.primary_team.split(' ').map(&:strip)#NOT WORKING FOR 2 WORD CITY NAMES YET
-
-    #@formatted_team = "Seattle"
-    @formatted_team = my_team[0] 
-
+    schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-page .schedule-table tbody tr').to_a
     @schedule = schedule_array
 
+    #get teams youtube username
+
   end
-
-
-  # def finds_next_game
-    
-  #   #finds game date and formats time. not for display in view, but for comparison on server to filter out past dates and also to determine which game state to show.
-  #   get_time
-  #   get_team_and_schedule
-   
-  #   schedule_array.each do |date|
-  #     raw_date = date.css('.schedule-page h3').text
-  #     @game_date = Chronic.parse(raw_date)#.strftime('%Y-%m-%d')
-      
-  #     if (game_date < @today)
-  #       schedule_array.delete game_date
-  #       true
-  #     end
-  #   end
-  #   #get current date
-
-  #   #compares the two
-  #   if schedule_array.include?(@today)
-  #     match_day
-  #   else
-  #     match_preview
-  #   end
-  # end
 
   #gets team names from espn db automatically (not doing anything with this yet)
   def get_teams_from_espn

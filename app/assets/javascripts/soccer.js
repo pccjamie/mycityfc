@@ -125,13 +125,12 @@ function switch_leagues() {
 	});
 }
 
-//change BG based on closest team
 
 function location_based_view() {
 	//if no primary team, use background for team closest
 	var bg = $('.team-venue-image:first').text();
 	//else use background for team chosen
-	$('.js-next-game').css('background-image', 'url(' + bg + ')');
+	$('body').css('background-image', 'url(' + bg + ')'); //change this???
 	$('.team:first').addClass('primary');
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
 }
@@ -143,7 +142,6 @@ function filter_schedule() {
 	// check MLS schedule
 	$('.single-game').each(function() {
 
-		//var game = $(this);
 		//removes day of week for calc.	
 		var game_date = moment($(this).children('.game-date').text()).format("MM-DD-YYYY");
 
@@ -156,10 +154,8 @@ function filter_schedule() {
 
 			//display ALL games that have my team
 			$(".single-game:contains('" + my_team + "')").css('display','block');
-
-			//$(this):contains("'+ my_team +'")).parent().first().appendTo(".game-summary").css('display','block');
 			
-			//add to upcoming games (NEED TO ACCOUNT FOR HAVING A HUGE LIST AT BEG OF MO)
+			//add upcoming games
 			$(this).filter(":contains('"+my_team+"')").appendTo("#upcoming-games");
 		
 			//grab the first from upcoming games
@@ -168,10 +164,9 @@ function filter_schedule() {
 			//limits returned results (NEED TO ADD USER OPTION TO CHANGE CAP)			
 			$('#upcoming-games').children().slice(cap);
 
-			//add to next game
+			//add NEXT game from upcoming
 			$(single_game).filter(":contains('"+my_team+"')").prependTo('#next-game');
 
-			//NEED TO LIMIT RESULTS TO XXXX 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
 			if (game_date == today) {
 				$('.gameday-trigger').css('display', 'block');
@@ -197,9 +192,9 @@ function filter_schedule() {
 			default:
 				$(this).addClass('type-other');
 		}
-
 		// finally id the next game
-		$(single_game).addClass('js-next-game').removeClass('type-mls-reg');
+		$(single_game).addClass('js-next-game').removeClass('type-mls-reg'); //remove ALL classes that control
+	
 	})
 	$(".schedule-trigger").click(function() {
 	$('#upcoming-games').slideToggle('slow', function() {
@@ -216,23 +211,18 @@ function game_fields() {
 	if (($('a.game-matchcenter') || $('a.game-tickets')).empty()) {
 		$(this).css('display', 'none');
 	}
-	//channels
 }
 
 // ON CLICK
 function sorting(){
-
 //conditional display of tabs, depending on various situations
 $("li.type-all").click(function(){
 	$("section#schedule-results * .single-game:contains('"+my_team+"')").show();
-
 });
 
 $("li.type-mls-reg").click(function(){
-
 	$("section#schedule-results * .single-game.type-mls-reg:contains('"+my_team+"')").show();
 	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-mls-reg')").hide();
-
 });
 
 $("li.type-ccl").click(function(){
@@ -271,7 +261,7 @@ var ch_espn=espn.match(/ESPN/g);
 var mls="MLS LIVE"; 
 var ch_mls=mls.match(/MLS LIVE/g);
 
-$('a.game-tv:contains("'+ch_nbcsn+'")').filter(function() { 
+$('a.game-tv:contains("'+ch_nbcsn+'")').filter(function(){
 	return $(this).text();
 }).attr("href","http://www.nbcsports.com/tv-listings");
 
@@ -279,15 +269,15 @@ $('a.game-tv:contains("'+ch_nbcsn+'")').filter(function() {
 // 	return $(this).text();
 // }).attr("href","http://www.nbc.com");
 
-$('a.game-tv:contains("'+ch_bein+'")').filter(function() { 
+$('a.game-tv:contains("'+ch_bein+'")').filter(function() {
 	return $(this).text();
 }).attr("href","http://www.beinsport.tv");
 
-$('a.game-tv:contains("'+ch_mls+'")').filter(function() { 
+$('a.game-tv:contains("'+ch_mls+'")').filter(function() {
 	return $(this).text();
 }).attr("href","https://live.mlssoccer.com/");
 
-$('a.game-tv:contains("'+ch_espn+'")').filter(function() { 
+$('a.game-tv:contains("'+ch_espn+'")').filter(function() {
 	return $(this).text();
 }).attr("href","http://espn.go.com/watchespn/index");
 
@@ -302,5 +292,5 @@ $(function() {
 	switch_leagues();
 	filter_schedule();
 	game_fields();
-	sorting();	
+	sorting();
 });

@@ -112,10 +112,10 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
-header.logo {display:inline-block; width: 100%; float: left; margin: 20px;
+header.logo {display:inline-block; width: 100%; float: left; padding: 20px;
  
  	* {margin: 0}
-	h1 {font-size: 92px; letter-spacing: 8px; text-shadow: -2px -2px 2px #425666; color: #FFF}
+	h1 {letter-spacing: 8px; text-shadow: -2px -2px 2px #425666; color: #FFF}
 
 }
 
@@ -146,7 +146,7 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 
 
 
-header#banner  {height: auto; width: 100%; overflow: hidden; margin-bottom: 10px; position: relative; background: $bg-medium;}
+header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; background: $bg-medium;}
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
@@ -333,6 +333,8 @@ section#videos, section#fans, section#players, section#schedule-results {
 
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
+
+	background: rgba(0, 0, 0, 0.25);
 	.sleeve {margin: 0; float: none}
 }
 
