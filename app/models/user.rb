@@ -30,21 +30,7 @@ belongs_to :profilable, :polymorphic => true
                          
 
                         #LOGIN AND SAVE 
-                        #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
-
-
-                        #location:auth.extra.raw_info[:location][:name],# CORRECT WRITING
-
-                         #location:auth.info["location"]["name"].to_s, #no account. error
-
-                         #location:auth.extra.raw_info["location"].to_s, #login, no save.
-                         
-                        #LOGIN, NO SAVE
-                         #location:auth.extra_raw_info["location"], 
-                         #location:auth.extra_raw_info["location"].to_s, 
-                          
-
-                        location:auth.extra.raw_info["name"],
+                        location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
 
 
                         # ERROR
