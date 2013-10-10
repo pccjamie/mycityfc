@@ -40,15 +40,17 @@ belongs_to :profilable, :polymorphic => true
                          #location:auth.extra.raw_info["location"].to_s, #login, no save.
                          
                         #LOGIN, NO SAVE
-                         #location:auth.info["location"], 
-                         #location:auth.info["location"].to_s, 
+                         #location:auth.extra_raw_info["location"], 
+                         #location:auth.extra_raw_info["location"].to_s, 
+                          
+                        location:auth.extra.raw_info.location.name,
 
 
-                      location:auth.extra.raw_info["location"].flatten,
 
-                         # errors
-                         #location:auth.extra.raw_info[:location][:name],
-                         #location:auth.extra.raw_info["location"]["name"],
+                        # ERROR
+                        #location:auth.extra.raw_info["location"].flatten,
+                        #location:auth.extra.raw_info[:location][:name],
+                        #location:auth.extra.raw_info["location"]["name"],
                          
 
                          picture: auth.info[:image],
