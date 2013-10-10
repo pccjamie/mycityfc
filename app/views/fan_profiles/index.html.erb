@@ -26,11 +26,12 @@
 			data-cycle-youtube-autostop=true 
 			>
 
-			<% @video_ids.each do |v| %>
-				<iframe id="player" class="video-slide" type="text/html" width="600" height="375"
-				src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com"
-				frameborder="0"></iframe>
-			<% end %>
+<% @video_ids.each do |v| %>
+<iframe id="player" class="video-slide" type="text/html" width="600" height="375"
+src="http://www.youtube.com/embed/<%= v %>?enablejsapi=1&origin=http://localhost:3000.com"
+frameborder="0"></iframe>
+<% end %>
+
 		</div>
 	
 	</div>
