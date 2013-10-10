@@ -24,11 +24,10 @@ belongs_to :profilable, :polymorphic => true
                          first_name:auth.info[:first_name],
                          provider:auth.provider,
                          uid:auth.uid,
-                         #location:auth.info[:location],
-                         # city: auth.info[:location].split(',').first,
-                         # state: auth.info[:location].split(',').last,
-                         
                         location:auth.info[:location],
+                         city: auth.info[:location].split(',').first,
+                         state: auth.info[:location].split(',').last,
+                         
 
 
                         #LOGIN AND SAVE 
