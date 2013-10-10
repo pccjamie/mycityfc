@@ -38,7 +38,7 @@ class FanProfilesController < ApplicationController
     current_user
 
     #first get the user's teams
-    get_user_team_info
+    # get_user_team_info
 
     base = "https://www.googleapis.com/youtube/v3"
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
