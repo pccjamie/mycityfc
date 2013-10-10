@@ -30,7 +30,7 @@ belongs_to :profilable, :polymorphic => true
                          
                         #location:auth.extra.raw_info["gender"],# CORRECT WRITING
                         #location:auth.extra.raw_info[:location][:name],# CORRECT WRITING
-                        location:auth.extra.raw_info.location.flatten,# CORRECT WRITING
+                        location:auth.extra.raw_info["location"],# CORRECT WRITING
 
                          #location:auth.info["location"]["name"].to_s, #no account. error
 
