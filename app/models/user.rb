@@ -29,8 +29,8 @@ belongs_to :profilable, :polymorphic => true
                          # state: auth.info[:location].split(',').last,
                          #location:auth.info["location"],
                          #location:auth.info[:location][:name],
-                         #location:auth.info[:location][:name],
-                         location:auth.info["location"]["name"],
+                         location:auth.info[:location][:name],
+                         #location:auth.info["location"]["name"],# results in error
                          picture: auth.info[:image],
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]
