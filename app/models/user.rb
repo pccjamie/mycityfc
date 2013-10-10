@@ -27,9 +27,10 @@ belongs_to :profilable, :polymorphic => true
                          #location:auth.info[:location],
                          # city: auth.info[:location].split(',').first,
                          # state: auth.info[:location].split(',').last,
-                         #location:auth.info["location"],
-                         #location:auth.info[:location][:name],
-                         location:auth.info[:location][:name],
+                         location:auth.info["location"],
+                         
+
+                         #location:auth.info[:location][:name],#results in error
                          #location:auth.info["location"]["name"],# results in error
                          picture: auth.info[:image],
                          email:auth.info.email,
