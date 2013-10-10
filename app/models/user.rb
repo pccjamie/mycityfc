@@ -44,7 +44,7 @@ belongs_to :profilable, :polymorphic => true
                          #location:auth.info["location"].to_s, 
 
 
-                      location:auth.extra.raw_info["location"].flatten
+                      location:auth.extra.raw_info["location"].flatten,
 
                          # errors
                          #location:auth.extra.raw_info[:location][:name],
