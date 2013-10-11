@@ -43,8 +43,6 @@ class FanProfilesController < ApplicationController
     # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
     yt_username = "soundersfcdotcom"
 
-    yt_username = Team.find()
-
     base = "https://www.googleapis.com/youtube/v3"
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
 
