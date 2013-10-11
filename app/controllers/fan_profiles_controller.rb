@@ -40,15 +40,18 @@ class FanProfilesController < ApplicationController
     #first get the user's teams
     # get_user_team_info
 
+    # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
+    yt_username = "soundersfcdotcom"
+
+    yt_username = Team.find()
+
     base = "https://www.googleapis.com/youtube/v3"
     y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
 
-    # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
-    y_user = "soundersfcdotcom"
 
     #FIND CHANNELS FOR EACH TEAM BASED ON YT USERNAME (youtube.channels.list)
 
-    response = HTTParty.get("#{base}/channels?part=id%2C+snippet&forUsername=#{y_user}&key=#{y_key}")
+    response = HTTParty.get("#{base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{y_key}")
 
     #get ch id from the response
     channel_id = response["items"][0]["id"]
@@ -104,7 +107,7 @@ class FanProfilesController < ApplicationController
 
     #get users team and sends to DOM, where it's used in schedule filtering.
     my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
-    @formatted_team = my_team[0]
+    @my_team = my_team[0]
  
     #get teams schedule. to be passed to DOM for client side handling.
     year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.

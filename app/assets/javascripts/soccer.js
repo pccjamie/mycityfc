@@ -3,16 +3,21 @@
 var city = 'seattle';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
-if(window.location.href.indexOf("fan") > -1) {
-	$('body').addClass('bg-fan-profiles');
-	}
-	if(window.location.href.indexOf("parent") > -1) {
-	$('body').addClass('bg-parent-profiles');
-	}
-	if (window.location.href.indexOf("slides") > -1) {
-		$('body').addClass('bg-slides').removeClass('bg-default');
-	} else {
-		$('body').addClass('bg-default');
+
+if (window.location.href.indexOf("fan") > -1) {
+	$('body').toggleClass('bg-fan-profiles');
+}
+
+if (window.location.href.indexOf("parent") > -1) {
+	$('body').toggleClass('bg-parent-profiles');
+}
+
+if (window.location.href.indexOf("slides") > -1) {
+	$('body').toggleClass('bg-slides');
+}
+
+else {
+	$('body').toggleClass('bg-default');
 }
 
 // //GET TEAM ID
@@ -36,6 +41,7 @@ if(window.location.href.indexOf("fan") > -1) {
 // 	});
 
 // // GET INFO
+
 function find_team_info() {
 	var espn_links;
 	$.ajax({
@@ -52,15 +58,15 @@ function find_team_info() {
 		type: "get"
 	}).done(function(data) {
 
-			console.log(team_id);
+		console.log(team_id);
 		$.each(data.sports[0].leagues[0].teams, function(index, team) {
 
 			var team_name = team.name.toLowerCase();
 			var team_location = team.location.toLowerCase();
 			var team_id = team.id;
 
-		// $('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
-		// $("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
+			// $('#my-teams * .team-feed header').append("<div class=feed-data>" + team_location + "</div>");
+			// $("#my-teams * .feed-data:contains('" + city + "')").css("display", "block");
 			$.each(team, function(index, info) {
 
 				info2 = $(info);
@@ -71,7 +77,7 @@ function find_team_info() {
 
 						$.each(set, function(index, contents) {
 							$.each(contents, function(index, espn_links) {
-								$('<a class="espn-links" href='+espn_links+'><span class="hideme">'+espn_links+'</span>'+ team_name +' on ESPN</a>').appendTo('.team-feed nav');
+								$('<a class="espn-links" href=' + espn_links + '><span class="hideme">' + espn_links + '</span>' + team_name + ' on ESPN</a>').appendTo('.team-feed nav');
 								$("#my-teams * a:contains('usa.1')").remove();
 								$("#my-teams * a:contains('" + city + "')").css("display", "block");
 								$("#my-teams * br").remove();
@@ -89,6 +95,7 @@ var my_team = $('.my-team').text();
 var cap = 2;
 
 //GET NEWS
+
 function find_news() {
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
@@ -107,16 +114,15 @@ function find_news() {
 		$.each(data.headlines, function(index, article) {
 			$('#ticker #js-headlines').append("<article><a href=" + article.links.web.href + ">" + article.title + "</a></article>");
 		});
-			$('#js-headlines article:first').appendTo("#js-headlines-latest");
+		$('#js-headlines article:first').appendTo("#js-headlines-latest");
 	});
 
 }
 
 $("#banner").on("click", ".news-trigger", function(e) {
 	e.preventDefault();
-		$('a.credits').fadeToggle();
-		$('#js-headlines').slideToggle('slow', function(){
-		});
+	$('a.credits').fadeToggle();
+	$('#js-headlines').slideToggle('slow', function() {});
 });
 
 function switch_leagues() {
@@ -142,22 +148,21 @@ function filter_schedule() {
 	// check MLS schedule
 	$('.single-game').each(function() {
 
+		//var game = $(this);
 		//removes day of week for calc.	
 		var game_date = moment($(this).children('.game-date').text()).format("MM-DD-YYYY");
 
 		if (game_date < today) {
-			var removable = $("#game-previews * .single-game:contains('" + my_team + "')").css('display','block');
+			var removable = $("#game-previews * .single-game:contains('" + my_team + "')").css('display', 'block');
 			$(removable).remove();
-		}
-
-		else if (game_date >= today) {
+		} else if (game_date >= today) {
 
 			//display ALL games that have my team
-			$(".single-game:contains('" + my_team + "')").css('display','block');
-			
+			$(".single-game:contains('" + my_team + "')").css('display', 'block');
+
 			//add upcoming games
-			$(this).filter(":contains('"+my_team+"')").appendTo("#upcoming-games");
-		
+			$(this).filter(":contains('" + my_team + "')").appendTo("#upcoming-games");
+
 			//grab the first from upcoming games
 			var single_game = $('#game-previews * .single-game:first');
 
@@ -165,7 +170,7 @@ function filter_schedule() {
 			$('#upcoming-games').children().slice(cap);
 
 			//add NEXT game from upcoming
-			$(single_game).filter(":contains('"+my_team+"')").prependTo('#next-game');
+			$(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
 			if (game_date == today) {
@@ -194,17 +199,17 @@ function filter_schedule() {
 		}
 		// finally id the next game
 		$(single_game).addClass('js-next-game').removeClass('type-mls-reg'); //remove ALL classes that control
-	
+
 	})
+
 	$(".schedule-trigger").click(function() {
-	$('#upcoming-games').slideToggle('slow', function() {
+		$('#upcoming-games').slideToggle('slow', function() {});
+
+		$('#controls').fadeToggle('slow').click(function() {
+			alert('clicking this will run code that controls how many results displayed');
+			$(this).css('color', 'red');
+		});
 	});
-	
-	$('#controls').fadeToggle('slow').click(function(){
-		alert('clicking this will run code that controls how many results displayed');
-		$(this).css('color','red');
-	});
-});
 }
 
 function game_fields() {
@@ -214,31 +219,32 @@ function game_fields() {
 }
 
 // ON CLICK
-function sorting(){
-//conditional display of tabs, depending on various situations
-$("li.type-all").click(function(){
-	$("section#schedule-results * .single-game:contains('"+my_team+"')").show();
-});
 
-$("li.type-mls-reg").click(function(){
-	$("section#schedule-results * .single-game.type-mls-reg:contains('"+my_team+"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-mls-reg')").hide();
-});
+function sorting() {
+	//conditional display of tabs, depending on various situations
+	$("li.type-all").click(function() {
+		$("section#schedule-results * .single-game:contains('" + my_team + "')").show();
+	});
 
-$("li.type-ccl").click(function(){
-	$("section#schedule-results * .single-game.type-ccl:contains('"+my_team+"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-ccl')").hide();
-});
+	$("li.type-mls-reg").click(function() {
+		$("section#schedule-results * .single-game.type-mls-reg:contains('" + my_team + "')").show();
+		$("section#schedule-results * .single-game:contains('" + my_team + "'):not('.type-mls-reg')").hide();
+	});
 
-$("li.type-natl-us").click(function(){
-	$("section#schedule-results * .single-game.type-natl-us:contains('"+my_team+"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-natl-us')").hide();
-});
+	$("li.type-ccl").click(function() {
+		$("section#schedule-results * .single-game.type-ccl:contains('" + my_team + "')").show();
+		$("section#schedule-results * .single-game:contains('" + my_team + "'):not('.type-ccl')").hide();
+	});
 
-$("li.type-natl-can").click(function(){
-	$("section#schedule-results * .single-game.type-natl-can:contains('"+my_team+"')").show();
-	$("section#schedule-results * .single-game:contains('"+my_team+"'):not('.type-natl-can')").hide();
-});
+	$("li.type-natl-us").click(function() {
+		$("section#schedule-results * .single-game.type-natl-us:contains('" + my_team + "')").show();
+		$("section#schedule-results * .single-game:contains('" + my_team + "'):not('.type-natl-us')").hide();
+	});
+
+	$("li.type-natl-can").click(function() {
+		$("section#schedule-results * .single-game.type-natl-can:contains('" + my_team + "')").show();
+		$("section#schedule-results * .single-game:contains('" + my_team + "'):not('.type-natl-can')").hide();
+	});
 }
 
 //triggers
@@ -246,42 +252,42 @@ $(".gameday-trigger").click(function() {
 	$('#js-gameday').toggle();
 });
 
-var nbcsn="NBCSN"; 
-var ch_nbcsn=nbcsn.match(/NBCSN/g);
+var nbcsn = "NBCSN";
+var ch_nbcsn = nbcsn.match(/NBCSN/g);
 
-var nbc="NBC"; 
-var ch_nbc=nbc.match(/NBC/g);
+var nbc = "NBC";
+var ch_nbc = nbc.match(/NBC/g);
 
-var bein= "BEIN SPORT"; 
-var ch_bein=bein.match(/BEIN SPORT/g);
+var bein = "BEIN SPORT";
+var ch_bein = bein.match(/BEIN SPORT/g);
 
-var espn="ESPN"; 
-var ch_espn=espn.match(/ESPN/g);
+var espn = "ESPN";
+var ch_espn = espn.match(/ESPN/g);
 
-var mls="MLS LIVE"; 
-var ch_mls=mls.match(/MLS LIVE/g);
+var mls = "MLS LIVE";
+var ch_mls = mls.match(/MLS LIVE/g);
 
-$('a.game-tv:contains("'+ch_nbcsn+'")').filter(function(){
+$('a.game-tv:contains("' + ch_nbcsn + '")').filter(function() {
 	return $(this).text();
-}).attr("href","http://www.nbcsports.com/tv-listings");
+}).attr("href", "http://www.nbcsports.com/tv-listings");
 
 // $('a.game-tv:contains("'+ch_nbc+'")').filter(function() { 
 // 	return $(this).text();
 // }).attr("href","http://www.nbc.com");
 
-$('a.game-tv:contains("'+ch_bein+'")').filter(function() {
+$('a.game-tv:contains("' + ch_bein + '")').filter(function() {
 	return $(this).text();
-}).attr("href","http://www.beinsport.tv");
+}).attr("href", "http://www.beinsport.tv");
 
-$('a.game-tv:contains("'+ch_mls+'")').filter(function() {
+$('a.game-tv:contains("' + ch_mls + '")').filter(function() {
 	return $(this).text();
-}).attr("href","https://live.mlssoccer.com/");
+}).attr("href", "https://live.mlssoccer.com/");
 
-$('a.game-tv:contains("'+ch_espn+'")').filter(function() {
+$('a.game-tv:contains("' + ch_espn + '")').filter(function() {
 	return $(this).text();
-}).attr("href","http://espn.go.com/watchespn/index");
+}).attr("href", "http://espn.go.com/watchespn/index");
 
-$('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background','none');
+$('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background', 'none');
 
 
 // ON LOAD...

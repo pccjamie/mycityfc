@@ -38,19 +38,6 @@ $profile: rgba(31,159,255,.75);
 
 .notice, .alert {background: orange; color: #FFF; padding: 10px;}
 
-body.bg-default {
-	background-image: url(closeup.jpg);
-	// #wrapper {background: $bg-dark}
-}
-body.bg-slides {
-	background-image: url(history1.jpg);
-}
-body.bg-parent-profiles { 
-	background-image: url(kids1.jpg);
-}
-body.bg-fan-profiles {
-		background-image: url(closeup.jpg);
-}
 
 body {
 	height:100%; 
@@ -61,9 +48,25 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 	display: block;
-	background-color: #333333;
+	// background: $bg-steel url(closeup.jpg) no-repeat;
 	margin: 0 auto;
 }
+
+
+.bg-default {
+	background: $bg-steel url(closeup.jpg) no-repeat;
+}
+
+.bg-fan-profiles {}
+
+.bg-parent-profiles { 
+	background-image: url(kids1.jpg);
+}
+
+.bg-slides {
+	background-image: url(history1.jpg);
+}
+
 
 // body.default * form {background: $bg-dark;}
 
@@ -200,7 +203,7 @@ header#banner #game-previews {
 	
 	height: auto; width: 60%; position: relative; display:inline-block;float:left;
 
-	.gameday-trigger {height: 180px; padding: 10px; margin: 0; width: 80px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
+	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 
 	.wrapper {height: auto;width: 100%; float: left; display:block}
 	.wrapper .schedule-trigger {height: 100%; width: 90%; background: transparent; display:inline-block; float:left; position: relative}	
