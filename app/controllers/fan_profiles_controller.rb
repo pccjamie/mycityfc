@@ -61,12 +61,12 @@ class FanProfilesController < ApplicationController
         @yt_username = yt_username
 
           if primary_team == yt_team
-            flash[:notice] = 'Current users primary team matches a team on Youtube. Pass the teams username to call'
+            flash[:notice] = "Current users team #{primary_team} is found on Youtube. Passed #{yt_username} to YT call"
 
             #pass the username into the channel search.... (youtube.channels.list)
             response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
           else
-            flash[:notice] = 'your team does not have a youtube channel. Here are non-specific league videos'
+            flash[:notice] = 'Your team does not have a youtube channel. Here are non-specific league videos'
             response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
           end
 
