@@ -24,11 +24,9 @@ belongs_to :profilable, :polymorphic => true
                          first_name:auth.info[:first_name],
                          provider:auth.provider,
                          uid:auth.uid,
-                        location:auth.info[:location],
+                         location:auth.info[:location],
                          city: auth.info[:location].split(',').first,
                          state: auth.info[:location].split(',').last,
-                         
-
 
                         #LOGIN AND SAVE 
                         #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
@@ -39,16 +37,13 @@ belongs_to :profilable, :polymorphic => true
                         # location:auth.extra.raw_info[:location],
                         # location:auth.extra.raw_info["location"],
                         
-
                         # ERROR
                         #location:auth.extra.raw_info.location["name"],
                         #location:auth.extra.raw_info.location.name,
-
                         #location:auth.extra.raw_info["location"].flatten,
                         #location:auth.extra.raw_info[:location][:name],
                         #location:auth.extra.raw_info["location"]["name"],
                          
-
                          picture: auth.info[:image],
                          email:auth.info.email,
                          password:Devise.friendly_token[0,20]

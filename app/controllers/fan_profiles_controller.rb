@@ -35,33 +35,57 @@ class FanProfilesController < ApplicationController
   end
 
   def get_video_from_youtube
-    current_user
+    #current_user
 
     #first get the user's teams
     # get_user_team_info
 
     # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
-    yt_username = "soundersfcdotcom"
 
-    base = "https://www.googleapis.com/youtube/v3"
-    y_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
+    primary_team = "Colorado Rapids"
+    @primary_team = primary_team
+    yt_base = "https://www.googleapis.com/youtube/v3"
+    yt_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
 
+    #array of teams
+    yt_users = Nokogiri::HTML(open("http://www.youtube.com/user/mls/about")).css('ul.channel-summary-list * .yt-lockup-title a').to_a
+    #for each team, get the team name and href value
+    yt_users.each do |t|
+        #return single team name
+        yt_team = t.text
+        yt_team = yt_team.strip 
+        @yt_team = yt_team
+        # mypatt = /href=\D\/user\/\D*"/i
+        yt_user = t.attributes['href'].to_s
+        yt_username = yt_user.gsub('/user/','')
+        @yt_username = yt_username
 
-    #FIND CHANNELS FOR EACH TEAM BASED ON YT USERNAME (youtube.channels.list)
+          if primary_team == yt_team
+            flash[:notice] = 'Current users primary team matches a team on Youtube. Pass the teams username to call'
 
-    response = HTTParty.get("#{base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{y_key}")
+            #pass the username into the channel search.... (youtube.channels.list)
+            response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
+          else
+            flash[:notice] = 'your team does not have a youtube channel. Here are non-specific league videos'
+            response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
+          end
 
-    #get ch id from the response
+          #get ch id from the response
     channel_id = response["items"][0]["id"]
 
     #get ch info from id
-    channel_info = HTTParty.get("#{base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{y_key}")
+    channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{yt_key}")
 
     #gets vid IDs from ch info
     @video_ids = []
     channel_info["items"].each do |item|
       @video_ids.push(item["id"]["videoId"])
     end
+
+    end
+
+
+    
 
     #this gets the actual video embed html.....but not using. Handling iframe rendering another way.
     # @videos = []
@@ -71,7 +95,7 @@ class FanProfilesController < ApplicationController
     #   @videos.push(a_video)
     #   #@video_id = id
     # end
-  
+
     respond_to do |format|
       format.html
       format.json { render :json => @videos.to_html }
@@ -99,14 +123,14 @@ class FanProfilesController < ApplicationController
   # end
 
 
-  def get_user_team_info 
+  def get_user_team_info
 
-    #need to rethink how schedule data is obtained and formatted. Scrape is not ideal. 
+    #need to rethink how schedule data is obtained and formatted. Scrape is not ideal.
 
     #get users team and sends to DOM, where it's used in schedule filtering.
     my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
     @my_team = my_team[0]
- 
+    #my_team = "Seattle"
     #get teams schedule. to be passed to DOM for client side handling.
     year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
     url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
@@ -114,6 +138,10 @@ class FanProfilesController < ApplicationController
     @schedule = schedule_array
 
     #get teams youtube username
+
+
+
+
 
   end
 

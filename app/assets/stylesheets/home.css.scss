@@ -43,7 +43,6 @@ body {
 	height:100%; 
 	width:100%;
 	max-width: 1360px;
-	//background-image: url(closeup.jpg);
 	background-size: 100%;
 	background-repeat: none;
 	background-attachment: fixed;
@@ -55,9 +54,14 @@ body {
 
 .bg-default {
 	background: $bg-steel url(closeup.jpg) no-repeat;
+	background-size: 100%;
+	background-repeat: none;
+	background-attachment: fixed;
 }
 
-.bg-fan-profiles {}
+.bg-fan-profiles {	background-size: 100%;
+	background-repeat: none;
+	background-attachment: fixed;}
 
 .bg-parent-profiles { 
 	background-image: url(kids1.jpg);
