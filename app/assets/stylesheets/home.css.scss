@@ -47,8 +47,10 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 	display: block;
-	background: $bg-steel url(closeup.jpg) no-repeat;
+	background-image: url(closeup.jpg) no-repeat;
+	background-color: $bg-steel;
 	margin: 0 auto;
+	position:relative;
 }
 
 
@@ -59,15 +61,22 @@ body {
 	background-attachment: fixed;
 }
 
-.bg-fan-profiles {	background-size: 100%;
+.bg-fan-profiles {	
+	background-size: 100%;
 	background-repeat: none;
 	background-attachment: fixed;}
 
 .bg-parent-profiles { 
+	background-size: 100%;
+	background-repeat: none;
+	background-attachment: fixed;
 	background-image: url(kids1.jpg);
 }
 
 .bg-slides {
+	background-size: 100%;
+	background-repeat: none;
+	background-attachment: fixed;
 	background-image: url(history1.jpg);
 }
 
@@ -218,7 +227,7 @@ header#banner #game-previews {
 
 
 	/*next game only */
-	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block;background-image: url(closeup.jpg); }
+	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block; background-image: url(closeup.jpg); }
 
 
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}

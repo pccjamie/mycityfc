@@ -1,28 +1,41 @@
 //var city = $('li.current-user-city').html();
 //var city = city.toLowerCase();
-var city = 'seattle';
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
-
-// if (window.location.href.indexOf("fan") > -1) {
-// 	$('body').toggleClass('bg-fan-profiles');
-// }
-
-if (window.location.href.indexOf("parent") > -1) {
-	$('body').addClass('bg-parent-profiles');
-}
-
-if (window.location.href.indexOf("slides") > -1) {
-	$('body').addClass('bg-slides');
-}
+// makes layout / visual changes based on current page url
 
 function location_based_view() {
-	//if no primary team, use background for team closest?
-	var bg = $('.team-venue-image:first').text();
-	//else use background for team chosen
-	$('body').css('background-image', 'url(' + bg + ')'); //change this???
+
+	if (window.location.href.indexOf("fan") > -1) {
+	// default to soccer stadium image(s)
+	
+	// IF no primary team, no change. COULD load random bg of user's current location instead, but requires an API for image search. May not be worth performance hit. TBD
+	// IF user HAS chosen a primary team, that will determine what the bg is. FOR NOW, Im setting bg to be image of the CLOSEST team's home field
+
+		var bg = $('.team-venue-image:first').text();
+		$('body').css('background-image', 'url(' + bg + ')');
+
+	}
+	
+	else {
+
+		//else do this for these other pages.
+
+		if (window.location.href.indexOf("parent") > -1) {
+			$('body').addClass('bg-parent-profiles');
+		}
+
+		if (window.location.href.indexOf("slides") > -1) {
+			$('body').addClass('bg-slides');
+		}
+
+	}
+
+	// some minor changes to styles for location based content.
 	$('.team:first').addClass('primary');
+	//should not run if there are no other teams in the area defined by controller
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
+
 }
 
 
@@ -98,7 +111,7 @@ function location_based_view() {
 // }
 
 var my_team = $('.my-team').text();
-var cap = 2;
+var cap = 4;
 
 //GET NEWS
 
@@ -143,7 +156,6 @@ function filter_schedule() {
 	// check MLS schedule
 	$('.single-game').each(function() {
 
-		//var game = $(this);
 		//removes day of week for calc.	
 		var game_date = moment($(this).children('.game-date').text()).format("MM-DD-YYYY");
 

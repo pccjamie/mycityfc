@@ -1,12 +1,5 @@
 class FanProfilesController < ApplicationController
 
-  # def set_access_control_headers
-  #   response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
-  #   response.headers["Access-Control-Request-Method"] = "*"
-  #   response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-  #   response.headers["Content-Type"] = "application/json, text/html"
-  # end
-
   before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
@@ -82,10 +75,7 @@ class FanProfilesController < ApplicationController
       @video_ids.push(item["id"]["videoId"])
     end
 
-    end
-
-
-    
+    end 
 
     #this gets the actual video embed html.....but not using. Handling iframe rendering another way.
     # @videos = []
@@ -138,10 +128,6 @@ class FanProfilesController < ApplicationController
     @schedule = schedule_array
 
     #get teams youtube username
-
-
-
-
 
   end
 
