@@ -82,8 +82,17 @@ body {
 
 .bg-default {
 
- #nav-wrapper {background: 0}
- 
+
+ #nav-wrapper {
+
+ 	#header.logo h1 {display:none}
+
+ 	nav.public {display:none}
+ 	
+ 	background: 0;
+
+ }
+
  * footer {display:none;}
 
 }
