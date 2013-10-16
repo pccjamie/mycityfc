@@ -21,6 +21,13 @@ function location_based_view() {
 
 		//else do this for these other pages.
 
+		var root = window.location.pathname == ("/");
+
+		if (window.location == root) {
+			$('body').addClass('bg-parent-profiles');
+		}
+
+
 		if (window.location.href.indexOf("parent") > -1) {
 			$('body').addClass('bg-parent-profiles');
 		}

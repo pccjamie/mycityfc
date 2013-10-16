@@ -80,6 +80,11 @@ body {
 	background-image: url(history1.jpg);
 }
 
+.bg-default {
+
+ #nav-wrapper, * footer {display:none;}
+
+}
 
 // body.default * form {background: $bg-dark;}
 
