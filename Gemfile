@@ -4,7 +4,8 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 # server
 gem 'pg'
-gem 'thin'
+
+# gem 'thin'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
