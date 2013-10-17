@@ -1,12 +1,5 @@
 class FanProfilesController < ApplicationController
 
-  # def set_access_control_headers
-  #   response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
-  #   response.headers["Access-Control-Request-Method"] = "*"
-  #   response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-  #   response.headers["Content-Type"] = "application/json, text/html"
-  # end
-
   before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
