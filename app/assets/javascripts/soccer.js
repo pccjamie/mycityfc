@@ -2,6 +2,11 @@
 //var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
+
+var start = new Date().getTime();
+
+
+
 // makes layout / visual changes based on current page url
 
 function location_based_view() {
@@ -137,6 +142,8 @@ function find_news() {
 		cache: false,
 		type: "get"
 	}).done(function(data) {
+		 console.log(new Date().getTime() - start);
+
 		$.each(data.headlines, function(index, article) {
 			$('#ticker #js-headlines').append("<article><a href=" + article.links.web.href + ">" + article.title + "</a></article>");
 		});
@@ -224,6 +231,8 @@ function filter_schedule() {
 			$(this).css('color', 'red');
 		});
 	});
+
+	return false;
 }
 
 function game_fields() {
@@ -310,7 +319,7 @@ $(function() {
 	//find_team_info();
 	find_news();
 	switch_leagues();
-	filter_schedule();
-	game_fields();
-	sorting();
+	//filter_schedule();
+	//game_fields();
+	//sorting();
 });

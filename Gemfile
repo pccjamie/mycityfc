@@ -94,6 +94,9 @@ gem "activesupport"   #, "~> 3.1.1"
 #forecast
 # gem 'forecast_io'
   
+
+
+  
 #dev / prod
   gem 'pry-rails'
   gem 'pry-debugger'
@@ -117,4 +120,7 @@ gem "activesupport"   #, "~> 3.1.1"
 # group :development do
 #   gem 'better_errors'
 # end
+
+gem 'newrelic_rpm'
+
 
