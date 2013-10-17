@@ -36,7 +36,7 @@ gem 'zurb-foundation', '~> 4.0.0'
 gem 'turbolinks'
 
 # background jobs
-#gem 'resque'
+gem 'resque', :require => "resque/server"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

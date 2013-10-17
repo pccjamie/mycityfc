@@ -24,7 +24,7 @@ function location_based_view() {
 		var root = window.location.pathname == ("/");
 
 		if (window.location == root) {
-			$('body').addClass('bg-parent-profiles');
+			$('body').css('bg-parent-profiles');
 		}
 
 
