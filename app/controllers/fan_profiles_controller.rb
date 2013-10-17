@@ -132,15 +132,15 @@ class FanProfilesController < ApplicationController
   end
 
   #gets team names from espn db automatically (not doing anything with this yet)
-  def get_teams_from_espn
-    response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
-    @response = response["sports"][0]["leagues"][0]["teams"]
-    respond_to do |format|
-      format.html
-      format.json { render :xml => @response.to_json }
-    end
-    return
-  end
+  # def get_teams_from_espn
+  #   response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
+  #   @response = response["sports"][0]["leagues"][0]["teams"]
+  #   respond_to do |format|
+  #     format.html
+  #     format.json { render :xml => @response.to_json }
+  #   end
+  #   return
+  # end
 
 
 
