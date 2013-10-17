@@ -1,5 +1,12 @@
 class FanProfilesController < ApplicationController
 
+  # def set_access_control_headers
+  #   response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
+  #   response.headers["Access-Control-Request-Method"] = "*"
+  #   response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+  #   response.headers["Content-Type"] = "application/json, text/html"
+  # end
+
   before_filter :authenticate_user!, :except => [:index]
 
   require 'active_support/all'
@@ -10,7 +17,7 @@ class FanProfilesController < ApplicationController
 
   def index
     current_user
-    #@users = User.all
+    @users = User.all
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     #get_teams_from_espn
@@ -123,7 +130,7 @@ class FanProfilesController < ApplicationController
     #my_team = "Seattle"
     #get teams schedule. to be passed to DOM for client side handling.
     year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
-    url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club= all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
+    url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
     schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-page .schedule-table tbody tr').to_a
     @schedule = schedule_array
 
@@ -132,16 +139,15 @@ class FanProfilesController < ApplicationController
   end
 
   #gets team names from espn db automatically (not doing anything with this yet)
- 
-  # def get_teams_from_espn
-  #   response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
-  #   @response = response["sports"][0]["leagues"][0]["teams"]
-  #   respond_to do |format|
-  #     format.html
-  #     format.json { render :xml => @response.to_json }
-  #   end
-  #   return
-  # end
+  def get_teams_from_espn
+    response = HTTParty.get('http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/?apikey=4u3e6enmscdszh8qcy9dh7my')
+    @response = response["sports"][0]["leagues"][0]["teams"]
+    respond_to do |format|
+      format.html
+      format.json { render :xml => @response.to_json }
+    end
+    return
+  end
 
 
 
