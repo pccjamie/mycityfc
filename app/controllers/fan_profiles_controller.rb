@@ -14,7 +14,7 @@ class FanProfilesController < ApplicationController
     @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     #get_teams_from_espn
-    #get_user_team_info
+    get_user_team_info
     get_video_from_youtube
     #return
   end

@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
   #helper :all
 
   after_filter :set_access_control_headers
+  
   def set_access_control_headers
     response.headers["Access-Control-Allow-Origin"] = "http://mycityfc.herokuapp.com"
     response.headers["Access-Control-Allow-Origin"] = "http://localhost:3000/"
