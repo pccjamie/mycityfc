@@ -12,6 +12,7 @@ class FanProfilesController < ApplicationController
     current_user
     #@users = User.all
     # @teams = Team.all
+    current_user.primary_team
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     #get_teams_from_espn
     get_user_team_info
@@ -57,7 +58,7 @@ class FanProfilesController < ApplicationController
       @yt_username = yt_username
 
       if some_team == yt_team
-        flash[:notice] = "#{my_team} is found on Youtube. Passed #{yt_username} to YT call"
+        flash[:notice] = "#{some_team} is found on Youtube. Passed #{yt_username} to YT call"
         #pass the username into the channel search.... (youtube.channels.list)
         response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
         #get ch id from the response
@@ -73,7 +74,7 @@ class FanProfilesController < ApplicationController
 
 
       else
-        flash[:notice] = "No videos found for #{my_team} "
+        flash[:notice] = "No videos found for #{some_team} "
         # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
       end
 
