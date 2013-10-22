@@ -37,9 +37,9 @@ class FanProfilesController < ApplicationController
 
     # primary_team = "Colorado Rapids"
     # @primary_team = primary_team
-    my_team = current_user.primary_team
-    my_team = my_team.strip
-    @my_team = my_team
+    some_team = current_user.primary_team
+    some_team = some_team.strip
+    @some_team = some_team
     yt_base = "https://www.googleapis.com/youtube/v3"
     yt_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
 
@@ -56,8 +56,8 @@ class FanProfilesController < ApplicationController
       yt_username = yt_user.gsub('/user/','')
       @yt_username = yt_username
 
-      if my_team == yt_team
-        #flash[:notice] = "#{current_user.primary_team} is found on Youtube. Passed #{yt_username} to YT call"
+      if some_team == yt_team
+        flash[:notice] = "#{my_team} is found on Youtube. Passed #{yt_username} to YT call"
         #pass the username into the channel search.... (youtube.channels.list)
         response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
         #get ch id from the response
@@ -73,7 +73,7 @@ class FanProfilesController < ApplicationController
 
 
       else
-        flash[:notice] = "No videos found for #{current_user.primary_team} "
+        flash[:notice] = "No videos found for #{my_team} "
         # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
       end
 
