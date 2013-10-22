@@ -10,12 +10,12 @@ class FanProfilesController < ApplicationController
 
   def index
     current_user
+    get_video_from_youtube
     @users = User.all
     # @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     #get_teams_from_espn
     get_user_team_info
-    get_video_from_youtube
     #return
   end
 
@@ -44,45 +44,45 @@ class FanProfilesController < ApplicationController
     yt_users = Nokogiri::HTML(open("http://www.youtube.com/user/mls/about")).css('ul.channel-summary-list * .yt-lockup-title a').to_a
     #for each team, get the team name and href value
     yt_users.each do |t|
-        #return single team name
-        yt_team = t.text
-        yt_team = yt_team.strip 
-        @yt_team = yt_team
-        # mypatt = /href=\D\/user\/\D*"/i
-        yt_user = t.attributes['href'].to_s
-        yt_username = yt_user.gsub('/user/','')
-        @yt_username = yt_username
+      #return single team name
+      yt_team = t.text
+      yt_team = yt_team.strip
+      @yt_team = yt_team
+      # mypatt = /href=\D\/user\/\D*"/i
+      yt_user = t.attributes['href'].to_s
+      yt_username = yt_user.gsub('/user/','')
+      @yt_username = yt_username
 
-          if primary_team == yt_team
-            flash[:notice] = "Current users team #{primary_team} is found on Youtube. Passed #{yt_username} to YT call"
+      if primary_team == yt_team
+        flash[:notice] = "Current users team #{primary_team} is found on Youtube. Passed #{yt_username} to YT call"
 
-            #pass the username into the channel search.... (youtube.channels.list)
-            response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
-         
- channel_id = response["items"][0]["id"]
+        #pass the username into the channel search.... (youtube.channels.list)
+        response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
 
-    #get ch info from id
-    channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{yt_key}")
+        channel_id = response["items"][0]["id"]
 
-    #gets vid IDs from ch info
-    @video_ids = []
-    channel_info["items"].each do |item|
-      @video_ids.push(item["id"]["videoId"])
+        #get ch info from id
+        channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{yt_key}")
+
+        #gets vid IDs from ch info
+        @video_ids = []
+        channel_info["items"].each do |item|
+          @video_ids.push(item["id"]["videoId"])
+        end
+
+
+      else
+        p 'hi'
+        # flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
+        # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
+
+
+      end
+
+      #get ch id from the response
+
+
     end
-
-    
-          else
-            p 'hi'
-            # flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
-            # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
-         
-
-          end
-
-          #get ch id from the response
-   
-
-    end 
 
     #this gets the actual video embed html.....but not using. Handling iframe rendering another way.
     # @videos = []
