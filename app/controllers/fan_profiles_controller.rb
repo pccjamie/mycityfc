@@ -126,9 +126,9 @@ class FanProfilesController < ApplicationController
     url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
     schedule_array = Nokogiri::HTML(open(url_mls))
 
+    schedule_array.css('td:not(.home-team-logo)')
 
     test = schedule_array.css('.schedule-table tbody tr').to_a
-    test.css('td:not(.home-team-logo)')
   
     @schedule = test
 
