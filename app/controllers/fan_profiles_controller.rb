@@ -58,14 +58,8 @@ class FanProfilesController < ApplicationController
 
             #pass the username into the channel search.... (youtube.channels.list)
             response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
-          else
-            p 'hi'
-            # flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
-            # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
-          end
-
-          #get ch id from the response
-    channel_id = response["items"][0]["id"]
+         
+ channel_id = response["items"][0]["id"]
 
     #get ch info from id
     channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{yt_key}")
@@ -75,6 +69,18 @@ class FanProfilesController < ApplicationController
     channel_info["items"].each do |item|
       @video_ids.push(item["id"]["videoId"])
     end
+
+    
+          else
+            p 'hi'
+            # flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
+            # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
+         
+
+          end
+
+          #get ch id from the response
+   
 
     end 
 
