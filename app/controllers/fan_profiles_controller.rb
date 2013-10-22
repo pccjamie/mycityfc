@@ -47,6 +47,7 @@ class FanProfilesController < ApplicationController
 
     #array of teams
     yt_users = Nokogiri::HTML(open("http://www.youtube.com/user/mls/about")).css('ul.channel-summary-list * .yt-lockup-title a').to_a
+    @yt_users = yt_users
     #for each team, get the team name and href value
     yt_users.each do |t|
       #return single team name
@@ -60,6 +61,7 @@ class FanProfilesController < ApplicationController
 
       if current_team == yt_team
         flash[:notice] = "#{current_team} is found on Youtube. Passed #{yt_username} to YT call"
+        
         #pass the username into the channel search.... (youtube.channels.list)
         response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
         #get ch id from the response
@@ -75,7 +77,7 @@ class FanProfilesController < ApplicationController
 
 
       else
-        flash[:notice] = "No videos found for #{current_team} "
+        #flash[:notice] = "No videos found for #{current_team} "
         # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
       end
 
