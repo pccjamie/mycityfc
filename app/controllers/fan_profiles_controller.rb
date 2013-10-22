@@ -12,7 +12,9 @@ class FanProfilesController < ApplicationController
     current_user
     #@users = User.all
     # @teams = Team.all
+    
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
+    respond_with(@nearby_teams) if stale?(@nearby_teams)
     #get_teams_from_espn
     get_user_team_info
     get_video_from_youtube
