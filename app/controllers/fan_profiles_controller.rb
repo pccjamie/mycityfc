@@ -35,8 +35,8 @@ class FanProfilesController < ApplicationController
 
     # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
 
-    primary_team = "Colorado Rapids"
-    @primary_team = primary_team
+    # primary_team = "Colorado Rapids"
+    # @primary_team = primary_team
     @primary_team = current_user.primary_team
 
     yt_base = "https://www.googleapis.com/youtube/v3"
