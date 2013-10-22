@@ -37,7 +37,7 @@ class FanProfilesController < ApplicationController
 
     # primary_team = "Colorado Rapids"
     # @primary_team = primary_team
-    primary_team = current_user.primary_team
+    @theteam = current_user.primary_team
 
     yt_base = "https://www.googleapis.com/youtube/v3"
     yt_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
@@ -55,7 +55,7 @@ class FanProfilesController < ApplicationController
       yt_username = yt_user.gsub('/user/','')
       @yt_username = yt_username
 
-      if primary_team == yt_team
+      if current_user.primary_team == yt_team
         #flash[:notice] = "#{current_user.primary_team} is found on Youtube. Passed #{yt_username} to YT call"
         #pass the username into the channel search.... (youtube.channels.list)
         response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
