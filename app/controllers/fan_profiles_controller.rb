@@ -59,8 +59,9 @@ class FanProfilesController < ApplicationController
             #pass the username into the channel search.... (youtube.channels.list)
             response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
           else
-            flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
-            response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
+            p 'hi'
+            # flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
+            # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
           end
 
           #get ch id from the response
