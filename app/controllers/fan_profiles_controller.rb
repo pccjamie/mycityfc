@@ -38,7 +38,8 @@ class FanProfilesController < ApplicationController
     # primary_team = "Colorado Rapids"
     # @primary_team = primary_team
     my_team = current_user.primary_team
-    @my_team = my_team.gsub(' ','')
+    my_team = my_team.gsub(' ','')
+    @my_team = my_team
     yt_base = "https://www.googleapis.com/youtube/v3"
     yt_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
 
