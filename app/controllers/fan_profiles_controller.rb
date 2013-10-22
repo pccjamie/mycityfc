@@ -65,7 +65,7 @@ class FanProfilesController < ApplicationController
     channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{yt_key}")
 
     #gets vid IDs from ch info
-    @video_ids = []
+    # @video_ids = []
     channel_info["items"].each do |item|
       @video_ids.push(item["id"]["videoId"])
     end
@@ -110,20 +110,9 @@ class FanProfilesController < ApplicationController
     return [@time, @today, @tomorrow, @yesterday]
   end
 
-
-  # def find_schedules
-
-  #   #MLS (alt: "http://espnfc.com/fixtures/_/league/usa.1/major-league-soccer?")
-  #   year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
-  #   url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
-
-  # end
-
-
   def get_user_team_info
 
     #need to rethink how schedule data is obtained and formatted. Scrape is not ideal.
-
     #get users team and sends to DOM, where it's used in schedule filtering.
     my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
     @my_team = my_team[0]
@@ -147,8 +136,6 @@ class FanProfilesController < ApplicationController
   #   return
   # end
 
-
-
   private
   def user_params
     params.require(:user).permit!
@@ -156,6 +143,5 @@ class FanProfilesController < ApplicationController
   def teams_params
     params.require(:team).permit!
   end
-
 
 end
