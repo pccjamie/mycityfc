@@ -60,8 +60,7 @@ class FanProfilesController < ApplicationController
             response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
           else
             flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
-            response = nil
-            # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
+            response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
           end
 
           #get ch id from the response
