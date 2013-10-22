@@ -12,9 +12,7 @@ class FanProfilesController < ApplicationController
     current_user
     #@users = User.all
     # @teams = Team.all
-    
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
-    respond_with(@nearby_teams) if stale?(@nearby_teams)
     #get_teams_from_espn
     get_user_team_info
     get_video_from_youtube
@@ -39,6 +37,8 @@ class FanProfilesController < ApplicationController
 
     primary_team = "Colorado Rapids"
     @primary_team = primary_team
+    @primary_team = current_user.primary_team
+
     yt_base = "https://www.googleapis.com/youtube/v3"
     yt_key = "AIzaSyDRWryJz70D_ybAHQmhuiwgrHtYOuEo9tA" #ADD TO ENVCFGVAR
 
@@ -56,16 +56,14 @@ class FanProfilesController < ApplicationController
       @yt_username = yt_username
 
       if primary_team == yt_team
-        flash[:notice] = "Current users team #{primary_team} is found on Youtube. Passed #{yt_username} to YT call"
-
+        #flash[:notice] = "#{current_user.primary_team} is found on Youtube. Passed #{yt_username} to YT call"
         #pass the username into the channel search.... (youtube.channels.list)
         response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
-
+        #get ch id from the response
         channel_id = response["items"][0]["id"]
 
         #get ch info from id
-        channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=3&order=date&key=#{yt_key}")
-
+        channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=2&order=date&key=#{yt_key}")
         #gets vid IDs from ch info
         @video_ids = []
         channel_info["items"].each do |item|
@@ -74,14 +72,11 @@ class FanProfilesController < ApplicationController
 
 
       else
-        p 'hi'
-        # flash[:notice] = "Your team does not have a youtube channel. Here are league videos"
+        flash[:notice] = "No videos found for #{current_user.primary_team} "
         # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
-
       end
 
-      #get ch id from the response
-
+    
 
     end
 
@@ -96,7 +91,7 @@ class FanProfilesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => @videos.to_html }
+      # format.json { render :json => @videos.to_html }
     end
 
     return
