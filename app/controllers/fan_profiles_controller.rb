@@ -11,7 +11,7 @@ class FanProfilesController < ApplicationController
   def index
     current_user
     @users = User.all
-    @teams = Team.all
+    # @teams = Team.all
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     #get_teams_from_espn
     get_user_team_info
@@ -124,7 +124,7 @@ class FanProfilesController < ApplicationController
     #get teams schedule. to be passed to DOM for client side handling.
     year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
     url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
-    schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-page .schedule-table tbody tr').to_a
+    schedule_array = Nokogiri::HTML(open(url_mls)).css(".schedule-table tbody tr").css(":not(img)")  
     @schedule = schedule_array
 
     #get teams youtube username

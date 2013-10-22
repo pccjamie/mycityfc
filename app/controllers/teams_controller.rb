@@ -6,6 +6,12 @@ before_filter :authenticate_user!
   	@teams = Team.all
   end
 
+  
+  # def locate
+  # @nearby_teams = Team.delay.near([current_user.latitude,current_user.longitude], 250)
+  # end
+
+
   def show
 	end
 
