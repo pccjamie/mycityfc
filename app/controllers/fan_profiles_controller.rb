@@ -124,8 +124,8 @@ class FanProfilesController < ApplicationController
     #get teams schedule. to be passed to DOM for client side handling.
     year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
     url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
-    schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-table tbody tr').css(':not(.home-team-logo)').to_a
-    
+    schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-table tbody tr').search('[class="home-team-logo"]').remove
+    schedule_array.to_a 
    
 
     @schedule = schedule_array
