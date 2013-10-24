@@ -109,8 +109,8 @@ class FanProfilesController < ApplicationController
     #trying to account for team names with shared words. Like New England, New York,  FC Dallas, FC something else, etc...
     
 
-    if my_team.include?("New" || "FC")
-      @my_team = my_team[0..1].to_s
+    if my_team.include?("New")
+      @my_team = my_team[0..1].join(" ")
     else
       @my_team = my_team[0] 
     end
