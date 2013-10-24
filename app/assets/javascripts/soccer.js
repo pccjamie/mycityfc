@@ -7,14 +7,10 @@ var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
-	// default to soccer stadium image(s)
 	
-	// IF no primary team, no change. 
-	// IF user HAS chosen a primary team, that will determine what the bg is. FOR NOW, Im setting bg to be image of the CLOSEST team's home field
-
-		var bg = $('.team-venue-image:first').text();
-		$('body').css('background-image', 'url(' + bg + ')');
-
+		//var bg = $('.team-venue-image:first').text();
+		//$('body').css('background-image', 'url(' + bg + ')');
+		console.log('add code to change bg based on primary team');
 	}
 	
 	else {
@@ -26,7 +22,6 @@ function location_based_view() {
 		if (window.location == root) {
 			$('body').css('bg-parent-profiles');
 		}
-
 
 		if (window.location.href.indexOf("parent") > -1) {
 			$('body').addClass('bg-parent-profiles');
@@ -192,9 +187,9 @@ function filter_schedule() {
 			var next_game = $(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
-			if ($(next_game).children('.game-date').text() == today) {
-				$('.gameday-trigger').css('display', 'block');
-			}
+			// if ($(next_game).children('.game-date').text() == today) {
+			// 	$('.gameday-trigger').css('display', 'block');
+			// }
 		}
 
 		// id game type
