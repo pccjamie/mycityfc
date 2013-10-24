@@ -199,6 +199,12 @@ function filter_schedule() {
 			case "MLS Regular Season":
 				$(this).addClass('type-mls-reg');
 				break;
+			case "MLS Playoffs":
+				$(this).addClass('type-mls-playoffs');
+				break;
+			case "MLS Cup":
+				$(this).addClass('type-mls-playoffs');
+				break;
 			case "CCL":
 				$(this).addClass('type-ccl');
 				break;
@@ -244,6 +250,13 @@ function sorting() {
 		$("section#schedule-results * .single-game.type-mls-reg:contains('" + my_team + "')").show();
 		$("section#schedule-results * .single-game:contains('" + my_team + "'):not('.type-mls-reg')").hide();
 	});
+
+	$("li.type-mls-playoffs").click(function() {
+		$("section#schedule-results * .single-game.type-mls-playoffs:contains('" + my_team + "')").show();
+		$("section#schedule-results * .single-game:contains('" + my_team + "'):not('.type-mls-playoffs')").hide();
+	});
+
+
 
 	$("li.type-ccl").click(function() {
 		$("section#schedule-results * .single-game.type-ccl:contains('" + my_team + "')").show();

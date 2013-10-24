@@ -1,6 +1,7 @@
 <ul class="competitions">
 	<li class="type-all clicked">ALL</li>
 	<li class="type-mls-reg clicked">MLS</li>
+	<li class="type-mls-playoffs clicked">MLS CUP</li>
 	<li class="type-ccl clicked">CCL</li>
 	<li class="type-natl-us clicked">OPEN CUP</li>
 <!-- 	<li class="type-natl-can clicked">Canadian Championship</li>
@@ -22,8 +23,6 @@
 	<div class="clearfix"></div>
 
 	<div class="game-competition"><%= game.css('span.competetion').text %></div>
-
-
 
 	<div class="game-home"><%= game.css('.field-home-team').text %></div>
 	<%= raw game.css('.field-home-team-logo') %>

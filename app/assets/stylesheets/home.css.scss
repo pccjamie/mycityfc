@@ -85,7 +85,7 @@ body {
 
  #nav-wrapper {
 
- 	header.logo h1 { font-size: 128px}
+ 	header.logo h1 { font-size: 28px}
 
  	nav.public {display:none}
  	
@@ -449,6 +449,7 @@ ul.competitions {height: auto; background: #363636; float: right; margin-right: 
 
 .type-all {background: #363636}
 .type-mls-reg {background: #f1f1f1;}
+.type-mls-playoffs {background: #660000;}
 .type-ccl {background: #99ccff}
 .type-natl-us {background: #336699}
 .type-natl-can {background: #FF0000}

@@ -31,13 +31,8 @@ class FanProfilesController < ApplicationController
   def get_video_from_youtube
     current_user
 
-    #first get the user's teams
-    # get_user_team_info
-
     # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
 
-    # primary_team = "Colorado Rapids"
-    # @primary_team = primary_team
     # some_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
     # @some_team = some_team
     current_team = current_user.primary_team.strip
@@ -60,13 +55,11 @@ class FanProfilesController < ApplicationController
       @yt_username = yt_username
 
       if current_team == yt_team
-        flash[:notice] = "#{current_team} is found on Youtube. Passed #{yt_username} to YT call"
-        
-        #pass the username into the channel search.... (youtube.channels.list)
+        flash[:notice] = "#{current_team} is found on Youtube. Passed #{yt_username} to YT call"     
+        #pass the username into youtube.channels.list
         response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
         #get ch id from the response
         channel_id = response["items"][0]["id"]
-
         #get ch info from id
         channel_info = HTTParty.get("#{yt_base}/search?part=id%2C+snippet&channelId=#{channel_id}&maxResults=2&order=date&key=#{yt_key}")
         #gets vid IDs from ch info
@@ -75,13 +68,10 @@ class FanProfilesController < ApplicationController
           @video_ids.push(item["id"]["videoId"])
         end
 
-
       else
         #flash[:notice] = "No videos found for #{current_team} "
         # response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=mls&key=#{yt_key}")
       end
-
-    
 
     end
 
@@ -113,14 +103,12 @@ class FanProfilesController < ApplicationController
 
   def get_user_team_info
 
-    #FOR DOM
     #get users team and sends to DOM, where it's used in schedule filtering.
     my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
     @my_team = my_team[0] 
-    #my_team = "Seattle"
 
     #SEPARATE
-    #get teams schedule. to be passed to DOM for client side handling.
+    #send schedule to DOM for filtering
     year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
     url_mls = "http://www.mlssoccer.com/schedule?month=10&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
     schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-table tbody tr').to_a
