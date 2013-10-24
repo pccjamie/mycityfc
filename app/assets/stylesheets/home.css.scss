@@ -10,7 +10,6 @@ $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
 
-$bg-steel: rgba(66,85,102,1);
 
 $bg-rev-medium: rgba(255,255,255,.5);
 
@@ -26,7 +25,10 @@ $white: #fff;
 
 $trigger: #BBFF00;
 
-$profile: rgba(31,159,255,.75);
+$bg-steel: rgba(66,85,102,1);
+$bg-steel-opaque: rgba(66,85,102,.5);
+
+$bg-profile: rgba(31,159,255,.75);
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -82,15 +84,12 @@ body {
 
 .bg-default {
 
-
  #nav-wrapper {
 
  	header.logo h1 { font-size: 28px}
 
  	nav.public {display:none}
  	
- 	background: 0;
-
  }
 
  * footer {display:none;}
@@ -163,7 +162,7 @@ header#splash {
 
 
 /*top nav*/
-#nav-wrapper {height: auto; width: 100%; display: block;background-color: $bg-steel; padding: 0 20px;}
+#nav-wrapper {height: auto; width: 100%; display: block; background: $bg-steel-opaque; padding: 0 20px;}
 
 nav {height: 40px; width: 100%; display: block; line-height: 40px;		
 	* img {margin-top: 4px; height: 20px}
@@ -235,7 +234,7 @@ header#banner #game-previews {
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 
 	.wrapper {height: auto;width: 100%; float: left; display:block}
-	.wrapper .schedule-trigger {height: 100%; width: 90%; background: transparent; display:inline-block; float:left; position: relative}	
+	 .schedule-trigger {height: 100%; width: 90%; background: $bg-steel-opaque; display:inline-block; float:left; position: relative}	
 	
 	}
 
@@ -243,7 +242,7 @@ header#banner #game-previews {
 
 
 	/*next game only */
-	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block; background-image: url(closeup.jpg); }
+	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block; background: $bg-profile; }
 
 
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
@@ -342,11 +341,8 @@ footer * {color: $white}
 // #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
 #profile, #local {height: auto; padding: 20px;display: inline-block; position:relative} 
-#profile {float: left;  position:relative; width:60%; background: $profile}
+#profile {float: left;  position:relative; width:60%; background: $bg-medium}
 #profile header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
-
-
-
 #profile section:nth-child(even) .sleeve header h2 {color: #363636}
 #profile section:nth-child(even) {background: $tbd;}
 
@@ -366,6 +362,7 @@ section#videos, section#fans, section#players, section#schedule-results {
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
 
+	border: 1px solid #FFF;
 	background: rgba(0, 0, 0, 0.25);
 	.sleeve {margin: 0; float: none}
 }
@@ -384,7 +381,6 @@ section#fans .sleeve aside {
 section#schedule-results .sleeve {margin:0}
 
 section#tbd {height: auto; min-height: 300px; background: $tbd; display: block;}
-
 section#tbd .sleeve {margin: 20px}
 
 

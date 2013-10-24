@@ -4,7 +4,7 @@
 	<%= render 'news_ticker' %>
 </header>
 <div id="profile">
-	<h5><%= @current_team %>: Latest Info</h5>
+	<h4 class="team-profile"><%= @current_team %>: Latest Info</h4>
 
 	<section id="videos">
 		<div class="sleeve">
@@ -20,8 +20,8 @@
 	  <%#= @primary_team %>
 	  <!--replace later with current_user.primary_team-->
 		<%#= @yt_username %>
-		<header><h4>Latest Videos</h4></header>
-		<p class="notice"><%= notice %></p>
+<!-- 		<header><h4>Latest Videos</h4></header>
+ -->		<!-- <p class="notice"><%#= notice %></p> -->
 
 		<div class="cycle-slideshow"	
 			data-cycle-timeout=0

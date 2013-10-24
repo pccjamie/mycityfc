@@ -55,7 +55,7 @@ class FanProfilesController < ApplicationController
       @yt_username = yt_username
 
       if current_team == yt_team
-        flash[:notice] = "#{current_team} is found on Youtube. Passed #{yt_username} to YT call"     
+        #flash[:notice] = "#{current_team} is found on Youtube. Passed #{yt_username} to YT call"     
         #pass the username into youtube.channels.list
         response = HTTParty.get("#{yt_base}/channels?part=id%2C+snippet&forUsername=#{yt_username}&key=#{yt_key}")
         #get ch id from the response
