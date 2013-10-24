@@ -190,7 +190,8 @@ function filter_schedule() {
 			$(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
-			if ($('#next-game').children('.game_date').text() == today) {
+			if (    ($('#next-game').children('.game_date').text()) == today       ) {
+
 				$('.gameday-trigger').css('display', 'block');
 			}
 		}
