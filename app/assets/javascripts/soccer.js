@@ -13,10 +13,6 @@ function location_based_view() {
 	// IF user HAS chosen a primary team, that will determine what the bg is. FOR NOW, Im setting bg to be image of the CLOSEST team's home field
 
 		var bg = $('.team-venue-image:first').text();
-
-
-		// var bg = need to get to the background image for the user's primary team.
-
 		$('body').css('background-image', 'url(' + bg + ')');
 
 	}
