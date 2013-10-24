@@ -164,7 +164,7 @@ function filter_schedule() {
 	//var today = moment().format("MM-DD-YYYY");
 
 	// check MLS schedule
-	$('.single-game:contains('" + my_team + "')")').each(function() {
+	$(".single-game:contains('" + my_team + "')").each(function() {
 
 		//removes day of week for calc.	
 		var game_date = moment($(this).children('.game-date').text()).format("MM-DD-YYYY");
