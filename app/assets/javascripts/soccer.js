@@ -192,9 +192,9 @@ function filter_schedule() {
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
 			if ($('#next-game').children('.game_date').text() == today) {
 				$('.gameday-trigger').css('display', 'block');
-				else{
+			}
+				else {
 				$('.gameday-trigger').css('display', 'none');
-
 				}
 			}
 		}
