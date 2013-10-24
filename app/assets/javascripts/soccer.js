@@ -189,9 +189,10 @@ function filter_schedule() {
 			//add NEXT game from upcoming
 			$(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
-			//additional, if today is gameday, displays the trigger and/or auto display the modal
-			if (    ($('#next-game').children('.game_date').text()) == today       ) {
+			var next_game = $(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
+			//additional, if today is gameday, displays the trigger and/or auto display the modal
+			if ($(next_game).children('.game-date').text() == today) {
 				$('.gameday-trigger').css('display', 'block');
 			}
 		}
