@@ -193,10 +193,6 @@ function filter_schedule() {
 			if ($('#next-game').children('.game_date').text() == today) {
 				$('.gameday-trigger').css('display', 'block');
 			}
-				else {
-				$('.gameday-trigger').css('display', 'none');
-				}
-			}
 		}
 
 		// id game type
