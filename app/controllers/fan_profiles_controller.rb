@@ -104,13 +104,11 @@ class FanProfilesController < ApplicationController
   def get_user_team_info
 
     #get users team and sends to DOM, where it's used in schedule filtering.
+    
     my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA, or NEW ENGLAND / NEW YORK
-    
-    #trying to account for team names with shared words. Like New England, New York,  FC Dallas, FC something else, etc...
-    
-
-    if my_team.include?("New")
-      @my_team = my_team[0..1].join(" ")
+    #account for team names with shared words. Like New England, New York,  FC Dallas, FC something else, etc...
+    if my_team.include?("New") 
+      @my_team = my_team[0..1].join(" ") #grabs second element.
     else
       @my_team = my_team[0] 
     end

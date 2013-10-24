@@ -158,7 +158,10 @@ function switch_leagues() {
 
 function filter_schedule() {
 
-	var today = moment().format("MM-DD-YYYY");
+	//hardcoded for demo purposes, as MLS reg season is over and would leave empty block. 
+	var today = moment().format("10-19-2013");
+
+	//var today = moment().format("MM-DD-YYYY");
 
 	// check MLS schedule
 	$('.single-game').each(function() {
