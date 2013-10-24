@@ -172,7 +172,7 @@ function filter_schedule() {
 	//var today = moment().format("MM-DD-YYYY");
 
 	// check MLS schedule
-	$('.single-game').each(function() {
+	$('.single-game:contains('" + my_team + "')")').each(function() {
 
 		//removes day of week for calc.	
 		var game_date = moment($(this).children('.game-date').text()).format("MM-DD-YYYY");
@@ -191,8 +191,6 @@ function filter_schedule() {
 			//grab the first from upcoming games
 			var single_game = $('#game-previews * .single-game:first');
 
-
-
 			//limits returned results (NEED TO ADD USER OPTION TO CHANGE CAP)			
 			$('#upcoming-games').children().slice(cap);
 
@@ -200,15 +198,9 @@ function filter_schedule() {
 			$(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
-			if ($(single_game).children('.game-date').text() == today) {
-				console.log('game day for users team');
+			if (game_date == today) {
 				$('.gameday-trigger').css('display', 'block');
-				else
-				{
-					alert('sory, its not game day yet');
-				}
 			}
-
 		}
 
 		// id game type
