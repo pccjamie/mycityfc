@@ -154,9 +154,9 @@ function switch_leagues() {
 function filter_schedule() {
 
 	//hardcoded for demo purposes, as MLS reg season is over and would leave empty block. 
-	var today = moment().format("10-20-2013");
 
 	//var today = moment().format("MM-DD-YYYY");
+	var today = "10-20-2013";
 
 	// check MLS schedule
 	$('.single-game').each(function() {
@@ -187,9 +187,9 @@ function filter_schedule() {
 			var next_game = $(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
-			// if ($(next_game).children('.game-date').text() == today) {
-			// 	$('.gameday-trigger').css('display', 'block');
-			// }
+			if ($(next_game).children('.game-date').text() == today) {
+				$('.gameday-trigger').css('display', 'block');
+			}
 		}
 
 		// id game type
