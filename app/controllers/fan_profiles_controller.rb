@@ -107,8 +107,10 @@ class FanProfilesController < ApplicationController
     my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA, or NEW ENGLAND / NEW YORK
     
     #trying to account for team names with shared words. Like New England, New York,  FC Dallas, FC something else, etc...
-    if my_team.include? ("New" || "FC")
-      @my_team = my_team[0..1]
+    
+
+    if my_team.include?("New" || "FC")
+      @my_team = my_team[0..1].to_s
     else
       @my_team = my_team[0] 
     end
