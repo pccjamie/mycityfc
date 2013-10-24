@@ -156,6 +156,14 @@ function switch_leagues() {
 	});
 }
 
+
+//if the user has a primary team, find what the team name is, then get its stadium image, and set it as the pages' background. how??
+
+
+
+
+
+
 function filter_schedule() {
 
 	//hardcoded for demo purposes, as MLS reg season is over and would leave empty block. 
@@ -183,6 +191,8 @@ function filter_schedule() {
 			//grab the first from upcoming games
 			var single_game = $('#game-previews * .single-game:first');
 
+
+
 			//limits returned results (NEED TO ADD USER OPTION TO CHANGE CAP)			
 			$('#upcoming-games').children().slice(cap);
 
@@ -190,9 +200,15 @@ function filter_schedule() {
 			$(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
-			if (game_date == today) {
+			if ($(single_game).children('.game-date').text() == today) {
+				console.log('game day for users team');
 				$('.gameday-trigger').css('display', 'block');
+				else
+				{
+					alert('sory, its not game day yet');
+				}
 			}
+
 		}
 
 		// id game type
