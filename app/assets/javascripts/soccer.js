@@ -164,7 +164,7 @@ function filter_schedule() {
 	//var today = moment().format("MM-DD-YYYY");
 
 	// check MLS schedule
-	$(".single-game:contains('" + my_team + "')").each(function() {
+	$('.single-game').each(function() {
 
 		//removes day of week for calc.	
 		var game_date = moment($(this).children('.game-date').text()).format("MM-DD-YYYY");
@@ -190,8 +190,12 @@ function filter_schedule() {
 			$(single_game).filter(":contains('" + my_team + "')").prependTo('#next-game');
 
 			//additional, if today is gameday, displays the trigger and/or auto display the modal
-			if (game_date == today) {
+			if ($('#next-game').children('.game_date').text() == today) {
 				$('.gameday-trigger').css('display', 'block');
+				else{
+				$('.gameday-trigger').css('display', 'none');
+
+				}
 			}
 		}
 
