@@ -156,14 +156,6 @@ function switch_leagues() {
 	});
 }
 
-
-//if the user has a primary team, find what the team name is, then get its stadium image, and set it as the pages' background. how??
-
-
-
-
-
-
 function filter_schedule() {
 
 	//hardcoded for demo purposes, as MLS reg season is over and would leave empty block. 
