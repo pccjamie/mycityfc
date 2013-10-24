@@ -103,23 +103,19 @@ class FanProfilesController < ApplicationController
 
   def get_user_team_info
 
-    current_user.primary_team
     #get users team and sends to DOM, where it's used in schedule filtering.
-    
-    #formatting
     my_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
-    my_team = my_team[0] 
-    @my_team = my_team
-    
+    @my_team = my_team[0] 
+
     #SEPARATE
     #send schedule to DOM for filtering
-    this_year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, season does not overlap years.
-    this_month = Chronic.parse('this month').strftime('%M') 
-
-    url_mls = "http://www.mlssoccer.com/schedule?month=#{this_month}&year=#{this_year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
-    @my_teams_results = "http://www.mlssoccer.com/schedule?month=all&year=#{this_year}&club=#{my_team}&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
-
+    year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, MLS season does not overlap years, so this works.
+    month = Chronic.parse('this month').strftime('%M')  
+    
+    url_mls = "http://www.mlssoccer.com/schedule?month=#{month}&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
     schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-table tbody tr').to_a
+    #@my_teams_results = "http://www.mlssoccer.com/schedule?month=all&year=#{this_year}&club=#{my_team}&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
+
     @schedule = schedule_array
 
   end
