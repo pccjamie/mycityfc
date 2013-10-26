@@ -238,7 +238,7 @@ header#banner #game-previews {
 	
 	}
 
-	#controls {height: 100%; width: 10%; color: #FFF; background: transparent; text-align:center; line-height: 50px; display: none; float:right}
+	#controls {height: 100%; width: 10%; color: #FFF; background: $bg-steel-opaque; text-align:center; line-height: 50px; display: none; float:right}
 
 
 	/*next game only */
@@ -272,7 +272,7 @@ header#banner #game-previews {
 }
 
 /*schedule filtering*/
-#upcoming-games .single-game {height: 150px; width:50%; border: 1px solid #363636; padding: 8px; float: left; margin-bottom: 0;display:inline; }
+#upcoming-games .single-game {height: 150px; width:50%; border: 1px solid #363636; padding: 18px; float: left; margin-bottom: 0;display:inline; background: #758AA3;}
 #upcoming-games .single-game * {color: #363636}; 
 #upcoming-games .single-game * a {background: #1f9fff;color:#FFF}
 #upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
