@@ -177,7 +177,7 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 
 
 
-header#banner  {height: auto; width: 100%; overflow: hidden; position: relative;}
+header#banner  {height: auto; width: 100%; margin-bottom: 10px; overflow: hidden; position: relative;}
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
