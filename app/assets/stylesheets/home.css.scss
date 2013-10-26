@@ -177,12 +177,11 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 
 
 
-header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; background: $bg-medium;}
+header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; background: $bg-steel-opaque;}
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
-header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000; background: $white; margin-right:20px; display:inline-block;float: left; position: relative;
-}
+header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000; background: $white; margin-right:20px; display:inline-block;float: left; position: relative;}
 
 
 
@@ -260,7 +259,7 @@ header#banner #game-previews {
 
 #upcoming-games {
 
-	height: 100%; width: 100%; overflow-y: auto; margin: auto; overflow: auto; position: relative;/*to be changed to :none */z-index: 8500; display: none;
+	height: 100%; width: 100%; overflow-y: auto; background: $bg-steel-opaque; margin: auto; overflow: auto; position: relative;/*to be changed to :none */z-index: 8500; display: none;
   // -webkit-transition: height 1s ease-in-out;
   -webkit-transition: display 1s ease-in-out;
   -moz-transition: display 1s ease-in-out;
