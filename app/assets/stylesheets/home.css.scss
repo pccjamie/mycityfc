@@ -413,13 +413,11 @@ section#nearby-teams { height: auto; width: 100%; padding: 10px; overflow-x: aut
 section#nearby-teams .sleeve {margin: 0px}
 
 
-
-
 form {background: rgba(135,169,181,0.75); max-height: 300px; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 form #slideshow section {height: 220px}
 form #slideshow.modal * {position: relative;}
 
-form #slideshow.modal * .sleeve {height: 100px; text-align: center;}
+form #slideshow.modal * .sleeve {height: 100px;}
 form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
 form #slideshow.modal * .button {position: relative; }
 
@@ -430,6 +428,7 @@ form.standard {background-color: $bg-main}
 form * {color: #363636;}
 form * input.button {margin: 0 0 20px 0}
 form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; border: 0; position: relative;}
+
 form * .button:hover {background: #f9f9f9;color: teal}
 
 form #slideshow.modal .button {width: 100%;}

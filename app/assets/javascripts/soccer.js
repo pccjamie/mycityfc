@@ -10,7 +10,6 @@ function location_based_view() {
 	
 			$('#nearby-teams * .team-venue-image').each(function (){
 				var venue = $(this).text();
-				console.log(venue);
 				$(this).parent().parent().css('background-image', 'url(' + venue + ')');
 			});
 	}
