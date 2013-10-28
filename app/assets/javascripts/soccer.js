@@ -8,9 +8,12 @@ function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
 	
-		//var bg = $('.team-venue-image:first').text();
-		//$('body').css('background-image', 'url(' + bg + ')');
+		var bg = $('.team-venue-image:first').text();
+		$('.team-overiew').css('background-image', 'url(' + bg + ')');
 		console.log('add code to change bg based on primary team');
+
+		
+
 	}
 	
 	else {

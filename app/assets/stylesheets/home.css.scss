@@ -41,6 +41,7 @@ $bg-profile: rgba(31,159,255,.75);
 .notice, .alert {background: orange; color: #FFF; padding: 10px;}
 
 
+
 body {
 	height:100%; 
 	width:100%;
@@ -83,17 +84,11 @@ body {
 }
 
 .bg-default {
-
  #nav-wrapper {
-
  	header.logo h1 { font-size: 28px; color: yellow;}
-
  	nav.public {display:none}
- 	
  }
-
  * footer {display:none;}
-
 }
 
 // body.default * form {background: $bg-dark;}
@@ -112,6 +107,8 @@ li {display: inline; padding: 5px}
 h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; font-weight: normal}
 
 p {font-family: Helvetica, Arial, sans-serif;}
+
+.instructions {color: orange}
 
 .app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
 
@@ -177,7 +174,7 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 
 
 
-header#banner  {height: auto; width: 100%; overflow: hidden; position: relative;}
+header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px;}
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
@@ -365,7 +362,7 @@ section#videos {
 	.sleeve {margin: 0; float: none}
 }
 
-section#fans {margin-bottom:20px}
+section#fans {background: rgba(255, 0, 0, 0.5); margin-bottom:20px}
 section#fans .sleeve header {display: block; position:relative}
 section#fans .sleeve aside {
 			
@@ -400,7 +397,7 @@ section#tbd .sleeve {margin: 20px}
 .league {background: $bg-light; color: #262626}
 
 #local * .cycle-pager {height: 40px;  width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
-#local * .cycle-pager li.pager {height: 40px; line-height: 40px; width: 30%; display: inline-block; background: $bg-main; margin:0; padding:0 0 0 20px;}
+#local * .cycle-pager li.pager {height: 40px; line-height: 40px; width: auto; display: inline-block; background: $bg-main; margin:0; padding: 10px;}
 #local * .cycle-pager li.active { background: $bg-light;}
 #local * .active-slide {height: auto;}
 

@@ -4,7 +4,7 @@
 	<%= render 'news_ticker' %>
 </header>
 <div id="profile">
-	<h4 class="team-profile"><%= @current_team %>: Latest Info</h4>
+	<h4 class=""><%= @current_team %>: Latest Info</h4	>
 
 	<section id="videos">
 		<div class="sleeve">
@@ -47,7 +47,7 @@ frameborder="0"></iframe>
 	<div class="sleeve">
 	<header><h4>NEW FAN?</h4></header>	
 	<aside>
-		<div class="venues"><header><h4>WHERE TO WATCH (and drink) IN <%#=current_user.city %></h4></header><span class="pending">Yelp</div>
+		<div class="venues"><header><h4>WHERE TO WATCH <%#=current_user.city %></h4></header><span class="pending">Yelp</div>
 		<div class="social"><header><h4>FOLLOW TEAM?</h4></header><span class="pending">Twitter</span>
 		</div>
 	</aside>
@@ -70,8 +70,8 @@ frameborder="0"></iframe>
 <div id="local">
 <header class="team-finder">
 <h3>PRO TEAMS NEAR <%= current_user.city %> <%= link_to 'All Teams', teams_path, class: "team-directory" %></h3>
-<p class="instructions">Click a team to add it to your profile!</p>
-</header>
+<!-- <p class="instructions">Click a team to add it to your profile!</p>
+ --></header>
 
 <div id="slideshow" class="js-tabs"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 <ul class="cycle-pager">
@@ -115,13 +115,13 @@ frameborder="0"></iframe>
 
 <div class="league slide">
 	<div class="sleeve">
-	<header class="right"><h3>NASL</h3></header>
+	<header class="right"><p>Coming soon</p></header>
 	</div>
 </div> <!--2-->
 
 <div class="league slide">
 	<div class="sleeve">
-	<header class="right"><h3>USL Pro</h3></header>
+	<header class="right"><p>Coming soon.</p></header>
 	</div>
 </div><!--3-->
 
