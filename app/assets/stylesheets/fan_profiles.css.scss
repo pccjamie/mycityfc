@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/*blacks */
+$bg-dark: rgba(0,0,0,.75);
+$bg-medium: rgba(0,0,0,.5);
+$bg-light: rgba(0,0,0,.25);
+
+$bg-steel: rgba(66,85,102,1);
+$bg-steel-opaque: rgba(66,85,102,.5);
+
 /*SPECIAL*/
 .external-links {height: auto}
 
@@ -10,10 +19,10 @@
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; float: left}
 
-	.team-overview {height: auto; width: 100%; float: left; padding: 8px; display: block; position: relative;}//background: #758AA3;
+	.team-overview {height: auto; width: 100%; float: left; padding: 8px; background-color: #758AA3; display: block; position: relative}
 
 		.team-logo {float: left; text-align:center}
-		.team-info {margin-left: 10px; float: left;}
+		.team-info {margin-left: 10px; float: left; background: $bg-medium}
 			.team-name {}
 			.team-venue {}
 			.team-city {}
@@ -27,9 +36,7 @@
 
 		 	.team.secondary {width: 50%; display:inline-block;}
 
-		 		.team.secondary .team-overview {border:0}//background: #425566; 
-		 		// .team.secondary * .team-logo img {height: auto; width:25%}
-
+		 		.team.secondary .team-overview {border:0; background-color: #425566; }
 				.team.secondary * .team-info {width: 100%}
 		 		.team.secondary * h4.team-name {font-size:16px}
 		 		.team.secondary * h5 {font-size:14px}

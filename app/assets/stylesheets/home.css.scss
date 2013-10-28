@@ -10,7 +10,6 @@ $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
 
-
 $bg-rev-medium: rgba(255,255,255,.5);
 
 $tx-dark: #666666;
@@ -40,8 +39,6 @@ $bg-profile: rgba(31,159,255,.75);
 
 .notice, .alert {background: orange; color: #FFF; padding: 10px;}
 
-
-
 body {
 	height:100%; 
 	width:100%;
@@ -50,7 +47,7 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 	display: block;
-	background-image: url(closeup.jpg) no-repeat;
+	background-image: url(closeup_flip.jpg) no-repeat;
 	background-color: $bg-steel;
 	margin: 0 auto;
 	position:relative;

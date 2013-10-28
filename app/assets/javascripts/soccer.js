@@ -4,15 +4,18 @@ var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 // makes layout / visual changes based on current page url
 
-
 function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
 	
-		console.log('add code to change bg based on primary team');
+			$('#nearby-teams * .team-venue-image').each(function (){
+				var venue = $(this).text();
+				console.log(venue);
+				$(this).parent().parent().css('background-image', 'url(' + venue + ')');
+			});
 
-		var bg = $('.team-venue-image').text();
-		$('.team-overiew').css('background-image', 'url(' + bg + ')');
+
+		// console.log('add code to change bg based on primary team');
 
 	}
 	
@@ -42,7 +45,6 @@ function location_based_view() {
 	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
 
 }
-
 
 
 // //GET TEAM ID
