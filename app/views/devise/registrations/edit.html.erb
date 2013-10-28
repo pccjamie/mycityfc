@@ -1,4 +1,4 @@
-
+<h2>Settings</h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 <!-- <h5>Default View <%#= resource_name.to_s.humanize %></h5>
  -->
@@ -33,7 +33,7 @@
                           <%= f.collection_select(:primary_team, Team.all, :name, :name), :class=>'select' %>
 
                        <%= f.submit "Confirm", :class=>'button' %>
-                       <%= link_to "Cancel", root_path, :class=>'button ' %>
+                       <%= link_to "Cancel", root_path, :class=>'button' %>
 
                         </div>
 
