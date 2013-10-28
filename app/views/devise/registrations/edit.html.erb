@@ -1,4 +1,4 @@
-<h2>Settings</h2>
+<h2>My Profile</h2>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 <!-- <h5>Default View <%#= resource_name.to_s.humanize %></h5>
  -->
@@ -30,10 +30,12 @@
 
                               <h5 class="setting"><%= f.label :primary_team, 'Follow a Team!' %></h5>
 
-                          <%= f.collection_select(:primary_team, Team.all, :name, :name), :class=>'select' %>
+                          <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
 
-                       <%= f.submit "Confirm", :class=>'button' %>
-                       <%= link_to "Cancel", root_path, :class=>'button' %>
+
+                        <%= f.submit "Confirm", :class=>'button' %>
+
+                       <%= link_to "Cancel", root_path %>
 
                         </div>
 
