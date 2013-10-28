@@ -86,7 +86,7 @@ body {
 
  #nav-wrapper {
 
- 	header.logo h1 { font-size: 28px}
+ 	header.logo h1 { font-size: 28px; color: yellow;}
 
  	nav.public {display:none}
  	
@@ -271,11 +271,11 @@ header#banner #game-previews {
 }
 
 /*schedule filtering*/
-#upcoming-games .single-game {height: 150px; width:50%; border: 1px solid #363636; padding: 18px; float: left; margin-bottom: 0;display:inline; background: #758AA3;}
-#upcoming-games .single-game * {color: #363636}; 
-#upcoming-games .single-game * a {background: #1f9fff;color:#FFF}
+#upcoming-games .single-game {height: 200px; width:50%; border: 1px solid #363636; padding: 18px; float: left; margin-bottom: 0;display:inline; background: #758AA3;}
+#upcoming-games .single-game * {color: #FFF}; 
+#upcoming-games .single-game * a {background: #1f9fff;color:#FFF;text-align:center}
 #upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
-#upcoming-games .single-game .game-time {display: inline; margin-bottom: 10px; width:35%}
+#upcoming-games .single-game .game-time {display: block; margin-bottom: 10px}
 #upcoming-games .single-game .game-competition {display:block; width: auto; margin: 10px 0}
 #upcoming-games .single-game .game-score {display:none}
 #upcoming-games .single-game .clearfix {display:none}
@@ -339,8 +339,8 @@ footer * {color: $white}
 // details summary h5 {color: #FFF; height: 20px; width: auto; display:block}	
 // #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
-#profile, #local {height: auto; padding: 20px;display: inline-block; position:relative} 
-#profile {float: left;  position:relative; width:60%; background: $bg-medium}
+#profile, #local {height: auto; padding: 20px;display: inline-block; position:relative; background: $bg-medium} 
+#profile {float: left;  position:relative; width:60%; }
 #profile header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
 #profile section:nth-child(even) .sleeve header h2 {color: #363636}
 #profile section:nth-child(even) {background: $tbd;}
@@ -361,7 +361,6 @@ section#videos, section#fans, section#players, section#schedule-results {
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
 
-	border: 1px solid #FFF;
 	background: rgba(0, 0, 0, 0.25);
 	.sleeve {margin: 0; float: none}
 }
