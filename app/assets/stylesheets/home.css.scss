@@ -144,9 +144,7 @@ header.logo {display:inline-block; width: 100%; float: left; padding: 20px;
 
 }
 
-
-
-nav.account {display:inline-block; width: 100%; float:right; background: #425666}
+nav.account {display:inline-block; width: 100%; float:right;}
 
 header#splash {
 	h1 {font-size: 120px;}
@@ -158,13 +156,13 @@ header#splash {
 /*top nav*/
 #nav-wrapper {height: auto; width: 100%; display: block; background: $bg-steel-opaque; padding: 0 20px;}
 
-nav {height: 40px; width: 100%; display: block; line-height: 40px;		
+nav {height: 40px; width: 100%; margin-left: 15px; display: block; line-height: 40px;		
 	* img {margin-top: 4px; height: 20px}
 }
 
-nav.private {
-	ul li {background: $bg-steel}
-}
+// nav.private {
+// 	ul li {background: $bg-steel}
+// }
 
 nav ul.l2 {display:none; position: absolute; top: 100%; left: 0; background: green}
 nav ul.l1 li:hover + ul.l2 {display: block}
@@ -222,7 +220,7 @@ section#schedule-results * .clearfix {display:none}
 /* previews */
 header#banner #game-previews {
 	
-	height: auto; width: 60%; position: relative; display:inline-block;float:left;
+	height: auto; width: 60%; position: relative; display:inline-block;float:left; background: $bg-medium;
 
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 
@@ -244,6 +242,7 @@ header#banner #game-previews {
 	.js-next-game.single-game .game-home-logo, 	.js-next-game.single-game .game-away-logo {margin: auto}
 	.js-next-game.single-game .game-date {background: 0; display:block}
 	.js-next-game.single-game .game-time {display:block}
+	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
 	.js-next-game.single-game * a {background: #1f9fff;color:#FFF}
 	.js-next-game * {background: 0}
@@ -339,7 +338,7 @@ background: -o-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* O
 background: -ms-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* IE10+ */
 background: linear-gradient(to bottom, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */}
- 
+
 #profile {float: left;  position:relative; width:60%; }
 #profile header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
 #profile section:nth-child(even) .sleeve header h2 {color: #363636}
@@ -378,7 +377,7 @@ section#fans .sleeve aside {
 
 section#schedule-results .sleeve {margin:0}
 
-section#tbd {height: auto; min-height: 300px; display: block; float: left; background: $tbd;}
+section#tbd {height: auto; min-height: 300px; width: 100%; display: block; float: left; background: $tbd;}
 section#tbd .sleeve {margin: 20px}
 
 
