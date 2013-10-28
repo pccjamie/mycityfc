@@ -28,7 +28,7 @@
 
                               <h5 class="setting"><%= f.label :primary_team, 'Follow a Team!' %></h5>
 
-                          <%= f.collection_select(:primary_team, Team.all, :name, :name), :class=>"team-list" %>
+                          <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
 
 
                         <%= f.submit "Confirm", :class=>'button' %>
