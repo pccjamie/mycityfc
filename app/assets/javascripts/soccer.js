@@ -11,6 +11,9 @@ function location_based_view() {
 	
 		console.log('add code to change bg based on primary team');
 
+		var bg = $('.team-venue-image').text();
+		$('.team-overiew').css('background-image', 'url(' + bg + ')');
+
 	}
 	
 	else {
@@ -40,8 +43,6 @@ function location_based_view() {
 
 }
 
-var bg = $('.team-venue-image').text();
-$('.team-overiew').css('background-image', 'url(' + bg + ')');
 
 
 // //GET TEAM ID
