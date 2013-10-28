@@ -10,7 +10,9 @@ $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
 
-$bg-rev-medium: rgba(255,255,255,.5);
+$bg-w-heavy: rgba(255,255,255,.75);
+$bg-w-medium: rgba(255,255,255,.5);
+$bg-w-light: rgba(255,255,255,.25);
 
 $tx-dark: #666666;
 $tx-medium: #464646;
@@ -18,7 +20,6 @@ $tx-light: #161616;
 
 $text-hover-bg: #262626;
 $text-hover-main: #FFF;
-$devise-bg: #f2f2f2;
 
 $white: #fff;
 
@@ -311,7 +312,7 @@ header#banner a.credits {height: auto; width: auto; display: none; position: abs
 header#banner a.credits img {height: 50%; width: 50%;}
 header#banner * .external-links {height: auto}
 
-footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-medium; position: relative; float: left; display: block; }
+footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel-opaque; position: relative; float: left; display: block; }
 footer * {color: $white}
 
 #js-gameday {height: 0px; width: 100%; margin: 0 auto; display: none; position: absolute; z-index: 9999; 
@@ -416,13 +417,16 @@ section#nearby-teams .sleeve {margin: 0px}
 form {background: rgba(135,169,181,0.75); max-height: 300px; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 form #slideshow section {height: 220px}
 form #slideshow.modal * {position: relative;}
+form #slideshow.modal * aside {text-align: center; margin: 5px 0px}
+
+form * .field-group {display:block; margin: 10px 0}
 
 form #slideshow.modal * .sleeve {height: 100px;}
 form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
 form #slideshow.modal * .button {position: relative; }
 
 form {background: #f2f2f2}
-form.devise {background-color: $devise-bg}
+form.devise {background: $bg-w-medium}
 form.standard {background-color: $bg-main}
 
 form * {color: #363636;}
