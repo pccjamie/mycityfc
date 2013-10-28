@@ -229,7 +229,7 @@ function filter_schedule() {
 	})
 
 	$(".schedule-trigger").click(function() {
-		$('#upcoming-games').delay( 500 ).slideToggle('slow', function() {test();});
+		$('#upcoming-games').slideToggle('slow', function() {});
 		$('#controls').fadeToggle('slow').click(function() {
 			alert('clicking this will run code that controls how many results displayed');
 			$(this).css('color', 'red');
