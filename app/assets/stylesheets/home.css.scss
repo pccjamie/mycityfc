@@ -419,13 +419,13 @@ form #slideshow section {height: 220px}
 form #slideshow.modal * {position: relative;}
 form #slideshow.modal * aside {text-align: center; margin: 5px 0px}
 
-form * .field-group {display:block; margin: 10px 0}
+form * .field-group {height: auto; display:block; float:left; margin: 10px 0}
 
 form #slideshow.modal * .sleeve {height: 100px;}
 form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
 form #slideshow.modal * .button {position: relative; }
 
-form {background: #f2f2f2}
+
 form.devise {background: $bg-w-medium}
 form.standard {background-color: $bg-main}
 
@@ -435,7 +435,7 @@ form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; borde
 
 form * .button:hover {background: #f9f9f9;color: teal}
 
-form #slideshow.modal .button {width: 100%;}
+form #slideshow.modal .button {width: 45%;}
 // form a:hover {background:rgba(135,169,181,.75); color: #fff;}
 // .form {height: auto; width: 25%; float: left; }
 // .form  {color: #FFF}

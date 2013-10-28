@@ -1,6 +1,15 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-<h5>Default View <%= resource_name.to_s.humanize %></h5>
-<header class="page-title">My Profile</header>
+<!-- <h5>Default View: <%#= resource_name.to_s.humanize %></h5>
+ --><header class="page-title">
+
+ <%= current_user.name %>'s Profile
+
+ <%= current_user.name %>
+<%= image_tag current_user.picture %>
+ <%= current_user.location %>
+
+
+</header>
  
 
 <%= devise_error_messages! %>
@@ -34,8 +43,8 @@
                               <%= f.label :primary_team, 'Follow a Team!' %>
                               <p>Select a team for a richer experience</p>
                               <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
-                              <%= f.submit "Confirm", :class=>'send' %>
-                              <%= link_to "Cancel", root_path, :class=> "cancel" %>
+                              <%= link_to "Cancel", root_path, :class=> "button" %>
+                              <%= f.submit "Confirm", :class=>'button' %>
 
                               </div>
 
