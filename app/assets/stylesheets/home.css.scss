@@ -82,7 +82,7 @@ body {
 
 .bg-default {
  #nav-wrapper {
- 	header.logo h1 { font-size: 28px; color: yellow;}
+ 	header.logo h1 { font-size: 60px; color: yellow;}
  	nav.public {display:none}
  }
  // * footer {display:none;}
@@ -278,8 +278,7 @@ header#banner #game-previews {
 
 
 /* NEWS TICKER */
-#ticker {height: auto; width: 40%; margin: auto; background: $bg-light}
-
+#ticker {height: auto; width: 40%; margin: auto;}
 #ticker .sleeve {height: 100%; margin: 20px}
 #ticker .sleeve header {height: 40px; display:block;
 	h4 {margin:0; width: auto; float:left; display:inline-block}
@@ -295,13 +294,13 @@ header#banner #game-previews {
 
 #ticker article:first-child {height: auto;}
 #ticker article:not(:first-child) {height: auto;}
-#ticker article:not(:first-child) a {font-size: 16px}
+#ticker article:not(:first-child) a {font-size: 20px}
 
 #js-headlines article {padding: 10px}
 #js-headlines article:nth-child(odd) {background: $bg-medium}
 
 #js-headlines-latest {height: 160px}
-#js-headlines-latest article:first-child a {font-size:32px; margin: auto; }
+#js-headlines-latest article:first-child a {font-size: 24px; margin: auto; }
 
 
 header#banner a.credits {height: auto; width: auto; display: none; position: absolute; float: left; margin-left: 20px;}
@@ -320,7 +319,7 @@ footer * {color: $white}
 
 /* TRIGGERS */
 
-.news-trigger {background: $bg-steel; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: 50px; line-height: 50px; background: $bg-medium; display: block;}
+.news-trigger {background: $bg-steel; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: auto; line-height: 50px; background: $bg-medium; display: block;}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
@@ -366,7 +365,7 @@ section#videos {
 	.sleeve {margin: 0; float: none}
 }
 
-section#fans {background: rgba(255, 0, 0, 0.5); margin-bottom:20px}
+section#fans {background: $bg-profile; margin-bottom:20px}
 section#fans .sleeve header {display: block; position:relative}
 section#fans .sleeve aside {
 			
@@ -400,7 +399,7 @@ section#tbd .sleeve {margin: 20px}
 
 .league {background: $bg-light; color: #262626}
 
-#local * .cycle-pager {height: 40px;  width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
+#local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
 #local * .cycle-pager li.pager {height: 40px; line-height: 100%; width: auto; display: inline-block; background: $bg-main; margin:0; padding: 10px;}
 #local * .cycle-pager li.active { background: $bg-light;}
 #local * .active-slide {height: auto;}

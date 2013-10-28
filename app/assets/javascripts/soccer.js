@@ -26,7 +26,7 @@ function location_based_view() {
 		var root = window.location.pathname == ("/");
 
 		if (window.location == root) {
-			$('body').css('bg-parent-profiles');
+			$('body * footer').css('display','none');
 		}
 
 		if (window.location.href.indexOf("parent") > -1) {
