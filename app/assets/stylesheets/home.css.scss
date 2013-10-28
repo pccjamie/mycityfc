@@ -27,7 +27,7 @@ $trigger: #BBFF00;
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
 
-$bg-profile: rgba(31,159,255,.75);
+$bg-profile: rgba(31,159,255,.5);
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -47,7 +47,7 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 	display: block;
-	background-image: url(closeup_flip.jpg) no-repeat;
+	background-image: url(closeup_flip2.jpg) no-repeat;
 	background-color: $bg-steel;
 	margin: 0 auto;
 	position:relative;
@@ -55,7 +55,7 @@ body {
 
 
 .bg-default {
-	background: $bg-steel url(closeup_flip.jpg) no-repeat;
+	background: $bg-steel url(closeup_flip2.jpg) no-repeat;
 	background-size: 100%;
 	background-repeat: none;
 	background-attachment: fixed;
@@ -278,7 +278,7 @@ header#banner #game-previews {
 
 
 /* NEWS TICKER */
-#ticker {height: auto; width: 40%; margin: auto;}
+#ticker {height: auto; width: 40%; margin: auto; background: $bg-light}
 
 #ticker .sleeve {height: 100%; margin: 20px}
 #ticker .sleeve header {height: 40px; display:block;

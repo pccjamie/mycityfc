@@ -22,7 +22,7 @@ $bg-steel-opaque: rgba(66,85,102,.5);
 	.team-overview {height: auto; width: 100%; float: left; padding: 8px; background-color: #758AA3; display: block; position: relative}
 
 		.team-logo {float: left; text-align:center}
-		.team-info {float: left; background: rgba(0,0,0,.75)}
+		.team-info {float: left; background: rgba(0,0,0,.5)}
 			.team-name {}
 			.team-venue {}
 			.team-city {}
@@ -33,7 +33,7 @@ $bg-steel-opaque: rgba(66,85,102,.5);
 			.team-links {margin-top: 10px; float: right; width: 100%; height: auto; display:inline-block; background: gray}
 
 			.team.primary * .team-logo {width:150px;}
-			.team.primary * .team-info {float:right}
+			.team.primary * .team-info {float:right; padding: 0 10px 0 10px}
 
 		 	.team.secondary {width: 50%; display:inline-block;}
 
