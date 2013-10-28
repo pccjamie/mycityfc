@@ -228,8 +228,8 @@ function filter_schedule() {
 
 	})
 
-	$(".schedule-trigger").click(function() {
-		$('#upcoming-games').slideToggle('slow', function() {});
+	$(".schedule-trigger").hover(function() {
+		$('#upcoming-games').delay( 1000 ).slideToggle('slow', function() {});
 
 		$('#controls').fadeToggle('slow').click(function() {
 			alert('clicking this will run code that controls how many results displayed');
