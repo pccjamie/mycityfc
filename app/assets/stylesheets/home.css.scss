@@ -85,7 +85,7 @@ body {
  	header.logo h1 { font-size: 28px; color: yellow;}
  	nav.public {display:none}
  }
- * footer {display:none;}
+ // * footer {display:none;}
 }
 
 // body.default * form {background: $bg-dark;}
@@ -193,7 +193,7 @@ h3.my-team {display:none}
 	.game-date {width: 100%; color: #363636}
 	.game-home-logo,	.game-away-logo {width: 50px;}
 	.game-score {width: 50px;}
-	.game-links {padding: 0; color: #FFF; float:right;}
+	.game-links {width: 100%; padding: 0; color: #FFF; float:right;}
 
 	.field-home-team-logo, .field-away-team-logo {width: auto;}
 	.field-home-team-logo img, .field-away-team-logo img {width: 25px}
@@ -244,7 +244,7 @@ header#banner #game-previews {
 	.js-next-game.single-game .game-home-logo, 	.js-next-game.single-game .game-away-logo {margin: auto}
 	.js-next-game.single-game .game-date {background: 0; display:block}
 	.js-next-game.single-game .game-time {display:block}
-	.js-next-game.single-game .game-links {margin-top: 20px;}
+	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
 	.js-next-game.single-game * a {background: #1f9fff;color:#FFF}
 	.js-next-game * {background: 0}
 
@@ -307,7 +307,7 @@ header#banner a.credits {height: auto; width: auto; display: none; position: abs
 header#banner a.credits img {height: 50%; width: 50%;}
 header#banner * .external-links {height: auto}
 
-footer {height: auto; width: 100%; margin-top: 20px; background-color: $bg-medium; position: relative; float: left; display: block; }
+footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-medium; position: relative; float: left; display: block; }
 footer * {color: $white}
 
 #js-gameday {height: 0px; width: 100%; margin: 0 auto; display: none; position: absolute; z-index: 9999; 
@@ -333,11 +333,17 @@ footer * {color: $white}
 // details summary h5 {color: #FFF; height: 20px; width: auto; display:block}	
 // #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
-#profile, #local {height: auto; padding: 20px;display: inline-block; position:relative; background: $bg-medium} 
+#profile, #local {height: auto; padding: 20px;display: inline-block; position:relative; background: -moz-linear-gradient(top, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0) 75%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.50)), color-stop(75%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */}
+ 
 #profile {float: left;  position:relative; width:60%; }
 #profile header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
 #profile section:nth-child(even) .sleeve header h2 {color: #363636}
-#profile section:nth-child(even) {background: $tbd;}
+// #profile section:nth-child(even) {background: $tbd;}
 
 
 section#videos, section#fans, section#players, section#schedule-results {
@@ -372,7 +378,7 @@ section#fans .sleeve aside {
 
 section#schedule-results .sleeve {margin:0}
 
-section#tbd {height: auto; min-height: 300px; background: $tbd; display: block;}
+section#tbd {height: auto; min-height: 300px; display: block; float: left; background: $tbd;}
 section#tbd .sleeve {margin: 20px}
 
 
@@ -394,7 +400,7 @@ section#tbd .sleeve {margin: 20px}
 .league {background: $bg-light; color: #262626}
 
 #local * .cycle-pager {height: 40px;  width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
-#local * .cycle-pager li.pager {height: 40px; line-height: 40px; width: auto; display: inline-block; background: $bg-main; margin:0; padding: 10px;}
+#local * .cycle-pager li.pager {height: 40px; line-height: 100%; width: auto; display: inline-block; background: $bg-main; margin:0; padding: 10px;}
 #local * .cycle-pager li.active { background: $bg-light;}
 #local * .active-slide {height: auto;}
 
@@ -431,7 +437,7 @@ form #slideshow.modal .button {width: 100%;}
 
 
 
-ul.competitions {height: auto; background: #363636; float: right; margin-right: 10px}
+ul.competitions {height: auto; float: right; margin-right: 10px}
 
 .game-competition {display: none}
 
