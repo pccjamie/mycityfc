@@ -113,7 +113,7 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .pending {background: $pending}
 
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
-// header nav a {height: auto; background: #1f9fff; color: #FFF; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
+//nav a {height: auto; background: #1f9fff; color: #FFF; font-size:24px; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
 #overlay {
     position: fixed;
@@ -144,7 +144,6 @@ header.logo {display:inline-block; width: 100%; float: left; padding: 20px;
 
 }
 
-nav.account {display:inline-block; width: 100%; float:right;}
 
 header#splash {
 	h1 {font-size: 120px;}
@@ -154,15 +153,20 @@ header#splash {
 
 
 /*top nav*/
+nav.account {display:inline-block; width: 100%; float:right;}
+
 #nav-wrapper {height: auto; width: 100%; display: block; background: $bg-steel-opaque; padding: 0 20px;}
 
 nav {height: 40px; width: 100%; margin-left: 15px; display: block; line-height: 40px;		
 	* img {margin-top: 4px; height: 20px}
 }
 
-// nav.private {
-// 	ul li {background: $bg-steel}
-// }
+nav.private {
+
+	a {height: auto; background: #1f9fff; color: #FFF; font-size:24px;}
+
+}
+
 
 nav ul.l2 {display:none; position: absolute; top: 100%; left: 0; background: green}
 nav ul.l1 li:hover + ul.l2 {display: block}
@@ -319,7 +323,7 @@ footer * {color: $white}
 
 /* TRIGGERS */
 
-.news-trigger {background: $bg-steel; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: auto; line-height: 50px; background: $bg-medium; display: block;}
+.news-trigger {background: $bg-steel; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: auto; padding: 0 10px; line-height: 50px; background: $bg-medium; display: block;}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
@@ -400,7 +404,7 @@ section#tbd .sleeve {margin: 20px}
 .league {background: $bg-light; color: #262626}
 
 #local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
-#local * .cycle-pager li.pager {height: 40px; line-height: 100%; width: auto; display: inline-block; background: $bg-main; margin:0; padding: 10px;}
+#local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-main; margin:0; padding: 10px;}
 #local * .cycle-pager li.active { background: $bg-light;}
 #local * .active-slide {height: auto;}
 

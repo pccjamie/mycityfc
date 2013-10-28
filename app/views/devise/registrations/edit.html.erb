@@ -14,7 +14,7 @@
 
                         <div class="sleeve">
                               
-                              <h5><%= f.label :profile, 'Choose a View' %></h5>
+                              <h5 class="setting"><%= f.label :profile, 'Choose a View' %></h5>
 
                               <aside class="left">
                               <%= f.radio_button(:profile, "Fan") %>
@@ -28,14 +28,12 @@
 
                               <div class="clearfix"></div>
 
-                              <h5><%= f.label :primary_team, 'Follow a Team!' %></h5>
+                              <h5 class="setting"><%= f.label :primary_team, 'Follow a Team!' %></h5>
 
-                          <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
+                          <%= f.collection_select(:primary_team, Team.all, :name, :name), :class=>'select' %>
 
-
-                        <%= f.submit "Confirm", :class=>'button' %>
-
-                       <%= link_to "Cancel", root_path %>
+                       <%= f.submit "Confirm", :class=>'button' %>
+                       <%= link_to "Cancel", root_path, :class=>'button ' %>
 
                         </div>
 

@@ -13,10 +13,6 @@ function location_based_view() {
 				console.log(venue);
 				$(this).parent().parent().css('background-image', 'url(' + venue + ')');
 			});
-
-
-		// console.log('add code to change bg based on primary team');
-
 	}
 	
 	else {
