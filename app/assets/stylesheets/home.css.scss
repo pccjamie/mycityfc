@@ -164,8 +164,6 @@ nav {height: 40px; width: 100%; margin-left: 15px; display: block; line-height: 
 
 nav.private {
 
-	margin-top: 50px;
-
 	a {height: auto; background: 0; color: #FFF; font-size:20px;}
 
 }
@@ -176,7 +174,7 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 
 
 
-header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px;}
+header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; border-top: 1px solid $bg-steel}
 
 header#banner > {min-height: 260px; height: auto;}
 
@@ -230,13 +228,13 @@ section#schedule-results * .clearfix {display:none}
 /* previews */
 header#banner #game-previews {
 	
-	height: auto; width: 60%; position: relative; display:inline-block;float:left; background: $bg-profile;
+	height: auto; width: 60%; position: relative; display:inline-block;float:left; background: 0;
 
 	.sleeve {margin:0}
 
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 
-	.wrapper {height: auto;width: 100%; float: left; display:block;background: $bg-steel-opaque; }
+	.wrapper {height: auto; width: 25%; float: right; margin-right: 20px; display:block;background: $bg-steel-opaque; }
 	
 	 .schedule-trigger {height: 100%; width: 90%;  display:inline-block; float:left; position: relative}
 	}
@@ -329,7 +327,7 @@ footer * {color: $white}
 
 /* TRIGGERS */
 
-.news-trigger {background: $bg-steel; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: auto; padding: 0 10px; line-height: 50px; background: $bg-medium; display: block;}
+.news-trigger {background: $bg-steel-opaque; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: auto; padding: 0 10px; line-height: 50px; background: $bg-medium; display: block;}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
