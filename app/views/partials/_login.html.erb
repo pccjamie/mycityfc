@@ -15,7 +15,11 @@
 <ul class="left">
   <li><%= link_to 'HOME', root_path %></li>
   <li><%= link_to 'US SOCCER STATS', slides_path %></li>
-  <li><%= link_to current_user.primary_team, fan_profiles_path %></li>
+  <li>
+    <%= link_to fan_profiles_path do %>
+      Your <%= current_user.primary_team, fan_profiles_path %>
+    <% end %>
+    </li>
   <li><%= link_to 'ALL TEAMS', teams_path, class: "team-directory" %></li>
 <!--   <li><%#= link_to 'soccer mom?', parent_profiles_path %></li>
  --></ul>
