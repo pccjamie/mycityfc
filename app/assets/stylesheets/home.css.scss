@@ -121,6 +121,8 @@ p {font-family: Helvetica, Arial, sans-serif;}
 /* TEMP */
 .pending {background: $pending}
 
+
+
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 //nav a {height: auto; background: #1f9fff; color: #FFF; font-size:24px; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
@@ -170,7 +172,7 @@ nav.account {
 
 nav.content {
 
-	height: auto; width: 40%; padding: 20px; display:inline-block; float:right;
+	height: auto; width: 40%; padding: 20px; padding-left: 0; display:inline-block; float:right;
 
 	ul.left {line-height:  80px}
 	ul.left li {height: 100px; width: 100px; padding: 10px; line-height: 100%; float:left}
@@ -178,7 +180,7 @@ nav.content {
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.25)}
 
-	ul.left li:hover {background: rgba(31,159,255,.25)}
+	ul.left li:hover {background: $bg-light; color: $bg-steel}
 
 	a {height: 100%; width: 1005; float: left; background: 0; color: #FFF; font-size:20px; line-height: 100%}
 }
