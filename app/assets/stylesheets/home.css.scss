@@ -178,9 +178,9 @@ nav.content {
 	ul.left li {height: 100px; width: 100px; padding: 10px; line-height: 100%; float:left}
 
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
-	ul.left li:nth-child(even) {background: rgba(31,159,255,.25)}
+	ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
 
-	ul.left li:hover {background: $bg-light; color: $bg-steel}
+	ul.left li:hover {background: $bg-light; color: $bg-light}
 
 	a {height: 100%; width: 1005; float: left; background: 0; color: #FFF; font-size:20px; line-height: 100%}
 }
