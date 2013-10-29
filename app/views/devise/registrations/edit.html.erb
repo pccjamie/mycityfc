@@ -1,17 +1,15 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 <!-- <h5>Default View: <%#= resource_name.to_s.humanize %></h5>
- --><header class="page-title">
-
- <%= current_user.name %>'s Profile
-
- <%= current_user.name %>
-<%= image_tag current_user.picture %>
- <%= current_user.location %>
-
-
+ -->
+<header class="page-title">
+My Profile
+<ul class="current">
+<li><%= current_user.name %></li>
+<li><%= image_tag current_user.picture %></li>
+<li><%= current_user.location %></li>
+</ul>
 </header>
  
-
 <%= devise_error_messages! %>
 
       <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='5000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
@@ -21,31 +19,25 @@
                     <!-- tab 1: choose a profile -->
                       <section id="section" class="slide" name="slide">
                               
-
                               <div class="field-group">
-                              <%= f.label :profile, 'Default View' %>
-                              <aside class="left">
-                              <%= f.radio_button(:profile, "Fan") %>
-                              <%= f.label(:profile_fan, "Fan") %>
-                              </aside>
+                                <%= f.label :profile, 'Default View' %>
+                                <aside class="left">
+                                <%= f.radio_button(:profile, "Fan") %>
+                                <%= f.label(:profile_fan, "Fan") %>
+                                </aside>
 
-                              <aside class="right">
-                              <%= f.radio_button(:profile, "Parent") %>
-                              <%= f.label(:profile_parent, "Parent") %>
-                              </aside>
-
+                                <aside class="right">
+                                <%= f.radio_button(:profile, "Parent") %>
+                                <%= f.label(:profile_parent, "Parent") %>
+                                </aside>
                               </div>
 
-      
-
                               <div class="field-group">
-
-                              <%= f.label :primary_team, 'Follow a Team!' %>
-                              <p>Select a team for a richer experience</p>
-                              <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
-                              <%= link_to "Cancel", root_path, :class=> "button" %>
-                              <%= f.submit "Confirm", :class=>'button' %>
-
+                                <%= f.label :primary_team, 'Follow a Team!' %>
+                                <p>Select a team for a richer experience</p>
+                                <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
+                                <%= link_to "Cancel", root_path, :class=> "button" %>
+                                <%= f.submit "Confirm", :class=>'button' %>
                               </div>
 
                       </section>
