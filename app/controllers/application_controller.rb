@@ -19,14 +19,14 @@ class ApplicationController < ActionController::Base
 
   #helper :all
 
-  before_filter :set_access_control_headers
+  # after_filter :set_access_control_headers
   
-  def set_access_control_headers
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Request-Method"] = "*"
-    response.headers["Access-Control-Allow-Headers"] = "Content-Type"
-    response.headers["Content-Type"] = "application/json, text/html"
-  end
+  # def set_access_control_headers
+  #   response.headers["Access-Control-Allow-Origin"] = "*"
+  #   response.headers["Access-Control-Request-Method"] = "*"
+  #   response.headers["Access-Control-Allow-Headers"] = "Content-Type"
+  #   response.headers["Content-Type"] = "application/json, text/html"
+  # end
 
 
   def after_sign_in_path_for(user)
