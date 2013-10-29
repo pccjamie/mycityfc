@@ -189,7 +189,7 @@ nav.content {
 header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; padding-top: 0px; border-top: 1px solid #FFF}
 
 
-header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
+header#banner * article a {font-family: Helvetica,Arial, serif; font-size:16px; letter-spacing:0; line-height: normal;}
 header#banner * article a:hover {background: yellow}
 
 
@@ -314,7 +314,7 @@ border-top-right-radius: 5px;}
 
 #ticker article:first-child {height: auto;}
 #ticker article:not(:first-child) {height: auto;}
-#ticker article:not(:first-child) a {font-size: 20px}
+#ticker article:not(:first-child) a {font-size: 16px}
 
 #js-headlines article {padding: 10px}
 #js-headlines article:nth-child(odd) {background: $bg-medium}
