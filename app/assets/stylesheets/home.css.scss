@@ -154,36 +154,29 @@ header#splash {
 
 
 /*top nav*/
-nav.account {display:inline-block; width: 100%; float:right;}
 
 #nav-wrapper {height: auto; width: 100%; display: block; background: $bg-steel-opaque; padding: 0 20px;}
 
-nav {height: 40px; width: 100%; margin-left: 15px; display: block; line-height: 40px;		
+nav {
+	height: 40px; width: 100%; display: block; line-height: 40px;		
 	* img {margin-top: 4px; height: 20px}
 }
 
-nav.private {
+nav.account {
+	display:inline-block; width: 100%; float:right; background: $bg-steel-opaque;
+}
 
+nav.content {
+	float:right; width: 40%;
 	a {height: auto; background: 0; color: #FFF; font-size:20px;}
-
 }
 
 
-nav ul.l2 {display:none; position: absolute; top: 100%; left: 0; background: green}
-nav ul.l1 li:hover + ul.l2 {display: block}
+header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; padding-top: 20px; border-top: 1px solid $bg-steel}
 
-
-
-header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; border-top: 1px solid $bg-steel}
-
-header#banner > {min-height: 260px; height: auto;}
 
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
-
-header#banner .g-title {height:100px; width: 100px; font-size: 20px; color: #000; background: $white; margin-right:20px; display:inline-block;float: left; position: relative;}
-
-
 
 
 /* DONT TOUCH */
