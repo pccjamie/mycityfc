@@ -16,7 +16,7 @@
   <li><%= link_to 'HOME', root_path %></li>
   <li><%= link_to 'US SOCCER STATS', slides_path %></li>
   <li>
-    <%= link_to fan_profiles_path do %>
+    <%= link_to 'Your Team', fan_profiles_path do %>
       Your <%= current_user.primary_team, fan_profiles_path %>
     <% end %>
     </li>
