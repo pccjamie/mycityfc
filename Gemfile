@@ -4,11 +4,10 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 # server
 gem 'pg'
-gem 'thin'
+# gem 'thin'
 
 #gem 'daemons'
 gem 'delayed_job_active_record'
-
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
