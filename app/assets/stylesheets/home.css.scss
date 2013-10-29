@@ -173,7 +173,7 @@ nav.content {
 	height: auto; width: 40%; padding: 20px; display:inline-block; float:right;
 
 	ul.left {line-height:  80px}
-	ul.left li {height: 100%; padding-left: 10px; padding-right: 10px; float: left}
+	ul.left li {height: auto; max-width: 150px; padding-left: 10px; padding-right: 10px; line-height: 100%}
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.25)}
 
@@ -277,12 +277,11 @@ border-top-right-radius: 5px;}
   -o-transition: display 1s ease-in-out;
   // transition: height 1s ease-in-out;
   transition: display 1s ease-in-out;
-  -webkit-box-shadow: 1px 1px 5px #363636;
 
 }
 
 /*schedule filtering*/
-#upcoming-games .single-game {height: 200px; width:50%; border: 1px solid #363636; padding: 18px; float: left; margin-bottom: 0;display:inline; background: #758AA3;}
+#upcoming-games .single-game {height: 200px; width:50%; padding: 18px; float: left; margin-bottom: 0;display:inline; background: rgba(117,138,163,.75);}
 #upcoming-games .single-game * {color: #FFF}; 
 #upcoming-games .single-game * a {background: $bg-profile; color:#FFF; text-align:center}
 #upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
