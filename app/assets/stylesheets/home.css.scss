@@ -138,7 +138,7 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
 
-header.logo {display:inline-block; width: 50%; float: left; padding: 20px;
+header.logo {display:inline-block; width: 60%; float: left; padding: 20px;
  
  	* {margin: 0}
 	h1 {letter-spacing: 8px; text-shadow: -2px -2px 2px #425666; color: #FFF}
@@ -164,7 +164,9 @@ nav {height: 40px; width: 100%; margin-left: 15px; display: block; line-height: 
 
 nav.private {
 
-	a {height: auto; background: #1f9fff; color: #FFF; font-size:20px;}
+	margin-top: 50px;
+
+	a {height: auto; background: 0; color: #FFF; font-size:20px;}
 
 }
 
@@ -175,6 +177,9 @@ nav ul.l1 li:hover + ul.l2 {display: block}
 
 
 header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px;}
+
+header#banner > {min-height: 260px; height: auto;}
+
 header#banner * article a {font-family: Helvetica,Arial, serif; letter-spacing:0; line-height: normal}
 header#banner * article a:hover {background: yellow}
 
@@ -283,7 +288,7 @@ header#banner #game-previews {
 
 
 /* NEWS TICKER */
-#ticker {height: auto; width: 40%; margin: auto; background: $bg-light}
+#ticker {height: auto; width: 40%; margin: auto; background: rgba(0,0,0,.1)}
 #ticker .sleeve {height: 100%; margin: 20px}
 #ticker .sleeve header {height: 40px; display:block;
 	h4 {margin:0; width: auto; float:left; display:inline-block}
