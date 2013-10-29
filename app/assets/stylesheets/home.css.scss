@@ -178,7 +178,9 @@ nav.content {
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.25)}
 
-	a {height: auto; background: 0; color: #FFF; font-size:20px; line-height: 100%}
+	ul.left li:hover {background: rgba(31,159,255,.25)}
+
+	a {height: 100%; width: 1005; float: left; background: 0; color: #FFF; font-size:20px; line-height: 100%}
 }
 
 
