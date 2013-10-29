@@ -14,9 +14,10 @@
 <nav class="private content">
 <ul class="left">
 <!--   <li><%#= link_to 'HOME', root_path %></li>
- -->  <li><%= link_to 'SOCCER IN THE US', slides_path %></li>
-  <li>My<br/><%= link_to current_user.primary_team, fan_profiles_path %></li>
+ -->  
+  <li>My <%= link_to current_user.primary_team, fan_profiles_path %></li>
+  <li><%= link_to 'SOCCER IN THE US', slides_path %></li>
   <li><%= link_to 'ALL TEAMS', teams_path, class: "team-directory" %></li>
   <li><%= link_to 'SOCCER MOMS!', parent_profiles_path %></li>
- --></ul>
+ </ul>
 </nav>

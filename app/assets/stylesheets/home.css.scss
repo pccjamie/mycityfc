@@ -173,11 +173,12 @@ nav.content {
 	height: auto; width: 40%; padding: 20px; display:inline-block; float:right;
 
 	ul.left {line-height:  80px}
-	ul.left li {height: auto; max-width: 150px; padding-left: 10px; padding-right: 10px; line-height: 100%}
+	ul.left li {height: 100px; width: 100px; padding: 10px; line-height: 100%; float:left}
+
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.25)}
 
-	a {height: auto; background: 0; color: #FFF; font-size:20px;}
+	a {height: auto; background: 0; color: #FFF; font-size:20px; line-height: 100%}
 }
 
 
