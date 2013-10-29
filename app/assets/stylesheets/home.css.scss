@@ -173,7 +173,7 @@ nav.content {
 	height: auto; width: 40%; padding: 20px; display:inline-block; float:right;
 
 	ul.left {line-height:  80px}
-	ul.left li {height: 100%; float: left}
+	ul.left li {height: 100%; padding-left: 10px; padding-right: 10px; float: left}
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.25)}
 
