@@ -229,13 +229,18 @@ header#banner #game-previews {
 
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 
-	.wrapper {height: 40px; width: 200px; margin: auto; display:block; background: $bg-steel-opaque; }
+	.wrapper {height: 40px; width: 200px; margin: auto; display:block; background: $bg-steel-opaque; -webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 5px;
+-moz-border-radius-topleft: 5px;
+-moz-border-radius-topright: 5px;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;}
 	
-	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: #FFF; display:inline-block; position: relative; margin: auto;}
+	 .schedule-trigger {height: 20px; padding: 10px; bottom: 0px; color: #FFF; display:inline-block; position: relative; margin: auto;}
 
 	}
 
-	#controls {height: 100%; width: 10%; color: #FFF;  text-align:center; display: none; float:right}
+	#controls {height: 20px; width: 10%; padding: 10px; color: #FFF;  text-align:center; display: none; float:right}
 
 
 	/*next game only */
@@ -290,7 +295,7 @@ header#banner #game-previews {
 
 #js-headlines {
 	height: auto;
-	width: auto;
+	width: 360px;
 	margin-bottom: 20px;
 	position:relative;
 	display:none;
@@ -303,7 +308,7 @@ header#banner #game-previews {
 #js-headlines article {padding: 10px}
 #js-headlines article:nth-child(odd) {background: $bg-medium}
 
-#js-headlines-latest {height: 160px}
+#js-headlines-latest {height: 145px; width: 360px;}
 #js-headlines-latest article:first-child a {font-size: 24px; margin: auto; }
 
 
@@ -324,7 +329,7 @@ footer * {color: $white}
 /* TRIGGERS */
 
 
-.news-trigger {background: $bg-steel-opaque; color:#FFF; position: absolute; text-align:center; margin: auto;bottom: 0px; right: 0px; z-index: 1; height: 50px; width: auto; padding: 0 10px; line-height: 50px; display: block;}
+.news-trigger {background: $bg-steel-opaque; color:#FFF; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
