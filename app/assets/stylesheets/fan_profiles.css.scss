@@ -19,7 +19,8 @@ $bg-steel-opaque: rgba(66,85,102,.5);
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; float: left}
 
-	.team-overview {height: auto; width: 100%; float: left; padding: 8px; background-color: #758AA3; display: block; position: relative}
+	.team-overview {height: auto; width: 100%; float: left; padding: 8px; background-color: #758AA3; -webkit-filter: grayscale(90%); display: block; position: relative}
+	.team-overview:hover {-webkit-filter: grayscale(0%);}
 
 		.team-logo {float: left; text-align:center}
 		.team-info {float: left; background: rgba(0,0,0,.5)}
