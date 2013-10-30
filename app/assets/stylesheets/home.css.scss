@@ -21,14 +21,12 @@ $tx-light: #161616;
 $text-hover-bg: #262626;
 $text-hover-main: #FFF;
 
-$white: #fff;
-
 $trigger: #BBFF00;
 
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
 
-$bg-profile: rgba(31,159,255,.5);
+$bg-highlight: rgba(31,159,255,.5);
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -249,7 +247,7 @@ border-top-right-radius: 5px;}
 	.js-next-game.single-game .game-time {display:block}
 	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
-	.js-next-game.single-game * a {background: $bg-profile; color:#FFF}
+	.js-next-game.single-game * a {background: $bg-highlight; color:#FFF}
 	.js-next-game * {background: 0}
 
 
@@ -270,7 +268,7 @@ border-top-right-radius: 5px;}
 /*schedule filtering*/
 #upcoming-games .single-game {height: 200px; width:50%; padding: 18px; float: left; margin-bottom: 0;display:inline; background: rgba(117,138,163,.75);}
 #upcoming-games .single-game * {color: #FFF}; 
-#upcoming-games .single-game * a {background: $bg-profile; color:#FFF; text-align:center}
+#upcoming-games .single-game * a {background: $bg-highlight; color:#FFF; text-align:center}
 #upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
 #upcoming-games .single-game .game-time {display: block; margin-bottom: 10px}
 #upcoming-games .single-game .game-competition {display:block; width: auto; margin: 10px 0}
@@ -312,7 +310,6 @@ header#banner a.credits img {height: 50%; width: 50%;}
 header#banner * .external-links {height: auto}
 
 footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel-opaque; position: relative; float: left; display: block; }
-footer * {color: $white}
 
 #js-gameday {height: 0px; width: 100%; margin: 0 auto; display: none; position: absolute; z-index: 9999; 
 	.sleeve {height: 400px; width: 800px; margin: auto; position: relative; background: orange; border: 2px solid white}
@@ -369,7 +366,7 @@ section#videos {
 	.sleeve {margin: 0; float: none}
 }
 
-section#fans {background: $bg-profile; margin-bottom:20px}
+section#fans {background: $bg-highlight; margin-bottom:20px}
 section#fans .sleeve header {display: block; position:relative}
 section#fans .sleeve aside {
 			
@@ -388,19 +385,7 @@ section#tbd .sleeve {margin: 20px}
 
 /* GEO */
 
-#local {height: 100%; width: 40%; position: relative; display:inline-block}
-#local * section {
-	display:inline-block; width:50%; height: auto; display: inline-block; position: relative; min-height: 200px; 
-}
 
-
-#local header.team-finder {}
-	h4 a.team-directory {background: rgba(66,85,102,1); padding: 0 10px; color: #FFF; float: right}
-#local #slideshow {min-height:400px; overflow: none}
-#local * .leagueslider {height: auto; display: block}
-#local * .league { height: auto; width: 100%; margin-top: 40px;}
-
-.league {background: $bg-light; color: #262626}
 
 
 form {background: rgba(135,169,181,0.75); height: auto; width: 300px; margin: 0 auto; padding: 20px;}

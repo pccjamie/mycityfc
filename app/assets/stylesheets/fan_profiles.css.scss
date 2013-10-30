@@ -10,14 +10,27 @@ $bg-light: rgba(0,0,0,.25);
 
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
+$bg-highlight: rgba(31,159,255,.5);
 
 /*SPECIAL*/
 .external-links {height: auto}
 
+#local {height: 100%; width: 40%; position: relative; display:inline-block}
+#local * section {
+	display:inline-block; height: auto; width: 100%; display: inline-block; position: relative; min-height: 200px; 
+}
+
+
+#local header.team-finder {}
+	h4 a.team-directory {background: rgba(66,85,102,1); padding: 0 10px; color: #FFF; float: right}
+#local #slideshow {min-height:400px; overflow: none}
+#local * .leagueslider {height: auto; display: block}
+#local * .league { height: auto; width: 100%; margin-top: 40px; background: $bg-light; color: #262626}
+
 
 #local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
 #local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-medium; margin:0; padding: 10px;}
-#local * .cycle-pager li.active { background: $bg-light;}
+#local * .cycle-pager li.active { background: $bg-highlight;}
 #local * .active-slide {height: auto; float:left}
 
 /* elements default to hidden */
