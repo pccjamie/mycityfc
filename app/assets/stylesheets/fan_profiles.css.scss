@@ -35,8 +35,8 @@ $bg-highlight: rgba(31,159,255,.5);
 
 #local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
 #local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-medium; margin:0; padding: 10px;}
-#local * .cycle-pager li.active { background: $bg-w-heavy;}
-#local * .active-slide {height: auto; float:left; background: $bg-w-heavy;}
+#local * .cycle-pager li.active { background: $bg-medium}
+#local * .active-slide {height: auto; float:left; background: $bg-medium;}
 
 /* elements default to hidden */
 section#nearby-teams * .hideme  {display: none};
@@ -45,7 +45,7 @@ section#nearby-teams .sleeve {margin: 0px}
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: $white-main; padding: 10px; float: left}
 
-	.team-overview {height: auto; width: 100%; float: left; padding: 8px; background-position:center; background-color: #758AA3; -webkit-filter: grayscale(100%); display: block; position: relative}
+	.team-overview {height: auto; width: 100%; float: left; padding: 0px; background-position:center; -webkit-filter: grayscale(100%); display: block; position: relative}
 	.team-overview:hover {-webkit-filter: grayscale(0%);}
 
 	.team-overview {
@@ -70,7 +70,7 @@ section#nearby-teams .sleeve {margin: 0px}
 
 		 	.team.secondary {width: 50%; display:inline-block;}
 
-		 		.team.secondary .team-overview {border:0; background-color: #425566; padding: 10px }
+		 		.team.secondary .team-overview {border:0; background-color: #425566; padding: 0px }
 				.team.secondary * .team-info {width: 100%; padding: 10px}
 		 		.team.secondary * h4.team-name {font-size:16px; letter-spacing: 6px;}
 		 		.team.secondary * h5 {font-size:14px}
