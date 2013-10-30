@@ -11,9 +11,6 @@ root :to => 'home#splash'
 
 resources :slides, :except => [:destroy]
 resources :fan_profiles, :except => [:destroy]
-resources :fan_profiles do
-  resources :index, as: current_user.primary_team
-end
 resources :parent_profiles, :except => [:destroy]
 resources :teams, :except => [:destroy]
 
