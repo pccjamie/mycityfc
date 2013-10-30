@@ -1,32 +1,33 @@
+$font-special:    'BenchNine', Helvetica, Arial, sans-serif;
+$font-normal:    Helvetica, Arial, sans-serif;
+
 $bg-main: rgba(135, 169, 181, 0.85);
-$header-bg: rgba(255,255,255,.5);
-$header-text: #363636;
 
-$tbd: rgba(0,0,0,.25);
-$pending: rgba(255,0,0,.5);
-
-/*blacks */
-$bg-dark: rgba(0,0,0,.75);
+/* darks */
+$bg-heavy: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
+
+/* lights */
+$white-main: #FFF;
 
 $bg-w-heavy: rgba(255,255,255,.75);
 $bg-w-medium: rgba(255,255,255,.5);
 $bg-w-light: rgba(255,255,255,.25);
 
-$tx-dark: #666666;
-$tx-medium: #464646;
-$tx-light: #161616;
-
-$text-hover-bg: #262626;
-$text-hover-main: #FFF;
-
-$trigger: #BBFF00;
-
+/*hovers*/
+$hover-bg-change: yellow;
 
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
 $bg-highlight: rgba(31,159,255,.5);
+
+/*temp*/
+$tbd: rgba(0,0,0,.25);
+$pending: rgba(255,0,0,.5);
+
+
+/* insert reset?*/
 
 .clearfix:after {
    content: " "; /* Older browser do not support empty content */
@@ -36,7 +37,7 @@ $bg-highlight: rgba(31,159,255,.5);
    clear: both;
 }
 
-.notice, .alert {background: orange; color: #FFF; padding: 10px;}
+.notice, .alert {background: orange; color: $white-main; padding: 10px;}
 
 body {
 	height:100%; 
@@ -89,37 +90,35 @@ body {
 	}
 
  	header.logo h4 {font-size:20px;}
- 	header.logo h1 {font-size:48px;letter-spacing: 8px; text-shadow: -1x -1px 1px $bg-steel; color: #FFF}
+ 	header.logo h1 {font-size:48px;letter-spacing: 8px; text-shadow: -1x -1px 1px $bg-steel; color: $white-main}
 
  	nav.public {display:none}
 
  }
 
-// body.default * form {background: $bg-dark;}
-
 body.bg-default * form * {color: #363636}
-
-body.bg-public {
-	h1,h2,h3,h4,h5,p,a,li {color: $tx-medium;}
-}
 
 table {display: block; position: relative;}
 
 ul {list-style: none; margin: 0; padding:0; line-height: 40px;}
 li {display: inline; padding: 5px}
 
-h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; letter-spacing: 1px; font-weight: normal}
+h1,h2,h3,h4,h5,a,li {color: $white-main; font-family: $font-special; letter-spacing: 1px; font-weight: normal}
 
 h1,h2,h3,h4, nav * a, nav * li {text-transform: uppercase}
 
-p {font-family: Helvetica, Arial, sans-serif;}
+p {font-family: $font-normal;}
+
+a.offsite:hover {background: $hover-bg-change}
+
+
 
 /* TEMP */
 .instructions {color: orange}
 .pending {background: $pending}
 
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
-//nav a {height: auto; background: #1f9fff; color: #FFF; font-size:24px; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
+//nav a {height: auto; background: #1f9fff; color: $white-main; font-size:24px; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
 #wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto; position: relative; z-index:0}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px; margin-top: 0; position: relative;}
@@ -150,7 +149,7 @@ nav {
 }
 
 nav.account {
-	display:inline-block; width: 100%; float:right; background: $bg-steel-opaque;border-bottom: 1px solid #FFF
+	display:inline-block; width: 100%; float:right; background: $bg-steel-opaque;border-bottom: 1px solid $white-main
 }
 
 nav.content {
@@ -163,30 +162,30 @@ nav.content {
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
 
-	ul.left li:hover {background: $bg-light; color: $bg-light}
+	ul.left li:hover {background: $bg-light; color: $white-main}
 
-	a {height: 100%; width: 1005; float: left; background: 0; color: #FFF; font-size:20px; line-height: 100%}
+	a {height: 100%; width: 1005; float: left; background: 0; color: $white-main; font-size:20px; line-height: 100%}
 }
 
 
-header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; padding-top: 0px; border-top: 1px solid #FFF}
+header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; padding-top: 0px; border-top: 1px solid $white-main}
 
 
 header#banner * article a {font-family: Helvetica,Arial, serif; font-size:16px; letter-spacing:0; line-height: normal;}
-header#banner * article a:hover {background: yellow}
+header#banner * article a:hover {background: $hover-bg-change}
 
 
 
 /*SCHEDULE */
 /* defaults */
-.single-game {height: auto; padding: 10px; margin-bottom: 1px; display: none; float: left; position: relative; z-index:20; background: #FFF;
+.single-game {height: auto; padding: 10px; margin-bottom: 1px; display: none; float: left; position: relative; z-index:20; background: $white-main;
 
 	* {width: 100px; display:inline-block; /*background: $bg-rev-medium; */line-height: normal; color: a; }
 
 	.game-date {width: 100%; color: #363636}
 	.game-home-logo,	.game-away-logo {width: 50px;}
 	.game-score {width: 50px;}
-	.game-links {width: 100%; padding: 0; color: #FFF; float:right;}
+	.game-links {width: 100%; padding: 0; color: $white-main; float:right;}
 
 	.field-home-team-logo, .field-away-team-logo {width: auto;}
 	.field-home-team-logo img, .field-away-team-logo img {width: 25px}
@@ -228,11 +227,11 @@ header#banner #game-previews {
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;}
 	
-	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: #FFF; display:inline-block; position: relative; margin: auto;}
+	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto;}
 
 	}
 
-	#controls {height: auto; width: 25%; padding: 10px; color: #FFF;  text-align:center; display: none; float:right}
+	#controls {height: auto; width: 25%; padding: 10px; color: $white-main;  text-align:center; display: none; float:right}
 
 
 	/*next game only */
@@ -240,14 +239,14 @@ border-top-right-radius: 5px;}
 
 
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
-	.js-next-game.single-game * {color: #FFF; width: auto}
-	.js-next-game.single-game .game-home,	.js-next-game.single-game .game-away {font-size: 64px; font-family: 'BenchNine', Helvetica, Arial; text-transform: uppercase;}
+	.js-next-game.single-game * {color: $white-main; width: auto}
+	.js-next-game.single-game .game-home,	.js-next-game.single-game .game-away {font-size: 64px; font-family: $font-special; text-transform: uppercase;}
 	.js-next-game.single-game .game-home-logo, 	.js-next-game.single-game .game-away-logo {margin: auto}
 	.js-next-game.single-game .game-date {background: 0; display:block}
 	.js-next-game.single-game .game-time {display:block}
 	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
-	.js-next-game.single-game * a {background: $bg-highlight; color:#FFF}
+	.js-next-game.single-game * a {background: $bg-highlight; color:$white-main}
 	.js-next-game * {background: 0}
 
 
@@ -256,19 +255,17 @@ border-top-right-radius: 5px;}
 #upcoming-games {
 
 	height: 100%; width: 100%; overflow-y: auto; background: $bg-steel-opaque; margin: auto; overflow: auto; position: relative;/*to be changed to :none */z-index: 8500; display: none;
-  // -webkit-transition: height 1s ease-in-out;
   -webkit-transition: display 1s ease-in-out;
   -moz-transition: display 1s ease-in-out;
   -o-transition: display 1s ease-in-out;
-  // transition: height 1s ease-in-out;
   transition: display 1s ease-in-out;
 
 }
 
 /*schedule filtering*/
 #upcoming-games .single-game {height: 200px; width:50%; padding: 18px; float: left; margin-bottom: 0;display:inline; background: rgba(117,138,163,.75);}
-#upcoming-games .single-game * {color: #FFF}; 
-#upcoming-games .single-game * a {background: $bg-highlight; color:#FFF; text-align:center}
+#upcoming-games .single-game * {color: $white-main}; 
+#upcoming-games .single-game * a {background: $bg-highlight; color:$white-main; text-align:center}
 #upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
 #upcoming-games .single-game .game-time {display: block; margin-bottom: 10px}
 #upcoming-games .single-game .game-competition {display:block; width: auto; margin: 10px 0}
@@ -321,18 +318,11 @@ footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel
 /* TRIGGERS */
 
 
-.news-trigger {background: $bg-steel-opaque; color:#FFF; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;}
+.news-trigger {background: $bg-steel-opaque; color:$white-main; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
 
-
-
-
-/* toggle header */
-// details {background: 0; }
-// details summary h5 {color: #FFF; height: 20px; width: auto; display:block}	
-// #banner {height: auto; display: block; position: relative; background: 0; width:100%; margin-bottom: 10px;
 
 #profile, #local {height: auto; padding: 20px;display: inline-block; position:relative; background: -moz-linear-gradient(top, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0) 75%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.50)), color-stop(75%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* Chrome10+,Safari5.1+ */
@@ -343,15 +333,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 #profile {float: left;  position:relative; width:60%; }
 #profile header h3 {height: 40px; line-height: 40px;}
-#profile section:nth-child(even) .sleeve header h2 {color: #363636}
-// #profile section:nth-child(even) {background: $tbd;}
 
 
 section#videos, section#fans, section#players, section#schedule-results {
 
 	height: auto;
 	width: 100%;
-	// padding: 20px;
 	display: block;
 	position: relative;
 	clear:both;
@@ -362,7 +349,7 @@ section#videos, section#fans, section#players, section#schedule-results {
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
 
-	background: rgba(0, 0, 0, 0.25);
+	background: $bg-light;
 	.sleeve {margin: 0; float: none}
 }
 
@@ -374,7 +361,7 @@ section#fans .sleeve aside {
 		display:inline-block;
 		position:relative;
 
-		.social, .venues {height: auto; width: 300px; min-height: 200px;margin-bottom: 20px; padding: 10px;background: #363636;}
+		.social, .venues {height: auto; width: 300px; min-height: 200px;margin-bottom: 20px; padding: 10px; background: #363636;}
 		}
 
 section#schedule-results .sleeve {margin:0}
@@ -401,6 +388,7 @@ form #slideshow.modal * .button {position: relative; }
 
 
 form.devise {background: $bg-w-medium}
+
 form.standard {background-color: $bg-main}
 
 form * {color: #363636;}
@@ -410,9 +398,9 @@ form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; borde
 form * .button:hover {background: #f9f9f9;color: teal}
 
 form #slideshow.modal .button {width: 100px}
-// form a:hover {background:rgba(135,169,181,.75); color: #fff;}
+// form a:hover {background:rgba(135,169,181,.75); color: $white-main;}
 // .form {height: auto; width: 25%; float: left; }
-// .form  {color: #FFF}
+// .form  {color: $white-main}
 
 //
 
@@ -432,5 +420,3 @@ ul.competitions {height: auto; float: right; margin-right: 10px}
 .type-other {background: brown}
 
 li.type-mls-reg {color: #363636}
-
-
