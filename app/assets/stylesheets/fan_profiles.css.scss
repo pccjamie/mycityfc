@@ -10,6 +10,9 @@ $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
 
+
+$bg-w-heavy: rgba(255,255,255,.75);
+
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
 $bg-highlight: rgba(31,159,255,.5);
@@ -32,8 +35,8 @@ $bg-highlight: rgba(31,159,255,.5);
 
 #local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
 #local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-medium; margin:0; padding: 10px;}
-#local * .cycle-pager li.active { background: $bg-dark;}
-#local * .active-slide {height: auto; float:left; background: $bg-dark;}
+#local * .cycle-pager li.active { background: $bg-w-heavy;}
+#local * .active-slide {height: auto; float:left; background: $bg-w-heavy;}
 
 /* elements default to hidden */
 section#nearby-teams * .hideme  {display: none};
