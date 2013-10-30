@@ -68,10 +68,10 @@ section#nearby-teams .sleeve {margin: 0px}
 			.team.primary * .team-logo {width: 50%;}
 			.team.primary * .team-info {float:right; padding: 0 10px 0 10px}
 
-		 	.team.secondary {width: 50%; display:inline-block;}
+		 	.team.secondary {height: 150px; width: 50%; display:inline-block;}
 
 		 		.team.secondary .team-overview {border:0; background-color: #425566; padding: 0px }
-				.team.secondary * .team-info {width: 100%; padding: 10px}
+				.team.secondary * .team-info {height:100%; width: 100%; padding: 10px}
 		 		.team.secondary * h4.team-name {font-size:16px; letter-spacing: 6px;}
 		 		.team.secondary * h5 {font-size:14px}
 
