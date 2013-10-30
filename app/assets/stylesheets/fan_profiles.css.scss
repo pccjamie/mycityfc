@@ -31,11 +31,10 @@ $bg-highlight: rgba(31,159,255,.5);
 #local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
 #local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-medium; margin:0; padding: 10px;}
 #local * .cycle-pager li.active { background: $bg-highlight;}
-#local * .active-slide {height: auto; float:left}
+#local * .active-slide {height: auto; float:left; background: $bg-highlight;}
 
 /* elements default to hidden */
 section#nearby-teams * .hideme  {display: none};
-
 section#nearby-teams { height: auto; width: 100%; padding: 0px; overflow-x: auto}
 section#nearby-teams .sleeve {margin: 0px}
 
@@ -70,7 +69,8 @@ section#nearby-teams .sleeve {margin: 0px}
 				.team.secondary * .team-info {width: 100%}
 		 		.team.secondary * h4.team-name {font-size:16px; letter-spacing: 6px;}
 		 		.team.secondary * h5 {font-size:14px}
-				
+
+				.team.secondary * .team-logo {display:none}
 				.team.secondary * .team-links {display:none}
 
 				// .team.secondary * .team-city {display:none}

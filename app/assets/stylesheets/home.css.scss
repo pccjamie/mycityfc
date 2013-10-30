@@ -23,9 +23,9 @@ $text-hover-main: #FFF;
 
 $trigger: #BBFF00;
 
+
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
-
 $bg-highlight: rgba(31,159,255,.5);
 
 .clearfix:after {
@@ -342,7 +342,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */}
 
 #profile {float: left;  position:relative; width:60%; }
-#profile header h3 {height: 40px; line-height: 40px; background: $bg-medium}
+#profile header h3 {height: 40px; line-height: 40px;}
 #profile section:nth-child(even) .sleeve header h2 {color: #363636}
 // #profile section:nth-child(even) {background: $tbd;}
 
