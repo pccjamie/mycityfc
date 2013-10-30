@@ -4,7 +4,7 @@
 	<%= render 'news_ticker' %>
 </header>
 <div id="profile">
-	<h4 class=""><%= @current_team %>: Media and Fan Info</h4	>
+	<h3 class=""><%= @current_team %>: Media and Fan Info</h3>
 
 	<section id="videos">
 		<div class="sleeve">
@@ -45,7 +45,7 @@ frameborder="0"></iframe>
 </section>
 <section id="fans">
 	<div class="sleeve">
-	<header><h4>NEW FAN?</h4></header>	
+	<header><h3>NEW FAN?</h3></header>	
 	<aside>
 		<div class="venues"><header><h4>WHERE TO WATCH <%#=current_user.city %></h4></header><span class="pending">Yelp</div>
 		<div class="social"><header><h4>FOLLOW TEAM?</h4></header><span class="pending">Twitter</span>
@@ -57,7 +57,7 @@ frameborder="0"></iframe>
 
 <section id="schedule-results">
 <div class="sleeve">
-<header><h4>Previous Results</h4></header>
+<header><h3>Previous Results</h3></header>
 <%= render 'schedule' %>
 </div>
 </section>
@@ -67,7 +67,7 @@ frameborder="0"></iframe>
 <!--right panel-->
 <div id="local">
 <header class="team-finder">
-<h4>PRO TEAMS NEAR <%= current_user.city %> <%= link_to 'All Teams', teams_path, class: "team-directory" %></h4>
+<h3>Pro Teams near <%= current_user.city %> <%= link_to 'All Teams', teams_path, class: "team-directory" %></h3>
 <!-- <p class="instructions">Click a team to add it to your profile!</p>
  --></header>
 
