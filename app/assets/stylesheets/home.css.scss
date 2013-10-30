@@ -4,6 +4,8 @@ $font-normal:    Helvetica, Arial, sans-serif;
 $bg-main: rgba(135, 169, 181, 0.85);
 
 /* darks */
+$black-main: #2ba6cb;
+
 $bg-heavy: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
@@ -31,14 +33,20 @@ $tbd: rgba(0,0,0,.25);
 $pending: rgba(255,0,0,.5);
 
 
-@mixin border-radius-top($radius) {
+@mixin border-radius-top-left($radius) {
 -webkit-border-top-left-radius: 15px;
--webkit-border-top-right-radius: 15px;
 -moz-border-radius-topleft: 15px;
--moz-border-radius-topright: 15px;
 border-top-left-radius: 15px;
+}
+
+@mixin border-radius-top-right($radius){
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topright: 15px;
 border-top-right-radius: 15px;
 }
+
+
+
 
 
 /* insert reset?*/
@@ -235,7 +243,12 @@ header#banner #game-previews {
 
 	.sleeve {margin:0}
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
-	.wrapper {height: 40px; width: 180px; margin: auto; display:block; background: $bg-steel-opaque; @include border-radius-top(15px);}
+	.wrapper {
+		height: 40px; width: 180px; margin: auto; float: right; display:block; background: $bg-steel-opaque; @include border-radius-top-left(15px);
+		:hover {background: $bg-medium}
+
+
+	}
 	
 	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto;}
 
@@ -250,14 +263,14 @@ header#banner #game-previews {
 
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
 	.js-next-game.single-game * {color: $white-main; width: auto}
-	.js-next-game.single-game .game-home,	.js-next-game.single-game .game-away {font-size: 64px; font-family: $font-special; text-transform: uppercase;}
+	.js-next-game.single-game .game-home,	.js-next-game.single-game .game-away {font-size: 48px; font-family: $font-special; text-transform: uppercase; letter-spacing: 4px}
 	.js-next-game.single-game .game-home-logo, 	.js-next-game.single-game .game-away-logo {margin: auto}
 	.js-next-game.single-game .game-date {background: 0; display:block}
-	.js-next-game.single-game .game-time {display:block}
+	.js-next-game.single-game .game-time {display:block; margin-bottom: 10px;}
 	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
 	.js-next-game.single-game * a {background: $bg-highlight; color:$white-main}
-	.js-next-game.single-game * a:hover {background: $hover-bg-change}
+	.js-next-game.single-game * a:hover {background: $hover-bg-change; color: $black-main}
 	.js-next-game * {background: 0}
 
 
@@ -318,8 +331,8 @@ header#banner #game-previews {
 #js-headlines article {padding: 10px}
 #js-headlines article:nth-child(odd) {background: $bg-item-odd}
 #js-headlines article:nth-child(even) {background: $bg-light}
-#js-headlines-latest {height: 145px; width: 100%;}
-#js-headlines-latest article:first-child a {font-size: 24px; margin: auto; }
+#js-headlines-latest {height: auto; width: 100%;}
+#js-headlines-latest article:first-child a {font-size: 36px; margin: auto; }
 
 footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel-opaque; position: relative; float: left; display: block;}
 
