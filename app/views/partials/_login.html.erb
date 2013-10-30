@@ -1,7 +1,6 @@
 <nav class="private account">
  <ul class="left">
-  <li><h4>Soccer is Fun. Come Play!</h4>
-</li>
+  <li>Soccer is Fun. Come Play!</li>
 </ul>
   <ul class="right">
     <li class="current-user-city">Currently In: <%= current_user.city %></li>
@@ -13,8 +12,9 @@
 </nav>
 <header class="logo">
 <h1>MYCITYFC</h1>
+<h2>I support <%= current_user.primary_team %></h2>
+
 </header>
-<h2>I support<%= current_user.primary_team %></h2>
 <nav class="private content">
 <ul class="left">
 <!--   <li><%#= link_to 'HOME', root_path %></li>

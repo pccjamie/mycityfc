@@ -219,7 +219,7 @@ function filter_schedule() {
 				$(this).addClass('type-other');
 		}
 		// finally id the next game
-		$(single_game).addClass('js-next-game').removeClass('type-mls-reg'); //remove ALL classes that control
+		$(single_game).removeClass().addClass('single-game, js-next-game'); //remove ALL classes that control
 
 	})
 
