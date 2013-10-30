@@ -21,15 +21,24 @@ $hover-bg-change: yellow;
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
 $bg-highlight: rgba(31,159,255,.5);
+
 $bg-item-odd: rgba(117, 138, 163, 0.75);
 $bg-item-even: rgba(117, 138, 163, 0.5);
+
 
 /*temp*/
 $tbd: rgba(0,0,0,.25);
 $pending: rgba(255,0,0,.5);
 
 
-$radius-medium: 15px;
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
 
 /* insert reset?*/
 
@@ -141,8 +150,6 @@ header#splash {
 /* DONT TOUCH */
 h3.my-team {display:none}
 
-
-
 /*top nav*/
 
 #nav-wrapper {height: auto; width: 100%; display: block; background: $bg-steel-opaque; padding: 0 10px;}
@@ -160,7 +167,7 @@ nav.content {
 
 	height: auto; width: 40%; padding: 20px; padding-left: 0; display:inline-block; float:right;
 
-	ul.left {line-height:  80px}
+	ul.left {line-height: 80px}
 	ul.left li {height: 100px; width: 20%; padding: 10px; line-height: 100%; float:left}
 
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
@@ -172,12 +179,17 @@ nav.content {
 }
 
 
-header#banner  {height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; padding-top: 0px; border-top: 1px solid $white-main}
+header#banner  {
+	height: auto; width: 100%; overflow: hidden; position: relative; margin-bottom:10px; padding-top: 0px; border-top: 1px solid $white-main;
 
+	a.credits {height: auto; width: auto; display: none; position: absolute; float: left; margin-left: 20px;}
+	a.credits img {height: 50%; width: 50%;}
 
-header#banner * article a {font-family: Helvetica,Arial, serif; font-size:16px; letter-spacing:0; line-height: normal;}
-header#banner * article a:hover {background: $hover-bg-change}
-
+	* header.primary-team {padding: 20px 0 0 20px;}
+	* article a {font-family: $font-normal; font-size:16px; letter-spacing:0; line-height: normal;}
+	* article a:hover {background: $hover-bg-change}
+	* .external-links {height: auto}
+}
 
 
 /*SCHEDULE */
@@ -206,7 +218,6 @@ section#schedule-results * .single-game {display:none; width: 100%}
 section#schedule-results * .single-game * {width: auto}
 section#schedule-results * .game-tv {display:none}
 section#schedule-results * .game-date {width: 35%;}
-
 section#schedule-results * .game-links {width: 100px; float: right; background: #333;}
 section#schedule-results * .game-time {display:none}
 section#schedule-results * .game-score {text-align:center}
@@ -224,15 +235,7 @@ header#banner #game-previews {
 
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 
-	.wrapper {height: 40px; width: 180px; margin: auto; display:block; background: $bg-steel-opaque; 
-
--webkit-border-top-left-radius: $radius-medium;
--webkit-border-top-right-radius: $radius-medium;
--moz-border-radius-topleft: $radius-medium;
--moz-border-radius-topright: $radius-medium;
-border-top-left-radius: $radius-medium;
-border-top-right-radius: $radius-medium;
-
+	.wrapper {height: 40px; width: 180px; margin: auto; display:block; background: $bg-steel-opaque; @include border-radius(15px);
 }
 	
 	 
@@ -303,17 +306,10 @@ border-top-right-radius: $radius-medium;
 #ticker article:not(:first-child) a {font-size: 16px}
 
 #js-headlines article {padding: 10px}
-
 #js-headlines article:nth-child(odd) {background: $bg-item-odd}
 #js-headlines article:nth-child(even) {background: $bg-light}
-
 #js-headlines-latest {height: 145px; width: 100%;}
 #js-headlines-latest article:first-child a {font-size: 24px; margin: auto; }
-
-
-header#banner a.credits {height: auto; width: auto; display: none; position: absolute; float: left; margin-left: 20px;}
-header#banner a.credits img {height: 50%; width: 50%;}
-header#banner * .external-links {height: auto}
 
 footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel-opaque; position: relative; float: left; display: block;}
 

@@ -1,4 +1,7 @@
 <nav class="private account">
+ <ul class="left">
+  <li>Hi<%= current_user.first_name %></li>
+</ul>
   <ul class="right">
     <li class="current-user-city">Currently In: <%= current_user.city %></li>
     <li><%= image_tag current_user.picture %></li>
@@ -18,6 +21,6 @@
   <li>My<br/><%= link_to current_user.primary_team, fan_profiles_path %></li>
   <li>A look at<br/><%= link_to 'SOCCER IN THE US TODAY', slides_path %></li>
   <li>All<br/><%= link_to 'MLS TEAMS', teams_path, class: "team-directory" %></li>
-  <li><%= link_to 'SOCCER MOM?', parent_profiles_path %></li>
+  <li><%#= link_to 'SOCCER MOMS!', parent_profiles_path %>Coming Soon: SOCCER MOMS!</li>
  </ul>
 </nav>
