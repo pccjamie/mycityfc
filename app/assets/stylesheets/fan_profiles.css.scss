@@ -43,7 +43,7 @@ section#nearby-teams * .hideme  {display: none};
 section#nearby-teams { height: auto; width: 100%; padding: 0px; overflow-x: auto}
 section#nearby-teams .sleeve {margin: 0px}
 
-.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: $white-main; padding: 10px; float: left}
+.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: $white-main; padding: 0px; float: left}
 
 	.team-overview {height: auto; width: 100%; float: left; padding: 0px; background-position:center; -webkit-filter: grayscale(100%); display: block; position: relative}
 	.team-overview:hover {-webkit-filter: grayscale(0%);}
