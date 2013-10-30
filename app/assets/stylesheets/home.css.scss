@@ -31,12 +31,13 @@ $tbd: rgba(0,0,0,.25);
 $pending: rgba(255,0,0,.5);
 
 
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-       -o-border-radius: $radius;
-          border-radius: $radius;
+@mixin border-radius-top($radius) {
+-webkit-border-top-left-radius: 15px;
+-webkit-border-top-right-radius: 15px;
+-moz-border-radius-topleft: 15px;
+-moz-border-radius-topright: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
 }
 
 
@@ -97,7 +98,6 @@ body {
  #nav-wrapper {
 
  	header.logo {display:inline-block; width: 60%; float: left; padding: 20px;
- 
  	* {margin: 0}
 
 	}
@@ -123,8 +123,6 @@ h1,h2,h3,h4, nav * a, nav * li {text-transform: uppercase}
 p {font-family: $font-normal;}
 
 a.offsite:hover {background: $hover-bg-change}
-
-
 
 /* TEMP */
 .instructions {color: orange}
@@ -172,7 +170,6 @@ nav.content {
 
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
-
 	ul.left li:hover {background: $bg-light; color: $white-main}
 
 	a {height: 100%; width: 1005; float: left; background: 0; color: $white-main; font-size:20px; line-height: 100%}
@@ -214,17 +211,22 @@ header#banner  {
 }
 
 /* results */
-section#schedule-results * .single-game {display:none; width: 100%}
-section#schedule-results * .single-game * {width: auto}
-section#schedule-results * .game-tv {display:none}
-section#schedule-results * .game-date {width: 35%;}
-section#schedule-results * .game-links {width: 100px; float: right; background: #333;}
-section#schedule-results * .game-time {display:none}
-section#schedule-results * .game-score {text-align:center}
-section#schedule-results * .game-home {width: 100px;}
-section#schedule-results * .game-away {width: 100px;}
-section#schedule-results * .separator {display:none}
-section#schedule-results * .clearfix {display:none}
+section#schedule-results {
+
+ * .single-game {display:none; width: 100%}
+ * .single-game * {width: auto}
+ * .game-tv {display:none}
+ * .game-date {width: 35%;}
+ * .game-links {width: 100px; float: right; background: #333;}
+ * .game-time {display:none}
+ * .game-score {text-align:center}
+ * .game-home {width: 100px;}
+ * .game-away {width: 100px;}
+ * .separator {display:none}
+ * .clearfix {display:none}
+
+}
+
 
 /* previews */
 header#banner #game-previews {
@@ -232,13 +234,9 @@ header#banner #game-previews {
 	height: auto; width: 60%; position: relative; display:inline-block; float:left; background: rgba(31,159,255,.1);
 
 	.sleeve {margin:0}
-
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
-
-	.wrapper {height: 40px; width: 180px; margin: auto; display:block; background: $bg-steel-opaque; @include border-radius(15px);
-}
+	.wrapper {height: 40px; width: 180px; margin: auto; display:block; background: $bg-steel-opaque; @include border-radius-top(15px);}
 	
-	 
 	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto;}
 
 	}
@@ -259,6 +257,7 @@ header#banner #game-previews {
 	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
 	.js-next-game.single-game * a {background: $bg-highlight; color:$white-main}
+	.js-next-game.single-game * a:hover {background: $hover-bg-change}
 	.js-next-game * {background: 0}
 
 
@@ -275,15 +274,26 @@ header#banner #game-previews {
 }
 
 /*schedule filtering*/
-#upcoming-games .single-game {height: 200px; width:50%; padding: 18px; float: left; margin-bottom: 0;display:inline; background: rgba(117,138,163,.75);}
-#upcoming-games .single-game * {color: $white-main}; 
-#upcoming-games .single-game * a {background: $bg-highlight; color:$white-main; text-align:center}
-#upcoming-games .single-game .game-date {font-weight: bold; display:inline; width: 65%;}
-#upcoming-games .single-game .game-time {display: block; margin-bottom: 10px}
-#upcoming-games .single-game .game-competition {display:block; width: auto; margin: 10px 0}
-#upcoming-games .single-game .game-score {display:none}
-#upcoming-games .single-game .clearfix {display:none}
-#upcoming-games .single-game .game-links {margin-top: 10px;}
+#upcoming-games .single-game {
+	height: 200px; width:50%; padding: 18px; float: left; margin-bottom: 0;display:inline; background: rgba(117,138,163,.75);
+	
+	* {color: $white-main}
+	* a {background: $bg-highlight; color:$white-main; text-align:center}
+
+	.game-date {font-weight: bold; display:inline; width: 65%;}
+	.game-time {display: block; margin-bottom: 10px}
+	.game-competition {display:block; width: auto; margin: 10px 0}
+	.game-score {display:none}
+	.clearfix {display:none}
+
+	.game-links {
+	margin-top: 10px;
+	a:hover {background: $hover-bg-change}
+	}
+
+}
+
+
 
 
 /* NEWS TICKER */
@@ -400,14 +410,9 @@ form * {color: #363636;}
 form * input.button {margin: 0 0 20px 0}
 form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; border: 0; position: relative;}
 
-form * .button:hover {background: #f9f9f9;color: teal}
+form * .button:hover {background: #f9f9f9; color: teal}
 
 form #slideshow.modal .button {width: 100px}
-// form a:hover {background:rgba(135,169,181,.75); color: $white-main;}
-// .form {height: auto; width: 25%; float: left; }
-// .form  {color: $white-main}
-
-//
 
 
 
