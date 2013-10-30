@@ -112,7 +112,7 @@ body {
 
  	header.logo h4 {font-size:20px;}
  	header.logo h1 {font-size:48px;letter-spacing: 8px; text-shadow: -1x -1px 1px $bg-steel; color: $white-main}
-
+	header.logo h2 {font-size: 24px; color: yellow; letter-spacing: 4px}
  	nav.public {display:none}
 
  }
@@ -166,7 +166,7 @@ nav {
 }
 
 nav.account {
-	display:inline-block; width: 100%; float:right; background: $bg-steel-opaque;border-bottom: 1px solid $white-main
+	display:inline-block; width: 100%; float:right; background: $bg-steel-opaque;border-bottom: 1px solid $white-main; padding: 0 20px;
 }
 
 nav.content {
@@ -252,7 +252,8 @@ header#banner #game-previews {
 
 	.wrapper:hover {background: $bg-medium; color: $white-main}
 	
-	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto;}
+	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto;
+	 }
 
 	}
 
@@ -335,7 +336,7 @@ header#banner #game-previews {
 #js-headlines article {padding: 10px}
 #js-headlines article:nth-child(odd) {background: $bg-item-odd}
 #js-headlines article:nth-child(even) {background: $bg-light}
-#js-headlines-latest {height: auto; width: 100%;}
+#js-headlines-latest {height: auto; width: 100%; margin-bottom: 20px}
 #js-headlines-latest article:first-child a {font-size: 36px; margin: auto; }
 
 footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel-opaque; position: relative; float: left; display: block;}
@@ -350,7 +351,11 @@ footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel
 /* TRIGGERS */
 
 
-.news-trigger {background: $bg-steel-opaque; color:$white-main; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;}
+.news-trigger {
+	background: $bg-steel-opaque; color:$white-main; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;
+
+	:hover {background: $bg-medium; color: $white-main}
+}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}

@@ -37,7 +37,7 @@ function location_based_view() {
 	// some minor changes to styles for location based content.
 	$('.team:first').addClass('primary');
 	//should not run if there are no other teams in the area defined by controller
-	$('.team:first').after('<h5>A little farther away...</h5><div class="clearfix"></div>').nextAll().addClass('secondary');
+	$('.team:first').after('<div class="clearfix"></div>').nextAll().addClass('secondary');
 
 }
 
@@ -255,8 +255,6 @@ function sorting() {
 		$("section#schedule-results * .single-game.type-mls-playoffs:contains('" + my_team + "')").show();
 		$("section#schedule-results * .single-game:contains('" + my_team + "'):not('.type-mls-playoffs')").hide();
 	});
-
-
 
 	$("li.type-ccl").click(function() {
 		$("section#schedule-results * .single-game.type-ccl:contains('" + my_team + "')").show();
