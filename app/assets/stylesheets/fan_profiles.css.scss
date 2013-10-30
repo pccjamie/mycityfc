@@ -33,17 +33,22 @@ $bg-highlight: rgba(31,159,255,.5);
 #local * .league { height: auto; width: 100%; margin-top: 40px; background: $bg-light; color: #262626}
 
 
-#local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
-#local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-medium; margin:0; padding: 10px;}
+#local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: none; top: 0; position: absolute}
+
+
+#local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: transparent; margin:0; padding: 10px;}
 #local * .cycle-pager li.active { background: $bg-medium}
-#local * .active-slide {height: auto; float:left; background: 0;}
+
+#local * .cycle-slide {background: $bg-medium}
+#local * .cycle-slide * p {color: $white-main}
+#local * .active-slide {height: auto; float:left; background: $bg-medium;}
 
 /* elements default to hidden */
 section#nearby-teams * .hideme  {display: none};
 section#nearby-teams { height: auto; width: 100%; padding: 0px; overflow-x: auto}
 section#nearby-teams .sleeve {margin: 0px}
 
-.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: $white-main; padding: 0px; float: left}
+.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em; color: $white-main; padding: 0px; float: left}
 
 	.team-overview {height: auto; width: 100%; float: left; padding: 0px; background-position:center; -webkit-filter: grayscale(100%); display: block; position: relative}
 	.team-overview:hover {-webkit-filter: grayscale(0%);}
@@ -70,7 +75,7 @@ section#nearby-teams .sleeve {margin: 0px}
 
 		 	.team.secondary {height: 150px; width: 50%; display:inline-block;}
 
-		 		.team.secondary .team-overview {border:0; background-color: #425566; padding: 0px }
+		 		.team.secondary .team-overview {height: 100%; border:0; background-color: #425566; padding: 0px }
 				.team.secondary * .team-info {height:100%; width: 100%; padding: 10px}
 		 		.team.secondary * h4.team-name {font-size:16px; letter-spacing: 6px;}
 		 		.team.secondary * h5 {font-size:14px}
@@ -84,13 +89,9 @@ section#nearby-teams .sleeve {margin: 0px}
 
 /*holds espn api info  - not certain what to do with that yet*/
 		.team-feed {height: 100%; max-width: 35%; width: auto; float:right; text-align: left; display:none}
-			.team-feed nav a.espn-links {color: red; display: none; background: none}
+		.team-feed nav a.espn-links {color: red; display: none; background: none}
+		.team-feed, .team-overview {position: relative; display:inline-block;}
 
-	.team-feed, .team-overview {position: relative; display:inline-block;}
-
-
-/* video slider */
-// #slideshow .cycle-slideshow {text-align: center}
 
 #profile * .cycle-slideshow {text-align:center}
 #profile * .video-slide {color: $white-main; width: 100%; padding: 20px}
