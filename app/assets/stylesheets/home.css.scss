@@ -112,36 +112,16 @@ li {display: inline; padding: 5px}
 
 h1,h2,h3,h4,h5,a,li {color: #FFF; font-family: 'BenchNine', Helvetica, Arial, sans-serif; letter-spacing: 1px; font-weight: normal}
 
-h1,h2,h3, nav * a, nav * li {text-transform: uppercase}
+h1,h2,h3,h4, nav * a, nav * li {text-transform: uppercase}
 
 p {font-family: Helvetica, Arial, sans-serif;}
 
-.instructions {color: orange}
-
-.app-name {font-size: 200%; color: #262626; text-shadow: none; letter-spacing: 1px;}
-
 /* TEMP */
+.instructions {color: orange}
 .pending {background: $pending}
-
-
 
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
 //nav a {height: auto; background: #1f9fff; color: #FFF; font-size:24px; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
-
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    filter:alpha(opacity=50);
-    -moz-opacity:0.5;
-    -khtml-opacity: 0.5;
-    opacity: 0.5;
-    z-index: 10000;
-    display:none
-}
 
 #wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto; position: relative; z-index:0}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px; margin-top: 0; position: relative;}
@@ -151,11 +131,14 @@ p {font-family: Helvetica, Arial, sans-serif;}
 .inner {margin: 20px;}
 
 
-
 header#splash {
 	h1 {font-size: 120px;}
 	h2 {font-size: 30px; background: $bg-light;}
 }
+
+
+/* DONT TOUCH */
+h3.my-team {display:none}
 
 
 
@@ -194,9 +177,6 @@ header#banner  {height: auto; width: 100%; overflow: hidden; position: relative;
 header#banner * article a {font-family: Helvetica,Arial, serif; font-size:16px; letter-spacing:0; line-height: normal;}
 header#banner * article a:hover {background: yellow}
 
-
-/* DONT TOUCH */
-h3.my-team {display:none}
 
 
 /*SCHEDULE */
@@ -301,14 +281,14 @@ border-top-right-radius: 5px;}
 
 /* NEWS TICKER */
 #ticker {height: auto; width: 40%; margin: auto; background: rgba(0,0,0,.1)}
-#ticker .sleeve {height: 200px; margin: 20px}
+#ticker .sleeve {height: auto; margin: 20px}
 #ticker .sleeve header {height: 40px; display:block;
 	h4 {margin:0; width: auto; float:left; display:inline-block}
 }
 
 #js-headlines {
 	height: auto;
-	width: 360px;
+	width: 100%;
 	margin-bottom: 20px;
 	position:relative;
 	display:none;
@@ -319,9 +299,11 @@ border-top-right-radius: 5px;}
 #ticker article:not(:first-child) a {font-size: 16px}
 
 #js-headlines article {padding: 10px}
-#js-headlines article:nth-child(odd) {background: $bg-medium}
 
-#js-headlines-latest {height: 145px; width: 360px;}
+#js-headlines article:nth-child(odd) {background: $bg-medium}
+#js-headlines article:nth-child(even) {background: $bg-light}
+
+#js-headlines-latest {height: 145px; width: 100%;}
 #js-headlines-latest article:first-child a {font-size: 24px; margin: auto; }
 
 
@@ -363,7 +345,7 @@ background: linear-gradient(to bottom, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */}
 
 #profile {float: left;  position:relative; width:60%; }
-#profile header h3 {height: 40px; line-height: 40px; margin:0 20px 0 0; background: $bg-medium}
+#profile header h3 {height: 40px; line-height: 40px; background: $bg-medium}
 #profile section:nth-child(even) .sleeve header h2 {color: #363636}
 // #profile section:nth-child(even) {background: $tbd;}
 
@@ -414,20 +396,12 @@ section#tbd .sleeve {margin: 20px}
 
 #local header.team-finder {}
 	h4 a.team-directory {background: rgba(66,85,102,1); padding: 0 10px; color: #FFF; float: right}
-
 #local #slideshow {min-height:400px; overflow: none}
 #local * .leagueslider {height: auto; display: block}
 #local * .league { height: auto; width: 100%; margin-top: 40px;}
 
 .league {background: $bg-light; color: #262626}
 
-#local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
-#local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-main; margin:0; padding: 10px;}
-#local * .cycle-pager li.active { background: $bg-light;}
-#local * .active-slide {height: auto;}
-
-section#nearby-teams { height: auto; width: 100%; padding: 10px; overflow-x: auto}
-section#nearby-teams .sleeve {margin: 0px}
 
 form {background: rgba(135,169,181,0.75); height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 form #slideshow section {height: 220px}

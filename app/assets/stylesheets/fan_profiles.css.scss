@@ -14,13 +14,28 @@ $bg-steel-opaque: rgba(66,85,102,.5);
 /*SPECIAL*/
 .external-links {height: auto}
 
+
+#local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: 0; top: 0; position: absolute}
+#local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: $bg-medium; margin:0; padding: 10px;}
+#local * .cycle-pager li.active { background: $bg-light;}
+#local * .active-slide {height: auto; float:left}
+
 /* elements default to hidden */
-#nearby-teams * .hideme  {display: none};
+section#nearby-teams * .hideme  {display: none};
+
+section#nearby-teams { height: auto; width: 100%; padding: 0px; overflow-x: auto}
+section#nearby-teams .sleeve {margin: 0px}
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em;color: #FFF; padding: 10px; float: left}
 
-	.team-overview {height: auto; width: 100%; float: left; padding: 8px; background-color: #758AA3; -webkit-filter: grayscale(90%); display: block; position: relative}
+	.team-overview {height: auto; width: 100%; float: left; padding: 8px; background-position:center; background-color: #758AA3; -webkit-filter: grayscale(100%); display: block; position: relative}
 	.team-overview:hover {-webkit-filter: grayscale(0%);}
+
+	.team-overview {
+
+		* h4.team-name {letter-spacing: 4px; text-transform: uppercase}
+
+	}
 
 		.team-logo {float: left; text-align:center}
 		.team-info {float: left; background: rgba(0,0,0,.5)}
@@ -33,18 +48,20 @@ $bg-steel-opaque: rgba(66,85,102,.5);
 
 			.team-links {margin-top: 10px; float: right; width: 100%; height: auto; display:inline-block; background: gray}
 
-			.team.primary * .team-logo {width:150px;}
+			.team.primary * .team-logo {width: 50%;}
 			.team.primary * .team-info {float:right; padding: 0 10px 0 10px}
 
 		 	.team.secondary {width: 50%; display:inline-block;}
 
-		 		.team.secondary .team-overview {border:0; background-color: #425566; }
+		 		.team.secondary .team-overview {border:0; background-color: #425566; padding: 10px }
 				.team.secondary * .team-info {width: 100%}
 		 		.team.secondary * h4.team-name {font-size:16px; letter-spacing: 6px;}
 		 		.team.secondary * h5 {font-size:14px}
 				
-				.team.secondary * .team-links, .team.secondary * .team-city {display:none}
+				.team.secondary * .team-links {display:none}
 
+				// .team.secondary * .team-city {display:none}
+				
 				h5.secondary {margin: 10px; font-size:15px; float: left; clear:both}
 
 /*holds espn api info  - not certain what to do with that yet*/
@@ -68,7 +85,6 @@ $bg-steel-opaque: rgba(66,85,102,.5);
 	z-index:9999;
 	top: 50%; 
 	border-radius: 30px;
-
 	background: rgba(0,0,0,.25);
 
 	a {font-size:30px;height: 60px;
