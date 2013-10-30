@@ -174,13 +174,13 @@ nav.content {
 	height: auto; width: 40%; padding: 20px; padding-left: 0; display:inline-block; float:right;
 
 	ul.left {line-height: 80px}
-	ul.left li {height: 100px; width: 25%; padding: 10px; line-height: 100%; float:left}
+	ul.left li {height: 100px; width: 25%; line-height: 100%; float:left}
 
 	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
 	ul.left li:hover {background: $bg-light; color: $white-main}
 
-	a {height: 100%; width: 1005; float: left; background: 0; color: $white-main; font-size:20px; line-height: 100%}
+	a {height: 100%; width: 100%; float: left; background: 0; color: $white-main; font-size:20px; line-height: 100%}
 }
 
 
