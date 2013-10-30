@@ -245,10 +245,12 @@ header#banner #game-previews {
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 	.wrapper {
 		height: 40px; width: 180px; margin: auto; float: right; display:block; background: $bg-steel-opaque; @include border-radius-top-left(15px);
-		:hover {background: $bg-medium}
+
 
 
 	}
+
+	.wrapper:hover {background: $bg-medium; color: $white-main}
 	
 	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto;}
 
@@ -269,8 +271,10 @@ header#banner #game-previews {
 	.js-next-game.single-game .game-time {display:block; margin-bottom: 10px;}
 	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
-	.js-next-game.single-game * a {background: $bg-highlight; color:$white-main}
+	.js-next-game.single-game * a {background: $bg-highlight; color: $white-main}
+	
 	.js-next-game.single-game * a:hover {background: $hover-bg-change; color: $black-main}
+
 	.js-next-game * {background: 0}
 
 
