@@ -11,7 +11,7 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "MYCITYFC.COM" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "https://www.google.com/jsapi" %>
@@ -47,11 +47,11 @@
   <div class="sleeve">
       
       <aside class="left">
-       <h1>MYCITYFC.COM</h1>
+       <h1><%= link_to 'MYCITYFC.COM', root_path %></h1>
       </aside>
 
       <aside class="right">
-      <h6>mycityfc.com 2013. all rights reserved</h6>
+      <h5>mycityfc.com 2013. all rights reserved</h5>
       </aside>
 
   </div>
