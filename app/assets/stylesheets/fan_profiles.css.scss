@@ -47,9 +47,9 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 // section#nearby-teams { height: auto; width: 100%; padding: 0px; overflow-x: auto}
 // section#nearby-teams .sleeve {margin: 0px}
 
-.team {height: 100%; width: auto; display: block; position: relative; font-size: 1em; color: $white-main; padding: 0px; float: left}
+.team {height: 100%; height: 180px; width: auto; display: block; position: relative; font-size: 1em; color: $white-main; padding: 0px; float: left}
 
-	.team-overview {height: auto; width: 100%; float: left; padding: 0px; background-position:center; -webkit-filter: grayscale(100%); display: block; position: relative}
+	.team-overview {height: auto; height: 100%; width: 100%; float: left; padding: 0px; background-position:center; -webkit-filter: grayscale(100%); display: block; position: relative}
 	.team-overview:hover {-webkit-filter: grayscale(0%);}
 
 	.team-overview {
@@ -58,8 +58,8 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 
 	}
 
-		.team-logo {float: left; text-align:center}
-		.team-info {float: left; background: $bg-highlight}
+		.team-logo {height: 100%; float: left; text-align:center}
+		.team-info {height: 100%; float: left; background: $bg-highlight}
 			.team-name {}
 			.team-venue {}
 			.team-city {}
@@ -70,7 +70,7 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 			.team-links {margin-top: 10px; float: right; width: 100%; height: auto; display:inline-block; background: gray}
 
 			.team.primary * .team-logo {width: 50%;}
-			.team.primary * .team-info {float:right; padding: 0 10px 0 10px}
+			.team.primary * .team-info {float:right; padding: 10px}
 
 		 	.team.secondary {height: 150px; width: 50%; display:inline-block;}
 

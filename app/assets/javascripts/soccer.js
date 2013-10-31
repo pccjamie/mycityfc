@@ -8,7 +8,7 @@ function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
 	
-			$('#nearby-teams * .team-venue-image').each(function (){
+			$('#local * .team-venue-image').each(function (){
 				var venue = $(this).text();
 				$(this).parent().parent().css('background-image', 'url(' + venue + ')');
 			});
