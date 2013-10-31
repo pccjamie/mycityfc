@@ -46,6 +46,21 @@ border-top-right-radius: 15px;
 }
 
 
+@mixin border-radius-bottom-left($radius) {
+-webkit-border-bottom-left-radius: 15px;
+-moz-border-radius-bottomleft: 15px;
+border-bottom-left-radius: 15px;
+}
+
+@mixin border-radius-bottom-right($radius){
+-webkit-border-bottom-right-radius: 15px;
+-moz-border-radius-bottomright: 15px;
+border-bottom-right-radius: 15px;
+}
+
+
+
+
 
 
 
@@ -246,13 +261,13 @@ header#banner #game-previews {
 	.sleeve {margin:0}
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 	.wrapper {
-		height: 40px; width: 180px; margin: auto; float: right; display:block; background: $bg-steel-opaque; @include border-radius-top-left(15px);
+		height: 40px; width: 180px; margin: auto; margin-right: 20px; float: right; display:block; background: $bg-steel-opaque; @include border-radius-top-left(10px);@include border-radius-top-right(10px);
 
 	}
 
 	.wrapper:hover {background: $bg-medium; color: $white-main}
 	
-	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto;
+	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto; @include border-radius-bottom-left(10px);@include border-radius-bottom-right(10px);
 	 }
 
 	}
@@ -433,11 +448,21 @@ section#tbd .sleeve {margin: 20px}
 
 form {background: 0; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 
-form #slideshow section {height: 220px}
-form #slideshow.modal * {position: relative;}
-form #slideshow.modal * aside {text-align: center; margin: 5px 0px}
+form.edit_user {
 
-form * .field-group {height: auto; width: 100%; display:block; float:left; margin: 10px 0}
+	* li {display: block}
+
+	*.modal * aside {text-align: center; margin: 5px 0px}
+	
+	.field-group {
+
+		height: auto; width: 100%; display:block; float:left; margin: 10px 0;
+
+		* {text-align:center}
+	}
+
+}
+
 
 form #slideshow.modal * .sleeve {height: 100px;}
 form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
