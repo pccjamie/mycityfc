@@ -8,7 +8,7 @@ function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
 	
-			$('#local * .team-venue-image').each(function (){
+			$('#local * .team-venue-image'schedule-trigger).each(function (){
 				var venue = $(this).text();
 				$(this).parent().parent().css('background-image', 'url(' + venue + ')');
 			});
@@ -19,7 +19,7 @@ function location_based_view() {
 		//else do this for these other pages.
 
 		var root = window.location.pathname == ("/");
-
+schedu
 		if (window.location == root) {
 			$('body * footer').css('display','none');
 		}
@@ -224,10 +224,12 @@ function filter_schedule() {
 	})
 
 	$(".schedule-trigger").click(function() {
+	$('#js-headlines').slideToggle('slow', function() {});
 		$('#upcoming-games').slideToggle('slow', function() {});
 		$('#controls').fadeToggle('slow').click(function() {
 			alert('clicking this will run code that controls how many results displayed');
 			$(this).css('color', 'red');
+
 		});
 	});
 }
