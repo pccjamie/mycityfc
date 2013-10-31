@@ -142,8 +142,13 @@ function find_news() {
 
 $("#banner").on("click", ".news-trigger", function(e) {
 	e.preventDefault();
-	$('a.credits').fadeToggle();
-		$('#upcoming-games').slideToggle('slow', function() {});
+	$('a.credits').fadeToggle();       
+
+	if ($('#upcoming-games').is(':visible'))
+
+{
+	$('#upcoming-games').slideToggle('slow', function() {});
+}
 
 	$('#js-headlines').slideToggle('slow', function() {});
 });
@@ -226,7 +231,14 @@ function filter_schedule() {
 	})
 
 	$(".schedule-trigger").click(function() {
+
+		if ($('#js-headlines').is(':visible'))
+{
+
+
 		$('#js-headlines').slideToggle('slow', function() {});
+}
+
 		$('#upcoming-games').slideToggle('slow', function() {});
 		$('#controls').fadeToggle('slow').click(function() {
 			alert('clicking this will run code that controls how many results displayed');
