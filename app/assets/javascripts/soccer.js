@@ -150,7 +150,7 @@ $("#banner").on("click", ".news-trigger", function(e) {
 	$('#upcoming-games').fadeToggle('slow', function() {});
 }
 
-	$('#js-headlines').slideToggle('slow', function() {});
+	$('#js-headlines').fadeToggle('slow', function() {});
 });
 
 function switch_leagues() {
@@ -239,7 +239,7 @@ function filter_schedule() {
 		$('#js-headlines').fadeToggle('slow', function() {});
 }
 
-		$('#upcoming-games').slideToggle('slow', function() {});
+		$('#upcoming-games').fadeToggle('slow', function() {});
 		$('#controls').fadeToggle('slow').click(function() {
 			alert('clicking this will run code that controls how many results displayed');
 			$(this).css('color', 'red');
