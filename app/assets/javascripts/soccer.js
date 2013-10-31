@@ -147,7 +147,7 @@ $("#banner").on("click", ".news-trigger", function(e) {
 	if ($('#upcoming-games').is(':visible'))
 
 {
-	$('#upcoming-games').fadeToggle('slow', function() {});
+	$('#upcoming-games').slideToggle('fast', function() {});
 }
 
 	$('#js-headlines').fadeToggle('slow', function() {});
@@ -236,7 +236,7 @@ function filter_schedule() {
 {
 
 
-		$('#js-headlines').fadeToggle('slow', function() {});
+		$('#js-headlines').slideToggle('fast', function() {});
 }
 
 		$('#upcoming-games').fadeToggle('slow', function() {});
