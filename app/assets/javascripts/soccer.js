@@ -7,21 +7,19 @@ var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
-	
-			$('#local * .team-venue-image').each(function (){
-				var venue = $(this).text();
-				$(this).parent().parent().css('background-image', 'url(' + venue + ')');
-			});
-	}
-	
-	else {
+
+		$('#local * .team-venue-image').each(function() {
+			var venue = $(this).text();
+			$(this).parent().parent().css('background-image', 'url(' + venue + ')');
+		});
+	} else {
 
 		//else do this for these other pages.
 
 		var root = window.location.pathname == ("/");
 
 		if (window.location == root) {
-			$('body * footer').css('display','none');
+			$('body * footer').css('display', 'none');
 		}
 
 		if (window.location.href.indexOf("parent") > -1) {
@@ -142,13 +140,13 @@ function find_news() {
 
 $("#banner").on("click", ".news-trigger", function(e) {
 	e.preventDefault();
-	$('a.credits').fadeToggle();       
+	$('a.credits').fadeToggle();
 
 	if ($('#upcoming-games').is(':visible'))
 
-{
-	$('#upcoming-games').slideToggle('slow', function() {});
-}
+	{
+		$('#upcoming-games').slideToggle('slow', function() {});
+	}
 
 	$('#js-headlines').fadeToggle('slow', function() {});
 });
@@ -232,12 +230,11 @@ function filter_schedule() {
 
 	$(".schedule-trigger").click(function() {
 
-		if ($('#js-headlines').is(':visible'))
-{
+		if ($('#js-headlines').is(':visible')) {
 
 
-		$('#js-headlines').slideToggle('slow', function() {});
-}
+			$('#js-headlines').slideToggle('slow', function() {});
+		}
 
 		$('#upcoming-games').fadeToggle('slow', function() {});
 		$('#controls').fadeToggle('slow').click(function() {
