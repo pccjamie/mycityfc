@@ -315,7 +315,7 @@ header#banner #game-previews {
 
 
 /* NEWS TICKER */
-#ticker {height: auto; width: 40%; margin: auto; background: $bg-light}
+#ticker {height: auto; width: 40%; margin: auto; background: 0}
 #ticker .sleeve {height: auto; margin: 20px}
 #ticker .sleeve header {height: 40px; display:block;
 	h4 {margin:0; width: auto; float:left; display:inline-block}
@@ -362,7 +362,7 @@ footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel
 .gameday-trigger {display:none}
 
 
-#profile, #local {height: auto; padding: 20px;display: inline-block; position:relative; background: -moz-linear-gradient(top, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0) 75%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.50)), color-stop(75%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+#profile, #local {height: auto; padding: 20px; display: inline-block; position:relative; background: -moz-linear-gradient(top, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0) 75%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.50)), color-stop(75%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* Chrome10+,Safari5.1+ */
 background: -o-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* Opera 11.10+ */
 background: -ms-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* IE10+ */
@@ -370,7 +370,10 @@ background: linear-gradient(to bottom, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */}
 
 #profile {float: left;  position:relative; width:60%; background: $bg-highlight-20 }
-#profile header h3 {height: 40px; line-height: 40px;}
+#local {background: 0}
+
+
+#profile h3, #local h3 {height: 40px; line-height: 40px; margin: 0;  margin-bottom: 20px; padding: 0;}
 
 
 section#videos, section#fans, section#players, section#schedule-results {
@@ -387,9 +390,12 @@ section#videos, section#fans, section#players, section#schedule-results {
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
 
+	height: 400px;
 	background: 0;
 	.sleeve {margin: 0; float: none}
 }
+
+
 
 section#fans {background: 0; margin-bottom:20px}
 section#fans .sleeve header {display: block; position:relative}
@@ -401,6 +407,10 @@ section#fans .sleeve aside {
 
 		.social, .venues {height: auto; width: 300px; min-height: 200px;margin-bottom: 20px; padding: 10px; background: #363636;}
 		}
+
+
+
+
 
 section#schedule-results .sleeve {margin:0}
 

@@ -20,19 +20,18 @@ $bg-highlight: rgba(31,159,255,.5);
 /*SPECIAL*/
 .external-links {height: auto}
 
-#local {height: 100%; width: 40%; position: relative; display:inline-block}
+#local {height: 100%; width: 40%; position: relative; display:inline-block; background: 0}
 #local * section {
 	display:inline-block; height: auto; width: 100%; display: inline-block; position: relative; min-height: 200px; 
 }
 
 
-#local header.team-finder {}s
-	h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $white-main; float: right}
-#local #slideshow {min-height:400px; overflow: none}
+
+h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $white-main; float: right}
+
+#local #slideshow {height:400px; overflow: none}
 #local * .leagueslider {height: auto; display: block}
 #local * .league { height: auto; width: 100%; margin-top: 40px; background: $bg-light; color: #262626}
-
-
 #local * .cycle-pager {height: auto; width: 100%; padding: 0; margin: 0; display:block; background: none; top: 0; position: absolute}
 
 
