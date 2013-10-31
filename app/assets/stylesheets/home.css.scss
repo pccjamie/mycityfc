@@ -23,7 +23,7 @@ $hover-bg-change: yellow;
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
 $bg-highlight: rgba(31,159,255,.5);
-
+$bg-highlight-20: rgba(31,159,255,.2);
 $bg-item-odd: rgba(117, 138, 163, 0.75);
 $bg-item-even: rgba(117, 138, 163, 0.5);
 
@@ -125,6 +125,8 @@ ul {list-style: none; margin: 0; padding:0; line-height: 40px;}
 li {display: inline; padding: 5px}
 
 h1,h2,h3,h4,h5,a,li {color: $white-main; font-family: $font-special; letter-spacing: 1px; font-weight: normal}
+
+h1,h2,h3,h4,h5,h6 {margin:0}
 
 h1,h2,h3,h4, nav * a, nav * li {text-transform: uppercase}
 
@@ -239,14 +241,12 @@ section#schedule-results {
 /* previews */
 header#banner #game-previews {
 	
-	height: auto; width: 60%; position: relative; display:inline-block; float:left; background: rgba(31,159,255,.1);
+	height: auto; width: 60%; position: relative; display:inline-block; float:left; background: $bg-highlight-20;
 
 	.sleeve {margin:0}
 	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
 	.wrapper {
 		height: 40px; width: 180px; margin: auto; float: right; display:block; background: $bg-steel-opaque; @include border-radius-top-left(15px);
-
-
 
 	}
 
@@ -315,7 +315,7 @@ header#banner #game-previews {
 
 
 /* NEWS TICKER */
-#ticker {height: auto; width: 40%; margin: auto;}
+#ticker {height: auto; width: 40%; margin: auto; background: $bg-light}
 #ticker .sleeve {height: auto; margin: 20px}
 #ticker .sleeve header {height: 40px; display:block;
 	h4 {margin:0; width: auto; float:left; display:inline-block}
@@ -354,8 +354,9 @@ footer {height: auto; width: 100%; margin-top: 10px; background-color: $bg-steel
 .news-trigger {
 	background: $bg-steel-opaque; color:$white-main; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;
 
-	:hover {background: $bg-medium; color: $white-main}
 }
+
+.news-trigger:hover {background: $bg-medium; color: $white-main}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
@@ -368,7 +369,7 @@ background: -ms-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* 
 background: linear-gradient(to bottom, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */}
 
-#profile {float: left;  position:relative; width:60%; }
+#profile {float: left;  position:relative; width:60%; background: $bg-highlight-20 }
 #profile header h3 {height: 40px; line-height: 40px;}
 
 
@@ -386,7 +387,7 @@ section#videos, section#fans, section#players, section#schedule-results {
 // section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
 
-	background: $bg-light;
+	background: 0;
 	.sleeve {margin: 0; float: none}
 }
 
