@@ -36,7 +36,8 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 
 
 #local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: transparent; margin:0; padding: 10px;}
-#local * .cycle-pager li.active { background: $bg-medium}
+
+#local * .cycle-pager li.active { background: yellow; color: black}
 
 #local * .cycle-slide {background: $bg-medium}
 #local * .cycle-slide * p {color: $white-main}
@@ -59,7 +60,7 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 	}
 
 		.team-logo {height: 100%; float: left; text-align:center}
-		.team-info {height: 100%; float: left; background: $bg-highlight}
+		.team-info {height: 100%; float: left; background: rgba(255, 165, 0, 0.2)}
 			.team-name {}
 			.team-venue {}
 			.team-city {}
