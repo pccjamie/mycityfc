@@ -69,7 +69,7 @@ frameborder="0"></iframe>
 <h3>Teams near <%= current_user.city %> <%#= link_to 'All Teams', teams_path, class: "team-directory" %></h3>
 <!-- <p class="instructions">Click a team to add it to your profile!</p>
  -->
- 
+
 
 <div id="slideshow" class="js-tabs"  data-cycle-fx='none' data-cycle-slides=">.league" data-cycle-pager='>.cycle-pager'    data-cycle-pager-template="" data-cycle-timeout="0" data-cycle-pager-event="mouseover" data-cycle-pager-active-class="active" data-cycle-slide-active-class="active-slide">
 <ul class="cycle-pager">
@@ -79,8 +79,7 @@ frameborder="0"></iframe>
 </ul>
 
 <div class="league slide">
-	<section id="nearby-teams">
-	<div class="sleeve">
+
 	
 		<!-- PLACE TEAM INFO HERE -->
 <% @nearby_teams.each do |t| %>
@@ -105,10 +104,6 @@ frameborder="0"></iframe>
 	<% end %>
 		<!-- PLACE TEAM INFO HERE -->
 
-
-
-	</div><!--sleeve-->
-	</section><!--my teams section-->
 </div>
 
 <div class="league slide">

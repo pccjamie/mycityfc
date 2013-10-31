@@ -43,9 +43,9 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 #local * .active-slide {height: auto; float:left; background: $bg-medium;}
 
 /* elements default to hidden */
-section#nearby-teams * .hideme  {display: none};
-section#nearby-teams { height: auto; width: 100%; padding: 0px; overflow-x: auto}
-section#nearby-teams .sleeve {margin: 0px}
+// section#nearby-teams * .hideme  {display: none};
+// section#nearby-teams { height: auto; width: 100%; padding: 0px; overflow-x: auto}
+// section#nearby-teams .sleeve {margin: 0px}
 
 .team {height: 100%; width: auto; display: block; position: relative; font-size: 1em; color: $white-main; padding: 0px; float: left}
 
