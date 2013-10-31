@@ -431,7 +431,8 @@ section#tbd .sleeve {margin: 20px}
 
 
 
-form {background: rgba(135,169,181,0.75); height: auto; width: 300px; margin: 0 auto; padding: 20px;}
+form {background: 0; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
+
 form #slideshow section {height: 220px}
 form #slideshow.modal * {position: relative;}
 form #slideshow.modal * aside {text-align: center; margin: 5px 0px}
