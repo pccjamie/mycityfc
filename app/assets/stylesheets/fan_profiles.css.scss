@@ -65,14 +65,14 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 			.team-city {}
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
-			.team-info, .team-logo{height: auto; width: 50%; position: relative; display: inline-block;}
+			.team-info, .team-logo{width: 50%; position: relative; display: inline-block;}
 
 			.team-links {margin-top: 10px; float: right; width: 100%; height: auto; display:inline-block; background: gray}
 
 			.team.primary * .team-logo {width: 50%;}
 			.team.primary * .team-info {float:right; padding: 10px}
 
-		 	.team.secondary {height: 150px; width: 50%; display:inline-block;}
+		 	.team.secondary {width: 50%; display:inline-block;}
 
 		 		.team.secondary .team-overview {height: 100%; border:0; background-color: #425566; padding: 0px }
 				.team.secondary * .team-info {height:100%; width: 100%; padding: 10px}
