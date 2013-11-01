@@ -1,34 +1,36 @@
 $font-special:    'BenchNine', Helvetica, Arial, sans-serif;
 $font-normal:    Helvetica, Arial, sans-serif;
 
-$bg-main: rgba(135, 169, 181, 0.85);
+/*scheme*/
+$steel: rgba(66,85,102,1);
+$steel-50: rgba(66,85,102,.5);
+$blue-50: rgba(31,159,255,.5);
+$blue-20: rgba(31,159,255,.2);
 
-/* darks */
-$black-main: #2ba6cb;
+$brown: rgba(178,107,0,1);
+$orange: rgba(255,165,31,1);
+$yellow: yellow;
+$red: rgba(255,0,0,.9);
 
-$bg-heavy: rgba(0,0,0,.75);
-$bg-medium: rgba(0,0,0,.5);
-$bg-light: rgba(0,0,0,.25);
+$black: #000;
+$black-75: rgba(0,0,0,.75);
+$black-50: rgba(0,0,0,.5);
+$black-25: rgba(0,0,0,.25);
 
-/* lights */
-$white-main: #FFF;
+$white: #FFF;
+$white-75: rgba(255,255,255,.75);
+$white-50: rgba(255,255,255,.5);
+$white-25: rgba(255,255,255,.25);
 
-$bg-w-heavy: rgba(255,255,255,.75);
-$bg-w-medium: rgba(255,255,255,.5);
-$bg-w-light: rgba(255,255,255,.25);
+$gray: rgba(117, 138, 163, 1);
 
-/*hovers*/
-$hover-bg-change: yellow;
-
-$bg-steel: rgba(66,85,102,1);
-$bg-steel-opaque: rgba(66,85,102,.5);
-$bg-highlight: rgba(31,159,255,.5);
-$bg-highlight-20: rgba(31,159,255,.2);
-$bg-item-odd: rgba(117, 138, 163, 0.75);
-$bg-item-even: rgba(117, 138, 163, 0.5);
+$gray-75: rgba(117, 138, 163, 0.75);
+$gray-50: rgba(117, 138, 163, 0.5);
 
 
 /*temp*/
+
+$teal: rgba(135, 169, 181, 0.85);
 $tbd: rgba(0,0,0,.25);
 $pending: rgba(255,0,0,.5);
 
@@ -74,7 +76,7 @@ border-bottom-right-radius: 10px;
    clear: both;
 }
 
-.notice, .alert {background: orange; color: $white-main; padding: 10px;}
+.notice, .alert {background: $orange; color: $white; padding: 10px;}
 
 body {
 	height:100%; 
@@ -85,14 +87,14 @@ body {
 	background-attachment: fixed;
 	display: block;
 	background-image: url(closeup_flip2.jpg) no-repeat;
-	background-color: $bg-steel;
+	background-color: $steel;
 	margin: 0 auto;
 	position:relative;
 }
 
 
 .bg-default {
-	background: $bg-steel url(closeup_flip2.jpg) no-repeat;
+	background: $steel url(closeup_flip2.jpg) no-repeat;
 	background-size: 100%;
 	background-repeat: none;
 	background-attachment: fixed;
@@ -119,27 +121,25 @@ body {
 
 
  #nav-wrapper {
-
  	header.logo {display:inline-block; width: 60%; float: left; padding: 20px;
  	* {margin: 0}
-
 	}
 
  	header.logo h4 {font-size:20px;}
- 	header.logo h1 {font-size:48px;letter-spacing: 8px; text-shadow: -1x -1px 1px $bg-steel; color: $white-main}
+ 	header.logo h1 {font-size:48px;letter-spacing: 8px; text-shadow: -1x -1px 1px $steel; color: $white}
 	header.logo h2 {font-size: 24px; color: yellow; letter-spacing: 4px}
  	nav.public {display:none}
 
  }
 
-body.bg-default * form * {color: #363636}
+body.bg-default * form * {color: $gray-50}
 
 table {display: block; position: relative;}
 
 ul {list-style: none; margin: 0; padding:0; line-height: 40px;}
 li {display: inline; padding: 5px}
 
-h1,h2,h3,h4,h5,a,li {color: $white-main; font-family: $font-special; letter-spacing: 1px; font-weight: normal}
+h1,h2,h3,h4,h5,a,li {color: $white; font-family: $font-special; letter-spacing: 1px; font-weight: normal}
 
 h1,h2,h3,h4,h5,h6 {margin:0}
 
@@ -147,14 +147,15 @@ h1,h2,h3,h4,h5, nav * a, nav * li {text-transform: uppercase}
 
 p {font-family: $font-normal;}
 
-a.offsite:hover {background: $hover-bg-change}
+a.offsite:hover {background: $yellow}
 
 /* TEMP */
-.instructions {color: orange}
+.instructions {color: $orange}
+
 .pending {background: $pending}
 
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}
-//nav a {height: auto; background: #1f9fff; color: $white-main; font-size:24px; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
+//nav a {height: auto; background: #1f9fff; color: $white; font-size:24px; display: inline-block;padding: 0; margin:0; position: relative;line-height: normal; float: right}
 
 #wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto; position: relative; z-index:0}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px; margin-top: 0; position: relative;}
@@ -166,7 +167,7 @@ a.offsite:hover {background: $hover-bg-change}
 
 header#splash {
 	h1 {font-size: 120px;}
-	h2 {font-size: 30px; background: $bg-light;}
+	h2 {font-size: 30px; background: $black-25;}
 }
 
 
@@ -175,7 +176,7 @@ h3.my-team {display:none}
 
 /*top nav*/
 
-#nav-wrapper {height: auto; width: 100%; display: block; background: $bg-steel-opaque; padding: 0 10px;}
+#nav-wrapper {height: auto; width: 100%; display: block; background: $steel-50; padding: 0 10px;}
 
 nav {
 	height: 40px; width: 100%; display: block; line-height: 40px;		
@@ -183,7 +184,7 @@ nav {
 }
 
 nav.account {
-	display:inline-block; width: 100%; float:right; background: $bg-steel-opaque;border-bottom: 1px solid $white-main; padding: 0 20px;
+	display:inline-block; width: 100%; float:right; background: $steel-50; border-bottom: 1px solid $white; padding: 0 20px;
 }
 
 nav.content {
@@ -191,39 +192,39 @@ nav.content {
 	height: auto; width: 40%; padding: 20px; padding-left: 0; display:inline-block; float:right;
 
 	ul.left {line-height: 80px}
-	ul.left li {height: 100px; width: 25%; line-height: 100%; text-decoration: underline; float:left}
+	ul.left li {height: 100px; width: 25%; line-height: 100%; float:left; border-bottom: 1px solid $white}
 
 	// ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	// ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
-	ul.left li:hover {background: $bg-light; color: $white-main}
+	ul.left li:hover {background: $black-25; color: $white}
 
-	a {height: 100%; width: 100%; float: left; background: 0; color: $white-main; font-size:20px; line-height: 100%}
+	a {height: 100%; width: 100%; float: left; background: 0; color: $white; font-size:20px; line-height: 100%}
 }
 
 
 header#banner  {
-	height: auto; width: 100%; overflow: hidden; position: relative; padding-top: 0px; border-top: 1px solid $white-main;
+	height: auto; width: 100%; overflow: hidden; position: relative; padding-top: 0px; border-top: 1px solid $white;
 
 	a.credits {height: auto; width: auto; display: none; position: absolute; float: left; margin-left: 20px;}
 	a.credits img {height: 50%; width: 50%;}
 
 	* header.primary-team {padding: 20px 0 0 20px;}
 	* article a {font-family: $font-normal; font-size:16px; letter-spacing:0; line-height: normal;}
-	* article a:hover {background: $hover-bg-change}
+	* article a:hover {background: $yellow}
 	* .external-links {height: auto}
 }
 
 
 /*SCHEDULE */
 /* defaults */
-.single-game {height: auto; padding: 10px; margin-bottom: 1px; display: none; float: left; position: relative; z-index:20; background: $white-main;
+.single-game {height: auto; padding: 10px; margin-bottom: 1px; display: none; float: left; position: relative; z-index:20; background: $white;
 
-	* {width: 100px; display:inline-block; /*background: $bg-rev-medium; */line-height: normal; color: a; }
+	* {width: 100px; display:inline-block; line-height: normal;}
 
-	.game-date {width: 100%; color: #363636}
+	.game-date {width: 100%; color: $gray}
 	.game-home-logo,	.game-away-logo {width: 50px;}
 	.game-score {width: 50px;}
-	.game-links {width: 100%; padding: 0; color: $white-main; float:right;}
+	.game-links {width: 100%; padding: 0; color: $white; float:right;}
 
 	.field-home-team-logo, .field-away-team-logo {width: auto;}
 	.field-home-team-logo img, .field-away-team-logo img {width: 25px}
@@ -242,7 +243,7 @@ section#schedule-results {
  * .single-game * {width: auto}
  * .game-tv {display:none}
  * .game-date {width: 35%;}
- * .game-links {width: 100px; float: right; background: #333;}
+ * .game-links {width: 100px; float: right; background: $gray;}
  * .game-time {display:none}
  * .game-score {text-align:center}
  * .game-home {width: 100px;}
@@ -256,41 +257,38 @@ section#schedule-results {
 /* previews */
 header#banner #game-previews {
 	
-	height: auto; width: 60%; position: relative; display:inline-block; float:left; background: $bg-highlight-20;
+	height: auto; width: 60%; position: relative; display:inline-block; float:left; background: $blue-20;
 
 	.sleeve {margin:0}
-	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: rgba(255,0,0,.9); text-align:center; z-index: 8000;}
+	.gameday-trigger {height: 200px; padding: 10px; margin: 0; width: 100px; margin: 20px 20px 0 0; background: $red; text-align:center; z-index: 8000;}
 	.wrapper {
-		height: 40px; width: 180px; margin: auto; margin-right: 20px; float: right; display:block; background: $bg-steel-opaque; @include border-radius-top-left(10px);@include border-radius-top-right(10px);
+		height: 40px; width: 180px; margin: auto; margin-right: 20px; float: right; display:block; background: $steel-50; @include border-radius-top-left(10px);@include border-radius-top-right(10px);
 
 	}
 
-	.wrapper:hover {background: $bg-medium; color: $white-main}
+	.wrapper:hover {background: $black-50; color: $white}
 	
-	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white-main; display:inline-block; position: relative; margin: auto; @include border-radius-bottom-left(10px);@include border-radius-bottom-right(10px);
+	 .schedule-trigger {height: auto; padding: 10px; bottom: 0px; color: $white; display:inline-block; position: relative; margin: auto; @include border-radius-bottom-left(10px);@include border-radius-bottom-right(10px);
 	 }
 
 	}
 
-	#controls {height: auto; width: 25%; padding: 10px; color: $white-main;  text-align:center; display: none; float:right}
+	#controls {height: auto; width: 25%; padding: 10px; color: $white;  text-align:center; display: none; float:right}
 
 
 	/*next game only */
 	.js-next-game {height: 200px; width: 100%; padding: 20px; display: block; background: transparent}
 
-
 	.js-next-game.single-game {margin-bottom: 0px; float: left;}
-	.js-next-game.single-game * {color: $white-main; width: auto}
+	.js-next-game.single-game * {color: $white; width: auto}
 	.js-next-game.single-game .game-home,	.js-next-game.single-game .game-away {font-size: 48px; font-family: $font-special; text-transform: uppercase; letter-spacing: 4px}
 	.js-next-game.single-game .game-home-logo, 	.js-next-game.single-game .game-away-logo {margin: auto}
 	.js-next-game.single-game .game-date {background: 0; display:block}
 	.js-next-game.single-game .game-time {display:block; margin-bottom: 10px;}
 	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
-	.js-next-game.single-game * a {background: $bg-highlight; color: $white-main}
-	
-	.js-next-game.single-game * a:hover {background: $hover-bg-change; color: $black-main}
-
+	.js-next-game.single-game * a {background: $blue-50; color: $white}
+	.js-next-game.single-game * a:hover {background: $yellow; color: $black}
 	.js-next-game * {background: 0}
 
 
@@ -298,7 +296,7 @@ header#banner #game-previews {
 
 #upcoming-games {
 
-	height: 100%; width: 100%; overflow-y: auto; background: $bg-steel-opaque; margin: auto; overflow: auto; position: relative;/*to be changed to :none */z-index: 8500; display: none;
+	height: 100%; width: 100%; overflow-y: auto; background: $steel-50; margin: auto; overflow: auto; position: relative; z-index: 8500; display: none;
   -webkit-transition: display 1s ease-in-out;
   -moz-transition: display 1s ease-in-out;
   -o-transition: display 1s ease-in-out;
@@ -310,8 +308,8 @@ header#banner #game-previews {
 #upcoming-games .single-game {
 	height: 200px; width:50%; padding: 18px; float: left; margin-bottom: 0;display:inline; background: rgba(117,138,163,.75);
 	
-	* {color: $white-main}
-	* a {background: $bg-highlight; color:$white-main; text-align:center}
+	* {color: $white}
+	* a {background: $blue-50; color:$white; text-align:center}
 
 	.game-date {font-weight: bold; display:inline; width: 65%;}
 	.game-time {display: block; margin-bottom: 10px}
@@ -321,7 +319,7 @@ header#banner #game-previews {
 
 	.game-links {
 	margin-top: 10px;
-	a:hover {background: $hover-bg-change}
+	a:hover {}
 	}
 
 }
@@ -349,13 +347,13 @@ header#banner #game-previews {
 #ticker article:not(:first-child) a {font-size: 16px}
 
 #js-headlines article {padding: 10px}
-#js-headlines article:nth-child(odd) {background: $bg-item-odd}
-#js-headlines article:nth-child(even) {background: $bg-light}
+#js-headlines article:nth-child(odd) {background: $gray-50}
+#js-headlines article:nth-child(even) {background: $black-25}
 #js-headlines-latest {height: auto; width: 100%; margin-bottom: 20px}
-#js-headlines-latest article:first-child a {font-size: 36px; margin: auto; }
+#js-headlines-latest article:first-child a {font-size: 36px; margin: auto;}
 
 footer {
-	height: auto; min-height: 200px; width: 100%; margin-top: 10px; background-color: $bg-steel-opaque; position: relative; float: left; display: block;
+	height: auto; min-height: 200px; width: 100%; margin-top: 10px; background-color: $steel-50; position: relative; float: left; display: block;
 
 	* aside.right {position: absolute; top: 20px; right: 20px; text-transform:uppercase}
 }
@@ -363,7 +361,7 @@ footer {
 footer * h1 {letter-spacing: 8px; font-size: 36px;}
 
 #js-gameday {height: 0px; width: 100%; margin: 0 auto; display: none; position: absolute; z-index: 9999; 
-	.sleeve {height: 400px; width: 800px; margin: auto; position: relative; background: orange; border: 2px solid white}
+	.sleeve {height: 400px; width: 800px; margin: auto; position: relative; background: $orange; border: 2px solid $white}
  }
 
 
@@ -373,11 +371,11 @@ footer * h1 {letter-spacing: 8px; font-size: 36px;}
 
 
 .news-trigger {
-	background: $bg-steel-opaque; color:$white-main; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;
+	background: $steel-50; color:$white; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;
 
 }
 
-.news-trigger:hover {background: $bg-medium; color: $white-main}
+.news-trigger:hover {background: $black-50; color: $white}
 
 .gameday-trigger {top: 0px; right: 0px; position: absolute}
 .gameday-trigger {display:none}
@@ -390,13 +388,13 @@ background: -ms-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* 
 background: linear-gradient(to bottom, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */}
 
-#profile {float: left;  position:relative; width:60%; background: $bg-highlight-20 }
+#profile {float: left;  position:relative; width:60%; background: $blue-20 }
 #local {background: 0}
 
 
 #profile h3, #local h3 {height: 40px; line-height: 40px; margin: 0;  margin-bottom: 10px; padding: 0;}
 
-#local h3 { background: $bg-w-light; color: yellow;}
+#local h3 { background: $white-75; color: $brown;}
 
 section#videos, section#fans, section#players, section#schedule-results {
 
@@ -431,21 +429,13 @@ section#fans .sleeve aside {
 		}
 
 
-
-
-
 section#schedule-results .sleeve {margin:0}
 
 section#tbd {height: auto; min-height: 300px; margin-top:20px; width: 100%; display: block; float: left; background: $tbd;}
 
 section#tbd .sleeve {margin: 20px}
 
-
-/* GEO */
-
-
-
-
+/*forms*/
 form {background: 0; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 
 form.edit_user {
@@ -469,15 +459,14 @@ form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline
 form #slideshow.modal * .button {position: relative; }
 
 
-form.devise {background: $bg-w-medium}
 
-form.standard {background-color: $bg-main}
 
-form * {color: #363636;}
+form.devise {background: $white-50}
+
 form * input.button {margin: 0 0 20px 0}
 form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; border: 0; position: relative;}
 
-form * .button:hover {background: #f9f9f9; color: teal}
+form * .button:hover {background: #f9f9f9; color: $gray}
 
 form #slideshow.modal .button {width: 100px}
 
