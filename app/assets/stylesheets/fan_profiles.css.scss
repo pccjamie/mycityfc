@@ -15,7 +15,7 @@ $bg-w-heavy: rgba(255,255,255,.75);
 
 $bg-steel: rgba(66,85,102,1);
 $bg-steel-opaque: rgba(66,85,102,.5);
-$bg-highlight: rgba(31,159,255,.5);
+$blue: rgba(31,159,255,.5);
 
 /*SPECIAL*/
 .external-links {height: auto}
@@ -41,7 +41,7 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 
 #local * .cycle-slide {background: $bg-medium}
 #local * .cycle-slide * p {color: $white-main}
-#local * .active-slide {height: auto; float:left; background: $bg-medium;}
+#local * .active-slide {height: auto; float:left; background: $bg-light;}
 
 /* elements default to hidden */
 // section#nearby-teams * .hideme  {display: none};

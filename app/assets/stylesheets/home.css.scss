@@ -147,7 +147,7 @@ h1,h2,h3,h4,h5, nav * a, nav * li {text-transform: uppercase}
 
 p {font-family: $font-normal;}
 
-a.offsite:hover {background: $yellow}
+// a.offsite:hover {background: $yellow}
 
 /* TEMP */
 .instructions {color: $orange}
@@ -192,7 +192,7 @@ nav.content {
 	height: auto; width: 40%; padding: 20px; padding-left: 0; display:inline-block; float:right;
 
 	ul.left {line-height: 80px}
-	ul.left li {height: 100px; width: 25%; line-height: 100%; float:left; border-bottom: 1px solid $white}
+	ul.left li {height: 100px; width: 25%; line-height: 100%; float:left;}
 
 	// ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
 	// ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
@@ -394,7 +394,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 
 #profile h3, #local h3 {height: 40px; line-height: 40px; margin: 0;  margin-bottom: 10px; padding: 0;}
 
-#local h3 { background: $white-75; color: $brown;}
+#local h3 { background: $black-25; color: $yellow; padding-left:10px;}
 
 section#videos, section#fans, section#players, section#schedule-results {
 

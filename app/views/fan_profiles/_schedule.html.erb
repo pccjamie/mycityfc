@@ -29,8 +29,6 @@
 	
 	<span class="separator">vs</span>
 
-<!-- <img src="<%#= game.css('imagecache-schedule_team_logo') %>"/>
- -->
 	<div class="game-score"><%= game.css('.field-score').text %></div>
 
 	<%= raw game.css('.field-away-team-logo') %>
@@ -41,8 +39,8 @@
 	<div class="game-links">
 	<a class="game-tv">
 		<%= game.css('.field-broadcast-partners').text %></a>	
-		<%= raw game.css('a.sch_tickets') %>
-		<%= raw game.css('a.sch_matchcenter') %>
+		<%= raw game.css('.sch_tickets') %>
+		<%= raw game.css('.sch_matchcenter') %>
 	</div>
 	
 </div>
