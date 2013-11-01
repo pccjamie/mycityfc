@@ -143,11 +143,9 @@ $("#banner").on("click", ".news-trigger", function(e) {
 	$('a.credits').fadeToggle();
 
 	if ($('#upcoming-games').is(':visible'))
-
 	{
 		$('#upcoming-games').slideToggle('slow', function() {});
 	}
-
 	$('#js-headlines').fadeToggle('slow', function() {});
 });
 
@@ -233,7 +231,6 @@ function filter_schedule() {
 		if ($('#js-headlines').is(':visible')) {
 			$('#js-headlines').slideToggle('slow', function() {});
 		}
-
 		$('#upcoming-games').fadeToggle('slow', function() {});
 		$('#controls').fadeToggle('slow').click(function() {
 			alert('clicking this will run code that controls how many results displayed');
