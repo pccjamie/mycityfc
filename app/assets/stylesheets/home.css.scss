@@ -127,7 +127,7 @@ body {
 
  	header.logo h4 {font-size:20px;}
  	header.logo h1 {font-size:48px;letter-spacing: 8px; text-shadow: -1x -1px 1px $steel; color: $white}
-	header.logo h2 {font-size: 24px; color: yellow; letter-spacing: 4px}
+	header.logo h2 {font-size: 24px; color: $yellow; letter-spacing: 4px}
  	nav.public {display:none}
 
  }
@@ -159,7 +159,7 @@ p {font-family: $font-normal;}
 
 #wrapper {height: 100%; width: 100%; padding:0; display:block; float: left; overflow: auto; position: relative; z-index:0}
 #inner-wrapper {height: 100%; width: auto; display: block; margin: 10px; margin-top: 0; position: relative;}
-#inner-wrapper.public {height: 100%; width: 100%; background: black; z-index:9999}
+#inner-wrapper.public {height: 100%; width: 100%; background: $black; z-index:9999}
 
 .sleeve {height: 100%; display:block; margin: 20px; }
 .inner {margin: 20px;}
@@ -287,8 +287,8 @@ header#banner #game-previews {
 	.js-next-game.single-game .game-time {display:block; margin-bottom: 10px;}
 	.js-next-game.single-game .game-score {display:none}
 	.js-next-game.single-game .game-links {width: 100%; margin-top: 20px;}
-	.js-next-game.single-game * a {background: $blue-50; color: $white}
-	.js-next-game.single-game * a:hover {background: $yellow; color: $black}
+	.js-next-game.single-game * a {background: $steel-50; color: $white}
+	.js-next-game.single-game * a:hover {background: $blue-50;}
 	.js-next-game * {background: 0}
 
 

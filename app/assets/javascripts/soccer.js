@@ -231,8 +231,6 @@ function filter_schedule() {
 	$(".schedule-trigger").click(function() {
 
 		if ($('#js-headlines').is(':visible')) {
-
-
 			$('#js-headlines').slideToggle('slow', function() {});
 		}
 
@@ -324,6 +322,8 @@ $('a.game-tv:contains("' + ch_espn + '")').filter(function() {
 	return $(this).text();
 }).attr("href", "http://espn.go.com/watchespn/index");
 
+
+//need to work on how to split string that contains multiple channels
 $('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background', 'none');
 
 
