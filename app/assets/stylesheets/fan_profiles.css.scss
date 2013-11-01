@@ -6,10 +6,11 @@
 $white-main: #FFF;
 
 /*blacks */
+$black-10: rgba(0,0,0,.1);
+
 $bg-dark: rgba(0,0,0,.75);
 $bg-medium: rgba(0,0,0,.5);
 $bg-light: rgba(0,0,0,.25);
-
 
 $bg-w-heavy: rgba(255,255,255,.75);
 
@@ -36,12 +37,12 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 
 
 #local * .cycle-pager li.pager {line-height: 100%; width: auto; display: inline-block; background: transparent; margin:0; padding: 10px;}
-
-#local * .cycle-pager li.active {color: yellow;}
+#local * .cycle-pager li.active {color: yellow; background: $black-10}
 
 #local * .cycle-slide {background: $bg-medium}
 #local * .cycle-slide * p {color: $white-main}
-#local * .active-slide {height: auto; float:left; background: $bg-light;}
+
+#local * .active-slide {height: auto; float:left; background: $black-10;}
 
 /* elements default to hidden */
 // section#nearby-teams * .hideme  {display: none};
@@ -50,38 +51,46 @@ h3 a.team-directory {background: $bg-steel-opaque; padding: 0 10px; color: $whit
 
 .team {height: 100%; height: 180px; width: auto; display: block; position: relative; font-size: 1em; color: $white-main; padding: 0px; float: left}
 
-	.team-overview {height: auto; height: 100%; width: 100%; float: left; padding: 0px; background-position:center; -webkit-filter: grayscale(100%); display: block; position: relative}
-	.team-overview:hover {-webkit-filter: grayscale(0%);}
+.team-overview {
 
-	.team-overview {
+	height: auto; height: 100%; width: 100%; float: left; padding: 0px; background-position:center; -webkit-filter: grayscale(100%); display: block; position: relative;
+	
+	* {text-shadow: 1px 1px 2px black}
+	* h4.team-name {font-size: 30px; letter-spacing: 6px; text-transform: uppercase}
+	* h5 {font-size:20px;}
 
-		* h4.team-name {letter-spacing: 4px; text-transform: uppercase}
+}
 
-	}
+.team-overview:hover {-webkit-filter: grayscale(0%);}
 
-		.team-logo {height: 100%; float: left; text-align:center}
-		.team-info {height: 100%; float: left; background: rgba(255, 255, 0, 0.25)}
-			.team-name {}
-			.team-venue {}
-			.team-city {}
+.team-logo {height: 100%; float: left; text-align:center}
+.team-info {height: 100%; float: left;}
+			
 			.team-venue-image {height: 0px; visibility: hidden; text-indent: -9999px}
 
 			.team-info, .team-logo{width: 50%; position: relative; display: inline-block;}
 
 			.team-links {margin-top: 10px; float: right; width: 100%; height: auto; display:inline-block; background: gray}
 
-			.team.primary * .team-logo {width: 50%;}
-			.team.primary * .team-info {float:right; padding: 10px}
+			.team.primary {
 
-		 	.team.secondary {width: 50%; display:inline-block;}
+				* .team-logo {width: 50%;}
+				* .team-info {float:right; padding: 10px}
 
-		 		.team.secondary .team-overview {height: 100%; border:0; background-color: #425566; padding: 0px }
-				.team.secondary * .team-info {height:100%; width: 100%; padding: 10px}
-		 		.team.secondary * h4.team-name {font-size:16px; letter-spacing: 6px;}
-		 		.team.secondary * h5 {font-size:14px}
+			}
 
-				.team.secondary * .team-logo {display:none}
-				.team.secondary * .team-links {display:none}
+		 	.team.secondary {
+
+		 		* h4.team-name {font-size:24px;}
+
+		 		width: 50%; display:inline-block;
+
+			 	.team-overview {height: 100%; border:0; background-color: #425566; padding: 0px }
+				* .team-info {height:100%; width: 100%; padding: 10px}
+				* .team-logo {display:none}
+				* .team-links {display:none}
+		 	
+		 	}
 
 				// .team.secondary * .team-city {display:none}
 				

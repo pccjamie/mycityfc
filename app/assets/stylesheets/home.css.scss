@@ -369,9 +369,10 @@ footer * h1 {letter-spacing: 8px; font-size: 36px;}
 
 /* TRIGGERS */
 
+.news-trigger, .schedule-trigger {}
 
 .news-trigger {
-	background: $steel-50; color:$white; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 120px; padding: 0 10px; line-height: 40px; display: block;
+	background: $steel-50; color:$white; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: auto; padding: 0 10px; line-height: 40px; display: block;
 
 }
 
@@ -431,7 +432,10 @@ section#fans .sleeve aside {
 
 section#schedule-results .sleeve {margin:0}
 
-section#tbd {height: auto; min-height: 300px; margin-top:20px; width: 100%; display: block; float: left; background: $tbd;}
+section#tbd {
+	height: auto; min-height: 300px; margin-top:20px; width: 100%; display: block; float: left; background: $tbd;
+	h3 {color: $yellow}
+}
 
 section#tbd .sleeve {margin: 20px}
 
