@@ -34,28 +34,28 @@ $pending: rgba(255,0,0,.5);
 
 
 @mixin border-radius-top-left($radius) {
--webkit-border-top-left-radius: 15px;
--moz-border-radius-topleft: 15px;
-border-top-left-radius: 15px;
+-webkit-border-top-left-radius: 10px;
+-moz-border-radius-topleft: 10px;
+border-top-left-radius: 10px;
 }
 
 @mixin border-radius-top-right($radius){
--webkit-border-top-right-radius: 15px;
--moz-border-radius-topright: 15px;
-border-top-right-radius: 15px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topright: 10px;
+border-top-right-radius: 10px;
 }
 
 
 @mixin border-radius-bottom-left($radius) {
--webkit-border-bottom-left-radius: 15px;
--moz-border-radius-bottomleft: 15px;
-border-bottom-left-radius: 15px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-left-radius: 10px;
 }
 
 @mixin border-radius-bottom-right($radius){
--webkit-border-bottom-right-radius: 15px;
--moz-border-radius-bottomright: 15px;
-border-bottom-right-radius: 15px;
+-webkit-border-bottom-right-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+border-bottom-right-radius: 10px;
 }
 
 
@@ -191,10 +191,10 @@ nav.content {
 	height: auto; width: 40%; padding: 20px; padding-left: 0; display:inline-block; float:right;
 
 	ul.left {line-height: 80px}
-	ul.left li {height: 100px; width: 25%; line-height: 100%; float:left}
+	ul.left li {height: 100px; width: 25%; line-height: 100%; text-decoration: underline; float:left}
 
-	ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
-	ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
+	// ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
+	// ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
 	ul.left li:hover {background: $bg-light; color: $white-main}
 
 	a {height: 100%; width: 100%; float: left; background: 0; color: $white-main; font-size:20px; line-height: 100%}
@@ -394,9 +394,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 #local {background: 0}
 
 
-#profile h3, #local h3 {height: 40px; line-height: 40px; margin: 0;  margin-bottom: 10px; padding: 0; background: $bg-w-light;}
+#profile h3, #local h3 {height: 40px; line-height: 40px; margin: 0;  margin-bottom: 10px; padding: 0;}
 
-#local h3 {color: yellow}
+#local h3 { background: $bg-w-light; color: yellow;}
 
 section#videos, section#fans, section#players, section#schedule-results {
 
