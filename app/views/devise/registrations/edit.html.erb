@@ -2,7 +2,7 @@
 <!-- <h5>Default View: <%#= resource_name.to_s.humanize %></h5>
  -->
 <header class="page-title">
-My Profile
+<h2>My Profile</h2>
 </header>
 
 <table class="current">
@@ -36,7 +36,7 @@ My Profile
 
                               <div class="field-group">
                                 <%= f.label :primary_team, 'Follow a Team!' %>
-                                <p>Select a team for a richer experience</p>
+                                <p>optional</p>
                                 <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
                                 <%= link_to "Cancel", root_path, :class=> "button" %>
                                 <%= f.submit "Confirm", :class=>'button' %>
