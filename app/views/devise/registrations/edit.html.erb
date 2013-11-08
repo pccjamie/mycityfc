@@ -37,11 +37,15 @@
                               <div class="field-group">
                                 <%= f.label :primary_team, 'Choose a Team', :class=>'profile-field' %>
                                 <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
-                                <%= link_to "Cancel", root_path, :class=> "button" %>
-                                <%= f.submit "Confirm", :class=>'button' %>
+                              
                               </div>
 
+                              <div class="field-group">
+
+                                <%= link_to "Cancel", root_path, :class=> "button" %>
+                                <%= f.submit "Confirm", :class=>'button' %>
                    
+                              </div>
                       <!--<section id="section" class="slide" name="slide">
 
                       <div><%#= f.label :email %><br />
