@@ -132,7 +132,9 @@ body {
 
  }
 
-body.bg-default * form * {color: $gray-50}
+
+form.edit_user {background: $black-75}
+form.edit_user * {color: $yellow}
 
 table {display: block; position: relative;}
 
