@@ -11,13 +11,13 @@ My Profile
 </header>
  
 <%= devise_error_messages! %>
-
-      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='5000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section">
+<!-- 
+      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='5000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section"> -->
 
                   <% if user_signed_in? #&& current_user.profile == nil %>
                     
                     <!-- tab 1: choose a profile -->
-                      <section id="section" class="slide" name="slide">
+                   <!--    <section id="section" class="slide" name="slide"> -->
                               
                               <div class="field-group">
                                 <%= f.label :profile, 'Default View' %>
@@ -40,7 +40,7 @@ My Profile
                                 <%= f.submit "Confirm", :class=>'button' %>
                               </div>
 
-                      </section>
+                   <!--    </section> -->
                    
                       <!--<section id="section" class="slide" name="slide">
 
@@ -64,7 +64,7 @@ My Profile
                    
                 <% end %>
 
-      </div> <!--slideshow-->
+     <!--  </div>  --><!--slideshow-->
 
 <% end %> <!-- form -->
 
