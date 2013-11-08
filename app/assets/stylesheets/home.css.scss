@@ -132,9 +132,10 @@ body {
 
  }
 
-
-form.edit_user {background: $black-75}
-form.edit_user * {color: $yellow}
+form.edit_user {background: $black-25; width: 50%}
+form.edit_user * {color: $white; font-size: 2em; font-family: $font-normal}
+form.edit_user * #slideshow {height: 320px;}
+form.edit_user * .button {color: $gray}
 
 table {display: block; position: relative;}
 
