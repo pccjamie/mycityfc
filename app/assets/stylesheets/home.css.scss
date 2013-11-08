@@ -132,11 +132,8 @@ body {
 
  }
 
-form.edit_user {background: $black-25; height: 320px; width: 50%}
-form.edit_user * {color: $white; font-size: 20px; font-family: $font-normal}
-form.edit_user * .button {color: $gray}
 
-table {display: block; position: relative;}
+table {display: block; position: relative; background: 0}
 
 ul {list-style: none; margin: 0; padding:0; line-height: 40px;}
 li {display: inline; padding: 5px}
@@ -444,39 +441,35 @@ section#tbd .sleeve {margin: 20px}
 /*forms*/
 form {background: 0; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 
+
+
 form.edit_user {
 
+	background: $black-25; height: 320px; width: 50%;
+
 	* li {display: block}
+	* {color: $white; font-size: 20px; font-family: $font-normal}
+	* .button {color: $gray}
 
-	*.modal * aside {text-align: center; margin: 5px 0px}
-	
 	.field-group {
-
 		height: auto; width: 100%; display:block; float:left; margin: 10px 0;
-
 		* {display:inline}
 	}
 
-
-
-
 }
-
 
 form #slideshow.modal * .sleeve {height: 100px;}
 form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
 form #slideshow.modal * .button {position: relative; }
+form #slideshow.modal .button {width: 100px}
+
 
 
 form.devise {background: $white-50}
 
 form * input.button {margin: 0 0 20px 0}
 form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; border: 0; position: relative;}
-
 form * .button:hover {background: #f9f9f9; color: $gray}
-
-form #slideshow.modal .button {width: 100px}
-
 
 
 ul.competitions {height: auto; float: right; margin-right: 10px}
