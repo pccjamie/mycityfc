@@ -1,35 +1,33 @@
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class=>'profile', :html => { :method => :put }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 <!-- <h5>Default View: <%#= resource_name.to_s.humanize %></h5>
  -->
 <header class="page-title">
-My Profile
-<ul class="current">
-<li><%= current_user.name %></li>
-<li><%= image_tag current_user.picture %></li>
-<li><%= current_user.location %></li>
-</ul>
+  <h2>My Profile</h2>
 </header>
- 
+
+<table class="current-profile">
+
+<tr>
+  <td>
+    <%= current_user.name %><br/>
+    <%= current_user.location %>
+  </td>
+  <td><%= image_tag current_user.picture %></td>
+</tr>
+
+</table>
+
 <%= devise_error_messages! %>
-<!-- 
-      <div id="slideshow" class="cycle-slideshow modal" data-cycle-speed='5000' data-cycle-pause-on-hover='true' data-cycle-fx='none' data-cycle-slides=">section"> -->
 
                   <% if user_signed_in? #&& current_user.profile == nil %>
                     
-                    <!-- tab 1: choose a profile -->
-                   <!--    <section id="section" class="slide" name="slide"> -->
-                              
                               <div class="field-group">
                                 <%= f.label :profile, 'Default View' %>
-                                <aside class="left">
+                               
                                 <%= f.radio_button(:profile, "Fan") %>
-                                <%= f.label(:profile_fan, "Fan") %>
-                                </aside>
-
-                                <aside class="right">
+                                <%= f.label(:profile_fan, "Fan") %>                              
                                 <%= f.radio_button(:profile, "Parent") %>
                                 <%= f.label(:profile_parent, "Parent") %>
-                                </aside>
                               </div>
 
                               <div class="field-group">
@@ -40,12 +38,8 @@ My Profile
                                 <%= f.submit "Confirm", :class=>'button' %>
                               </div>
 
-                   <!--    </section> -->
-                   
-                      <!--<section id="section" class="slide" name="slide">
-
-                      <div><%#= f.label :email %><br />
-                      <%#= f.email_field :email, :autofocus => true %></div>
+                      <%#= f.label :email %>  
+                      <%#= f.email_field :email, :autofocus => true %>
 
                       <%# if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                         <div>Currently waiting on confirmation for: <%#= resource.unconfirmed_email %></div>
@@ -59,12 +53,8 @@ My Profile
 
                       <div><%#= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
                       <%#= f.password_field :current_password %></div>
-
-                    </section>-->
                    
                 <% end %>
-
-     <!--  </div>  --><!--slideshow-->
 
 <% end %> <!-- form -->
 

@@ -454,8 +454,11 @@ form.edit_user {
 
 		height: auto; width: 100%; display:block; float:left; margin: 10px 0;
 
-		* {text-align:center}
+		* {display:inline}
 	}
+
+
+
 
 }
 
@@ -463,8 +466,6 @@ form.edit_user {
 form #slideshow.modal * .sleeve {height: 100px;}
 form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
 form #slideshow.modal * .button {position: relative; }
-
-
 
 
 form.devise {background: $white-50}
