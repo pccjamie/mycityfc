@@ -415,8 +415,6 @@ section#videos {
 	.sleeve {margin: 0; float: none}
 }
 
-
-
 section#fans {background: 0; margin-bottom:20px}
 section#fans .sleeve header {display: block; position:relative}
 section#fans .sleeve aside {
@@ -445,30 +443,31 @@ form.edit_user {
 
 	background: $black-25; height: auto; width: 50%;
 
-	* {color: $white; font-size: 20px; font-family: $font-normal}
-	* .button {margin-top: 10px; color: $gray}
-
-	* select {width:auto; display:block;}
-
 	.field-group {
 		height: auto; width: 100%; display:block; margin: 10px 0;
 		* {display:inline}
 	}
 
+	* label {width: 100px;}
+	* {color: $white; font-size: 20px; font-family: $font-normal}
+	* .button {margin-top: 10px; color: $gray}
+	* img {border: 1px solid white;}
+	* select {width:auto; display: inline; color:$gray}
+
+
 }
 
-form #slideshow.modal * .sleeve {height: 100px;}
-form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
-form #slideshow.modal * .button {position: relative; }
-form #slideshow.modal .button {width: 100px}
-
-
+// form #slideshow.modal * .sleeve {height: 100px;}
+// form #slideshow.modal * .sleeve aside {height: 60px; width: 50%; display: inline-block; }
+// form #slideshow.modal * .button {position: relative; }
+// form #slideshow.modal .button {width: 100px}
 
 form.devise {background: $white-50}
 
 form * input.button {margin: 0 0 20px 0}
 form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; border: 0; position: relative;}
 form * .button:hover {background: #f9f9f9; color: $gray}
+
 
 
 ul.competitions {height: auto; float: right; margin-right: 10px}

@@ -25,7 +25,7 @@
                  
                               
                               <div class="field-group">
-                                <%= f.label :profile, 'Default View' %>
+                                <%= f.label :profile, 'Default View', :class=>'profile-field' %>
                                
                                 <%= f.radio_button(:profile, "Fan") %>
                                 <%= f.label(:profile_fan, "Fan") %>                              
@@ -35,8 +35,7 @@
                               </div>
 
                               <div class="field-group">
-                                <%= f.label :primary_team, 'Follow a Team!' %>
-                                <p>optional</p>
+                                <%= f.label :primary_team, 'Choose a Team', :class=>'profile-field' %>
                                 <%= f.collection_select(:primary_team, Team.all, :name, :name) %>
                                 <%= link_to "Cancel", root_path, :class=> "button" %>
                                 <%= f.submit "Confirm", :class=>'button' %>
