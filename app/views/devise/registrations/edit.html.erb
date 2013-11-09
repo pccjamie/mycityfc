@@ -20,7 +20,7 @@
  
 <%= devise_error_messages! %>
 
-                  <% if user_signed_in? #&& current_user.profile == nil %>
+                  <% if user_signed_in? && current_user.profile == nil %>
                               
                               <div class="field-group">
                                 <%= f.label :profile, 'Default View', :class=>'profile-field' %>                               
@@ -43,7 +43,7 @@
                                 <%= f.submit "Confirm", :class=>'button' %>
                    
                               </div>
-                      <!--<section id="section" class="slide" name="slide">
+                      <!--
 
                       <div><%#= f.label :email %><br />
                       <%#= f.email_field :email, :autofocus => true %></div>
@@ -61,7 +61,7 @@
                       <div><%#= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
                       <%#= f.password_field :current_password %></div>
 
-                    </section>-->
+                   -->
                    
                 <% end %>
 
