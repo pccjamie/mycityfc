@@ -8,6 +8,9 @@ function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
 
+		$('body').addClass('bg-fans');
+
+
 		$('#local * .team-venue-image').each(function() {
 			var venue = $(this).text();
 			$(this).parent().parent().css('background-image', 'url(' + venue + ')');

@@ -86,10 +86,11 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 	display: block;
-	background-image: url(closeup_flip2.jpg) no-repeat;
 	background-color: $steel;
 	margin: 0 auto;
 	position:relative;
+	background-image: url(closeup_flip2.jpg) no-repeat;
+
 }
 
 
@@ -98,12 +99,18 @@ body {
 	background-size: 100%;
 	background-repeat: none;
 	background-attachment: fixed;
+
+
+	#intro h2 {display:none}
+	* footer {position: fixed; bottom: 0; float:left;}
+
 }
 
-.bg-fan-profiles {	
-	background-size: 100%;
-	background-repeat: none;
-	background-attachment: fixed;}
+.bg-fans{	
+
+* footer {position: relative;}
+
+}
 
 .bg-parent-profiles { 
 	background-size: 100%;
@@ -352,7 +359,7 @@ header#banner #game-previews {
 #js-headlines-latest article:first-child a {font-size: 36px; margin: auto;}
 
 footer {
-	height: auto; min-height: 200px; width: 100%; margin-top: 10px; background-color: $steel-50; position: relative; float: left; display: block;
+	height: auto; min-height: 200px; width: 100%; margin-top: 10px; background-color: $steel-50; position: fixed; bottom: 0; float: left; display: block;
 
 	* aside.right {position: absolute; top: 20px; right: 20px; text-transform:uppercase}
 }
