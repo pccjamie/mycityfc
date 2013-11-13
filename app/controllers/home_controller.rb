@@ -15,7 +15,7 @@ before_filter :authenticate_user!, :except => [:splash], :unless => :user_signed
   		current_user.profile == 'Parent'
   		redirect_to :parent_profiles
   	else
-  		redirect_to :index
+  		redirect_to :splash
       # flash[:alert] = 'I am home. No profile.'
   	end
 	end

@@ -30,7 +30,6 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(user)
-    #edit_fan_profiles_path
     home_index_path
     # edit_user_registration_path, unless: => :current_user
   end
