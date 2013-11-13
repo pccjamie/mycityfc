@@ -104,12 +104,11 @@ body {
 
 		height: auto; width: 100%; margin: auto; margin-top: 100px;
 
-		.sleeve {width: 500px;}
+		.sleeve {width: 500px;margin:auto;}
 
 		aside {height: 150px; width: 198px; text-align:center; border: 1px solid white; padding: 20px;background: $black-25; }
 
-		aside.separator {text-align:center; margin: auto; height: 100px; width: 100px; float:left; border:0;
-
+		aside.separator {text-align:center; margin: auto; height: 100px; width: 100px; float:left; border:0;background:0;
 			p {line-height:90px;}
 		}
 		
