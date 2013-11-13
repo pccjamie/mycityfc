@@ -21,6 +21,8 @@ function location_based_view() {
 		var root = window.location.pathname == ("/");
 
 		if (window.location == root) {
+			$('body').addClass('bg-splash');
+
 			$('body * footer').css('display', 'none');
 		}
 
