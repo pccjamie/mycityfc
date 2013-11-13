@@ -138,6 +138,8 @@ body {
 			button.medium {width:150px; margin-top: 25px; background: $steel; text-align:center}
 		}
 
+		aside.local {background: purple;}
+
 	}
 
 .bg-parent-profiles { 
@@ -497,6 +499,11 @@ form * .button {background: #F8F8F8; font-weight: normal;  color: #262626; borde
 form * .button:hover {background: #f9f9f9; color: $gray}
 
 
+.holder {background: gray;  
+	-webkit-transition: background 1s ease-in-out;
+  -moz-transition: background 1s ease-in-out;
+  -o-transition: background 1s ease-in-out;
+  transition: background 1s ease-in-out;}
 
 ul.competitions {height: auto; float: right; margin-right: 10px}
 

@@ -327,15 +327,13 @@ $('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background', 
 
 	$('.local button').hover( function() {
 
-		$(this).text('Coming Soon');
+		$(this).addClass('holder').text('Coming Soon');
 
 	}, function(){
 
-		$(this).text('Sign In');
+		$(this).text('SIGN UP');
 
 	});
-
-
 
 
 // ON LOAD...
