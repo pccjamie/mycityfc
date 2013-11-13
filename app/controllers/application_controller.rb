@@ -2,11 +2,12 @@ class ApplicationController < ActionController::Base
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery :with => :exception
-  before_filter :devise_parameter_sanitizer, :if => :devise_controller?
+  protect_from_forgery with: :exception
+  before_filter :devise_parameter_sanitizer, if: :devise_controller?
+  #before_filter :authenticate_user!
   before_filter :authenticate_user!, :except => [:splash], :unless => :user_signed_in?
 
-  require 'pry-rails'
+    require 'pry-rails'
 
   # before_filter :block_cache
   # def block_cache
@@ -15,6 +16,8 @@ class ApplicationController < ActionController::Base
   #   response.headers["Pragma"] = "no-cache"
   #   response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   # end
+
+  #helper :all
 
   # after_filter :set_access_control_headers
   
