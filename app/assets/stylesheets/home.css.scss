@@ -100,11 +100,18 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 
+	#intro h2 {display:none}
+	* footer {position: fixed; bottom: 0; float:left;}
+
+}
+
+
+
 	#intro {
 
-		height: 200px; width: 640px; margin: auto;
+		height: 200px; width: 800px; margin: auto;
 
-		aside {background: $black-25;}
+		aside {background: black;}
 
 		aside {height: 100px; width: 220px; border: 1px solid white; padding: 10px; }
 
@@ -115,10 +122,6 @@ body {
 	}
 
 
-	#intro h2 {display:none}
-	* footer {position: fixed; bottom: 0; float:left;}
-
-}
 
 .bg-fans{	
 
