@@ -104,16 +104,13 @@ body {
 
 		height: 200px; width: 640px; margin: auto;
 
-		aside {height: 100px; width: 196px;border: 1px solid white; padding: 10px;}
+		aside {background: $black-25;}
 
-		aside * img {width: 150px;}
+		aside {height: 100px; width: 220px; border: 1px solid white; padding: 10px; }
+
+		aside a img {width: 150px;}
 
 		aside * {color: $white;}
-
-		aside.right {background: $black-25;}
-
-		div.center {margin: auto; height: auto; width: auto;display:inline-block; float:left}
-
 
 	}
 
