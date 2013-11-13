@@ -102,10 +102,11 @@ body {
 
 	.intro {
 
-		height: auto; width: 500px; margin: auto; margin-top: 100px;
+		height: auto; width: 100%; margin: auto; margin-top: 100px;
 
+		.sleeve {width: 500px;}
 
-		aside {height: 150px; width: 198px; text-align:center; border: 1px solid white; padding: 20px;}
+		aside {height: 150px; width: 198px; text-align:center; border: 1px solid white; padding: 20px;background: $black-25; }
 
 		aside.separator {text-align:center; margin: auto; height: 100px; width: 100px; float:left; border:0;
 
@@ -117,13 +118,9 @@ body {
 		aside * {color: $white;}
 
 		aside.right {
-			background: $black-25; 
-
-			* {font-weight: normal; text-align:left; font-family: $font-normal}
-
-			button.small {background: $steel;}
-				
-
+			
+			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
+			button.medium {background: $steel; float:left;}
 		}
 
 

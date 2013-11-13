@@ -4,13 +4,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
-  #before_filter :authenticate_user!
-
-  # before_filter :user_signed_in?, :root => [:index]
-
   before_filter :authenticate_user!, :except => [:splash], :unless => :user_signed_in?
 
-    require 'pry-rails'
+  require 'pry-rails'
 
   # before_filter :block_cache
   # def block_cache
@@ -20,10 +16,8 @@ class ApplicationController < ActionController::Base
   #   response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
   # end
 
-  #helper :all
-
   # after_filter :set_access_control_headers
-  
+
   # def set_access_control_headers
   #   response.headers["Access-Control-Allow-Origin"] = "*"
   #   response.headers["Access-Control-Request-Method"] = "*"
@@ -42,7 +36,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_update_path_for(user)
-     home_index_path
+    home_index_path
   end
 
   #relies on lib/user_sanitizer.rb
