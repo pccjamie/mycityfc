@@ -108,7 +108,7 @@ body {
 
 			.tagline {padding-left: 20px;
 
-				h1 {font-size: 4em}
+				* h1 {font-size: 4em}
 			
 			}
 
@@ -127,7 +127,7 @@ body {
 		aside.right {
 			
 			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
-			button.medium {width:150px; margin-top: 25px; background: $steel; float:left;}
+			button.medium {width:150px; margin-top: 25px; background: $steel; text-align:center}
 		}
 
 
@@ -137,6 +137,13 @@ body {
 
 	.intro h2 {display:none}
 	* footer {position: fixed; bottom: 0; float:left;}
+
+}
+
+.bg-splash {
+
+	* header.logo {display:none}
+	* footer {height: 100px;}
 
 }
 

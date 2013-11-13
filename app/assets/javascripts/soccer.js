@@ -18,12 +18,13 @@ function location_based_view() {
 
 		//else do this for these other pages.
 
-		var root = window.location.pathname == ("/");
+		// var root = window.location.pathname == ("/");
+
+		var root = "http://mycityfc.herokuapp.com/";
 
 		if (window.location == root) {
 			$('body').addClass('bg-splash');
-
-			$('body * footer').css('display', 'none');
+			// $('body * footer').css('display', 'none');
 		}
 
 		if (window.location.href.indexOf("parent") > -1) {
