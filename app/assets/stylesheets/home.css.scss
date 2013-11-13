@@ -102,13 +102,14 @@ body {
 
 	.intro {
 
-		height: 200px; width: 640px; margin: auto;
+		height: 200px; width: 500px; margin: auto;
 
-		aside.separator {text-align:center; margin: auto; height: auto; width: auto;display:inline-block; float:left}
+
+		aside {height: 100px; width: 198px; text-align:center; border: 1px solid white; padding: 10px;}
+
+		aside.separator {text-align:center; margin: auto; height: 100px; width: 100px; float:left; border:0;}
 		
-		aside {height: 100px; width: 196px; text-align:center; border: 1px solid white; padding: 10px;}
-
-		aside * img {width: 150px;}
+		aside * img {width: 100%;}
 
 		aside * {color: $white;}
 
