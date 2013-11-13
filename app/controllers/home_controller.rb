@@ -7,32 +7,32 @@ before_filter :authenticate_user!, :except => [:splash], :unless => :user_signed
 
 #no actual index view for now. this redirects to one of two paths after they've signed in and set up profile
 
-	def index
+	# def index
+ #    current_user
+ #  	if current_user.profile == 'Fan'
+ #  		redirect_to :fan_profiles
+ #  	elsif
+ #  		current_user.profile == 'Parent'
+ #  		redirect_to :parent_profiles
+ #  	# else
+ #  	# 	redirect_to :index
+ #      # flash[:alert] = 'I am home. No profile.'
+ #  	end
+	# end
+
+
+  def index
     current_user
-  	if current_user.profile == 'Fan'
-  		redirect_to :fan_profiles
-  	elsif
-  		current_user.profile == 'Parent'
-  		redirect_to :parent_profiles
-  	# else
-  	# 	redirect_to :index
+    if user_signed_in? && current_user.profile == 'Fan'
+      redirect_to :fan_profiles
+    elsif 
+      user_signed_in? && current_user.profile == 'Parent'
+      redirect_to :parent_profiles
+    else
+      redirect_to :index
       # flash[:alert] = 'I am home. No profile.'
-  	end
-	end
-
-
-  # def index
-  #   current_user
-  #   if current_user.profile == 'Fan'
-  #     redirect_to :fan_profiles
-  #   elsif 
-  #     current_user.profile == 'Parent'
-  #     redirect_to :parent_profiles
-  #   else
-  #     redirect_to :index
-  #     # flash[:alert] = 'I am home. No profile.'
-  #   end
-  # end
+    end
+  end
 
 
 
