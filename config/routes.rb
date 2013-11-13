@@ -7,7 +7,7 @@ get "users/edit", :to => "users/registrations#edit"
 
 resources :home, :only => [:index, :splash]
 
-root :to => 'home#splash'
+root :to => 'home#index'
 
 resources :slides, :except => [:destroy]
 resources :fan_profiles, :except => [:destroy]

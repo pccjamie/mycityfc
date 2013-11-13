@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(user)
-    root_path
+    home_splash_path
   end
 
   def after_update_path_for(user)
