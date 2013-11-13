@@ -102,18 +102,30 @@ body {
 
 	.intro {
 
-		height: 200px; width: 500px; margin: auto;
+		height: auto; width: 500px; margin: auto; margin-top: 100px;
 
 
-		aside {height: 100px; width: 198px; text-align:center; border: 1px solid white; padding: 10px;}
+		aside {height: 150px; width: 198px; text-align:center; border: 1px solid white; padding: 10px;}
 
-		aside.separator {text-align:center; margin: auto; height: 100px; width: 100px; float:left; border:0;}
+		aside.separator {text-align:center; margin: auto; height: 100px; width: 100px; float:left; border:0;
+
+			p {line-height:90px;}
+		}
 		
 		aside * img {width: 100%;}
 
 		aside * {color: $white;}
 
-		aside.right {background: $black-25;}
+		aside.right {
+			background: $black-25; 
+
+			* {font-weight: normal; text-align:left; font-family: $font-normal}
+
+			.button {background: $steel;}
+				
+
+		}
+
 
 
 	}
