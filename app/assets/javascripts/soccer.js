@@ -1,9 +1,6 @@
-//var city = $('li.current-user-city').html();
-//var city = city.toLowerCase();
 var espn = 'http://api.espn.com/v1/sports/soccer/usa.1/teams/links/web/';
 
 // makes layout / visual changes based on current page url
-
 function location_based_view() {
 
 	if (window.location.href.indexOf("fan") > -1) {
@@ -16,16 +13,13 @@ function location_based_view() {
 		});
 	} else {
 
-		//else do this for these other pages.
-
 		// var root = window.location.pathname == ("/");
-
 		var root = "http://mycityfc.herokuapp.com/";
 
 		if (window.location == root) {
 			$('body').addClass('bg-splash');
-			$('body * footer').css('display', 'none');
 			$('body * header.logo').css('display', 'none');
+			$('body * footer').css('height', '100px');
 		}
 
 		if (window.location.href.indexOf("parent") > -1) {
