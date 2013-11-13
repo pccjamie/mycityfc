@@ -100,6 +100,12 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 
+	#intro {width: 400px;margin: auto;
+
+		aside {border: 1px solid white; padding: 10;}
+
+	}
+
 
 	#intro h2 {display:none}
 	* footer {position: fixed; bottom: 0; float:left;}
