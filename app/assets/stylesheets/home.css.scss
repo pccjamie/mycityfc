@@ -100,28 +100,28 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 
-	#intro h2 {display:none}
-	* footer {position: fixed; bottom: 0; float:left;}
+	.intro {
 
-}
+		height: 200px; width: 640px; margin: auto;
 
+		.separator {text-align:center; margin: auto; height: auto; width: auto;display:inline-block; float:left}
+		
+		aside {height: 100px; width: 196px; text-align:center; border: 1px solid white; padding: 10px;}
 
-
-	#intro {
-
-		height: 200px; width: 600px; margin: auto; background: black;
-
-		aside {background: black;}
-
-		aside {height: 100px; width: 220px; border: 1px solid white; padding: 10px; }
-
-		aside a img {width: 150px;}
+		aside * img {width: 150px;}
 
 		aside * {color: $white;}
+
+		aside.right {background: $black-25;}
+
 
 	}
 
 
+	.intro h2 {display:none}
+	* footer {position: fixed; bottom: 0; float:left;}
+
+}
 
 .bg-fans{	
 
