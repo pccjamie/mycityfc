@@ -2,18 +2,22 @@
 	<div class="sleeve">
 	<div class="intro">
 
-				<aside class="left">
-
-					<p> Native login coming soon</p>
-		  	
+				<aside class="left">  	
+		  	<%= link_to image_tag('https://s3.amazonaws.com/static.stackmob.com/resources/images/facebook-landing/scrumptious/login_1.png'), user_omniauth_authorize_path(:facebook)%>
 				</aside>
 
 
+				<div class="center">
+				<h5>or</h5>
+				</div>
 				<aside class="right">
 
-							  <div class="fb-login-button"></div>
+<!-- 				<div class="fb-login-button"></div>
+ -->
+					<button class="small">SIGN UP</button>
+					<label>Already registered?</label>
+					<a class="" href="#">Log In</a>
 
-		  	<%= link_to image_tag('https://www.facebookbrand.com/img/assets/asset.facebook.logo.lg.png'), user_omniauth_authorize_path(:facebook)%>
 				</aside>
 		
 		</div>

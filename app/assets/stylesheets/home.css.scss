@@ -100,9 +100,17 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 
-	#intro {width: 400px;margin: auto;
+	#intro {
 
-		aside {border: 1px solid white; padding: 10;}
+		height: 200px; width: 440px; margin: auto;
+
+		div.center {text-align:center; margin: auto; height: auto; width:auto;}
+		aside {height: 100px; width: 196px; text-align:center; border: 1px solid white; padding: 10px;}
+
+		aside * {color: $white;}
+
+		aside.right {background: $black-25;}
+
 
 	}
 
