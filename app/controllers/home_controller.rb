@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 #no actual index view for now. this redirects to one of two paths after they've signed in and set up profile
 
 	def index
-    # current_user
+    current_user
   	if current_user.profile == 'Fan'
   		redirect_to :fan_profiles
   	elsif 
