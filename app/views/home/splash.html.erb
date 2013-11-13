@@ -2,16 +2,20 @@
 	<div class="sleeve">
 		<div class="intro" id="login-options">
 			<div class="sleeve">
-				<div class="tagline"><h5>Is soccer near you?</h5></div>
+				
+				<div class="tagline login">
+					<h1>MYCITYFC.COM</h1>
+					<h4>Find soccer near you</h4>
+				</div>
 
-				<aside class="left fb-login">
+				<aside class="left login">
 					<%= link_to image_tag('https://s3.amazonaws.com/static.stackmob.com/resources/images/facebook-landing/scrumptious/login_1.png'), user_omniauth_authorize_path(:facebook)%>
 					<%#= link_to image_tag('assets/fb-login.png'), user_omniauth_authorize_path(:facebook)%>
 				</aside>
 				<aside class="separator">
 					<p>or</p>
 				</aside>
-				<aside class="right fc-login">
+				<aside class="right login">
 					<!--<div class="fb-login-button"></div>-->
 					<button class="medium">SIGN UP</button>
 			</aside>

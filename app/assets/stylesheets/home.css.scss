@@ -104,9 +104,15 @@ body {
 
 		height: auto; width: 100%; margin: auto; margin-top: 100px;
 
-		.sleeve {width: 500px;margin:auto;}
+		.sleeve {width: 600px;margin:auto; padding: 20px;
 
-		
+			.tagline {padding-left: 20px;
+
+				h1 {font-size: 4em}
+			
+			}
+
+		}
 
 		aside {height:auto; width: 200px; text-align:center;}
 
@@ -121,7 +127,7 @@ body {
 		aside.right {
 			
 			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
-			button.medium {width:100px; background: $steel; float:left;}
+			button.medium {width:150px; margin-top: 25px; background: $steel; float:left;}
 		}
 
 
