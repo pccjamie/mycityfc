@@ -15,6 +15,9 @@ belongs_to :profilable, :polymorphic => true
   #At least until project delivery is completed. Next step: Move attribute control into an appropriate User or Devise controller.
   attr_accessible  :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid, :location, :picture, :first_name, :city, :state, :profile,:primary_team
 
+  validates :profile, :presence => true
+
+
 #find an existing user by uid or create one otherwise.
 
    def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
@@ -28,8 +31,6 @@ belongs_to :profilable, :polymorphic => true
                          city: auth.info[:location].split(',').first,
                          state: auth.info[:location].split(',').last,
                          
-
-
                         #LOGIN AND SAVE 
                         #location:auth.extra.raw_info["gender"],# GOOD SAVE, RIGHT HASH
                         #location:auth.extra.raw_info[:gender]
