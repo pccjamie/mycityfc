@@ -23,10 +23,9 @@ function location_based_view() {
 		var root = "http://mycityfc.herokuapp.com/";
 
 		if (window.location == root) {
-			$('body').removeClass('bg-default');
-
 			$('body').addClass('bg-splash');
-			// $('body * footer').css('display', 'none');
+			$('body * footer').css('display', 'none');
+			$('body * header.logo').css('display', 'none');
 		}
 
 		if (window.location.href.indexOf("parent") > -1) {
