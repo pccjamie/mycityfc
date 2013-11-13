@@ -19,7 +19,6 @@ function location_based_view() {
 		if (window.location == root) {
 			$('body').addClass('bg-splash');
 			$('body * header.logo').css('display', 'none');
-			$('body * footer').css('height', '100px');
 		}
 
 		if (window.location.href.indexOf("parent") > -1) {
@@ -31,13 +30,14 @@ function location_based_view() {
 		}
 
 	}
-
+$
 	// some minor changes to styles for location based content.
 	$('.team:first').addClass('primary');
 	//should not run if there are no other teams in the area defined by controller
 	$('.team:first').after('<div class="clearfix"></div>').nextAll().addClass('secondary');
 
 }
+
 
 
 // //GET TEAM ID
@@ -325,8 +325,23 @@ $('a.game-tv:contains("' + ch_espn + '")').filter(function() {
 $('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background', 'none');
 
 
+	$('.local button').hover( function() {
+
+		$(this).text('Coming Soon');
+
+	}, function(){
+
+		$(this).text('Sign In');
+
+	});
+
+
+
+
 // ON LOAD...
 $(function() {
+
+
 	location_based_view();
 	//find_team_info();
 	find_news();

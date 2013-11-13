@@ -98,10 +98,10 @@ body {
 
 }
 
-// .bg-splash {
-// 	* header.logo {display:none}
-// 	* footer {height: 100px;}
-// }
+.bg-splash {
+	* header.logo {display:none}
+	* footer {height: 100px;}
+}
 
 .bg-fans{	
 * footer {position: relative;}
@@ -380,7 +380,7 @@ header#banner #game-previews {
 #js-headlines-latest article:first-child a {font-size: 36px; margin: auto;}
 
 footer {
-	height: auto; min-height: 200px; width: 100%; margin-top: 10px; background-color: $steel-50; position: fixed; bottom: 0; float: left; display: block;
+	height: auto; min-height: 100px; width: 100%; margin-top: 10px; background-color: $steel-50; position: fixed; bottom: 0; float: left; display: block;
 
 	* aside.right {position: absolute; top: 20px; right: 20px; text-transform:uppercase}
 }
