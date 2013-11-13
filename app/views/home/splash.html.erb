@@ -1,23 +1,22 @@
 <header id="splash">
 	<div class="sleeve">
-	<div class="intro">
+	<div class="intro" id="login-options">
 
-				<aside class="left">  	
+				<aside class="left fb-login">  	
 		  	<%= link_to image_tag('https://s3.amazonaws.com/static.stackmob.com/resources/images/facebook-landing/scrumptious/login_1.png'), user_omniauth_authorize_path(:facebook)%>
 				</aside>
 
 
-				<div class="separator">
-				or
-				</div>
+				<aside class="separator">
+				<p>or</p>
+				</aside>
 
-				<aside class="right">
+				<aside class="right fc-login">
 
 <!-- 				<div class="fb-login-button"></div>
  -->
 					<button class="small">SIGN UP</button>
-					<label>Already registered?</label>
-					<a class="" href="#">Log In</a>
+					<label>Already registered? | <a class="" href="#">Log In</a></label.
 
 				</aside>
 		
