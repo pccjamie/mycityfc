@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
 
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
   #before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:splash], :unless => :user_signed_in?
 
     require 'pry-rails'
 
@@ -31,7 +31,8 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(user)
     #edit_fan_profiles_path
-    edit_user_registration_path
+    home_index_path
+    # edit_user_registration_path, unless: => :current_user
   end
 
   def after_sign_out_path_for(user)
