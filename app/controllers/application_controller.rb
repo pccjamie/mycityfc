@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :devise_parameter_sanitizer, if: :devise_controller?
   #before_filter :authenticate_user!
+
+  # before_filter :user_signed_in?, :root => [:index]
+
   before_filter :authenticate_user!, :except => [:splash], :unless => :user_signed_in?
 
     require 'pry-rails'
