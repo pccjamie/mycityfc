@@ -106,7 +106,9 @@ body {
 
 		.sleeve {width: 500px;margin:auto;}
 
-		aside {height: 150px; width: 198px; text-align:center; border: 1px solid white; padding: 20px;background: $black-25; }
+		
+
+		aside {height:auto; width: 200px; text-align:center;}
 
 		aside.separator {text-align:center; margin: auto; height: 100px; width: 100px; float:left; border:0;background:0;
 			p {line-height:90px;}
@@ -119,7 +121,7 @@ body {
 		aside.right {
 			
 			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
-			button.medium {background: $steel; float:left;}
+			button.medium {width:100px; background: $steel; float:left;}
 		}
 
 
