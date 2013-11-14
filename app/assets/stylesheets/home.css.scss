@@ -114,17 +114,14 @@ body {
 		.sleeve {width: 600px; margin:auto; padding: 20px;
 
 			header {
-
-				padding-left: 20px;
 				h1.logo {font-size: 4em}
 				h4.tagline {font-size: 1.5em}
-
 			}
 
 		}
 
 		aside {
-			height:auto; width: 200px; text-align:center;
+			height:auto; width: 200px; margin-top: 40px; text-align:center;
 			* {color: $white;}
 			* img {width: 100%;}
 		}
@@ -135,8 +132,8 @@ body {
 
 		aside.right {
 			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
-			button.medium {width:150px; margin-top: 25px; background: $steel-50; text-align:center}
-			button.medium:hover {width:150px; margin-top: 25px; background: $steel; text-align:center}
+			button.medium {width:150px; background: $steel-50; text-align:center}
+			button.medium:hover {background: $steel; text-align:center}
 
 		}
 
@@ -222,14 +219,9 @@ nav.account {
 nav.content {
 
 	height: auto; width: 40%; padding: 20px; padding-left: 0; display:inline-block; float:right;
-
 	ul.left {line-height: 80px}
 	ul.left li {height: 100px; width: 25%; line-height: 100%; float:left;}
-
-	// ul.left li:nth-child(odd) {background: rgba(31,159,255,.5)}
-	// ul.left li:nth-child(even) {background: rgba(31,159,255,.55)}
 	ul.left li:hover {background: $black-25; color: $white}
-
 	a {height: 100%; width: 100%; float: left; background: 0; color: $white; font-size:20px; line-height: 100%}
 }
 
