@@ -121,19 +121,19 @@ body {
 		}
 
 		aside {
-			height:auto; width: 200px; margin-top: 40px; text-align:center;
+			height: auto; width: 200px; margin-top: 40px; text-align:center;
 			* {color: $white;}
 			* img {width: 100%;}
 		}
 
-		aside.separator {text-align:center; margin: auto; height: 100px; width: 160px; float:left; border:0;background:0;
-			p {line-height:90px;}
+		aside.separator {height: auto; width: 160px; text-align:center; margin: auto; margin-top: 40px; float:left; border:0;background:0;
+			p {line-height:40px;}
 		}
 
 		aside.right {
 			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
-			button.medium {width:150px; background: $steel-50; text-align:center}
-			button.medium:hover {background: $steel; text-align:center}
+			button.medium {height: 40px; width:150px; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; background: $steel; text-align:center; border: 1px solid $white;}
+			button.medium:hover {background: $orange; text-align:center; color: $white;}
 
 		}
 
