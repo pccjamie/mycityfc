@@ -11,9 +11,11 @@ function location_based_view() {
 			var venue = $(this).text();
 			$(this).parent().parent().css('background-image', 'url(' + venue + ')');
 		});
-	} else {
+	} 
+	
+	else {
 
-		// var root = window.location.pathname == ("/");
+		//var root = window.location.pathname == ("/");
 		var root = "http://mycityfc.herokuapp.com/";
 
 		if (window.location == root) {
@@ -30,7 +32,8 @@ function location_based_view() {
 		}
 
 	}
-$
+
+
 	// some minor changes to styles for location based content.
 	$('.team:first').addClass('primary');
 	//should not run if there are no other teams in the area defined by controller
@@ -112,13 +115,11 @@ $
 // }
 
 var my_team = $('.my-team').text();
+var cap = 4;
 
 //GET NEWS
 
 function find_news() {
-
-	var cap = 4;
-
 
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
@@ -328,10 +329,10 @@ $('a.game-tv:contains("' + ch_espn + '")').filter(function() {
 $('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background', 'none');
 
 
-//home - sign up button
 
 $('.local button').hover( function() {
-	$(this).addClass('pending').text('Coming Soon');
+	$(this).addClass('holder').text('Coming Soon');
+
 }, function(){
 
 	$(this).text('Sign Up');

@@ -120,7 +120,7 @@ body {
 			}
 
 		}
-
+el
 		aside {
 			height: auto; width: 200px; margin-top: 40px; text-align:center;
 			* {color: $white;}
@@ -467,14 +467,14 @@ form {background: 0; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 
 form.edit_user {
 
-	background: $black-25; height: auto; width: 50%;
+	background: $black-25; height: auto; width: 600px;
 
 	.field-group {
 		height: auto; width: 100%; display:block; margin: 10px 0; padding: 10px;
-		* {display:inline}
+		* {display:inline; line-height:normal;}
 	}
 
-	* label {width: 100px;}
+	* label {width: 150px; float:left;}
 	* {color: $white; font-size: 20px; font-family: $font-normal}
 	* .button {margin-top: 10px; color: $gray}
 	* img {border: 1px solid white;}

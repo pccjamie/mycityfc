@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   # skip_before_filter :authenticate_user!, :only => [:index]
-  before_filter :user_signed_in?
+  # before_filter :user_signed_in?
   before_filter :authenticate_user!, :except => [:splash], :unless => :user_signed_in?
   
   #no actual index view for now. this redirects to one of two paths after they've signed in and set up profile
