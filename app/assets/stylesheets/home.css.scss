@@ -470,9 +470,10 @@ form.edit_user {
 
 	.field-group {
 		height: auto; width: 100%; display:block; margin: 10px 0; padding: 10px;
-		> {display:inline-block; line-height:normal; color: $white; font-size: 20px; font-family: $font-normal}
+		* {display:inline-block; line-height:normal; color: $white; font-size: 20px; font-family: $font-normal}
 
 		.actions {text-align: center; border-top: 1px solid $steel}
+
 		.button {color: $gray; border-radius: 7px; -webkit-border-radius: 7px}
 	  label.profile-field {width: 200px; float:left;}
 		select {width:auto; color:$gray}
