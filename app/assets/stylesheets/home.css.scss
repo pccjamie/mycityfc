@@ -69,7 +69,7 @@ border-bottom-right-radius: 10px;
    clear: both;
 }
 
-.notice, .alert {background: $orange; color: $white;}
+.notice, .alert {height: auto; width: auto; background: $orange; color: $white; float: left}
 
 body {
 	height:100%; 
@@ -133,9 +133,8 @@ body {
 
 		aside.right {
 			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
-			button.medium {height: 38px; width:150px; padding:0; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; background: $steel-50; text-align:center; border: 1px solid $gray;}
-			button.medium:hover {background: $yellow; text-align:center; color: $black;}
-
+			button.medium {height: 38px; width:150px; padding:0; cursor: auto; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; background: $steel-50; text-align:center; border: 1px solid $gray;}
+			button.medium:hover {background: $black-50; text-align:center; color: $yellow;}
 		}
 
 	}
