@@ -17,7 +17,6 @@ class HomeController < ApplicationController
   end
 
   def splash
-    #flash[:notice] = 'Splash'
   end
 
 end
