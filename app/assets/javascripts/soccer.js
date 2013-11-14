@@ -112,11 +112,14 @@ $
 // }
 
 var my_team = $('.my-team').text();
-var cap = 4;
 
 //GET NEWS
 
 function find_news() {
+
+	var cap = 4;
+
+
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
 		data: {
@@ -325,15 +328,15 @@ $('a.game-tv:contains("' + ch_espn + '")').filter(function() {
 $('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background', 'none');
 
 
-	$('.local button').hover( function() {
+//home - sign up button
 
-		$(this).addClass('holder').text('Coming Soon');
+$('.local button').hover( function() {
+	$(this).addClass('pending').text('Coming Soon');
+}, function(){
 
-	}, function(){
+	$(this).text('Sign Up');
 
-		$(this).text('SIGN UP');
-
-	});
+});
 
 
 // ON LOAD...

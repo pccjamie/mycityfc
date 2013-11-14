@@ -31,7 +31,7 @@ $gray-50: rgba(117, 138, 163, 0.5);
 
 $teal: rgba(135, 169, 181, 0.85);
 $tbd: rgba(0,0,0,.25);
-$pending: rgba(255,0,0,.5);
+$pending: rgba(255,165,31,1);
 
 
 @mixin border-radius-top-left($radius) {
@@ -93,7 +93,6 @@ body {
 	background-repeat: none;
 	background-attachment: fixed;
 
-	.splash h2 {display:none}
 	* footer {position: fixed; left:0; bottom: 0; float:left;}
 
 }
@@ -110,7 +109,7 @@ body {
 .splash {
 
 		height: auto; width: 100%; margin: auto; margin-top: 100px;
-
+		
 		.sleeve {width: 600px; margin:auto; padding: 20px;
 
 			header {
@@ -126,13 +125,13 @@ body {
 			* img {width: 100%;}
 		}
 
-		aside.separator {height: auto; width: 160px; text-align:center; margin: auto; margin-top: 40px; float:left; border:0;background:0;
+		aside.separator {height: 40px; width: 160px; text-align:center; margin: auto; margin-top: 40px; float:left; border:0;background:0;
 			p {line-height:40px;}
 		}
 
 		aside.right {
 			* {font-weight: normal; text-align:left; font-family: $font-normal; clear:both;}
-			button.medium {height: 40px; width:150px; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; background: $steel; text-align:center; border: 1px solid $white;}
+			button.medium {height: 38px; width:150px; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; background: $pending; text-align:center; border: 1px solid $gray;}
 			button.medium:hover {background: $orange; text-align:center; color: $white;}
 
 		}
@@ -185,9 +184,10 @@ p {font-family: $font-normal;}
 /* TEMP */
 .instructions {color: $orange}
 
+
 .pending {background: $pending}
 
-.holder button {background: $orange}
+.pending button {background: $pending}
 
 
 // header{height: auto; padding: 0; position: relative; right: 0; background: none;}

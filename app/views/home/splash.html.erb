@@ -1,14 +1,12 @@
 <div class="sleeve">
 		<div class="splash">
 			<div class="sleeve">
-				
 				<header>
 					<h1 class="logo">MYCITYFC.COM</h1>
 					<h4 class="tagline">Find soccer near you</h4>
 				</header>
 
 				<aside class="left login social">
-					<%#= link_to image_tag('https://s3.amazonaws.com/static.stackmob.com/resources/images/facebook-landing/scrumptious/login_1.png'), user_omniauth_authorize_path(:facebook)%>
 					<%= link_to image_tag('../assets/fb-login.png'), user_omniauth_authorize_path(:facebook)%>
 				</aside>
 				<aside class="separator">
@@ -16,7 +14,7 @@
 				</aside>
 				<aside class="right login local">
 					<!--<div class="fb-login-button"></div>-->
-					<button class="medium">SIGN UP</button>
+					<button class="medium">Sign Up!</button>
 			</aside>
 
 		</div>

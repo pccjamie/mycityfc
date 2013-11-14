@@ -4,61 +4,49 @@
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-  <head>
-  	<meta charset="utf-8" />
-  	<!-- Uncomment to make IE8 render like IE7 -->
-  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
-  	<!-- Set the viewport width to device width for mobile -->
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <!-- Uncomment to make IE8 render like IE7 -->
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= content_for?(:title) ? yield(:title) : "MYCITYFC.COM" %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=BenchNine|Pathway+Gothic+One|Numans|Carrois+Gothic+SC|Inconsolata' %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
+<!-- should replace bg swap with helper method. already written but path on Heroku breaks for some reason. BG change controlled by JS instead.-->
 
-  	<title><%= content_for?(:title) ? yield(:title) : "MYCITYFC.COM" %></title>
-
-  	<%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "https://www.google.com/jsapi" %>
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=BenchNine|Pathway+Gothic+One|Numans|Carrois+Gothic+SC|Inconsolata' %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
-
-<!-- replace with helper method. already written but path on Heroku breaks for some reason. BG change controlled by JS instead.-->
- 
 <body class="bg-default">
-
-<div id="nav-wrapper">
-
-<% if user_signed_in? %>
-  <%= render "/partials/login" %>
-<% else %>
-  <%= render "/partials/public" %>
-<% end %>
-
-</div>
+  <div id="nav-wrapper">
+    <% if user_signed_in? %>
+    <%= render "/partials/login" %>
+    <% else %>
+    <%= render "/partials/public" %>
+    <% end %>
+  </div>
   
-<!-- <p class="notice"><%#= notice %></p>-->   
-<!-- <p class="alert"><%#= alert %></p> -->
-
-<div id="wrapper">
- 
-  <div id="inner-wrapper">
-    <%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div id="wrapper">
+    
+    <div id="inner-wrapper">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="sleeve">
+        
+        <aside class="left">
+          <h5><%= link_to 'MYCITYFC.COM', root_path %></h5>
+        </aside>
+        <aside class="right">
+          <h5>mycityfc.com 2013. all rights reserved</h5>
+        </aside>
+      </div>
+    </footer>
   </div>
-
-<footer>
-  <div class="sleeve">
-      
-      <aside class="left">
-       <h1><%= link_to 'MYCITYFC.COM', root_path %></h1>
-      </aside>
-
-      <aside class="right">
-      <h5>mycityfc.com 2013. all rights reserved</h5>
-      </aside>
-
-  </div>
-</footer>    
-
-
-</div>
-    <%= javascript_include_tag "application" %>
-  </body>
+  <%= javascript_include_tag "application" %>
+</body>
 </html>
