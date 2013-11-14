@@ -11,9 +11,7 @@ function location_based_view() {
 			var venue = $(this).text();
 			$(this).parent().parent().css('background-image', 'url(' + venue + ')');
 		});
-	} 
-	
-	else {
+	} else {
 
 		//var root = window.location.pathname == ("/");
 		var root = "http://mycityfc.herokuapp.com/";
@@ -42,8 +40,8 @@ function location_based_view() {
 }
 
 
+// function espn_team_id() {
 
-// //GET TEAM ID
 // $.ajax({
 // 	url: espn,
 // 	data: {
@@ -62,10 +60,9 @@ function location_based_view() {
 // 					return this;
 // 			});	return;
 // 	});
+//}
 
-// // GET INFO
-
-// function find_team_info() {
+// function espn_team_links() {
 // 	var espn_links;
 // 	$.ajax({
 // 		url: espn,
@@ -119,7 +116,7 @@ var cap = 4;
 
 //GET NEWS
 
-function find_news() {
+function espn_news() {
 
 	$.ajax({
 		url: 'http://api.espn.com/v1/sports/soccer/usa.1/news/headlines/',
@@ -250,10 +247,9 @@ function game_fields() {
 	}
 }
 
-// ON CLICK
+//conditional display of tabs, depending on various situations
 
 function sorting() {
-	//conditional display of tabs, depending on various situations
 	$("li.type-all").click(function() {
 		$("section#schedule-results * .single-game:contains('" + my_team + "')").show();
 	});
@@ -285,10 +281,12 @@ function sorting() {
 }
 
 //triggers
+
 $(".gameday-trigger").click(function() {
 	$('#js-gameday').toggle();
 });
 
+//set regex
 var nbcsn = "NBCSN";
 var ch_nbcsn = nbcsn.match(/NBCSN/g);
 
@@ -329,24 +327,22 @@ $('a.game-tv:contains("' + ch_espn + '")').filter(function() {
 $('a.game-tv:contains("MLS LIVETSNRDS2")').removeAttr('href').css('background', 'none');
 
 
+//MISC
 
 $('.local button').hover( function() {
 	$(this).addClass('holder').text('Coming Soon');
-
 }, function(){
-
 	$(this).text('Sign Up');
-
 });
 
 
 // ON LOAD...
 $(function() {
 
-
 	location_based_view();
-	//find_team_info();
-	find_news();
+	//espn_team_id();
+	//espn_team_links();
+	espn_news();
 	switch_leagues();
 	filter_schedule();
 	game_fields();
