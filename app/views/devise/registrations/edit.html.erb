@@ -15,10 +15,10 @@
 </table>
 
 <%= devise_error_messages! %>
-<% if user_signed_in? && (current_user.profile || current_user.primary_team) == nil %>
+<% if user_signed_in?  %> <!--&& (current_user.profile || current_user.primary_team) == nil-->
 
 <div class="field-group">
-  <%= f.label :profile, 'Default View', :class=>'profile-field' %>
+  <%= f.label :profile, 'Default View', :class=>'profile-field'%>
   <%= f.radio_button(:profile, "Fan") %>
   <%= f.label(:profile_fan, "Fan") %>
   <%= f.radio_button(:profile, "Parent") %>
