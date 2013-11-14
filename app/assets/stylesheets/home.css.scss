@@ -109,12 +109,14 @@ body {
 .splash {
 
 		height: auto; width: 100%; margin: auto; margin-top: 100px;
+
+		* {text-shadow: 1px 2px 2px $gray}
 		
 		.sleeve {width: 600px; margin:auto; padding: 20px;
 
 			header {
-				h1.logo {font-size: 4em}
-				h4.tagline {font-size: 1.5em}
+				h1.logo {font-size: 4em;}
+				h4.tagline {font-size: 1.5em;}
 			}
 
 		}
