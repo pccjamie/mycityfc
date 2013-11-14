@@ -33,7 +33,6 @@ $teal: rgba(135, 169, 181, 0.85);
 $tbd: rgba(0,0,0,.25);
 $pending: rgba(255,165,31,1);
 
-
 @mixin border-radius-top-left($radius) {
 -webkit-border-top-left-radius: 10px;
 -moz-border-radius-topleft: 10px;
@@ -120,7 +119,7 @@ body {
 			}
 
 		}
-el
+
 		aside {
 			height: auto; width: 200px; margin-top: 40px; text-align:center;
 			* {color: $white;}
@@ -187,7 +186,6 @@ p {font-family: $font-normal;}
 
 
 .pending {background: $pending}
-
 .pending button {background: $pending}
 
 
@@ -379,7 +377,6 @@ header#banner #game-previews {
 
 footer {
 	height: auto; min-height: 100px; width: 100%; margin-top: 10px; background-color: $steel-50; position: fixed; bottom: 0; float: left; display: block;
-
 	* aside.right {position: absolute; top: 20px; right: 20px; text-transform:uppercase}
 }
 
@@ -467,20 +464,23 @@ form {background: 0; height: auto; width: 300px; margin: 0 auto; padding: 20px;}
 
 form.edit_user {
 
+	* td:nth-child(first) {width:200px}
+
 	background: $black-25; height: auto; width: 600px;
 
 	.field-group {
 		height: auto; width: 100%; display:block; margin: 10px 0; padding: 10px;
-		* {display:inline; line-height:normal;}
+		> {display:inline-block; line-height:normal; color: $white; font-size: 20px; font-family: $font-normal}
+
+		.actions {text-align: center; border-top: 1px solid $steel}
+		.button {color: $gray; border-radius: 7px; -webkit-border-radius: 7px}
+	  label.profile-field {width: 200px; float:left;}
+		select {width:auto; color:$gray}
+
 	}
 
-	* label {width: 150px; float:left;}
-	* {color: $white; font-size: 20px; font-family: $font-normal}
-	* .button {margin-top: 10px; color: $gray}
-	* img {border: 1px solid white;}
-	* select {width:auto; display: inline; color:$gray}
-
-
+	* img {border: 1px solid $steel}
+	
 }
 
 // form #slideshow.modal * .sleeve {height: 100px;}
