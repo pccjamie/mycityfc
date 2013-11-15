@@ -13,6 +13,12 @@ class FanProfilesController < ApplicationController
     @users = User.all
     # @teams = Team.all
     current_user.primary_team
+
+    if current_user.primary_team.blank?
+      flash[:alert] = "Select a team!"
+      redirect_to edit_fan_profile_path
+    end
+
     @nearby_teams = Team.near([current_user.latitude,current_user.longitude], 250)
     #get_teams_from_espn
     get_user_team_info
@@ -31,10 +37,9 @@ class FanProfilesController < ApplicationController
   def get_video_from_youtube
     current_user
 
-    # YT USERNAME (HARDCODED. NEED TO MAP THIS TO USERS PREFERRED TEAM AND THEN BE ABLE TO QUERY THAT RELATIONSHIP
-
     # some_team = current_user.primary_team.split(' ').map(&:strip) # DOES NOT WORK FOR SOMETHING LIKE FC DALLAS or CHIVAS USA
     # @some_team = some_team
+
     current_team = current_user.primary_team.strip
     @current_team = current_team
     yt_base = "https://www.googleapis.com/youtube/v3"

@@ -395,14 +395,11 @@ footer * h1 {letter-spacing: 8px; font-size: 36px;}
 
 .news-trigger {
 	background: $steel-50; color:$white; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 40px; line-height: 40px; display: block;
-
 }
 
 .news-trigger:hover {background: $black-50; color: $white}
 
-.gameday-trigger {top: 0px; right: 0px; position: absolute}
-.gameday-trigger {display:none}
-
+.gameday-trigger {top: 0px; right: 0px; position: absolute; display:none}
 
 #profile, #local {height: auto; padding: 20px; display: inline-block; position:relative; background: -moz-linear-gradient(top, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0) 75%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.50)), color-stop(75%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top, rgba(0,0,0,0.50) 0%,rgba(0,0,0,0) 75%); /* Chrome10+,Safari5.1+ */
@@ -428,9 +425,9 @@ section#videos, section#fans, section#players, section#schedule-results {
 	clear:both;
 	float:left;
 	.sleeve {margin: 0px}
+
 }
 
-// section#schedule-results {max-height: 400px; overflow: auto}
 section#videos {
 
 	height: 400px;
