@@ -166,7 +166,7 @@ function filter_schedule() {
 	var today = moment().format("MM-DD-YYYY");
 
 
-	var today = "05-01-2014";
+	var today = "08-01-2014";
 	// check MLS teams schedule for the current year
 	$('.single-game').each(function() {
 
