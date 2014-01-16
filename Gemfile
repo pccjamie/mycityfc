@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.0.0', patchlevel: '195'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 # server
@@ -58,7 +58,8 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', '~> 1.6.1',  group: [:development, :test]
+# gem 'debugger', '~> 1.6.1',  group: [:development, :test]
+gem 'debugger', '~> 1.6.1'
 
 #RAIL 4S compatability
 
