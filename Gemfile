@@ -2,9 +2,15 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-# server
+
+#DEPENDENCIES
+
+#db
 gem 'pg'
+
+#server
 # gem 'thin'
+
 
 #gem 'daemons'
 gem 'delayed_job_active_record'
@@ -22,9 +28,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#time parser
 gem 'chronic'
 
 #foundation
@@ -37,16 +45,13 @@ gem 'zurb-foundation', '~> 4.0.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
-# background jobs
+#background jobs
+
 #gem 'resque'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -57,14 +62,19 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', '~> 1.6.1',  group: [:development, :test]
-# gem 'debugger', '~> 1.6.1'
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
+
 
 #RAIL 4S compatability
 
 # to be able to deploy to Heroku
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+end
 
 # keeping this so Devise will cooperate for now.
 gem "protected_attributes", "~> 1.0.0"
@@ -99,17 +109,23 @@ gem "activesupport"   #, "~> 3.1.1"
   
 
 
-  
-#dev / prod
-  gem 'pry-rails'
+#DEV
+
+group :development do
+  gem "debugger"
   gem 'pry-debugger'
+  #gem 'better_errors'
+end
+
+  gem 'pry-rails'
   gem 'pry-stack_explorer'
   gem 'quiet_assets'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'annotate'
 
-# #test
+#TEST
+
   # gem 'factory_girl_rails'
   # gem 'rspec-rails'
   # gem 'shoulda-matchers'
@@ -120,9 +136,7 @@ gem "activesupport"   #, "~> 3.1.1"
   # gem 'guard-rspec'
   # gem 'faker'
 
-# group :development do
-#   gem 'better_errors'
-# end
+
 
 gem 'newrelic_rpm'
 
