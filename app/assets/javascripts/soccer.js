@@ -31,7 +31,6 @@ function location_based_view() {
 
 	}
 
-
 	// some minor changes to styles for location based content.
 	$('.team:first').addClass('primary');
 	//should not run if there are no other teams in the area defined by controller
@@ -159,16 +158,16 @@ function switch_leagues() {
 function filter_schedule() {
 
 	console.log('filtering schedule');
-	var my_team = $('.my-team').text();
-	var cap = 4;
 
-	// hardcoded for demo purposes, as MLS reg season is over and would leave empty block. 
-	// var today = "01-16-2014"; 
-	// need to account for season and schedule alterations 
+	// need to account for:
+	// 1. season overlapping year
+	// 2. 
 
 	var today = moment().format("MM-DD-YYYY");
 
-	// check MLS schedule
+
+	var today = "05-01-2015";
+	// check MLS teams schedule for the current year
 	$('.single-game').each(function() {
 
 		//removes day of week for calc.	
