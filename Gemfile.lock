@@ -209,7 +209,6 @@ DEPENDENCIES
   binding_of_caller
   chronic
   coffee-rails (~> 4.0.0)
-  debugger
   delayed_job_active_record
   devise
   figaro
