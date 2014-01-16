@@ -121,9 +121,9 @@ class FanProfilesController < ApplicationController
     #SEPARATE
     #send schedule to DOM for filtering
     year = Chronic.parse('this year').strftime('%Y')  #allows for new year to be passed in. In US soccer, MLS season does not overlap years, so this works.
-    month = Chronic.parse('this month').strftime('%m')  
+    month = Chronic.parse('this month').strftime('%m')
     
-    url_mls = "http://www.mlssoccer.com/schedule?month=#{month}&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
+    url_mls = "http://www.mlssoccer.com/schedule?month=all&year=#{year}&club=all&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
     schedule_array = Nokogiri::HTML(open(url_mls)).css('.schedule-table tbody tr').to_a
     #@my_teams_results = "http://www.mlssoccer.com/schedule?month=all&year=#{this_year}&club=#{my_team}&competition_type=all&broadcast_type=all&op=Search&form_id=mls_schedule_form"
 
