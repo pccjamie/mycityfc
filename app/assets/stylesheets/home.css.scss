@@ -391,7 +391,7 @@ footer * h1 {letter-spacing: 8px; font-size: 36px;}
 
 /* TRIGGERS */
 
-.news-trigger, .schedule-trigger {border: 1px solid $white}
+.news-trigger {border: 1px solid $white}
 
 .news-trigger {
 	background: $steel-50; color:$white; position: absolute; text-align:center; margin: auto; top: 10px; right: 10px; z-index: 1; height: 40px; width: 40px; line-height: 40px; display: block;
