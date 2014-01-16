@@ -251,6 +251,10 @@ function game_fields() {
 //conditional display of tabs, depending on various situations
 
 function sorting() {
+
+	var my_team = $('.my-team').text();
+
+
 	$("li.type-all").click(function() {
 		$("section#schedule-results * .single-game:contains('" + my_team + "')").show();
 	});
