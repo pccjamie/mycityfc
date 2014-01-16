@@ -159,6 +159,9 @@ function switch_leagues() {
 function filter_schedule() {
 
 	console.log('filtering schedule');
+	var my_team = $('.my-team').text();
+	var cap = 4;
+
 	// hardcoded for demo purposes, as MLS reg season is over and would leave empty block. 
 	// var today = "01-16-2014"; 
 	// need to account for season and schedule alterations 
